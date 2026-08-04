@@ -1,0 +1,26 @@
+name: Weekly Green Deal Digest
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  update-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run digest script
+        run: python fetch_digest.py
+      - name: Commit updated digest
+        run: |
+          git config user.name "policyupdate-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add digest.md site/digest.json
+          git diff --cached --quiet || git commit -m "Weekly digest update"
+          git push
