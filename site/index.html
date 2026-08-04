@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolicyUpdate.eu — EU policy tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <img class="hero-image" src="images/hero.svg" alt="" aria-hidden="true" role="presentation">
+    <div class="wrap">
+      <p class="eyebrow"><span class="pro-badge">PRO</span> EU policy intelligence</p>
+      <h1>PolicyUpdate.eu</h1>
+      <p class="tagline">The latest think tank and NGO contributions to EU policy debates — collected weekly, so you don't have to check twenty websites yourself. Starting with the Green Deal, expanding to other policy fields over time.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <nav class="field-tabs" id="field-tabs" aria-label="Policy fields">
+      <button class="field-tab active" data-field="green-deal">Green Deal</button>
+      <button class="field-tab" data-field="security" disabled title="Coming soon">Security</button>
+      <button class="field-tab" data-field="tech" disabled title="Coming soon">Tech</button>
+      <button class="field-tab" data-field="health" disabled title="Coming soon">Health</button>
+    </nav>
+
+    <section class="signup" id="signup">
+      <h2>Get the weekly digest by email</h2>
+      <p>One email a week. No spam, unsubscribe any time.</p>
+
+      <!--
+        STEP FOR YOU: replace this placeholder with the embed code your
+        newsletter provider gives you.
+
+        - Buttondown: Settings → Embed → copy the HTML snippet
+        - Substack: Settings → Embed → copy the subscribe widget code
+
+        Just paste it here in place of the <form> below.
+      -->
+      <form class="signup-form" onsubmit="return false;">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe (placeholder — swap in your provider's embed)</button>
+      </form>
+    </section>
+
+    <section class="digest">
+      <div class="digest-header">
+        <h2>This week's contributions <span id="active-field-label"></span></h2>
+        <span id="generated-date" class="generated-date"></span>
+      </div>
+      <div id="entries" class="entries">
+        <p class="loading">Loading latest entries…</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Links go to the original publication — this site only lists titles, dates, and short excerpts, it doesn't reproduce full papers.</p>
+      <p><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Follow the weekly roundup on LinkedIn →</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

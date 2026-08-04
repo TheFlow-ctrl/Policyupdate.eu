@@ -1,0 +1,274 @@
+:root {
+  --navy-950: #0B1F33;
+  --navy-800: #132C45;
+  --navy-700: #1E3A57;
+  --slate-500: #4C6478;
+  --gold: #C9A227;
+  --gold-dark: #8A6F1E;
+  --text: #16202A;
+  --muted: #5B6B78;
+  --bg: #F4F2EC;
+  --card-bg: #FFFFFF;
+  --border: #DEDACD;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+h1, h2, h3 {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.site-header .wrap {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pro-badge {
+  background: var(--gold);
+  color: var(--navy-950);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.site-header h1 {
+  margin: 0 0 12px;
+  font-size: 2.1rem;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0;
+  color: #D7DEE4;
+  font-size: 0.98rem;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.field-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin: 0 0 28px;
+}
+
+.field-tab {
+  padding: 12px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.field-tab.active {
+  color: var(--navy-950);
+  border-bottom-color: var(--gold);
+}
+
+.field-tab:disabled {
+  color: #B7B2A3;
+  cursor: not-allowed;
+}
+
+.signup {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--navy-950);
+  border-radius: 2px;
+  padding: 18px 22px;
+  margin: 0 0 32px;
+}
+
+.signup h2 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+
+.signup p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.signup-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.signup-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+
+.signup-form button {
+  padding: 9px 18px;
+  border: 1px solid var(--navy-950);
+  border-radius: 2px;
+  background: var(--navy-950);
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.digest {
+  margin: 0 0 40px;
+}
+
+.digest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.digest-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+#active-field-label {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.generated-date {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-card {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  padding: 16px 4px 16px 16px;
+  transition: border-color 0.15s ease;
+}
+
+.entry-card:hover {
+  border-left-color: var(--gold);
+}
+
+.entry-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.entry-card h3 a {
+  color: var(--navy-950);
+  text-decoration: none;
+}
+
+.entry-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.entry-meta {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
+
+.entry-summary {
+  font-size: 0.92rem;
+  color: #333;
+}
+
+.loading, .empty, .error {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 0 44px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.site-footer a {
+  color: var(--navy-950);
+  font-weight: 600;
+}

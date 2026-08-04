@@ -1,0 +1,48 @@
+# List of RSS feeds to track, grouped by policy field.
+# "field" must match one of the tab IDs in site/index.html
+# (green-deal, security, tech, health) so the website can filter by it.
+#
+# Confirmed working (checked July 2026):
+sources:
+  - name: Bruegel
+    url: https://www.bruegel.org/rss.xml
+    field: green-deal
+  - name: E3G
+    url: https://www.e3g.org/feed
+    field: green-deal
+  - name: CAN Europe
+    url: https://caneurope.org/feed
+    field: green-deal
+  - name: IEEP
+    url: https://ieep.eu/feed
+    field: green-deal
+  - name: ECFR
+    url: https://ecfr.eu/feed
+    field: green-deal
+
+# Add more Green Deal sources here once you've confirmed the feed URL, e.g.:
+#  - name: CEPS
+#    url: https://www.ceps.eu/feed/
+#    field: green-deal
+#  - name: Transport & Environment
+#    url: https://www.transportenvironment.org/feed/
+#    field: green-deal
+#  - name: Agora Energiewende
+#    url: https://www.agora-energiewende.org/feed/
+#    field: green-deal
+#  - name: Ember
+#    url: https://ember-climate.org/feed/
+#    field: green-deal
+
+# Future policy fields — uncomment/add sources once you're ready to expand.
+# The website already has tabs wired up for these (currently shown as
+# "coming soon" and disabled in site/index.html until sources exist).
+#  - name: Some security think tank
+#    url: https://example.org/feed
+#    field: security
+#  - name: Some tech policy org
+#    url: https://example.org/feed
+#    field: tech
+#  - name: Some health policy org
+#    url: https://example.org/feed
+#    field: health

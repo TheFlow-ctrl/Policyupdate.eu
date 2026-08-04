@@ -1,0 +1,13 @@
+{
+  "generated": "2026-07-14",
+  "entries": [
+    {
+      "org": "Bruegel",
+      "field": "green-deal",
+      "title": "Sample entry — this is placeholder data",
+      "link": "https://www.bruegel.org/",
+      "date": "2026-07-13",
+      "summary": "This is a placeholder card so the page isn't empty on first load. Run fetch_digest.py to replace this file with real entries from your RSS feeds."
+    }
+  ]
+}
