@@ -6,6 +6,9 @@ on:
     paths:
       - "site/**"
       - ".github/workflows/deploy-pages.yml"
+  workflow_run:
+    workflows: ["Weekly Green Deal Digest"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
@@ -19,15 +22,19 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
       - id: deployment
         uses: actions/deploy-pages@v4
