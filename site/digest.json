@@ -1,13 +1,53 @@
 {
-  "generated": "2026-07-14",
+  "generated": "2026-08-05",
   "entries": [
     {
-      "org": "Bruegel",
+      "org": "E3G",
       "field": "green-deal",
-      "title": "Sample entry — this is placeholder data",
-      "link": "https://www.bruegel.org/",
-      "date": "2026-07-13",
-      "summary": "This is a placeholder card so the page isn't empty on first load. Run fetch_digest.py to replace this file with real entries from your RSS feeds."
+      "title": "Eyes on Asia: shaping the global energy transition",
+      "link": "https://www.e3g.org/news/eyes-on-asia-shaping-the-global-energy-transition/?utm_source=rss&utm_medium=rss&utm_campaign=eyes-on-asia-shaping-the-global-energy-transition",
+      "date": "2026-08-05",
+      "summary": "<p>Asia is becoming the decisive arena for the global energy transition. The region is expected to account for most global energy demand growth over the next decade, driven by economic expansion, rising populations, and rising cooling needs linked to climate change. Clean energy deployment is accelerating rapidly, supported by high ambition, strong renewable resources, innovation, [&#8230;]</p>\n<p>The post <a href=\"https://www.e3g.org/news/eyes-on-asia-shaping-the-global-energy-transition/\">Eyes on Asia: shaping the global energy transition</a> appeared first on <a href=\"https://www.e3g.org\">E3G</a>.</p>"
+    },
+    {
+      "org": "ECFR",
+      "field": "green-deal",
+      "title": "If Marine Le Pen wins: A European guide to a far-right France",
+      "link": "https://ecfr.eu/publication/if-marine-le-pen-wins-a-european-guide-to-a-far-right-france/",
+      "date": "2026-08-04",
+      "summary": "A Le Pen-led France would mean major changes to European politics. Here's how political leaders can begin to prepare."
+    },
+    {
+      "org": "ECFR",
+      "field": "green-deal",
+      "title": "Alone at the border: Ceuta and Europe\u2019s solidarity failure",
+      "link": "https://ecfr.eu/article/alone-at-the-border-ceuta-and-europes-solidarity-failure/",
+      "date": "2026-07-31",
+      "summary": "By failing to show solidarity with a member state under pressure, the EU is encouraging Morocco and others to keep using migration as a tool of coercion."
+    },
+    {
+      "org": "ECFR",
+      "field": "green-deal",
+      "title": "How splits on the right may threaten Poland\u2019s pro-European camp",
+      "link": "https://ecfr.eu/article/how-the-split-on-polands-right-may-threaten-its-pro-european-camp/",
+      "date": "2026-07-31",
+      "summary": "More than 40 MPs have walked out of Law and Justice, Poland\u2019s largest opposition party, and will court centre-right voters who put Donald Tusk in power in 2023. To win them back, Tusk should make the European argument he has spent years avoiding"
+    },
+    {
+      "org": "ECFR",
+      "field": "green-deal",
+      "title": "Defining modernity in South-East Asia",
+      "link": "https://ecfr.eu/podcasts/episode/defining-modernity-in-south-east-asia/",
+      "date": "2026-07-31",
+      "summary": "Mark Leonard welcomes LuHan Gabel, Ooi Kee Beng and Chelsea Nguyen to explore how younger generations in China, Malaysia and Vietnam are rethinking the meaning of modernity in a post-Western world"
+    },
+    {
+      "org": "E3G",
+      "field": "green-deal",
+      "title": "What worked: Early wins from South Africa\u2019s first Just Energy Transition Partnership",
+      "link": "https://www.e3g.org/news/what-worked-early-wins-from-south-africa-s-first-just-energy-transition-partnership/?utm_source=rss&utm_medium=rss&utm_campaign=what-worked-early-wins-from-south-africa-s-first-just-energy-transition-partnership",
+      "date": "2026-07-30",
+      "summary": "<p>Just energy transitions are\u00a0difficult, especially\u00a0for emerging economies\u00a0such as\u00a0South Africa, where\u00a0decarbonisation must be balanced with economic development, employment and energy\u00a0security. Since\u00a0its\u00a0launch at\u00a0COP26\u00a0in 2021, the\u00a0Just Energy Transition Partnership (JETP)\u00a0sought\u00a0to meet\u00a0this challenge through\u00a0international finance, political commitment, and coordinated planning. The partnership has faced legitimate criticism. Progress has been slower than anticipated, financing has not always matched expectations, and [&#8230;]</p>\n<p>The post <a href=\"https://www.e3g.org/news/what-worked-early-wins-from-south-africa-s-first-just-energy-transition-partnership/\">What worked: Early wins from South Africa\u2019s first Just Energy Transition Partnership\u00a0</a> appeared first on <a href=\"https://www.e3g.org\">E3G</a>.</p>"
     }
   ]
 }
