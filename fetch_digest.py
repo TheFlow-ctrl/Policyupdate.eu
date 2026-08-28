@@ -1,8 +1,9 @@
 """
-Pulls the last 7 days of publications from the RSS feeds listed in
-sources.yaml, filters them to EU Green Deal / environmental-policy-relevant
-content, and writes them to digest.md (human-readable) and
-site/digest.json (what the website reads to display entries).
+Pulls the last 7 days of publications from the RSS feeds and scrapers listed
+in sources.yaml, filters them to EU Green Deal / environmental-policy-relevant
+content (green-deal sources only -- other fields are not topic-filtered), and
+writes them to digest.md (human-readable) and site/digest.json (what the
+website reads to display entries).
 
 Usage:
     pip install -r requirements.txt
@@ -18,6 +19,8 @@ from pathlib import Path
 import feedparser
 import yaml
 
+import backend_scrapers
+
 SOURCES_FILE = Path(__file__).parent / "sources.yaml"
 OUTPUT_FILE = Path(__file__).parent / "digest.md"
 JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
@@ -29,6 +32,11 @@ DAYS_BACK = 7
 # long-form bodies.
 EXCERPT_CHARS = 600
 
+# NOTE: this keyword list is only applied to sources tagged field: green-deal
+# (see apply_relevance_filter()). Sources tagged security/tech/health are
+# NOT run through this filter -- it would incorrectly reject almost
+# everything from a general-topic source, since e.g. a defense/foreign-policy
+# article has no reason to mention "climate" or "carbon".
 GREEN_DEAL_KEYWORDS = [
     "climate change", "climate", "climate crisis", "climate policy", "climate diplomacy",
     "climate action", "climate finance", "climate adaptation", "climate mitigation",
@@ -39,13 +47,15 @@ GREEN_DEAL_KEYWORDS = [
     "renewable energy", "renewables", "energy transition", "decarbonisation",
     "decarbonization", "methane", "fossil fuel", "fossil fuels", "net zero",
     "net-zero", "clean energy", "energy efficiency", "solar", "solar power", "wind power", "wind mills",
-    "wind energy", "coal phase-out", "coal phase out", "energy"
+    "wind energy", "coal phase-out", "coal phase out", "energy",
     "sustainability", "sustainable", "emissions", "carbon", "environment", "transition",
     "environmental", "pollution", "deforestation", "ecosystem", "ecosystems",
     "biodiversity loss", "air quality", "water quality", "plastic pollution",
     "single-use plastics", "recycling", "waste management", "greenhouse gas",
     "greenhouse gases", "carbon tax", "carbon price", "carbon pricing",
-    "green transition", "just transition", "CCUS", "CCU", "CCS", "biogenic", "Clean Industrial Deal", "Article 6", "Paris Agreement", "Kyoto", "UNFCCC", "UNEP", "EPR", "Extended Producer Responsibility"
+    "green transition", "just transition", "CCUS", "CCU", "CCS", "biogenic",
+    "Clean Industrial Deal", "Article 6", "Paris Agreement", "Kyoto", "UNFCCC",
+    "UNEP", "EPR", "Extended Producer Responsibility",
 ]
 
 _KEYWORD_PATTERN = re.compile(
@@ -82,16 +92,11 @@ def bounded_excerpt(text, limit=EXCERPT_CHARS):
     Observatory's RSS <description> field contains the ENTIRE long-form
     article body (no separate short excerpt), so unbounded keyword
     matching against it can trigger on a single stray, incidental mention
-    deep in an otherwise off-topic piece. E.g. "Indemnifying Bayer" (a
-    podcast episode about Bayer lobbying for legal indemnification over
-    glyphosate lawsuits, and disinformation tactics) matched only because
-    paragraph 2 of 4 draws an analogy to "the climate change debate" as a
-    parallel to tobacco-industry disinformation -- not because the piece
-    is actually about climate policy. Bounding matching (and the stored/
-    displayed summary) to a lead-paragraph-length excerpt avoids this
-    without narrowing the filter so much that genuinely relevant articles
-    (whose real topic is normally stated in their opening lines) get
-    missed.
+    deep in an otherwise off-topic piece. Bounding matching (and the
+    stored/displayed summary) to a lead-paragraph-length excerpt avoids
+    this without narrowing the filter so much that genuinely relevant
+    articles (whose real topic is normally stated in their opening lines)
+    get missed.
     """
     if len(text) <= limit:
         return text
@@ -125,6 +130,31 @@ def is_relevant(title, excerpt):
     return bool(_KEYWORD_PATTERN.search(text))
 
 
+def apply_relevance_filter(entries, field):
+    """Keyword-filter entries, but ONLY for field == 'green-deal'.
+
+    Other fields (security, tech, health) are source-segregated instead --
+    every source tagged with one of those fields is already handpicked for
+    that topic, so running them through GREEN_DEAL_KEYWORDS would wrongly
+    reject nearly everything.
+    """
+    if field != "green-deal":
+        return entries
+
+    kept = []
+    skipped = 0
+    for entry in entries:
+        if is_relevant(entry["title"], entry["summary"]):
+            kept.append(entry)
+        else:
+            skipped += 1
+
+    if skipped:
+        print(f"  filtered out {skipped} off-topic item(s)")
+
+    return kept
+
+
 def load_sources():
     with open(SOURCES_FILE, "r") as f:
         data = yaml.safe_load(f)
@@ -140,23 +170,22 @@ def entry_date(entry):
 
 
 def fetch_recent_entries(name, url, field, cutoff):
+    """Fetch and date-filter (but NOT relevance-filter) entries from an RSS
+    feed. Relevance filtering happens afterwards in apply_relevance_filter()
+    so it can be applied identically to both feed-based and scraper-based
+    sources."""
     feed = feedparser.parse(url)
     if feed.bozo and not feed.entries:
         print(f"  [warning] could not parse feed for {name}: {url}")
         return []
 
     recent = []
-    skipped_off_topic = 0
     for entry in feed.entries:
         published = entry_date(entry)
         if published is not None and published < cutoff:
             continue
 
         title, excerpt = entry_text_fields(entry)
-
-        if not is_relevant(title, excerpt):
-            skipped_off_topic += 1
-            continue
 
         recent.append(
             {
@@ -169,10 +198,27 @@ def fetch_recent_entries(name, url, field, cutoff):
             }
         )
 
-    if skipped_off_topic:
-        print(f"  filtered out {skipped_off_topic} off-topic item(s)")
-
     return recent
+
+
+def fetch_source(source, cutoff):
+    """Dispatch a single sources.yaml entry to either the scraper path or
+    the RSS-feed path, depending on whether it has a "scraper" or "url" key."""
+    name = source["name"]
+    field = source.get("field", "green-deal")
+
+    if "scraper" in source:
+        scraper_fn = backend_scrapers.SCRAPERS.get(source["scraper"])
+        if scraper_fn is None:
+            print(f"  [warning] unknown scraper key '{source['scraper']}' for {name}")
+            return []
+        try:
+            return scraper_fn(cutoff)
+        except Exception as exc:
+            print(f"  [warning] scraper for {name} failed: {exc}")
+            return []
+
+    return fetch_recent_entries(name, source["url"], field, cutoff)
 
 
 def main():
@@ -181,10 +227,13 @@ def main():
 
     all_entries = []
     for source in sources:
-        name, url = source["name"], source["url"]
+        name = source["name"]
         field = source.get("field", "green-deal")
         print(f"Checking {name} ({field})...")
-        entries = fetch_recent_entries(name, url, field, cutoff)
+
+        entries = fetch_source(source, cutoff)
+        entries = apply_relevance_filter(entries, field)
+
         print(f"  found {len(entries)} relevant recent item(s)")
         all_entries.extend(entries)
 
@@ -221,4 +270,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
