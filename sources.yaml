@@ -1,14 +1,22 @@
-# List of RSS feeds to track, grouped by policy field.
+Sources · YAML
+# List of feeds/scrapers to track, grouped by policy field.
 # "field" must match one of the tab IDs in site/index.html
 # (green-deal, security, tech, health) so the website can filter by it.
 #
-# Every entry pulled from these feeds is additionally checked against the
+# Every entry with field: green-deal is additionally checked against the
 # GREEN_DEAL_KEYWORDS list in fetch_digest.py before being included, since
-# some sources (ECFR, Corporate Europe Observatory) cover topics well beyond
-# the Green Deal / environmental policy.
+# some sources (Corporate Europe Observatory, VTT) cover topics well beyond
+# the Green Deal / environmental policy. Sources tagged with other fields
+# are NOT keyword-filtered -- they're already topic-segregated by being
+# hand-picked for that field.
 #
-# Confirmed working (checked August 2026):
+# Entries with a "scraper" key (instead of "url") are handled by
+# backend_scrapers.py, for sites with no working RSS/Atom feed.
+#
+# Last full review: August 2026.
+ 
 sources:
+  # --- Green Deal / environmental policy -----------------------------------
   - name: Bruegel
     url: https://www.bruegel.org/rss.xml
     field: green-deal
@@ -19,11 +27,10 @@ sources:
     url: https://caneurope.org/feed
     field: green-deal
   - name: IEEP
-    url: https://ieep.eu/feed
+    url: https://ieep.eu/news/feed/
     field: green-deal
-  - name: ECFR
-    url: https://ecfr.eu/feed
-    field: green-deal
+    # Note: the old generic https://ieep.eu/feed was dead (no items since
+    # Feb 2023). This /news/feed/ URL is confirmed live as of Aug 2026.
   - name: EEB (European Environmental Bureau)
     url: https://eeb.org/feed/
     field: green-deal
@@ -36,9 +43,14 @@ sources:
   - name: Corporate Europe Observatory
     url: https://corporateeurope.org/en/rss.xml
     field: green-deal
+    # Broad-topic source (lobbying transparency across many sectors) --
+    # relies on the keyword filter to surface only its Green Deal-relevant
+    # content. Its feed also dumps full article bodies into <description>,
+    # which is why fetch_digest.py bounds matching to a lead excerpt.
   - name: I4CE (Institute for Climate Economics)
     url: https://www.i4ce.org/feed/
     field: green-deal
+    # French-language site; low recent volume.
   - name: Sandbag
     url: https://sandbag.be/feed/
     field: green-deal
@@ -48,28 +60,156 @@ sources:
   - name: RAP Europe (Regulatory Assistance Project)
     url: https://www.raponline.org/feed/
     field: green-deal
-
+    # Feed validity not independently re-confirmed in the most recent
+    # review pass -- worth a manual spot check if it stops producing items.
+  - name: Climate Observatory (ECNO)
+    url: https://climateobservatory.eu/rss.xml
+    field: green-deal
+  - name: GEF (Green European Foundation)
+    url: https://gef.eu/feed/
+    field: green-deal
+  - name: Netzero Cities
+    url: https://netzerocities.eu/feed/
+    field: green-deal
+  - name: Demos Helsinki
+    url: https://demoshelsinki.fi/feed/
+    field: green-deal
+    # Leans broader "futures/social policy" -- currently climate-governance-
+    # heavy but worth rechecking periodically.
+  - name: Ecologic Institute
+    url: https://www.ecologic.eu/rss.xml
+    field: green-deal
+  - name: Fondazione Sviluppo Sostenibile
+    url: https://www.fondazionesvilupposostenibile.org/feed/
+    field: green-deal
+    # Italian-language only.
+  - name: The Green Tank
+    url: https://thegreentank.gr/en/feed/
+    field: green-deal
+  - name: WiseEuropa
+    url: https://wise-europa.eu/en/feed/
+    field: green-deal
+  - name: EPG Thinktank
+    url: https://www.epg-thinktank.org/feed/
+    field: green-deal
+  - name: Think2030
+    url: https://think2030.eu/feed/
+    field: green-deal
+  - name: VTT (Finland)
+    url: https://www.vttresearch.com/en/rss.xml
+    field: green-deal
+    # Very broad research institute (health, quantum, defense, energy all
+    # mixed) -- included specifically because the keyword filter applies
+    # to green-deal sources, so only its energy/climate output should
+    # actually surface. Worth monitoring for false positives.
+  - name: Green10
+    url: https://green10.org/feed/
+    field: green-deal
+    # Structurally valid RSS but returned zero items at last check --
+    # keep tracking rather than treat as permanently dead.
+ 
+  # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
+  # See backend_scrapers.py. All four confirmed against real fetched HTML,
+  # Aug 2026.
+  - name: CEPS
+    scraper: ceps
+    field: green-deal
+  - name: Transport & Environment
+    scraper: transport_environment
+    field: green-deal
+  - name: PIK Potsdam
+    scraper: pik_potsdam
+    field: green-deal
+  - name: IDDRI
+    scraper: iddri
+    field: green-deal
+ 
+  # --- Security / foreign policy (field exists on the site but the tab is --
+  # --- still disabled -- these sources are ready for when it's activated) --
+  - name: ECFR
+    url: https://ecfr.eu/feed
+    field: security
+    # Moved here from green-deal: ECFR is a general European foreign-policy
+    # think tank (defense, China, Russia, trade...) -- that mismatch was
+    # the original reason the keyword filter got added in the first place.
+  - name: Chatham House
+    url: https://www.chathamhouse.org/path/whatsnew.xml
+    field: security
+  - name: Clingendael
+    url: https://www.clingendael.org/rss.xml
+    field: security
+    # Curated "in the media" clippings feed, links to external outlets
+    # rather than Clingendael's own original publications.
+  - name: EPLO (European Peacebuilding Liaison Office)
+    url: https://eplo.org/feed/
+    field: security
+  - name: FIIA (Finnish Institute of International Affairs)
+    url: https://fiia.fi/en/feed
+    field: security
+  - name: International Crisis Group
+    url: https://www.crisisgroup.org/rss.xml
+    field: security
+  - name: SIPRI
+    url: https://www.sipri.org/rss/combined.xml
+    field: security
+  - name: SWP (German Institute for International and Security Affairs)
+    url: https://www.swp-berlin.org/en/SWPPublications.xml
+    field: security
+  - name: Lisbon Council
+    url: https://lisboncouncil.net/feed/
+    field: security
+  - name: Wilfried Martens Centre (EPP)
+    url: https://www.martenscentre.eu/feed/
+    field: security
+  - name: FEPS (S&D)
+    url: https://feps-europe.eu/feed/
+    field: security
+  - name: European Liberal Forum (Renew)
+    url: https://liberalforum.eu/feed/
+    field: security
+    # Publishes some green-deal-adjacent content too -- fine to leave under
+    # security for now since that field isn't keyword-filtered.
+  - name: Transform Network
+    url: https://transform-network.net/feed/
+    field: security
+    # Broad left-political network, not narrowly "security" -- reassess
+    # once the tab is activated and real categorization needs firm up.
+ 
 # Checked but not currently working (excluded until fixed):
-#  - CEPS (https://www.ceps.eu/feed/) — WordPress error, no feed available
-#  - EPC — no working feed URL found, no RSS autodiscovery on their site
-#  - Transport & Environment — /feed/ and /discover/feed/ both redirect to
-#    plain HTML pages, not a feed
-#  - Agora Energiewende / Agora Energy — both guessed feed URLs 404
-#  - Ember (https://ember-energy.org/feed/) — structurally valid RSS but
+#  - CEPS's own RSS feed (WordPress feeds disabled site-wide) -- now
+#    covered via a custom scraper instead, see above.
+#  - EPC -- no working feed URL found, no RSS autodiscovery on their site
+#  - Agora Energiewende (.de and .org) -- no feed on either domain (TYPO3)
+#  - Ember (https://ember-energy.org/feed/) -- structurally valid RSS but
 #    currently returns zero items; re-check later
-#  - WWF European Policy Office — no working feed URL found
-#  - ClientEarth — no working feed URL found
-#  - European Climate Foundation — /feed/ redirects to the homepage
-
-# Future policy fields — uncomment/add sources once you're ready to expand.
-# The website already has tabs wired up for these (currently shown as
-# "coming soon" and disabled in site/index.html until sources exist).
-#  - name: Some security think tank
-#    url: https://example.org/feed
-#    field: security
+#  - WWF European Policy Office -- site appears stale/abandoned (content
+#    references 2013 as current)
+#  - ClientEarth -- no working feed URL found
+#  - European Climate Foundation -- no feed; listing page at
+#    europeanclimate.org/latest-updates/ could be a future scraper target
+#  - Eurelectric -- no feed; listing page at eurelectric.org/news/ could be
+#    a future scraper target (substantive sector content, not pure PR)
+#  - EERA -- no feed; listing page at eera-set.eu/news-resources.html
+#  - BC3 (Basque Centre for Climate Change) -- no feed; listing page at
+#    bc3research.org/en/newsroom/news/, partly Spanish-language
+#  - JRC Publications Repository -- database/search-driven, PDF-only,
+#    not feed- or easily scraper-friendly
+#  - TNO, Cefic, BusinessEurope, EIPA, New Direction -- checked, excluded
+#    as too broad/generic, pure industry-lobby PR, or too thin/inconsistent
+#    an output to be worth tracking
+#  - TEPSA, IAI, DGAP, Egmont Institute -- feeds exist but are currently
+#    empty (not dead links, just no recent items); URLs not re-confirmed
+#    in the latest pass, so not added here to avoid guessing at exact
+#    endpoints -- worth revisiting if these become a priority
+ 
+# Future policy fields (tech, health) -- no sources yet. The website
+# already has tabs wired up for these (currently shown as "coming soon"
+# and disabled in site/index.html) as well as for security (see above,
+# security sources exist but the tab itself is still disabled).
 #  - name: Some tech policy org
 #    url: https://example.org/feed
 #    field: tech
 #  - name: Some health policy org
 #    url: https://example.org/feed
 #    field: health
+ 
