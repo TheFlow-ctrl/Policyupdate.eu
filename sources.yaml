@@ -2,7 +2,12 @@
 # "field" must match one of the tab IDs in site/index.html
 # (green-deal, security, tech, health) so the website can filter by it.
 #
-# Confirmed working (checked July 2026):
+# Every entry pulled from these feeds is additionally checked against the
+# GREEN_DEAL_KEYWORDS list in fetch_digest.py before being included, since
+# some sources (ECFR, Corporate Europe Observatory) cover topics well beyond
+# the Green Deal / environmental policy.
+#
+# Confirmed working (checked August 2026):
 sources:
   - name: Bruegel
     url: https://www.bruegel.org/rss.xml
@@ -19,20 +24,42 @@ sources:
   - name: ECFR
     url: https://ecfr.eu/feed
     field: green-deal
+  - name: EEB (European Environmental Bureau)
+    url: https://eeb.org/feed/
+    field: green-deal
+  - name: Carbon Market Watch
+    url: https://carbonmarketwatch.org/feed/
+    field: green-deal
+  - name: Zero Waste Europe
+    url: https://www.zerowasteeurope.eu/feed/
+    field: green-deal
+  - name: Corporate Europe Observatory
+    url: https://corporateeurope.org/en/rss.xml
+    field: green-deal
+  - name: I4CE (Institute for Climate Economics)
+    url: https://www.i4ce.org/feed/
+    field: green-deal
+  - name: Sandbag
+    url: https://sandbag.be/feed/
+    field: green-deal
+  - name: Bellona
+    url: https://bellona.org/feed
+    field: green-deal
+  - name: RAP Europe (Regulatory Assistance Project)
+    url: https://www.raponline.org/feed/
+    field: green-deal
 
-# Add more Green Deal sources here once you've confirmed the feed URL, e.g.:
-#  - name: CEPS
-#    url: https://www.ceps.eu/feed/
-#    field: green-deal
-#  - name: Transport & Environment
-#    url: https://www.transportenvironment.org/feed/
-#    field: green-deal
-#  - name: Agora Energiewende
-#    url: https://www.agora-energiewende.org/feed/
-#    field: green-deal
-#  - name: Ember
-#    url: https://ember-climate.org/feed/
-#    field: green-deal
+# Checked but not currently working (excluded until fixed):
+#  - CEPS (https://www.ceps.eu/feed/) — WordPress error, no feed available
+#  - EPC — no working feed URL found, no RSS autodiscovery on their site
+#  - Transport & Environment — /feed/ and /discover/feed/ both redirect to
+#    plain HTML pages, not a feed
+#  - Agora Energiewende / Agora Energy — both guessed feed URLs 404
+#  - Ember (https://ember-energy.org/feed/) — structurally valid RSS but
+#    currently returns zero items; re-check later
+#  - WWF European Policy Office — no working feed URL found
+#  - ClientEarth — no working feed URL found
+#  - European Climate Foundation — /feed/ redirects to the homepage
 
 # Future policy fields — uncomment/add sources once you're ready to expand.
 # The website already has tabs wired up for these (currently shown as
