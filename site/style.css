@@ -152,6 +152,14 @@ h1, h2, h3 {
   flex-wrap: wrap;
 }
 
+.substack-embed {
+  border: none;
+  background: transparent;
+  max-width: 100%;
+  display: block;
+  margin: 0 -4px;
+}
+
 .signup-form input {
   flex: 1;
   min-width: 200px;
