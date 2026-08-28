@@ -1,4 +1,3 @@
-Sources · YAML
 # List of feeds/scrapers to track, grouped by policy field.
 # "field" must match one of the tab IDs in site/index.html
 # (green-deal, security, tech, health) so the website can filter by it.
