@@ -25,6 +25,7 @@
     <nav class="field-tabs" id="field-tabs" aria-label="Policy fields">
       <button class="field-tab active" data-field="green-deal">Green Deal</button>
       <button class="field-tab" data-view="archive">Archive</button>
+      <button class="field-tab" data-view="policy-cycle">Policy Cycle</button>
       <span class="field-tabs-upcoming">
         <span class="field-tabs-upcoming-label">Upcoming</span>
         <button class="field-tab field-tab-upcoming" data-field="security" disabled title="Coming soon">Security</button>
@@ -77,6 +78,17 @@
       </div>
       <div id="archive-months">
         <p class="loading">Loading archive…</p>
+      </div>
+    </section>
+
+    <section class="policy-cycle" id="policy-cycle-section" hidden>
+      <div class="digest-header">
+        <h2>Policy Cycle</h2>
+        <span class="generated-date">Where each Green Deal law currently stands</span>
+      </div>
+      <div id="policy-cycle-legend" class="policy-cycle-legend"></div>
+      <div id="policy-cycle-laws">
+        <p class="loading">Loading policy cycle data…</p>
       </div>
     </section>
 
