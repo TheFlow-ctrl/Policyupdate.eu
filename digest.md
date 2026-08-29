@@ -18,33 +18,6 @@ This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR
 
 ---
 
-### Can a ceasefire survive Israel’s election?
-*ECFR — 2026-08-28*
-
-This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR, to unpack a turbulent summer in Israel and the Palestinian territories. While Palestinian factions in Gaza have agreed in principle to decommission their weapons , the proposal faces significant obstacles, not least opposition from the Israeli government. Meanwhile settler violence is surging and settlement construction is spreading, redrawing the map faster than any negotiation could. Hugh explains why a sustainable ceasefire cannot rely on disarmament alone but requires a broader political process that…
-
-[Read more](https://ecfr.eu/podcasts/episode/can-a-ceasefire-survive-israels-election/)
-
----
-
-### Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI
-*Chatham House — 2026-08-28*
-
-Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI 3 September 2026 — 11:00 TO 12:00 BST Anonymous (not verified) 28 August 2026 Chatham House and Online Hear from Finland’s foreign minister on how Europe can innovate, build strength and compete in artificial intelligence. Hear from Finland’s Foreign Minister on how Europe can compete, innovate and build strength in the age of AI. Artificial intelligence is reshaping economic competition, security and political power at a pace that is testing existing institutions and assumptions. As the US…
-
-[Read more](https://www.chathamhouse.org/events/all/standard-event/elina-valtonen-minister-foreign-affairs-finland-whether-europe-can)
-
----
-
-### Zambia's 2026 election: A test of democratic resilience
-*Chatham House — 2026-08-28*
-
-Zambia's 2026 election: A test of democratic resilience 22 September 2026 — 14:00 TO 15:00 BST Anonymous (not verified) 28 August 2026 Online Discover what the election aftermath means for politics, policy and investment. Discover what the election aftermath means for politics, policy and investment Zambia’s Electoral Commission announced that President Hakainde Hichilema had secured a second term after winning 60 per cent of the vote. Despite a peaceful polling day, counting was paused because of security concerns and questions have since emerged over reported discrepancies between…
-
-[Read more](https://www.chathamhouse.org/events/all/standard-event/zambias-2026-election-test-democratic-resilience)
-
----
-
 ### Return Hubs in European Migration Policy
 *SWP (German Institute for International and Security Affairs) — 2026-08-28*
 
@@ -78,51 +51,6 @@ Cover image: picture alliance / Hans Lucas | Martin Bertrand US secretary of sta
 Iran, Gaza, Trump and Netanyahu: Understanding the Middle East’s crises Audio sseth.drupal@c… 27 August 2026 In this week’s episode of Independent Thinking, our experts discuss the big picture in the Middle East and how the various conflicts are shaping relations in the region. It’s been a tumultuous year in the Middle East – and it’s far from over. Six months after the US and Israel launched their offensive against Iran, the conflict continues to disrupt trade, energy and food security. President Trump struggles to escape a deadlock that threatens to seriously damage him in the American…
 
 [Read more](https://www.chathamhouse.org/2026/08/iran-gaza-trump-netanyahu-understanding-middle-easts-crises-independent-thinking-podcast)
-
----
-
-### Iraq Initiative Conference 2026
-*Chatham House — 2026-08-27*
-
-Iraq Initiative Conference 2026 11 November 2026 — 09:00 TO 17:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online The eighth annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq’s new government can navigate growing regional and domestic pressures and reinforce national sovereignty. The eight annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq’s new government can navigate growing regional and domestic pressures…
-
-[Read more](https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026)
-
----
-
-### Global trade 2027
-*Chatham House — 2026-08-27*
-
-Global trade 2027 17 March 2027 TO 18 March 2027 — 09:00 TO 13:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join government officials, global business and civil society leaders to explore strategies for navigating economic uncertainty in an increasingly complex geopolitical landscape. Chatham House’s 2027 Global Trade Conference brings together government officials, global business and civil society leaders to examine pivotal developments in global trade policy. Navigating global economic uncertainty Over the past year, climate and geopolitical shocks have…
-
-[Read more](https://www.chathamhouse.org/events/all/conference/global-trade-2027)
-
----
-
-### Climate and energy 2027
-*Chatham House — 2026-08-27*
-
-Climate and energy 2027 10 March 2027 TO 11 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and experts for a day and a half of unique discussion on how to manage mounting geopolitical and climate risks while maintaining energy security, economic prosperity and international cooperation towards the transition. Chatham House’s 2027 Climate & Energy Summit convenes policymakers, business leaders and non-profit stakeholders to shape the strategies for securing a resilient future. The energy transition’s…
-
-[Read more](https://www.chathamhouse.org/events/all/conference/climate-and-energy-2027)
-
----
-
-### Security and defence 2027
-*Chatham House — 2026-08-27*
-
-Security and defence 2027 3 March 2027 TO 4 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and international security experts for a day and a half of unique discussions on the future of security and defence across modern domains of conflict, and how to prepare for an uncertain future. Chatham House’s 2027 Security and Defence Conference convenes policymakers, military leaders and industry stakeholders to shape solutions for navigating an increasingly complex threat landscape. Adjusting to the…
-
-[Read more](https://www.chathamhouse.org/events/all/conference/security-and-defence-2027)
-
----
-
-### Climate and energy 2027
-*Chatham House — 2026-08-27*
-
-Climate and energy 2027 10 March 2027 TO 11 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and experts for a day and a half of unique discussion on how to manage mounting geopolitical and climate risks while maintaining energy security, economic prosperity and international cooperation towards the transition. Chatham House’s 2027 Climate & Energy Summit convenes policymakers, business leaders and non-profit stakeholders to shape the strategies for securing a resilient future. The energy transition’s…
-
-[Read more](https://www.chathamhouse.org/events/all/conference/climate-and-energy-2027)
 
 ---
 
@@ -225,15 +153,6 @@ The European Climate Foundation (ECF) and the Institute for European Environment
 
 ---
 
-### Call for abstracts "Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind"
-*EERA — 2026-08-25*
-
-News: Call for abstracts "Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind"
-
-[Read more](https://www.eera-set.eu/news-resources/8715-call-for-abstracts-sustainability-and-circularity-strategies-of-end-of-life-management-of-energy-systems-photovoltaic-and-wind-1.html)
-
----
-
 ### Nigeria will need more than a bigger army to tackle security challenges
 *Chatham House — 2026-08-25*
 
@@ -267,15 +186,6 @@ Recognising the role of domestic workers in climate policies is essential to tac
 The climate crisis is not simply the result of human activity. Its roots lie in interconnected patriarchal, colonial and capitalist relations. The post The Androcene: Rethinking the Roots of the Planetary Crisis appeared first on transform!europe .
 
 [Read more](https://transform-network.net/blog/analysis/the-androcene-rethinking-the-roots-of-the-planetary-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=the-androcene-rethinking-the-roots-of-the-planetary-crisis)
-
----
-
-### Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty
-*Chatham House — 2026-08-24*
-
-Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty 17 September 2026 — 14:30 TO 15:30 BST Anonymous (not verified) 24 August 2026 Chatham House and Online Hear Vice President Ndaba Nkosinathi Gaolathe set out Botswana’s priorities for inclusive economic reform. Hear Vice President and Minister of Finance HE Ndaba Gaolathe set out Botswana’s priorities for inclusive economic reform. As Botswana marks 60 years of independence, a weakening of the diamond market has exposed the limits of the model that drove the country’s rise to upper-middle-income status.…
-
-[Read more](https://www.chathamhouse.org/events/all/standard-event/botswanas-future-vice-president-gaolathe-economic-resilience-amid-global)
 
 ---
 
