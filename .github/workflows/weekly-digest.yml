@@ -21,6 +21,6 @@ jobs:
         run: |
           git config user.name "policyupdate-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add digest.md site/digest.json
+          git add digest.md site/digest.json site/archive.json
           git diff --cached --quiet || git commit -m "Weekly digest update"
           git push
