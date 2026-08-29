@@ -1,5 +1,23 @@
 # Weekly Green Deal Digest — 2026-08-29
 
+### Tortious Liability for Climate Change Inaction: Recent Trends across Jurisdictions
+*European Environmental Law Review — 2026-08-29*
+
+The article tracks a change of approach taken by national courts within and across legal systems to assessing climate actions in tort. The polycentric nature of climate policy, which had proven fatal to plaintiffs’ earlier cases in common law jurisdictions, has rarely struck judges in continental Europe as a particularly effective defence. Nonetheless, to civil courts, too, the difficulties of linking individual harm to a specific greenhouse gas (GHG) emitter have until recently made the adverse effects of climate change appear conceptually inapt for redress by means of tortious liability.…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026006)
+
+---
+
+### Balancing Flexibility and Predictable Harmonization for Hydrogen Transmission
+*European Environmental Law Review — 2026-08-29*
+
+The hydrogen and gas decarbonization package introduces a legal framework for hydrogen transmission. To enable a hydrogen market in Europe as a key building block on the way to a climate neutral economy, a cross-border pipeline infrastructure must be constructed, which demands harmonized regulation. This article analyses how far the new legal framework strikes a balance between flexibility, which is needed to ramp up a new infrastructure, legal predictability, which is needed to facilitate long-term investments and strategies, and harmonization, which is needed for cross-border energy…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026007)
+
+---
+
 ### What is net zero?
 *ClientEarth — 2026-08-28*
 
@@ -117,6 +135,15 @@ How innovation in technologies demonstrates the need to modernise Europe’s rec
 
 ---
 
+### A sustainable platform for federated health data access, AI innovation, and regulatory acceptance in alignment with the European Health Data Space principles [version 2; peer review: 1 approved with reservations]
+*Open Research Europe (ORE) — 2026-08-26*
+
+doi:10.12688/openreseurope.23459.2
+
+[Read more](https://open-research-europe.ec.europa.eu/articles/6-181/v2?src=rss)
+
+---
+
 ### Study to support the fitness check of the polluter pays principle
 *CEPS — 2026-08-26*
 
@@ -162,30 +189,12 @@ Nigeria will need more than a bigger army to tackle security challenges Expert c
 
 ---
 
-### The Androcene: Rethinking the Roots of the Planetary Crisis
-*Transform Network — 2026-08-25*
+### Lessons learned from European land subsidence
+*Nature Sustainability — 2026-08-24*
 
-The climate crisis is not simply the result of human activity. Its roots lie in interconnected patriarchal, colonial and capitalist relations. The post The Androcene: Rethinking the Roots of the Planetary Crisis appeared first on transform!europe .
+Nature Sustainability, Published online: 24 August 2026; doi:10.1038/s41893-026-01918-4 Millions of people are impacted by land subsidence, which is accelerated by human-induced drivers. Across Europe, research and policy is focused on managing these drivers and mitigating their influence, with data and monitoring infrastructure playing a key role in tackling future challenges.
 
-[Read more](https://transform-network.net/blog/analysis/the-androcene-rethinking-the-roots-of-the-planetary-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=the-androcene-rethinking-the-roots-of-the-planetary-crisis)
-
----
-
-### A Just Ecological Transition for Domestic Workers
-*Transform Network — 2026-08-25*
-
-Recognising the role of domestic workers in climate policies is essential to tackling both social inequality and the environmental crisis. The post A Just Ecological Transition for Domestic Workers appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/analysis/a-just-ecological-transition-for-domestic-workers/?utm_source=rss&utm_medium=rss&utm_campaign=a-just-ecological-transition-for-domestic-workers)
-
----
-
-### The Androcene: Rethinking the Roots of the Planetary Crisis
-*Transform Network — 2026-08-25*
-
-The climate crisis is not simply the result of human activity. Its roots lie in interconnected patriarchal, colonial and capitalist relations. The post The Androcene: Rethinking the Roots of the Planetary Crisis appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/analysis/the-androcene-rethinking-the-roots-of-the-planetary-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=the-androcene-rethinking-the-roots-of-the-planetary-crisis)
+[Read more](https://www.nature.com/articles/s41893-026-01918-4)
 
 ---
 
@@ -195,41 +204,5 @@ The climate crisis is not simply the result of human activity. Its roots lie in 
 An Integrated Approach to National, European and Global Resilience The healthcare sector worldwide is facing an increasing threat from cyberattacks. Between 2022 and 2025, the European Repository of Cyber Incidents (EuRepoC) rec­orded a total of 351 significant attacks on healthcare facilities. These data provide initial insights into the impact of cyberattacks on healthcare systems and sectors, and the crisis management that follows. They also highlight that such attacks pose a threat to public health and national security. The data analysis shows that national critical sectors and the…
 
 [Read more](https://www.swp-berlin.org/en/publication/cybersecurity-in-the-healthcare-sector)
-
----
-
-### Will Anyone Mourn the Migrants Who Died at Sea off Ceuta?
-*Transform Network — 2026-08-24*
-
-The tragedy at Ceuta exposes the human cost of weaponised migration and a European border regime that denies safe routes and fundamental rights. The post Will Anyone Mourn the Migrants Who Died at Sea off Ceuta? appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/commentary/will-anyone-mourn-the-migrants-who-died-at-sea-off-ceuta/?utm_source=rss&utm_medium=rss&utm_campaign=will-anyone-mourn-the-migrants-who-died-at-sea-off-ceuta)
-
----
-
-### A Fiery Planet in an Age of Climate Change, War and Migration
-*Transform Network — 2026-08-24*
-
-As the climate crisis accelerates, it deepens global inequalities, drives displacement and migration, and intersects with war and conflict. With time running out, urgent action is needed. The post A Fiery Planet in an Age of Climate Change, War and Migration appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/analysis/a-fiery-planet-in-an-age-of-climate-change-war-and-migration/?utm_source=rss&utm_medium=rss&utm_campaign=a-fiery-planet-in-an-age-of-climate-change-war-and-migration)
-
----
-
-### The Recent Reforms of the EU Asylum System: Anti-Humanitarian Measures and Neocolonial Aspirations
-*Transform Network — 2026-08-24*
-
-Not only does the reform of EU asylum policies infringe on the human rights of people on the move, it also aims at defining the EU sphere of power irrespective of geographic borders. The post The Recent Reforms of the EU Asylum System: Anti-Humanitarian Measures and Neocolonial Aspirations appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/analysis/the-recent-reforms-of-the-eu-asylum-system-anti-humanitarian-measures-and-neocolonial-aspirations/?utm_source=rss&utm_medium=rss&utm_campaign=the-recent-reforms-of-the-eu-asylum-system-anti-humanitarian-measures-and-neocolonial-aspirations)
-
----
-
-### A Fiery Planet in an Age of Climate Change, War and Migration
-*Transform Network — 2026-08-24*
-
-As the climate crisis accelerates, it deepens global inequalities, drives displacement and migration, and intersects with war and conflict. With time running out, urgent action is needed. The post A Fiery Planet in an Age of Climate Change, War and Migration appeared first on transform!europe .
-
-[Read more](https://transform-network.net/blog/analysis/a-fiery-planet-in-an-age-of-climate-change-war-and-migration/?utm_source=rss&utm_medium=rss&utm_campaign=a-fiery-planet-in-an-age-of-climate-change-war-and-migration)
 
 ---
