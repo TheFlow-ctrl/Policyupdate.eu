@@ -13,7 +13,7 @@
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
 #
 # Last full review: August 2026.
- 
+
 sources:
   # --- Green Deal / environmental policy -----------------------------------
   - name: Bruegel
@@ -94,19 +94,12 @@ sources:
   - name: Think2030
     url: https://think2030.eu/feed/
     field: green-deal
-  - name: VTT (Finland)
-    url: https://www.vttresearch.com/en/rss.xml
-    field: green-deal
-    # Very broad research institute (health, quantum, defense, energy all
-    # mixed) -- included specifically because the keyword filter applies
-    # to green-deal sources, so only its energy/climate output should
-    # actually surface. Worth monitoring for false positives.
   - name: Green10
     url: https://green10.org/feed/
     field: green-deal
     # Structurally valid RSS but returned zero items at last check --
     # keep tracking rather than treat as permanently dead.
- 
+
   # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
   # See backend_scrapers.py. All four confirmed against real fetched HTML,
   # Aug 2026.
@@ -122,7 +115,7 @@ sources:
   - name: IDDRI
     scraper: iddri
     field: green-deal
- 
+
   # --- Security / foreign policy (field exists on the site but the tab is --
   # --- still disabled -- these sources are ready for when it's activated) --
   - name: ECFR
@@ -173,7 +166,14 @@ sources:
     field: security
     # Broad left-political network, not narrowly "security" -- reassess
     # once the tab is activated and real categorization needs firm up.
- 
+
+# Removed after real content-quality problems (not a feed/technical issue):
+#  - VTT (Finland) -- had a working feed, but as a large multi-domain
+#    applied-research institute (health, quantum, defense, energy all
+#    mixed), keyword filtering couldn't reliably separate its Green Deal
+#    content from unrelated technical research. Removed rather than
+#    fine-tuned; revisit only with a much stronger per-source signal.
+
 # Checked but not currently working (excluded until fixed):
 #  - CEPS's own RSS feed (WordPress feeds disabled site-wide) -- now
 #    covered via a custom scraper instead, see above.
@@ -200,7 +200,7 @@ sources:
 #    empty (not dead links, just no recent items); URLs not re-confirmed
 #    in the latest pass, so not added here to avoid guessing at exact
 #    endpoints -- worth revisiting if these become a priority
- 
+
 # Future policy fields (tech, health) -- no sources yet. The website
 # already has tabs wired up for these (currently shown as "coming soon"
 # and disabled in site/index.html) as well as for security (see above,
@@ -211,4 +211,3 @@ sources:
 #  - name: Some health policy org
 #    url: https://example.org/feed
 #    field: health
- 
