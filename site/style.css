@@ -14,6 +14,17 @@
 
 * { box-sizing: border-box; }
 
+/* Several nav bars (.actor-tabs, .topic-tabs, etc.) set their own
+   `display: flex`, which -- being an author-stylesheet rule -- silently
+   overrides the browser's built-in `[hidden] { display: none }` behavior
+   regardless of selector specificity. This single rule forces the HTML
+   `hidden` attribute to always win, so `element.hidden = true` in
+   script.js reliably hides things no matter what display value a class
+   sets elsewhere. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
