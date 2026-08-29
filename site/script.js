@@ -295,44 +295,46 @@ function setupActorTabs() {
 }
 
 function rerenderCurrentView() {
+  const policyCycleVisible = !document.getElementById("policy-cycle-section").hidden;
   const archiveVisible = !document.getElementById("archive-section").hidden;
-  if (archiveVisible) {
+  if (policyCycleVisible) {
+    renderPolicyCycle();
+  } else if (archiveVisible) {
     renderArchive();
   } else {
     renderActiveField();
   }
 }
 
-// The topic/actor filter bars and per-law info card only make sense for the
-// digest/archive views (they filter a list of entries) -- the Policy Cycle
-// view shows all 15 laws at once with no filtering, so those bars are
-// hidden while it's active rather than left dangling with no effect.
-function setFilterBarsVisible(visible) {
-  document.getElementById("topic-tabs").hidden = !visible;
-  document.getElementById("actor-tabs").hidden = !visible;
-  if (!visible) document.getElementById("topic-info").hidden = true;
-}
-
 function showDigestView() {
   document.getElementById("digest-section").hidden = false;
   document.getElementById("archive-section").hidden = true;
   document.getElementById("policy-cycle-section").hidden = true;
-  setFilterBarsVisible(true);
+  document.getElementById("topic-tabs").hidden = false;
+  document.getElementById("actor-tabs").hidden = false;
 }
 
 function showArchiveView() {
   document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = false;
   document.getElementById("policy-cycle-section").hidden = true;
-  setFilterBarsVisible(true);
+  document.getElementById("topic-tabs").hidden = false;
+  document.getElementById("actor-tabs").hidden = false;
   loadArchive();
 }
 
+// The law/topic filter (ETS I, CBAM, ...) applies here too -- clicking a
+// law shows just that law's diagram. Actor type (Academic/Political/Lobby)
+// doesn't apply to a law's own legislative status, so that bar stays
+// hidden, along with the per-law info card (description/EUR-Lex link),
+// which would otherwise duplicate what each diagram's caption already says.
 function showPolicyCycleView() {
   document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = true;
   document.getElementById("policy-cycle-section").hidden = false;
-  setFilterBarsVisible(false);
+  document.getElementById("topic-tabs").hidden = false;
+  document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("topic-info").hidden = true;
   loadPolicyCycle();
 }
 
@@ -371,7 +373,15 @@ function renderPolicyCycle() {
   legendEl.innerHTML =
     '<span class="policy-cycle-legend-label">How to read this:</span> each diagram traces a law\'s path through all 9 stages of the EU legislative process; the gold node marks where it stands today.';
 
-  lawsEl.innerHTML = POLICY_CYCLE_LAW_ORDER.filter((id) => laws[id]).map((id) => renderLawCycle(id, laws[id], stages)).join("");
+  // The law/topic filter (shared with the digest/archive views) applies
+  // here too -- selecting e.g. "CBAM" shows just that law's diagram.
+  const idsToShow =
+    activeTopic === "all" ? POLICY_CYCLE_LAW_ORDER : POLICY_CYCLE_LAW_ORDER.filter((id) => id === activeTopic);
+  const visibleIds = idsToShow.filter((id) => laws[id]);
+
+  lawsEl.innerHTML = visibleIds.length
+    ? visibleIds.map((id) => renderLawCycle(id, laws[id], stages)).join("")
+    : '<p class="empty">No policy cycle data for this law yet.</p>';
 }
 
 function renderLawCycle(lawId, law, stages) {
@@ -414,17 +424,18 @@ function renderLawCycle(lawId, law, stages) {
   `;
 }
 
-// Builds a "reverse S" stepper diagram (a boustrophedon path: top row
-// right-to-left, middle row left-to-right, bottom row right-to-left) as an
-// inline SVG string, with each stage's full name printed at its node.
-// Completed stages are solid navy, the current stage is a larger gold node,
-// upcoming stages are muted outlines. Assumes exactly 9 stages (3 rows of 3)
-// -- if the stage list ever changes length, this layout needs revisiting.
+// Builds an "S" stepper diagram (a boustrophedon path: top row left-to-right,
+// middle row right-to-left, bottom row left-to-right -- starting top-left,
+// ending bottom-right) as an inline SVG string, with each stage's full name
+// printed at its node. Completed stages are solid navy, the current stage is
+// a larger gold node, upcoming stages are muted outlines. Assumes exactly 9
+// stages (3 rows of 3) -- if the stage list ever changes length, this layout
+// needs revisiting.
 function buildStepperSvg(stages, currentIndex) {
   const width = 680;
-  const height = 460;
+  const height = 520;
   const colX = [560, 340, 120]; // right, middle, left
-  const rowY = [70, 250, 430];
+  const rowY = [80, 260, 440];
   const n = stages.length;
 
   const DONE_COLOR = "#1E3A57"; // var(--navy-700)
@@ -434,39 +445,60 @@ function buildStepperSvg(stages, currentIndex) {
   const LABEL_DONE = "#1E3A57";
   const LABEL_CURRENT = "#8A6F1E";
   const LABEL_UPCOMING = "#5B6B78";
+  const ARROW_OPACITY = 0.4; // kept faint so lines don't visually clash with the stage labels
 
-  // Position of stage i: row = floor(i/3); even rows run right-to-left
-  // (colX order as-is), odd rows run left-to-right (colX reversed).
+  // Position of stage i: row = floor(i/3); even rows run left-to-right
+  // (colX reversed to left/mid/right), odd rows run right-to-left (colX
+  // as-is, right/mid/left) -- so the path starts top-left and ends
+  // bottom-right.
   function pos(i) {
     const row = Math.floor(i / 3);
     const posInRow = i % 3;
-    const cols = row % 2 === 0 ? colX : [...colX].reverse();
+    const cols = row % 2 === 0 ? [...colX].reverse() : colX;
     return { x: cols[posInRow], y: rowY[row] };
   }
 
   const defs = `<defs>
     <marker id="arrow-done" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="${DONE_COLOR}" />
+      <path d="M0,0 L10,5 L0,10 z" fill="${DONE_COLOR}" fill-opacity="${ARROW_OPACITY}" />
     </marker>
     <marker id="arrow-upcoming" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="${UPCOMING_STROKE}" />
+      <path d="M0,0 L10,5 L0,10 z" fill="${UPCOMING_STROKE}" fill-opacity="${ARROW_OPACITY}" />
     </marker>
   </defs>`;
 
-  // Connecting arrows: horizontal within a row, vertical between rows.
+  // Connecting arrows: gentle curves rather than straight segments, so the
+  // whole path reads as one smooth flowing S rather than a blocky zigzag.
+  // Horizontal (within-row) segments get a slight arc; vertical
+  // (row-to-row) segments get a proper S-wiggle cubic bezier, since those
+  // are the "corners" where the smoothing matters most.
   let arrows = "";
   for (let i = 0; i < n - 1; i++) {
     const a = pos(i);
     const b = pos(i + 1);
+    const row = Math.floor(i / 3);
     const done = i + 1 <= currentIndex;
     const color = done ? DONE_COLOR : UPCOMING_STROKE;
     const marker = `url(#arrow-${done ? "done" : "upcoming"})`;
+
     if (a.y === b.y) {
-      // Same row: shorten the line so it doesn't run under the node circles.
+      // Same row: shorten so the curve doesn't run under the node circles,
+      // then bow it gently up or down.
       const dir = b.x > a.x ? 1 : -1;
-      arrows += `<line x1="${a.x + dir * 22}" y1="${a.y}" x2="${b.x - dir * 22}" y2="${b.y}" stroke="${color}" stroke-width="2.5" marker-end="${marker}" />`;
+      const x1 = a.x + dir * 22;
+      const x2 = b.x - dir * 22;
+      const midX = (x1 + x2) / 2;
+      const bow = row === 1 ? -14 : 14; // middle row bows up, outer rows bow down
+      arrows += `<path d="M ${x1} ${a.y} Q ${midX} ${a.y + bow} ${x2} ${b.y}" fill="none" stroke="${color}" stroke-opacity="${ARROW_OPACITY}" stroke-width="2.5" marker-end="${marker}" />`;
     } else {
-      arrows += `<line x1="${a.x}" y1="${a.y + 22}" x2="${b.x}" y2="${b.y - 22}" stroke="${color}" stroke-width="2.5" marker-end="${marker}" />`;
+      // Row transition: same x, different y -- an S-wiggle cubic bezier
+      // (bulge right then left) turns the sharp corner into a smooth curve.
+      const y1 = a.y + 22;
+      const y2 = b.y - 22;
+      const dx = 26;
+      const cy1 = y1 + (y2 - y1) / 3;
+      const cy2 = y1 + (2 * (y2 - y1)) / 3;
+      arrows += `<path d="M ${a.x} ${y1} C ${a.x + dx} ${cy1}, ${a.x - dx} ${cy2}, ${a.x} ${y2}" fill="none" stroke="${color}" stroke-opacity="${ARROW_OPACITY}" stroke-width="2.5" marker-end="${marker}" />`;
     }
   }
 
