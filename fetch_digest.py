@@ -27,6 +27,18 @@ JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
 ARCHIVE_FILE = Path(__file__).parent / "site" / "archive.json"
 DAYS_BACK = 7
 
+# feedparser's default request has no real browser User-Agent, which some
+# WAFs (observed on FSR Climate's WordPress install) silently block --
+# serving an empty body instead of an error, which looks like "feed has no
+# entries" rather than "request was blocked". A normal browser UA header
+# avoids this without changing behaviour for feeds that never cared.
+FEED_REQUEST_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    )
+}
+
 MONTH_NAMES = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
@@ -119,6 +131,76 @@ _CROSS_TAG_PATTERN = re.compile(
     r"\b(" + "|".join(re.escape(k) for k in CROSS_TAG_KEYWORDS) + r")\b",
     re.IGNORECASE,
 )
+
+# Additional, academic-register vocabulary used ONLY to widen the topic
+# check for actor_type == "academic" sources (see is_relevant()). Journal
+# abstracts describe the same substance as think-tank/NGO output in more
+# technical, less news-style language (e.g. "carbon leakage" rather than
+# "CBAM", "Europeanization" rather than "EU policy") -- GREEN_DEAL_KEYWORDS
+# alone, tuned against RSS-feed news writing, misses a lot of this.
+ACADEMIC_TOPIC_KEYWORDS = [
+    "carbon leakage", "policy diffusion", "climate governance",
+    "multi-level governance", "multilevel governance", "regulatory stringency",
+    "environmental federalism", "policy integration",
+    "europeanization", "europeanisation", "climate law", "environmental law",
+    "energy governance", "low-carbon transition", "low carbon transition",
+    "decarbonisation pathway", "decarbonization pathway", "climate neutrality",
+    "greenwashing", "carbon lock-in", "energy poverty", "just transition fund",
+    "climate litigation", "environmental justice", "polycentric governance",
+    "regulatory competition", "eco-innovation", "green innovation",
+    "industrial decarbonisation", "industrial decarbonization",
+    "sustainable finance", "esg disclosure", "climate risk disclosure",
+    "climate policy integration", "climate ambition", "carbon budget",
+    "stranded assets", "just transition mechanism",
+]
+
+_ACADEMIC_KEYWORD_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in GREEN_DEAL_KEYWORDS + ACADEMIC_TOPIC_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# EU-specificity gate applied ONLY to actor_type == "academic" sources, on
+# top of (not instead of) the topic check above. Academic journals (Energy
+# Policy, Nature Climate Change, Environmental Politics...) publish
+# globally -- a paper on US carbon pricing or Chinese renewables policy
+# matches GREEN_DEAL_KEYWORDS just as easily as an EU one, but has nothing
+# to do with this site. Requiring an additional EU context marker (or a
+# keyword that already names an EU law/institution directly) keeps only
+# genuinely EU-relevant academic output. This mirrors the CROSS_TAG_KEYWORDS
+# pattern above -- same idea (a stricter AND-gate for a noisier source
+# category), different reason (global topical breadth, not off-topic field).
+EU_CONTEXT_KEYWORDS = [
+    "european union", "eu policy", "eu law", "eu regulation", "eu directive",
+    "eu member state", "eu member states", "european commission",
+    "european parliament", "european council",
+    "council of the european union", "brussels", "eu27", "eu-27",
+    "eu institutions", "eu climate policy", "eu energy policy",
+    "eu environmental policy", "european green deal", "europe", "european",
+]
+
+_EU_CONTEXT_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in EU_CONTEXT_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# Keywords that already unambiguously name an EU law/institution on their
+# own, so a match on one of these satisfies the EU-specificity gate without
+# also needing a separate EU_CONTEXT_KEYWORDS match.
+_INHERENTLY_EU_KEYWORDS = {
+    "green deal", "fit for 55", "cbam", "carbon border adjustment mechanism",
+    "carbon border adjustment", "eu ets", "ets2", "ets 2",
+    "nature restoration law", "clean industrial deal",
+}
+
+
+def is_eu_relevant(title, excerpt):
+    """True if the text carries an EU-specific context marker, for the
+    academic-source EU-specificity gate (see EU_CONTEXT_KEYWORDS above)."""
+    text = f"{title or ''} {excerpt or ''}"
+    if _EU_CONTEXT_PATTERN.search(text):
+        return True
+    text_lower = text.lower()
+    return any(k in text_lower for k in _INHERENTLY_EU_KEYWORDS)
 
 # Filters out event listings and calls for abstracts/papers -- these are
 # administrative notices, not policy publications, and were showing up
@@ -297,32 +379,47 @@ def entry_text_fields(entry):
     return title, excerpt
 
 
-def is_relevant(title, excerpt):
+def is_relevant(title, excerpt, actor_type=None):
     text = f"{title or ''} {excerpt or ''}"
-    return bool(_KEYWORD_PATTERN.search(text))
+    pattern = _ACADEMIC_KEYWORD_PATTERN if actor_type == "academic" else _KEYWORD_PATTERN
+    return bool(pattern.search(text))
 
 
-def apply_relevance_filter(entries, field):
+def apply_relevance_filter(entries, field, actor_type=None):
     """Keyword-filter entries, but ONLY for field == 'green-deal'.
 
     Other fields (security, tech, health) are source-segregated instead --
     every source tagged with one of those fields is already handpicked for
     that topic, so running them through GREEN_DEAL_KEYWORDS would wrongly
     reject nearly everything.
+
+    For actor_type == "academic", two things differ from the default path:
+    the topic check itself is widened (GREEN_DEAL_KEYWORDS + the more
+    technical ACADEMIC_TOPIC_KEYWORDS, since journal abstracts don't use
+    news-style phrasing), and a second, EU-specificity check is layered on
+    top (see is_eu_relevant()), since these are global journals that
+    publish plenty of non-EU climate/energy research a topic-only filter
+    would happily let through.
     """
     if field != "green-deal":
         return entries
 
     kept = []
     skipped = 0
+    eu_skipped = 0
     for entry in entries:
-        if is_relevant(entry["title"], entry["summary"]):
-            kept.append(entry)
-        else:
+        if not is_relevant(entry["title"], entry["summary"], actor_type):
             skipped += 1
+            continue
+        if actor_type == "academic" and not is_eu_relevant(entry["title"], entry["summary"]):
+            eu_skipped += 1
+            continue
+        kept.append(entry)
 
     if skipped:
         print(f"  filtered out {skipped} off-topic item(s)")
+    if eu_skipped:
+        print(f"  filtered out {eu_skipped} non-EU academic item(s)")
 
     return kept
 
@@ -346,7 +443,7 @@ def fetch_recent_entries(name, url, field, cutoff):
     feed. Relevance filtering happens afterwards in apply_relevance_filter()
     so it can be applied identically to both feed-based and scraper-based
     sources."""
-    feed = feedparser.parse(url)
+    feed = feedparser.parse(url, request_headers=FEED_REQUEST_HEADERS)
     if feed.bozo and not feed.entries:
         print(f"  [warning] could not parse feed for {name}: {url}")
         return []
@@ -495,9 +592,11 @@ def main():
             entry["actor_type"] = actor_type
 
         # Primary inclusion: filtered against GREEN_DEAL_KEYWORDS only if
-        # this source's own field IS green-deal.
+        # this source's own field IS green-deal. actor_type is passed
+        # through so academic sources get the widened topic check + EU
+        # gate (see apply_relevance_filter()).
         try:
-            primary_entries = apply_relevance_filter(raw_entries, field)
+            primary_entries = apply_relevance_filter(raw_entries, field, actor_type)
         except Exception as exc:
             print(f"  [warning] unexpected error filtering {name}, skipping: {exc}")
             primary_entries = []
