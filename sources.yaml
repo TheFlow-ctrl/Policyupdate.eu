@@ -4,10 +4,25 @@
 #
 # Every entry with field: green-deal is additionally checked against the
 # GREEN_DEAL_KEYWORDS list in fetch_digest.py before being included, since
-# some sources (Corporate Europe Observatory, VTT) cover topics well beyond
+# some sources (Corporate Europe Observatory) cover topics well beyond
 # the Green Deal / environmental policy. Sources tagged with other fields
-# are NOT keyword-filtered -- they're already topic-segregated by being
-# hand-picked for that field.
+# are NOT keyword-filtered against the FULL feed -- but see the
+# cross-tagging note below.
+#
+# Cross-tagging: sources whose primary field isn't green-deal (the
+# security-tagged ones below) are STILL checked against the green-deal
+# keyword filter. Any of their entries that match get an *additional* copy
+# tagged field: green-deal (their own entries stay under their primary
+# field too). This is how e.g. an ECFR piece specifically about EU climate
+# diplomacy can surface on the Green Deal tab without moving all of
+# ECFR's foreign-policy content there.
+#
+# actor_type classifies the SOURCE itself (not the article), one of:
+#   think-tank  -- academic / independent research institute
+#   political   -- political-party-affiliated (EP group foundations etc.)
+#   lobby       -- lobby groups, industry associations, and advocacy NGOs
+# This is a judgment call for a few borderline orgs (documented inline
+# where relevant) -- adjust freely if you disagree with a classification.
 #
 # Entries with a "scraper" key (instead of "url") are handled by
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
@@ -19,84 +34,118 @@ sources:
   - name: Bruegel
     url: https://www.bruegel.org/rss.xml
     field: green-deal
+    actor_type: think-tank
   - name: E3G
     url: https://www.e3g.org/feed
     field: green-deal
+    actor_type: think-tank
   - name: CAN Europe
     url: https://caneurope.org/feed
     field: green-deal
+    actor_type: lobby
+    # NGO coalition (Climate Action Network) -- advocacy-oriented.
   - name: IEEP
     url: https://ieep.eu/news/feed/
     field: green-deal
+    actor_type: think-tank
     # Note: the old generic https://ieep.eu/feed was dead (no items since
     # Feb 2023). This /news/feed/ URL is confirmed live as of Aug 2026.
   - name: EEB (European Environmental Bureau)
     url: https://eeb.org/feed/
     field: green-deal
+    actor_type: lobby
+    # NGO umbrella federation -- advocacy-oriented.
   - name: Carbon Market Watch
     url: https://carbonmarketwatch.org/feed/
     field: green-deal
+    actor_type: lobby
+    # NGO watchdog -- advocacy-oriented.
   - name: Zero Waste Europe
     url: https://www.zerowasteeurope.eu/feed/
     field: green-deal
+    actor_type: lobby
+    # NGO network -- advocacy-oriented.
   - name: Corporate Europe Observatory
     url: https://corporateeurope.org/en/rss.xml
     field: green-deal
-    # Broad-topic source (lobbying transparency across many sectors) --
-    # relies on the keyword filter to surface only its Green Deal-relevant
-    # content. Its feed also dumps full article bodies into <description>,
+    actor_type: lobby
+    # NGO watchdog (lobbying transparency) -- also a broad-topic source
+    # relying on the keyword filter to surface only its Green Deal-relevant
+    # content. Its feed dumps full article bodies into <description>,
     # which is why fetch_digest.py bounds matching to a lead excerpt.
   - name: I4CE (Institute for Climate Economics)
     url: https://www.i4ce.org/feed/
     field: green-deal
+    actor_type: think-tank
     # French-language site; low recent volume.
   - name: Sandbag
     url: https://sandbag.be/feed/
     field: green-deal
+    actor_type: lobby
+    # NGO, campaign-oriented on carbon pricing.
   - name: Bellona
     url: https://bellona.org/feed
     field: green-deal
+    actor_type: lobby
+    # NGO foundation -- advocacy-oriented.
   - name: RAP Europe (Regulatory Assistance Project)
     url: https://www.raponline.org/feed/
     field: green-deal
+    actor_type: lobby
+    # Technical/regulatory-expert NGO -- output reads as expert analysis
+    # rather than campaign advocacy, so classified think-tank; borderline.
     # Feed validity not independently re-confirmed in the most recent
     # review pass -- worth a manual spot check if it stops producing items.
   - name: Climate Observatory (ECNO)
     url: https://climateobservatory.eu/rss.xml
     field: green-deal
+    actor_type: think-tank
   - name: GEF (Green European Foundation)
     url: https://gef.eu/feed/
     field: green-deal
+    actor_type: political
+    # Official European Green Party-affiliated foundation.
   - name: Netzero Cities
     url: https://netzerocities.eu/feed/
     field: green-deal
+    actor_type: think-tank
+    # EU-funded implementation programme, closest fit is think-tank.
   - name: Demos Helsinki
     url: https://demoshelsinki.fi/feed/
     field: green-deal
+    actor_type: think-tank
     # Leans broader "futures/social policy" -- currently climate-governance-
     # heavy but worth rechecking periodically.
   - name: Ecologic Institute
     url: https://www.ecologic.eu/rss.xml
     field: green-deal
+    actor_type: think-tank
   - name: Fondazione Sviluppo Sostenibile
     url: https://www.fondazionesvilupposostenibile.org/feed/
     field: green-deal
+    actor_type: think-tank
     # Italian-language only.
   - name: The Green Tank
     url: https://thegreentank.gr/en/feed/
     field: green-deal
+    actor_type: think-tank
   - name: WiseEuropa
     url: https://wise-europa.eu/en/feed/
     field: green-deal
+    actor_type: think-tank
   - name: EPG Thinktank
     url: https://www.epg-thinktank.org/feed/
     field: green-deal
+    actor_type: think-tank
   - name: Think2030
     url: https://think2030.eu/feed/
     field: green-deal
+    actor_type: think-tank
   - name: Green10
     url: https://green10.org/feed/
     field: green-deal
+    actor_type: lobby
+    # Coalition of environmental NGOs.
     # Structurally valid RSS but returned zero items at last check --
     # keep tracking rather than treat as permanently dead.
 
@@ -106,66 +155,92 @@ sources:
   - name: CEPS
     scraper: ceps
     field: green-deal
+    actor_type: think-tank
   - name: Transport & Environment
     scraper: transport_environment
     field: green-deal
+    actor_type: lobby
+    # NGO campaign group, despite the neutral-sounding name.
   - name: PIK Potsdam
     scraper: pik_potsdam
     field: green-deal
+    actor_type: think-tank
+    # Academic/scientific research institute.
   - name: IDDRI
     scraper: iddri
     field: green-deal
+    actor_type: think-tank
 
   # --- Security / foreign policy (field exists on the site but the tab is --
-  # --- still disabled -- these sources are ready for when it's activated) --
+  # --- still disabled -- these sources are ready for when it's activated. --
+  # --- Also cross-tagged into green-deal when an entry matches, see above.)
   - name: ECFR
     url: https://ecfr.eu/feed
     field: security
+    actor_type: think-tank
     # Moved here from green-deal: ECFR is a general European foreign-policy
     # think tank (defense, China, Russia, trade...) -- that mismatch was
     # the original reason the keyword filter got added in the first place.
+    # Its occasional climate-diplomacy pieces still reach Green Deal via
+    # cross-tagging.
   - name: Chatham House
     url: https://www.chathamhouse.org/path/whatsnew.xml
     field: security
+    actor_type: think-tank
   - name: Clingendael
     url: https://www.clingendael.org/rss.xml
     field: security
+    actor_type: think-tank
     # Curated "in the media" clippings feed, links to external outlets
     # rather than Clingendael's own original publications.
   - name: EPLO (European Peacebuilding Liaison Office)
     url: https://eplo.org/feed/
     field: security
+    actor_type: lobby
+    # NGO network.
   - name: FIIA (Finnish Institute of International Affairs)
     url: https://fiia.fi/en/feed
     field: security
+    actor_type: think-tank
   - name: International Crisis Group
     url: https://www.crisisgroup.org/rss.xml
     field: security
+    actor_type: think-tank
+    # Widely regarded as an independent analysis org rather than a
+    # campaign-style advocacy NGO -- borderline call.
   - name: SIPRI
     url: https://www.sipri.org/rss/combined.xml
     field: security
+    actor_type: think-tank
   - name: SWP (German Institute for International and Security Affairs)
     url: https://www.swp-berlin.org/en/SWPPublications.xml
     field: security
+    actor_type: think-tank
   - name: Lisbon Council
     url: https://lisboncouncil.net/feed/
     field: security
+    actor_type: think-tank
   - name: Wilfried Martens Centre (EPP)
     url: https://www.martenscentre.eu/feed/
     field: security
+    actor_type: political
+    # Official EPP-affiliated think tank.
   - name: FEPS (S&D)
     url: https://feps-europe.eu/feed/
     field: security
+    actor_type: political
+    # Official S&D-affiliated think tank.
   - name: European Liberal Forum (Renew)
     url: https://liberalforum.eu/feed/
     field: security
-    # Publishes some green-deal-adjacent content too -- fine to leave under
-    # security for now since that field isn't keyword-filtered.
+    actor_type: political
+    # Official Renew Europe-affiliated think tank. Publishes some
+    # green-deal-adjacent content too -- reaches that tab via cross-tagging.
   - name: Transform Network
     url: https://transform-network.net/feed/
     field: security
-    # Broad left-political network, not narrowly "security" -- reassess
-    # once the tab is activated and real categorization needs firm up.
+    actor_type: political
+    # Linked to the transform! europe / Left-group political network.
 
 # Removed after real content-quality problems (not a feed/technical issue):
 #  - VTT (Finland) -- had a working feed, but as a large multi-domain
