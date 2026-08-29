@@ -415,7 +415,7 @@ function renderLawCycle(lawId, law, stages) {
   return `
     <div class="policy-cycle-law">
       <h3>${label} <span class="policy-cycle-current-stage">— currently: ${escapeHtml(currentLabel)}</span>${omnibusBadge}</h3>
-      ${buildStepperSvg(stages, currentIndex)}
+      ${buildStepperSvg(stages, currentIndex, law.stage_dates)}
       <p class="policy-cycle-caption"><strong>Next:</strong> ${escapeHtml(law.next_step || "—")}${nextDeadline}</p>
       ${law.notes ? `<p class="policy-cycle-notes">${escapeHtml(law.notes)}</p>` : ""}
       ${omnibusNote}
@@ -424,18 +424,33 @@ function renderLawCycle(lawId, law, stages) {
   `;
 }
 
+// Formats an ISO date ("YYYY-MM-DD" or "YYYY-MM") as a compact "Mon YYYY"
+// string for display inside the diagram, where horizontal space per node is
+// tight. Returns "" for null/missing dates.
+const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function formatShortDate(isoDate) {
+  if (!isoDate) return "";
+  const m = /^(\d{4})-(\d{2})/.exec(isoDate);
+  if (!m) return isoDate;
+  const year = m[1];
+  const monthIndex = parseInt(m[2], 10) - 1;
+  const monthName = MONTH_ABBR[monthIndex];
+  return monthName ? `${monthName} ${year}` : isoDate;
+}
+
 // Builds an "S" stepper diagram (a boustrophedon path: top row left-to-right,
 // middle row right-to-left, bottom row left-to-right -- starting top-left,
 // ending bottom-right) as an inline SVG string, with each stage's full name
-// printed at its node. Completed stages are solid navy, the current stage is
-// a larger gold node, upcoming stages are muted outlines. Assumes exactly 9
-// stages (3 rows of 3) -- if the stage list ever changes length, this layout
-// needs revisiting.
-function buildStepperSvg(stages, currentIndex) {
+// AND date (when known) printed at its node. Completed stages are solid
+// navy, the current stage is a larger gold node, upcoming stages are muted
+// outlines. Assumes exactly 9 stages (3 rows of 3) -- if the stage list
+// ever changes length, this layout needs revisiting.
+function buildStepperSvg(stages, currentIndex, stageDates) {
+  const dates = stageDates || {};
   const width = 680;
-  const height = 520;
+  const height = 560;
   const colX = [560, 340, 120]; // right, middle, left
-  const rowY = [80, 260, 440];
+  const rowY = [90, 280, 470];
   const n = stages.length;
 
   const DONE_COLOR = "#1E3A57"; // var(--navy-700)
@@ -530,18 +545,31 @@ function buildStepperSvg(stages, currentIndex) {
       numColor = "#5B6B78";
     }
 
-    // Label sits below nodes in the two right-to-left rows (even rows) and
-    // above nodes in the left-to-right middle row, so labels never collide
-    // with the vertical connector arrows running along the left/right edges.
+    // Label (and date, when known) sits below nodes in the two
+    // right-to-left rows (even rows) and above nodes in the left-to-right
+    // middle row, so text never collides with the vertical connector
+    // arrows running along the left/right edges. The date line continues
+    // outward past the name line, in the same direction.
     const row = Math.floor(i / 3);
-    const labelY = row % 2 === 0 ? y + radius + 20 : y - radius - 12;
+    const outward = row % 2 === 0 ? 1 : -1;
+    const labelY = y + outward * (radius + (row % 2 === 0 ? 20 : 12));
+    const dateY = labelY + outward * 16;
+
+    const rawDate = dates[stage.id];
+    const shortDate = i <= currentIndex ? formatShortDate(rawDate) : ""; // only show dates for stages already reached
+    const dateLine = shortDate
+      ? `<text x="${x}" y="${dateY}" text-anchor="middle" font-size="10.5" font-family="IBM Plex Sans, sans-serif" fill="${labelColor}" opacity="0.75">${escapeHtml(shortDate)}</text>`
+      : "";
+
+    const tooltipDate = rawDate ? ` — ${escapeHtml(formatShortDate(rawDate))}` : "";
 
     nodes += `<g>
       <circle cx="${x}" cy="${y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="2">
-        <title>${escapeHtml(`${i + 1}. ${stage.label}`)}${i === currentIndex ? " (current stage)" : ""}</title>
+        <title>${escapeHtml(`${i + 1}. ${stage.label}`)}${tooltipDate}${i === currentIndex ? " (current stage)" : ""}</title>
       </circle>
       <text x="${x}" y="${y + 5}" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="${numColor}" font-weight="700">${i + 1}</text>
       <text x="${x}" y="${labelY}" text-anchor="middle" font-size="13" font-family="IBM Plex Sans, sans-serif" fill="${labelColor}" font-weight="${labelWeight}">${escapeHtml(stage.label)}</text>
+      ${dateLine}
     </g>`;
   }
 
