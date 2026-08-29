@@ -169,9 +169,17 @@ const TOPIC_INFO = {
 
 let digestData = null;
 let archiveData = null;
+let policyCycleData = null;
 let activeField = "green-deal";
 let activeTopic = "all";
 let activeActor = "all";
+
+// Fixed display order for the 15 laws in the Policy Cycle view -- matches
+// the order the law tabs already appear in, in index.html.
+const POLICY_CYCLE_LAW_ORDER = [
+  "ets1", "ets2", "cbam", "red3", "csddd", "crma", "nzia", "csrd",
+  "taxonomy", "sfdr", "eudr", "nature-restoration", "lulucf", "ccus", "eed",
+];
 
 async function loadDigest() {
   const entriesEl = document.getElementById("entries");
@@ -251,6 +259,8 @@ function setupFieldTabs() {
 
       if (tab.dataset.view === "archive") {
         showArchiveView();
+      } else if (tab.dataset.view === "policy-cycle") {
+        showPolicyCycleView();
       } else {
         activeField = tab.dataset.field;
         showDigestView();
@@ -293,15 +303,191 @@ function rerenderCurrentView() {
   }
 }
 
+// The topic/actor filter bars and per-law info card only make sense for the
+// digest/archive views (they filter a list of entries) -- the Policy Cycle
+// view shows all 15 laws at once with no filtering, so those bars are
+// hidden while it's active rather than left dangling with no effect.
+function setFilterBarsVisible(visible) {
+  document.getElementById("topic-tabs").hidden = !visible;
+  document.getElementById("actor-tabs").hidden = !visible;
+  if (!visible) document.getElementById("topic-info").hidden = true;
+}
+
 function showDigestView() {
   document.getElementById("digest-section").hidden = false;
   document.getElementById("archive-section").hidden = true;
+  document.getElementById("policy-cycle-section").hidden = true;
+  setFilterBarsVisible(true);
 }
 
 function showArchiveView() {
   document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = false;
+  document.getElementById("policy-cycle-section").hidden = true;
+  setFilterBarsVisible(true);
   loadArchive();
+}
+
+function showPolicyCycleView() {
+  document.getElementById("digest-section").hidden = true;
+  document.getElementById("archive-section").hidden = true;
+  document.getElementById("policy-cycle-section").hidden = false;
+  setFilterBarsVisible(false);
+  loadPolicyCycle();
+}
+
+async function loadPolicyCycle() {
+  const legendEl = document.getElementById("policy-cycle-legend");
+  const lawsEl = document.getElementById("policy-cycle-laws");
+
+  if (policyCycleData) {
+    renderPolicyCycle();
+    return;
+  }
+
+  try {
+    const res = await fetch("policy_stages.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    policyCycleData = await res.json();
+    renderPolicyCycle();
+  } catch (err) {
+    legendEl.innerHTML = "";
+    lawsEl.innerHTML =
+      '<p class="error">Couldn\'t load policy cycle data. Run <code>fetch_digest.py</code> or check that site/policy_stages.json exists.</p>';
+    console.error(err);
+  }
+}
+
+function renderPolicyCycle() {
+  const legendEl = document.getElementById("policy-cycle-legend");
+  const lawsEl = document.getElementById("policy-cycle-laws");
+  if (!policyCycleData) return;
+
+  const { stages, laws } = policyCycleData;
+
+  legendEl.innerHTML =
+    '<span class="policy-cycle-legend-label">Stages:</span>' +
+    stages
+      .map((s, i) => `<span class="policy-cycle-legend-item">${i + 1}. ${escapeHtml(s.label)}</span>`)
+      .join("");
+
+  lawsEl.innerHTML = POLICY_CYCLE_LAW_ORDER.filter((id) => laws[id]).map((id) => renderLawCycle(id, laws[id], stages)).join("");
+}
+
+function renderLawCycle(lawId, law, stages) {
+  const label = escapeHtml(TOPIC_LABELS[lawId] || lawId);
+  const currentIndex = stages.findIndex((s) => s.id === law.current_stage);
+  const currentLabel = stages[currentIndex] ? stages[currentIndex].label : law.current_stage;
+
+  const nextDeadline = law.next_deadline ? ` — expected ${escapeHtml(law.next_deadline)}` : "";
+
+  // Only shown for laws Omnibus actually touched -- badging all 15 would
+  // bury the (few) laws where it matters under noise from the 12 it didn't.
+  const omnibusBadge =
+    law.omnibus_impact && law.omnibus_impact !== "none"
+      ? `<span class="policy-cycle-omnibus-badge policy-cycle-omnibus-${escapeHtml(
+          law.omnibus_impact
+        )}">Omnibus-affected</span>`
+      : "";
+
+  const omnibusNote =
+    law.omnibus_impact && law.omnibus_impact !== "none" && law.omnibus_note
+      ? `<p class="policy-cycle-omnibus-note"><strong>Omnibus impact:</strong> ${escapeHtml(law.omnibus_note)}</p>`
+      : "";
+
+  const oeilCitation =
+    law.oeil_url && law.oeil_procedure
+      ? `<p class="policy-cycle-source">Source: <a href="${law.oeil_url}" target="_blank" rel="noopener">European Parliament Legislative Observatory (OEIL) — ${escapeHtml(
+          law.oeil_procedure
+        )} ↗</a></p>`
+      : "";
+
+  return `
+    <div class="policy-cycle-law">
+      <h3>${label} <span class="policy-cycle-current-stage">— currently: ${escapeHtml(currentLabel)}</span>${omnibusBadge}</h3>
+      ${buildStepperSvg(stages, currentIndex)}
+      <p class="policy-cycle-caption"><strong>Next:</strong> ${escapeHtml(law.next_step || "—")}${nextDeadline}</p>
+      ${law.notes ? `<p class="policy-cycle-notes">${escapeHtml(law.notes)}</p>` : ""}
+      ${omnibusNote}
+      ${oeilCitation}
+    </div>
+  `;
+}
+
+// Builds a horizontal stepper diagram (nodes connected by arrows) as an
+// inline SVG string. Completed stages are solid navy, the current stage is
+// a larger gold node, upcoming stages are muted outlines. Each node carries
+// a native <title> tooltip with its full stage name (and date, for the
+// current stage) since a full text label under all 9 stages, repeated
+// across 15 laws, would be too cluttered -- the shared legend above spells
+// out what each numbered stage means once.
+function buildStepperSvg(stages, currentIndex) {
+  const width = 720;
+  const height = 64;
+  const marginX = 36;
+  const y = 30;
+  const n = stages.length;
+  const step = (width - marginX * 2) / (n - 1);
+
+  const DONE_COLOR = "#1E3A57"; // var(--navy-700)
+  const CURRENT_COLOR = "#C9A227"; // var(--gold)
+  const UPCOMING_COLOR = "#DEDACD"; // var(--border)
+  const UPCOMING_STROKE = "#B7B2A3";
+
+  // Arrowhead marker defs (one per color, referenced by the lines below).
+  const defs = `<defs>
+    <marker id="arrow-done" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="${DONE_COLOR}" />
+    </marker>
+    <marker id="arrow-upcoming" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="${UPCOMING_STROKE}" />
+    </marker>
+  </defs>`;
+
+  // Arrows (drawn before nodes, so node circles sit on top of the line ends).
+  let arrows = "";
+  for (let i = 0; i < n - 1; i++) {
+    const x1 = marginX + i * step + 9;
+    const x2 = marginX + (i + 1) * step - 9;
+    const done = i + 1 <= currentIndex;
+    const color = done ? DONE_COLOR : UPCOMING_STROKE;
+    arrows += `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${color}" stroke-width="2" marker-end="url(#arrow-${done ? "done" : "upcoming"})" />`;
+  }
+
+  // Nodes.
+  let nodes = "";
+  for (let i = 0; i < n; i++) {
+    const x = marginX + i * step;
+    const stage = stages[i];
+    let radius = 6;
+    let fill = UPCOMING_COLOR;
+    let stroke = UPCOMING_STROKE;
+    let textColor = "#5B6B78";
+
+    if (i < currentIndex) {
+      radius = 6;
+      fill = DONE_COLOR;
+      stroke = DONE_COLOR;
+      textColor = "white";
+    } else if (i === currentIndex) {
+      radius = 10;
+      fill = CURRENT_COLOR;
+      stroke = CURRENT_COLOR;
+      textColor = "#16202A";
+    }
+
+    nodes += `<g>
+      <circle cx="${x}" cy="${y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="1.5">
+        <title>${escapeHtml(`${i + 1}. ${stage.label}`)}${i === currentIndex ? " (current stage)" : ""}</title>
+      </circle>
+      <text x="${x}" y="${y + 22}" text-anchor="middle" font-size="10" font-family="IBM Plex Sans, sans-serif" fill="${
+      i === currentIndex ? "#8A6F1E" : "#5B6B78"
+    }" font-weight="${i === currentIndex ? "700" : "400"}">${i + 1}</text>
+    </g>`;
+  }
+
+  const openTag = `<svg class="policy-cycle-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Legislative stage progress">`;
+  return openTag + defs + arrows + nodes + "</svg>";
 }
 
 async function loadArchive() {
