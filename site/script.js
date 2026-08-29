@@ -36,8 +36,10 @@ const TOPIC_LABELS = {
 // Keep in sync with actor_type values in sources.yaml.
 const ACTOR_LABELS = {
   "think-tank": "Think Tank",
+  academic: "Academic Journal",
   political: "Political",
-  lobby: "Lobby / NGO",
+  industry: "Industry & Lobby Groups",
+  ngo: "NGO & Advocacy",
 };
 
 // Plain-language explainer + "why it matters" + link to the original legal
