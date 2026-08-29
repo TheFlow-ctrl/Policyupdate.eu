@@ -1,5 +1,8 @@
 // Loads digest.json (written by fetch_digest.py) and renders it as cards,
-// filtered by the active policy-field tab (Green Deal, Security, Tech, Health).
+// filtered by the active policy-field tab (Green Deal, Security, Tech, Health)
+// and, within Green Deal, by the active EU-legislation topic tab (CBAM,
+// CSRD, etc. -- see TOPIC_LABELS, which must be kept in sync with the tag
+// ids used in fetch_digest.py's LEGISLATION_TAGS).
 // No build step, no framework — just fetch + template strings.
 
 const FIELD_LABELS = {
@@ -9,9 +12,29 @@ const FIELD_LABELS = {
   health: "Health",
 };
 
+// Keep in sync with LEGISLATION_TAGS in fetch_digest.py.
+const TOPIC_LABELS = {
+  ets1: "ETS I",
+  ets2: "ETS II",
+  cbam: "CBAM",
+  red3: "RED III",
+  csddd: "CSDDD",
+  crma: "CRMA",
+  nzia: "NZIA",
+  csrd: "CSRD",
+  taxonomy: "EU Taxonomy",
+  sfdr: "SFDR",
+  eudr: "EUDR",
+  "nature-restoration": "Nature Restoration Law",
+  lulucf: "LULUCF",
+  ccus: "CCUS",
+  eed: "EED",
+};
+
 let digestData = null;
 let archiveData = null;
 let activeField = "green-deal";
+let activeTopic = "all";
 
 async function loadDigest() {
   const entriesEl = document.getElementById("entries");
@@ -31,6 +54,10 @@ async function loadDigest() {
   }
 }
 
+function matchesTopic(entry) {
+  return activeTopic === "all" || (entry.tags || []).includes(activeTopic);
+}
+
 function renderActiveField() {
   const entriesEl = document.getElementById("entries");
   const labelEl = document.getElementById("active-field-label");
@@ -38,10 +65,14 @@ function renderActiveField() {
 
   if (!digestData || !digestData.entries) return;
 
-  const filtered = digestData.entries.filter((e) => (e.field || "green-deal") === activeField);
+  const filtered = digestData.entries.filter(
+    (e) => (e.field || "green-deal") === activeField && matchesTopic(e)
+  );
 
   if (filtered.length === 0) {
-    entriesEl.innerHTML = '<p class="empty">No new publications this week — check back soon.</p>';
+    entriesEl.innerHTML = activeTopic === "all"
+      ? '<p class="empty">No new publications this week — check back soon.</p>'
+      : `<p class="empty">No entries this week tagged ${escapeHtml(TOPIC_LABELS[activeTopic] || activeTopic)}.</p>`;
     return;
   }
 
@@ -61,6 +92,24 @@ function setupFieldTabs() {
       } else {
         activeField = tab.dataset.field;
         showDigestView();
+        renderActiveField();
+      }
+    });
+  });
+}
+
+function setupTopicTabs() {
+  const tabs = document.querySelectorAll(".topic-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      activeTopic = tab.dataset.topic;
+
+      const archiveVisible = !document.getElementById("archive-section").hidden;
+      if (archiveVisible) {
+        renderArchive();
+      } else {
         renderActiveField();
       }
     });
@@ -108,12 +157,16 @@ function renderArchive() {
   const filteredMonths = archiveData.months
     .map((month) => ({
       ...month,
-      entries: month.entries.filter((e) => (e.field || "green-deal") === "green-deal"),
+      entries: month.entries.filter(
+        (e) => (e.field || "green-deal") === "green-deal" && matchesTopic(e)
+      ),
     }))
     .filter((month) => month.entries.length > 0);
 
   if (filteredMonths.length === 0) {
-    monthsEl.innerHTML = '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>';
+    monthsEl.innerHTML = activeTopic === "all"
+      ? '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
+      : `<p class="empty">No archived entries tagged ${escapeHtml(TOPIC_LABELS[activeTopic] || activeTopic)} yet.</p>`;
     return;
   }
 
@@ -135,12 +188,17 @@ function renderEntry(entry) {
   const date = escapeHtml(entry.date || "");
   const link = entry.link || "#";
   const summary = entry.summary ? `<p class="entry-summary">${escapeHtml(stripHtml(entry.summary)).slice(0, 280)}</p>` : "";
+  const tags = (entry.tags || [])
+    .map((t) => `<span class="entry-tag">${escapeHtml(TOPIC_LABELS[t] || t)}</span>`)
+    .join("");
+  const tagsHtml = tags ? `<div class="entry-tags">${tags}</div>` : "";
 
   return `
     <article class="entry-card">
       <h3><a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
       <div class="entry-meta">${org} — ${date}</div>
       ${summary}
+      ${tagsHtml}
     </article>
   `;
 }
@@ -159,4 +217,5 @@ function escapeHtml(str) {
 }
 
 setupFieldTabs();
+setupTopicTabs();
 loadDigest();
