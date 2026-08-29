@@ -412,6 +412,8 @@ function renderLawCycle(lawId, law, stages) {
         )} ↗</a></p>`
       : "";
 
+  const revisionBlock = law.active_revision ? renderRevisionBlock(law.active_revision, stages) : "";
+
   return `
     <div class="policy-cycle-law">
       <h3>${label} <span class="policy-cycle-current-stage">— currently: ${escapeHtml(currentLabel)}</span>${omnibusBadge}</h3>
@@ -419,6 +421,34 @@ function renderLawCycle(lawId, law, stages) {
       <p class="policy-cycle-caption"><strong>Next:</strong> ${escapeHtml(law.next_step || "—")}${nextDeadline}</p>
       ${law.notes ? `<p class="policy-cycle-notes">${escapeHtml(law.notes)}</p>` : ""}
       ${omnibusNote}
+      ${oeilCitation}
+      ${revisionBlock}
+    </div>
+  `;
+}
+
+// Renders a law's active revision (a separate, ongoing legislative
+// procedure amending an already-adopted law) as a visually distinct
+// sub-card: a different accent color throughout -- both the card border
+// and the diagram's current-stage node -- so it reads unmistakably as its
+// own, separate policy cycle rather than a continuation of the main one.
+function renderRevisionBlock(revision, stages) {
+  const currentIndex = stages.findIndex((s) => s.id === revision.current_stage);
+  const currentLabel = stages[currentIndex] ? stages[currentIndex].label : revision.current_stage;
+  const nextDeadline = revision.next_deadline ? ` — expected ${escapeHtml(revision.next_deadline)}` : "";
+  const oeilCitation =
+    revision.oeil_url && revision.oeil_procedure
+      ? `<p class="policy-cycle-source">Source: <a href="${revision.oeil_url}" target="_blank" rel="noopener">European Parliament Legislative Observatory (OEIL) — ${escapeHtml(
+          revision.oeil_procedure
+        )} ↗</a></p>`
+      : "";
+
+  return `
+    <div class="policy-cycle-revision">
+      <h4><span class="policy-cycle-revision-badge">Active revision</span> ${escapeHtml(revision.label)} <span class="policy-cycle-current-stage">— currently: ${escapeHtml(currentLabel)}</span></h4>
+      ${buildStepperSvg(stages, currentIndex, revision.stage_dates, REVISION_ACCENT)}
+      <p class="policy-cycle-caption"><strong>Next:</strong> ${escapeHtml(revision.next_step || "—")}${nextDeadline}</p>
+      ${revision.notes ? `<p class="policy-cycle-notes">${escapeHtml(revision.notes)}</p>` : ""}
       ${oeilCitation}
     </div>
   `;
@@ -438,14 +468,22 @@ function formatShortDate(isoDate) {
   return monthName ? `${monthName} ${year}` : isoDate;
 }
 
+// Accent used for an active-revision sub-diagram's current-stage node, in
+// place of the main diagram's gold -- a deliberately different color so a
+// revision's diagram is visually unmistakable as its own, separate cycle
+// even at a glance. { current, label } mirror the gold/gold-dark pairing
+// used for the main diagram's CURRENT_COLOR/LABEL_CURRENT.
+const REVISION_ACCENT = { current: "#2C6E8A", label: "#1D4A5C" };
+
 // Builds an "S" stepper diagram (a boustrophedon path: top row left-to-right,
 // middle row right-to-left, bottom row left-to-right -- starting top-left,
 // ending bottom-right) as an inline SVG string, with each stage's full name
 // AND date (when known) printed at its node. Completed stages are solid
-// navy, the current stage is a larger gold node, upcoming stages are muted
-// outlines. Assumes exactly 9 stages (3 rows of 3) -- if the stage list
-// ever changes length, this layout needs revisiting.
-function buildStepperSvg(stages, currentIndex, stageDates) {
+// navy, the current stage is a larger accent-colored node (gold by default,
+// overridable via `accent` -- see REVISION_ACCENT), upcoming stages are
+// muted outlines. Assumes exactly 9 stages (3 rows of 3) -- if the stage
+// list ever changes length, this layout needs revisiting.
+function buildStepperSvg(stages, currentIndex, stageDates, accent) {
   const dates = stageDates || {};
   const width = 680;
   const height = 560;
@@ -454,11 +492,11 @@ function buildStepperSvg(stages, currentIndex, stageDates) {
   const n = stages.length;
 
   const DONE_COLOR = "#1E3A57"; // var(--navy-700)
-  const CURRENT_COLOR = "#C9A227"; // var(--gold)
+  const CURRENT_COLOR = accent ? accent.current : "#C9A227"; // var(--gold)
   const UPCOMING_COLOR = "#DEDACD"; // var(--border)
   const UPCOMING_STROKE = "#B7B2A3";
   const LABEL_DONE = "#1E3A57";
-  const LABEL_CURRENT = "#8A6F1E";
+  const LABEL_CURRENT = accent ? accent.label : "#8A6F1E";
   const LABEL_UPCOMING = "#5B6B78";
   const ARROW_OPACITY = 0.4; // kept faint so lines don't visually clash with the stage labels
 
