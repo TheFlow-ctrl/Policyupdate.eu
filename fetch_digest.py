@@ -395,30 +395,63 @@ def main():
     for source in sources:
         name = source["name"]
         field = source.get("field", "green-deal")
-        print(f"Checking {name} ({field})...")
+        actor_type = source.get("actor_type", "think-tank")
+        print(f"Checking {name} ({field}, {actor_type})...")
 
         try:
-            entries = fetch_source(source, cutoff)
-            entries = apply_relevance_filter(entries, field)
+            raw_entries = fetch_source(source, cutoff)
         except Exception as exc:
             # Belt-and-suspenders: fetch_source() already catches errors
             # from individual scrapers/feeds, but this outer guard makes
-            # sure a bug anywhere in a single source's handling (or in
-            # apply_relevance_filter itself) can never take down the whole
-            # run -- with 30+ sources, one bad actor shouldn't block every
-            # other source's content from being published.
+            # sure a bug anywhere in a single source's handling can never
+            # take down the whole run -- with 30+ sources, one bad actor
+            # shouldn't block every other source's content from being
+            # published.
             print(f"  [warning] unexpected error processing {name}, skipping: {exc}")
-            entries = []
+            raw_entries = []
 
-        for entry in entries:
+        for entry in raw_entries:
+            entry["actor_type"] = actor_type
+
+        # Primary inclusion: filtered against GREEN_DEAL_KEYWORDS only if
+        # this source's own field IS green-deal.
+        try:
+            primary_entries = apply_relevance_filter(raw_entries, field)
+        except Exception as exc:
+            print(f"  [warning] unexpected error filtering {name}, skipping: {exc}")
+            primary_entries = []
+
+        for entry in primary_entries:
             entry["tags"] = (
                 tag_legislation(entry["title"], entry["summary"])
                 if field == "green-deal"
                 else []
             )
 
-        print(f"  found {len(entries)} relevant recent item(s)")
-        all_entries.extend(entries)
+        print(f"  found {len(primary_entries)} relevant recent item(s) under {field}")
+        all_entries.extend(primary_entries)
+
+        # Cross-tagging: for sources whose primary field ISN'T green-deal
+        # (the broad security/foreign-policy think tanks), also check their
+        # raw entries against the green-deal keyword filter. Anything that
+        # matches gets an ADDITIONAL copy tagged field: green-deal, so e.g.
+        # an ECFR piece specifically about EU climate diplomacy can surface
+        # on the Green Deal tab without moving all of ECFR's content there.
+        # The original entry (unfiltered) still appears under its primary
+        # field for whenever that tab goes live.
+        if field != "green-deal":
+            cross_matches = [
+                e for e in raw_entries if is_relevant(e["title"], e["summary"])
+            ]
+            for match in cross_matches:
+                cross_entry = dict(match)  # copy -- don't mutate the original
+                cross_entry["field"] = "green-deal"
+                cross_entry["tags"] = tag_legislation(
+                    cross_entry["title"], cross_entry["summary"]
+                )
+                all_entries.append(cross_entry)
+            if cross_matches:
+                print(f"  +{len(cross_matches)} also surfaced under green-deal (cross-topic match)")
 
     all_entries.sort(key=lambda e: e["date"], reverse=True)
 
