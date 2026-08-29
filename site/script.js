@@ -40,98 +40,129 @@ const ACTOR_LABELS = {
   lobby: "Lobby / NGO",
 };
 
-// One-line explainer + link to the original legal text for each law, shown
-// as an info card whenever that topic filter is active. Keep ids in sync
-// with TOPIC_LABELS / LEGISLATION_TAGS.
+// Plain-language explainer + "why it matters" + link to the original legal
+// text for each law, shown as an info card whenever that topic filter is
+// active. Written for a general reader, not a policy specialist. Keep ids
+// in sync with TOPIC_LABELS / LEGISLATION_TAGS.
 const TOPIC_INFO = {
   ets1: {
     instrument: "Directive 2003/87/EC",
     description:
-      "Establishes the EU Emissions Trading System (EU ETS), the cap-and-trade scheme covering power generation, industry and intra-EU aviation, under which a shrinking cap on allowances is auctioned or freely allocated and traded.",
+      "The EU's carbon market. It puts a price on CO2 from power plants, heavy industry and flights within Europe — companies get a shrinking number of permits each year and must buy more if they emit beyond that.",
+    whyItMatters:
+      "It's the EU's main tool for making pollution cost money, which pushes industry toward cleaner technology.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
   },
   ets2: {
     instrument: "Directive (EU) 2023/959",
     description:
-      "Revises the main EU ETS and, within the same amending act, creates a new separate emissions trading system (\"ETS2\") covering fuel combustion in buildings, road transport and additional small-industry sectors, with trading due to start in 2027.",
+      "A second, separate carbon price covering the fuel used to heat buildings and to power cars and trucks, starting in 2027.",
+    whyItMatters:
+      "Unlike the original carbon market, this is the part that will eventually show up in people's heating and fuel bills, not just industry's costs.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L0959",
   },
   cbam: {
     instrument: "Regulation (EU) 2023/956",
     description:
-      "Requires importers of carbon-intensive goods (cement, iron and steel, aluminium, fertilisers, hydrogen, electricity) to purchase certificates reflecting embedded carbon emissions, priced in line with the EU ETS, to prevent carbon leakage as free ETS allowances are phased out.",
+      "A charge on imports of carbon-heavy goods like steel, cement, aluminium and fertiliser, matching the carbon price European producers already pay.",
+    whyItMatters:
+      "It stops European industry from being undercut by cheaper goods made in countries with weaker climate rules, and pressures those countries to clean up too.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
   },
   red3: {
     instrument: "Directive (EU) 2023/2413",
     description:
-      "The third revision of the EU's renewable energy framework, raising the binding EU-wide renewables target to at least 42.5% of final energy consumption by 2030, with sub-targets for industry, transport, heating/cooling and renewable hydrogen.",
+      "Sets a target for how much of Europe's energy must come from renewable sources by 2030 (at least 42.5%), with specific goals for industry, transport, heating and hydrogen.",
+    whyItMatters:
+      "It's the main driver behind the growth of wind, solar and renewable hydrogen projects across the EU.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L2413",
   },
   csddd: {
     instrument: "Directive (EU) 2024/1760",
     description:
-      "Requires large EU and non-EU companies above set turnover/headcount thresholds to identify, prevent and mitigate adverse human rights and environmental impacts in their operations and value chains, and to adopt a 1.5°C-aligned climate transition plan.",
+      "Requires large companies to check that their suppliers anywhere in the world aren't causing serious harm to people or the environment, and to have a credible plan for cutting their own climate impact.",
+    whyItMatters:
+      "It makes big companies legally responsible for problems — like forced labour or pollution — deep in their supply chains, not just their own factories.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
   },
   crma: {
     instrument: "Regulation (EU) 2024/1252",
     description:
-      "Sets EU-wide capacity benchmarks for domestic extraction, processing and recycling of critical raw materials, streamlines permitting for \"strategic projects,\" and requires supply-risk monitoring and diversification.",
+      "Sets targets for Europe to mine, process and recycle more of the raw materials — like lithium, cobalt and rare earths — needed for batteries, wind turbines and electronics, and speeds up permits for projects that do.",
+    whyItMatters:
+      "Europe currently depends heavily on a handful of countries, especially China, for these materials; this law is about reducing that dependence.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
   },
   nzia: {
     instrument: "Regulation (EU) 2024/1735",
     description:
-      "Aims to scale up EU manufacturing capacity for net-zero technologies (solar, wind, batteries, heat pumps, electrolysers, CCS) to meet at least 40% of EU deployment needs by 2030, via faster permitting, procurement criteria and a CO2 storage injection-capacity target.",
+      "Aims to get at least 40% of the clean-energy equipment Europe needs — solar panels, batteries, heat pumps, electrolysers — manufactured in Europe itself, with faster permits and support for factories.",
+    whyItMatters:
+      "It's the EU's response to competition from cheaper, subsidised clean-tech manufacturing in China and the US.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
   },
   csrd: {
     instrument: "Directive (EU) 2022/2464",
     description:
-      "Expands and standardises mandatory sustainability reporting for large EU companies and listed SMEs, requiring double-materiality disclosures under the European Sustainability Reporting Standards, digitally tagged and subject to third-party assurance.",
+      "Requires large companies, and many listed smaller ones, to publish detailed, standardised reports on their environmental and social impact, checked by outside auditors.",
+    whyItMatters:
+      "It's meant to stop vague \"greenwashing\" claims by forcing companies to report real, comparable numbers on things like emissions and labour practices.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
   },
   taxonomy: {
     instrument: "Regulation (EU) 2020/852",
     description:
-      "Creates a common EU classification defining which economic activities qualify as \"environmentally sustainable\" against six environmental objectives, via technical screening criteria set out in delegated acts.",
+      "A rulebook defining which business activities can officially be called \"environmentally sustainable\" in the EU.",
+    whyItMatters:
+      "It's the reference point investors, banks and companies use to back up — or challenge — claims that money is being invested \"green.\"",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
   },
   sfdr: {
     instrument: "Regulation (EU) 2019/2088",
     description:
-      "Imposes harmonised disclosure obligations on asset managers, insurers and financial advisers on how they integrate sustainability risks into investment decisions, and introduces the Article 6/8/9 fund classification used across EU sustainable finance.",
+      "Requires investment funds and financial advisers to disclose how sustainable their products really are, using a common set of categories.",
+    whyItMatters:
+      "It's why you'll see investment funds labelled by their sustainability tier when you look at products in Europe.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
   },
   eudr: {
     instrument: "Regulation (EU) 2023/1115",
     description:
-      "Bans placing on the EU market (or exporting from it) cattle, cocoa, coffee, palm oil, rubber, soy, wood and derived products unless they are deforestation-free, legally produced, and covered by a due-diligence statement with geolocation traceability.",
+      "Bans selling products in the EU — like coffee, cocoa, palm oil, beef, timber and rubber — if they were grown on land deforested after 2020, and requires proof of where they came from.",
+    whyItMatters:
+      "It puts the burden of proof on companies to show their supply chains aren't driving deforestation, rather than leaving it to consumers to guess.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
   },
   "nature-restoration": {
     instrument: "Regulation (EU) 2024/1991",
     description:
-      "Sets the EU's first binding, continent-wide targets to restore degraded ecosystems, covering at least 20% of EU land and sea areas by 2030 and all ecosystems in need of restoration by 2050, via national restoration plans.",
+      "Sets binding targets to repair damaged nature — wetlands, forests, rivers, farmland habitats — covering at least a fifth of the EU's land and sea by 2030.",
+    whyItMatters:
+      "It's the EU's first legally binding commitment to actively restore nature, not just slow its decline.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
   },
   lulucf: {
     instrument: "Regulation (EU) 2018/841 (as amended by (EU) 2023/839)",
     description:
-      "Requires Member States to account for and offset greenhouse gas emissions and removals from land use, land-use change and forestry, and sets a binding EU-wide net removals target of 310 Mt CO2eq by 2030.",
+      "Sets targets for how much CO2 Europe's forests, soils and farmland must absorb from the atmosphere, and requires countries to report and offset losses — for example from deforestation or wildfires.",
+    whyItMatters:
+      "Forests and land are supposed to be one of Europe's biggest natural carbon sinks; this law is what keeps countries accountable for protecting that.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
   },
   ccus: {
     instrument: "Directive 2009/31/EC",
     description:
-      "The EU's dedicated legal framework for carbon capture and storage: permitting, site selection, monitoring, leakage liability and closure of geological CO2 storage sites. Current deployment is additionally driven by the Net-Zero Industry Act's CO2 storage-capacity target.",
+      "Sets the legal rules for capturing CO2 from industrial sites and storing it permanently underground, plus (via the Net-Zero Industry Act) a target for how much storage capacity Europe should build.",
+    whyItMatters:
+      "It's central to plans for cleaning up industries — like cement and steel — where cutting emissions to zero any other way is very difficult.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009L0031",
   },
   eed: {
     instrument: "Directive (EU) 2023/1791",
     description:
-      "Recast of the Energy Efficiency Directive, setting a binding EU target to cut final energy consumption by 11.7% by 2030 (vs. a 2020 baseline), enshrining \"energy efficiency first,\" and imposing annual public-sector renovation obligations.",
+      "Sets a binding target to cut how much energy Europe uses overall — by at least 11.7% by 2030 — and requires governments to renovate public buildings and run energy-saving programmes.",
+    whyItMatters:
+      "Using less energy in the first place is usually the cheapest way to cut emissions, and it directly affects things like building renovation rules.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
   },
 };
@@ -181,9 +212,10 @@ function renderTopicInfo() {
 
   el.hidden = false;
   el.innerHTML = `
-    <h3>${label} <span class="topic-info-instrument">— ${escapeHtml(info.instrument)}</span></h3>
+    <h3>${label}</h3>
     <p>${escapeHtml(info.description)}</p>
-    <a href="${info.eurlexUrl}" target="_blank" rel="noopener">Read the full text on EUR-Lex →</a>
+    <p class="topic-info-why"><strong>Why it matters:</strong> ${escapeHtml(info.whyItMatters)}</p>
+    <p class="topic-info-source">${escapeHtml(info.instrument)} · <a href="${info.eurlexUrl}" target="_blank" rel="noopener">official legal text on EUR-Lex ↗</a></p>
   `;
 }
 
