@@ -463,6 +463,121 @@ h1, h2, h3 {
   padding-bottom: 8px;
 }
 
+.policy-cycle {
+  margin: 0 0 40px;
+}
+
+.policy-cycle-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 12px 16px;
+  margin: 0 0 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.policy-cycle-legend-label {
+  font-weight: 700;
+  color: var(--navy-950);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+}
+
+.policy-cycle-law {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 3px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.policy-cycle-law h3 {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  color: var(--navy-950);
+}
+
+.policy-cycle-current-stage {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: var(--gold-dark);
+  font-size: 0.8rem;
+}
+
+.policy-cycle-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 4px 0 8px;
+}
+
+.policy-cycle-caption {
+  margin: 0 0 4px;
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.policy-cycle-notes {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.policy-cycle-omnibus-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.policy-cycle-omnibus-significant {
+  background: #F4E4C1;
+  color: var(--gold-dark);
+}
+
+.policy-cycle-omnibus-minor {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.policy-cycle-omnibus-note {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--gold-dark);
+  line-height: 1.5;
+}
+
+.policy-cycle-source {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 0.76rem;
+}
+
+.policy-cycle-source a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.policy-cycle-source a:hover {
+  color: var(--gold-dark);
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 20px 0 44px;
