@@ -21,7 +21,18 @@
       "oeil_procedure": "2001/0245(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2001/0245(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2001-10-23",
+        "committee": "2002-09-10",
+        "plenary": "2002-10-10",
+        "council": "2003-03-18",
+        "trilogue": null,
+        "agreement": null,
+        "adoption": "2003-07-22",
+        "in_force": "2003-11-14",
+        "implementation": null
+      }
     },
     "ets2": {
       "current_stage": "in_force",
@@ -32,7 +43,18 @@
       "oeil_procedure": "2021/0211A(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0211A(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2021-07-14",
+        "committee": "2022-05-17",
+        "plenary": "2022-06-22",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-02-09",
+        "adoption": "2023-04-25",
+        "in_force": "2023-06-05",
+        "implementation": null
+      }
     },
     "cbam": {
       "current_stage": "implementation",
@@ -43,7 +65,18 @@
       "oeil_procedure": "2021/0214(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0214(COD)",
       "omnibus_impact": "significant",
-      "omnibus_note": "Omnibus I introduced a 50-tonne annual mass \"de minimis\" threshold exempting roughly 90% of importers (mostly SMEs and individuals) from CBAM obligations, via amending procedure 2025/0039(COD) — Regulation (EU) 2025/2083, in force 20 October 2025."
+      "omnibus_note": "Omnibus I introduced a 50-tonne annual mass \"de minimis\" threshold exempting roughly 90% of importers (mostly SMEs and individuals) from CBAM obligations, via amending procedure 2025/0039(COD) — Regulation (EU) 2025/2083, in force 20 October 2025.",
+      "stage_dates": {
+        "proposal": "2021-07-14",
+        "committee": "2022-05-17",
+        "plenary": "2022-06-22",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-02-09",
+        "adoption": "2023-04-25",
+        "in_force": "2023-06-05",
+        "implementation": null
+      }
     },
     "red3": {
       "current_stage": "implementation",
@@ -54,7 +87,18 @@
       "oeil_procedure": "2021/0218(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0218(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2021-07-14",
+        "committee": "2022-07-13",
+        "plenary": "2022-09-14",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-06-28",
+        "adoption": "2023-10-09",
+        "in_force": "2023-11-20",
+        "implementation": null
+      }
     },
     "csddd": {
       "current_stage": "in_force",
@@ -65,7 +109,18 @@
       "oeil_procedure": "2022/0051(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0051(COD)",
       "omnibus_impact": "significant",
-      "omnibus_note": "Omnibus I first postponed transposition/application via a 'stop-the-clock' procedure (Directive (EU) 2025/794, April 2025), then substantively narrowed scope and liability rules via a further amendment (Directive (EU) 2026/0470, published 26 February 2026)."
+      "omnibus_note": "Omnibus I first postponed transposition/application via a 'stop-the-clock' procedure (Directive (EU) 2025/794, April 2025), then substantively narrowed scope and liability rules via a further amendment (Directive (EU) 2026/0470, published 26 February 2026).",
+      "stage_dates": {
+        "proposal": "2022-02-23",
+        "committee": "2023-04-25",
+        "plenary": "2023-06-01",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2024-03-19",
+        "adoption": "2024-05-24",
+        "in_force": "2024-07-25",
+        "implementation": null
+      }
     },
     "crma": {
       "current_stage": "implementation",
@@ -76,7 +131,18 @@
       "oeil_procedure": "2023/0079(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0079(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2023-03-16",
+        "committee": "2023-09-07",
+        "plenary": "2023-09-14",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-12-07",
+        "adoption": "2024-03-18",
+        "in_force": "2024-05-23",
+        "implementation": null
+      }
     },
     "nzia": {
       "current_stage": "implementation",
@@ -87,7 +153,18 @@
       "oeil_procedure": "2023/0081(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0081(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2023-03-14",
+        "committee": "2023-10-25",
+        "plenary": "2023-11-21",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2024-02-22",
+        "adoption": "2024-05-27",
+        "in_force": "2024-07-18",
+        "implementation": null
+      }
     },
     "csrd": {
       "current_stage": "implementation",
@@ -98,7 +175,18 @@
       "oeil_procedure": "2021/0104(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0104(COD)",
       "omnibus_impact": "significant",
-      "omnibus_note": "Same Omnibus I amendment as CSDDD raised the scope threshold to >1,000 employees / >€450M turnover and delayed Wave 2/3 reporting; final act Directive (EU) 2026/0470, published 26 February 2026."
+      "omnibus_note": "Same Omnibus I amendment as CSDDD raised the scope threshold to >1,000 employees / >€450M turnover and delayed Wave 2/3 reporting; final act Directive (EU) 2026/0470, published 26 February 2026.",
+      "stage_dates": {
+        "proposal": "2021-04-21",
+        "committee": "2022-03-15",
+        "plenary": "2022-04-04",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2022-07-14",
+        "adoption": "2022-11-28",
+        "in_force": "2023-01-05",
+        "implementation": null
+      }
     },
     "taxonomy": {
       "current_stage": "implementation",
@@ -109,7 +197,18 @@
       "oeil_procedure": "2018/0178(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2018/0178(COD)",
       "omnibus_impact": "significant",
-      "omnibus_note": "A Commission Delegated Act adopted 4 July 2025 (in force 1 January 2026) cut mandatory Taxonomy reporting data points by ~64% for non-financial undertakings and ~89% for credit institutions — done via delegated act, not a new legislative procedure, so the base regulation's own procedure reference is unchanged."
+      "omnibus_note": "A Commission Delegated Act adopted 4 July 2025 (in force 1 January 2026) cut mandatory Taxonomy reporting data points by ~64% for non-financial undertakings and ~89% for credit institutions — done via delegated act, not a new legislative procedure, so the base regulation's own procedure reference is unchanged.",
+      "stage_dates": {
+        "proposal": "2018-05-24",
+        "committee": "2019-03-11",
+        "plenary": "2019-03-28",
+        "council": "2020-05-08",
+        "trilogue": null,
+        "agreement": "2020-01-23",
+        "adoption": "2020-06-18",
+        "in_force": "2020-07-12",
+        "implementation": null
+      }
     },
     "sfdr": {
       "current_stage": "implementation",
@@ -120,7 +219,18 @@
       "oeil_procedure": "2018/0179(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2018/0179(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": "The 'SFDR 2.0' revision is a separate track (procedure 2025/0361(COD)), not part of Omnibus I — OEIL does not label it as an Omnibus file, unlike the CBAM/CSRD/CSDDD amendments."
+      "omnibus_note": "The 'SFDR 2.0' revision is a separate track (procedure 2025/0361(COD)), not part of Omnibus I — OEIL does not label it as an Omnibus file, unlike the CBAM/CSRD/CSDDD amendments.",
+      "stage_dates": {
+        "proposal": "2018-05-24",
+        "committee": "2018-11-05",
+        "plenary": "2019-04-18",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2019-04-01",
+        "adoption": "2019-11-08",
+        "in_force": "2019-12-29",
+        "implementation": null
+      }
     },
     "eudr": {
       "current_stage": "in_force",
@@ -131,7 +241,18 @@
       "oeil_procedure": "2021/0366(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0366(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": "The application-date delay (Regulation (EU) 2024/3234) and scope-narrowing amendment (Regulation (EU) 2025/2650) are EUDR-specific simplification tracks, not part of Omnibus I — neither carries an 'Omnibus' label on OEIL."
+      "omnibus_note": "The application-date delay (Regulation (EU) 2024/3234) and scope-narrowing amendment (Regulation (EU) 2025/2650) are EUDR-specific simplification tracks, not part of Omnibus I — neither carries an 'Omnibus' label on OEIL.",
+      "stage_dates": {
+        "proposal": "2021-11-17",
+        "committee": "2022-07-12",
+        "plenary": "2022-09-13",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-01-16",
+        "adoption": "2023-05-16",
+        "in_force": "2023-06-29",
+        "implementation": null
+      }
     },
     "nature-restoration": {
       "current_stage": "implementation",
@@ -142,7 +263,18 @@
       "oeil_procedure": "2022/0195(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2022/0195(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2022-06-22",
+        "committee": "2023-06-27",
+        "plenary": "2023-07-12",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-11-29",
+        "adoption": "2024-06-17",
+        "in_force": "2024-08-18",
+        "implementation": null
+      }
     },
     "lulucf": {
       "current_stage": "implementation",
@@ -153,7 +285,18 @@
       "oeil_procedure": "2021/0201(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0201(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2021-07-14",
+        "committee": "2022-05-17",
+        "plenary": "2022-06-08",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-01-16",
+        "adoption": "2023-03-28",
+        "in_force": "2023-05-11",
+        "implementation": null
+      }
     },
     "ccus": {
       "current_stage": "implementation",
@@ -164,7 +307,18 @@
       "oeil_procedure": "2023/0081(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0081(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2023-03-14",
+        "committee": "2023-10-25",
+        "plenary": "2023-11-21",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2024-02-22",
+        "adoption": "2024-05-27",
+        "in_force": "2024-07-18",
+        "implementation": null
+      }
     },
     "eed": {
       "current_stage": "implementation",
@@ -175,7 +329,18 @@
       "oeil_procedure": "2021/0203(COD)",
       "oeil_url": "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2021/0203(COD)",
       "omnibus_impact": "none",
-      "omnibus_note": ""
+      "omnibus_note": "",
+      "stage_dates": {
+        "proposal": "2021-07-14",
+        "committee": "2022-07-13",
+        "plenary": "2022-09-14",
+        "council": null,
+        "trilogue": null,
+        "agreement": "2023-04-25",
+        "adoption": "2023-07-25",
+        "in_force": "2023-10-10",
+        "implementation": null
+      }
     }
   }
 }
