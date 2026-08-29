@@ -32,6 +32,27 @@
         "adoption": "2003-07-22",
         "in_force": "2003-11-14",
         "implementation": null
+      },
+      "active_revision": {
+        "label": "ETS Phase 5 targeted revision (post-2030 rules, MSR redesign, carbon removals)",
+        "oeil_procedure": "2026/0212(COD)",
+        "oeil_url": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2026/0212(COD)",
+        "current_stage": "proposal",
+        "stage_date": "2026-07-17",
+        "next_step": "Formal referral to Parliament's lead committee (expected ENVI) is still pending; no rapporteur has been named yet.",
+        "next_deadline": null,
+        "notes": "OEIL's own status field reads 'Preparatory phase in Parliament' — no committee assigned yet. Not to be confused with COM(2026)153 (a separate, narrower proposal on MSR allowance invalidation, procedure 2026/0085(COD)).",
+        "stage_dates": {
+          "proposal": "2026-07-17",
+          "committee": null,
+          "plenary": null,
+          "council": null,
+          "trilogue": null,
+          "agreement": null,
+          "adoption": null,
+          "in_force": null,
+          "implementation": null
+        }
       }
     },
     "ets2": {
@@ -230,6 +251,27 @@
         "adoption": "2019-11-08",
         "in_force": "2019-12-29",
         "implementation": null
+      },
+      "active_revision": {
+        "label": "SFDR 2.0 revision (sustainability disclosures & PRIIPs alignment)",
+        "oeil_procedure": "2025/0361(COD)",
+        "oeil_url": "https://oeil.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0361(COD)",
+        "current_stage": "committee",
+        "stage_date": "2026-04-28",
+        "next_step": "ECON committee vote on the draft report and amendments is still pending before Parliament can set its position for trilogue; Council already holds an agreed mandate.",
+        "next_deadline": null,
+        "notes": "Rapporteur Gerben-Jan Gerbrandy (Renew, ECON) appointed 29 Jan 2026; committee amendments tabled June 2026, but OEIL's own status field still reads 'Awaiting committee decision.' Council adopted its negotiating mandate 24 June 2026. Trilogues are reportedly targeted for Q4 2026 per press commentary — not yet confirmed on OEIL.",
+        "stage_dates": {
+          "proposal": "2025-11-20",
+          "committee": "2026-04-28",
+          "plenary": null,
+          "council": null,
+          "trilogue": null,
+          "agreement": null,
+          "adoption": null,
+          "in_force": null,
+          "implementation": null
+        }
       }
     },
     "eudr": {
