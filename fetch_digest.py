@@ -136,7 +136,7 @@ _CROSS_TAG_PATTERN = re.compile(
 # check for actor_type == "academic" sources (see is_relevant()). Journal
 # abstracts describe the same substance as think-tank/NGO output in more
 # technical, less news-style language (e.g. "carbon leakage" rather than
-# "CBAM", "Europeanization" rather than "EU policy") -- GREEN_DEAL_KEYWORDS
+# "CBAM", "Europeanization" rather than "EU policy") -- CROSS_TAG_KEYWORDS
 # alone, tuned against RSS-feed news writing, misses a lot of this.
 ACADEMIC_TOPIC_KEYWORDS = [
     "carbon leakage", "policy diffusion", "climate governance",
@@ -154,8 +154,18 @@ ACADEMIC_TOPIC_KEYWORDS = [
     "stranded assets", "just transition mechanism",
 ]
 
+# Built on CROSS_TAG_KEYWORDS, not the full GREEN_DEAL_KEYWORDS -- academic
+# sources include broad, all-discipline platforms (Open Research Europe,
+# Zenodo) that are exactly the "not already climate-dedicated" case
+# CROSS_TAG_KEYWORDS was built for. Concrete false positive this fixed: an
+# ORE health-data-infrastructure paper titled "...in alignment with the
+# European Health Data Space principles" matched bare "sustainable" (only
+# in the broader list) + bare "European" (an EU_CONTEXT_KEYWORDS marker) --
+# nothing to do with climate policy. CROSS_TAG_KEYWORDS drops "sustainable"/
+# "sustainability" specifically because they're too generic outside a
+# dedicated climate feed, which is exactly this situation.
 _ACADEMIC_KEYWORD_PATTERN = re.compile(
-    r"\b(" + "|".join(re.escape(k) for k in GREEN_DEAL_KEYWORDS + ACADEMIC_TOPIC_KEYWORDS) + r")\b",
+    r"\b(" + "|".join(re.escape(k) for k in CROSS_TAG_KEYWORDS + ACADEMIC_TOPIC_KEYWORDS) + r")\b",
     re.IGNORECASE,
 )
 
