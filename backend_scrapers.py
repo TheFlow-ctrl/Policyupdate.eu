@@ -73,10 +73,14 @@ def _make_item(org, title, link, dt, summary):
 
 
 def _passes_cutoff(dt, cutoff):
-    """An unparsed date (dt is None) always passes - we include it rather
-    than silently drop it, per spec."""
+    """An unparsed date (dt is None) does NOT pass - excluded rather than
+    included. This is a "last N days" digest, so an item we can't confirm
+    the recency of shouldn't be assumed recent; the earlier "always
+    include" behaviour let stale/irrelevant items (e.g. an old outreach
+    article with no clean date on the page) resurface in every run
+    indefinitely."""
     if dt is None:
-        return True
+        return False
     return dt >= cutoff
 
 
