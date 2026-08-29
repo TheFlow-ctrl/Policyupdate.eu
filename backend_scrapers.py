@@ -23,6 +23,7 @@ items resurface every run regardless of actual age, so recency must be
 confirmed, not assumed.
 """
 
+import html
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -810,6 +811,89 @@ def scrape_eurofer(cutoff):
 
 
 # ---------------------------------------------------------------------------
+# Zenodo (EU Open Research Repository)
+# ---------------------------------------------------------------------------
+# Zenodo has a JSON REST API but no RSS/Atom feed, so it can't go through
+# feedparser like the other academic sources -- confirmed by a research
+# agent inspecting the site's DOM for feed links (none found). This scraper
+# queries https://zenodo.org/api/records directly instead.
+#
+# ZENODO_QUERY_TERMS is a flat OR of quoted phrases -- deliberately simple
+# Elasticsearch query syntax (no field prefixes, no nested AND/OR grouping)
+# to avoid a malformed query silently returning zero results. It's a mix of
+# EU Green Deal law names (which are unambiguous on their own) and a few
+# generic "EU + climate/energy policy" phrase combos. This is Zenodo's own
+# relevance search, separate from (and in addition to) the site's own
+# is_relevant()/is_eu_relevant() keyword filter that later runs on whatever
+# this returns (actor_type: academic triggers both).
+ZENODO_QUERY_TERMS = [
+    "European Green Deal", "EU Green Deal", "Fit for 55", "CBAM",
+    "carbon border adjustment", "EU Emissions Trading System", "EU ETS",
+    "Nature Restoration Law", "Corporate Sustainability Due Diligence Directive",
+    "Net Zero Industry Act", "Critical Raw Materials Act", "EU Taxonomy Regulation",
+    "Sustainable Finance Disclosure Regulation", "EU Deforestation Regulation",
+    "Energy Efficiency Directive", "EU climate policy", "EU energy policy",
+    "European Union climate policy", "European Union energy policy",
+]
+ZENODO_QUERY = " OR ".join(f'"{t}"' for t in ZENODO_QUERY_TERMS)
+ZENODO_PAGE_SIZE = 30
+
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def scrape_zenodo(cutoff):
+    """
+    https://zenodo.org/api/records?q=...&sort=mostrecent&size=30
+
+    Response shape (Zenodo REST API v1):
+        {"hits": {"hits": [
+            {"id": 1234567,
+             "metadata": {"title": "...", "description": "<p>...</p>",
+                          "publication_date": "2026-08-28", ...},
+             ...},
+            ...
+        ]}}
+
+    The record's public URL is built from its numeric id
+    (zenodo.org/records/<id>) rather than trusted from a links.* field --
+    Zenodo's exact links.* key naming wasn't independently confirmed, while
+    the id-based URL pattern is documented and stable.
+    """
+    org = "Zenodo"
+    items = []
+    try:
+        resp = requests.get(
+            "https://zenodo.org/api/records",
+            headers=HEADERS,
+            params={"q": ZENODO_QUERY, "sort": "mostrecent", "size": ZENODO_PAGE_SIZE},
+            timeout=REQUEST_TIMEOUT,
+        )
+        resp.raise_for_status()
+        hits = resp.json().get("hits", {}).get("hits", [])
+
+        for record in hits:
+            record_id = record.get("id")
+            metadata = record.get("metadata", {})
+            title = metadata.get("title")
+            if not record_id or not title:
+                continue
+
+            dt = _parse_date(metadata.get("publication_date", ""), ["%Y-%m-%d"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            link = f"https://zenodo.org/records/{record_id}"
+            raw_description = metadata.get("description", "")
+            summary = html.unescape(_HTML_TAG_RE.sub(" ", raw_description))
+
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_zenodo failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
     "transport_environment": scrape_transport_environment,
@@ -824,4 +908,5 @@ SCRAPERS = {
     "eera": scrape_eera,
     "cefic": scrape_cefic,
     "eurofer": scrape_eurofer,
+    "zenodo": scrape_zenodo,
 }
