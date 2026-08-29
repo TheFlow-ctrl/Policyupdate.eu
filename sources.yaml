@@ -18,13 +18,27 @@
 # ECFR's foreign-policy content there.
 #
 # actor_type classifies the SOURCE itself (not the article), one of:
-#   think-tank  -- independent research institute
-#   academic    -- peer-reviewed journal / scholarly publisher
-#   political   -- political-party-affiliated (EP group foundations etc.)
-#   industry    -- trade associations and corporate/sector lobby groups
-#   ngo         -- advocacy NGOs, campaign groups, watchdog organisations
+#   think-tank    -- independent research institute
+#   academic      -- peer-reviewed journal, scholarly publisher, or a
+#                    university/research-institution output stream (EUI
+#                    units, Open Research Europe, Zenodo -- see the
+#                    Academic sources section below for notes on each)
+#   political     -- political-party-affiliated (EP group foundations etc.)
+#   industry      -- trade associations and corporate/sector lobby groups
+#   ngo           -- advocacy NGOs, campaign groups, watchdog organisations
+#   eu-institution -- an official EU institution/agency publishing about
+#                    itself or its own work (EPRS, CORDIS, EEA...) -- not
+#                    independent, not peer-reviewed academic output, not
+#                    party-affiliated, so none of the other categories fit
 # This is a judgment call for a few borderline orgs (documented inline
 # where relevant) -- adjust freely if you disagree with a classification.
+#
+# Academic sources get an EXTRA layer of filtering in fetch_digest.py on
+# top of the standard field: green-deal keyword filter: an EU-specificity
+# gate (is_eu_relevant()), since journals/repositories publish globally and
+# a topic-only match (e.g. "renewable energy policy") says nothing about
+# whether the piece is even about the EU. See fetch_digest.py's
+# EU_CONTEXT_KEYWORDS / ACADEMIC_TOPIC_KEYWORDS for the exact logic.
 #
 # Entries with a "scraper" key (instead of "url") are handled by
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
@@ -217,6 +231,173 @@ sources:
     actor_type: ngo
     # Grantmaking/coordinating foundation, advocacy-adjacent -- borderline
     # think-tank/lobby call, went with lobby given its network-building role.
+
+  # --- Academic journals -----------------------------------------------------
+  # Confirmed working feeds (fetched live and checked for real, current
+  # entries), researched Aug 2026. All get the EU-specificity gate described
+  # above (actor_type: academic), since none of these are EU-only journals.
+  - name: Climate Policy
+    url: https://www.tandfonline.com/action/showFeed?type=etoc&feed=rss&jc=tcpo20
+    field: green-deal
+    actor_type: academic
+  - name: Journal of European Public Policy
+    url: https://www.tandfonline.com/action/showFeed?type=etoc&feed=rss&jc=rjpp20
+    field: green-deal
+    actor_type: academic
+  - name: Journal of Common Market Studies
+    url: https://onlinelibrary.wiley.com/action/showFeed?jc=14685965&type=etoc&feed=rss
+    field: green-deal
+    actor_type: academic
+  - name: Energy Policy
+    url: http://rss.sciencedirect.com/publication/science/03014215
+    field: green-deal
+    actor_type: academic
+    # ScienceDirect's own sciencedirect.com/journal/.../rss pattern is
+    # behind an Akamai bot-block; this dedicated rss.sciencedirect.com
+    # host is unauthenticated and confirmed working instead.
+  - name: Environmental Politics
+    url: https://www.tandfonline.com/action/showFeed?type=etoc&feed=rss&jc=fenp20
+    field: green-deal
+    actor_type: academic
+  - name: Journal of Environmental Policy & Planning
+    url: https://www.tandfonline.com/action/showFeed?type=etoc&feed=rss&jc=cjoe20
+    field: green-deal
+    actor_type: academic
+    # Journal code is cjoe20 -- do not confuse with cjep20, which is the
+    # separate journal "Journal of Environmental Planning and Management".
+  - name: Energy Research & Social Science
+    url: http://rss.sciencedirect.com/publication/science/22146296
+    field: green-deal
+    actor_type: academic
+  - name: WIREs Climate Change
+    url: https://onlinelibrary.wiley.com/action/showFeed?jc=17577799&type=etoc&feed=rss
+    field: green-deal
+    actor_type: academic
+  - name: European Environmental Law Review
+    url: https://kluwerlawonline.com/feeds/EELR
+    field: green-deal
+    actor_type: academic
+    # This journal was renamed to "European Energy and Environmental Law
+    # Review" (EEELR) -- kept the original name here since that's what was
+    # requested, but the feed (code EELR, old abbreviation) and publisher
+    # page both reflect the new name. Best feed of the whole batch: ships
+    # full abstracts, not just titles, and isn't paywalled.
+  - name: Environmental Policy and Governance
+    url: https://onlinelibrary.wiley.com/action/showFeed?jc=17569338&type=etoc&feed=rss
+    field: green-deal
+    actor_type: academic
+  - name: Global Environmental Change
+    url: http://rss.sciencedirect.com/publication/science/09593780
+    field: green-deal
+    actor_type: academic
+  - name: Nature Climate Change
+    url: https://www.nature.com/nclimate.rss
+    field: green-deal
+    actor_type: academic
+  - name: Nature Sustainability
+    url: https://www.nature.com/natsustain.rss
+    field: green-deal
+    actor_type: academic
+  - name: Environmental Science & Policy
+    url: http://rss.sciencedirect.com/publication/science/14629011
+    field: green-deal
+    actor_type: academic
+
+  # --- Academic / research institutions ---------------------------------------
+  - name: FSR Climate (Florence School of Regulation, EUI)
+    url: https://fsr.eui.eu/energy/climate/feed/
+    field: green-deal
+    actor_type: academic
+    # Already scoped to Climate content specifically. WordPress site sits
+    # behind a WAF that returns an empty body to non-browser User-Agents --
+    # fetch_digest.py now sends a normal browser UA on every feed request
+    # (FEED_REQUEST_HEADERS) to avoid this; flag if it still comes back empty.
+  - name: STG Climate (School of Transnational Governance, EUI)
+    url: "https://cadmus.eui.eu/server/opensearch/search?format=rss&scope=c1070db1-ef89-5fd3-bc26-9b6d0bfe138a&query=climate"
+    field: green-deal
+    actor_type: academic
+    # STG's own site has no RSS; this is EUI's institutional repository
+    # (Cadmus, DSpace-based) OpenSearch endpoint, scoped to the STG
+    # community + a "climate" query. Caveat: many records only carry a
+    # placeholder "01 Jan <year>" date and results aren't reliably
+    # newest-first, so this source may under-deliver on the weekly
+    # recency cutoff -- worth revisiting if it produces ~0 items for a
+    # while despite STG actively publishing.
+  - name: Open Research Europe (ORE)
+    url: https://open-research-europe.ec.europa.eu/published/rss
+    field: green-deal
+    actor_type: academic
+    # Broad by necessity: ORE is EU-funded (Horizon Europe) open-access
+    # publishing across ALL research disciplines, and its query parameter
+    # is confirmed to NOT scope the feed (tested -- ?q=climate returns the
+    # identical unfiltered stream). Relies entirely on the EU-specificity +
+    # topic filter described above.
+  - name: Zenodo
+    scraper: zenodo
+    field: green-deal
+    actor_type: academic
+    # General-purpose open research repository, not EU-specific by nature
+    # and has no RSS/Atom feed -- uses backend_scrapers.py's scrape_zenodo,
+    # which queries Zenodo's REST API directly with a Green Deal/EU-law
+    # search string (see ZENODO_QUERY_TERMS there).
+
+  # --- EU institutions ---------------------------------------------------
+  # Official EU institutions/agencies reporting on themselves or their own
+  # work -- not independent research, so kept separate from actor_type:
+  # academic/think-tank (see the actor_type note at the top of this file).
+  # No EU-specificity gate applies to this category (unlike academic) since
+  # everything here is inherently EU by definition -- the standard
+  # green-deal topic filter is enough.
+  - name: CORDIS
+    url: "https://cordis.europa.eu/search/en?q=contenttype%3D%27news%27%20AND%20%28relations%2Fcategories%2FapplicationDomain%2Fcode%3D%27env%27%20OR%20relations%2Fcategories%2FapplicationDomain%2Fcode%3D%27ener%27%29%20AND%20language%3D%27en%27&p=1&num=20&format=rss"
+    field: green-deal
+    actor_type: eu-institution
+    # European Commission's own EU-funded-research database. Query is
+    # pre-scoped via CORDIS's "Domain of Application" taxonomy to
+    # env (Climate Change & Environment) + ener (Energy), English only,
+    # newest-first news items (contenttype='news' specifically -- the
+    # broader 'article' contenttype ignores sort order).
+  - name: EPRS (European Parliament Research Service)
+    url: https://epthinktank.eu/feed/
+    field: green-deal
+    actor_type: eu-institution
+    # The Parliament's own in-house, nonpartisan research service. Using
+    # the full firehose feed (not a topic-tag-scoped one) since EPRS's
+    # climate-tagging is inconsistent post-to-post -- relies on the site's
+    # own keyword filter like CEPS/EPC do for the same broad-source reason.
+  - name: EEA (European Environment Agency) — Press releases
+    url: https://www.eea.europa.eu/en/newsroom/rss-feeds/eeas-press-releases-rss/rss.xml
+    field: green-deal
+    actor_type: eu-institution
+  - name: EEA (European Environment Agency) — Publications
+    url: https://www.eea.europa.eu/en/newsroom/rss-feeds/publications-rss/rss.xml
+    field: green-deal
+    actor_type: eu-institution
+    # Both EEA feeds are general (EEA doesn't split by sub-topic, only by
+    # content type), but since EEA's entire remit is environment/climate,
+    # that's narrow enough on its own -- confirmed live, real dated entries.
+
+  # NOT added: European Court of Auditors (ECA). No RSS/Atom feed exists --
+  # confirmed via a research agent that actually rendered the JS-driven
+  # SharePoint site: it loads news/publications via an internal, undocumented
+  # SharePoint WCF POST endpoint (NewsService.svc/Search), not a public feed.
+  # ECA does publish audit special reports directly relevant to Green Deal
+  # spending (EU ETS, biodiversity funding, energy transition...), so it's
+  # worth adding later, but doing so would mean either standing up a
+  # headless-browser scraper (Playwright/Selenium -- a real new dependency,
+  # unlike the requests+BeautifulSoup scrapers in backend_scrapers.py) or
+  # reverse-engineering that internal API, which could break without notice
+  # since it's not a documented public interface. Flagging as a real gap
+  # rather than skipping silently -- worth a deliberate call on whether it's
+  # worth the added infrastructure.
+
+  # NOT added: Global Environmental Politics (MIT Press / Silverchair) --
+  # no working feed could be confirmed. Every automated attempt (a research
+  # agent with full internet access, and a direct in-app-browser check)
+  # was stopped by a persistent Cloudflare "Just a moment..." JS challenge
+  # on every page of direct.mit.edu, including the RSS-icon target. If you
+  # can grab the feed URL yourself from a real logged-in browser session,
+  # send it over and it can be added the same way as the others.
 
   # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
   # See backend_scrapers.py. All confirmed against real fetched HTML,
