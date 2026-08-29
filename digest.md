@@ -9,6 +9,15 @@ This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR
 
 ---
 
+### Can a ceasefire survive Israel’s election?
+*ECFR — 2026-08-28*
+
+This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR, to unpack a turbulent summer in Israel and the Palestinian territories. While Palestinian factions in Gaza have agreed in principle to decommission their weapons , the proposal faces significant obstacles, not least opposition from the Israeli government. Meanwhile settler violence is surging and settlement construction is spreading, redrawing the map faster than any negotiation could. Hugh explains why a sustainable ceasefire cannot rely on disarmament alone but requires a broader political process that…
+
+[Read more](https://ecfr.eu/podcasts/episode/can-a-ceasefire-survive-israels-election/)
+
+---
+
 ### Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI
 *Chatham House — 2026-08-28*
 
@@ -96,6 +105,15 @@ Climate and energy 2027 10 March 2027 TO 11 March 2027 — 09:00 TO 12:30 GMT An
 Security and defence 2027 3 March 2027 TO 4 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and international security experts for a day and a half of unique discussions on the future of security and defence across modern domains of conflict, and how to prepare for an uncertain future. Chatham House’s 2027 Security and Defence Conference convenes policymakers, military leaders and industry stakeholders to shape solutions for navigating an increasingly complex threat landscape. Adjusting to the…
 
 [Read more](https://www.chathamhouse.org/events/all/conference/security-and-defence-2027)
+
+---
+
+### Climate and energy 2027
+*Chatham House — 2026-08-27*
+
+Climate and energy 2027 10 March 2027 TO 11 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and experts for a day and a half of unique discussion on how to manage mounting geopolitical and climate risks while maintaining energy security, economic prosperity and international cooperation towards the transition. Chatham House’s 2027 Climate & Energy Summit convenes policymakers, business leaders and non-profit stakeholders to shape the strategies for securing a resilient future. The energy transition’s…
+
+[Read more](https://www.chathamhouse.org/events/all/conference/climate-and-energy-2027)
 
 ---
 
@@ -216,6 +234,15 @@ Recognising the role of domestic workers in climate policies is essential to tac
 
 ---
 
+### The Androcene: Rethinking the Roots of the Planetary Crisis
+*Transform Network — 2026-08-25*
+
+The climate crisis is not simply the result of human activity. Its roots lie in interconnected patriarchal, colonial and capitalist relations. The post The Androcene: Rethinking the Roots of the Planetary Crisis appeared first on transform!europe .
+
+[Read more](https://transform-network.net/blog/analysis/the-androcene-rethinking-the-roots-of-the-planetary-crisis/?utm_source=rss&utm_medium=rss&utm_campaign=the-androcene-rethinking-the-roots-of-the-planetary-crisis)
+
+---
+
 ### Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty
 *Chatham House — 2026-08-24*
 
@@ -258,5 +285,14 @@ As the climate crisis accelerates, it deepens global inequalities, drives displa
 Not only does the reform of EU asylum policies infringe on the human rights of people on the move, it also aims at defining the EU sphere of power irrespective of geographic borders. The post The Recent Reforms of the EU Asylum System: Anti-Humanitarian Measures and Neocolonial Aspirations appeared first on transform!europe .
 
 [Read more](https://transform-network.net/blog/analysis/the-recent-reforms-of-the-eu-asylum-system-anti-humanitarian-measures-and-neocolonial-aspirations/?utm_source=rss&utm_medium=rss&utm_campaign=the-recent-reforms-of-the-eu-asylum-system-anti-humanitarian-measures-and-neocolonial-aspirations)
+
+---
+
+### A Fiery Planet in an Age of Climate Change, War and Migration
+*Transform Network — 2026-08-24*
+
+As the climate crisis accelerates, it deepens global inequalities, drives displacement and migration, and intersects with war and conflict. With time running out, urgent action is needed. The post A Fiery Planet in an Age of Climate Change, War and Migration appeared first on transform!europe .
+
+[Read more](https://transform-network.net/blog/analysis/a-fiery-planet-in-an-age-of-climate-change-war-and-migration/?utm_source=rss&utm_medium=rss&utm_campaign=a-fiery-planet-in-an-age-of-climate-change-war-and-migration)
 
 ---
