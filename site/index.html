@@ -27,9 +27,10 @@
       <button class="field-tab" data-field="security" disabled title="Coming soon">Security</button>
       <button class="field-tab" data-field="tech" disabled title="Coming soon">Tech</button>
       <button class="field-tab" data-field="health" disabled title="Coming soon">Health</button>
+      <button class="field-tab" data-view="archive">Archive</button>
     </nav>
 
-    <section class="digest">
+    <section class="digest" id="digest-section">
       <div class="digest-header">
         <h2>This week's contributions <span id="active-field-label"></span></h2>
         <span id="generated-date" class="generated-date"></span>
@@ -39,11 +40,21 @@
       </div>
     </section>
 
+    <section class="archive" id="archive-section" hidden>
+      <div class="digest-header">
+        <h2>Archive</h2>
+      </div>
+      <div id="archive-months">
+        <p class="loading">Loading archive…</p>
+      </div>
+    </section>
+
     <section class="signup" id="signup">
       <h2>Get the weekly digest by email</h2>
       <p>One email a week. No spam, unsubscribe any time.</p>
 
-     <iframe class="substack-embed" src="https://policyupdatedoteu.substack.com/embed" width="480" height="320" frameborder="0" scrolling="no"></iframe>
+      <iframe class="substack-embed" src="https://policyupdatedoteu.substack.com/embed" width="480" height="320" frameborder="0" scrolling="no"></iframe>
+    </section>
 
   </main>
 
