@@ -175,6 +175,46 @@ h1, h2, h3 {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+.topic-info {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+  padding: 14px 18px;
+  margin: -8px 0 20px;
+}
+
+.topic-info h3 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  color: var(--navy-950);
+}
+
+.topic-info-instrument {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.topic-info p {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.topic-info a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.topic-info a:hover {
+  text-decoration: underline;
+}
+
 .actor-tabs {
   display: flex;
   flex-wrap: wrap;
