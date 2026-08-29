@@ -1,5 +1,14 @@
 # Weekly Green Deal Digest — 2026-08-29
 
+### What is net zero?
+*ClientEarth — 2026-08-28*
+
+What is net zero?
+
+[Read more](https://www.clientearth.org/latest/news/what-is-net-zero/)
+
+---
+
 ### Can a ceasefire survive Israel’s election?
 *ECFR — 2026-08-28*
 
@@ -171,6 +180,15 @@ In 2024, SIPRI and its partner BUCOFORE carried out research showing that refuge
 
 ---
 
+### Europe cannot deliver a circular plastics economy without enabling innovation
+*PlasticsEurope — 2026-08-26*
+
+How innovation in technologies demonstrates the need to modernise Europe’s recycling framework Europe has set ambitious circular economy, recycled content and climate objectives. For plastics, these objectives can help reduce waste to landfill and incineration, strengthen resource efficiency, and support a more resilient European industrial base. Yet Europe faces a striking contradiction. It calls for innovation, but too often regulates the circular economy through frameworks designed only around technologies that already operate at scale. White_paper_innovation_final Download The post Europe…
+
+[Read more](https://plasticseurope.org/media/europe-cannot-deliver-circular-plastics-economy-without-enabling-innovation/)
+
+---
+
 ### Study to support the fitness check of the polluter pays principle
 *CEPS — 2026-08-26*
 
@@ -204,6 +222,15 @@ The energy transition is accelerating, with renewable energy generation continui
 The European Climate Foundation (ECF) and the Institute for European Environmental Policy (IEEP) invite you to the launch of the Traded Emissions Tracker. The post Tracking the world’s hidden carbon: Launch of the ECF Traded Emissions Tracker appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/tracking-the-worlds-hidden-carbon-launch-of-the-ecf-traded-emissions-tracker/)
+
+---
+
+### Call for abstracts "Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind"
+*EERA — 2026-08-25*
+
+News: Call for abstracts "Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind"
+
+[Read more](https://www.eera-set.eu/news-resources/8715-call-for-abstracts-sustainability-and-circularity-strategies-of-end-of-life-management-of-energy-systems-photovoltaic-and-wind-1.html)
 
 ---
 

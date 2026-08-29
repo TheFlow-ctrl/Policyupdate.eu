@@ -46,6 +46,16 @@
           "tags": []
         },
         {
+          "org": "ClientEarth",
+          "field": "green-deal",
+          "title": "What is net zero?",
+          "link": "https://www.clientearth.org/latest/news/what-is-net-zero/",
+          "date": "2026-08-28",
+          "summary": "What is net zero?",
+          "actor_type": "lobby",
+          "tags": []
+        },
+        {
           "org": "E3G",
           "field": "green-deal",
           "title": "Planning for resilience",
@@ -196,6 +206,16 @@
           "tags": []
         },
         {
+          "org": "PlasticsEurope",
+          "field": "green-deal",
+          "title": "Europe cannot deliver a circular plastics economy without enabling innovation",
+          "link": "https://plasticseurope.org/media/europe-cannot-deliver-circular-plastics-economy-without-enabling-innovation/",
+          "date": "2026-08-26",
+          "summary": "How innovation in technologies demonstrates the need to modernise Europe\u2019s recycling framework Europe has set ambitious circular economy, recycled content and climate objectives. For plastics, these objectives can help reduce waste to landfill and incineration, strengthen resource efficiency, and support a more resilient European industrial base. Yet Europe faces a striking contradiction. It calls for innovation, but too often regulates the circular economy through frameworks designed only around technologies that already operate at scale. White_paper_innovation_final Download The post Europe\u2026",
+          "actor_type": "lobby",
+          "tags": []
+        },
+        {
           "org": "E3G",
           "field": "green-deal",
           "title": "Why the clean energy transition needs information integrity",
@@ -243,6 +263,16 @@
           "date": "2026-08-25",
           "summary": "Recognising the role of domestic workers in climate policies is essential to tackling both social inequality and the environmental crisis. The post A Just Ecological Transition for Domestic Workers appeared first on transform!europe .",
           "actor_type": "political",
+          "tags": []
+        },
+        {
+          "org": "EERA",
+          "field": "green-deal",
+          "title": "Call for abstracts \"Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind\"",
+          "link": "https://www.eera-set.eu/news-resources/8715-call-for-abstracts-sustainability-and-circularity-strategies-of-end-of-life-management-of-energy-systems-photovoltaic-and-wind-1.html",
+          "date": "2026-08-25",
+          "summary": "News: Call for abstracts \"Sustainability and circularity strategies of End of-Life management of energy systems: Photovoltaic and Wind\"",
+          "actor_type": "think-tank",
           "tags": []
         },
         {
