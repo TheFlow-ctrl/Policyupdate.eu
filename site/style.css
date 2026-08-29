@@ -126,6 +126,29 @@ h1, h2, h3 {
   cursor: not-allowed;
 }
 
+.field-tabs-upcoming {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+}
+
+.field-tabs-upcoming-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B7B2A3;
+}
+
+.field-tab-upcoming {
+  padding: 12px 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
 .topic-tabs {
   display: flex;
   flex-wrap: wrap;
