@@ -91,7 +91,7 @@ sources:
   - name: RAP Europe (Regulatory Assistance Project)
     url: https://www.raponline.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: think-tank
     # Technical/regulatory-expert NGO -- output reads as expert analysis
     # rather than campaign advocacy, so classified think-tank; borderline.
     # Feed validity not independently re-confirmed in the most recent
@@ -149,8 +149,75 @@ sources:
     # Structurally valid RSS but returned zero items at last check --
     # keep tracking rather than treat as permanently dead.
 
+  # --- Industry / sector lobby groups ---------------------------------------
+  - name: Airlines for Europe (A4E)
+    url: https://a4e.eu/feed/
+    field: green-deal
+    actor_type: lobby
+    # Aviation. Feed works but posting is infrequent (last seen Jan 2025 at
+    # last check) -- expect it to often contribute 0 items in a given week.
+  - name: PlasticsEurope
+    url: https://plasticseurope.org/feed/
+    field: green-deal
+    actor_type: lobby
+    # Plastics industry. Actively updated.
+  - name: IOGP
+    url: https://www.iogp.org/feed/
+    field: green-deal
+    actor_type: lobby
+    # Oil & gas producers (global body, not EU-only, but covers EU-relevant
+    # content). Actively updated.
+  - name: Cefic
+    scraper: cefic
+    field: green-deal
+    actor_type: lobby
+    # Chemical industry.
+  - name: Eurofer
+    scraper: eurofer
+    field: green-deal
+    actor_type: lobby
+    # Steel industry.
+  - name: Eurelectric
+    scraper: eurelectric
+    field: green-deal
+    actor_type: lobby
+    # Electricity industry.
+  - name: European Aluminium
+    url: https://european-aluminium.eu/feed/
+    field: green-deal
+    actor_type: lobby
+    # Confirmed to exist (valid RSS structure) but returned zero items at
+    # last check -- kept in case it starts publishing through the feed.
+  - name: Concawe
+    url: https://www.concawe.eu/feed/
+    field: green-deal
+    actor_type: lobby
+    # Oil refiners' environmental science association. Confirmed to exist
+    # but currently empty -- same as European Aluminium above.
+  - name: BusinessEurope
+    url: https://www.businesseurope.eu/feed/
+    field: green-deal
+    actor_type: lobby
+    # Cross-industry. Confirmed to exist but currently empty.
+
+  # --- NGOs ------------------------------------------------------------------
+  - name: Greenpeace EU
+    url: https://www.greenpeace.org/eu-unit/feed/
+    field: green-deal
+    actor_type: lobby
+  - name: ClientEarth
+    scraper: clientearth
+    field: green-deal
+    actor_type: lobby
+  - name: European Climate Foundation
+    scraper: european_climate_foundation
+    field: green-deal
+    actor_type: lobby
+    # Grantmaking/coordinating foundation, advocacy-adjacent -- borderline
+    # think-tank/lobby call, went with lobby given its network-building role.
+
   # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
-  # See backend_scrapers.py. All four confirmed against real fetched HTML,
+  # See backend_scrapers.py. All confirmed against real fetched HTML,
   # Aug 2026.
   - name: CEPS
     scraper: ceps
@@ -168,6 +235,25 @@ sources:
     # Academic/scientific research institute.
   - name: IDDRI
     scraper: iddri
+    field: green-deal
+    actor_type: think-tank
+  - name: Agora Energiewende
+    scraper: agora_energiewende
+    field: green-deal
+    actor_type: think-tank
+  - name: EPC
+    scraper: epc
+    field: green-deal
+    actor_type: think-tank
+    # Broad multi-topic think tank (like CEPS) -- relies on the keyword
+    # filter to surface only its Green Deal-relevant output.
+  - name: BC3 (Basque Centre for Climate Change)
+    scraper: bc3
+    field: green-deal
+    actor_type: think-tank
+    # Titles/excerpts are a mix of English and Spanish.
+  - name: EERA
+    scraper: eera
     field: green-deal
     actor_type: think-tank
 
@@ -241,6 +327,28 @@ sources:
     field: security
     actor_type: political
     # Linked to the transform! europe / Left-group political network.
+  - name: TEPSA
+    url: https://tepsa.eu/feed/
+    field: security
+    actor_type: think-tank
+    # Confirmed exact URL, but currently empty -- kept in case it starts
+    # publishing through the feed.
+  - name: IAI (Istituto Affari Internazionali)
+    url: https://www.iai.it/en/aggregator/rss
+    field: security
+    actor_type: think-tank
+    # Confirmed exact URL (not /en/rss.xml, which just redirects here) --
+    # currently empty.
+  - name: DGAP (German Council on Foreign Relations)
+    url: https://dgap.org/en/rss.xml
+    field: security
+    actor_type: think-tank
+    # Confirmed exact URL -- currently empty.
+  - name: Egmont Institute
+    url: https://egmontinstitute.be/feed/
+    field: security
+    actor_type: think-tank
+    # Confirmed exact URL (valid RSS content-type) -- currently empty.
 
 # Removed after real content-quality problems (not a feed/technical issue):
 #  - VTT (Finland) -- had a working feed, but as a large multi-domain
@@ -249,32 +357,27 @@ sources:
 #    content from unrelated technical research. Removed rather than
 #    fine-tuned; revisit only with a much stronger per-source signal.
 
-# Checked but not currently working (excluded until fixed):
-#  - CEPS's own RSS feed (WordPress feeds disabled site-wide) -- now
-#    covered via a custom scraper instead, see above.
-#  - EPC -- no working feed URL found, no RSS autodiscovery on their site
-#  - Agora Energiewende (.de and .org) -- no feed on either domain (TYPO3)
-#  - Ember (https://ember-energy.org/feed/) -- structurally valid RSS but
-#    currently returns zero items; re-check later
-#  - WWF European Policy Office -- site appears stale/abandoned (content
-#    references 2013 as current)
-#  - ClientEarth -- no working feed URL found
-#  - European Climate Foundation -- no feed; listing page at
-#    europeanclimate.org/latest-updates/ could be a future scraper target
-#  - Eurelectric -- no feed; listing page at eurelectric.org/news/ could be
-#    a future scraper target (substantive sector content, not pure PR)
-#  - EERA -- no feed; listing page at eera-set.eu/news-resources.html
-#  - BC3 (Basque Centre for Climate Change) -- no feed; listing page at
-#    bc3research.org/en/newsroom/news/, partly Spanish-language
+# Checked but still not currently working (excluded until fixed):
+#  - ASD-Europe (aerospace/defence industry) -- modern Next.js/Umbraco
+#    site, no RSS anywhere. Listing page (would need a scraper):
+#    asd-europe.org/news-media/news-events/news/
+#  - FuelsEurope (oil/gas refining industry) -- custom CMS, no RSS found.
+#    Listing page: fuelseurope.eu/publications
+#  - WWF European Policy Office -- NOT actually abandoned (re-checked Aug
+#    2026: newsletter archive runs to Nov 2025, live articles dated Aug
+#    2026 findable via search) -- the earlier "stale since 2013" read was
+#    from a broken legacy fallback served to simple fetches, likely a
+#    JS-rendered/legacy CMS quirk. No RSS discoverable. Listing page (a
+#    real scraper target, just not built yet): wwf.eu/wwf_news/media_centre/
 #  - JRC Publications Repository -- database/search-driven, PDF-only,
 #    not feed- or easily scraper-friendly
-#  - TNO, Cefic, BusinessEurope, EIPA, New Direction -- checked, excluded
-#    as too broad/generic, pure industry-lobby PR, or too thin/inconsistent
-#    an output to be worth tracking
-#  - TEPSA, IAI, DGAP, Egmont Institute -- feeds exist but are currently
-#    empty (not dead links, just no recent items); URLs not re-confirmed
-#    in the latest pass, so not added here to avoid guessing at exact
-#    endpoints -- worth revisiting if these become a priority
+#  - TNO, EIPA, New Direction -- checked, excluded as too broad/generic,
+#    not a regular publisher, or too thin/inconsistent an output to be
+#    worth tracking (Cefic and BusinessEurope, previously grouped with
+#    these on the same "pure industry PR" reasoning, were reconsidered
+#    once actor_type: lobby existed as an explicit, labeled category for
+#    exactly this kind of voice -- see above, Cefic now has a scraper and
+#    BusinessEurope's feed is tracked defensively)
 
 # Future policy fields (tech, health) -- no sources yet. The website
 # already has tabs wired up for these (currently shown as "coming soon"
