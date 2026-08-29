@@ -24,7 +24,13 @@ import backend_scrapers
 SOURCES_FILE = Path(__file__).parent / "sources.yaml"
 OUTPUT_FILE = Path(__file__).parent / "digest.md"
 JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
+ARCHIVE_FILE = Path(__file__).parent / "site" / "archive.json"
 DAYS_BACK = 7
+
+MONTH_NAMES = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+]
 
 # Bound applied to article text before keyword matching / display (see
 # bounded_excerpt() below). Chosen to comfortably cover a real lead
@@ -240,6 +246,68 @@ def fetch_source(source, cutoff):
         return []
 
 
+def update_archive(new_entries):
+    """Merge this run's entries into a cumulative, month-grouped archive at
+    site/archive.json, deduplicated by link.
+
+    This is how the archive builds up over time: there is no historical
+    backfill (RSS feeds don't expose months of history, and most sources
+    have no scraper), so the archive simply starts accumulating from
+    whenever this code first runs and grows by one week's worth of entries
+    each time. Only entries with a real, parsed date are archived --
+    "unknown date" entries can't be placed in a month bucket.
+    """
+    existing_entries = []
+    if ARCHIVE_FILE.exists():
+        try:
+            existing_data = json.loads(ARCHIVE_FILE.read_text())
+            for month in existing_data.get("months", []):
+                existing_entries.extend(month.get("entries", []))
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"  [warning] could not read existing archive, starting fresh: {exc}")
+
+    # Dedupe by link, preferring the newest-seen copy of any given entry
+    # (a source occasionally revises a title/summary after first publish).
+    by_link = {}
+    for entry in existing_entries + new_entries:
+        link = entry.get("link")
+        if not link:
+            continue
+        if entry.get("date") == "unknown date":
+            continue
+        by_link[link] = entry
+
+    months = {}
+    for entry in by_link.values():
+        date_str = entry.get("date", "")
+        try:
+            year, month_num, _ = date_str.split("-")
+            month_num = int(month_num)
+        except (ValueError, AttributeError):
+            continue
+        key = f"{year}-{month_num:02d}"
+        months.setdefault(key, {
+            "key": key,
+            "label": f"{MONTH_NAMES[month_num - 1]} {year}",
+            "entries": [],
+        })["entries"].append(entry)
+
+    for month in months.values():
+        month["entries"].sort(key=lambda e: e["date"], reverse=True)
+
+    ordered_months = sorted(months.values(), key=lambda m: m["key"], reverse=True)
+
+    ARCHIVE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    ARCHIVE_FILE.write_text(
+        json.dumps(
+            {"generated": dt.date.today().isoformat(), "months": ordered_months},
+            indent=2,
+        )
+    )
+    total = sum(len(m["entries"]) for m in ordered_months)
+    print(f"Archive now has {total} entries across {len(ordered_months)} month(s)")
+
+
 def main():
     sources = load_sources()
     cutoff = dt.datetime.utcnow() - dt.timedelta(days=DAYS_BACK)
@@ -295,6 +363,8 @@ def main():
         )
     )
     print(f"Wrote {len(all_entries)} entries to {JSON_OUTPUT_FILE}")
+
+    update_archive(all_entries)
 
 
 if __name__ == "__main__":
