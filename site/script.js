@@ -365,11 +365,11 @@ function renderPolicyCycle() {
 
   const { stages, laws } = policyCycleData;
 
+  // Stage names are now printed directly on each diagram, so the separate
+  // numbered legend that used to live here would just repeat them -- a
+  // single explanatory line is enough.
   legendEl.innerHTML =
-    '<span class="policy-cycle-legend-label">Stages:</span>' +
-    stages
-      .map((s, i) => `<span class="policy-cycle-legend-item">${i + 1}. ${escapeHtml(s.label)}</span>`)
-      .join("");
+    '<span class="policy-cycle-legend-label">How to read this:</span> each diagram traces a law\'s path through all 9 stages of the EU legislative process; the gold node marks where it stands today.';
 
   lawsEl.innerHTML = POLICY_CYCLE_LAW_ORDER.filter((id) => laws[id]).map((id) => renderLawCycle(id, laws[id], stages)).join("");
 }
@@ -414,75 +414,102 @@ function renderLawCycle(lawId, law, stages) {
   `;
 }
 
-// Builds a horizontal stepper diagram (nodes connected by arrows) as an
-// inline SVG string. Completed stages are solid navy, the current stage is
-// a larger gold node, upcoming stages are muted outlines. Each node carries
-// a native <title> tooltip with its full stage name (and date, for the
-// current stage) since a full text label under all 9 stages, repeated
-// across 15 laws, would be too cluttered -- the shared legend above spells
-// out what each numbered stage means once.
+// Builds a "reverse S" stepper diagram (a boustrophedon path: top row
+// right-to-left, middle row left-to-right, bottom row right-to-left) as an
+// inline SVG string, with each stage's full name printed at its node.
+// Completed stages are solid navy, the current stage is a larger gold node,
+// upcoming stages are muted outlines. Assumes exactly 9 stages (3 rows of 3)
+// -- if the stage list ever changes length, this layout needs revisiting.
 function buildStepperSvg(stages, currentIndex) {
-  const width = 720;
-  const height = 64;
-  const marginX = 36;
-  const y = 30;
+  const width = 680;
+  const height = 460;
+  const colX = [560, 340, 120]; // right, middle, left
+  const rowY = [70, 250, 430];
   const n = stages.length;
-  const step = (width - marginX * 2) / (n - 1);
 
   const DONE_COLOR = "#1E3A57"; // var(--navy-700)
   const CURRENT_COLOR = "#C9A227"; // var(--gold)
   const UPCOMING_COLOR = "#DEDACD"; // var(--border)
   const UPCOMING_STROKE = "#B7B2A3";
+  const LABEL_DONE = "#1E3A57";
+  const LABEL_CURRENT = "#8A6F1E";
+  const LABEL_UPCOMING = "#5B6B78";
 
-  // Arrowhead marker defs (one per color, referenced by the lines below).
+  // Position of stage i: row = floor(i/3); even rows run right-to-left
+  // (colX order as-is), odd rows run left-to-right (colX reversed).
+  function pos(i) {
+    const row = Math.floor(i / 3);
+    const posInRow = i % 3;
+    const cols = row % 2 === 0 ? colX : [...colX].reverse();
+    return { x: cols[posInRow], y: rowY[row] };
+  }
+
   const defs = `<defs>
-    <marker id="arrow-done" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrow-done" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="${DONE_COLOR}" />
     </marker>
-    <marker id="arrow-upcoming" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrow-upcoming" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="${UPCOMING_STROKE}" />
     </marker>
   </defs>`;
 
-  // Arrows (drawn before nodes, so node circles sit on top of the line ends).
+  // Connecting arrows: horizontal within a row, vertical between rows.
   let arrows = "";
   for (let i = 0; i < n - 1; i++) {
-    const x1 = marginX + i * step + 9;
-    const x2 = marginX + (i + 1) * step - 9;
+    const a = pos(i);
+    const b = pos(i + 1);
     const done = i + 1 <= currentIndex;
     const color = done ? DONE_COLOR : UPCOMING_STROKE;
-    arrows += `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${color}" stroke-width="2" marker-end="url(#arrow-${done ? "done" : "upcoming"})" />`;
+    const marker = `url(#arrow-${done ? "done" : "upcoming"})`;
+    if (a.y === b.y) {
+      // Same row: shorten the line so it doesn't run under the node circles.
+      const dir = b.x > a.x ? 1 : -1;
+      arrows += `<line x1="${a.x + dir * 22}" y1="${a.y}" x2="${b.x - dir * 22}" y2="${b.y}" stroke="${color}" stroke-width="2.5" marker-end="${marker}" />`;
+    } else {
+      arrows += `<line x1="${a.x}" y1="${a.y + 22}" x2="${b.x}" y2="${b.y - 22}" stroke="${color}" stroke-width="2.5" marker-end="${marker}" />`;
+    }
   }
 
-  // Nodes.
+  // Nodes + embedded labels.
   let nodes = "";
   for (let i = 0; i < n; i++) {
-    const x = marginX + i * step;
+    const { x, y } = pos(i);
     const stage = stages[i];
-    let radius = 6;
+    let radius = 11;
     let fill = UPCOMING_COLOR;
     let stroke = UPCOMING_STROKE;
-    let textColor = "#5B6B78";
+    let numColor = "white";
+    let labelColor = LABEL_UPCOMING;
+    let labelWeight = "500";
 
     if (i < currentIndex) {
-      radius = 6;
       fill = DONE_COLOR;
       stroke = DONE_COLOR;
-      textColor = "white";
+      numColor = "white";
+      labelColor = LABEL_DONE;
     } else if (i === currentIndex) {
-      radius = 10;
+      radius = 18;
       fill = CURRENT_COLOR;
       stroke = CURRENT_COLOR;
-      textColor = "#16202A";
+      numColor = "#16202A";
+      labelColor = LABEL_CURRENT;
+      labelWeight = "700";
+    } else {
+      numColor = "#5B6B78";
     }
 
+    // Label sits below nodes in the two right-to-left rows (even rows) and
+    // above nodes in the left-to-right middle row, so labels never collide
+    // with the vertical connector arrows running along the left/right edges.
+    const row = Math.floor(i / 3);
+    const labelY = row % 2 === 0 ? y + radius + 20 : y - radius - 12;
+
     nodes += `<g>
-      <circle cx="${x}" cy="${y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="1.5">
+      <circle cx="${x}" cy="${y}" r="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="2">
         <title>${escapeHtml(`${i + 1}. ${stage.label}`)}${i === currentIndex ? " (current stage)" : ""}</title>
       </circle>
-      <text x="${x}" y="${y + 22}" text-anchor="middle" font-size="10" font-family="IBM Plex Sans, sans-serif" fill="${
-      i === currentIndex ? "#8A6F1E" : "#5B6B78"
-    }" font-weight="${i === currentIndex ? "700" : "400"}">${i + 1}</text>
+      <text x="${x}" y="${y + 5}" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="${numColor}" font-weight="700">${i + 1}</text>
+      <text x="${x}" y="${labelY}" text-anchor="middle" font-size="13" font-family="IBM Plex Sans, sans-serif" fill="${labelColor}" font-weight="${labelWeight}">${escapeHtml(stage.label)}</text>
     </g>`;
   }
 
