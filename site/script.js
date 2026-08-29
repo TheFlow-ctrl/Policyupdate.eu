@@ -1,8 +1,10 @@
 // Loads digest.json (written by fetch_digest.py) and renders it as cards,
-// filtered by the active policy-field tab (Green Deal, Security, Tech, Health)
-// and, within Green Deal, by the active EU-legislation topic tab (CBAM,
-// CSRD, etc. -- see TOPIC_LABELS, which must be kept in sync with the tag
-// ids used in fetch_digest.py's LEGISLATION_TAGS).
+// filtered by three independent dimensions:
+//   1. field (Green Deal, Security, Tech, Health)
+//   2. topic -- which EU law an entry mentions, within Green Deal
+//      (see TOPIC_LABELS, kept in sync with LEGISLATION_TAGS in fetch_digest.py)
+//   3. actor type -- what kind of source it is (see ACTOR_LABELS, kept in
+//      sync with the actor_type values used in sources.yaml)
 // No build step, no framework — just fetch + template strings.
 
 const FIELD_LABELS = {
@@ -31,10 +33,18 @@ const TOPIC_LABELS = {
   eed: "EED",
 };
 
+// Keep in sync with actor_type values in sources.yaml.
+const ACTOR_LABELS = {
+  "think-tank": "Think Tank",
+  political: "Political",
+  lobby: "Lobby / NGO",
+};
+
 let digestData = null;
 let archiveData = null;
 let activeField = "green-deal";
 let activeTopic = "all";
+let activeActor = "all";
 
 async function loadDigest() {
   const entriesEl = document.getElementById("entries");
@@ -54,8 +64,10 @@ async function loadDigest() {
   }
 }
 
-function matchesTopic(entry) {
-  return activeTopic === "all" || (entry.tags || []).includes(activeTopic);
+function matchesFilters(entry) {
+  const topicOk = activeTopic === "all" || (entry.tags || []).includes(activeTopic);
+  const actorOk = activeActor === "all" || (entry.actor_type || "think-tank") === activeActor;
+  return topicOk && actorOk;
 }
 
 function renderActiveField() {
@@ -66,13 +78,13 @@ function renderActiveField() {
   if (!digestData || !digestData.entries) return;
 
   const filtered = digestData.entries.filter(
-    (e) => (e.field || "green-deal") === activeField && matchesTopic(e)
+    (e) => (e.field || "green-deal") === activeField && matchesFilters(e)
   );
 
   if (filtered.length === 0) {
-    entriesEl.innerHTML = activeTopic === "all"
+    entriesEl.innerHTML = activeTopic === "all" && activeActor === "all"
       ? '<p class="empty">No new publications this week — check back soon.</p>'
-      : `<p class="empty">No entries this week tagged ${escapeHtml(TOPIC_LABELS[activeTopic] || activeTopic)}.</p>`;
+      : '<p class="empty">No entries this week match that filter.</p>';
     return;
   }
 
@@ -105,15 +117,30 @@ function setupTopicTabs() {
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
       activeTopic = tab.dataset.topic;
-
-      const archiveVisible = !document.getElementById("archive-section").hidden;
-      if (archiveVisible) {
-        renderArchive();
-      } else {
-        renderActiveField();
-      }
+      rerenderCurrentView();
     });
   });
+}
+
+function setupActorTabs() {
+  const tabs = document.querySelectorAll(".actor-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      activeActor = tab.dataset.actor;
+      rerenderCurrentView();
+    });
+  });
+}
+
+function rerenderCurrentView() {
+  const archiveVisible = !document.getElementById("archive-section").hidden;
+  if (archiveVisible) {
+    renderArchive();
+  } else {
+    renderActiveField();
+  }
 }
 
 function showDigestView() {
@@ -158,15 +185,15 @@ function renderArchive() {
     .map((month) => ({
       ...month,
       entries: month.entries.filter(
-        (e) => (e.field || "green-deal") === "green-deal" && matchesTopic(e)
+        (e) => (e.field || "green-deal") === "green-deal" && matchesFilters(e)
       ),
     }))
     .filter((month) => month.entries.length > 0);
 
   if (filteredMonths.length === 0) {
-    monthsEl.innerHTML = activeTopic === "all"
+    monthsEl.innerHTML = activeTopic === "all" && activeActor === "all"
       ? '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
-      : `<p class="empty">No archived entries tagged ${escapeHtml(TOPIC_LABELS[activeTopic] || activeTopic)} yet.</p>`;
+      : '<p class="empty">No archived entries match that filter yet.</p>';
     return;
   }
 
@@ -187,6 +214,7 @@ function renderEntry(entry) {
   const org = escapeHtml(entry.org || "");
   const date = escapeHtml(entry.date || "");
   const link = entry.link || "#";
+  const actorLabel = ACTOR_LABELS[entry.actor_type] || "";
   const summary = entry.summary ? `<p class="entry-summary">${escapeHtml(stripHtml(entry.summary)).slice(0, 280)}</p>` : "";
   const tags = (entry.tags || [])
     .map((t) => `<span class="entry-tag">${escapeHtml(TOPIC_LABELS[t] || t)}</span>`)
@@ -196,7 +224,7 @@ function renderEntry(entry) {
   return `
     <article class="entry-card">
       <h3><a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
-      <div class="entry-meta">${org} — ${date}</div>
+      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}</div>
       ${summary}
       ${tagsHtml}
     </article>
@@ -218,4 +246,5 @@ function escapeHtml(str) {
 
 setupFieldTabs();
 setupTopicTabs();
+setupActorTabs();
 loadDigest();
