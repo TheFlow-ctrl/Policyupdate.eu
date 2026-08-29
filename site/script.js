@@ -10,6 +10,7 @@ const FIELD_LABELS = {
 };
 
 let digestData = null;
+let archiveData = null;
 let activeField = "green-deal";
 
 async function loadDigest() {
@@ -54,10 +55,78 @@ function setupFieldTabs() {
       if (tab.disabled) return;
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
-      activeField = tab.dataset.field;
-      renderActiveField();
+
+      if (tab.dataset.view === "archive") {
+        showArchiveView();
+      } else {
+        activeField = tab.dataset.field;
+        showDigestView();
+        renderActiveField();
+      }
     });
   });
+}
+
+function showDigestView() {
+  document.getElementById("digest-section").hidden = false;
+  document.getElementById("archive-section").hidden = true;
+}
+
+function showArchiveView() {
+  document.getElementById("digest-section").hidden = true;
+  document.getElementById("archive-section").hidden = false;
+  loadArchive();
+}
+
+async function loadArchive() {
+  const monthsEl = document.getElementById("archive-months");
+
+  if (archiveData) {
+    renderArchive();
+    return;
+  }
+
+  try {
+    const res = await fetch("archive.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    archiveData = await res.json();
+    renderArchive();
+  } catch (err) {
+    monthsEl.innerHTML = '<p class="error">Couldn\'t load the archive yet — check back once a few weekly digests have run.</p>';
+    console.error(err);
+  }
+}
+
+function renderArchive() {
+  const monthsEl = document.getElementById("archive-months");
+
+  if (!archiveData || !archiveData.months || archiveData.months.length === 0) {
+    monthsEl.innerHTML = '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>';
+    return;
+  }
+
+  const filteredMonths = archiveData.months
+    .map((month) => ({
+      ...month,
+      entries: month.entries.filter((e) => (e.field || "green-deal") === "green-deal"),
+    }))
+    .filter((month) => month.entries.length > 0);
+
+  if (filteredMonths.length === 0) {
+    monthsEl.innerHTML = '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>';
+    return;
+  }
+
+  monthsEl.innerHTML = filteredMonths
+    .map((month, i) => `
+      <details class="archive-month"${i === 0 ? " open" : ""}>
+        <summary>${escapeHtml(month.label)} <span class="archive-count">(${month.entries.length})</span></summary>
+        <div class="entries">
+          ${month.entries.map(renderEntry).join("")}
+        </div>
+      </details>
+    `)
+    .join("");
 }
 
 function renderEntry(entry) {
