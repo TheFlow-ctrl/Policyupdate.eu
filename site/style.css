@@ -10,6 +10,9 @@
   --bg: #F4F2EC;
   --card-bg: #FFFFFF;
   --border: #DEDACD;
+  --revision-accent: #2C6E8A;
+  --revision-accent-dark: #1D4A5C;
+  --revision-bg: #EAF2F4;
 }
 
 * { box-sizing: border-box; }
@@ -585,6 +588,50 @@ h1, h2, h3 {
 
 .policy-cycle-source a:hover {
   color: var(--gold-dark);
+}
+
+/* An active revision's card deliberately reuses almost none of the main
+   card's gold styling -- different border color, different tinted
+   background -- so it's unmistakable at a glance as a separate, ongoing
+   procedure rather than a continuation of the law above it. */
+.policy-cycle-revision {
+  margin-top: 18px;
+  padding: 16px 18px;
+  background: var(--revision-bg);
+  border: 1px solid var(--revision-accent);
+  border-left: 3px solid var(--revision-accent);
+  border-radius: 3px;
+}
+
+.policy-cycle-revision h4 {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  color: var(--revision-accent-dark);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.policy-cycle-revision-badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--revision-accent);
+  color: white;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.policy-cycle-revision .policy-cycle-source {
+  border-top-color: var(--revision-accent);
+}
+
+.policy-cycle-revision .policy-cycle-source a:hover {
+  color: var(--revision-accent-dark);
 }
 
 .site-footer {
