@@ -18,9 +18,11 @@
 # ECFR's foreign-policy content there.
 #
 # actor_type classifies the SOURCE itself (not the article), one of:
-#   think-tank  -- academic / independent research institute
+#   think-tank  -- independent research institute
+#   academic    -- peer-reviewed journal / scholarly publisher
 #   political   -- political-party-affiliated (EP group foundations etc.)
-#   lobby       -- lobby groups, industry associations, and advocacy NGOs
+#   industry    -- trade associations and corporate/sector lobby groups
+#   ngo         -- advocacy NGOs, campaign groups, watchdog organisations
 # This is a judgment call for a few borderline orgs (documented inline
 # where relevant) -- adjust freely if you disagree with a classification.
 #
@@ -42,7 +44,7 @@ sources:
   - name: CAN Europe
     url: https://caneurope.org/feed
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO coalition (Climate Action Network) -- advocacy-oriented.
   - name: IEEP
     url: https://ieep.eu/news/feed/
@@ -53,22 +55,22 @@ sources:
   - name: EEB (European Environmental Bureau)
     url: https://eeb.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO umbrella federation -- advocacy-oriented.
   - name: Carbon Market Watch
     url: https://carbonmarketwatch.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO watchdog -- advocacy-oriented.
   - name: Zero Waste Europe
     url: https://www.zerowasteeurope.eu/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO network -- advocacy-oriented.
   - name: Corporate Europe Observatory
     url: https://corporateeurope.org/en/rss.xml
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO watchdog (lobbying transparency) -- also a broad-topic source
     # relying on the keyword filter to surface only its Green Deal-relevant
     # content. Its feed dumps full article bodies into <description>,
@@ -81,12 +83,12 @@ sources:
   - name: Sandbag
     url: https://sandbag.be/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO, campaign-oriented on carbon pricing.
   - name: Bellona
     url: https://bellona.org/feed
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO foundation -- advocacy-oriented.
   - name: RAP Europe (Regulatory Assistance Project)
     url: https://www.raponline.org/feed/
@@ -144,7 +146,7 @@ sources:
   - name: Green10
     url: https://green10.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # Coalition of environmental NGOs.
     # Structurally valid RSS but returned zero items at last check --
     # keep tracking rather than treat as permanently dead.
@@ -153,66 +155,66 @@ sources:
   - name: Airlines for Europe (A4E)
     url: https://a4e.eu/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Aviation. Feed works but posting is infrequent (last seen Jan 2025 at
     # last check) -- expect it to often contribute 0 items in a given week.
   - name: PlasticsEurope
     url: https://plasticseurope.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Plastics industry. Actively updated.
   - name: IOGP
     url: https://www.iogp.org/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Oil & gas producers (global body, not EU-only, but covers EU-relevant
     # content). Actively updated.
   - name: Cefic
     scraper: cefic
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Chemical industry.
   - name: Eurofer
     scraper: eurofer
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Steel industry.
   - name: Eurelectric
     scraper: eurelectric
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Electricity industry.
   - name: European Aluminium
     url: https://european-aluminium.eu/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Confirmed to exist (valid RSS structure) but returned zero items at
     # last check -- kept in case it starts publishing through the feed.
   - name: Concawe
     url: https://www.concawe.eu/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Oil refiners' environmental science association. Confirmed to exist
     # but currently empty -- same as European Aluminium above.
   - name: BusinessEurope
     url: https://www.businesseurope.eu/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: industry
     # Cross-industry. Confirmed to exist but currently empty.
 
   # --- NGOs ------------------------------------------------------------------
   - name: Greenpeace EU
     url: https://www.greenpeace.org/eu-unit/feed/
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
   - name: ClientEarth
     scraper: clientearth
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
   - name: European Climate Foundation
     scraper: european_climate_foundation
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # Grantmaking/coordinating foundation, advocacy-adjacent -- borderline
     # think-tank/lobby call, went with lobby given its network-building role.
 
@@ -226,7 +228,7 @@ sources:
   - name: Transport & Environment
     scraper: transport_environment
     field: green-deal
-    actor_type: lobby
+    actor_type: ngo
     # NGO campaign group, despite the neutral-sounding name.
   - name: PIK Potsdam
     scraper: pik_potsdam
@@ -282,7 +284,7 @@ sources:
   - name: EPLO (European Peacebuilding Liaison Office)
     url: https://eplo.org/feed/
     field: security
-    actor_type: lobby
+    actor_type: ngo
     # NGO network.
   - name: FIIA (Finnish Institute of International Affairs)
     url: https://fiia.fi/en/feed
