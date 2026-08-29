@@ -40,6 +40,7 @@ const ACTOR_LABELS = {
   political: "Political",
   industry: "Industry & Lobby Groups",
   ngo: "NGO & Advocacy",
+  "eu-institution": "EU Institutions",
 };
 
 // Plain-language explainer + "why it matters" + link to the original legal
