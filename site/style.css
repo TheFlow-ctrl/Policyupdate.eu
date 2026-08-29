@@ -126,6 +126,55 @@ h1, h2, h3 {
   cursor: not-allowed;
 }
 
+.topic-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 24px;
+}
+
+.topic-tab {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.topic-tab:hover {
+  border-color: var(--gold-dark);
+  color: var(--navy-950);
+}
+
+.topic-tab.active {
+  background: var(--navy-950);
+  border-color: var(--navy-950);
+  color: white;
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.entry-tag {
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
 .signup {
   background: var(--card-bg);
   border: 1px solid var(--border);
