@@ -38,25 +38,35 @@ EXCERPT_CHARS = 600
 # everything from a general-topic source, since e.g. a defense/foreign-policy
 # article has no reason to mention "climate" or "carbon".
 GREEN_DEAL_KEYWORDS = [
-    "climate change", "climate", "climate crisis", "climate policy", "climate diplomacy",
+    "climate change", "climate crisis", "climate policy", "climate diplomacy",
     "climate action", "climate finance", "climate adaptation", "climate mitigation",
+    "world climate conference", "un climate conference",
     "green deal", "fit for 55", "cbam", "carbon border adjustment",
     "emissions trading", "eu ets", "ets", "ets2", "ets 2",
     "nature restoration law",
     "nature restoration", "circular economy", "biodiversity",
-    "renewable energy", "renewables", "energy transition", "decarbonisation",
+    "renewable energy", "renewables", "energy transition", "energy policy",
+    "energy security", "decarbonisation",
     "decarbonization", "methane", "fossil fuel", "fossil fuels", "net zero",
-    "net-zero", "clean energy", "energy efficiency", "solar", "solar power", "wind power", "wind mills",
-    "wind energy", "coal phase-out", "coal phase out", "energy",
-    "sustainability", "sustainable", "emissions", "carbon", "environment", "transition",
-    "environmental", "pollution", "deforestation", "ecosystem", "ecosystems",
+    "net-zero", "clean energy", "energy efficiency", "solar power", "wind power",
+    "wind energy", "coal phase-out", "coal phase out", "just transition",
+    "green transition",
+    "sustainability", "sustainable", "emissions", "carbon", "environmental policy",
+    "environmental regulation", "pollution", "deforestation", "ecosystem", "ecosystems",
     "biodiversity loss", "air quality", "water quality", "plastic pollution",
     "single-use plastics", "recycling", "waste management", "greenhouse gas",
     "greenhouse gases", "carbon tax", "carbon price", "carbon pricing",
-    "green transition", "just transition", "CCUS", "CCU", "CCS", "biogenic",
+    "CCUS", "CCU", "CCS", "biogenic",
     "Clean Industrial Deal", "Article 6", "Paris Agreement", "Kyoto", "UNFCCC",
     "UNEP", "EPR", "Extended Producer Responsibility",
 ]
+# Removed as too broad after real false positives: bare "climate", "energy",
+# "transition", "solar", "environment", "wind mills". Each matched
+# incidental mentions in off-topic content (e.g. a schools-outreach article
+# titled "...to the World Climate Conference" matched on bare "climate";
+# VTT -- a large multi-domain applied-research institute -- produced mostly
+# noise because "energy" appears constantly in purely technical contexts).
+# Kept the same ideas but as more specific multi-word phrases instead.
 
 _KEYWORD_PATTERN = re.compile(
     r"\b(" + "|".join(re.escape(k) for k in GREEN_DEAL_KEYWORDS) + r")\b",
@@ -182,7 +192,12 @@ def fetch_recent_entries(name, url, field, cutoff):
     recent = []
     for entry in feed.entries:
         published = entry_date(entry)
-        if published is not None and published < cutoff:
+        # An entry with no parseable date is EXCLUDED rather than included:
+        # this is a "last N days" digest, so we can't confirm recency for
+        # an undated item, and defaulting to "include" let stale/irrelevant
+        # items resurface indefinitely (this was a real bug -- see
+        # backend_scrapers.py's matching fix for the same issue).
+        if published is None or published < cutoff:
             continue
 
         title, excerpt = entry_text_fields(entry)
@@ -218,7 +233,11 @@ def fetch_source(source, cutoff):
             print(f"  [warning] scraper for {name} failed: {exc}")
             return []
 
-    return fetch_recent_entries(name, source["url"], field, cutoff)
+    try:
+        return fetch_recent_entries(name, source["url"], field, cutoff)
+    except Exception as exc:
+        print(f"  [warning] feed for {name} failed: {exc}")
+        return []
 
 
 def main():
@@ -231,8 +250,18 @@ def main():
         field = source.get("field", "green-deal")
         print(f"Checking {name} ({field})...")
 
-        entries = fetch_source(source, cutoff)
-        entries = apply_relevance_filter(entries, field)
+        try:
+            entries = fetch_source(source, cutoff)
+            entries = apply_relevance_filter(entries, field)
+        except Exception as exc:
+            # Belt-and-suspenders: fetch_source() already catches errors
+            # from individual scrapers/feeds, but this outer guard makes
+            # sure a bug anywhere in a single source's handling (or in
+            # apply_relevance_filter itself) can never take down the whole
+            # run -- with 30+ sources, one bad actor shouldn't block every
+            # other source's content from being published.
+            print(f"  [warning] unexpected error processing {name}, skipping: {exc}")
+            entries = []
 
         print(f"  found {len(entries)} relevant recent item(s)")
         all_entries.extend(entries)
