@@ -79,6 +79,85 @@ _KEYWORD_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Sub-categories under the green-deal field: tags each entry with the
+# specific EU laws/files it mentions, so the site can offer a secondary
+# filter (see the frontend's TOPIC_LABELS, which must be kept in sync with
+# the ids used here). An entry can carry multiple tags, or none -- lots of
+# genuinely relevant Green Deal content won't name a specific law.
+#
+# (tag id, display label, keyword phrases to match)
+LEGISLATION_TAGS = [
+    ("ets1", "ETS I", [
+        "eu ets", "emissions trading scheme", "emissions trading system",
+    ]),
+    ("ets2", "ETS II", [
+        "ets2", "ets 2", "ets ii", "emissions trading for buildings",
+        "emissions trading for road transport", "new emissions trading system",
+        "second emissions trading system", "buildings and transport ets",
+    ]),
+    ("cbam", "CBAM", [
+        "cbam", "carbon border adjustment mechanism", "carbon border adjustment",
+    ]),
+    ("red3", "RED III", [
+        "red iii", "red 3", "renewable energy directive",
+    ]),
+    ("csddd", "CSDDD", [
+        "csddd", "corporate sustainability due diligence directive",
+        "due diligence directive",
+    ]),
+    ("crma", "Critical Raw Materials Act", [
+        "critical raw materials act", "crma", "critical raw materials regulation",
+    ]),
+    ("nzia", "Net Zero Industry Act", [
+        "net zero industry act", "nzia",
+    ]),
+    ("csrd", "CSRD", [
+        "csrd", "corporate sustainability reporting directive",
+    ]),
+    ("taxonomy", "EU Taxonomy", [
+        "eu taxonomy", "taxonomy regulation", "sustainable finance taxonomy",
+    ]),
+    ("sfdr", "SFDR", [
+        "sfdr", "sustainable finance disclosure regulation",
+    ]),
+    ("eudr", "EUDR", [
+        "eudr", "eu deforestation regulation", "deforestation regulation",
+        "deforestation-free products",
+    ]),
+    ("nature-restoration", "Nature Restoration Law", [
+        "nature restoration law", "nature restoration regulation",
+    ]),
+    ("lulucf", "LULUCF", [
+        "lulucf", "land use, land-use change and forestry",
+    ]),
+    ("ccus", "CCUS", [
+        "ccus", "carbon capture, utilisation and storage",
+        "carbon capture and storage", "carbon capture utilization and storage",
+    ]),
+    ("eed", "EED", [
+        "eed", "energy efficiency directive",
+    ]),
+]
+
+_LEGISLATION_PATTERNS = {
+    tag_id: re.compile(
+        r"\b(" + "|".join(re.escape(k) for k in keywords) + r")\b",
+        re.IGNORECASE,
+    )
+    for tag_id, _label, keywords in LEGISLATION_TAGS
+}
+
+
+def tag_legislation(title, excerpt):
+    """Return the list of legislation-tag ids whose keywords appear in
+    title+excerpt. An entry can match zero, one, or several tags."""
+    text = f"{title or ''} {excerpt or ''}"
+    return [
+        tag_id
+        for tag_id, _label, _keywords in LEGISLATION_TAGS
+        if _LEGISLATION_PATTERNS[tag_id].search(text)
+    ]
+
 _TAG_RE = re.compile(r"<[^>]+>")
 _WHITESPACE_RE = re.compile(r"\s+")
 
@@ -330,6 +409,13 @@ def main():
             # other source's content from being published.
             print(f"  [warning] unexpected error processing {name}, skipping: {exc}")
             entries = []
+
+        for entry in entries:
+            entry["tags"] = (
+                tag_legislation(entry["title"], entry["summary"])
+                if field == "green-deal"
+                else []
+            )
 
         print(f"  found {len(entries)} relevant recent item(s)")
         all_entries.extend(entries)
