@@ -6,12 +6,32 @@
       "label": "August 2026",
       "entries": [
         {
+          "org": "European Environmental Law Review",
+          "field": "green-deal",
+          "title": "Tortious Liability for Climate Change Inaction: Recent Trends across Jurisdictions",
+          "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026006",
+          "date": "2026-08-29",
+          "summary": "The article tracks a change of approach taken by national courts within and across legal systems to assessing climate actions in tort. The polycentric nature of climate policy, which had proven fatal to plaintiffs\u2019 earlier cases in common law jurisdictions, has rarely struck judges in continental Europe as a particularly effective defence. Nonetheless, to civil courts, too, the difficulties of linking individual harm to a specific greenhouse gas (GHG) emitter have until recently made the adverse effects of climate change appear conceptually inapt for redress by means of tortious liability.\u2026",
+          "actor_type": "academic",
+          "tags": []
+        },
+        {
+          "org": "European Environmental Law Review",
+          "field": "green-deal",
+          "title": "Balancing Flexibility and Predictable Harmonization for Hydrogen Transmission",
+          "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026007",
+          "date": "2026-08-29",
+          "summary": "The hydrogen and gas decarbonization package introduces a legal framework for hydrogen transmission. To enable a hydrogen market in Europe as a key building block on the way to a climate neutral economy, a cross-border pipeline infrastructure must be constructed, which demands harmonized regulation. This article analyses how far the new legal framework strikes a balance between flexibility, which is needed to ramp up a new infrastructure, legal predictability, which is needed to facilitate long-term investments and strategies, and harmonization, which is needed for cross-border energy\u2026",
+          "actor_type": "academic",
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI",
           "link": "https://www.chathamhouse.org/events/all/standard-event/elina-valtonen-minister-foreign-affairs-finland-whether-europe-can",
           "date": "2026-08-28",
-          "summary": "Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI 3 September 2026 — 11:00 TO 12:00 BST Anonymous (not verified) 28 August 2026 Chatham House and Online Hear from Finland’s foreign minister on how Europe can innovate, build strength and compete in artificial intelligence. Hear from Finland’s Foreign Minister on how Europe can compete, innovate and build strength in the age of AI. Artificial intelligence is reshaping economic competition, security and political power at a pace that is testing existing institutions and assumptions. As the US…",
+          "summary": "Elina Valtonen, Minister for Foreign Affairs of Finland, on whether Europe can compete in the age of AI 3 September 2026 \u2014 11:00 TO 12:00 BST Anonymous (not verified) 28 August 2026 Chatham House and Online Hear from Finland\u2019s foreign minister on how Europe can innovate, build strength and compete in artificial intelligence. Hear from Finland\u2019s Foreign Minister on how Europe can compete, innovate and build strength in the age of AI. Artificial intelligence is reshaping economic competition, security and political power at a pace that is testing existing institutions and assumptions. As the US\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -21,17 +41,17 @@
           "title": "Zambia's 2026 election: A test of democratic resilience",
           "link": "https://www.chathamhouse.org/events/all/standard-event/zambias-2026-election-test-democratic-resilience",
           "date": "2026-08-28",
-          "summary": "Zambia's 2026 election: A test of democratic resilience 22 September 2026 — 14:00 TO 15:00 BST Anonymous (not verified) 28 August 2026 Online Discover what the election aftermath means for politics, policy and investment. Discover what the election aftermath means for politics, policy and investment Zambia’s Electoral Commission announced that President Hakainde Hichilema had secured a second term after winning 60 per cent of the vote. Despite a peaceful polling day, counting was paused because of security concerns and questions have since emerged over reported discrepancies between…",
+          "summary": "Zambia's 2026 election: A test of democratic resilience 22 September 2026 \u2014 14:00 TO 15:00 BST Anonymous (not verified) 28 August 2026 Online Discover what the election aftermath means for politics, policy and investment. Discover what the election aftermath means for politics, policy and investment Zambia\u2019s Electoral Commission announced that President Hakainde Hichilema had secured a second term after winning 60 per cent of the vote. Despite a peaceful polling day, counting was paused because of security concerns and questions have since emerged over reported discrepancies between\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "SWP (German Institute for International and Security Affairs)",
           "field": "security",
-          "title": "Return Hubs in European Migration Policy",
+          "title": "Return Hubs in European Migration\u00a0Policy",
           "link": "https://www.swp-berlin.org/en/publication/return-hubs-in-european-migration-policy",
           "date": "2026-08-28",
-          "summary": "A Residual Instrument with Systemic Risks The EU Return Regulation creates a legal basis for transferring individuals subject to enforceable return decisions to third countries willing to accept them, even where they have no prior connection to that country. This makes so-called return hubs an increasingly likely prospect. The political appeal is clear: return hubs offer governments a visible way to demonstrate enforcement at a moment when the EU Pact on Migration and Asylum depends on credible implementation. But political salience should not be mistaken for operational effectiveness.…",
+          "summary": "A Residual Instrument with Systemic Risks The EU Return Regulation creates a legal basis for transferring individuals subject to enforceable return decisions to third countries willing to accept them, even where they have no prior connection to that country. This makes so-called return hubs an increasingly likely prospect. The political appeal is clear: return hubs offer governments a visible way to demonstrate enforcement at a moment when the EU Pact on Migration and Asylum depends on credible implementation. But political salience should not be mistaken for operational effectiveness.\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -46,32 +66,42 @@
           "tags": []
         },
         {
+          "org": "ECFR",
+          "field": "security",
+          "title": "Can a ceasefire survive Israel\u2019s election?",
+          "link": "https://ecfr.eu/podcasts/episode/can-a-ceasefire-survive-israels-election/",
+          "date": "2026-08-28",
+          "summary": "This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR, to unpack a turbulent summer in Israel and the Palestinian territories. While Palestinian factions in Gaza have agreed in principle to decommission their weapons , the proposal faces significant obstacles, not least opposition from the Israeli government. Meanwhile settler violence is surging and settlement construction is spreading, redrawing the map faster than any negotiation could. Hugh explains why a sustainable ceasefire cannot rely on disarmament alone but requires a broader political process that\u2026",
+          "actor_type": "think-tank",
+          "tags": []
+        },
+        {
           "org": "E3G",
           "field": "green-deal",
           "title": "Planning for resilience",
           "link": "https://www.e3g.org/news/planning-for-resilience/?utm_source=rss&utm_medium=rss&utm_campaign=planning-for-resilience",
           "date": "2026-08-27",
-          "summary": "In 2026, Europe endured one of its hottest ever summers putting the EU’s resilience and energy security to the test. Now, this autumn’s legislative agenda presents two opportunities to embed lessons from this summer’s heatwaves and plan for a secure and resilient future. The forthcoming Climate Resilience and Risk Management Integrated Framework is a first step to ensuring climate impacts are built into the decisions that shape Europe’s economy. The revision of the Energy Security Framework can be an early test of what this looks like in practice – and whether Europe is ready to plan its…",
+          "summary": "In 2026, Europe endured one of its hottest ever summers putting the EU\u2019s resilience and energy security to the test. Now, this autumn\u2019s legislative agenda presents two opportunities to embed lessons from this summer\u2019s heatwaves and plan for a secure and resilient future. The forthcoming Climate Resilience and Risk Management Integrated Framework is a first step to ensuring climate impacts are built into the decisions that shape Europe\u2019s economy. The revision of the Energy Security Framework can be an early test of what this looks like in practice \u2013 and whether Europe is ready to plan its\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "ECFR",
           "field": "security",
-          "title": "Talk is cheap: Europe’s defence promise meets the EU budget",
+          "title": "Talk is cheap: Europe\u2019s defence promise meets the EU budget",
           "link": "https://ecfr.eu/article/talk-is-cheap-europes-defence-promise-meets-the-eu-budget/",
           "date": "2026-08-27",
-          "summary": "Cover image: picture alliance / Hans Lucas | Martin Bertrand US secretary of state Marco Rubio described NATO’s July gathering in Ankara, two months before it convened, as “one of the more important leaders’ summits in [its] history.” The summit confirmed that Europeans have accepted America’s expectation that they do more for their own security. The Ankara declaration recognised that “European allies and Canada, working together with the United States, are assuming greater responsibility for the alliance’s defence.” Accepting that shift is one thing; paying for it is another. For European…",
+          "summary": "Cover image: picture alliance / Hans Lucas | Martin Bertrand US secretary of state Marco Rubio described NATO\u2019s July gathering in Ankara, two months before it convened, as \u201cone of the more important leaders\u2019 summits in [its] history.\u201d The summit confirmed that Europeans have accepted America\u2019s expectation that they do more for their own security. The Ankara declaration recognised that \u201cEuropean allies and Canada, working together with the United States, are assuming greater responsibility for the alliance\u2019s defence.\u201d Accepting that shift is one thing; paying for it is another. For European\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "Chatham House",
           "field": "security",
-          "title": "Iran, Gaza, Trump and Netanyahu: Understanding the Middle East’s crises",
+          "title": "Iran, Gaza, Trump and Netanyahu: Understanding the Middle East\u2019s crises",
           "link": "https://www.chathamhouse.org/2026/08/iran-gaza-trump-netanyahu-understanding-middle-easts-crises-independent-thinking-podcast",
           "date": "2026-08-27",
-          "summary": "Iran, Gaza, Trump and Netanyahu: Understanding the Middle East’s crises Audio sseth.drupal@c… 27 August 2026 In this week’s episode of Independent Thinking, our experts discuss the big picture in the Middle East and how the various conflicts are shaping relations in the region. It’s been a tumultuous year in the Middle East – and it’s far from over. Six months after the US and Israel launched their offensive against Iran, the conflict continues to disrupt trade, energy and food security. President Trump struggles to escape a deadlock that threatens to seriously damage him in the American…",
+          "summary": "Iran, Gaza, Trump and Netanyahu: Understanding the Middle East\u2019s crises Audio sseth.drupal@c\u2026 27 August 2026 In this week\u2019s episode of Independent Thinking, our experts discuss the big picture in the Middle East and how the various conflicts are shaping relations in the region. It\u2019s been a tumultuous year in the Middle East \u2013 and it\u2019s far from over. Six months after the US and Israel launched their offensive against Iran, the conflict continues to disrupt trade, energy and food security. President Trump struggles to escape a deadlock that threatens to seriously damage him in the American\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -81,7 +111,7 @@
           "title": "Iraq Initiative Conference 2026",
           "link": "https://www.chathamhouse.org/events/all/standard-event/iraq-initiative-conference-2026",
           "date": "2026-08-27",
-          "summary": "Iraq Initiative Conference 2026 11 November 2026 — 09:00 TO 17:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online The eighth annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq’s new government can navigate growing regional and domestic pressures and reinforce national sovereignty. The eight annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq’s new government can navigate growing regional and domestic pressures…",
+          "summary": "Iraq Initiative Conference 2026 11 November 2026 \u2014 09:00 TO 17:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online The eighth annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq\u2019s new government can navigate growing regional and domestic pressures and reinforce national sovereignty. The eight annual conference convenes Iraqi and international policymakers, business leaders, experts, and civil society to assess whether Iraq\u2019s new government can navigate growing regional and domestic pressures\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -91,7 +121,7 @@
           "title": "Global trade 2027",
           "link": "https://www.chathamhouse.org/events/all/conference/global-trade-2027",
           "date": "2026-08-27",
-          "summary": "Global trade 2027 17 March 2027 TO 18 March 2027 — 09:00 TO 13:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join government officials, global business and civil society leaders to explore strategies for navigating economic uncertainty in an increasingly complex geopolitical landscape. Chatham House’s 2027 Global Trade Conference brings together government officials, global business and civil society leaders to examine pivotal developments in global trade policy. Navigating global economic uncertainty Over the past year, climate and geopolitical shocks have…",
+          "summary": "Global trade 2027 17 March 2027 TO 18 March 2027 \u2014 09:00 TO 13:00 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join government officials, global business and civil society leaders to explore strategies for navigating economic uncertainty in an increasingly complex geopolitical landscape. Chatham House\u2019s 2027 Global Trade Conference brings together government officials, global business and civil society leaders to examine pivotal developments in global trade policy. Navigating global economic uncertainty Over the past year, climate and geopolitical shocks have\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -101,47 +131,47 @@
           "title": "Security and defence 2027",
           "link": "https://www.chathamhouse.org/events/all/conference/security-and-defence-2027",
           "date": "2026-08-27",
-          "summary": "Security and defence 2027 3 March 2027 TO 4 March 2027 — 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and international security experts for a day and a half of unique discussions on the future of security and defence across modern domains of conflict, and how to prepare for an uncertain future. Chatham House’s 2027 Security and Defence Conference convenes policymakers, military leaders and industry stakeholders to shape solutions for navigating an increasingly complex threat landscape. Adjusting to the…",
+          "summary": "Security and defence 2027 3 March 2027 TO 4 March 2027 \u2014 09:00 TO 12:30 GMT Anonymous (not verified) 27 August 2026 Chatham House and Online Join senior policymakers, business leaders and international security experts for a day and a half of unique discussions on the future of security and defence across modern domains of conflict, and how to prepare for an uncertain future. Chatham House\u2019s 2027 Security and Defence Conference convenes policymakers, military leaders and industry stakeholders to shape solutions for navigating an increasingly complex threat landscape. Adjusting to the\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "SIPRI",
           "field": "security",
-          "title": "Surmonter les Obstacles à L’intégration des Réfugiés Soudanais au Tchad : Éducation, Emploi et Accès à la Terre",
+          "title": "Surmonter les Obstacles \u00e0 L\u2019int\u00e9gration des R\u00e9fugi\u00e9s Soudanais au Tchad : \u00c9ducation, Emploi et Acc\u00e8s \u00e0 la Terre",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/surmonter-les-obstacles-lintegration-des-refugies-soudanais-au-tchad-education-emploi-et-acces-la",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "SIPRI",
           "field": "security",
-          "title": "التغلب على العوائق أمام اندماج اللاجئين السودانيين في تشاد: التعليم والعمل والوصول إلى الأراضي",
+          "title": "\u0627\u0644\u062a\u063a\u0644\u0628 \u0639\u0644\u0649 \u0627\u0644\u0639\u0648\u0627\u0626\u0642 \u0623\u0645\u0627\u0645 \u0627\u0646\u062f\u0645\u0627\u062c \u0627\u0644\u0644\u0627\u062c\u0626\u064a\u0646 \u0627\u0644\u0633\u0648\u062f\u0627\u0646\u064a\u064a\u0646 \u0641\u064a \u062a\u0634\u0627\u062f: \u0627\u0644\u062a\u0639\u0644\u064a\u0645 \u0648\u0627\u0644\u0639\u0645\u0644 \u0648\u0627\u0644\u0648\u0635\u0648\u0644 \u0625\u0644\u0649 \u0627\u0644\u0623\u0631\u0627\u0636\u064a",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/altghlb-ly-alwayq-amam-andmaj-allajyyn-alswdanyyn-fy-tshad-altlym-walml-walwswl-aly-alarady",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "SIPRI",
           "field": "security",
-          "title": "Sous-financement Humanitaire au Tchad : Implications pour les Populations Vulnérables",
+          "title": "Sous-financement Humanitaire au Tchad : Implications pour les Populations Vuln\u00e9rables",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/sous-financement-humanitaire-au-tchad-implications-pour-les-populations-vulnerables",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "SIPRI",
           "field": "security",
-          "title": "فجوات تمويل العمل الإنساني في تشاد: الآ ثار المترتبة على الفئات السكانية الأكثر هشاشة",
+          "title": "\u0641\u062c\u0648\u0627\u062a \u062a\u0645\u0648\u064a\u0644 \u0627\u0644\u0639\u0645\u0644 \u0627\u0644\u0625\u0646\u0633\u0627\u0646\u064a \u0641\u064a \u062a\u0634\u0627\u062f: \u0627\u0644\u0622 \u062b\u0627\u0631 \u0627\u0644\u0645\u062a\u0631\u062a\u0628\u0629 \u0639\u0644\u0649 \u0627\u0644\u0641\u0626\u0627\u062a \u0627\u0644\u0633\u0643\u0627\u0646\u064a\u0629 \u0627\u0644\u0623\u0643\u062b\u0631 \u0647\u0634\u0627\u0634\u0629",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/fjwat-tmwyl-alml-alansany-fy-tshad-ala-thar-almtrtbt-ly-alfyat-alskanyt-alakthr-hshasht",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -151,7 +181,7 @@
           "title": "Overcoming Barriers to Integration for Sudanese Refugees in Chad: Education, Employment and Land Access",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/overcoming-barriers-integration-sudanese-refugees-chad-education-employment-and-land-access",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -161,7 +191,7 @@
           "title": "The Humanitarian Funding Gap in Chad: Implications for Vulnerable Populations",
           "link": "https://www.sipri.org/publications/2026/sipri-fact-sheets/humanitarian-funding-gap-chad-implications-vulnerable-populations",
           "date": "2026-08-27",
-          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
+          "summary": "In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad\u2013Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -191,7 +221,7 @@
           "title": "Europe cannot deliver a circular plastics economy without enabling innovation",
           "link": "https://plasticseurope.org/media/europe-cannot-deliver-circular-plastics-economy-without-enabling-innovation/",
           "date": "2026-08-26",
-          "summary": "How innovation in technologies demonstrates the need to modernise Europe’s recycling framework Europe has set ambitious circular economy, recycled content and climate objectives. For plastics, these objectives can help reduce waste to landfill and incineration, strengthen resource efficiency, and support a more resilient European industrial base. Yet Europe faces a striking contradiction. It calls for innovation, but too often regulates the circular economy through frameworks designed only around technologies that already operate at scale. White_paper_innovation_final Download The post Europe…",
+          "summary": "How innovation in technologies demonstrates the need to modernise Europe\u2019s recycling framework Europe has set ambitious circular economy, recycled content and climate objectives. For plastics, these objectives can help reduce waste to landfill and incineration, strengthen resource efficiency, and support a more resilient European industrial base. Yet Europe faces a striking contradiction. It calls for innovation, but too often regulates the circular economy through frameworks designed only around technologies that already operate at scale. White_paper_innovation_final Download The post Europe\u2026",
           "actor_type": "industry",
           "tags": []
         },
@@ -201,17 +231,17 @@
           "title": "Why the clean energy transition needs information integrity",
           "link": "https://www.e3g.org/news/why-the-clean-energy-transition-needs-information-integrity/?utm_source=rss&utm_medium=rss&utm_campaign=why-the-clean-energy-transition-needs-information-integrity",
           "date": "2026-08-25",
-          "summary": "The energy transition is accelerating, with renewable energy generation continuing to break records . Yet this is taking place in an increasingly contested information environment – one in which information manipulation can shape public perceptions, political discourses and ultimately the conditions for climate action. This matters because climate and energy policy are politically sensitive. They are particularly vulnerable to attempts to influence public opinion, as it runs counter to the interests of political and economic incumbents benefiting from the fossil fuel economy. Rapid advances…",
+          "summary": "The energy transition is accelerating, with renewable energy generation continuing to break records . Yet this is taking place in an increasingly contested information environment \u2013 one in which information manipulation can shape public perceptions, political discourses and ultimately the conditions for climate action. This matters because climate and energy policy are politically sensitive. They are particularly vulnerable to attempts to influence public opinion, as it runs counter to the interests of political and economic incumbents benefiting from the fossil fuel economy. Rapid advances\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
         {
           "org": "IEEP",
           "field": "green-deal",
-          "title": "Tracking the world’s hidden carbon: Launch of the ECF Traded Emissions Tracker",
+          "title": "Tracking the world\u2019s hidden carbon: Launch of the ECF\u00a0Traded Emissions Tracker",
           "link": "https://ieep.eu/news/tracking-the-worlds-hidden-carbon-launch-of-the-ecf-traded-emissions-tracker/",
           "date": "2026-08-25",
-          "summary": "The European Climate Foundation (ECF) and the Institute for European Environmental Policy (IEEP) invite you to the launch of the Traded Emissions Tracker. The post Tracking the world’s hidden carbon: Launch of the ECF Traded Emissions Tracker appeared first on IEEP AISBL .",
+          "summary": "The European Climate Foundation (ECF) and the Institute for European Environmental Policy (IEEP) invite you to the launch of the Traded Emissions Tracker. The post Tracking the world\u2019s hidden carbon: Launch of the ECF Traded Emissions Tracker appeared first on IEEP AISBL .",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -221,7 +251,7 @@
           "title": "Nigeria will need more than a bigger army to tackle security challenges",
           "link": "https://www.chathamhouse.org/2026/08/nigeria-will-need-more-bigger-army-tackle-security-challenges",
           "date": "2026-08-25",
-          "summary": "Nigeria will need more than a bigger army to tackle security challenges Expert comment LToremark 25 August 2026 Without accompanying reforms, the risk is that President Tinubu’s plan only makes Nigeria’s army bigger but not better. In July, President Bola Tinubu announced a major expansion of the Nigerian Army, adding four new divisions to its existing eight. Rather than framing it as a long-planned response to Nigeria’s many worsening security challenges , Tinubu indicated that the announcement was a direct response to a mass school kidnapping in his home region, the latest in a series of…",
+          "summary": "Nigeria will need more than a bigger army to tackle security challenges Expert comment LToremark 25 August 2026 Without accompanying reforms, the risk is that President Tinubu\u2019s plan only makes Nigeria\u2019s army bigger but not better. In July, President Bola Tinubu announced a major expansion of the Nigerian Army, adding four new divisions to its existing eight. Rather than framing it as a long-planned response to Nigeria\u2019s many worsening security challenges , Tinubu indicated that the announcement was a direct response to a mass school kidnapping in his home region, the latest in a series of\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -251,7 +281,7 @@
           "title": "Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty",
           "link": "https://www.chathamhouse.org/events/all/standard-event/botswanas-future-vice-president-gaolathe-economic-resilience-amid-global",
           "date": "2026-08-24",
-          "summary": "Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty 17 September 2026 — 14:30 TO 15:30 BST Anonymous (not verified) 24 August 2026 Chatham House and Online Hear Vice President Ndaba Nkosinathi Gaolathe set out Botswana’s priorities for inclusive economic reform. Hear Vice President and Minister of Finance HE Ndaba Gaolathe set out Botswana’s priorities for inclusive economic reform. As Botswana marks 60 years of independence, a weakening of the diamond market has exposed the limits of the model that drove the country’s rise to upper-middle-income status.…",
+          "summary": "Botswana's future: Vice President Gaolathe on economic resilience amid global uncertainty 17 September 2026 \u2014 14:30 TO 15:30 BST Anonymous (not verified) 24 August 2026 Chatham House and Online Hear Vice President Ndaba Nkosinathi Gaolathe set out Botswana\u2019s priorities for inclusive economic reform. Hear Vice President and Minister of Finance HE Ndaba Gaolathe set out Botswana\u2019s priorities for inclusive economic reform. As Botswana marks 60 years of independence, a weakening of the diamond market has exposed the limits of the model that drove the country\u2019s rise to upper-middle-income status.\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
@@ -261,7 +291,7 @@
           "title": "Cybersecurity in the Healthcare Sector",
           "link": "https://www.swp-berlin.org/en/publication/cybersecurity-in-the-healthcare-sector",
           "date": "2026-08-24",
-          "summary": "An Integrated Approach to National, European and Global Resilience The healthcare sector worldwide is facing an increasing threat from cyberattacks. Between 2022 and 2025, the European Repository of Cyber Incidents (EuRepoC) rec­orded a total of 351 significant attacks on healthcare facilities. These data provide initial insights into the impact of cyberattacks on healthcare systems and sectors, and the crisis management that follows. They also highlight that such attacks pose a threat to public health and national security. The data analysis shows that national critical sectors and the…",
+          "summary": "An Integrated Approach to National, European and Global Resilience The healthcare sector worldwide is facing an increasing threat from cyberattacks. Between 2022 and 2025, the European Repository of Cyber Incidents (EuRepoC) rec\u00adorded a total of 351 significant attacks on healthcare facilities. These data provide initial insights into the impact of cyberattacks on healthcare systems and sectors, and the crisis management that follows. They also highlight that such attacks pose a threat to public health and national security. The data analysis shows that national critical sectors and the\u2026",
           "actor_type": "think-tank",
           "tags": []
         },
