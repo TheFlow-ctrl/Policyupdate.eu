@@ -79,6 +79,83 @@ _KEYWORD_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Stricter subset of GREEN_DEAL_KEYWORDS used ONLY for cross-tagging content
+# from non-green-deal sources (see the cross-tagging block in main()).
+# Primary green-deal sources are dedicated climate/energy feeds, so a fairly
+# broad keyword list is safe there. Cross-tagging instead runs against
+# arbitrary foreign-policy/security/general-topic content, where generic
+# terms cause real false positives -- e.g. an ECFR podcast about the
+# Israeli election ("Can a ceasefire survive Israel's election?") matched
+# on "energy security", a phrase that means something completely different
+# in a Middle East geopolitics context than in an EU decarbonisation one.
+# This list drops bare/overloaded terms (energy policy, energy security,
+# sustainability, sustainable, emissions, carbon, ecosystem(s), recycling,
+# Article 6) that are too generic to safely apply outside a feed that's
+# already climate-dedicated, keeping only phrases specific enough to be
+# unambiguous wherever they appear.
+CROSS_TAG_KEYWORDS = [
+    "climate change", "climate crisis", "climate policy", "climate diplomacy",
+    "climate action", "climate finance", "climate adaptation", "climate mitigation",
+    "world climate conference", "un climate conference",
+    "green deal", "fit for 55", "cbam", "carbon border adjustment",
+    "emissions trading", "eu ets", "ets2", "ets 2",
+    "nature restoration law", "nature restoration", "circular economy",
+    "biodiversity", "biodiversity loss",
+    "renewable energy", "renewables", "energy transition",
+    "decarbonisation", "decarbonization", "methane", "fossil fuel", "fossil fuels",
+    "net zero", "net-zero", "clean energy", "energy efficiency",
+    "solar power", "wind power", "wind energy", "coal phase-out", "coal phase out",
+    "just transition", "green transition",
+    "environmental policy", "environmental regulation", "pollution", "deforestation",
+    "air quality", "water quality", "plastic pollution", "single-use plastics",
+    "waste management", "greenhouse gas", "greenhouse gases",
+    "carbon tax", "carbon price", "carbon pricing",
+    "CCUS", "CCU", "CCS", "biogenic",
+    "Clean Industrial Deal", "Paris Agreement", "Kyoto", "UNFCCC",
+    "UNEP", "EPR", "Extended Producer Responsibility",
+]
+
+_CROSS_TAG_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in CROSS_TAG_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# Filters out event listings and calls for abstracts/papers -- these are
+# administrative notices, not policy publications, and were showing up
+# in the digest (e.g. a Chatham House "Climate and energy 2027" conference
+# listing, an EERA "Call for abstracts" page). Applied globally to every
+# source, not just green-deal, since an event listing is equally
+# out-of-place under any field.
+_EVENT_TITLE_RE = re.compile(
+    r"\b(call for (abstracts|papers|proposals|applications|contributions)|"
+    r"save the date|registration (now )?open)\b",
+    re.IGNORECASE,
+)
+_EVENT_LINK_RE = re.compile(r"/(events?|webinars?)/", re.IGNORECASE)
+
+
+def is_event_or_cfa(title, link):
+    """True if an entry looks like an event listing or a call for
+    abstracts/papers rather than an actual publication."""
+    if title and _EVENT_TITLE_RE.search(title):
+        return True
+    if link and _EVENT_LINK_RE.search(link):
+        return True
+    return False
+
+
+def filter_out_events(entries):
+    """Drop event/call-for-abstracts entries from a list, returning
+    (kept_entries, number_skipped)."""
+    kept = []
+    skipped = 0
+    for entry in entries:
+        if is_event_or_cfa(entry.get("title", ""), entry.get("link", "")):
+            skipped += 1
+        else:
+            kept.append(entry)
+    return kept, skipped
+
 # Sub-categories under the green-deal field: tags each entry with the
 # specific EU laws/files it mentions, so the site can offer a secondary
 # filter (see the frontend's TOPIC_LABELS, which must be kept in sync with
@@ -410,6 +487,10 @@ def main():
             print(f"  [warning] unexpected error processing {name}, skipping: {exc}")
             raw_entries = []
 
+        raw_entries, event_skipped = filter_out_events(raw_entries)
+        if event_skipped:
+            print(f"  filtered out {event_skipped} event/call-for-abstracts item(s)")
+
         for entry in raw_entries:
             entry["actor_type"] = actor_type
 
@@ -441,7 +522,8 @@ def main():
         # field for whenever that tab goes live.
         if field != "green-deal":
             cross_matches = [
-                e for e in raw_entries if is_relevant(e["title"], e["summary"])
+                e for e in raw_entries
+                if _CROSS_TAG_PATTERN.search(f"{e['title']} {e['summary']}")
             ]
             for match in cross_matches:
                 cross_entry = dict(match)  # copy -- don't mutate the original
