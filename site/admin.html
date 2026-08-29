@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Archive Editor — PolicyUpdate.eu (admin)</title>
+<style>
+  :root {
+    --navy-950: #0B1F33;
+    --navy-800: #132C45;
+    --navy-700: #1E3A57;
+    --slate-500: #4C6478;
+    --gold: #C9A227;
+    --gold-dark: #8A6F1E;
+    --text: #16202A;
+    --muted: #5B6B78;
+    --bg: #F4F2EC;
+    --card-bg: #FFFFFF;
+    --border: #DEDACD;
+    --danger: #A6362C;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; color: var(--navy-950); }
+  .hint { color: var(--muted); margin: 0 0 24px; font-size: 0.88rem; }
+  section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  label.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  input, select, textarea {
+    font-family: inherit;
+    font-size: 0.88rem;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text);
+    background: white;
+  }
+  textarea { resize: vertical; }
+  button {
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 3px;
+    border: 1px solid var(--navy-950);
+    background: var(--navy-950);
+    color: white;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  button.secondary { background: none; color: var(--muted); border-color: var(--border); }
+  button.delete-btn { background: none; color: var(--danger); border-color: var(--danger); padding: 5px 10px; font-size: 0.76rem; }
+  .actions { display: flex; gap: 10px; margin-top: 8px; }
+  .status { font-size: 0.82rem; margin: 10px 0 0; color: var(--muted); }
+  .status.error { color: var(--danger); font-weight: 600; }
+  details.howto { margin-bottom: 16px; font-size: 0.82rem; color: var(--muted); }
+  details.howto summary { cursor: pointer; font-weight: 600; color: var(--gold-dark); }
+  details.howto ol { padding-left: 20px; }
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .toolbar input { flex: 1; min-width: 180px; }
+  #entry-count { color: var(--muted); font-size: 0.8rem; white-space: nowrap; }
+  .month-block { border-top: 1px solid var(--border); padding-top: 10px; margin-top: 10px; }
+  .month-block summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--navy-950);
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+  .entry-card {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+  }
+  .entry-card label.field { margin-bottom: 0; }
+  .entry-card label.field:nth-child(1),
+  .entry-card label.field:nth-child(6) { grid-column: 1 / -1; }
+  .card-footer {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+  .open-link { font-size: 0.78rem; color: var(--muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Archive Editor</h1>
+  <p class="hint">
+    Edit or delete entries stored in <code>site/archive.json</code> directly on GitHub.
+    This page isn't linked from the site's navigation — bookmark it if you want quick access.
+  </p>
+
+  <section id="auth-panel">
+    <details class="howto">
+      <summary>How to create a token (one-time setup)</summary>
+      <ol>
+        <li>GitHub → your avatar → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token.</li>
+        <li>Resource owner: your account. Repository access: "Only select repositories" → pick your PolicyUpdate.eu repo.</li>
+        <li>Under Permissions → Repository permissions, set <strong>Contents: Read and write</strong>. Leave everything else as No access.</li>
+        <li>Generate, then paste the token below. It starts with <code>github_pat_</code>. Keep it private — anyone with it can edit this repo.</li>
+      </ol>
+    </details>
+
+    <label class="field">Repository (owner/name)
+      <input id="repo-input" value="theflow-ctrl/Policyupdate.eu">
+    </label>
+    <label class="field">Branch
+      <input id="branch-input" value="main">
+    </label>
+    <label class="field">GitHub personal access token
+      <input id="token-input" type="password" placeholder="github_pat_...">
+    </label>
+    <div class="actions">
+      <button id="load-btn">Load archive</button>
+      <button id="forget-token-btn" class="secondary" type="button">Forget token</button>
+    </div>
+    <p id="auth-status" class="status"></p>
+  </section>
+
+  <section id="editor-panel" hidden>
+    <div class="toolbar">
+      <input id="search-input" placeholder="Search title or organisation…">
+      <span id="entry-count"></span>
+      <button id="save-btn" disabled>Save changes to GitHub</button>
+    </div>
+    <p id="save-status" class="status"></p>
+    <div id="months-container"></div>
+  </section>
+</div>
+
+<script>
+const GITHUB_API = "https://api.github.com";
+const ARCHIVE_PATH = "site/archive.json";
+
+const repoInput = document.getElementById("repo-input");
+const branchInput = document.getElementById("branch-input");
+const tokenInput = document.getElementById("token-input");
+const loadBtn = document.getElementById("load-btn");
+const forgetTokenBtn = document.getElementById("forget-token-btn");
+const authStatus = document.getElementById("auth-status");
+const editorPanel = document.getElementById("editor-panel");
+const searchInput = document.getElementById("search-input");
+const entryCount = document.getElementById("entry-count");
+const saveBtn = document.getElementById("save-btn");
+const saveStatus = document.getElementById("save-status");
+const monthsContainer = document.getElementById("months-container");
+
+let archiveData = null;
+let currentSha = null;
+let dirty = false;
+
+// Restore repo/branch/token from this tab's session (cleared when the tab closes).
+(function restoreSession() {
+  const savedRepo = sessionStorage.getItem("gd_admin_repo");
+  const savedBranch = sessionStorage.getItem("gd_admin_branch");
+  const savedToken = sessionStorage.getItem("gd_admin_token");
+  if (savedRepo) repoInput.value = savedRepo;
+  if (savedBranch) branchInput.value = savedBranch;
+  if (savedToken) tokenInput.value = savedToken;
+})();
+
+function setAuthStatus(msg, isError) {
+  authStatus.textContent = msg;
+  authStatus.className = "status" + (isError ? " error" : "");
+}
+
+function setSaveStatus(msg, isError) {
+  saveStatus.textContent = msg;
+  saveStatus.className = "status" + (isError ? " error" : "");
+}
+
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
+function base64ToUtf8(b64) {
+  const binary = atob(b64.replace(/\n/g, ""));
+  const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+function countEntries() {
+  return archiveData.months.reduce((sum, m) => sum + m.entries.length, 0);
+}
+
+function markDirty() {
+  dirty = true;
+  saveBtn.disabled = false;
+  setSaveStatus("Unsaved changes.");
+}
+
+async function loadArchive() {
+  const [owner, repo] = repoInput.value.split("/").map((s) => s.trim());
+  const branch = branchInput.value.trim() || "main";
+  const token = tokenInput.value.trim();
+
+  if (!owner || !repo || !token) {
+    setAuthStatus("Fill in the repository and token first.", true);
+    return;
+  }
+
+  sessionStorage.setItem("gd_admin_repo", repoInput.value);
+  sessionStorage.setItem("gd_admin_branch", branch);
+  sessionStorage.setItem("gd_admin_token", token);
+
+  setAuthStatus("Loading…");
+  try {
+    const res = await fetch(
+      `${GITHUB_API}/repos/${owner}/${repo}/contents/${ARCHIVE_PATH}?ref=${encodeURIComponent(branch)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/vnd.github+json",
+        },
+      }
+    );
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body.message || `HTTP ${res.status}`);
+    }
+    const payload = await res.json();
+    currentSha = payload.sha;
+    archiveData = JSON.parse(base64ToUtf8(payload.content));
+    dirty = false;
+    saveBtn.disabled = true;
+    setAuthStatus(`Loaded ${countEntries()} entries.`);
+    setSaveStatus("");
+    editorPanel.hidden = false;
+    renderEditor();
+  } catch (err) {
+    setAuthStatus(`Failed to load: ${err.message}`, true);
+  }
+}
+
+async function saveArchive() {
+  const [owner, repo] = repoInput.value.split("/").map((s) => s.trim());
+  const branch = branchInput.value.trim() || "main";
+  const token = tokenInput.value.trim();
+
+  // Drop any months that ended up with no entries left.
+  archiveData.months = archiveData.months.filter((m) => m.entries.length > 0);
+
+  const message = `Edit archive via admin panel (${new Date().toISOString().slice(0, 10)})`;
+  const content = utf8ToBase64(JSON.stringify(archiveData, null, 2));
+
+  setSaveStatus("Saving…");
+  saveBtn.disabled = true;
+  try {
+    const res = await fetch(`${GITHUB_API}/repos/${owner}/${repo}/contents/${ARCHIVE_PATH}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message, content, sha: currentSha, branch }),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body.message || `HTTP ${res.status}`);
+    }
+    const payload = await res.json();
+    currentSha = payload.content.sha;
+    dirty = false;
+    setSaveStatus("Saved. The live site will update in a minute or two once GitHub Pages redeploys.");
+    renderEditor();
+  } catch (err) {
+    saveBtn.disabled = false;
+    setSaveStatus(
+      `Save failed: ${err.message}. If this mentions a SHA/conflict, click "Load archive" again to refresh, then redo your edits.`,
+      true
+    );
+  }
+}
+
+function fieldRow(labelText, inputEl) {
+  const wrap = document.createElement("label");
+  wrap.className = "field";
+  const span = document.createElement("span");
+  span.textContent = labelText;
+  wrap.appendChild(span);
+  wrap.appendChild(inputEl);
+  return wrap;
+}
+
+function renderEntryCard(month, entry) {
+  const card = document.createElement("div");
+  card.className = "entry-card";
+
+  const titleInput = document.createElement("input");
+  titleInput.value = entry.title || "";
+  titleInput.addEventListener("input", () => {
+    entry.title = titleInput.value;
+    markDirty();
+  });
+
+  const orgInput = document.createElement("input");
+  orgInput.value = entry.org || "";
+  orgInput.addEventListener("input", () => {
+    entry.org = orgInput.value;
+    markDirty();
+  });
+
+  const dateInput = document.createElement("input");
+  dateInput.value = entry.date || "";
+  dateInput.placeholder = "YYYY-MM-DD";
+  dateInput.addEventListener("input", () => {
+    entry.date = dateInput.value;
+    markDirty();
+  });
+
+  const fieldSelect = document.createElement("select");
+  ["green-deal", "security", "tech", "health"].forEach((f) => {
+    const opt = document.createElement("option");
+    opt.value = f;
+    opt.textContent = f;
+    if (entry.field === f) opt.selected = true;
+    fieldSelect.appendChild(opt);
+  });
+  fieldSelect.addEventListener("change", () => {
+    entry.field = fieldSelect.value;
+    markDirty();
+  });
+
+  const actorSelect = document.createElement("select");
+  ["think-tank", "political", "lobby"].forEach((a) => {
+    const opt = document.createElement("option");
+    opt.value = a;
+    opt.textContent = a;
+    if (entry.actor_type === a) opt.selected = true;
+    actorSelect.appendChild(opt);
+  });
+  actorSelect.addEventListener("change", () => {
+    entry.actor_type = actorSelect.value;
+    markDirty();
+  });
+
+  const linkInput = document.createElement("input");
+  linkInput.value = entry.link || "";
+  linkInput.addEventListener("input", () => {
+    entry.link = linkInput.value;
+    markDirty();
+  });
+
+  const summaryTextarea = document.createElement("textarea");
+  summaryTextarea.value = entry.summary || "";
+  summaryTextarea.rows = 3;
+  summaryTextarea.addEventListener("input", () => {
+    entry.summary = summaryTextarea.value;
+    markDirty();
+  });
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.type = "button";
+  deleteBtn.textContent = "Delete entry";
+  deleteBtn.className = "delete-btn";
+  deleteBtn.addEventListener("click", () => {
+    if (!confirm(`Delete "${entry.title}"? This can't be undone once you save.`)) return;
+    month.entries = month.entries.filter((e) => e !== entry);
+    markDirty();
+    renderEditor();
+  });
+
+  const openLink = document.createElement("a");
+  openLink.href = entry.link || "#";
+  openLink.target = "_blank";
+  openLink.rel = "noopener";
+  openLink.textContent = "Open original ↗";
+  openLink.className = "open-link";
+
+  card.appendChild(fieldRow("Title", titleInput));
+  card.appendChild(fieldRow("Organisation", orgInput));
+  card.appendChild(fieldRow("Date", dateInput));
+  card.appendChild(fieldRow("Field", fieldSelect));
+  card.appendChild(fieldRow("Actor type", actorSelect));
+  card.appendChild(fieldRow("Link", linkInput));
+  card.appendChild(fieldRow("Summary", summaryTextarea));
+
+  const footer = document.createElement("div");
+  footer.className = "card-footer";
+  footer.appendChild(openLink);
+  footer.appendChild(deleteBtn);
+  card.appendChild(footer);
+
+  return card;
+}
+
+function renderEditor() {
+  const filter = searchInput.value.trim().toLowerCase();
+  monthsContainer.innerHTML = "";
+  let shown = 0;
+
+  archiveData.months.forEach((month) => {
+    const filteredEntries = month.entries.filter(
+      (e) =>
+        !filter ||
+        (e.title || "").toLowerCase().includes(filter) ||
+        (e.org || "").toLowerCase().includes(filter)
+    );
+    if (filter && filteredEntries.length === 0) return;
+    shown += filteredEntries.length;
+
+    const details = document.createElement("details");
+    details.open = true;
+    details.className = "month-block";
+    const summary = document.createElement("summary");
+    summary.textContent = `${month.label} (${filteredEntries.length}${
+      filter ? ` of ${month.entries.length}` : ""
+    })`;
+    details.appendChild(summary);
+
+    filteredEntries.forEach((entry) => {
+      details.appendChild(renderEntryCard(month, entry));
+    });
+    monthsContainer.appendChild(details);
+  });
+
+  entryCount.textContent = filter ? `${shown} matching entries` : `${countEntries()} entries total`;
+}
+
+loadBtn.addEventListener("click", loadArchive);
+saveBtn.addEventListener("click", saveArchive);
+searchInput.addEventListener("input", () => {
+  if (archiveData) renderEditor();
+});
+forgetTokenBtn.addEventListener("click", () => {
+  tokenInput.value = "";
+  sessionStorage.removeItem("gd_admin_token");
+  setAuthStatus("Token cleared from this session.");
+});
+
+window.addEventListener("beforeunload", (e) => {
+  if (dirty) {
+    e.preventDefault();
+    e.returnValue = "";
+  }
+});
+</script>
+</body>
+</html>
