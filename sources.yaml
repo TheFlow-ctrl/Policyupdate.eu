@@ -391,13 +391,17 @@ sources:
   # rather than skipping silently -- worth a deliberate call on whether it's
   # worth the added infrastructure.
 
-  # NOT added: Global Environmental Politics (MIT Press / Silverchair) --
-  # no working feed could be confirmed. Every automated attempt (a research
-  # agent with full internet access, and a direct in-app-browser check)
-  # was stopped by a persistent Cloudflare "Just a moment..." JS challenge
-  # on every page of direct.mit.edu, including the RSS-icon target. If you
-  # can grab the feed URL yourself from a real logged-in browser session,
-  # send it over and it can be added the same way as the others.
+  - name: Global Environmental Politics
+    url: https://direct.mit.edu/rss/site_1000041/advanceAccess_1000023.xml
+    field: green-deal
+    actor_type: academic
+    # Automated lookup was blocked by Cloudflare on every path (see git
+    # history for the earlier "NOT added" note) -- this URL was grabbed
+    # manually from a real logged-in browser session. Used the "Advance
+    # Access" feed specifically (not "Current Issue Only" or "Open Issues")
+    # since it updates continuously as articles are accepted, matching how
+    # the other journals' feeds behave -- "Current Issue Only" would sit
+    # unchanged between print issues.
 
   # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
   # See backend_scrapers.py. All confirmed against real fetched HTML,
