@@ -492,6 +492,19 @@ h1, h2, h3 {
   line-height: 1.5;
 }
 
+.policy-cycle-legend p {
+  margin: 0 0 8px;
+}
+
+.policy-cycle-legend p:last-child {
+  margin-bottom: 0;
+}
+
+.policy-cycle-legend-intro {
+  color: var(--navy-950);
+  font-weight: 500;
+}
+
 .policy-cycle-legend-label {
   font-weight: 700;
   color: var(--navy-950);
