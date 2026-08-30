@@ -1,6 +1,6 @@
 {
   "generated": "2026-08-30",
-  "note": "First-pass research draft, grounded in real EU policy documents/framing (EU 2023 Economic Security Strategy JOIN(2023)20, REPowerEU 2022, WTO disputes, the Draghi competitiveness report, Omnibus I). Work in progress, not a finished dataset. Strength scale: 0 = no meaningful connection, 1 = secondary/indirect but real, 2 = primary/central to how the law is actually debated or designed.",
+  "note": "First-pass research draft, grounded in real EU policy documents/framing (EU 2023 Economic Security Strategy JOIN(2023)20, REPowerEU 2022, WTO disputes, the Draghi competitiveness report, Omnibus I). Work in progress, not a finished dataset. Strength scale: 0 = no meaningful connection, 1 = secondary/indirect but real, 2 = primary/central to how the law is actually debated or designed. lawLinks (added later) captures genuine interdependencies between the 15 laws themselves, researched with the same grounding standard -- also a first-pass draft pending Flo's review.",
   "dimensions": [
     {
       "id": "trade",
@@ -271,5 +271,133 @@
         }
       }
     }
-  }
+  },
+  "lawLinks": [
+    {
+      "a": "ets1",
+      "b": "cbam",
+      "strength": 2,
+      "rationale": "The CBAM Regulation and Article 30d of the EU ETS Directive explicitly link the two mechanisms: free allocation of ETS I allowances to CBAM-covered sectors (steel, aluminium, cement, fertilisers, hydrogen, electricity) is phased out on a fixed schedule from 2026-2034 in lockstep with CBAM's phase-in, and the CBAM certificate price is calculated directly from EU ETS auction prices."
+    },
+    {
+      "a": "csrd",
+      "b": "taxonomy",
+      "strength": 2,
+      "rationale": "Article 8 of the Taxonomy Regulation applies to the same undertakings triggered by CSRD's amendments to the Accounting Directive -- the two disclosure obligations share a single legal trigger, and the Taxonomy Disclosures Delegated Act specifies how CSRD-reporting companies must calculate Taxonomy-aligned turnover/CapEx/OpEx."
+    },
+    {
+      "a": "taxonomy",
+      "b": "sfdr",
+      "strength": 2,
+      "rationale": "SFDR's Level 2 Regulatory Technical Standards mandate that Article 8/9 financial products disclose Taxonomy-alignment percentages, and the ESAs merged the SFDR and Taxonomy disclosure templates into a single rulebook RTS -- a direct, legally mandated data dependency."
+    },
+    {
+      "a": "nzia",
+      "b": "crma",
+      "strength": 2,
+      "rationale": "NZIA and CRMA are the two flagship legislative acts of the Commission's February 2023 “Green Deal Industrial Plan for the Net-Zero Age,” designed and proposed together as complementary supply-side (raw materials) and manufacturing-capacity pillars of the same industrial strategy."
+    },
+    {
+      "a": "nzia",
+      "b": "ccus",
+      "strength": 2,
+      "rationale": "The CCUS storage obligation (50 Mt/year by 2030) is not a separate instrument but is literally Article 23 of the Net-Zero Industry Act itself -- the most direct possible legal identity between the two."
+    },
+    {
+      "a": "ets1",
+      "b": "ccus",
+      "strength": 2,
+      "rationale": "The EU ETS Monitoring and Reporting Regulation exempts CO2 that is captured and permanently geologically stored from the obligation to surrender allowances, meaning the ETS carbon price is the core economic incentive CCUS project economics (and NZIA Article 23's storage mandate) depend on."
+    },
+    {
+      "a": "lulucf",
+      "b": "nature-restoration",
+      "strength": 1,
+      "rationale": "The Commission and analysts frame the Nature Restoration Law as directly supporting LULUCF's 310 Mt CO2e 2030 net-removal target, since ecosystem/forest restoration is a primary lever for increasing the land sink LULUCF accounts for; the two are explicitly discussed as needing implementation alignment."
+    },
+    {
+      "a": "red3",
+      "b": "eed",
+      "strength": 1,
+      "rationale": "RED III and the recast EED are the two principal “Fit for 55” energy-package instruments, negotiated and framed together as complementary levers (renewables deployment vs. demand reduction) toward the same 2030 targets, with EED's final-energy-consumption denominator interacting with RED's renewable-share calculations."
+    },
+    {
+      "a": "csrd",
+      "b": "sfdr",
+      "strength": 1,
+      "rationale": "Sustainable-finance literature and Commission framing describe SFDR reporting as dependent on standardized CSRD/ESRS corporate disclosures as its underlying data source, alongside the Taxonomy classification layer -- without reliable CSRD data, financial market participants cannot substantiate SFDR Article 8/9 claims."
+    },
+    {
+      "a": "csddd",
+      "b": "csrd",
+      "strength": 1,
+      "rationale": "The 2025-26 “Omnibus I” simplification package amended CSDDD and CSRD together, and due-diligence practice guidance treats CSRD/ESRS sustainability reporting as a documentation source that can support CSDDD due-diligence obligations, reflecting their deliberate legislative bundling."
+    },
+    {
+      "a": "csddd",
+      "b": "eudr",
+      "strength": 1,
+      "rationale": "Legal commentary notes explicit overlap between EUDR's deforestation-specific due diligence and CSDDD's broader value-chain human-rights/environmental due diligence, with practitioners advising companies to reuse EUDR traceability data (e.g. geolocation coordinates) to support CSDDD compliance."
+    },
+    {
+      "a": "taxonomy",
+      "b": "csddd",
+      "strength": 1,
+      "rationale": "The Taxonomy Regulation's “minimum safeguards” (Article 18) require alignment with OECD Guidelines/UNGPs on human-rights due diligence, and the Commission's Platform on Sustainable Finance identifies CSDDD compliance as a potential proxy for satisfying this Taxonomy requirement."
+    },
+    {
+      "a": "sfdr",
+      "b": "csddd",
+      "strength": 1,
+      "rationale": "SFDR's mandatory Principal Adverse Impact indicators on human rights and due diligence are built on the same OECD/UNGP standards that CSDDD operationalizes, and EU Parliament briefings describe CSDDD as designed to “complement” SFDR by supplying the underlying corporate due-diligence data those indicators require."
+    },
+    {
+      "a": "csrd",
+      "b": "eudr",
+      "strength": 1,
+      "rationale": "CSRD's ESRS E4 (biodiversity/ecosystems) standard requires supply-chain deforestation-risk disclosure and double-materiality assessment that directly overlaps with EUDR's mandatory geolocation-based traceability data; EUDR compliance data is described as reusable for ESRS E4-2/E4-3 reporting."
+    },
+    {
+      "a": "red3",
+      "b": "lulucf",
+      "strength": 1,
+      "rationale": "Both instruments address the same “carbon debt” problem of forest biomass use: RED III's tightened sustainability/cascading-use criteria for woody biomass were negotiated alongside the LULUCF revision specifically to prevent bioenergy harvesting from undermining the EU's 310 Mt CO2e land-sink target."
+    },
+    {
+      "a": "red3",
+      "b": "eudr",
+      "strength": 1,
+      "rationale": "RED III designates palm oil (and, more recently, soy) as “high indirect land-use change risk” feedstocks and phases them out of renewable-energy accounting by 2030, targeting the same deforestation-linked commodities that EUDR restricts from the EU market."
+    },
+    {
+      "a": "ets1",
+      "b": "eed",
+      "strength": 1,
+      "rationale": "The ETS-financed Innovation Fund and Modernisation Fund (both filled by EU ETS I allowance auctioning revenue) are explicit, named financing mechanisms for energy-efficiency investments, including efficiency improvements the EED requires Member States to pursue."
+    },
+    {
+      "a": "ets2",
+      "b": "eed",
+      "strength": 1,
+      "rationale": "The Social Climate Fund, financed by ETS II auction revenue plus 50 million EU ETS I allowances, is legally earmarked to fund building energy-efficiency renovations and clean heating -- directly financing EED-type obligations to offset ETS2's cost impact on households."
+    },
+    {
+      "a": "cbam",
+      "b": "red3",
+      "strength": 1,
+      "rationale": "CBAM's embedded-emissions methodology for imported hydrogen classifies it as effectively zero-emission only if produced as renewable hydrogen (RFNBO) under RED III's additionality and correlation rules -- CBAM's carbon-cost treatment of hydrogen imports is contingent on RED III's legal definition of “renewable.”"
+    },
+    {
+      "a": "ccus",
+      "b": "cbam",
+      "strength": 1,
+      "rationale": "CBAM's monitoring and reporting methodology treats fossil CO2 that is captured and permanently geologically stored as “not emitted,” letting operators reduce their declared embedded emissions (and CBAM certificate obligations) through documented CCS -- directly tying CBAM's cost calculation to CCUS deployment."
+    },
+    {
+      "a": "nzia",
+      "b": "red3",
+      "strength": 1,
+      "rationale": "NZIA's 40%-by-2030 domestic manufacturing benchmark is defined relative to the EU's annual deployment needs for net-zero technologies (solar, wind, electrolysers), which are derived from National Energy and Climate Plans implementing RED III's renewable deployment targets."
+    }
+  ]
 }
