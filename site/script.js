@@ -173,6 +173,8 @@ const TOPIC_INFO = {
 let digestData = null;
 let archiveData = null;
 let policyCycleData = null;
+let interconnectData = null;
+let visualisationRendered = false;
 let activeField = "green-deal";
 let activeTopic = "all";
 let activeActor = "all";
@@ -264,6 +266,8 @@ function setupFieldTabs() {
         showArchiveView();
       } else if (tab.dataset.view === "policy-cycle") {
         showPolicyCycleView();
+      } else if (tab.dataset.view === "visualisation") {
+        showVisualisationView();
       } else {
         activeField = tab.dataset.field;
         showDigestView();
@@ -313,6 +317,7 @@ function showDigestView() {
   document.getElementById("digest-section").hidden = false;
   document.getElementById("archive-section").hidden = true;
   document.getElementById("policy-cycle-section").hidden = true;
+  document.getElementById("visualisation-section").hidden = true;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = false;
 }
@@ -321,6 +326,7 @@ function showArchiveView() {
   document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = false;
   document.getElementById("policy-cycle-section").hidden = true;
+  document.getElementById("visualisation-section").hidden = true;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = false;
   loadArchive();
@@ -335,10 +341,48 @@ function showPolicyCycleView() {
   document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = true;
   document.getElementById("policy-cycle-section").hidden = false;
+  document.getElementById("visualisation-section").hidden = true;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadPolicyCycle();
+}
+
+// The Visualisation graph shows all 15 laws at once (it's not a per-law
+// view like Policy Cycle), so neither the law/topic filter nor the actor
+// type filter apply here -- both stay hidden, same reasoning as Policy
+// Cycle's actor-tabs. Clicking a law node jumps to the Green Deal digest
+// view with that law selected instead (see jumpToLawInfoCard()).
+function showVisualisationView() {
+  document.getElementById("digest-section").hidden = true;
+  document.getElementById("archive-section").hidden = true;
+  document.getElementById("policy-cycle-section").hidden = true;
+  document.getElementById("visualisation-section").hidden = false;
+  document.getElementById("topic-tabs").hidden = true;
+  document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("topic-info").hidden = true;
+  loadVisualisation();
+}
+
+// Reused by clicking a law node in the Visualisation graph: switches back
+// to the Green Deal digest view with that law selected, exactly as if the
+// person had clicked its topic-tab button directly.
+function jumpToLawInfoCard(lawId) {
+  activeField = "green-deal";
+  activeTopic = lawId;
+
+  document.querySelectorAll(".field-tab").forEach((t) => {
+    t.classList.toggle("active", t.dataset.field === "green-deal");
+  });
+  document.querySelectorAll(".topic-tab").forEach((t) => {
+    t.classList.toggle("active", t.dataset.topic === lawId);
+  });
+
+  showDigestView();
+  renderActiveField();
+
+  const infoEl = document.getElementById("topic-info");
+  if (infoEl) infoEl.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function loadPolicyCycle() {
@@ -709,6 +753,215 @@ function escapeHtml(str) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+// Fixed anchor points for the 3 outer policy dimensions the Visualisation
+// graph pulls laws toward. Positions form a triangle around the SVG's
+// viewBox (see VIS_WIDTH/VIS_HEIGHT below); colors are distinct from the
+// gold "current stage" accent used elsewhere so the two don't get confused.
+const VIS_WIDTH = 800;
+const VIS_HEIGHT = 620;
+const DIMENSION_ANCHORS = {
+  trade: { x: VIS_WIDTH / 2, y: 90, color: "#2C6E8A" },
+  security: { x: 160, y: VIS_HEIGHT - 90, color: "#8A2E2E" },
+  industrial: { x: VIS_WIDTH - 160, y: VIS_HEIGHT - 90, color: "#8A6F1E" },
+};
+
+async function loadVisualisation() {
+  const container = document.getElementById("visualisation-graph");
+
+  if (visualisationRendered) return; // simulation is already live in the DOM
+
+  if (interconnectData) {
+    renderVisualisation(interconnectData);
+    return;
+  }
+
+  try {
+    const res = await fetch("interconnections.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    interconnectData = await res.json();
+    renderVisualisation(interconnectData);
+  } catch (err) {
+    container.innerHTML =
+      '<p class="error">Couldn\'t load the visualisation. Check that site/interconnections.json exists.</p>';
+    console.error(err);
+  }
+}
+
+// Builds a D3 force-directed graph: the 15 tracked laws as draggable
+// squares, springing toward whichever of the 3 fixed outer-dimension
+// anchors (Trade / Security / Industrial policy) they're substantively
+// connected to -- stronger connections pull harder and settle closer.
+// Laws with no dimension connection have nothing pulling them outward, so
+// a gentle centering force keeps them near the middle instead of drifting
+// off-canvas, which incidentally makes "purely climate/environmental, not
+// contested elsewhere" laws visually cluster together in the center.
+function renderVisualisation(data) {
+  const container = document.getElementById("visualisation-graph");
+  if (!container || typeof d3 === "undefined") {
+    if (container) {
+      container.innerHTML =
+        '<p class="error">Visualisation library failed to load -- check your internet connection and reload.</p>';
+    }
+    return;
+  }
+  if (visualisationRendered) return;
+
+  const { dimensions, laws } = data;
+
+  const dimensionNodes = dimensions.map((dim) => ({
+    id: dim.id,
+    type: "dimension",
+    label: dim.label,
+    x: DIMENSION_ANCHORS[dim.id].x,
+    y: DIMENSION_ANCHORS[dim.id].y,
+    fx: DIMENSION_ANCHORS[dim.id].x,
+    fy: DIMENSION_ANCHORS[dim.id].y,
+    color: DIMENSION_ANCHORS[dim.id].color,
+  }));
+
+  const lawIds = POLICY_CYCLE_LAW_ORDER.filter((id) => laws[id]);
+  const lawNodes = lawIds.map((id) => ({
+    id,
+    type: "law",
+    label: TOPIC_LABELS[id] || id,
+    x: VIS_WIDTH / 2 + (Math.random() - 0.5) * 40,
+    y: VIS_HEIGHT / 2 + (Math.random() - 0.5) * 40,
+  }));
+
+  const nodes = [...dimensionNodes, ...lawNodes];
+
+  const links = [];
+  lawIds.forEach((lawId) => {
+    const connections = laws[lawId].connections || {};
+    Object.keys(connections).forEach((dimId) => {
+      const conn = connections[dimId];
+      if (conn && conn.strength > 0) {
+        links.push({ source: lawId, target: dimId, strength: conn.strength });
+      }
+    });
+  });
+
+  container.innerHTML = "";
+  const svg = d3
+    .select(container)
+    .append("svg")
+    .attr("viewBox", `0 0 ${VIS_WIDTH} ${VIS_HEIGHT}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("class", "visualisation-svg");
+
+  const linkGroup = svg.append("g").attr("class", "vis-links");
+  const nodeGroup = svg.append("g").attr("class", "vis-nodes");
+
+  const linkSelection = linkGroup
+    .selectAll("line")
+    .data(links)
+    .join("line")
+    .attr("class", (d) => `vis-link vis-link-strength-${d.strength}`)
+    .attr("stroke", (d) => DIMENSION_ANCHORS[d.target].color)
+    .attr("stroke-width", (d) => (d.strength === 2 ? 3 : 1.5))
+    .attr("stroke-opacity", (d) => (d.strength === 2 ? 0.55 : 0.3));
+
+  const nodeSelection = nodeGroup
+    .selectAll("g.vis-node")
+    .data(nodes)
+    .join("g")
+    .attr("class", (d) => `vis-node vis-node-${d.type}`);
+
+  // Dimension anchors: bigger, fixed, labeled circles -- not draggable.
+  const dimSelection = nodeSelection.filter((d) => d.type === "dimension");
+  dimSelection
+    .append("circle")
+    .attr("r", 46)
+    .attr("fill", (d) => d.color)
+    .attr("class", "vis-dimension-circle");
+  dimSelection
+    .append("text")
+    .attr("class", "vis-dimension-label")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
+    .text((d) => d.label);
+
+  // Law nodes: draggable squares with a label underneath. clickDistance()
+  // is what lets a genuine click (vs. a drag that happened to move a few
+  // pixels) still fire the 'click' listener below -- without it, D3's drag
+  // behavior swallows the click entirely.
+  const lawSelection = nodeSelection.filter((d) => d.type === "law");
+  const LAW_SIZE = 26;
+  lawSelection
+    .append("rect")
+    .attr("class", "vis-law-square")
+    .attr("width", LAW_SIZE)
+    .attr("height", LAW_SIZE)
+    .attr("x", -LAW_SIZE / 2)
+    .attr("y", -LAW_SIZE / 2)
+    .attr("rx", 3);
+  lawSelection
+    .append("text")
+    .attr("class", "vis-law-label")
+    .attr("text-anchor", "middle")
+    .attr("y", LAW_SIZE / 2 + 14)
+    .text((d) => d.label);
+
+  lawSelection
+    .style("cursor", "pointer")
+    .on("click", (event, d) => jumpToLawInfoCard(d.id))
+    .call(
+      d3
+        .drag()
+        .clickDistance(6)
+        .on("start", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        })
+        .on("drag", (event, d) => {
+          d.fx = event.x;
+          d.fy = event.y;
+        })
+        .on("end", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        })
+    );
+
+  lawSelection.append("title").text((d) => d.label);
+
+  const margin = LAW_SIZE;
+  const simulation = d3
+    .forceSimulation(nodes)
+    .force(
+      "link",
+      d3
+        .forceLink(links)
+        .id((d) => d.id)
+        .distance((d) => (d.strength === 2 ? 110 : 200))
+        .strength((d) => (d.strength === 2 ? 0.9 : 0.45))
+    )
+    .force("charge", d3.forceManyBody().strength(-220).distanceMax(360))
+    .force("collide", d3.forceCollide().radius((d) => (d.type === "dimension" ? 50 : 24)))
+    .force("x", d3.forceX(VIS_WIDTH / 2).strength(0.03))
+    .force("y", d3.forceY(VIS_HEIGHT / 2).strength(0.03))
+    .on("tick", () => {
+      nodes.forEach((d) => {
+        if (d.type === "law") {
+          d.x = Math.max(margin, Math.min(VIS_WIDTH - margin, d.x));
+          d.y = Math.max(margin, Math.min(VIS_HEIGHT - margin, d.y));
+        }
+      });
+
+      linkSelection
+        .attr("x1", (d) => d.source.x)
+        .attr("y1", (d) => d.source.y)
+        .attr("x2", (d) => d.target.x)
+        .attr("y2", (d) => d.target.y);
+
+      nodeSelection.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    });
+
+  visualisationRendered = true;
 }
 
 setupFieldTabs();
