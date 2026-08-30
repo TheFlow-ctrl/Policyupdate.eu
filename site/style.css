@@ -664,8 +664,12 @@ h1, h2, h3 {
   display: block;
 }
 
+/* Real law-to-law interdependencies -- the only lines in this graph.
+   Neutral navy rather than a dimension color, since these connections
+   aren't associated with any single outer dimension. */
 .vis-link {
   pointer-events: none;
+  stroke: var(--navy-700);
 }
 
 .vis-law-square {
@@ -687,16 +691,22 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-.vis-dimension-circle {
-  stroke: var(--card-bg);
-  stroke-width: 3;
+/* Dimension "gravity wells" -- deliberately not a bounded node shape (see
+   the comment above renderVisualisation() in script.js): a soft radial
+   glow (fill set inline per-dimension via the gradient defs) fading to
+   fully transparent, with no stroke at all, so it reads as a field rather
+   than a graph node. Nothing points to or from it. */
+.vis-dimension-glow {
+  pointer-events: none;
 }
 
 .vis-dimension-label {
   font-size: 13px;
   font-weight: 700;
-  fill: var(--card-bg);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   pointer-events: none;
+  /* fill color is set per-dimension inline in script.js, not here */
 }
 
 .site-footer {
