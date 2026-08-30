@@ -372,9 +372,11 @@ function renderPolicyCycle() {
 
   // Stage names are now printed directly on each diagram, so the separate
   // numbered legend that used to live here would just repeat them -- a
-  // single explanatory line is enough.
+  // single explanatory line is enough. A framing line sits above it: why
+  // this view matters, before how to read it.
   legendEl.innerHTML =
-    '<span class="policy-cycle-legend-label">How to read this:</span> each diagram traces a law\'s path through all 9 stages of the EU legislative process; the gold node marks where it stands today.';
+    '<p class="policy-cycle-legend-intro">In Brussels you need to know what is happening when. Here we help you understand where in the policy cycle each law currently stands and what the next deadline is.</p>' +
+    '<p><span class="policy-cycle-legend-label">How to read this:</span> each diagram traces a law\'s path through all 9 stages of the EU legislative process; the gold node marks where it stands today.</p>';
 
   // The law/topic filter (shared with the digest/archive views) applies
   // here too -- selecting e.g. "CBAM" shows just that law's diagram.
