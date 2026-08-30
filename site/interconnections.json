@@ -1,0 +1,275 @@
+{
+  "generated": "2026-08-30",
+  "note": "First-pass research draft, grounded in real EU policy documents/framing (EU 2023 Economic Security Strategy JOIN(2023)20, REPowerEU 2022, WTO disputes, the Draghi competitiveness report, Omnibus I). Work in progress, not a finished dataset. Strength scale: 0 = no meaningful connection, 1 = secondary/indirect but real, 2 = primary/central to how the law is actually debated or designed.",
+  "dimensions": [
+    {
+      "id": "trade",
+      "label": "Trade Policy"
+    },
+    {
+      "id": "security",
+      "label": "Security Policy"
+    },
+    {
+      "id": "industrial",
+      "label": "Industrial Policy"
+    }
+  ],
+  "laws": {
+    "ets1": {
+      "name": "EU Emissions Trading System (ETS I)",
+      "connections": {
+        "trade": {
+          "strength": 2,
+          "rationale": "Free allocation to “carbon leakage” sectors is a core design feature to shield trade-exposed industry, and the 2012 extension to aviation triggered international retaliation threats (US, China, India, Russia), a widely-cited case in EU trade law literature."
+        },
+        "security": {
+          "strength": 1,
+          "rationale": "ETS Innovation/Modernisation Fund revenue is increasingly framed in Commission communications as financing the clean-energy shift that reduces fossil-fuel import dependence, but this is a secondary framing, not the scheme's core purpose."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "The carbon leakage list, free allocation, and CBAM's role as ETS's “sister mechanism” make it central to EU industrial competitiveness debates for steel, cement, and chemicals."
+        }
+      }
+    },
+    "ets2": {
+      "name": "ETS II (buildings and road transport fuels)",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection; fuel suppliers operate mainly in domestic retail/heating markets, not a debated trade-policy channel."
+        },
+        "security": {
+          "strength": 1,
+          "rationale": "Its 2027 launch delay was explicitly tied to energy-price/cost-of-living fallout from the 2022 Russian gas shock, and the accompanying Social Climate Fund was designed partly around that energy-security-driven affordability concern."
+        },
+        "industrial": {
+          "strength": 0,
+          "rationale": "No meaningful, specifically-discussed connection to strategic industrial policy debates (as distinct from consumer/household cost debates)."
+        }
+      }
+    },
+    "cbam": {
+      "name": "Carbon Border Adjustment Mechanism",
+      "connections": {
+        "trade": {
+          "strength": 2,
+          "rationale": "By design a border trade instrument; formally contested at the WTO (Russia's May 2025 DS639 consultations request) and criticized by Brazil, India, China, South Africa as a potential disguised trade restriction."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection; CBAM's rationale is carbon leakage prevention, not security/geopolitics."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Explicitly designed to protect EU energy-intensive industry from carbon leakage as free allocation phases out, central to the Draghi competitiveness agenda."
+        }
+      }
+    },
+    "red3": {
+      "name": "Renewable Energy Directive III",
+      "connections": {
+        "trade": {
+          "strength": 1,
+          "rationale": "Biofuel/palm-oil sustainability criteria continue the RED II-era trade friction (Indonesia/Malaysia WTO complaints over palm-oil biofuel restrictions), a real but secondary trade dimension."
+        },
+        "security": {
+          "strength": 2,
+          "rationale": "RED III's accelerated 45% target was adopted explicitly under the REPowerEU plan as a response to Russian gas dependence, per the Commission's own May 2022 REPowerEU communication."
+        },
+        "industrial": {
+          "strength": 1,
+          "rationale": "Deployment targets create demand-pull for renewables manufacturing (overlapping with NZIA), but RED III itself is a deployment/permitting law, not a manufacturing-strategy instrument."
+        }
+      }
+    },
+    "csddd": {
+      "name": "Corporate Sustainability Due Diligence Directive",
+      "connections": {
+        "trade": {
+          "strength": 1,
+          "rationale": "Extraterritorial application to non-EU parent companies has drawn formal US government comments about competitiveness/level-playing-field impacts, a real but secondary trade-law concern."
+        },
+        "security": {
+          "strength": 1,
+          "rationale": "Due diligence obligations reference “conflict-affected and high-risk areas,” aligning with OECD conflict-minerals-style supply chain guidance, a real if secondary security-adjacent link."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Became a flagship target of the 2025 Omnibus I deregulation, explicitly driven by the Draghi report's competitiveness critique of EU regulatory burden."
+        }
+      }
+    },
+    "crma": {
+      "name": "Critical Raw Materials Act",
+      "connections": {
+        "trade": {
+          "strength": 2,
+          "rationale": "Built around diversifying supply away from any single third country (cap of 65% import share from one country) and negotiating strategic partnerships, a core trade-diversification instrument."
+        },
+        "security": {
+          "strength": 2,
+          "rationale": "Directly implements the Commission's 2023 Economic Security Strategy “de-risking” doctrine, with explicit targets for batteries, rare earths and defense-critical materials."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Sets binding 2030 benchmarks (10% extraction/40% processing/25% recycling) as the centerpiece of the Green Deal Industrial Plan's raw-materials pillar."
+        }
+      }
+    },
+    "nzia": {
+      "name": "Net Zero Industry Act",
+      "connections": {
+        "trade": {
+          "strength": 1,
+          "rationale": "Its “resilience”/non-price auction criteria have been criticized by trading partners as quasi-local-content requirements with potential WTO-compatibility questions, a real but secondary trade dimension."
+        },
+        "security": {
+          "strength": 1,
+          "rationale": "Framed as reducing “unilateral reliance on imports” for clean-tech, echoing the Economic Security Strategy's supply-chain-resilience language, though secondary to its industrial rationale."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Explicitly proposed as the EU's industrial-policy answer to the US Inflation Reduction Act, part of the Green Deal Industrial Plan (Commission communications and EUR-Lex COM(2023)161 confirm this framing)."
+        }
+      }
+    },
+    "csrd": {
+      "name": "Corporate Sustainability Reporting Directive",
+      "connections": {
+        "trade": {
+          "strength": 1,
+          "rationale": "Extraterritorial reporting duty on non-EU companies with substantial EU turnover has drawn the same US government “level playing field” criticism as CSDDD, a real secondary trade-law issue."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Central target of the 2025 Omnibus simplification package, explicitly justified by the Commission via the Draghi competitiveness report's regulatory-burden critique."
+        }
+      }
+    },
+    "taxonomy": {
+      "name": "EU Taxonomy Regulation",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection; it is a domestic financial classification system, not a trade instrument."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 1,
+          "rationale": "Steers capital toward industrial decarbonization technologies and was folded into the Commission's Omnibus competitiveness simplification, but it is a finance-sector tool rather than an industrial-strategy instrument itself."
+        }
+      }
+    },
+    "sfdr": {
+      "name": "Sustainable Finance Disclosure Regulation",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 1,
+          "rationale": "Its “unintentionally hybrid” disclosure regime is discussed in the sustainable-finance literature as a competitiveness burden on EU asset managers, prompting the Commission's Omnibus review, but it is a secondary link."
+        }
+      }
+    },
+    "eudr": {
+      "name": "EU Deforestation Regulation",
+      "connections": {
+        "trade": {
+          "strength": 2,
+          "rationale": "Formally contested (Malaysia and Indonesia both pursued WTO-adjacent complaints; 17 developing-country governments' 2023 joint letter alleged WTO-rule inconsistency), estimated to affect $401bn in annual exports."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 1,
+          "rationale": "EU-based chocolate, furniture, rubber and palm-oil-derivative industries lobbied heavily over compliance costs, a real but secondary industrial impact rather than a strategic-industrial-policy debate."
+        }
+      }
+    },
+    "nature-restoration": {
+      "name": "Nature Restoration Law",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 0,
+          "rationale": "No meaningful connection; debate centers on farmers/land managers and CAP-adjacent set-aside dynamics, not strategic industrial policy."
+        }
+      }
+    },
+    "lulucf": {
+      "name": "LULUCF Regulation",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "security": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "industrial": {
+          "strength": 0,
+          "rationale": "No meaningful connection; purely a land-use carbon-accounting framework."
+        }
+      }
+    },
+    "ccus": {
+      "name": "Carbon Capture, Utilisation and Storage (NZIA Article 23)",
+      "connections": {
+        "trade": {
+          "strength": 1,
+          "rationale": "Cross-border CO2 transport/storage (e.g., EU-Norway Northern Lights project) requires London Protocol-style bilateral arrangements, a real but narrow trade-adjacent dimension."
+        },
+        "security": {
+          "strength": 1,
+          "rationale": "The Commission's Industrial Carbon Management Strategy links CCS partly to repurposing North Sea oil & gas infrastructure, a secondary energy-security framing."
+        },
+        "industrial": {
+          "strength": 2,
+          "rationale": "Article 23 imposes binding CO2-storage obligations on 44 oil and gas producers (50 Mt by 2030) as the core decarbonization pathway for hard-to-abate industry (cement, steel, chemicals) under the Industrial Carbon Management Strategy."
+        }
+      }
+    },
+    "eed": {
+      "name": "Energy Efficiency Directive",
+      "connections": {
+        "trade": {
+          "strength": 0,
+          "rationale": "No meaningful connection."
+        },
+        "security": {
+          "strength": 2,
+          "rationale": "Explicitly strengthened under REPowerEU with the “Efficiency First” principle to cut Russian fossil-fuel import dependence, per the Commission's own 2022 REPowerEU communication."
+        },
+        "industrial": {
+          "strength": 1,
+          "rationale": "Article 8-style energy-audit and public-sector obligations affect industrial energy consumers and efficiency-service industries, but it is not a flagship strategic-industrial-policy law like NZIA/CRMA."
+        }
+      }
+    }
+  }
+}
