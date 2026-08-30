@@ -647,6 +647,58 @@ h1, h2, h3 {
   color: var(--revision-accent-dark);
 }
 
+.visualisation {
+  margin: 0 0 40px;
+}
+
+.visualisation-graph {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.visualisation-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vis-link {
+  pointer-events: none;
+}
+
+.vis-law-square {
+  fill: var(--card-bg);
+  stroke: var(--navy-700);
+  stroke-width: 1.5;
+  transition: stroke 0.15s ease, fill 0.15s ease;
+}
+
+.vis-node-law:hover .vis-law-square {
+  stroke: var(--gold-dark);
+  fill: var(--revision-bg);
+}
+
+.vis-law-label {
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--text);
+  pointer-events: none;
+}
+
+.vis-dimension-circle {
+  stroke: var(--card-bg);
+  stroke-width: 3;
+}
+
+.vis-dimension-label {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--card-bg);
+  pointer-events: none;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 20px 0 44px;
