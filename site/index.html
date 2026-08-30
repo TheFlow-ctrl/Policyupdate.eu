@@ -26,6 +26,7 @@
       <button class="field-tab active" data-field="green-deal">Green Deal</button>
       <button class="field-tab" data-view="archive">Archive</button>
       <button class="field-tab" data-view="policy-cycle">Policy Cycle</button>
+      <button class="field-tab" data-view="visualisation">Visualisation</button>
       <span class="field-tabs-upcoming">
         <span class="field-tabs-upcoming-label">Upcoming</span>
         <button class="field-tab field-tab-upcoming" data-field="security" disabled title="Coming soon">Security</button>
@@ -95,6 +96,16 @@
       </div>
     </section>
 
+    <section class="visualisation" id="visualisation-section" hidden>
+      <div class="digest-header">
+        <h2>Visualisation</h2>
+        <span class="generated-date">Drag a law to see how strongly it pulls toward Trade, Security &amp; Industrial policy — click a law to open its info card</span>
+      </div>
+      <div id="visualisation-graph" class="visualisation-graph">
+        <p class="loading">Loading visualisation…</p>
+      </div>
+    </section>
+
     <section class="signup" id="signup">
       <h2>Get the weekly digest by email</h2>
       <p>One email a week. No spam, unsubscribe any time.</p>
@@ -111,6 +122,7 @@
     </div>
   </footer>
 
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
