@@ -789,14 +789,21 @@ async function loadVisualisation() {
   }
 }
 
-// Builds a D3 force-directed graph: the 15 tracked laws as draggable
-// squares, springing toward whichever of the 3 fixed outer-dimension
-// anchors (Trade / Security / Industrial policy) they're substantively
-// connected to -- stronger connections pull harder and settle closer.
-// Laws with no dimension connection have nothing pulling them outward, so
-// a gentle centering force keeps them near the middle instead of drifting
-// off-canvas, which incidentally makes "purely climate/environmental, not
-// contested elsewhere" laws visually cluster together in the center.
+// Builds a D3 force-directed graph of the EU Green Deal policy architecture.
+// The 15 tracked laws are the only real graph nodes/links here: draggable
+// squares connected by real edges (lawLinks) representing genuine
+// interdependencies between laws (shared legal cross-references, joint
+// Commission packages, shared data pipelines -- see interconnections.json).
+//
+// Trade / Security / Industrial policy are NOT graph nodes -- they're fixed
+// "centers of gravity" rendered as a soft glow + label with no bounded
+// shape and no line connecting to anything, since which dimension a law
+// belongs to is inherently more debatable than a documented legal
+// cross-reference between two laws. Each law is pulled toward the
+// weighted average position of whichever dimensions it connects to
+// (stronger connection = stronger pull), purely through force physics --
+// nothing is drawn for this, the law's position IS the signal. Laws with
+// no dimension connection just get a gentle pull toward the center instead.
 function renderVisualisation(data) {
   const container = document.getElementById("visualisation-graph");
   if (!container || typeof d3 === "undefined") {
@@ -808,40 +815,52 @@ function renderVisualisation(data) {
   }
   if (visualisationRendered) return;
 
-  const { dimensions, laws } = data;
-
-  const dimensionNodes = dimensions.map((dim) => ({
-    id: dim.id,
-    type: "dimension",
-    label: dim.label,
-    x: DIMENSION_ANCHORS[dim.id].x,
-    y: DIMENSION_ANCHORS[dim.id].y,
-    fx: DIMENSION_ANCHORS[dim.id].x,
-    fy: DIMENSION_ANCHORS[dim.id].y,
-    color: DIMENSION_ANCHORS[dim.id].color,
-  }));
+  const { dimensions, laws, lawLinks } = data;
 
   const lawIds = POLICY_CYCLE_LAW_ORDER.filter((id) => laws[id]);
-  const lawNodes = lawIds.map((id) => ({
-    id,
-    type: "law",
-    label: TOPIC_LABELS[id] || id,
-    x: VIS_WIDTH / 2 + (Math.random() - 0.5) * 40,
-    y: VIS_HEIGHT / 2 + (Math.random() - 0.5) * 40,
-  }));
 
-  const nodes = [...dimensionNodes, ...lawNodes];
-
-  const links = [];
-  lawIds.forEach((lawId) => {
-    const connections = laws[lawId].connections || {};
-    Object.keys(connections).forEach((dimId) => {
-      const conn = connections[dimId];
-      if (conn && conn.strength > 0) {
-        links.push({ source: lawId, target: dimId, strength: conn.strength });
+  // Gravity target/strength is computed once per law, up front, from its
+  // dimension connections -- then applied every tick via forceX/forceY.
+  // This is what replaces a drawn law-to-dimension link with a pull that
+  // never appears as a line.
+  const CENTER_X = VIS_WIDTH / 2;
+  const CENTER_Y = VIS_HEIGHT / 2;
+  const lawNodes = lawIds.map((id) => {
+    const connections = laws[id].connections || {};
+    let totalWeight = 0;
+    let weightedX = 0;
+    let weightedY = 0;
+    dimensions.forEach((dim) => {
+      const strength = (connections[dim.id] || {}).strength || 0;
+      if (strength > 0) {
+        const anchor = DIMENSION_ANCHORS[dim.id];
+        totalWeight += strength;
+        weightedX += anchor.x * strength;
+        weightedY += anchor.y * strength;
       }
     });
+
+    const gravityTargetX = totalWeight > 0 ? weightedX / totalWeight : CENTER_X;
+    const gravityTargetY = totalWeight > 0 ? weightedY / totalWeight : CENTER_Y;
+    // Capped so even a law connected to all 3 dimensions at max strength
+    // doesn't overpower the law-to-law link springs entirely -- position
+    // should reflect both, not just whichever force is computed first.
+    const gravityStrength = totalWeight > 0 ? Math.min(0.02 + totalWeight * 0.015, 0.09) : 0.02;
+
+    return {
+      id,
+      label: TOPIC_LABELS[id] || id,
+      gravityTargetX,
+      gravityTargetY,
+      gravityStrength,
+      x: CENTER_X + (Math.random() - 0.5) * 60,
+      y: CENTER_Y + (Math.random() - 0.5) * 60,
+    };
   });
+
+  const links = (lawLinks || [])
+    .filter((l) => laws[l.a] && laws[l.b])
+    .map((l) => ({ source: l.a, target: l.b, strength: l.strength, rationale: l.rationale }));
 
   container.innerHTML = "";
   const svg = d3
@@ -851,6 +870,37 @@ function renderVisualisation(data) {
     .attr("preserveAspectRatio", "xMidYMid meet")
     .attr("class", "visualisation-svg");
 
+  // Dimension "gravity wells" -- static, not part of the simulation, drawn
+  // once and never repositioned since they're fixed. A radial gradient
+  // fading to fully transparent reads as an ambient field rather than a
+  // discrete node shape, on purpose.
+  const defs = svg.append("defs");
+  dimensions.forEach((dim) => {
+    const anchor = DIMENSION_ANCHORS[dim.id];
+    const gradientId = `vis-glow-${dim.id}`;
+    const gradient = defs
+      .append("radialGradient")
+      .attr("id", gradientId)
+      .attr("cx", "50%")
+      .attr("cy", "50%")
+      .attr("r", "50%");
+    gradient.append("stop").attr("offset", "0%").attr("stop-color", anchor.color).attr("stop-opacity", 0.35);
+    gradient.append("stop").attr("offset", "100%").attr("stop-color", anchor.color).attr("stop-opacity", 0);
+  });
+
+  const glowGroup = svg.append("g").attr("class", "vis-glows");
+  dimensions.forEach((dim) => {
+    const anchor = DIMENSION_ANCHORS[dim.id];
+    const g = glowGroup.append("g").attr("transform", `translate(${anchor.x},${anchor.y})`);
+    g.append("circle").attr("r", 130).attr("fill", `url(#vis-glow-${dim.id})`).attr("class", "vis-dimension-glow");
+    g.append("text")
+      .attr("class", "vis-dimension-label")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .attr("fill", anchor.color)
+      .text(dim.label);
+  });
+
   const linkGroup = svg.append("g").attr("class", "vis-links");
   const nodeGroup = svg.append("g").attr("class", "vis-nodes");
 
@@ -859,35 +909,25 @@ function renderVisualisation(data) {
     .data(links)
     .join("line")
     .attr("class", (d) => `vis-link vis-link-strength-${d.strength}`)
-    .attr("stroke", (d) => DIMENSION_ANCHORS[d.target].color)
-    .attr("stroke-width", (d) => (d.strength === 2 ? 3 : 1.5))
-    .attr("stroke-opacity", (d) => (d.strength === 2 ? 0.55 : 0.3));
+    .attr("stroke-width", (d) => (d.strength === 2 ? 2.5 : 1.25))
+    .attr("stroke-opacity", (d) => (d.strength === 2 ? 0.65 : 0.4));
 
-  const nodeSelection = nodeGroup
-    .selectAll("g.vis-node")
-    .data(nodes)
-    .join("g")
-    .attr("class", (d) => `vis-node vis-node-${d.type}`);
-
-  // Dimension anchors: bigger, fixed, labeled circles -- not draggable.
-  const dimSelection = nodeSelection.filter((d) => d.type === "dimension");
-  dimSelection
-    .append("circle")
-    .attr("r", 46)
-    .attr("fill", (d) => d.color)
-    .attr("class", "vis-dimension-circle");
-  dimSelection
-    .append("text")
-    .attr("class", "vis-dimension-label")
-    .attr("text-anchor", "middle")
-    .attr("dy", "0.35em")
-    .text((d) => d.label);
+  // Kept as a separate statement (rather than chained off linkSelection)
+  // specifically so linkSelection itself keeps referring to the <line>
+  // elements -- chaining .append("title") there would silently rebind it
+  // to the <title> elements instead, breaking the tick handler below.
+  linkSelection.append("title").text((d) => d.rationale || "");
 
   // Law nodes: draggable squares with a label underneath. clickDistance()
   // is what lets a genuine click (vs. a drag that happened to move a few
   // pixels) still fire the 'click' listener below -- without it, D3's drag
   // behavior swallows the click entirely.
-  const lawSelection = nodeSelection.filter((d) => d.type === "law");
+  const lawSelection = nodeGroup
+    .selectAll("g.vis-node-law")
+    .data(lawNodes)
+    .join("g")
+    .attr("class", "vis-node vis-node-law");
+
   const LAW_SIZE = 26;
   lawSelection
     .append("rect")
@@ -931,25 +971,23 @@ function renderVisualisation(data) {
 
   const margin = LAW_SIZE;
   const simulation = d3
-    .forceSimulation(nodes)
+    .forceSimulation(lawNodes)
     .force(
       "link",
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance((d) => (d.strength === 2 ? 110 : 200))
-        .strength((d) => (d.strength === 2 ? 0.9 : 0.45))
+        .distance((d) => (d.strength === 2 ? 90 : 170))
+        .strength((d) => (d.strength === 2 ? 0.7 : 0.35))
     )
-    .force("charge", d3.forceManyBody().strength(-220).distanceMax(360))
-    .force("collide", d3.forceCollide().radius((d) => (d.type === "dimension" ? 50 : 24)))
-    .force("x", d3.forceX(VIS_WIDTH / 2).strength(0.03))
-    .force("y", d3.forceY(VIS_HEIGHT / 2).strength(0.03))
+    .force("charge", d3.forceManyBody().strength(-200).distanceMax(340))
+    .force("collide", d3.forceCollide().radius(24))
+    .force("x", d3.forceX((d) => d.gravityTargetX).strength((d) => d.gravityStrength))
+    .force("y", d3.forceY((d) => d.gravityTargetY).strength((d) => d.gravityStrength))
     .on("tick", () => {
-      nodes.forEach((d) => {
-        if (d.type === "law") {
-          d.x = Math.max(margin, Math.min(VIS_WIDTH - margin, d.x));
-          d.y = Math.max(margin, Math.min(VIS_HEIGHT - margin, d.y));
-        }
+      lawNodes.forEach((d) => {
+        d.x = Math.max(margin, Math.min(VIS_WIDTH - margin, d.x));
+        d.y = Math.max(margin, Math.min(VIS_HEIGHT - margin, d.y));
       });
 
       linkSelection
@@ -958,7 +996,7 @@ function renderVisualisation(data) {
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
 
-      nodeSelection.attr("transform", (d) => `translate(${d.x},${d.y})`);
+      lawSelection.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
 
   visualisationRendered = true;
