@@ -1,7 +1,34 @@
-# Weekly Green Deal Digest — 2026-08-29
+# Weekly Green Deal Digest — 2026-08-31
+
+### Regolamento PPWR: prime novità per gli imballaggi
+*Fondazione Sviluppo Sostenibile — 2026-08-31*
+
+articolo elaborato dal Circular Economy Network Dallo scorso 12 agosto sul territorio dell’Unione europea si applicano le prime nuove disposizioni previste dal Regolamento PPWR , acronimo che sta per Packaging and Packaging Waste Regulation . Il nuovo regolamento imballaggi , licenziato nel gennaio 2025 ma che produce i primi effetti concreti a partire da questa estate, sostituisce la direttiva 94/62/CE e, in quanto regolamento, entra in vigore in tutti gli Stati Membri senza necessità di un recepimento nazionale. Il Regolamento PPWR costituisce il nuovo quadro di riferimento per tutta la…
+
+[Read more](https://www.fondazionesvilupposostenibile.org/regolamento-ppwr-prime-novita-per-imballaggi/)
+
+---
+
+### Trends in electricity production – July 2026
+*The Green Tank — 2026-08-31*
+
+In July 2026, renewables broke the 3 TWh “barrier,” setting a record for monthly production at 3,097 GWh. By absorbing 22.8 GWh of renewable energy that would otherwise have been curtailed, batteries prevented 13.6% of curtailments, which totaled 144.9 GWh in July (or 4.5% of total renewable energy production). Cumulatively over the first 7 months of the year, clean energy sources (RES and large hydro) reached a record high (22,348 GWh), exceeding fossil fuels by 6.6 TWh. There was a significant decline in oil (-38.8%) thanks to the Crete interconnection. However, gas remained at high levels…
+
+[Read more](https://thegreentank.gr/en/2026/08/31/admie-july26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-july26-en)
+
+---
+
+### Balancing Flexibility and Predictable Harmonization for Hydrogen Transmission
+*European Environmental Law Review — 2026-08-31*
+
+The hydrogen and gas decarbonization package introduces a legal framework for hydrogen transmission. To enable a hydrogen market in Europe as a key building block on the way to a climate neutral economy, a cross-border pipeline infrastructure must be constructed, which demands harmonized regulation. This article analyses how far the new legal framework strikes a balance between flexibility, which is needed to ramp up a new infrastructure, legal predictability, which is needed to facilitate long-term investments and strategies, and harmonization, which is needed for cross-border energy…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026007)
+
+---
 
 ### Tortious Liability for Climate Change Inaction: Recent Trends across Jurisdictions
-*European Environmental Law Review — 2026-08-29*
+*European Environmental Law Review — 2026-08-31*
 
 The article tracks a change of approach taken by national courts within and across legal systems to assessing climate actions in tort. The polycentric nature of climate policy, which had proven fatal to plaintiffs’ earlier cases in common law jurisdictions, has rarely struck judges in continental Europe as a particularly effective defence. Nonetheless, to civil courts, too, the difficulties of linking individual harm to a specific greenhouse gas (GHG) emitter have until recently made the adverse effects of climate change appear conceptually inapt for redress by means of tortious liability.…
 
@@ -9,12 +36,48 @@ The article tracks a change of approach taken by national courts within and acro
 
 ---
 
-### Balancing Flexibility and Predictable Harmonization for Hydrogen Transmission
-*European Environmental Law Review — 2026-08-29*
+### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
+*European Environmental Law Review — 2026-08-31*
 
-The hydrogen and gas decarbonization package introduces a legal framework for hydrogen transmission. To enable a hydrogen market in Europe as a key building block on the way to a climate neutral economy, a cross-border pipeline infrastructure must be constructed, which demands harmonized regulation. This article analyses how far the new legal framework strikes a balance between flexibility, which is needed to ramp up a new infrastructure, legal predictability, which is needed to facilitate long-term investments and strategies, and harmonization, which is needed for cross-border energy…
+The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026007)
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
+
+---
+
+### Climate of concern: The changing face of social movements in North Africa
+*ECFR — 2026-08-31*
+
+Cover image: picture alliance / Hans Lucas | Imen Ben Youssef The profile of social activism in North Africa is changing. Young people in the region shifted away from demanding regime change after the thwarted hopes of the 2011 Arab uprisings and the 2019 Hirak movement in Algeria. Now, they tend to seek practical improvements in their social and economic conditions rather than wholesale political reform. Many of these new social movements focus on environmental concerns, and increasingly on the impact of global warming. North Africa is among the regions in the world most affected by climate…
+
+[Read more](https://ecfr.eu/article/climate-of-concern-the-changing-face-of-social-movements-in-north-africa/)
+
+---
+
+### After Tidö: What a centre-left Sweden would change for Europe
+*ECFR — 2026-08-31*
+
+VISBY, SVERIGE 20260625 Socialdemokraternas partiledare Magdalena Andersson (S) håller sitt tal under Almedalsveckan. Foto: Henrik Montgomery / TT / Kod 10060 | picture alliance / TT NYHETSBYRÅN | Henrik Montgomery/TT The Gripen came in low over the medieval rooftops of Visby, stood on its tail and climbed vertically out of sight. Hundreds of hands went up holding phones. Every late June, all Swedish party leaders gather for Almedalen Week in this town on Gotland, the Baltic Sea’s most strategic island. This year, the military display drew the only unanimous reaction of the week. Sweden votes…
+
+[Read more](https://ecfr.eu/article/after-tido-what-a-centre-left-sweden-would-change-for-europe/)
+
+---
+
+### Actually, maybe: How German Angst could become Europe’s nightmare
+*ECFR — 2026-08-31*
+
+Friedrich Merz (CDU), Federal Chancellor, photographed before the government declaration in the German Bundestag in Berlin, 18.03.2026. | picture alliance / photothek.de | Florian Gaertner Berlin; late August: when politics normally stirs into life after the holiday lull. But this year, the lull never came. German chancellor Friedrich Merz is beset by approval levels plumbing the depths of the depleted Rhine and Danube. His governing conservative CDU party spent the summer at war with itself over pension reform (not helped by a botched cabinet reshuffle ). Some of the chancellor’s staunchest…
+
+[Read more](https://ecfr.eu/article/actually-maybe-how-german-angst-could-become-europes-nightmare/)
+
+---
+
+### Russian Budget Monitor
+*SWP (German Institute for International and Security Affairs) — 2026-08-31*
+
+Visualizing Russia’s budget laws and spending reports The full-screen view of the visualization can be found here .
+
+[Read more](https://www.swp-berlin.org/en/publication/russian-budget-monitor)
 
 ---
 
@@ -33,6 +96,96 @@ What is net zero?
 This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR, to unpack a turbulent summer in Israel and the Palestinian territories. While Palestinian factions in Gaza have agreed in principle to decommission their weapons , the proposal faces significant obstacles, not least opposition from the Israeli government. Meanwhile settler violence is surging and settlement construction is spreading, redrawing the map faster than any negotiation could. Hugh explains why a sustainable ceasefire cannot rely on disarmament alone but requires a broader political process that…
 
 [Read more](https://ecfr.eu/podcasts/episode/can-a-ceasefire-survive-israels-election/)
+
+---
+
+### Washington 27 August 2026 #3
+*International Crisis Group — 2026-08-28*
+
+Washington 27 August 2026 #3 lalasor Fri, 08/28/2026 - 21:58 Washington Fri, 08/28/2026 - 12:00 27 August 2026 President Trump asserted that the Strait of Hormuz “is open. The Iranian response is very mild. They don’t want us to back at them. That’s the whole ball game. The rest doesn’t matter”. Relatedly, CENTCOM’s commander stated that “we have successfully cleared sea mines in the strait’s international shipping lanes that were laid months ago by Iran’s Islamic Revolutionary Guard Corps. Internationally recognized transit routes in the strait are free of Iranian sea mines”. “Bottom line,…
+
+[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-3)
+
+---
+
+### Hormuz 27 August 2026 #2
+*International Crisis Group — 2026-08-28*
+
+Hormuz 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:57 Strait of Hormuz Fri, 08/28/2026 - 12:00 27 August 2026 President Trump asserted that the Strait of Hormuz “is open. The Iranian response is very mild. They don’t want us to back at them. That’s the whole ball game. The rest doesn’t matter”. Relatedly, CENTCOM’s commander stated that “we have successfully cleared sea mines in the strait’s international shipping lanes that were laid months ago by Iran’s Islamic Revolutionary Guard Corps. Internationally recognized transit routes in the strait are free of Iranian sea mines”. “Bottom line,…
+
+[Read more](https://www.crisisgroup.org/content/hormuz-27-august-2026-2)
+
+---
+
+### Washington 27 August 2026 #2
+*International Crisis Group — 2026-08-28*
+
+Washington 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:55 Washington Fri, 08/28/2026 - 12:00 27 August 2026 U.S. President Trump stated “ I don’t want to meet, they [Iran] do. In fact, they are begging to make a deal”. Iran’s foreign minister meanwhile posited that “putting diplomacy back on track isn’t impossible. It hinges on U.S. understanding of one simple fact: pressure doesn’t work. The U.S. should build trust, speak respectfully, acknowledge our rights and uphold commitments”.
+
+[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-2)
+
+---
+
+### Tehran 27 August 2026 #2
+*International Crisis Group — 2026-08-28*
+
+Tehran 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:55 Tehran Fri, 08/28/2026 - 12:00 27 August 2026 U.S. President Trump stated “ I don’t want to meet, they [Iran] do. In fact, they are begging to make a deal”. Iran’s foreign minister meanwhile posited that “putting diplomacy back on track isn’t impossible. It hinges on U.S. understanding of one simple fact: pressure doesn’t work. The U.S. should build trust, speak respectfully, acknowledge our rights and uphold commitments”.
+
+[Read more](https://www.crisisgroup.org/content/tehran-27-august-2026-2)
+
+---
+
+### Washington 28 August 2026 #1
+*International Crisis Group — 2026-08-28*
+
+Washington 28 August 2026 #1 lalasor Fri, 08/28/2026 - 21:53 Washington Fri, 08/28/2026 - 12:00 28 August 2026 The U.S. announced sanctions against “the manager of the Dubai branch of Iran’s Bank Melli… [and] a Hong Kong-based company that has helped designated Iranian individuals and entities to access the international financial system”. The Treasury Department additionally “proposed a rule that would revoke Banque Misr UAE’s correspondent banking access to U.S. financial institutions”. Iran's foreign ministry same day asserted that the U.S .was undertaking “a new wave of economic terrorism…
+
+[Read more](https://www.crisisgroup.org/content/washington-28-august-2026-1)
+
+---
+
+### Tehran 28 August 2026 #1
+*International Crisis Group — 2026-08-28*
+
+Tehran 28 August 2026 #1 lalasor Fri, 08/28/2026 - 21:53 Tehran Fri, 08/28/2026 - 12:00 28 August 2026 The U.S. announced sanctions against “the manager of the Dubai branch of Iran’s Bank Melli… [and] a Hong Kong-based company that has helped designated Iranian individuals and entities to access the international financial system”. The Treasury Department additionally “proposed a rule that would revoke Banque Misr UAE’s correspondent banking access to U.S. financial institutions”. Iran's foreign ministry same day asserted that the U.S .was undertaking “a new wave of economic terrorism against…
+
+[Read more](https://www.crisisgroup.org/content/tehran-28-august-2026-1)
+
+---
+
+### Chad Blames Sudan’s Army for Strikes on Convoy
+*International Crisis Group — 2026-08-28*
+
+Chad Blames Sudan’s Army for Strikes on Convoy cmoore Fri, 08/28/2026 - 12:46 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Analyst's Notebook / Africa 28 August 2026 2 minutes Chad Blames Sudan’s Army for Strikes on Convoy Crisis Group expert Fulbert Ngodji sheds light on an air raid in Chad that is believed to have destroyed trucks carrying supplies for one of the main belligerents in the Sudanese civil war. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Fulbert…
+
+[Read more](https://www.crisisgroup.org/anb/africa/chad-sudan/chad-blames-sudans-army-strikes-convoy)
+
+---
+
+### Israel 27 August 2026 #1
+*International Crisis Group — 2026-08-28*
+
+Israel 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:06 Israel Fri, 08/28/2026 - 12:00 27 August 2026 The Israeli military reported that “Hizbollah launched explosive drones toward IDF soldiers in southern Lebanon”, with no reported casualties. The IDF subsequently said it had struck “Hizbollah weapons storage facilities in the Nabatieh area”.
+
+[Read more](https://www.crisisgroup.org/content/israel-27-august-2026-1)
+
+---
+
+### Lebanon 27 August 2026 #1
+*International Crisis Group — 2026-08-28*
+
+Lebanon 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:05 Lebanon Fri, 08/28/2026 - 12:00 27 August 2026 The Israeli military reported that “Hizbollah launched explosive drones toward IDF soldiers in southern Lebanon”, with no reported casualties. The IDF subsequently said it had struck “Hizbollah weapons storage facilities in the Nabatieh area”.
+
+[Read more](https://www.crisisgroup.org/content/lebanon-27-august-2026-1)
+
+---
+
+### Washington 27 August 2026 #1
+*International Crisis Group — 2026-08-28*
+
+Washington 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:04 Washington Fri, 08/28/2026 - 12:00 27 August 2026 Iranian Foreign Minister Araghchi met with Qatar's Prime Minister, and per a Qatari readout addressed "efforts to de-escalate tensions and create a conducive environment for dialogue… [as well as] ongoing discussions regarding the proposed interim framework, which includes the establishment of a temporary joint shipping corridor through the Strait of Hormuz and an agreement to implement a joint project to clear the strait of mines”. The Qatari delegation also met with Iran’s…
+
+[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-1)
 
 ---
 
@@ -171,20 +324,20 @@ The European Climate Foundation (ECF) and the Institute for European Environment
 
 ---
 
+### The real battle for a Just Transition begins now
+*The Green Tank — 2026-08-25*
+
+The debate on the future of Greece’s lignite regions is no longer only about the timeline for the operation of lignite power plants. It is primarily about whether these regions will continue to receive support from the EU Cohesion Policy beyond 2027. In an article published in Oikonomikos Tachydromos titled “Just Transition: The real battle begins now”, Nikos Mantzaris highlights the importance of the decisions currently being taken at both European and national level for the new programming period 2028–2034. The post The real battle for a Just Transition begins now first appeared on The…
+
+[Read more](https://thegreentank.gr/en/2026/08/25/nm-ot-just-transition-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-ot-just-transition-en)
+
+---
+
 ### Nigeria will need more than a bigger army to tackle security challenges
 *Chatham House — 2026-08-25*
 
 Nigeria will need more than a bigger army to tackle security challenges Expert comment LToremark 25 August 2026 Without accompanying reforms, the risk is that President Tinubu’s plan only makes Nigeria’s army bigger but not better. In July, President Bola Tinubu announced a major expansion of the Nigerian Army, adding four new divisions to its existing eight. Rather than framing it as a long-planned response to Nigeria’s many worsening security challenges , Tinubu indicated that the announcement was a direct response to a mass school kidnapping in his home region, the latest in a series of…
 
 [Read more](https://www.chathamhouse.org/2026/08/nigeria-will-need-more-bigger-army-tackle-security-challenges)
-
----
-
-### Cybersecurity in the Healthcare Sector
-*SWP (German Institute for International and Security Affairs) — 2026-08-24*
-
-An Integrated Approach to National, European and Global Resilience The healthcare sector worldwide is facing an increasing threat from cyberattacks. Between 2022 and 2025, the European Repository of Cyber Incidents (EuRepoC) rec­orded a total of 351 significant attacks on healthcare facilities. These data provide initial insights into the impact of cyberattacks on healthcare systems and sectors, and the crisis management that follows. They also highlight that such attacks pose a threat to public health and national security. The data analysis shows that national critical sectors and the…
-
-[Read more](https://www.swp-berlin.org/en/publication/cybersecurity-in-the-healthcare-sector)
 
 ---
