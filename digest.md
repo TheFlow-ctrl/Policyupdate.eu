@@ -1,47 +1,236 @@
-# Weekly Green Deal Digest — 2026-08-31
+# Weekly Green Deal Digest — 2026-09-07
 
-### Regolamento PPWR: prime novità per gli imballaggi
-*Fondazione Sviluppo Sostenibile — 2026-08-31*
+### Con investimenti integrati per clima ed aria pulita ritorni economici da 1 a 15 – Rapporto Unep e CCAC
+*Fondazione Sviluppo Sostenibile — 2026-09-07*
 
-articolo elaborato dal Circular Economy Network Dallo scorso 12 agosto sul territorio dell’Unione europea si applicano le prime nuove disposizioni previste dal Regolamento PPWR , acronimo che sta per Packaging and Packaging Waste Regulation . Il nuovo regolamento imballaggi , licenziato nel gennaio 2025 ma che produce i primi effetti concreti a partire da questa estate, sostituisce la direttiva 94/62/CE e, in quanto regolamento, entra in vigore in tutti gli Stati Membri senza necessità di un recepimento nazionale. Il Regolamento PPWR costituisce il nuovo quadro di riferimento per tutta la…
+Ogni dollaro investito nella lotta congiunta contro il cambiamento climatico e l’inquinamento atmosferico può generare circa 15 dollari di benefici economici. Lo dice un rapporto appena pubblicato dal Programma delle Nazioni Unite per l’ambiente (UNEP) e dalla Climate and Clean Air Coalition (CCAC) che per la prima volta valuta i benefici di un’azione integrata per clima e aria pulita. Pubblicato in occasione della Giornata internazionale dell’aria pulita per un cielo più azzurro , il Rapporto “Risorse nascoste: il caso economico e sanitario dell’azione per il clima e l’aria pulita” individua…
 
-[Read more](https://www.fondazionesvilupposostenibile.org/regolamento-ppwr-prime-novita-per-imballaggi/)
-
----
-
-### Trends in electricity production – July 2026
-*The Green Tank — 2026-08-31*
-
-In July 2026, renewables broke the 3 TWh “barrier,” setting a record for monthly production at 3,097 GWh. By absorbing 22.8 GWh of renewable energy that would otherwise have been curtailed, batteries prevented 13.6% of curtailments, which totaled 144.9 GWh in July (or 4.5% of total renewable energy production). Cumulatively over the first 7 months of the year, clean energy sources (RES and large hydro) reached a record high (22,348 GWh), exceeding fossil fuels by 6.6 TWh. There was a significant decline in oil (-38.8%) thanks to the Crete interconnection. However, gas remained at high levels…
-
-[Read more](https://thegreentank.gr/en/2026/08/31/admie-july26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-july26-en)
+[Read more](https://www.fondazionesvilupposostenibile.org/con-investimenti-integrati-per-clima-ed-aria-pulita-ritorni-economici-da-1-a-15-rapporto-unep-e-ccac/)
 
 ---
 
-### Balancing Flexibility and Predictable Harmonization for Hydrogen Transmission
-*European Environmental Law Review — 2026-08-31*
+### EPR per mobili e arredo: consultazione pubblica per il regolamento
+*Fondazione Sviluppo Sostenibile — 2026-09-07*
 
-The hydrogen and gas decarbonization package introduces a legal framework for hydrogen transmission. To enable a hydrogen market in Europe as a key building block on the way to a climate neutral economy, a cross-border pipeline infrastructure must be constructed, which demands harmonized regulation. This article analyses how far the new legal framework strikes a balance between flexibility, which is needed to ramp up a new infrastructure, legal predictability, which is needed to facilitate long-term investments and strategies, and harmonization, which is needed for cross-border energy…
+C’è tempo fino al 18 settembre per contribuire alla definizione del nuovo regime di responsabilità estesa del produttore nel settore dell’arredo . Il ministero dell’Ambiente e della Sicurezza Energetica ha infatti prorogato di 15 giorni il termine della consultazione pubblica sullo schema di regolamento che istituisce il regime di Extended Producer Responsibility per la filiera dei mobili e dei prodotti da arredo. Visto la concomitanza con il periodo feriale la consultazione rischiava infatti di chiudersi senza dare il tempo necessario a tutti gli attori della filiera di proporre le proprie…
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026007)
-
----
-
-### Tortious Liability for Climate Change Inaction: Recent Trends across Jurisdictions
-*European Environmental Law Review — 2026-08-31*
-
-The article tracks a change of approach taken by national courts within and across legal systems to assessing climate actions in tort. The polycentric nature of climate policy, which had proven fatal to plaintiffs’ earlier cases in common law jurisdictions, has rarely struck judges in continental Europe as a particularly effective defence. Nonetheless, to civil courts, too, the difficulties of linking individual harm to a specific greenhouse gas (GHG) emitter have until recently made the adverse effects of climate change appear conceptually inapt for redress by means of tortious liability.…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026006)
+[Read more](https://www.fondazionesvilupposostenibile.org/epr-per-mobili-e-arredo-consultazione-pubblica-per-il-regolamento/)
 
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-08-31*
+*European Environmental Law Review — 2026-09-07*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
+
+---
+
+### Against war, drought and hunger: A global coalition to prevent a food crisis
+*ECFR — 2026-09-07*
+
+Cover image: picture alliance / ZUMAPRESS.com | Bianca Otero Three features of today’s unordered world are converging to create a devastating food crisis. Russia’s war in Ukraine is disrupting agricultural exports from both countries. The enduring blockage of the Strait of Hormuz is restricting fertiliser shipments. And this year’s El Niño (a sporadic warming of the Pacific Ocean generating widespread knock-on effects elsewhere) could be the most drastic on record, causing widespread droughts. As this year’s United Nations general assembly (UNGA) draws near, global food affordability and…
+
+[Read more](https://ecfr.eu/article/against-war-drought-and-hunger-a-global-coalition-to-prevent-a-food-crisis/)
+
+---
+
+### Clima: Unep, verso superamento 1,5 °C e per WMO allarme super Niño
+*Fondazione Sviluppo Sostenibile — 2026-09-04*
+
+L’aumento della temperatura globale è destinato a superare 1,5 °C, probabilmente entro i prossimi anni, spingendo i rischi e gli impatti climatici a livelli sempre più pericolosi, ma è ancora possibile ridurre le temperature e raggiungere gli obiettivi globali dell’Accordo di Parigi. L’allarme lo lancia il nuovo rapporto del Programma delle Nazioni Unite per l’ambiente (UNEP), “ Limitare il superamento della temperatura massima “, ( Limiting Overshoot Spotlight) che identifica un percorso di “ superamento, picco e declino ” come la migliore opzione rimanente per minimizzare l’entità e la…
+
+[Read more](https://www.fondazionesvilupposostenibile.org/clima-unep-verso-superamento-15-c-e-per-wmo-allarme-super-nino/)
+
+---
+
+### Orchestrators, not customers: A new role for European governments in defence
+*ECFR — 2026-09-04*
+
+Instructor at the training ground of the Unmanned Systems Troops (UAVS). | picture alliance / Picvario Media | Sergey Elagin Europe is rearming. Defence budgets are rising, factories are expanding, and new EU instruments are pouring money into ammunition production and joint procurement. But money is only part of Europe’s defence problems. The main constraint is that its systems remain slow, fragmented and poorly suited to an age when military technology can change in months rather than decades. Three transformations are hitting the continent at once. Russia’s invasion of Ukraine has brought…
+
+[Read more](https://ecfr.eu/article/orchestrators-not-customers-a-new-role-for-european-governments-in-defence/)
+
+---
+
+### Bonus episode: The EU enlargement game
+*ECFR — 2026-09-04*
+
+What happens if your economy is suddenly in crisis, Brussels offers help with strings attached—and Turkey, China or Russia can move faster? What if your country delivers every reform the EU asks for, only for a member state to block the next step anyway? And after years of waiting, would voters still choose to join? In this special bonus episode, The Neighbourhood goes live from Lisbon for an EU enlargement game. Jessica Hendrick brings together RE-ENGAGE experts representing six EU candidate countries and throws a series of fictional—but very plausible—political and economic shocks at them…
+
+[Read more](https://ecfr.eu/podcasts/episode/bonus-episode-the-eu-enlargement-game/)
+
+---
+
+### A no to the EU, not to Europe: What Icelanders actually voted on
+*ECFR — 2026-09-04*
+
+Cover image: picture alliance / AP Photo/Marco Di Marco It took Europe’s far-right leaders no time at all to work out what Icelanders meant on August 29th, when they voted 52.8% to 47.2% against resuming negotiations to join the EU: a prosperous democracy had looked hard at Brussels and said no. Britain’s Nigel Farage congratulated them on “voting to keep their independence”. France’s Marine Le Pen went further, calling the result a reminder that “another Europe is possible”. But Iceland did not vote against Europe—it voted to keep the Europe it already has.The country sits inside the single…
+
+[Read more](https://ecfr.eu/article/a-no-to-the-eu-not-to-europe-what-icelanders-actually-voted-on/)
+
+---
+
+### Maximum pressure on Iran, round two
+*ECFR — 2026-09-04*
+
+This week, Mark Leonard is joined by Ellie Geranmayeh , deputy director of ECFR’s Middle East and North Africa programme, to unpack a volatile new chapter in the confrontation between the United States and Iran. After months of managed escalation, military strikes have resumed and President Donald Trump has launched an ambitious new sanctions package, dubbed an economic “D-Day”, aimed at squeezing Tehran into submission. Ellie argues that Washington has returned to a familiar strategy of maximum pressure, betting that unprecedented economic isolation and a blockade of Iranian exports will…
+
+[Read more](https://ecfr.eu/podcasts/episode/maximum-pressure-on-iran-round-two/)
+
+---
+
+### Banning UK trade with illegal Israeli settlements is long overdue
+*Chatham House — 2026-09-04*
+
+Banning UK trade with illegal Israeli settlements is long overdue Expert comment sfarrell.drupa… 4 September 2026 It would be a natural extension of current UK positions, and parliament’s cross-party Foreign Affairs Committee has recommended a formal ban for over a year. Israeli settlement expansion, land appropriation, and escalating settler violence in the occupied West Bank represent some of the most outstanding obstacles to realizing a sovereign Palestinian state alongside a secure Israel, a long-standing pillar of the UK’s Middle East policy. As such, the new Labour government under…
+
+[Read more](https://www.chathamhouse.org/2026/09/banning-uk-trade-illegal-israeli-settlements-long-overdue)
+
+---
+
+### Russian military spending soars, upending the Kremlin’s budget plans
+*SWP (German Institute for International and Security Affairs) — 2026-09-04*
+
+When Vladimir Putin takes the stage at a major public event, little is left to chance. Speeches, questions and answers are usually choreographed down to the smallest detail. Putin’s appearance at the Eastern Economic Forum in Vladivostok on September 3 was no exception. The plenary session began with a largely boilerplate speech by Putin on the socio-economic development of Russia’s Far East. But when Putin left the podium and returned to his seat on stage, the moderator immediately shifted the discussion to a different topic. He asked Putin about the state of the federal budget, pointing to…
+
+[Read more](https://www.swp-berlin.org/en/publication/russian-military-spending-soars-upending-the-kremlins-budget-plans)
+
+---
+
+### The axis and the alternative
+*FEPS (S&D) — 2026-09-04*
+
+90 years ago, in July 1936, the Bayreuth opera festival featured Richard Wagner’s Siegfried, as it had many times before and since. After this performance, however, one of the festival’s regular guests, who was the leader of Germany at the time, received two envoys from the Spanish nationalist general Francisco Franco. As a result, Germany helped Franco to attack the Spanish Republic from Morocco, and later, Italy also provided massive military support to the fascist forces to wage a civil war on the democratic Republic, which lasted almost three years. In 1936, the emerging Italo-German axis…
+
+[Read more](https://feps-europe.eu/the-axis-and-the-alternative/)
+
+---
+
+### Executive Summary: Circular Economy Act as Europe’s new competitiveness strategy and its implications for plastics
+*PlasticsEurope — 2026-09-03*
+
+High-level stakeholder event organised by PubAffairs Bruxelles in partnership with Plastics Europe The debate brought together policymakers, industry representatives and stakeholders to discuss the role of the forthcoming Circular Economy Act (CEA) in Europe’s industrial future. The discussion took place against a backdrop of growing concerns about European competitiveness, industrial resilience and strategic autonomy. Traditionally viewed through an environmental lens, participants broadly agreed that circularity must now be considered as a core component of Europe’s economic and industrial…
+
+[Read more](https://plasticseurope.org/media/executive-summary-circular-economy-act-as-europes-new-competitiveness-strategy-and-its-implications-for-plastics/)
+
+---
+
+### What is the United Nations for?
+*Chatham House — 2026-09-03*
+
+What is the United Nations for? Audio sseth.drupal@c… 3 September 2026 On this week’s episode of Independent Thinking, our experts discuss the issues facing the United Nations ahead of the 81st General Assembly. The United Nations convenes for its 81st General Assembly next week amid turmoil around the world that it seeks to bring together. The conflicts in Iran, Ukraine and Gaza, and the US, China and Russia’s undermining of the rules-based international order cast a shadow over UNGA. Can the organization renew itself for a dangerous multipolar world? Or is it doomed to the same fate as the…
+
+[Read more](https://www.chathamhouse.org/2026/09/what-united-nations-for-independent-thinking-podcast)
+
+---
+
+### Putting a seat belt on allowance use: how aviation could do its part
+*Sandbag — 2026-09-02*
+
+This brief proposes that access by airlines to emission allowances from other sectors should gradually be reduced. Download the policy brief Explore our ETS Simulator Aviation was included in the EU’s Emissions Trading System (ETS) in 2012, initially covering all flights departing from the EU, then restricted to intra-EU flights from 2013 onwards. Ever since, aviation has failed to stay within its carbon budget, emitting more CO2 than its allocated allowances, except in 2020-21 due to Covid-19. In 2024, aviation exceeded its carbon budget by 119%, at 62 million tonnes of CO2. Aviation has so…
+
+[Read more](https://sandbag.be/2026/09/02/putting-a-seat-belt-on-allowance-use-how-aviation-could-do-its-part/)
+
+---
+
+### Declines in European bumblebee habitat suitability attributable to climate change
+*Nature Climate Change — 2026-09-02*
+
+Nature Climate Change, Published online: 02 September 2026; doi:10.1038/s41558-026-02734-6 The authors consider factual and counterfactual scenarios to isolate the role of climate change in the decline of suitable habitats for European bumblebees (1901–2019). They show reductions of 5% on average, and up to 19% locally, with high-altitude gains partially offsetting losses.
+
+[Read more](https://www.nature.com/articles/s41558-026-02734-6)
+
+---
+
+### Is China’s humanoid robot industry a bubble?
+*Chatham House — 2026-09-02*
+
+Is China’s humanoid robot industry a bubble? Expert comment jon.wallace 2 September 2026 The market debut of Unitree, China’s leading humanoid robot company, has stoked fears that Beijing’s ambitions for robots exceed demand. Until humanoid robots reach their ‘ChatGPT moment’ those worries will remain. China’s robotics industry has been making headlines again. Videos of humanoid robots running, jumping and boxing at Beijing’s World Humanoid Games swamped social media feeds in late August – including a robot that broke Usain Bolt’s 100m record. Meanwhile financial media were gripped by wild…
+
+[Read more](https://www.chathamhouse.org/2026/09/chinas-humanoid-robot-industry-bubble)
+
+---
+
+### SIPRI co-hosts 2026 Armament and Disarmament Summer School
+*SIPRI — 2026-09-02*
+
+SIPRI and its partners hosted the 2026 Armament and Disarmament Summer School in Stockholm and Uppsala
+
+[Read more](https://www.sipri.org/news/2026/sipri-co-hosts-2026-armament-and-disarmament-summer-school)
+
+---
+
+### E3G WhatsApp registration for journalists
+*E3G — 2026-09-01*
+
+Media can receive targeted news, developments and exclusive analysis via E3G’s WhatsApp broadcast for journalists. Experts from the E3G team bring you access to exclusive WhatsApp updates with background, comment, press advisories and releases for key geopolitical and climate events over the year – the UNFCCC key moments including Bonn, UNGA, COP; WB Springs and Annuals, Munich Security Conference, for example. This service is used to support key moments and not for routine updates. E3G’s weekly stakeholder newsletter is open to all following our work – either subscribe on this website – see…
+
+[Read more](https://www.e3g.org/news/e3g-whatsapp-registration-for-updates/?utm_source=rss&utm_medium=rss&utm_campaign=e3g-whatsapp-registration-for-updates)
+
+---
+
+### Restore nature, strengthen Europe: governments urged to meet legal deadline and deliver credible restoration plans
+*EEB (European Environmental Bureau) — 2026-09-01*
+
+Today marks the deadline for EU countries to submit their draft National Restoration Plans under the EU Nature Restoration Law. Environmental organisations urge governments to move beyond box-ticking and set out credible, science-based plans that deliver restoration on the ground. As wildfires, droughts, heatwaves and other climate-driven disasters intensify across Europe, nature restoration is more urgent than ever. Restoring healthy ecosystems is essential to strengthening Europe’s resilience, protecting people and reducing the impacts of climate disasters while delivering benefits for…
+
+[Read more](https://eeb.org/en/restore-nature-strengthen-europe/)
+
+---
+
+### The Carbon Footprint of Electricity Production – July 2026
+*The Green Tank — 2026-09-01*
+
+Emissions from electricity generation rose in July to 1.28 million tons (+25.6% compared to June), mainly due to increased gas use, which also pushed the carbon intensity above 200 g CO2/kWh (204 g CO2/kWh, +12.5%). However, for the first 7 months of 2026, emissions from the sector reached a historic low (8.23 million tons), mainly due to reduced use of lignite and oil in non-interconnected islands. Despite this historic low, the country has already emitted more than 90% of its annual carbon budget and is off track to meet the NECP the electricity production sector. The post The Carbon…
+
+[Read more](https://thegreentank.gr/en/2026/09/01/emissionswatch-july26-en/?utm_source=rss&utm_medium=rss&utm_campaign=emissionswatch-july26-en)
+
+---
+
+### Annual Review 2025–26
+*Chatham House — 2026-09-01*
+
+Annual Review 2025–26 Other resource tharrisson.drupal 1 September 2026 Explore highlights from our work over the past year, including research, events, and impact. Chair’s statement The turbulence in international affairs over the last year has underscored the importance of Chatham House’s mission. I am proud that our teams have risen to the challenge. They have produced timely, independent analysis of global crises, delivered original and influential research on systemic changes, and convened the leaders and decision-makers who have been shaping events. All of this work culminated in the…
+
+[Read more](https://www.chathamhouse.org/2026/09/annual-review-2025-26)
+
+---
+
+### The era of single-solution security is over: Helsinki Security Forum 2026 explores new layers of security
+*FIIA (Finnish Institute of International Affairs) — 2026-09-01*
+
+The era of single-solution security is over. In a world shaped by disruption and competition, resilience no longer stems from a single security guarantee, alliance, or strategy. The fifth annual Helsinki Security Forum (HSF) will take place in Helsinki on 2–4 October 2026, bringing together international policymakers and experts to discuss the future of Finnish and European security. The theme of HSF 2026, Layers of Security , highlights both the different layers of security and the diverse actors who help shape them. “European security is being shaped simultaneously by geopolitical,…
+
+[Read more](https://fiia.fi/en/news/the-era-of-single-solution-security-is-over-helsinki-security-forum-2026-explores-new-layers-of-security)
+
+---
+
+### A South Korean Warning on the Perils of the AI Economy
+*Wilfried Martens Centre (EPP) — 2026-09-01*
+
+Although barely reported in Europe, South Korea has just experienced a terrifying glimpse of how AI stocks increasing market dominance – coupled with modern trading technology and lax financial regulations – can cause extreme volatility and wealth destruction. The South Korean stock exchange (KOSPI) doubled in value between January and June 2026 before plummeting by nearly 40% over the following month. Although designed to represent the entire South Korean economy, the KOSPI had come to represent a one-way bet on the AI boom. Over 50% of the entire index was represented by just two firms –…
+
+[Read more](https://www.martenscentre.eu/blog/a-south-korean-warning-on-the-perils-of-the-ai-economy/)
+
+---
+
+### A deadly alliance of Big Tech and Big Oil
+*Corporate Europe Observatory — 2026-08-31*
+
+The unholy trinity of data centres, gas and carbon capture 31.08.2026 Tech Big tech companies like Microsoft, Amazon and Google are building new fossil gas plants to power their energy guzzling data centres. And the EU wants to triple Europe’s data centre capacity in five to seven years. What’s more, tech firms are starting to team up with oil companies like ExxonMobil, Chevron and Eni to greenwash their fossil-fuelled data centres. This unholy alliance of Big Tech and Big Oil promises to capture, transport and store the emissions from these gas plants. Carbon capture, however, is the…
+
+[Read more](https://corporateeurope.org/en/2026/08/deadly-alliance-big-tech-and-big-oil)
+
+---
+
+### The Invisible Engine Powering Europe’s Climate Transition
+*Netzero Cities — 2026-08-31*
+
+Every day, cities generate extraordinary amounts of information. Buildings consume energy. Buses move through neighbourhoods. Heat networks respond to changing demand. For years, much of this information existed in separate systems, making it difficult to understand how one decision affected another. Today, cities are beginning to connect those pieces through an invisible tissue of digitalisation. Digital technologies are helping cities reveal hidden patterns, model and test pathways before investment, and monitor whether their climate strategies are effective. “ Climate change doesn’t…
+
+[Read more](https://netzerocities.eu/2026/08/31/the-invisible-engine-powering-europes-climate-transition/)
 
 ---
 
@@ -57,287 +246,44 @@ Cover image: picture alliance / Hans Lucas | Imen Ben Youssef The profile of soc
 ### After Tidö: What a centre-left Sweden would change for Europe
 *ECFR — 2026-08-31*
 
-VISBY, SVERIGE 20260625 Socialdemokraternas partiledare Magdalena Andersson (S) håller sitt tal under Almedalsveckan. Foto: Henrik Montgomery / TT / Kod 10060 | picture alliance / TT NYHETSBYRÅN | Henrik Montgomery/TT The Gripen came in low over the medieval rooftops of Visby, stood on its tail and climbed vertically out of sight. Hundreds of hands went up holding phones. Every late June, all Swedish party leaders gather for Almedalen Week in this town on Gotland, the Baltic Sea’s most strategic island. This year, the military display drew the only unanimous reaction of the week. Sweden votes…
+VISBY, SVERIGE 20260625 Socialdemokraternas partiledare Magdalena Andersson (S) håller sitt tal under Almedalsveckan. Foto: Henrik Montgomery / TT / Kod 10060 | picture alliance / TT NYHETSBYRÅN | Henrik Montgomery/TT The Gripen fighter jet came in low over the medieval rooftops of Visby, stood on its tail and climbed vertically out of sight. Hundreds of hands went up holding phones. Every late June, all Swedish party leaders gather for Almedalen Week in this town on Gotland, the Baltic Sea’s most strategic island. This year, the military display drew the only unanimous reaction of the week.…
 
 [Read more](https://ecfr.eu/article/after-tido-what-a-centre-left-sweden-would-change-for-europe/)
 
 ---
 
-### Actually, maybe: How German Angst could become Europe’s nightmare
-*ECFR — 2026-08-31*
+### Critical minerals need secure supply chains – increasingly that depends on responsible production
+*Chatham House — 2026-08-31*
 
-Friedrich Merz (CDU), Federal Chancellor, photographed before the government declaration in the German Bundestag in Berlin, 18.03.2026. | picture alliance / photothek.de | Florian Gaertner Berlin; late August: when politics normally stirs into life after the holiday lull. But this year, the lull never came. German chancellor Friedrich Merz is beset by approval levels plumbing the depths of the depleted Rhine and Danube. His governing conservative CDU party spent the summer at war with itself over pension reform (not helped by a botched cabinet reshuffle ). Some of the chancellor’s staunchest…
+Critical minerals need secure supply chains – increasingly that depends on responsible production Expert comment sfarrell.drupa… 31 August 2026 More than half of critical minerals worldwide are located under or near Indigenous lands. Community protests have interrupted production, so the business case for taking human rights seriously is becoming stronger and stronger. Global trade wars, geo-economic competition and climate change are catalysing threats within minerals supply chains. The Business and Human Rights Centre recorded a 73% increase in human rights abuses linked to transition…
 
-[Read more](https://ecfr.eu/article/actually-maybe-how-german-angst-could-become-europes-nightmare/)
+[Read more](https://www.chathamhouse.org/2026/09/critical-minerals-need-secure-supply-chains-increasingly-depends-responsible-production)
 
 ---
 
-### Russian Budget Monitor
+### The ‘reverse Kindleberger Trap’: reasons to worry about the next financial crisis
+*Chatham House — 2026-08-31*
+
+The ‘reverse Kindleberger Trap’: reasons to worry about the next financial crisis Expert comment sfarrell.drupa… 31 August 2026 A US crisis is very likely to be associated with a capital outflow, rather than a capital inflow, with the result that the dollar could weaken substantially against other currencies. A worrying feature of the next big financial crisis is that we may lack a dominant power able and willing to stabilise the international economic order. That would certainly have been the view of the late economic historian Charles Kindleberger, who argued that the length and depth of…
+
+[Read more](https://www.chathamhouse.org/2026/09/reverse-kindleberger-trap-reasons-worry-about-next-financial-crisis)
+
+---
+
+### Critical minerals need secure supply chains – increasingly that depends on responsible production
+*Chatham House — 2026-08-31*
+
+Critical minerals need secure supply chains – increasingly that depends on responsible production Expert comment sfarrell.drupa… 31 August 2026 More than half of critical minerals worldwide are located under or near Indigenous lands. Community protests have interrupted production, so the business case for taking human rights seriously is becoming stronger and stronger. Global trade wars, geo-economic competition and climate change are catalysing threats within minerals supply chains. The Business and Human Rights Centre recorded a 73% increase in human rights abuses linked to transition…
+
+[Read more](https://www.chathamhouse.org/2026/09/critical-minerals-need-secure-supply-chains-increasingly-depends-responsible-production)
+
+---
+
+### Why the Gulf Monarchies Will Not Turn Away from the United States Despite the Iran War
 *SWP (German Institute for International and Security Affairs) — 2026-08-31*
 
-Visualizing Russia’s budget laws and spending reports The full-screen view of the visualization can be found here .
+The signing on 7 August of the so-called Mecca Pact by Saudi Arabia, Türkiye and Pakistan again raises the question of whether the Gulf monarchies might seek to reduce their security dependence on the United States. The Gulf monarchies’ experience of the Iran war makes such a realignment appear plausible. Despite their decades-long partnership with Washington, they became targets of Iranian drone and missile attacks that caused considerable damage to the region’s energy infrastructure and severely disrupted energy exports, as the Strait of Hormuz was effectively closed. The Trump…
 
-[Read more](https://www.swp-berlin.org/en/publication/russian-budget-monitor)
-
----
-
-### What is net zero?
-*ClientEarth — 2026-08-28*
-
-What is net zero?
-
-[Read more](https://www.clientearth.org/latest/news/what-is-net-zero/)
-
----
-
-### Can a ceasefire survive Israel’s election?
-*ECFR — 2026-08-28*
-
-This week, Mark Leonard is joined by Hugh Lov att , senior policy fellow at ECFR, to unpack a turbulent summer in Israel and the Palestinian territories. While Palestinian factions in Gaza have agreed in principle to decommission their weapons , the proposal faces significant obstacles, not least opposition from the Israeli government. Meanwhile settler violence is surging and settlement construction is spreading, redrawing the map faster than any negotiation could. Hugh explains why a sustainable ceasefire cannot rely on disarmament alone but requires a broader political process that…
-
-[Read more](https://ecfr.eu/podcasts/episode/can-a-ceasefire-survive-israels-election/)
-
----
-
-### Washington 27 August 2026 #3
-*International Crisis Group — 2026-08-28*
-
-Washington 27 August 2026 #3 lalasor Fri, 08/28/2026 - 21:58 Washington Fri, 08/28/2026 - 12:00 27 August 2026 President Trump asserted that the Strait of Hormuz “is open. The Iranian response is very mild. They don’t want us to back at them. That’s the whole ball game. The rest doesn’t matter”. Relatedly, CENTCOM’s commander stated that “we have successfully cleared sea mines in the strait’s international shipping lanes that were laid months ago by Iran’s Islamic Revolutionary Guard Corps. Internationally recognized transit routes in the strait are free of Iranian sea mines”. “Bottom line,…
-
-[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-3)
-
----
-
-### Hormuz 27 August 2026 #2
-*International Crisis Group — 2026-08-28*
-
-Hormuz 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:57 Strait of Hormuz Fri, 08/28/2026 - 12:00 27 August 2026 President Trump asserted that the Strait of Hormuz “is open. The Iranian response is very mild. They don’t want us to back at them. That’s the whole ball game. The rest doesn’t matter”. Relatedly, CENTCOM’s commander stated that “we have successfully cleared sea mines in the strait’s international shipping lanes that were laid months ago by Iran’s Islamic Revolutionary Guard Corps. Internationally recognized transit routes in the strait are free of Iranian sea mines”. “Bottom line,…
-
-[Read more](https://www.crisisgroup.org/content/hormuz-27-august-2026-2)
-
----
-
-### Washington 27 August 2026 #2
-*International Crisis Group — 2026-08-28*
-
-Washington 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:55 Washington Fri, 08/28/2026 - 12:00 27 August 2026 U.S. President Trump stated “ I don’t want to meet, they [Iran] do. In fact, they are begging to make a deal”. Iran’s foreign minister meanwhile posited that “putting diplomacy back on track isn’t impossible. It hinges on U.S. understanding of one simple fact: pressure doesn’t work. The U.S. should build trust, speak respectfully, acknowledge our rights and uphold commitments”.
-
-[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-2)
-
----
-
-### Tehran 27 August 2026 #2
-*International Crisis Group — 2026-08-28*
-
-Tehran 27 August 2026 #2 lalasor Fri, 08/28/2026 - 21:55 Tehran Fri, 08/28/2026 - 12:00 27 August 2026 U.S. President Trump stated “ I don’t want to meet, they [Iran] do. In fact, they are begging to make a deal”. Iran’s foreign minister meanwhile posited that “putting diplomacy back on track isn’t impossible. It hinges on U.S. understanding of one simple fact: pressure doesn’t work. The U.S. should build trust, speak respectfully, acknowledge our rights and uphold commitments”.
-
-[Read more](https://www.crisisgroup.org/content/tehran-27-august-2026-2)
-
----
-
-### Washington 28 August 2026 #1
-*International Crisis Group — 2026-08-28*
-
-Washington 28 August 2026 #1 lalasor Fri, 08/28/2026 - 21:53 Washington Fri, 08/28/2026 - 12:00 28 August 2026 The U.S. announced sanctions against “the manager of the Dubai branch of Iran’s Bank Melli… [and] a Hong Kong-based company that has helped designated Iranian individuals and entities to access the international financial system”. The Treasury Department additionally “proposed a rule that would revoke Banque Misr UAE’s correspondent banking access to U.S. financial institutions”. Iran's foreign ministry same day asserted that the U.S .was undertaking “a new wave of economic terrorism…
-
-[Read more](https://www.crisisgroup.org/content/washington-28-august-2026-1)
-
----
-
-### Tehran 28 August 2026 #1
-*International Crisis Group — 2026-08-28*
-
-Tehran 28 August 2026 #1 lalasor Fri, 08/28/2026 - 21:53 Tehran Fri, 08/28/2026 - 12:00 28 August 2026 The U.S. announced sanctions against “the manager of the Dubai branch of Iran’s Bank Melli… [and] a Hong Kong-based company that has helped designated Iranian individuals and entities to access the international financial system”. The Treasury Department additionally “proposed a rule that would revoke Banque Misr UAE’s correspondent banking access to U.S. financial institutions”. Iran's foreign ministry same day asserted that the U.S .was undertaking “a new wave of economic terrorism against…
-
-[Read more](https://www.crisisgroup.org/content/tehran-28-august-2026-1)
-
----
-
-### Chad Blames Sudan’s Army for Strikes on Convoy
-*International Crisis Group — 2026-08-28*
-
-Chad Blames Sudan’s Army for Strikes on Convoy cmoore Fri, 08/28/2026 - 12:46 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Analyst's Notebook / Africa 28 August 2026 2 minutes Chad Blames Sudan’s Army for Strikes on Convoy Crisis Group expert Fulbert Ngodji sheds light on an air raid in Chad that is believed to have destroyed trucks carrying supplies for one of the main belligerents in the Sudanese civil war. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Fulbert…
-
-[Read more](https://www.crisisgroup.org/anb/africa/chad-sudan/chad-blames-sudans-army-strikes-convoy)
-
----
-
-### Israel 27 August 2026 #1
-*International Crisis Group — 2026-08-28*
-
-Israel 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:06 Israel Fri, 08/28/2026 - 12:00 27 August 2026 The Israeli military reported that “Hizbollah launched explosive drones toward IDF soldiers in southern Lebanon”, with no reported casualties. The IDF subsequently said it had struck “Hizbollah weapons storage facilities in the Nabatieh area”.
-
-[Read more](https://www.crisisgroup.org/content/israel-27-august-2026-1)
-
----
-
-### Lebanon 27 August 2026 #1
-*International Crisis Group — 2026-08-28*
-
-Lebanon 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:05 Lebanon Fri, 08/28/2026 - 12:00 27 August 2026 The Israeli military reported that “Hizbollah launched explosive drones toward IDF soldiers in southern Lebanon”, with no reported casualties. The IDF subsequently said it had struck “Hizbollah weapons storage facilities in the Nabatieh area”.
-
-[Read more](https://www.crisisgroup.org/content/lebanon-27-august-2026-1)
-
----
-
-### Washington 27 August 2026 #1
-*International Crisis Group — 2026-08-28*
-
-Washington 27 August 2026 #1 lalasor Fri, 08/28/2026 - 02:04 Washington Fri, 08/28/2026 - 12:00 27 August 2026 Iranian Foreign Minister Araghchi met with Qatar's Prime Minister, and per a Qatari readout addressed "efforts to de-escalate tensions and create a conducive environment for dialogue… [as well as] ongoing discussions regarding the proposed interim framework, which includes the establishment of a temporary joint shipping corridor through the Strait of Hormuz and an agreement to implement a joint project to clear the strait of mines”. The Qatari delegation also met with Iran’s…
-
-[Read more](https://www.crisisgroup.org/content/washington-27-august-2026-1)
-
----
-
-### Return Hubs in European Migration Policy
-*SWP (German Institute for International and Security Affairs) — 2026-08-28*
-
-A Residual Instrument with Systemic Risks The EU Return Regulation creates a legal basis for transferring individuals subject to enforceable return decisions to third countries willing to accept them, even where they have no prior connection to that country. This makes so-called return hubs an increasingly likely prospect. The political appeal is clear: return hubs offer governments a visible way to demonstrate enforcement at a moment when the EU Pact on Migration and Asylum depends on credible implementation. But political salience should not be mistaken for operational effectiveness.…
-
-[Read more](https://www.swp-berlin.org/en/publication/return-hubs-in-european-migration-policy)
-
----
-
-### Planning for resilience
-*E3G — 2026-08-27*
-
-In 2026, Europe endured one of its hottest ever summers putting the EU’s resilience and energy security to the test. Now, this autumn’s legislative agenda presents two opportunities to embed lessons from this summer’s heatwaves and plan for a secure and resilient future. The forthcoming Climate Resilience and Risk Management Integrated Framework is a first step to ensuring climate impacts are built into the decisions that shape Europe’s economy. The revision of the Energy Security Framework can be an early test of what this looks like in practice – and whether Europe is ready to plan its…
-
-[Read more](https://www.e3g.org/news/planning-for-resilience/?utm_source=rss&utm_medium=rss&utm_campaign=planning-for-resilience)
-
----
-
-### Talk is cheap: Europe’s defence promise meets the EU budget
-*ECFR — 2026-08-27*
-
-Cover image: picture alliance / Hans Lucas | Martin Bertrand US secretary of state Marco Rubio described NATO’s July gathering in Ankara, two months before it convened, as “one of the more important leaders’ summits in [its] history.” The summit confirmed that Europeans have accepted America’s expectation that they do more for their own security. The Ankara declaration recognised that “European allies and Canada, working together with the United States, are assuming greater responsibility for the alliance’s defence.” Accepting that shift is one thing; paying for it is another. For European…
-
-[Read more](https://ecfr.eu/article/talk-is-cheap-europes-defence-promise-meets-the-eu-budget/)
-
----
-
-### Iran, Gaza, Trump and Netanyahu: Understanding the Middle East’s crises
-*Chatham House — 2026-08-27*
-
-Iran, Gaza, Trump and Netanyahu: Understanding the Middle East’s crises Audio sseth.drupal@c… 27 August 2026 In this week’s episode of Independent Thinking, our experts discuss the big picture in the Middle East and how the various conflicts are shaping relations in the region. It’s been a tumultuous year in the Middle East – and it’s far from over. Six months after the US and Israel launched their offensive against Iran, the conflict continues to disrupt trade, energy and food security. President Trump struggles to escape a deadlock that threatens to seriously damage him in the American…
-
-[Read more](https://www.chathamhouse.org/2026/08/iran-gaza-trump-netanyahu-understanding-middle-easts-crises-independent-thinking-podcast)
-
----
-
-### Surmonter les Obstacles à L’intégration des Réfugiés Soudanais au Tchad : Éducation, Emploi et Accès à la Terre
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/surmonter-les-obstacles-lintegration-des-refugies-soudanais-au-tchad-education-emploi-et-acces-la)
-
----
-
-### التغلب على العوائق أمام اندماج اللاجئين السودانيين في تشاد: التعليم والعمل والوصول إلى الأراضي
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/altghlb-ly-alwayq-amam-andmaj-allajyyn-alswdanyyn-fy-tshad-altlym-walml-walwswl-aly-alarady)
-
----
-
-### Sous-financement Humanitaire au Tchad : Implications pour les Populations Vulnérables
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/sous-financement-humanitaire-au-tchad-implications-pour-les-populations-vulnerables)
-
----
-
-### فجوات تمويل العمل الإنساني في تشاد: الآ ثار المترتبة على الفئات السكانية الأكثر هشاشة
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/fjwat-tmwyl-alml-alansany-fy-tshad-ala-thar-almtrtbt-ly-alfyat-alskanyt-alakthr-hshasht)
-
----
-
-### Overcoming Barriers to Integration for Sudanese Refugees in Chad: Education, Employment and Land Access
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that the socioeconomic integration of Sudanese refugee women is constrained by limited access to education, economic opportunities and land.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/overcoming-barriers-integration-sudanese-refugees-chad-education-employment-and-land-access)
-
----
-
-### The Humanitarian Funding Gap in Chad: Implications for Vulnerable Populations
-*SIPRI — 2026-08-27*
-
-In 2024, SIPRI and its partner BUCOFORE carried out research showing that refugee women and girls in the Chad–Sudan border region face considerable threats to their safety, and existing protection measures are inadequate. The research also found that humanitarian funding in Chad remains insufficient to match the scale of need.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-fact-sheets/humanitarian-funding-gap-chad-implications-vulnerable-populations)
-
----
-
-### Europe cannot deliver a circular plastics economy without enabling innovation
-*PlasticsEurope — 2026-08-26*
-
-How innovation in technologies demonstrates the need to modernise Europe’s recycling framework Europe has set ambitious circular economy, recycled content and climate objectives. For plastics, these objectives can help reduce waste to landfill and incineration, strengthen resource efficiency, and support a more resilient European industrial base. Yet Europe faces a striking contradiction. It calls for innovation, but too often regulates the circular economy through frameworks designed only around technologies that already operate at scale. White_paper_innovation_final Download The post Europe…
-
-[Read more](https://plasticseurope.org/media/europe-cannot-deliver-circular-plastics-economy-without-enabling-innovation/)
-
----
-
-### Study to support the fitness check of the polluter pays principle
-*CEPS — 2026-08-26*
-
-The Polluter Pays Principle (PPP) is applied where polluters bear the costs of their pollution, including of measures to prevent, control and remedy it, of poli
-
-[Read more](https://www.ceps.eu/ceps-publications/study-to-support-the-fitness-check-of-the-polluter-pays-principle/)
-
----
-
-### Beyond the Blue Line: Tackling Climate, Peace, and Security Challenges in Abyei
-*SIPRI — 2026-08-26*
-
-Abyei, a disputed area between Sudan and South Sudan, faces interconnected climate, peace and security challenges that affect local communities and the operating environment of the United Nations Interim Security Force for Abyei (UNISFA).
-
-[Read more](https://www.sipri.org/publications/2026/partner-publications/beyond-blue-line-tackling-climate-peace-and-security-challenges-abyei)
-
----
-
-### Why the clean energy transition needs information integrity
-*E3G — 2026-08-25*
-
-The energy transition is accelerating, with renewable energy generation continuing to break records . Yet this is taking place in an increasingly contested information environment – one in which information manipulation can shape public perceptions, political discourses and ultimately the conditions for climate action. This matters because climate and energy policy are politically sensitive. They are particularly vulnerable to attempts to influence public opinion, as it runs counter to the interests of political and economic incumbents benefiting from the fossil fuel economy. Rapid advances…
-
-[Read more](https://www.e3g.org/news/why-the-clean-energy-transition-needs-information-integrity/?utm_source=rss&utm_medium=rss&utm_campaign=why-the-clean-energy-transition-needs-information-integrity)
-
----
-
-### Tracking the world’s hidden carbon: Launch of the ECF Traded Emissions Tracker
-*IEEP — 2026-08-25*
-
-The European Climate Foundation (ECF) and the Institute for European Environmental Policy (IEEP) invite you to the launch of the Traded Emissions Tracker. The post Tracking the world’s hidden carbon: Launch of the ECF Traded Emissions Tracker appeared first on IEEP AISBL .
-
-[Read more](https://ieep.eu/news/tracking-the-worlds-hidden-carbon-launch-of-the-ecf-traded-emissions-tracker/)
-
----
-
-### The real battle for a Just Transition begins now
-*The Green Tank — 2026-08-25*
-
-The debate on the future of Greece’s lignite regions is no longer only about the timeline for the operation of lignite power plants. It is primarily about whether these regions will continue to receive support from the EU Cohesion Policy beyond 2027. In an article published in Oikonomikos Tachydromos titled “Just Transition: The real battle begins now”, Nikos Mantzaris highlights the importance of the decisions currently being taken at both European and national level for the new programming period 2028–2034. The post The real battle for a Just Transition begins now first appeared on The…
-
-[Read more](https://thegreentank.gr/en/2026/08/25/nm-ot-just-transition-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-ot-just-transition-en)
-
----
-
-### Nigeria will need more than a bigger army to tackle security challenges
-*Chatham House — 2026-08-25*
-
-Nigeria will need more than a bigger army to tackle security challenges Expert comment LToremark 25 August 2026 Without accompanying reforms, the risk is that President Tinubu’s plan only makes Nigeria’s army bigger but not better. In July, President Bola Tinubu announced a major expansion of the Nigerian Army, adding four new divisions to its existing eight. Rather than framing it as a long-planned response to Nigeria’s many worsening security challenges , Tinubu indicated that the announcement was a direct response to a mass school kidnapping in his home region, the latest in a series of…
-
-[Read more](https://www.chathamhouse.org/2026/08/nigeria-will-need-more-bigger-army-tackle-security-challenges)
+[Read more](https://www.swp-berlin.org/en/publication/why-the-gulf-monarchies-will-not-turn-away-from-the-united-states-despite-the-iran-war)
 
 ---
