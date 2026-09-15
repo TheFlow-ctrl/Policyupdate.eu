@@ -433,6 +433,16 @@ function setupUtilityNav() {
       showInfoView(sectionIds[link.dataset.view]);
     });
   });
+
+  // The "us" link inside the Sources page's intro text jumps to Contact --
+  // reuses the real Contact nav button's click handler above, so active
+  // states stay in sync instead of duplicating the switch logic here.
+  const sourcesContactLink = document.getElementById("sources-contact-link");
+  if (sourcesContactLink) {
+    sourcesContactLink.addEventListener("click", () => {
+      document.querySelector('.utility-link[data-view="contact"]').click();
+    });
+  }
 }
 
 // Reused by clicking a law node in the Visualisation graph: switches back
