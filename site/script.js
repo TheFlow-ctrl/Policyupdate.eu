@@ -326,6 +326,7 @@ function hideAllSections() {
   document.getElementById("mission-section").hidden = true;
   document.getElementById("team-section").hidden = true;
   document.getElementById("funding-section").hidden = true;
+  document.getElementById("sources-section").hidden = true;
   document.getElementById("contact-section").hidden = true;
 }
 
@@ -421,6 +422,7 @@ function setupUtilityNav() {
     mission: "mission-section",
     team: "team-section",
     funding: "funding-section",
+    sources: "sources-section",
     contact: "contact-section",
   };
   links.forEach((link) => {
