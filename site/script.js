@@ -383,6 +383,38 @@ function showInfoView(sectionId) {
   document.getElementById("topic-info").hidden = true;
 }
 
+// Animates the header's sources-tracked badge from 0 up to its real value
+// (already correct in the pre-rendered HTML -- see STATIC_SOURCE_COUNT_*
+// markers in fetch_digest.py -- so no-JS visitors and crawlers still see
+// the right number; this is a purely cosmetic count-up for JS-enabled
+// visitors, to draw the eye to the badge on page load).
+function animateSourceCount() {
+  const el = document.querySelector(".sources-banner-count");
+  if (!el) return;
+
+  const target = parseInt(el.textContent.replace(/[^0-9]/g, ""), 10);
+  if (!Number.isFinite(target) || target <= 0) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const duration = 3000;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = target;
+    }
+  }
+
+  el.textContent = "0";
+  requestAnimationFrame(tick);
+}
+
 function setupUtilityNav() {
   const links = document.querySelectorAll(".utility-link");
   const sectionIds = {
@@ -1043,4 +1075,5 @@ setupFieldTabs();
 setupTopicTabs();
 setupActorTabs();
 setupUtilityNav();
+animateSourceCount();
 loadDigest();
