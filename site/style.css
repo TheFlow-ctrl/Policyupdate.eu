@@ -102,6 +102,7 @@ h1, h2, h3 {
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--gold);
+  font-variant-numeric: tabular-nums;
 }
 
 .sources-banner-label {
