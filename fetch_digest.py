@@ -316,6 +316,20 @@ _LEGISLATION_PATTERNS = {
     for tag_id, _label, keywords in LEGISLATION_TAGS
 }
 
+# Kept in sync with TOPIC_LABELS in script.js -- used only to render the
+# tag pills in the static (pre-rendered) HTML below.
+TOPIC_LABELS = {tag_id: label for tag_id, label, _keywords in LEGISLATION_TAGS}
+
+# Kept in sync with ACTOR_LABELS in script.js.
+ACTOR_LABELS = {
+    "think-tank": "Think Tank",
+    "academic": "Academic Journal",
+    "political": "Political",
+    "industry": "Industry & Lobby Groups",
+    "ngo": "NGO & Advocacy",
+    "eu-institution": "EU Institutions",
+}
+
 
 def tag_legislation(title, excerpt):
     """Return the list of legislation-tag ids whose keywords appear in
@@ -571,6 +585,385 @@ def update_archive(new_entries):
     print(f"Archive now has {total} entries across {len(ordered_months)} month(s)")
 
 
+INDEX_HTML_FILE = Path(__file__).parent / "site" / "index.html"
+POLICY_STAGES_FILE = Path(__file__).parent / "site" / "policy_stages.json"
+
+_ENTRIES_MARKER_RE = re.compile(
+    r"(<!--STATIC_ENTRIES_START-->).*?(<!--STATIC_ENTRIES_END-->)", re.DOTALL
+)
+_DATE_MARKER_RE = re.compile(
+    r"(<!--STATIC_DATE_START-->).*?(<!--STATIC_DATE_END-->)", re.DOTALL
+)
+_ARCHIVE_MARKER_RE = re.compile(
+    r"(<!--STATIC_ARCHIVE_START-->).*?(<!--STATIC_ARCHIVE_END-->)", re.DOTALL
+)
+_POLICY_CYCLE_MARKER_RE = re.compile(
+    r"(<!--STATIC_POLICY_CYCLE_START-->).*?(<!--STATIC_POLICY_CYCLE_END-->)", re.DOTALL
+)
+
+# Kept in sync with POLICY_CYCLE_LAW_ORDER in script.js.
+POLICY_CYCLE_LAW_ORDER = [
+    "ets1", "ets2", "cbam", "red3", "csddd", "crma", "nzia", "csrd",
+    "taxonomy", "sfdr", "eudr", "nature-restoration", "lulucf", "ccus", "eed",
+]
+
+
+def _escape_html(text):
+    """Mirrors escapeHtml() in script.js exactly -- only & < > , not quotes,
+    since that's what the JS-rendered version also leaves unescaped."""
+    return (text or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def render_entry_html(entry):
+    """Python port of renderEntry() in script.js -- must stay in sync with
+    it, since this generates the static (no-JS) snapshot of the same
+    entries script.js renders client-side. Only used for entries where
+    field == "green-deal" (the page's default view); other fields are
+    reachable only via the JS-driven tabs, so they don't need a static
+    fallback."""
+    title = _escape_html(entry.get("title") or "(no title)")
+    org = _escape_html(entry.get("org") or "")
+    date = _escape_html(entry.get("date") or "")
+    link = entry.get("link") or "#"
+    actor_label = ACTOR_LABELS.get(entry.get("actor_type"), "")
+    # entry["summary"] is already HTML-stripped by clean_text() earlier in
+    # this same pipeline (unlike script.js's stripHtml(), which defends
+    # against raw JSON that might still contain markup) -- so this only
+    # needs the same 280-char slice script.js applies for display.
+    summary_text = (entry.get("summary") or "")[:280]
+    summary_html = f'<p class="entry-summary">{_escape_html(summary_text)}</p>' if summary_text else ""
+    tags_html = "".join(
+        f'<span class="entry-tag">{_escape_html(TOPIC_LABELS.get(t, t))}</span>'
+        for t in entry.get("tags") or []
+    )
+    tags_block = f'<div class="entry-tags">{tags_html}</div>' if tags_html else ""
+    meta = f"{org}{f' · {_escape_html(actor_label)}' if actor_label else ''} — {date}"
+
+    return f"""
+    <article class="entry-card">
+      <h3><a href="{link}" target="_blank" rel="noopener">{title}</a></h3>
+      <div class="entry-meta">{meta}</div>
+      {summary_html}
+      {tags_block}
+    </article>
+  """
+
+
+def render_static_entries(all_entries):
+    """Renders the default view (field == green-deal, no topic/actor
+    filter) as static HTML, so crawlers that don't execute JavaScript see
+    this week's real entries instead of the "Loading…" placeholder."""
+    green_deal_entries = [e for e in all_entries if (e.get("field") or "green-deal") == "green-deal"]
+    if not green_deal_entries:
+        return '<p class="empty">No new publications this week — check back soon.</p>'
+    return "".join(render_entry_html(e) for e in green_deal_entries)
+
+
+def render_archive_months(archive_data):
+    """Python port of renderArchive() in script.js, for the default view
+    (green-deal field, no topic/actor filter) -- same scoping rule as
+    render_static_entries() above."""
+    months = (archive_data or {}).get("months") or []
+    filtered_months = []
+    for month in months:
+        entries = [e for e in month.get("entries", []) if (e.get("field") or "green-deal") == "green-deal"]
+        if entries:
+            filtered_months.append({**month, "entries": entries})
+
+    if not filtered_months:
+        return '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
+
+    parts = []
+    for i, month in enumerate(filtered_months):
+        open_attr = " open" if i == 0 else ""
+        label = _escape_html(month.get("label", ""))
+        count = len(month["entries"])
+        entries_html = "".join(render_entry_html(e) for e in month["entries"])
+        parts.append(f"""
+      <details class="archive-month"{open_attr}>
+        <summary>{label} <span class="archive-count">({count})</span></summary>
+        <div class="entries">
+          {entries_html}
+        </div>
+      </details>
+    """)
+    return "".join(parts)
+
+
+# ---------------------------------------------------------------- policy cycle
+# Python port of the Policy Cycle rendering pipeline in script.js
+# (renderLawCycle / renderRevisionBlock / buildStepperSvg / formatShortDate).
+# Must stay in sync with those -- this generates the static (no-JS) snapshot
+# of the exact same stepper diagrams script.js renders client-side from
+# site/policy_stages.json.
+
+_MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+_SHORT_DATE_RE = re.compile(r"^(\d{4})-(\d{2})")
+
+
+def format_short_date(iso_date):
+    if not iso_date:
+        return ""
+    m = _SHORT_DATE_RE.match(iso_date)
+    if not m:
+        return iso_date
+    year, month_num = m.group(1), int(m.group(2))
+    month_name = _MONTH_ABBR[month_num - 1] if 1 <= month_num <= 12 else None
+    return f"{month_name} {year}" if month_name else iso_date
+
+
+# { current, label } accent used for an active-revision sub-diagram's
+# current-stage node -- mirrors REVISION_ACCENT in script.js.
+REVISION_ACCENT = {"current": "#2C6E8A", "label": "#1D4A5C"}
+
+
+def render_stepper_svg(stages, current_index, stage_dates, accent=None):
+    dates = stage_dates or {}
+    width, height = 680, 560
+    col_x = [560, 340, 120]  # right, middle, left
+    row_y = [90, 280, 470]
+    n = len(stages)
+
+    DONE_COLOR = "#1E3A57"
+    CURRENT_COLOR = accent["current"] if accent else "#C9A227"
+    UPCOMING_COLOR = "#DEDACD"
+    UPCOMING_STROKE = "#B7B2A3"
+    LABEL_DONE = "#1E3A57"
+    LABEL_CURRENT = accent["label"] if accent else "#8A6F1E"
+    LABEL_UPCOMING = "#5B6B78"
+    ARROW_OPACITY = 0.4
+
+    def pos(i):
+        row = i // 3
+        pos_in_row = i % 3
+        cols = list(reversed(col_x)) if row % 2 == 0 else col_x
+        return cols[pos_in_row], row_y[row]
+
+    defs = f"""<defs>
+    <marker id="arrow-done" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="{DONE_COLOR}" fill-opacity="{ARROW_OPACITY}" />
+    </marker>
+    <marker id="arrow-upcoming" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="{UPCOMING_STROKE}" fill-opacity="{ARROW_OPACITY}" />
+    </marker>
+  </defs>"""
+
+    arrows = []
+    for i in range(n - 1):
+        ax, ay = pos(i)
+        bx, by = pos(i + 1)
+        row = i // 3
+        done = (i + 1) <= current_index
+        color = DONE_COLOR if done else UPCOMING_STROKE
+        marker = f"url(#arrow-{'done' if done else 'upcoming'})"
+
+        if ay == by:
+            direction = 1 if bx > ax else -1
+            x1 = ax + direction * 22
+            x2 = bx - direction * 22
+            mid_x = (x1 + x2) / 2
+            bow = -14 if row == 1 else 14
+            arrows.append(
+                f'<path d="M {x1} {ay} Q {mid_x} {ay + bow} {x2} {by}" fill="none" '
+                f'stroke="{color}" stroke-opacity="{ARROW_OPACITY}" stroke-width="2.5" marker-end="{marker}" />'
+            )
+        else:
+            y1 = ay + 22
+            y2 = by - 22
+            dx = 26
+            cy1 = y1 + (y2 - y1) / 3
+            cy2 = y1 + (2 * (y2 - y1)) / 3
+            arrows.append(
+                f'<path d="M {ax} {y1} C {ax + dx} {cy1}, {ax - dx} {cy2}, {ax} {y2}" fill="none" '
+                f'stroke="{color}" stroke-opacity="{ARROW_OPACITY}" stroke-width="2.5" marker-end="{marker}" />'
+            )
+
+    nodes = []
+    for i in range(n):
+        x, y = pos(i)
+        stage = stages[i]
+        radius = 11
+        fill = UPCOMING_COLOR
+        stroke = UPCOMING_STROKE
+        num_color = "white"
+        label_color = LABEL_UPCOMING
+        label_weight = "500"
+
+        if i < current_index:
+            fill = DONE_COLOR
+            stroke = DONE_COLOR
+            num_color = "white"
+            label_color = LABEL_DONE
+        elif i == current_index:
+            radius = 18
+            fill = CURRENT_COLOR
+            stroke = CURRENT_COLOR
+            num_color = "#16202A"
+            label_color = LABEL_CURRENT
+            label_weight = "700"
+        else:
+            num_color = "#5B6B78"
+
+        row = i // 3
+        outward = 1 if row % 2 == 0 else -1
+        label_y = y + outward * (radius + (20 if row % 2 == 0 else 12))
+        date_y = label_y + outward * 16
+
+        raw_date = dates.get(stage["id"])
+        short_date = format_short_date(raw_date) if i <= current_index else ""
+        date_line = (
+            f'<text x="{x}" y="{date_y}" text-anchor="middle" font-size="10.5" '
+            f'font-family="IBM Plex Sans, sans-serif" fill="{label_color}" opacity="0.75">'
+            f'{_escape_html(short_date)}</text>'
+            if short_date else ""
+        )
+        tooltip_date = f" — {_escape_html(format_short_date(raw_date))}" if raw_date else ""
+        current_suffix = " (current stage)" if i == current_index else ""
+
+        nodes.append(f"""<g>
+      <circle cx="{x}" cy="{y}" r="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="2">
+        <title>{_escape_html(f"{i + 1}. {stage['label']}")}{tooltip_date}{current_suffix}</title>
+      </circle>
+      <text x="{x}" y="{y + 5}" text-anchor="middle" font-size="12" font-family="IBM Plex Sans, sans-serif" fill="{num_color}" font-weight="700">{i + 1}</text>
+      <text x="{x}" y="{label_y}" text-anchor="middle" font-size="13" font-family="IBM Plex Sans, sans-serif" fill="{label_color}" font-weight="{label_weight}">{_escape_html(stage['label'])}</text>
+      {date_line}
+    </g>""")
+
+    open_tag = (
+        f'<svg class="policy-cycle-svg" viewBox="0 0 {width} {height}" '
+        f'xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Legislative stage progress">'
+    )
+    return open_tag + defs + "".join(arrows) + "".join(nodes) + "</svg>"
+
+
+def render_revision_block(revision, stages):
+    current_index = next((i for i, s in enumerate(stages) if s["id"] == revision.get("current_stage")), -1)
+    current_label = stages[current_index]["label"] if 0 <= current_index < len(stages) else revision.get("current_stage")
+    next_deadline = f" — expected {_escape_html(revision['next_deadline'])}" if revision.get("next_deadline") else ""
+    oeil_citation = ""
+    if revision.get("oeil_url") and revision.get("oeil_procedure"):
+        oeil_citation = (
+            f'<p class="policy-cycle-source">Source: <a href="{revision["oeil_url"]}" target="_blank" '
+            f'rel="noopener">European Parliament Legislative Observatory (OEIL) — '
+            f'{_escape_html(revision["oeil_procedure"])} ↗</a></p>'
+        )
+    notes = f'<p class="policy-cycle-notes">{_escape_html(revision["notes"])}</p>' if revision.get("notes") else ""
+
+    return f"""
+    <div class="policy-cycle-revision">
+      <h4><span class="policy-cycle-revision-badge">Active revision</span> {_escape_html(revision.get('label',''))} <span class="policy-cycle-current-stage">— currently: {_escape_html(current_label)}</span></h4>
+      {render_stepper_svg(stages, current_index, revision.get("stage_dates"), REVISION_ACCENT)}
+      <p class="policy-cycle-caption"><strong>Next:</strong> {_escape_html(revision.get('next_step') or '—')}{next_deadline}</p>
+      {notes}
+      {oeil_citation}
+    </div>
+  """
+
+
+def render_law_cycle(law_id, law, stages):
+    label = _escape_html(TOPIC_LABELS.get(law_id, law_id))
+    current_index = next((i for i, s in enumerate(stages) if s["id"] == law.get("current_stage")), -1)
+    current_label = stages[current_index]["label"] if 0 <= current_index < len(stages) else law.get("current_stage")
+    next_deadline = f" — expected {_escape_html(law['next_deadline'])}" if law.get("next_deadline") else ""
+
+    omnibus_badge = ""
+    if law.get("omnibus_impact") and law["omnibus_impact"] != "none":
+        omnibus_badge = (
+            f'<span class="policy-cycle-omnibus-badge policy-cycle-omnibus-{_escape_html(law["omnibus_impact"])}">'
+            f"Omnibus-affected</span>"
+        )
+    omnibus_note = ""
+    if law.get("omnibus_impact") and law["omnibus_impact"] != "none" and law.get("omnibus_note"):
+        omnibus_note = f'<p class="policy-cycle-omnibus-note"><strong>Omnibus impact:</strong> {_escape_html(law["omnibus_note"])}</p>'
+
+    oeil_citation = ""
+    if law.get("oeil_url") and law.get("oeil_procedure"):
+        oeil_citation = (
+            f'<p class="policy-cycle-source">Source: <a href="{law["oeil_url"]}" target="_blank" '
+            f'rel="noopener">European Parliament Legislative Observatory (OEIL) — '
+            f'{_escape_html(law["oeil_procedure"])} ↗</a></p>'
+        )
+    notes = f'<p class="policy-cycle-notes">{_escape_html(law["notes"])}</p>' if law.get("notes") else ""
+    revision_block = render_revision_block(law["active_revision"], stages) if law.get("active_revision") else ""
+
+    return f"""
+    <div class="policy-cycle-law">
+      <h3>{label} <span class="policy-cycle-current-stage">— currently: {_escape_html(current_label)}</span>{omnibus_badge}</h3>
+      {render_stepper_svg(stages, current_index, law.get("stage_dates"))}
+      <p class="policy-cycle-caption"><strong>Next:</strong> {_escape_html(law.get('next_step') or '—')}{next_deadline}</p>
+      {notes}
+      {omnibus_note}
+      {oeil_citation}
+      {revision_block}
+    </div>
+  """
+
+
+def render_policy_cycle_laws(policy_stages_data):
+    """Python port of the law-cards portion of renderPolicyCycle() in
+    script.js, for the default view (topic filter == all). The legend text
+    above it never changes with the data, so it's written directly into
+    index.html rather than generated here."""
+    if not policy_stages_data:
+        return '<p class="empty">No policy cycle data for this law yet.</p>'
+    stages = policy_stages_data.get("stages", [])
+    laws = policy_stages_data.get("laws", {})
+    visible_ids = [law_id for law_id in POLICY_CYCLE_LAW_ORDER if law_id in laws]
+    if not visible_ids:
+        return '<p class="empty">No policy cycle data for this law yet.</p>'
+    return "".join(render_law_cycle(law_id, laws[law_id], stages) for law_id in visible_ids)
+
+
+def _apply_marker(html_text, marker_re, marker_name, replacement_html):
+    if not marker_re.search(html_text):
+        print(f"  [warning] {marker_name} markers not found in index.html, skipping that section")
+        return html_text
+    return marker_re.sub(lambda m: m.group(1) + replacement_html + m.group(2), html_text, count=1)
+
+
+def update_static_html(all_entries, generated_date):
+    """Injects static (no-JS) HTML snapshots into site/index.html: this
+    week's digest entries, the archive, and the Policy Cycle diagrams --
+    between their respective STATIC_*_START/END marker comments. Safe to
+    re-run: only the text between each marker pair is replaced, everything
+    else in the file is untouched. A section whose markers are missing
+    (e.g. removed during a redesign) is skipped with a warning rather than
+    failing the whole run -- script.js still renders that section
+    client-side either way, this only affects the no-JS snapshot."""
+    if not INDEX_HTML_FILE.exists():
+        print(f"  [warning] {INDEX_HTML_FILE} not found, skipping static HTML pre-render")
+        return
+
+    html_text = INDEX_HTML_FILE.read_text()
+
+    entries_html = render_static_entries(all_entries)
+    html_text = _apply_marker(html_text, _ENTRIES_MARKER_RE, "STATIC_ENTRIES_*", entries_html)
+
+    date_html = _escape_html(f"Updated {generated_date}") if generated_date else ""
+    html_text = _apply_marker(html_text, _DATE_MARKER_RE, "STATIC_DATE_*", date_html)
+
+    archive_data = None
+    if ARCHIVE_FILE.exists():
+        try:
+            archive_data = json.loads(ARCHIVE_FILE.read_text())
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"  [warning] could not read {ARCHIVE_FILE} for static pre-render: {exc}")
+    archive_html = render_archive_months(archive_data)
+    html_text = _apply_marker(html_text, _ARCHIVE_MARKER_RE, "STATIC_ARCHIVE_*", archive_html)
+
+    policy_stages_data = None
+    if POLICY_STAGES_FILE.exists():
+        try:
+            policy_stages_data = json.loads(POLICY_STAGES_FILE.read_text())
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"  [warning] could not read {POLICY_STAGES_FILE} for static pre-render: {exc}")
+    policy_cycle_html = render_policy_cycle_laws(policy_stages_data)
+    html_text = _apply_marker(html_text, _POLICY_CYCLE_MARKER_RE, "STATIC_POLICY_CYCLE_*", policy_cycle_html)
+
+    INDEX_HTML_FILE.write_text(html_text)
+    print(f"Pre-rendered static entries/archive/policy-cycle into {INDEX_HTML_FILE}")
+
+
 def main():
     sources = load_sources()
     cutoff = dt.datetime.utcnow() - dt.timedelta(days=DAYS_BACK)
@@ -675,6 +1068,7 @@ def main():
     print(f"Wrote {len(all_entries)} entries to {JSON_OUTPUT_FILE}")
 
     update_archive(all_entries)
+    update_static_html(all_entries, dt.date.today().isoformat())
 
 
 if __name__ == "__main__":
