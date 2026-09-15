@@ -82,6 +82,35 @@ h1, h2, h3 {
   gap: 18px;
 }
 
+.sources-banner {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  background: rgba(11, 31, 51, 0.55);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  border-radius: 999px;
+  padding: 6px 14px;
+  backdrop-filter: blur(2px);
+}
+
+.sources-banner-count {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+
+.sources-banner-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #D7DEE4;
+}
+
 .utility-link {
   border: none;
   background: none;
@@ -104,6 +133,17 @@ h1, h2, h3 {
 }
 
 @media (max-width: 640px) {
+  .sources-banner {
+    top: 14px;
+    left: 16px;
+    padding: 4px 10px;
+  }
+  .sources-banner-count {
+    font-size: 0.9rem;
+  }
+  .sources-banner-label {
+    font-size: 0.62rem;
+  }
   .utility-nav {
     top: 14px;
     right: 16px;
