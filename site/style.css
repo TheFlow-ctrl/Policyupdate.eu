@@ -73,6 +73,47 @@ h1, h2, h3 {
   padding-bottom: 32px;
 }
 
+.utility-nav {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  z-index: 2;
+  display: flex;
+  gap: 18px;
+}
+
+.utility-link {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #D7DEE4;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.utility-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.utility-link.active {
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .utility-nav {
+    top: 14px;
+    right: 16px;
+    gap: 12px;
+  }
+  .utility-link {
+    font-size: 0.68rem;
+  }
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -707,6 +748,44 @@ h1, h2, h3 {
   letter-spacing: 0.04em;
   pointer-events: none;
   /* fill color is set per-dimension inline in script.js, not here */
+}
+
+.info-page {
+  margin: 0 0 40px;
+}
+
+.info-page-body {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--navy-950);
+  border-radius: 2px;
+  padding: 20px 24px;
+  max-width: 640px;
+}
+
+.info-page-body p {
+  margin: 0 0 12px;
+  font-size: 0.92rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.info-page-body p:last-child {
+  margin-bottom: 0;
+}
+
+.info-page-joke {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.info-page-body a {
+  color: var(--navy-950);
+  font-weight: 600;
+}
+
+.info-page-body a:hover {
+  color: var(--gold-dark);
 }
 
 .site-footer {
