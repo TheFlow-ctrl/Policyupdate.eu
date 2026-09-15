@@ -231,6 +231,16 @@ sources:
     actor_type: ngo
     # Grantmaking/coordinating foundation, advocacy-adjacent -- borderline
     # think-tank/lobby call, went with lobby given its network-building role.
+  - name: YEE (Youth and Environment Europe)
+    url: https://yeenet.eu/feed/
+    field: green-deal
+    actor_type: ngo
+    # Youth-led environmental NGO network. /news/feed/ only serves comments
+    # (WordPress quirk -- News is a static page, not a category archive), so
+    # this uses the site-wide feed instead, which covers the same News,
+    # Articles and Position papers content. Broad-topic feed like Corporate
+    # Europe Observatory above -- relies on the standard green-deal keyword
+    # filter to surface only its EU-policy-relevant posts.
 
   # --- Academic journals -----------------------------------------------------
   # Confirmed working feeds (fetched live and checked for real, current
