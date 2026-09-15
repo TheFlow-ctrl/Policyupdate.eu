@@ -600,6 +600,9 @@ _ARCHIVE_MARKER_RE = re.compile(
 _POLICY_CYCLE_MARKER_RE = re.compile(
     r"(<!--STATIC_POLICY_CYCLE_START-->).*?(<!--STATIC_POLICY_CYCLE_END-->)", re.DOTALL
 )
+_SOURCE_COUNT_MARKER_RE = re.compile(
+    r"(<!--STATIC_SOURCE_COUNT_START-->).*?(<!--STATIC_SOURCE_COUNT_END-->)", re.DOTALL
+)
 
 # Kept in sync with POLICY_CYCLE_LAW_ORDER in script.js.
 POLICY_CYCLE_LAW_ORDER = [
@@ -921,15 +924,16 @@ def _apply_marker(html_text, marker_re, marker_name, replacement_html):
     return marker_re.sub(lambda m: m.group(1) + replacement_html + m.group(2), html_text, count=1)
 
 
-def update_static_html(all_entries, generated_date):
+def update_static_html(all_entries, generated_date, source_count=None):
     """Injects static (no-JS) HTML snapshots into site/index.html: this
-    week's digest entries, the archive, and the Policy Cycle diagrams --
-    between their respective STATIC_*_START/END marker comments. Safe to
-    re-run: only the text between each marker pair is replaced, everything
-    else in the file is untouched. A section whose markers are missing
-    (e.g. removed during a redesign) is skipped with a warning rather than
-    failing the whole run -- script.js still renders that section
-    client-side either way, this only affects the no-JS snapshot."""
+    week's digest entries, the archive, the Policy Cycle diagrams, and the
+    tracked-source count -- between their respective STATIC_*_START/END
+    marker comments. Safe to re-run: only the text between each marker pair
+    is replaced, everything else in the file is untouched. A section whose
+    markers are missing (e.g. removed during a redesign) is skipped with a
+    warning rather than failing the whole run -- script.js still renders
+    that section client-side either way, this only affects the no-JS
+    snapshot."""
     if not INDEX_HTML_FILE.exists():
         print(f"  [warning] {INDEX_HTML_FILE} not found, skipping static HTML pre-render")
         return
@@ -938,6 +942,10 @@ def update_static_html(all_entries, generated_date):
 
     entries_html = render_static_entries(all_entries)
     html_text = _apply_marker(html_text, _ENTRIES_MARKER_RE, "STATIC_ENTRIES_*", entries_html)
+
+    if source_count is not None:
+        count_html = _escape_html(str(source_count))
+        html_text = _apply_marker(html_text, _SOURCE_COUNT_MARKER_RE, "STATIC_SOURCE_COUNT_*", count_html)
 
     date_html = _escape_html(f"Updated {generated_date}") if generated_date else ""
     html_text = _apply_marker(html_text, _DATE_MARKER_RE, "STATIC_DATE_*", date_html)
@@ -1068,7 +1076,7 @@ def main():
     print(f"Wrote {len(all_entries)} entries to {JSON_OUTPUT_FILE}")
 
     update_archive(all_entries)
-    update_static_html(all_entries, dt.date.today().isoformat())
+    update_static_html(all_entries, dt.date.today().isoformat(), source_count=len(sources))
 
 
 if __name__ == "__main__":
