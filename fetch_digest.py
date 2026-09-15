@@ -15,6 +15,7 @@ import html
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlparse
 
 import feedparser
 import yaml
@@ -330,6 +331,31 @@ ACTOR_LABELS = {
     "eu-institution": "EU Institutions",
 }
 
+# Display order for the public Sources page -- matches the actor-tabs order
+# in index.html.
+ACTOR_ORDER = ["think-tank", "academic", "political", "industry", "ngo", "eu-institution"]
+
+# Homepage URL for sources.yaml entries that use a "scraper" key instead of
+# a "url" (so there's no feed URL to derive a homepage from). Pulled from
+# the target page each scraper function documents/scrapes in
+# backend_scrapers.py -- update here if a scraper's target page moves.
+SCRAPER_HOMEPAGES = {
+    "cefic": "https://cefic.org",
+    "eurofer": "https://www.eurofer.eu",
+    "eurelectric": "https://www.eurelectric.org",
+    "clientearth": "https://www.clientearth.org",
+    "european_climate_foundation": "https://europeanclimate.org",
+    "zenodo": "https://zenodo.org",
+    "ceps": "https://www.ceps.eu",
+    "transport_environment": "https://www.transportenvironment.org",
+    "pik_potsdam": "https://www.pik-potsdam.de",
+    "iddri": "https://www.iddri.org",
+    "agora_energiewende": "https://www.agora-energiewende.org",
+    "epc": "https://www.epc.eu",
+    "bc3": "https://www.bc3research.org",
+    "eera": "https://www.eera-set.eu",
+}
+
 
 def tag_legislation(title, excerpt):
     """Return the list of legislation-tag ids whose keywords appear in
@@ -602,6 +628,9 @@ _POLICY_CYCLE_MARKER_RE = re.compile(
 )
 _SOURCE_COUNT_MARKER_RE = re.compile(
     r"(<!--STATIC_SOURCE_COUNT_START-->).*?(<!--STATIC_SOURCE_COUNT_END-->)", re.DOTALL
+)
+_SOURCES_LIST_MARKER_RE = re.compile(
+    r"(<!--STATIC_SOURCES_LIST_START-->).*?(<!--STATIC_SOURCES_LIST_END-->)", re.DOTALL
 )
 
 # Kept in sync with POLICY_CYCLE_LAW_ORDER in script.js.
@@ -917,6 +946,70 @@ def render_policy_cycle_laws(policy_stages_data):
     return "".join(render_law_cycle(law_id, laws[law_id], stages) for law_id in visible_ids)
 
 
+def _source_homepage(source):
+    """Best-effort homepage link for a sources.yaml entry, for the public
+    Sources page. Feed-based entries derive it from the feed URL's origin
+    (e.g. https://ieep.eu/news/feed/ -> https://ieep.eu); scraper-based
+    entries look it up in SCRAPER_HOMEPAGES since they have no url field."""
+    url = source.get("url")
+    if url:
+        parsed = urlparse(url)
+        if parsed.scheme and parsed.netloc:
+            return f"{parsed.scheme}://{parsed.netloc}"
+    scraper = source.get("scraper")
+    if scraper and scraper in SCRAPER_HOMEPAGES:
+        return SCRAPER_HOMEPAGES[scraper]
+    return None
+
+
+def render_sources_list(sources):
+    """Renders the public, transparency-page list of every outlet tracked
+    in sources.yaml, grouped by actor_type in the same order as the
+    actor-tabs filter. Each source is deduplicated by name (a source
+    cross-tagged into multiple fields still only appears once here) and
+    links to its homepage where one can be derived -- see
+    _source_homepage()."""
+    if not sources:
+        return '<p class="empty">Source list unavailable.</p>'
+
+    seen = set()
+    by_actor = {actor_id: [] for actor_id in ACTOR_ORDER}
+    for source in sources:
+        name = source.get("name")
+        actor_type = source.get("actor_type")
+        if not name or actor_type not in by_actor or name in seen:
+            continue
+        seen.add(name)
+        by_actor[actor_type].append(source)
+
+    sections = []
+    for actor_id in ACTOR_ORDER:
+        group = sorted(by_actor[actor_id], key=lambda s: s["name"].lower())
+        if not group:
+            continue
+        items = []
+        for source in group:
+            name_html = _escape_html(source["name"])
+            homepage = _source_homepage(source)
+            if homepage:
+                items.append(
+                    f'<li><a href="{_escape_html(homepage)}" target="_blank" rel="noopener">{name_html}</a></li>'
+                )
+            else:
+                items.append(f"<li>{name_html}</li>")
+        sections.append(
+            f"""
+    <div class="sources-list-group">
+      <h3>{_escape_html(ACTOR_LABELS.get(actor_id, actor_id))} <span class="sources-list-count">({len(group)})</span></h3>
+      <ul class="sources-list">
+        {"".join(items)}
+      </ul>
+    </div>
+  """
+        )
+    return "".join(sections)
+
+
 def _apply_marker(html_text, marker_re, marker_name, replacement_html):
     if not marker_re.search(html_text):
         print(f"  [warning] {marker_name} markers not found in index.html, skipping that section")
@@ -924,16 +1017,16 @@ def _apply_marker(html_text, marker_re, marker_name, replacement_html):
     return marker_re.sub(lambda m: m.group(1) + replacement_html + m.group(2), html_text, count=1)
 
 
-def update_static_html(all_entries, generated_date, source_count=None):
+def update_static_html(all_entries, generated_date, source_count=None, sources=None):
     """Injects static (no-JS) HTML snapshots into site/index.html: this
-    week's digest entries, the archive, the Policy Cycle diagrams, and the
-    tracked-source count -- between their respective STATIC_*_START/END
-    marker comments. Safe to re-run: only the text between each marker pair
-    is replaced, everything else in the file is untouched. A section whose
-    markers are missing (e.g. removed during a redesign) is skipped with a
-    warning rather than failing the whole run -- script.js still renders
-    that section client-side either way, this only affects the no-JS
-    snapshot."""
+    week's digest entries, the archive, the Policy Cycle diagrams, the
+    tracked-source count, and the public Sources list -- between their
+    respective STATIC_*_START/END marker comments. Safe to re-run: only the
+    text between each marker pair is replaced, everything else in the file
+    is untouched. A section whose markers are missing (e.g. removed during
+    a redesign) is skipped with a warning rather than failing the whole run
+    -- script.js still renders that section client-side either way, this
+    only affects the no-JS snapshot."""
     if not INDEX_HTML_FILE.exists():
         print(f"  [warning] {INDEX_HTML_FILE} not found, skipping static HTML pre-render")
         return
@@ -946,6 +1039,10 @@ def update_static_html(all_entries, generated_date, source_count=None):
     if source_count is not None:
         count_html = _escape_html(str(source_count))
         html_text = _apply_marker(html_text, _SOURCE_COUNT_MARKER_RE, "STATIC_SOURCE_COUNT_*", count_html)
+
+    if sources is not None:
+        sources_list_html = render_sources_list(sources)
+        html_text = _apply_marker(html_text, _SOURCES_LIST_MARKER_RE, "STATIC_SOURCES_LIST_*", sources_list_html)
 
     date_html = _escape_html(f"Updated {generated_date}") if generated_date else ""
     html_text = _apply_marker(html_text, _DATE_MARKER_RE, "STATIC_DATE_*", date_html)
@@ -1076,7 +1173,12 @@ def main():
     print(f"Wrote {len(all_entries)} entries to {JSON_OUTPUT_FILE}")
 
     update_archive(all_entries)
-    update_static_html(all_entries, dt.date.today().isoformat(), source_count=len(sources))
+    update_static_html(
+        all_entries,
+        dt.date.today().isoformat(),
+        source_count=len(sources),
+        sources=sources,
+    )
 
 
 if __name__ == "__main__":
