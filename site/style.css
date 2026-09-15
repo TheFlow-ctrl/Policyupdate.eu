@@ -829,6 +829,24 @@ h1, h2, h3 {
   color: var(--gold-dark);
 }
 
+/* Inline text-link styled as a <button> (not <a>), since it triggers a
+   JS view switch to the Contact tab rather than navigating anywhere. */
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--navy-950);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  color: var(--gold-dark);
+}
+
 /* The Sources page lists ~80 outlets, so it gets a wider card and a
    multi-column layout, unlike the other (short, prose) info pages. */
 #sources-section .info-page-body {
