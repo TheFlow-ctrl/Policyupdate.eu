@@ -261,6 +261,7 @@ function setupFieldTabs() {
       if (tab.disabled) return;
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
+      document.querySelectorAll(".utility-link").forEach((l) => l.classList.remove("active"));
 
       if (tab.dataset.view === "archive") {
         showArchiveView();
@@ -313,20 +314,31 @@ function rerenderCurrentView() {
   }
 }
 
-function showDigestView() {
-  document.getElementById("digest-section").hidden = false;
+// The three info-page sections (Our Team / Funding / Contact) are reached
+// via the header's utility-nav, not the main field-tabs -- they're static
+// "about" content, not a filterable data view, so the law/actor filter bars
+// stay hidden the same way they do for Visualisation.
+function hideAllSections() {
+  document.getElementById("digest-section").hidden = true;
   document.getElementById("archive-section").hidden = true;
   document.getElementById("policy-cycle-section").hidden = true;
   document.getElementById("visualisation-section").hidden = true;
+  document.getElementById("mission-section").hidden = true;
+  document.getElementById("team-section").hidden = true;
+  document.getElementById("funding-section").hidden = true;
+  document.getElementById("contact-section").hidden = true;
+}
+
+function showDigestView() {
+  hideAllSections();
+  document.getElementById("digest-section").hidden = false;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = false;
 }
 
 function showArchiveView() {
-  document.getElementById("digest-section").hidden = true;
+  hideAllSections();
   document.getElementById("archive-section").hidden = false;
-  document.getElementById("policy-cycle-section").hidden = true;
-  document.getElementById("visualisation-section").hidden = true;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = false;
   loadArchive();
@@ -338,10 +350,8 @@ function showArchiveView() {
 // hidden, along with the per-law info card (description/EUR-Lex link),
 // which would otherwise duplicate what each diagram's caption already says.
 function showPolicyCycleView() {
-  document.getElementById("digest-section").hidden = true;
-  document.getElementById("archive-section").hidden = true;
+  hideAllSections();
   document.getElementById("policy-cycle-section").hidden = false;
-  document.getElementById("visualisation-section").hidden = true;
   document.getElementById("topic-tabs").hidden = false;
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
@@ -354,14 +364,41 @@ function showPolicyCycleView() {
 // Cycle's actor-tabs. Clicking a law node jumps to the Green Deal digest
 // view with that law selected instead (see jumpToLawInfoCard()).
 function showVisualisationView() {
-  document.getElementById("digest-section").hidden = true;
-  document.getElementById("archive-section").hidden = true;
-  document.getElementById("policy-cycle-section").hidden = true;
+  hideAllSections();
   document.getElementById("visualisation-section").hidden = false;
   document.getElementById("topic-tabs").hidden = true;
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadVisualisation();
+}
+
+// Our Team / Funding / Contact: static "about" content, reached from the
+// header's utility-nav rather than the main field-tabs. Same pattern as the
+// other show*View() functions, minus any data loading.
+function showInfoView(sectionId) {
+  hideAllSections();
+  document.getElementById(sectionId).hidden = false;
+  document.getElementById("topic-tabs").hidden = true;
+  document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("topic-info").hidden = true;
+}
+
+function setupUtilityNav() {
+  const links = document.querySelectorAll(".utility-link");
+  const sectionIds = {
+    mission: "mission-section",
+    team: "team-section",
+    funding: "funding-section",
+    contact: "contact-section",
+  };
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      links.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+      document.querySelectorAll(".field-tab").forEach((t) => t.classList.remove("active"));
+      showInfoView(sectionIds[link.dataset.view]);
+    });
+  });
 }
 
 // Reused by clicking a law node in the Visualisation graph: switches back
@@ -1005,4 +1042,5 @@ function renderVisualisation(data) {
 setupFieldTabs();
 setupTopicTabs();
 setupActorTabs();
+setupUtilityNav();
 loadDigest();
