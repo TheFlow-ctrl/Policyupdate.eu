@@ -829,6 +829,69 @@ h1, h2, h3 {
   color: var(--gold-dark);
 }
 
+/* The Sources page lists ~80 outlets, so it gets a wider card and a
+   multi-column layout, unlike the other (short, prose) info pages. */
+#sources-section .info-page-body {
+  max-width: 760px;
+}
+
+.sources-list-group {
+  margin-top: 20px;
+}
+
+.sources-list-group:first-child {
+  margin-top: 4px;
+}
+
+.sources-list-group h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--navy-800);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin: 0 0 8px;
+}
+
+.sources-list-count {
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.sources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 24px;
+}
+
+.sources-list li {
+  font-size: 0.88rem;
+  padding: 3px 0;
+  break-inside: avoid;
+}
+
+.sources-list a {
+  color: var(--text);
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.sources-list a:hover {
+  color: var(--gold-dark);
+  border-bottom-color: var(--gold-dark);
+}
+
+@media (max-width: 560px) {
+  .sources-list {
+    columns: 1;
+  }
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 20px 0 44px;
