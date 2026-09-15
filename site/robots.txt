@@ -1,0 +1,33 @@
+# PolicyUpdate.eu — allow all crawlers, including AI/LLM crawlers.
+# The site's value is in being cited and shared, so nothing here is blocked.
+User-agent: *
+Allow: /
+
+# Explicitly named for clarity (already covered by the wildcard above, but
+# some crawlers/operators check for an explicit mention before trusting a
+# wildcard allow).
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://policyupdate.eu/sitemap.xml
