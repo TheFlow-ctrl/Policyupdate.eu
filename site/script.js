@@ -1,14 +1,17 @@
 // Loads digest.json (written by fetch_digest.py) and renders it as cards,
 // filtered by three independent dimensions:
-//   1. field (Green Deal, Security, Tech, Health)
-//   2. topic -- which EU law an entry mentions, within Green Deal
+//   1. field (Climate/Energy/Environment, Security, Tech, Health)
+//   2. topic -- which EU law an entry mentions, within Climate/Energy/Environment
 //      (see TOPIC_LABELS, kept in sync with LEGISLATION_TAGS in fetch_digest.py)
 //   3. actor type -- what kind of source it is (see ACTOR_LABELS, kept in
 //      sync with the actor_type values used in sources.yaml)
 // No build step, no framework — just fetch + template strings.
 
+// Display labels only -- the underlying field id stays "green-deal"
+// throughout sources.yaml/digest.json/this file's own filtering logic, so
+// renaming the on-site label here doesn't require touching the data model.
 const FIELD_LABELS = {
-  "green-deal": "Green Deal",
+  "green-deal": "Climate, Energy & Environment",
   security: "Security",
   tech: "Tech",
   health: "Health",
@@ -371,7 +374,7 @@ function showPolicyCycleView() {
 // The Visualisation graph shows all 15 laws at once (it's not a per-law
 // view like Policy Cycle), so neither the law/topic filter nor the actor
 // type filter apply here -- both stay hidden, same reasoning as Policy
-// Cycle's actor-tabs. Clicking a law node jumps to the Green Deal digest
+// Cycle's actor-tabs. Clicking a law node jumps to the digest
 // view with that law selected instead (see jumpToLawInfoCard()).
 function showVisualisationView() {
   hideAllSections();
@@ -455,7 +458,7 @@ function setupUtilityNav() {
 }
 
 // Reused by clicking a law node in the Visualisation graph: switches back
-// to the Green Deal digest view with that law selected, exactly as if the
+// to the digest view with that law selected, exactly as if the
 // person had clicked its topic-tab button directly.
 function jumpToLawInfoCard(lawId) {
   activeField = "green-deal";
@@ -883,7 +886,7 @@ async function loadVisualisation() {
   }
 }
 
-// Builds a D3 force-directed graph of the EU Green Deal policy architecture.
+// Builds a D3 force-directed graph of the EU climate/energy/environment policy architecture.
 // The 15 tracked laws are the only real graph nodes/links here: draggable
 // squares connected by real edges (lawLinks) representing genuine
 // interdependencies between laws (shared legal cross-references, joint
