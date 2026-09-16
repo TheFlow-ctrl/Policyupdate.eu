@@ -309,10 +309,16 @@ def filter_out_low_value(entries):
 # Content-format classification: purely cosmetic (drives a small badge next
 # to the entry title on the site, via FORMAT_LABELS) -- unlike
 # EXCLUDED_URLS/is_low_value_link above, nothing here removes an entry.
-# Checked in order (podcast -> report -> interview/radio); first match
+# Checked in order (podcast/radio -> report -> interview); first match
 # wins. Kept intentionally conservative -- a missed badge is harmless, a
 # wrongly-applied one is confusing, so these lean on fairly unambiguous
 # genre words/URL segments rather than broad topic terms.
+#
+# Many sources (e.g. Ecologic Institute) use bare numeric-ID URLs
+# (ecologic.eu/20662) that carry no genre info at all -- for those, the
+# title/URL markers below miss every time, so classify_content_type() also
+# checks the entry's summary/description text, which is where a source
+# usually says "radio programme", "policy brief", etc.
 FORMAT_LABELS = {
     "podcast": "Podcast",
     "report": "Report",
@@ -320,6 +326,10 @@ FORMAT_LABELS = {
 }
 
 _PODCAST_URL_MARKERS = ("/podcast/", "/podcasts/", "/podcast-episode/")
+# Radio contributions are labelled "Podcast" too (per user preference) --
+# checked against title+summary since radio shows are rarely called out
+# in the URL itself.
+_PODCAST_TITLE_RE = re.compile(r"\b(podcast|radio)\b", re.IGNORECASE)
 
 _REPORT_TITLE_RE = re.compile(
     r"\b(policy brief|position paper|working paper|discussion paper|"
@@ -330,28 +340,36 @@ _REPORT_URL_MARKERS = (
     "/reports/", "/report/", "/publications/", "/policy-briefs/",
     "/position-papers/", "/studies/", "/working-papers/", "/briefs/",
 )
+# Looser substring check (no leading/trailing slash required) to catch
+# source-prefixed publication paths like CEPS's "/ceps-publications/".
+_REPORT_URL_SUBSTRINGS = ("publication",)
 
 _INTERVIEW_TITLE_RE = re.compile(
-    r"\b(interview|in conversation with|q&a|radio)\b", re.IGNORECASE
+    r"\b(interview|in conversation with|q&a)\b", re.IGNORECASE
 )
-_INTERVIEW_URL_MARKERS = ("/interviews/", "/speeches-interviews/", "/radio/", "/interview/")
+_INTERVIEW_URL_MARKERS = ("/interviews/", "/speeches-interviews/", "/interview/")
 
 
-def classify_content_type(title, link):
+def classify_content_type(title, link, summary=""):
     """Returns "podcast", "report", "interview", or None (a regular
     article -- no badge shown). See FORMAT_LABELS for the display text."""
     link_lower = (link or "").lower()
     title = title or ""
+    combined_text = f"{title} {summary or ''}"
 
     if any(marker in link_lower for marker in _PODCAST_URL_MARKERS):
         return "podcast"
+    if _PODCAST_TITLE_RE.search(combined_text):
+        return "podcast"
 
-    if _REPORT_TITLE_RE.search(title) or any(
-        marker in link_lower for marker in _REPORT_URL_MARKERS
+    if (
+        _REPORT_TITLE_RE.search(combined_text)
+        or any(marker in link_lower for marker in _REPORT_URL_MARKERS)
+        or any(sub in link_lower for sub in _REPORT_URL_SUBSTRINGS)
     ):
         return "report"
 
-    if _INTERVIEW_TITLE_RE.search(title) or any(
+    if _INTERVIEW_TITLE_RE.search(combined_text) or any(
         marker in link_lower for marker in _INTERVIEW_URL_MARKERS
     ):
         return "interview"
@@ -634,6 +652,22 @@ def fetch_recent_entries(name, url, field, cutoff):
     return recent
 
 
+def _importance_sort_key(entry):
+    """Sort key used for both the digest and the archive: reports first,
+    then longer/more substantive contributions, ahead of short press
+    releases. Used as a secondary, stable sort on top of a date-desc sort,
+    so entries tied on importance keep their recency order.
+
+    This also gives a practical answer to sources like The Green Tank,
+    where many entries are short English press releases that merely link
+    out to a full (often Greek-language) report or interview: rather than
+    trying to detect and classify the linked-to content, the short
+    press-release copy itself naturally sorts lower by length."""
+    is_report = entry.get("content_type") == "report"
+    length = len(entry.get("summary") or "") + len(entry.get("title") or "")
+    return (is_report, length)
+
+
 def fetch_source(source, cutoff):
     """Dispatch a single sources.yaml entry to either the scraper path or
     the RSS-feed path, depending on whether it has a "scraper" or "url" key."""
@@ -705,7 +739,12 @@ def update_archive(new_entries):
         })["entries"].append(entry)
 
     for month in months.values():
+        # Same importance-first ordering as the live digest (see
+        # _importance_sort_key) -- date-desc first, then a stable re-sort
+        # so reports/longer entries surface above short press releases
+        # within each month.
         month["entries"].sort(key=lambda e: e["date"], reverse=True)
+        month["entries"].sort(key=_importance_sort_key, reverse=True)
 
     ordered_months = sorted(months.values(), key=lambda m: m["key"], reverse=True)
 
@@ -1244,7 +1283,9 @@ def main():
 
         for entry in raw_entries:
             entry["actor_type"] = actor_type
-            entry["content_type"] = classify_content_type(entry["title"], entry["link"])
+            entry["content_type"] = classify_content_type(
+                entry["title"], entry["link"], entry.get("summary", "")
+            )
 
         # Primary inclusion: filtered against GREEN_DEAL_KEYWORDS only if
         # this source's own field IS green-deal. actor_type is passed
@@ -1289,7 +1330,13 @@ def main():
             if cross_matches:
                 print(f"  +{len(cross_matches)} also surfaced under green-deal (cross-topic match)")
 
+    # Importance-first ordering: reports and longer, more substantive
+    # contributions (e.g. a full analysis) surface above short press
+    # releases, per user preference -- rather than pure reverse-chronology.
+    # Sort by date first, then re-sort by importance; Python's sort is
+    # stable, so entries that tie on importance keep their date order.
     all_entries.sort(key=lambda e: e["date"], reverse=True)
+    all_entries.sort(key=_importance_sort_key, reverse=True)
 
     lines = [f"# Weekly Green Deal Digest — {dt.date.today().isoformat()}", ""]
     if not all_entries:
