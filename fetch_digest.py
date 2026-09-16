@@ -278,19 +278,57 @@ EXCLUDED_URLS = {
     # inconsistent -- see scrape_eurofer()'s docstring). Current live URL:
     # https://www.eurofer.eu/press-releases/european-steel-industry-and-commission-mark-75th-anniversary-of-the-treaty-of-paris
     "https://www.eurofer.eu/press-releases/75-years-after-the-treaty-of-paris-steel-industry-calls-for-a-new-era-of-european-industrial-cooperation",
+    # A "register for our WhatsApp updates" utility page, not a policy
+    # contribution -- matched the keyword filter incidentally.
+    "https://www.e3g.org/news/e3g-whatsapp-registration-for-updates/",
+}
+
+# Sources whose entire output is unusable for this English-language
+# tracker, regardless of individual URL -- unlike EXCLUDED_URLS above,
+# this drops every entry from the named source wholesale, matched against
+# the entry's `org` field.
+EXCLUDED_ORGS = {
+    # Feed is entirely Italian-language (its RSS <language> tag reads
+    # "it-IT", confirmed 2026-09-17) -- e.g. "Con investimenti integrati
+    # per clima ed aria pulita ritorni economici da 1 a 15 – Rapporto Unep
+    # e CCAC". fetch_recent_entries() also skips non-English feeds going
+    # forward (see the language check there); this entry exists so
+    # update_archive()'s self-heal pass (below) can retroactively purge
+    # this source's already-archived entries too.
+    "Fondazione Sviluppo Sostenibile",
 }
 
 
-def is_low_value_link(link):
+def _strip_url_query(url):
+    """Drop query string/fragment and any trailing slash, so a denylist
+    entry still matches a link that shows up with different tracking
+    params attached (e.g. RSS feeds appending ?utm_source=rss&...)."""
+    parsed = urlparse(url)
+    return f"{parsed.scheme}://{parsed.netloc}{parsed.path}".rstrip("/")
+
+
+_EXCLUDED_URLS_NORMALIZED = None
+
+
+def is_low_value_link(link, org=None):
     """True if an entry should be dropped regardless of topic relevance --
-    currently just the manually-maintained EXCLUDED_URLS denylist. Podcast
-    episodes used to be hard-excluded by URL pattern here too, but that's
-    now handled by classify_content_type() instead (labelled with a
-    "Podcast" badge on the site rather than dropped) -- see FORMAT_LABELS
-    below."""
+    either it's on the manually-maintained EXCLUDED_URLS denylist, or its
+    source is wholesale-excluded via EXCLUDED_ORGS. Podcast episodes used
+    to be hard-excluded by URL pattern here too, but that's now handled by
+    classify_content_type() instead (labelled with a "Podcast" badge on
+    the site rather than dropped) -- see FORMAT_LABELS below."""
+    global _EXCLUDED_URLS_NORMALIZED
+    if org in EXCLUDED_ORGS:
+        return True
     if not link:
         return False
-    return link in EXCLUDED_URLS or link.rstrip("/") in {u.rstrip("/") for u in EXCLUDED_URLS}
+    if _EXCLUDED_URLS_NORMALIZED is None:
+        _EXCLUDED_URLS_NORMALIZED = {_strip_url_query(u) for u in EXCLUDED_URLS}
+    return (
+        link in EXCLUDED_URLS
+        or link.rstrip("/") in {u.rstrip("/") for u in EXCLUDED_URLS}
+        or _strip_url_query(link) in _EXCLUDED_URLS_NORMALIZED
+    )
 
 
 def filter_out_low_value(entries):
@@ -299,7 +337,7 @@ def filter_out_low_value(entries):
     kept = []
     skipped = 0
     for entry in entries:
-        if is_low_value_link(entry.get("link", "")):
+        if is_low_value_link(entry.get("link", ""), entry.get("org")):
             skipped += 1
         else:
             kept.append(entry)
@@ -625,6 +663,17 @@ def fetch_recent_entries(name, url, field, cutoff):
         print(f"  [warning] could not parse feed for {name}: {url}")
         return []
 
+    # General safety net: skip a feed outright if it declares itself
+    # non-English (e.g. Fondazione Sviluppo Sostenibile's <language>it-IT
+    # </language>) -- this is a static, per-source tracker for an
+    # English-reading audience, so there's no per-entry translation step.
+    # Only acts on an explicit, unambiguous tag; a missing/blank language
+    # field is not treated as a signal either way.
+    feed_language = (feed.feed.get("language") or "").strip().lower()
+    if feed_language and not feed_language.startswith("en"):
+        print(f"  [warning] skipping {name}: feed declares non-English language '{feed_language}'")
+        return []
+
     recent = []
     for entry in feed.entries:
         published = entry_date(entry)
@@ -711,6 +760,21 @@ def update_archive(new_entries):
                 existing_entries.extend(month.get("entries", []))
         except (json.JSONDecodeError, OSError) as exc:
             print(f"  [warning] could not read existing archive, starting fresh: {exc}")
+
+    # Self-heal: EXCLUDED_URLS/EXCLUDED_ORGS and classify_content_type()
+    # normally only run against freshly-fetched entries, so a rule added
+    # after an entry was already archived (e.g. the IEEP intern interview
+    # denylisted post-publication) would otherwise sit in archive.json
+    # forever with no way to fix it short of hand-editing the live file.
+    # Re-running both against the existing archive on every pipeline run
+    # means it catches up automatically instead.
+    existing_entries, archive_pruned = filter_out_low_value(existing_entries)
+    if archive_pruned:
+        print(f"  [archive] pruned {archive_pruned} now-denylisted archived entr{'y' if archive_pruned == 1 else 'ies'}")
+    for entry in existing_entries:
+        entry["content_type"] = classify_content_type(
+            entry.get("title", ""), entry.get("link", ""), entry.get("summary", "")
+        )
 
     # Dedupe by link, preferring the newest-seen copy of any given entry
     # (a source occasionally revises a title/summary after first publish).
