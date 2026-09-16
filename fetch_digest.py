@@ -18,6 +18,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import feedparser
+import requests
 import yaml
 
 import backend_scrapers
@@ -27,6 +28,16 @@ OUTPUT_FILE = Path(__file__).parent / "digest.md"
 JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
 ARCHIVE_FILE = Path(__file__).parent / "site" / "archive.json"
 DAYS_BACK = 7
+
+# IndexNow: pings Bing/Yandex/Seznam.cz/Naver that the homepage changed, so
+# they can recrawl promptly instead of waiting for their own schedule.
+# Google does not participate in IndexNow -- use Search Console's "Request
+# Indexing" for that. The key below must exactly match the filename of the
+# key file hosted at site/ root (site/<key>.txt) -- if you ever regenerate
+# the key, update both together.
+INDEXNOW_KEY = "37260d7cae55277918c2b150aa67eee2"
+INDEXNOW_KEY_FILE = Path(__file__).parent / "site" / f"{INDEXNOW_KEY}.txt"
+INDEXNOW_SITE_URL = "https://policyupdate.eu/"
 
 # feedparser's default request has no real browser User-Agent, which some
 # WAFs (observed on FSR Climate's WordPress install) silently block --
@@ -1069,6 +1080,32 @@ def update_static_html(all_entries, generated_date, source_count=None, sources=N
     print(f"Pre-rendered static entries/archive/policy-cycle into {INDEX_HTML_FILE}")
 
 
+def submit_indexnow(urls):
+    """Pings the IndexNow API (Bing, Yandex, Seznam.cz, Naver) so the given
+    URL(s) get recrawled promptly instead of waiting for the engine's own
+    schedule -- useful since this site republishes weekly. Google doesn't
+    participate in IndexNow; Search Console's "Request Indexing" is the
+    equivalent there. Best-effort and non-fatal: a network hiccup here
+    should never break the weekly digest run."""
+    if not INDEXNOW_KEY_FILE.exists():
+        print(f"  [warning] IndexNow key file {INDEXNOW_KEY_FILE} not found, skipping IndexNow submission")
+        return
+    payload = {
+        "host": "policyupdate.eu",
+        "key": INDEXNOW_KEY,
+        "keyLocation": f"https://policyupdate.eu/{INDEXNOW_KEY}.txt",
+        "urlList": urls,
+    }
+    try:
+        resp = requests.post("https://api.indexnow.org/indexnow", json=payload, timeout=10)
+        if resp.status_code in (200, 202):
+            print(f"  IndexNow: submitted {len(urls)} URL(s) (HTTP {resp.status_code})")
+        else:
+            print(f"  [warning] IndexNow submission returned HTTP {resp.status_code}: {resp.text[:200]}")
+    except requests.RequestException as exc:
+        print(f"  [warning] IndexNow submission failed: {exc}")
+
+
 def main():
     sources = load_sources()
     cutoff = dt.datetime.utcnow() - dt.timedelta(days=DAYS_BACK)
@@ -1179,6 +1216,7 @@ def main():
         source_count=len(sources),
         sources=sources,
     )
+    submit_indexnow([INDEXNOW_SITE_URL])
 
 
 if __name__ == "__main__":
