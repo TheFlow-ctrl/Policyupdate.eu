@@ -2,25 +2,42 @@ name: Weekly Green Deal Digest
 
 on:
   schedule:
-    - cron: "0 7 * * 1"
-  workflow_dispatch: {}
+    # Every day at 13:00 UTC (= 15:00 CEST / 14:00 CET). Running daily
+    # (rather than just weekly) means new publications show up on the site
+    # within a day instead of waiting up to a week -- DAYS_BACK's 7-day
+    # window in fetch_digest.py is unaffected, it just gets recomputed more
+    # often. The Sunday occurrence of this daily run still lands a few
+    # hours ahead of the Sunday-evening social-post drafting task, so that
+    # draft keeps working off a fresh digest either way.
+    - cron: "0 13 * * *"
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
 
 jobs:
-  update-digest:
+  build-digest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Run digest script
         run: python fetch_digest.py
+
       - name: Commit updated digest
         run: |
-          git config user.name "policyupdate-bot"
+          git config user.name "green-deal-tracker-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add digest.md site/digest.json site/archive.json
-          git diff --cached --quiet || git commit -m "Weekly digest update"
+          # NOTE: fetch_digest.py also regenerates site/archive.json (via
+          # update_archive()) and site/index.html (via update_static_html()'s
+          # pre-rendered no-JS snapshots) on every run -- both must be
+          # committed here too, or those changes are silently discarded when
+          # the ephemeral runner is torn down and the live site never
+          # reflects them (this was previously happening unnoticed).
+          git add digest.md site/digest.json site/archive.json site/index.html
+          git diff --cached --quiet || git commit -m "Digest update"
           git push
