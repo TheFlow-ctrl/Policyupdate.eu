@@ -1,4 +1,4 @@
-# Weekly Green Deal Digest — 2026-09-16
+# Weekly Climate, Energy & Environment Digest — 2026-09-16
 
 ### Political Instability Meets Fiscal Limits: Is France the Euro’s Next Big Stress Test?
 *SWP (German Institute for International and Security Affairs) — 2026-09-10*
