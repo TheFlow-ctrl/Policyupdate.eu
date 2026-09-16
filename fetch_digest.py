@@ -1402,7 +1402,7 @@ def main():
     all_entries.sort(key=lambda e: e["date"], reverse=True)
     all_entries.sort(key=_importance_sort_key, reverse=True)
 
-    lines = [f"# Weekly Green Deal Digest — {dt.date.today().isoformat()}", ""]
+    lines = [f"# Weekly Climate, Energy & Environment Digest — {dt.date.today().isoformat()}", ""]
     if not all_entries:
         lines.append("No new publications found this week.")
     else:
