@@ -260,6 +260,104 @@ def filter_out_events(entries):
             kept.append(entry)
     return kept, skipped
 
+
+# Specific known-bad links spotted manually -- either dead (the source's own
+# site moved/renamed the page after our scraper captured the original URL)
+# or off-topic despite matching the keyword filter (e.g. a staff/personal
+# interview that happens to mention "environmental policy"). There's no
+# reliable general rule for either category, so this is a manually
+# maintained denylist -- add to it as new cases turn up. Matched against
+# the exact `link` field fetch_recent_entries()/the scrapers populate.
+EXCLUDED_URLS = {
+    # IEEP staff-interview piece about an individual's career journey, not
+    # Green Deal policy content -- matched the keyword filter incidentally
+    # (title mentions "Europe's environmental policy").
+    "https://ieep.eu/news/jordan-stock-from-investigating-the-sustainability-of-californias-agriculture-to-europes-environmental-policy/",
+    # Eurofer's own site renamed this press release's URL after our
+    # scraper captured the original slug (their internal links are
+    # inconsistent -- see scrape_eurofer()'s docstring). Current live URL:
+    # https://www.eurofer.eu/press-releases/european-steel-industry-and-commission-mark-75th-anniversary-of-the-treaty-of-paris
+    "https://www.eurofer.eu/press-releases/75-years-after-the-treaty-of-paris-steel-industry-calls-for-a-new-era-of-european-industrial-cooperation",
+}
+
+
+def is_low_value_link(link):
+    """True if an entry should be dropped regardless of topic relevance --
+    currently just the manually-maintained EXCLUDED_URLS denylist. Podcast
+    episodes used to be hard-excluded by URL pattern here too, but that's
+    now handled by classify_content_type() instead (labelled with a
+    "Podcast" badge on the site rather than dropped) -- see FORMAT_LABELS
+    below."""
+    if not link:
+        return False
+    return link in EXCLUDED_URLS or link.rstrip("/") in {u.rstrip("/") for u in EXCLUDED_URLS}
+
+
+def filter_out_low_value(entries):
+    """Drop manually-excluded entries from a list, returning (kept_entries,
+    number_skipped)."""
+    kept = []
+    skipped = 0
+    for entry in entries:
+        if is_low_value_link(entry.get("link", "")):
+            skipped += 1
+        else:
+            kept.append(entry)
+    return kept, skipped
+
+
+# Content-format classification: purely cosmetic (drives a small badge next
+# to the entry title on the site, via FORMAT_LABELS) -- unlike
+# EXCLUDED_URLS/is_low_value_link above, nothing here removes an entry.
+# Checked in order (podcast -> report -> interview/radio); first match
+# wins. Kept intentionally conservative -- a missed badge is harmless, a
+# wrongly-applied one is confusing, so these lean on fairly unambiguous
+# genre words/URL segments rather than broad topic terms.
+FORMAT_LABELS = {
+    "podcast": "Podcast",
+    "report": "Report",
+    "interview": "Interview",
+}
+
+_PODCAST_URL_MARKERS = ("/podcast/", "/podcasts/", "/podcast-episode/")
+
+_REPORT_TITLE_RE = re.compile(
+    r"\b(policy brief|position paper|working paper|discussion paper|"
+    r"briefing paper|white paper|policy paper)\b",
+    re.IGNORECASE,
+)
+_REPORT_URL_MARKERS = (
+    "/reports/", "/report/", "/publications/", "/policy-briefs/",
+    "/position-papers/", "/studies/", "/working-papers/", "/briefs/",
+)
+
+_INTERVIEW_TITLE_RE = re.compile(
+    r"\b(interview|in conversation with|q&a|radio)\b", re.IGNORECASE
+)
+_INTERVIEW_URL_MARKERS = ("/interviews/", "/speeches-interviews/", "/radio/", "/interview/")
+
+
+def classify_content_type(title, link):
+    """Returns "podcast", "report", "interview", or None (a regular
+    article -- no badge shown). See FORMAT_LABELS for the display text."""
+    link_lower = (link or "").lower()
+    title = title or ""
+
+    if any(marker in link_lower for marker in _PODCAST_URL_MARKERS):
+        return "podcast"
+
+    if _REPORT_TITLE_RE.search(title) or any(
+        marker in link_lower for marker in _REPORT_URL_MARKERS
+    ):
+        return "report"
+
+    if _INTERVIEW_TITLE_RE.search(title) or any(
+        marker in link_lower for marker in _INTERVIEW_URL_MARKERS
+    ):
+        return "interview"
+
+    return None
+
 # Sub-categories under the green-deal field: tags each entry with the
 # specific EU laws/files it mentions, so the site can offer a secondary
 # filter (see the frontend's TOPIC_LABELS, which must be kept in sync with
@@ -681,10 +779,17 @@ def render_entry_html(entry):
     )
     tags_block = f'<div class="entry-tags">{tags_html}</div>' if tags_html else ""
     meta = f"{org}{f' · {_escape_html(actor_label)}' if actor_label else ''} — {date}"
+    content_type = entry.get("content_type")
+    format_label = FORMAT_LABELS.get(content_type)
+    format_badge = (
+        f'<span class="format-badge format-badge-{content_type}">{format_label}</span>'
+        if format_label
+        else ""
+    )
 
     return f"""
     <article class="entry-card">
-      <h3><a href="{link}" target="_blank" rel="noopener">{title}</a></h3>
+      <h3>{format_badge}<a href="{link}" target="_blank" rel="noopener">{title}</a></h3>
       <div class="entry-meta">{meta}</div>
       {summary_html}
       {tags_block}
@@ -1133,8 +1238,13 @@ def main():
         if event_skipped:
             print(f"  filtered out {event_skipped} event/call-for-abstracts item(s)")
 
+        raw_entries, low_value_skipped = filter_out_low_value(raw_entries)
+        if low_value_skipped:
+            print(f"  filtered out {low_value_skipped} podcast/known-bad item(s)")
+
         for entry in raw_entries:
             entry["actor_type"] = actor_type
+            entry["content_type"] = classify_content_type(entry["title"], entry["link"])
 
         # Primary inclusion: filtered against GREEN_DEAL_KEYWORDS only if
         # this source's own field IS green-deal. actor_type is passed
