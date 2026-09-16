@@ -189,21 +189,21 @@ Putin is far from isolated. Europe must play him at the long game Expert comment
 
 ---
 
-### The Critical Minerals Linking Myanmar’s Civil War to the World
-*International Crisis Group — 2026-09-09*
-
-The Critical Minerals Linking Myanmar’s Civil War to the World eschelhaas Thu, 09/10/2026 - 00:05 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute The Critical Minerals Linking Myanmar’s Civil War to the World From AI data centres to makers of electric vehicles, luxury goods and missile systems, industries around the world depend on minerals extracted in Myanmar. These stories show how four globally important resources have become…
-
-[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/critical-minerals-linking-myanmars-civil-war-world)
-
----
-
 ### Indian summer: The BRICS summit and warming New Delhi-Beijing relations
 *ECFR — 2026-09-15*
 
 Cover image: picture alliance / ZUMAPRESS.com | Pib Handout/Press Information Problem The BRICS summit concluded in New Delhi on Sunday, with Indian prime minister Narendra Modi having hosted the two-day gathering as chair. As with many meetings of the group of emerging economies, this edition brought together the leaders of China, India and Russia and featured plenty of anti-Western rhetoric. This was also Chinese leader Xi Jinping’s first visit to India for more than six years, in the latest example of Sino-Indian normalisation following a sustained period of tensions. New Delhi’s…
 
 [Read more](https://ecfr.eu/article/indian-summer-the-brics-summit-and-warming-new-delhi-beijing-relations/)
+
+---
+
+### Too Close to Call: Sweden’s Political Centre Is Back in the Game
+*European Liberal Forum (Renew) — 2026-09-16*
+
+Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed – maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest…
+
+[Read more](https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/)
 
 ---
 
@@ -252,24 +252,6 @@ Written By: Nicos Rompapas, President at Center for Liberal Studies – Markos D
 
 ---
 
-### Gold: Funding the Grassroots Resistance to Military Rule
-*International Crisis Group — 2026-09-09*
-
-Gold: Funding the Grassroots Resistance to Military Rule eschelhaas Thu, 09/10/2026 - 00:03 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Gold: Funding the Grassroots Resistance to Military Rule Gold mining in Sagaing region has become a military objective for both the regime and its opponents. While it provides jobs in a devastated economy and revenues for armed groups fighting the regime, it also destroys farmland, pollutes…
-
-[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/gold-funding-grassroots-resistance-military-rule)
-
----
-
-### Jade: Fighting for Profits from the “Stone of Heaven”
-*International Crisis Group — 2026-09-09*
-
-Jade: Fighting for Profits from the “Stone of Heaven” eschelhaas Thu, 09/10/2026 - 00:02 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Jade: Fighting for Profits from the “Stone of Heaven” Hpakant supplies billions of dollars of jade to China each year, enriching many along the supply chain. Since Myanmar’s 2021 coup, fighting around Hpakant has intensified as the military and its opponents battle for control of one of the…
-
-[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/jade-fighting-profits-stone-heaven)
-
----
-
 ### What Future for Venezuela after the U.S. Oil Carve-up?
 *International Crisis Group — 2026-09-11*
 
@@ -312,15 +294,6 @@ Ten Challenges for the UN in 2026-2027 eschelhaas Mon, 09/14/2026 - 10:00 Latest
 Is AI really getting out of control? Expert comment jon.wallace 14 September 2026 Anthropic’s warning should be taken seriously – but not as cover for entrenching US labs or escalating rivalry with Beijing. This weekend current and former employees of US AI laboratories and their leaders issued dire warnings of a near-term apocalypse at the hands of AI. Out-of-control AI development could mean ‘ we could all die in the immediate future ’ said one former lab employee. This was followed by a proposal from Dario Amodei, the CEO of AI company Anthropic, to slow down AI development to ensure the…
 
 [Read more](https://www.chathamhouse.org/2026/09/ai-really-getting-out-control)
-
----
-
-### Tin: The Mine that Moves the Market
-*International Crisis Group — 2026-09-09*
-
-Tin: The Mine that Moves the Market eschelhaas Thu, 09/10/2026 - 00:04 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Tin: The Mine that Moves the Market A single mine’s disruption led to a spike in global tin prices. As AI-driven demand surges, supply now depends on opaque politics in a militia-run enclave at the Myanmar-China border. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags eEARTH Myanmar…
-
-[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/tin-mine-moves-market)
 
 ---
 
@@ -396,15 +369,6 @@ On Our Radar eschelhaas Fri, 09/11/2026 - 00:00 Latest Updates Africa Asia-Pacif
 
 ---
 
-### Plastic Pirates Research Wins First Prize in Citizen Science Research Award
-*Ecologic Institute — 2026-09-09*
-
-We are delighted to announce that Dr Sinja Dittmann, lead author of a study investigating plastic pollution in German rivers, has won first prize in the "Wissen der Vielen – Forschungspreis für Citizen Science" (Knowledge of the Many – Citizen Science Research Award). The study draws on data collected through the Plastic Pirates citizen science initiative. The award is also a recognition of years of collaboration between researchers, educators and the public – and of the many people who have made the Plastic Pirates possible.
-
-[Read more](https://www.ecologic.eu/20660)
-
----
-
 ### Natural Capital, Biodiversity and the Economy: Why Nature Is an Investment in Our Future
 *The Green Tank — 2026-09-14*
 
@@ -429,6 +393,15 @@ Plastic waste in rivers and seas is a global environmental problem. But how does
 The Green Tank’s new analysis [in Greek], titled “Electricity exports from fossil gas: the cost to the Greek market and the climate”, quantitatively examines the impact of this additional use of fossil gas for electricity exports on Greece’s wholesale electricity market and on emissions from the power sector. The post How much do electricity exports cost us? first appeared on The Green Tank .
 
 [Read more](https://thegreentank.gr/en/2026/09/10/electricity-exports-gas-report-en/?utm_source=rss&utm_medium=rss&utm_campaign=electricity-exports-gas-report-en)
+
+---
+
+### Event | Ready for the EUDR: perspectives from business
+*IEEP — 2026-09-15*
+
+WRI and IEEP will host a lively and solutions-focused event on 29 September in Brussels that puts one message front and centre: business is ready to implement the EU Deforestation Regulation (EUDR). The post Event | Ready for the EUDR: perspectives from business appeared first on IEEP AISBL .
+
+[Read more](https://ieep.eu/news/event-ready-for-the-eudr-perspectives-from-business/)
 
 ---
 
