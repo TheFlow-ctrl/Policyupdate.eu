@@ -1,11 +1,146 @@
-# Weekly Green Deal Digest — 2026-09-14
+# Weekly Green Deal Digest — 2026-09-16
 
-### Jordan Stock – From investigating the sustainability of California’s agriculture to Europe’s environmental policy
-*IEEP — 2026-09-14*
+### SOTEU 2026: Europe’s “summer of truth” must now lead to action
+*EEB (European Environmental Bureau) — 2026-09-16*
 
-Meet Jordan Stock, a Master’s student from Stanford University, as she shares her experience with the Nature and Sustainable Food Systems team as an a student intern at IEEP. The post Jordan Stock – From investigating the sustainability of California’s agriculture to Europe’s environmental policy appeared first on IEEP AISBL .
+BRUSSELS, 16 September 2026 – Reacting to European Commission President Ursula von der Leyen’s State of the European Union address, the European Environmental Bureau (EEB) calls for Europe to take action to face the globe’s most significant security challenges posed by growing climate, environmental and pollution risks. Patrick ten Brink, Secretary General of the European Environmental Bureau, said: “Europe has lived through what President von der Leyen called a ‘summer of truth’. After another summer of heat, drought and devastating fires, the question now is what we do with that truth.…
 
-[Read more](https://ieep.eu/news/jordan-stock-from-investigating-the-sustainability-of-californias-agriculture-to-europes-environmental-policy/)
+[Read more](https://eeb.org/en/soteu-2026-europes-summer-of-truth-must-now-lead-to-action/)
+
+---
+
+### It was the hottest of summers, it was the meekest of responses
+*Greenpeace EU — 2026-09-16*
+
+Von der Leyen delivers annual state of the EU speech © Eric De Mildt / Greenpeace Brussels, 16 September 2026 – Commenting on European Commission president Ursula von der Leyen’s annual state of the European Union speech , Greenpeace EU Programme Director Magda Stoczkiewicz said: “It was the hottest of summers, it was the meekest of responses. The droughts and wildfires of this summer made it impossible for von der Leyen to ignore the impact of the climate crisis on people across Europe. This is something many of her political allies are still reluctant to admit. But her speech does not…
+
+[Read more](https://www.greenpeace.org/eu-unit/issues/climate-energy/48541/meek-von-der-leyen-state-of-the-eu-speech/)
+
+---
+
+### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
+*European Environmental Law Review — 2026-09-16*
+
+The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
+
+---
+
+### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
+*European Environmental Law Review — 2026-09-16*
+
+This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
+
+---
+
+### Invasive Alien Species and European Union Regulation: Some Reflections
+*European Environmental Law Review — 2026-09-16*
+
+This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
+
+---
+
+### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
+*European Environmental Law Review — 2026-09-16*
+
+This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
+
+---
+
+### An outsider within: The paradox of the Europe-Turkey relationship
+*ECFR — 2026-09-16*
+
+Turkish President Recep Tayyip Erdogan during the press conference at the NATO Summit in Ankara, Turkiye on July 8, 2026. (Photo by Jakub Porzycki/NurPhoto) | picture alliance / NurPhoto | Jakub Porzycki Summary Europe still expects Turkey to pick a side. It has refused, and a post-Erdogan government would refuse too. Turkey has become an embedded outsider: a middle power that builds strategic autonomy from inside the Western system—because that is where its leverage comes from. Ankara has now tools of its own: troops abroad, a $10bn arms industry, partners in the global south, a geography…
+
+[Read more](https://ecfr.eu/publication/an-outsider-within-the-paradox-of-the-europe-turkey-relationship/)
+
+---
+
+### Combating new bioweapon risks: A Q&A with Dr Miranda Smith on the European Biotech Act
+*SIPRI — 2026-09-16*
+
+In this Q&A, Smith talks about why the European Biotech Act is significant, the new biosecurity risks emerging in the era of rapidly developing artificial intelligence (AI), and what the Act can and cannot do.
+
+[Read more](https://www.sipri.org/commentary/topical-backgrounder/2026/combating-new-bioweapon-risks-qa-dr-miranda-smith-european-biotech-act)
+
+---
+
+### 5 Messages That Stood out From the SOTEU
+*Wilfried Martens Centre (EPP) — 2026-09-16*
+
+On the morning of Wednesday September 16 th , European Commission President Ursula von der Leyen delivered her annual State of the European Union. At a time of heightened geopolitical uncertainty and societal upheaval, her address served as a reminder of the many issues facing the European Union, along with an outline of the paths available to the EU to respond to these various challenges. Five elements in particular emerged from her speech: Europe’s Changing Priorities – Tomi Huhtanen, Executive Director: The annual State of the European Union can be analysed as an update of the EU…
+
+[Read more](https://www.martenscentre.eu/blog/5-messages-that-stood-out-from-the-soteu/)
+
+---
+
+### The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use
+*The Green Tank — 2026-09-15*
+
+Batteries are already helping to reduce the amount of renewable energy being lost in Greece, while also reducing the need for electricity generation from costly fossil gas. However, the country is still far from the desired level of battery deployment. This is highlighted by data from IPTO’s day-ahead scheduling analysed by The Green Tank and featured in an article by Mahi Tratsa in To Vima tis Kyriakis and ot.gr. The post The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use first appeared on The Green Tank .
+
+[Read more](https://thegreentank.gr/en/2026/09/15/nm-vima-batteries-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-vima-batteries-en)
+
+---
+
+### Governing Agriculture or Farmers? Problem Representations of Biodiversity and Farm Loss in Swedens Strategy for the Common Agricultural Policy
+*Environmental Policy and Governance — 2026-09-15*
+
+ABSTRACT European Union (EU) strategies for food supply address challenges of increasing, or at least maintaining, today's level of agricultural food production. At the same time, European farmland biodiversity continues to deteriorate despite considerable investments in measures to promote environmentally friendly farming practices. In this paper, we analyse the Swedish strategy for the EU's Common Agricultural Policy (CAP) and discuss how it represents biodiversity and farm loss. We apply Carol Bacchi's critical policy approach, What's the problem represented to be? (WPR), to identify how…
+
+[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70138?af=R)
+
+---
+
+### Indian summer: The BRICS summit and warming New Delhi-Beijing relations
+*ECFR — 2026-09-15*
+
+Cover image: picture alliance / ZUMAPRESS.com | Pib Handout/Press Information Problem The BRICS summit concluded in New Delhi on Sunday, with Indian prime minister Narendra Modi having hosted the two-day gathering as chair. As with many meetings of the group of emerging economies, this edition brought together the leaders of China, India and Russia and featured plenty of anti-Western rhetoric. This was also Chinese leader Xi Jinping’s first visit to India for more than six years, in the latest example of Sino-Indian normalisation following a sustained period of tensions. New Delhi’s…
+
+[Read more](https://ecfr.eu/article/indian-summer-the-brics-summit-and-warming-new-delhi-beijing-relations/)
+
+---
+
+### Life of the party: Democrats and the search for a post-Trump future
+*ECFR — 2026-09-15*
+
+Summary The Democrats could win big in the US midterm elections. This won’t matter much for constraining Trump, but it will start to establish what politics comes after him. Our research finds three camps of Democrats, all with different diagnoses of America’s problems: the revolutionaries see the system as unjust and needing structural change; the renovators see it as corrupt and needing reform; and the revivalists blame right-wing populism for breaking a system of bipartisan cooperation. What these camps see as broken in American domestic politics translates to how they view US foreign…
+
+[Read more](https://ecfr.eu/publication/life-of-the-party-democrats-and-the-search-for-a-post-trump-future/)
+
+---
+
+### Putin is far from isolated. Europe must play him at the long game
+*Chatham House — 2026-09-15*
+
+Putin is far from isolated. Europe must play him at the long game Expert comment jon.wallace 15 September 2026 The SCO and BRICS summits indicate Russia retains sufficient value to China, India and other non-Western powers to pursue its war objectives. Europe needs to adjust to that reality. The past fortnight has seen President Vladimir Putin undertake plenty of summit diplomacy. Throughout he has shown no sign he is open to compromise on Russia’s war aims in Ukraine. On the contrary, escalation has accelerated. Europe seems inclined to read this increased aggression as a sign of desperation…
+
+[Read more](https://www.chathamhouse.org/2026/09/putin-far-isolated-europe-must-play-him-long-game)
+
+---
+
+### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
+*FIIA (Finnish Institute of International Affairs) — 2026-09-15*
+
+New publication in the NB8 policy brief series by Justinas Lingevicius (VU IIRPS) and Markus Holmgren (FIIA). Drone incursions in the Baltic States and Finland have made clear that this is no longer a distant battlefield concern. This brief argues that as the NB8 framework matures into an increasingly like-minded security community, drone cooperation could stimulate market integration. A standardised, modular drone platform architecture, a European drone defence “Platform market” model, could give the countries the economy of scale that they otherwise lack. Read publication The Nordic-Baltic…
+
+[Read more](https://fiia.fi/en/news/the-nordic-baltic-eight-policy-brief-nb8-and-the-drone-challenge)
+
+---
+
+### Explore SIPRI’s latest data visualizations
+*SIPRI — 2026-09-15*
+
+SIPRI’s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute’s major data launches.
+
+[Read more](https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations)
 
 ---
 
@@ -27,39 +162,12 @@ In an interview with ESG+ Stories, Ioli Christopoulou, Policy Director and co-fo
 
 ---
 
-### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-14*
+### Catching up with HiEFFICIENT: powering tomorrow’s electric vehicles for greener European transport
+*CORDIS — 2026-09-14*
 
-The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
+Two years on, the HiEFFICIENT project continues to drive a new era of electromobility across Europe. Its legacy lives on through commercial products, new spin-offs and follow-up initiatives that redefine sustainable transport.
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
-
----
-
-### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-14*
-
-This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
-
----
-
-### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-14*
-
-This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
-
----
-
-### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-14*
-
-This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
+[Read more](https://cordis.europa.eu/article/rcn/467377/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467377&WT.rss_ev=a)
 
 ---
 
@@ -69,6 +177,69 @@ This article examines whether European Union (EU) rule-of-law principles constra
 Transitioning towards a circular textile economy has become a central objective of the European Union’s sustainability policy. Moving away from the currently li
 
 [Read more](https://www.ceps.eu/ceps-publications/unlocking-textile-circularity-in-the-eu-from-challenges-to-opportunities/)
+
+---
+
+### The Houthis’ capture of Mocha has transformed the war in Yemen – and the geopolitics of the Red Sea
+*Chatham House — 2026-09-14*
+
+The Houthis’ capture of Mocha has transformed the war in Yemen – and the geopolitics of the Red Sea Expert comment thilton.drupal 14 September 2026 Iran and its allies can now exert pressure on two strategic maritime chokepoints, with global implications. A more coherent international approach to Yemen is needed. The Houthi armed group recently captured the strategic port city of Mocha in southwestern Yemen and advanced along the coast of the Bab al-Mandab Strait. This represents the most consequential change in territorial control in Yemen for years. For Yemen, the offensive risks reopening…
+
+[Read more](https://www.chathamhouse.org/2026/09/houthis-capture-mocha-has-transformed-war-yemen-and-geopolitics-red-sea)
+
+---
+
+### Is AI really getting out of control?
+*Chatham House — 2026-09-14*
+
+Is AI really getting out of control? Expert comment jon.wallace 14 September 2026 Anthropic’s warning should be taken seriously – but not as cover for entrenching US labs or escalating rivalry with Beijing. This weekend current and former employees of US AI laboratories and their leaders issued dire warnings of a near-term apocalypse at the hands of AI. Out-of-control AI development could mean ‘ we could all die in the immediate future ’ said one former lab employee. This was followed by a proposal from Dario Amodei, the CEO of AI company Anthropic, to slow down AI development to ensure the…
+
+[Read more](https://www.chathamhouse.org/2026/09/ai-really-getting-out-control)
+
+---
+
+### Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait?
+*International Crisis Group — 2026-09-14*
+
+Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait? hschaub Mon, 09/14/2026 - 17:03 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Middle East & North Africa 14 September 2026 1 minute Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait? In this special episode of Hold Your Fire!, Richard speaks with Crisis Group expert Ahmed Nagi about the rapid Houthi advances along Yemen’s Red Sea coast, what they mean for Saudi Arabia and the wider region,…
+
+[Read more](https://www.crisisgroup.org/pod/middle-east-north-africa/yemen/special-episode-will-houthis-shut-down-bab-al-mandab-strait)
+
+---
+
+### Ten Challenges for the UN in 2026-2027
+*International Crisis Group — 2026-09-14*
+
+Ten Challenges for the UN in 2026-2027 eschelhaas Mon, 09/14/2026 - 10:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Candidates for United Nations Secretary-General position participate in a debate at the UN General Assembly Hall in New York, on July 23, 2026. Leonardo MUNOZ / AFP Special Briefing 15 / Multilateral Diplomacy 14 September 2026 20+ minutes Ten Challenges for the UN in 2026-2027 As the 2026 General Assembly begins, the UN remains hobbled by cost cutting and big-power…
+
+[Read more](https://www.crisisgroup.org/sbr/global/sb15-ten-challenges-un-2026-2027)
+
+---
+
+### Yet Another Sham Election in Russia
+*SWP (German Institute for International and Security Affairs) — 2026-09-14*
+
+The Upcoming Ballot for the Ninth State Duma So far, 2026 is not proving a good year for the Putin regime. The front line in Ukraine is barely moving, Ukrainian drones and missiles are striking targets deep inside Russian territory, the economy is faltering and public sentiment is deteriorating. Under these difficult conditions, the Kremlin administration has to engineer another victory for the ruling United Russia party, as the State Duma elections are due to take place from 18 to 20 September. Yet the Russian parliament is scarcely able to fulfil its function as a source of legitimacy in…
+
+[Read more](https://www.swp-berlin.org/en/publication/yet-another-sham-election-in-russia)
+
+---
+
+### Arms at the Frontier
+*SWP (German Institute for International and Security Affairs) — 2026-09-14*
+
+What Turkey’s Africa Engagement Reveals about Its Defence-Industrial Model Turkey’s defence engagement in Africa is often read through the lens of geopolitics, drone use, and conflict dynamics. Yet the deeper story is industrial and strategic. Africa remains central to Turkey’s defence-export strategy because it helps resolve structural pressures within Turkey’s defence-industrial ecosystem by sustaining pro­duction, easing competitive pressures, and creating external demand for an increasingly export-dependent industry. As Turkish and European companies become more closely connected, these…
+
+[Read more](https://www.swp-berlin.org/en/publication/arms-at-the-frontier)
+
+---
+
+### Economic Competitiveness and European Citizens
+*Wilfried Martens Centre (EPP) — 2026-09-14*
+
+A stakeholder report by EUobserver quoting our Policy Director, Peter Hefele.
+
+[Read more](https://www.martenscentre.eu/media-mentions/economic-competitiveness-and-european-citizens/)
 
 ---
 
@@ -108,6 +279,15 @@ Cover image: picture alliance / NurPhoto | Daniel Gnap On September 30th, the Eu
 
 ---
 
+### The geopolitics of global hunger
+*ECFR — 2026-09-11*
+
+This week, Mark Leonard is joined by Cary Fowler , founder and president of the Food Security Leadership Council and former US global food security envoy, and Jim O’Brien , ECFR distinguished visiting fellow and former US assistant secretary of state for European and Eurasian affairs. As conflict, climate change and geopolitical fragmentation converge, there is a growing risk of a global food crisis. Russia’s war in Ukraine continues to disrupt grain exports, the blockage of the Strait of Hormuz is restricting fertiliser shipments, and a potentially severe El Niño threatens drought and…
+
+[Read more](https://ecfr.eu/podcasts/episode/the-geopolitics-of-global-hunger/)
+
+---
+
 ### Ukraine: The battle beyond war
 *ECFR — 2026-09-11*
 
@@ -126,21 +306,39 @@ This week, Mark Leonard is joined by Cary Fowler , founder and president of the 
 
 ---
 
-### The geopolitics of global hunger
-*ECFR — 2026-09-11*
-
-This week, Mark Leonard is joined by Cary Fowler , founder and president of the Food Security Leadership Council and former US global food security envoy, and Jim O’Brien , ECFR distinguished visiting fellow and former US assistant secretary of state for European and Eurasian affairs. As conflict, climate change and geopolitical fragmentation converge, there is a growing risk of a global food crisis. Russia’s war in Ukraine continues to disrupt grain exports, the blockage of the Strait of Hormuz is restricting fertiliser shipments, and a potentially severe El Niño threatens drought and…
-
-[Read more](https://ecfr.eu/podcasts/episode/the-geopolitics-of-global-hunger/)
-
----
-
 ### How did 9/11 shape the world we live in?
 *Chatham House — 2026-09-11*
 
 How did 9/11 shape the world we live in? Audio sfarrell.drupa… 11 September 2026 In an extended edition of our weekly Independent Thinking podcast, we look back over a quarter of a century to examine the longer-term consequences of 9/11. Twenty five years ago the deadliest terrorist attacks in human history, on 11 September 2001, saw 2,977 people killed in New York, Washington, and aboard the planes hijacked by 19 members of Al-Qaeda. An immediate response followed with the US-led ‘war on terror’, which saw Western forces occupy Afghanistan and Iraq, and two decades of military operations…
 
 [Read more](https://www.chathamhouse.org/2026/09/how-did-911-shape-world-we-live)
+
+---
+
+### An Historic Poll Puts Peace to the Test in the Philippines
+*International Crisis Group — 2026-09-11*
+
+An Historic Poll Puts Peace to the Test in the Philippines cthuratong Fri, 09/11/2026 - 17:10 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Campaign posters in Cotabato City, in the Bangsamoro Autonomous Region in Muslim Mindanao, Philippines. August 2026. CRISIS GROUP / Georgi Engelbrecht Q&A / Asia-Pacific 11 September 2026 12 minutes An Historic Poll Puts Peace to the Test in the Philippines In mid-September, residents of the Bangsamoro in the southern Philippines will elect regional…
+
+[Read more](https://www.crisisgroup.org/qna/asia-pacific/philippines/historic-poll-puts-peace-test-philippines)
+
+---
+
+### Nuclear Deterrence in Europe (and another round of U.S. Ukraine-Russia diplomacy)
+*International Crisis Group — 2026-09-11*
+
+Nuclear Deterrence in Europe (and another round of U.S. Ukraine-Russia diplomacy) hschaub Fri, 09/11/2026 - 16:59 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Europe 11 September 2026 1 minute Nuclear Deterrence in Europe (and another round of U.S. Ukraine-Russia diplomacy) This week on Hold Your Fire!, Richard speaks with Crisis Group expert Olga Oliker about evolving nuclear calculations in Europe amid doubts about the U.S.’s NATO commitments. They also talk about the…
+
+[Read more](https://www.crisisgroup.org/pod/europe/nuclear-deterrence-europe-and-another-round-us-ukraine-russia-diplomacy)
+
+---
+
+### What Future for Venezuela after the U.S. Oil Carve-up?
+*International Crisis Group — 2026-09-11*
+
+What Future for Venezuela after the U.S. Oil Carve-up? pzeiler Fri, 09/11/2026 - 11:11 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List US Energy Secretary Chris Wright (L) and Venezuela's interim President Delcy Rodriguez (R) talk during a meeting over an oil agreement at the Miraflores Presidential Palace in Caracas on September 2, 2026. Juan Barreto / AFP Q&A / Latin America & Caribbean 11 September 2026 17 minutes What Future for Venezuela after the U.S. Oil Carve-up? The Trump…
+
+[Read more](https://www.crisisgroup.org/qna/latin-america-caribbean/venezuela-united-states/what-future-venezuela-after-us-oil-carve)
 
 ---
 
@@ -225,6 +423,15 @@ Can the UK escape the public debt trap? Expert comment jon.wallace 10 September 
 
 ---
 
+### On Our Radar
+*International Crisis Group — 2026-09-10*
+
+On Our Radar eschelhaas Fri, 09/11/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 11 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky E-post Facebook Linkedin Twitter…
+
+[Read more](https://www.crisisgroup.org/sco/global/our-radar)
+
+---
+
 ### Political Instability Meets Fiscal Limits: Is France the Euro’s Next Big Stress Test?
 *SWP (German Institute for International and Security Affairs) — 2026-09-10*
 
@@ -243,263 +450,38 @@ We are delighted to announce that Dr Sinja Dittmann, lead author of a study inve
 
 ---
 
-### The Green Tank on SKAI Radio on electricity prices
-*The Green Tank — 2026-09-09*
+### The Critical Minerals Linking Myanmar’s Civil War to the World
+*International Crisis Group — 2026-09-09*
 
-Nikos Mantzaris, co-founder and energy policy analyst at The Green Tank, spoke to journalist Giorgos Psaltis on SKAI Radio about electricity prices, following the Prime Minister’s commitment, announced at the Thessaloniki International Fair (TIF), to reduce electricity bills by 30% over the next three years. The post The Green Tank on SKAI Radio on electricity prices first appeared on The Green Tank .
+The Critical Minerals Linking Myanmar’s Civil War to the World eschelhaas Thu, 09/10/2026 - 00:05 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute The Critical Minerals Linking Myanmar’s Civil War to the World From AI data centres to makers of electric vehicles, luxury goods and missile systems, industries around the world depend on minerals extracted in Myanmar. These stories show how four globally important resources have become…
 
-[Read more](https://thegreentank.gr/en/2026/09/09/nm-skairadio-prices-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-skairadio-prices-en)
-
----
-
-### 75 years after the Treaty of Paris, steel industry calls for a new era of European industrial cooperation
-*Eurofer — 2026-09-09*
-
-75 years after coal and steel helped lay the foundations for European integration, Europe’s steel industry has called for renewed cooperation with policymakers to build a more competitive and sustainable European Union.
-
-[Read more](https://www.eurofer.eu/press-releases/75-years-after-the-treaty-of-paris-steel-industry-calls-for-a-new-era-of-european-industrial-cooperation)
+[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/critical-minerals-linking-myanmars-civil-war-world)
 
 ---
 
-### Clean energy technologies are driving job creation in the EU, but challenges remain around skill shortages and inclusion
-*EEA (European Environment Agency) — Press releases — 2026-09-09*
+### Tin: The Mine that Moves the Market
+*International Crisis Group — 2026-09-09*
 
-Clean energy technologies are creating hundreds of thousands of jobs across the European Union, according to a report published today by the European Environment Agency (EEA). However, persistent shortages of skilled workers risk slowing future growth, while at the same time the clean energy sector faces inclusion challenges, with women and young people underrepresented.
+Tin: The Mine that Moves the Market eschelhaas Thu, 09/10/2026 - 00:04 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Tin: The Mine that Moves the Market A single mine’s disruption led to a spike in global tin prices. As AI-driven demand surges, supply now depends on opaque politics in a militia-run enclave at the Myanmar-China border. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags eEARTH Myanmar…
 
-[Read more](https://www.eea.europa.eu/en/newsroom/news/clean-energy-technologies-are-driving-job-creation-in-the-eu-but-challenges-remain-around-skill-shortages-and-inclusion)
-
----
-
-### Clean energy technologies in the European Union — Implications for quality jobs, skills and a just transition
-*EEA (European Environment Agency) — Publications — 2026-09-09*
-
-Europe’s transition to climate neutrality is reshaping industrial value chains and labour markets. This report provides an assessment of the employment implications of selected clean energy technologies in the European Union, with a focus on wind energy, solar photovoltaics, heat pumps and batteries. It analyses trends in employment, workforce composition, skills shortages and job quality, and exp...
-
-[Read more](https://www.eea.europa.eu/en/analysis/publications/clean-energy-technologies-in-the-eu-implications-for-quality-jobs-skills-and-just-transition)
+[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/tin-mine-moves-market)
 
 ---
 
-### A future with Chinese characteristics
-*ECFR — 2026-09-09*
+### Gold: Funding the Grassroots Resistance to Military Rule
+*International Crisis Group — 2026-09-09*
 
-BEIJING, CHINA - AUGUST 19, 2026 - A humanoid robot plays table tennis with an audience at the 2026 World Robot Conference in Beijing, China on August 19, 2026. | picture alliance / CFOTO | CFOTO For much of the 20th century, the US represented not just a place on the map. It was also a point in time. When Western Europeans looked at images of America after the second world war—depictions of Hollywood’s glamour, American cars and newfangled labour-saving devices—they thought they were looking into the future. The American Dream had an especially irresistible draw for Eastern Europeans behind…
+Gold: Funding the Grassroots Resistance to Military Rule eschelhaas Thu, 09/10/2026 - 00:03 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Gold: Funding the Grassroots Resistance to Military Rule Gold mining in Sagaing region has become a military objective for both the regime and its opponents. While it provides jobs in a devastated economy and revenues for armed groups fighting the regime, it also destroys farmland, pollutes…
 
-[Read more](https://ecfr.eu/article/a-future-with-chinese-characteristics/)
-
----
-
-### Friends without benefits: Why the EU should offer Canada more than casual defence ties
-*ECFR — 2026-09-09*
-
-Cover image: picture alliance / Hans Lucas | POOL UNION EUROPEENNE / AGENCE HANS LUCAS European leaders losing sleep over Trump’s economic and territorial threats should spare a thought for their Canadian counterparts. On August 22nd, Canadian prime minister Mark Carney announced that his country was “at war” with the United States after trade negotiations collapsed at the eleventh hour. Trump’s subsequent renaming of Lake Ontario to Lake America echoed the crisis with Greenland in January, when the US called into question Denmark’s sovereignty over the territory and refused to rule out…
-
-[Read more](https://ecfr.eu/article/friends-without-benefits-why-the-eu-should-offer-canada-more-than-casual-defence-ties/)
+[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/gold-funding-grassroots-resistance-military-rule)
 
 ---
 
-### Canada's retaliatory tariffs put Trump's trade strategy to the test
-*Chatham House — 2026-09-09*
+### Jade: Fighting for Profits from the “Stone of Heaven”
+*International Crisis Group — 2026-09-09*
 
-Canada's retaliatory tariffs put Trump's trade strategy to the test Expert comment LToremark 9 September 2026 US–Canada trade war will test not only economic strength but also political will. On the latter, Canada may have an advantage. As Canada’s new retaliatory tariffs against the United States came into effect on Tuesday, the Canada–US trade dispute entered a new phase – one that will be closely watched around the world. Apart from China, Canada is the only country that has imposed retaliatory tariffs on the US. The key question now is whether this strategy can succeed. The most recent…
+Jade: Fighting for Profits from the “Stone of Heaven” eschelhaas Thu, 09/10/2026 - 00:02 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Visual Explainers / Asia-Pacific 10 September 2026 1 minute Jade: Fighting for Profits from the “Stone of Heaven” Hpakant supplies billions of dollars of jade to China each year, enriching many along the supply chain. Since Myanmar’s 2021 coup, fighting around Hpakant has intensified as the military and its opponents battle for control of one of the…
 
-[Read more](https://www.chathamhouse.org/2026/09/canadas-retaliatory-tariffs-put-trumps-trade-strategy-test)
-
----
-
-### North Korea’s military partnership with Russia has consequences far beyond Ukraine
-*Chatham House — 2026-09-09*
-
-North Korea’s military partnership with Russia has consequences far beyond Ukraine Expert comment thilton.drupal 9 September 2026 North Korea is emerging as Russia’s reserve arsenal – and potentially its reserve army. This deepening partnership has strengthened Pyongyang’s military capabilities and its strategic position in East Asia. The first road bridge connecting North Korea and Russia opened this week, providing the latest sign of the deepening partnership between the two countries since Russia launched its full-scale invasion of Ukraine in 2022. North Korea’s military partnership with…
-
-[Read more](https://www.chathamhouse.org/2026/09/north-koreas-military-partnership-russia-has-consequences-far-beyond-ukraine)
-
----
-
-### Future nostalgia: Europe’s unfinished song
-*ECFR — 2026-09-08*
-
-Summary To find out what “Europe” means to people today, ECFR commissioned almost 6,000 interviews in six European countries and qualitative desk research across 15 more. The interviews reveal that most people have strong opinions about Europe and its future; the complementary research found that geopolitical chaos and culture wars are helping the EU become more politicised in domestic debates. How people feel about Europe may thus affect how they vote in the potentially seismic domestic elections to come, in many of which the far right leads in the polls. The interviews also found many…
-
-[Read more](https://ecfr.eu/special/future-nostalgia-europes-unfinished-song/)
-
----
-
-### Beyond Saxony-Anhalt: What Merz’s crisis means for Europe
-*ECFR — 2026-09-08*
-
-Cover image: picture alliance / photothek.de | Florian Gaertner Problem Saxony-Anhalt has returned 43.8% of the vote for the Alternative for Germany (AfD) in its state election. The result puts the party within reach of forming what would be the first state government run by the far-right in the history of the German federal republic. The AfD has no executive experience and its Saxony-Anhalt branch is riven with tensions and splits. A chaotic state government could deter voters elsewhere from backing such parties. But if the AfD manages to govern halfway coherently, it will have the chance to…
-
-[Read more](https://ecfr.eu/article/beyond-saxony-anhalt-what-merzs-crisis-means-for-europe/)
-
----
-
-### Emergency Room: The AfD’s victory in Saxony-Anhalt
-*ECFR — 2026-09-08*
-
-This week, Mark Leonard is joined by Jana Puglierin , senior policy fellow and head of ECFR’s Berlin office, in a World in 30 Minutes Emergency Room episode to discuss the latest in German politics. The AfD’s win in the small eastern state of Saxony-Anhalt was widely expected, but the scale of the result and the collapse of Chancellor Friedrich Merz’s Christian Democrats (CDU/CSU) have still shocked Berlin. For the first time since the second world war, a far-right party is within reach of governing a German Bundesland. Jana unpacks the AfD’s possible paths to power, the pressure on Merz and…
-
-[Read more](https://ecfr.eu/podcasts/episode/emergency-room-the-afds-victory-in-saxony-anhalt/)
-
----
-
-### Britons back ban on trade with Israeli settlements by more than two to one
-*ECFR — 2026-09-08*
-
-Cover image: picture alliance / Sipa USA | JNA PRESS With the British government set to announce new measures targeting Israel’s settlement project, polling by Opinium for ECFR shows that just 18% of UK adults oppose a ban on trade in goods with Israeli settlements in the West Bank and East Jerusalem, compared to 46% who back it. Support rises to nearly three quarters—72% versus 28%—when excluding those who did not voice an opinion. To date, the UK has sanctioned some two dozen organisations and individuals linked to settler violence. It has also excluded settlement goods from the…
-
-[Read more](https://ecfr.eu/article/britons-back-ban-on-trade-with-israeli-settlements-by-more-than-two-to-one/)
-
----
-
-### What the US midterms could mean for Trump’s power
-*Chatham House — 2026-09-08*
-
-What the US midterms could mean for Trump’s power Expert comment LToremark 8 September 2026 The Democrats are projected to make big gains in November’s midterm elections. But this will not necessarily constrain President Trump. As President Trump gathers Republicans this week for their first-ever midterm convention, election campaigning is in full swing. The results of the November midterm elections will shape Trump’s remaining tenure and the 2028 presidential cycle. As it stands, Democrats are projected to take the House of Representatives, while the Senate is a closer call . Either way,…
-
-[Read more](https://www.chathamhouse.org/2026/09/what-us-midterms-could-mean-trumps-power)
-
----
-
-### Farea al-Muslimi: ‘I wrote my own death statement 5 times’
-*Chatham House — 2026-09-08*
-
-Farea al-Muslimi: ‘I wrote my own death statement 5 times’ The World Today iallan.drupal 8 September 2026 Chatham House’s research fellow in the Middle East and North Africa Programme on falling foul of Houthi warlords, testifying in the US Senate and how the Arab Spring changed his life. How did you get into international affairs? I was born in a remote mountain village in Yemen in 1990, the same year communist South Yemen united with North Yemen to create one state. Until secondary school, I lived on the family farm with my parents – my father can read and write a bit, my mother not at all.…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/farea-al-muslimi-i-wrote-my-own-death-statement-5-times)
-
----
-
-### Book reviews: What’s behind America’s hang-up with Iran and why are strong states so bad at coercion?
-*Chatham House — 2026-09-08*
-
-Book reviews: What’s behind America’s hang-up with Iran and why are strong states so bad at coercion? The World Today iallan.drupal 8 September 2026 A potted selection of reviews from our sister journal ‘International Affairs’, by its editorial coordinator Aroni Sarkar. Enduring Hostility: The Making of America’s Iran Policy By Dalia Dassa Kaye, Stanford University Press, £18.99 Why has Washington failed to normalize relations with Tehran despite changing foreign policy approaches across successive US administrations? This is the question Dalia Dassa Kaye addresses through her ‘detailed and…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/book-reviews-whats-behind-americas-hang-iran-and-why-are)
-
----
-
-### Nadia Murad: ‘Yazidis are still looking for justice’
-*Chatham House — 2026-09-08*
-
-Nadia Murad: ‘Yazidis are still looking for justice’ The World Today iallan.drupal 8 September 2026 The human rights activist and Nobel Peace Prize Laureate speaks to Sara Seth about her journey from a prisoner of ISIS to her global mission to support survivors of conflict-related sexual violence – and why she nearly gave up her campaign. Nadia Murad is an Iraqi-born Yazidi human rights activist. In 2014, Islamic State attacked her village, Kocho, in Sinjar, northern Iraq, killing many, including Murad’s mother and six brothers, and imprisoning her. The ISIS genocide claimed around 5,000…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/nadia-murad-yazidis-are-still-looking-justice)
-
----
-
-### Lebanon’s Shia refugees don’t know where to turn
-*Chatham House — 2026-09-08*
-
-Lebanon’s Shia refugees don’t know where to turn The World Today iallan.drupal 8 September 2026 Lebanese fleeing the country’s south are caught between the Israeli occupation and Hezbollah’s refusal to disarm. But for those seeking refuge in Beirut, further struggles await, writes Lemma Shehadi. Beirut’s Sports City was built in the 1950s to host major regional games. In July, rows of tents lined the galleries beneath the abandoned stadium’s upper tier, sheltering hundreds of families displaced from southern Lebanon by an Israeli war against the Lebanese militia Hezbollah that began in March…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/lebanons-shia-refugees-dont-know-where-turn)
-
----
-
-### Does South Africa’s anti-immigrant backlash signal the beginning of a new political era?
-*Chatham House — 2026-09-08*
-
-Does South Africa’s anti-immigrant backlash signal the beginning of a new political era? The World Today iallan.drupal 8 September 2026 After a long season of vigilantism and protests against undocumented foreign nationals, November’s local elections will test whether anti-immigrant populism has appeal for an electorate dissatisfied with the coalition government, writes Kiri Rupiah. South Africa has been in the grip of anti-immigrant protests and violence over its winter months, leading to the deaths of four foreign nationals - two Mozambicans, an Ethiopian and a Malawian. Tens of thousands…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/does-south-africas-anti-immigrant-backlash-signal-beginning)
-
----
-
-### Will the oil-tanker shadow fleet ever be brought back into line?
-*Chatham House — 2026-09-08*
-
-Will the oil-tanker shadow fleet ever be brought back into line? The World Today iallan.drupal 8 September 2026 Sanctions are inadvertently transforming ‘dark’ tankers taking Russian and Iranian oil around the world into a parallel trading system. Even with improved international relations, they are unlikely to want to rejoin a global shipping order laid down by the West, warns Nitya Labh. For decades, clandestine networks of ships have been used to bypass international sanctions and smuggle embargoed oil from Russia, Iran and Venezuela around the world. Their methods include turning off…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/will-oil-tanker-shadow-fleet-ever-be-brought-back-line)
-
----
-
-### Resigned but resilient: How Cuba is enduring its US blackout
-*Chatham House — 2026-09-08*
-
-Resigned but resilient: How Cuba is enduring its US blackout The World Today iallan.drupal 8 September 2026 Daily power cuts, fuel shortages and empty shop shelves are part of everyday life for Cubans as they struggle with the worst economic crisis in decades. Photographer Daniel Desormais visited an island bracing itself for America’s next move. You visited Havana earlier this year. What does life look like for Cubans? I’ve been to Cuba five times before, but things are significantly worse [since the US tightened its oil embargo in January]. People are trying to survive, but they are…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/resigned-resilient-how-cuba-enduring-its-us-blackout)
-
----
-
-### Russia’s elites pay ever greater price for Ukraine war
-*Chatham House — 2026-09-08*
-
-Russia’s elites pay ever greater price for Ukraine war The World Today iallan.drupal 8 September 2026 High-level dissent is being stamped out as Putin makes big business bear the costs of the invasion – but concern is mounting, writes Natalya Kovaleva. Vladimir Putin’s decision to launch his full-scale invasion of Ukraine in February 2022 met little resistance from Russia’s political and economic establishment. The few prominent objections came at a cost. Putin’s longtime aide Dmitry Kozak, who reportedly opposed the invasion in Kremlin security council meetings, saw his influence diminish.…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/russias-elites-pay-ever-greater-price-ukraine-war)
-
----
-
-### What the West fails to grasp about China’s strategy to lead the world
-*Chatham House — 2026-09-08*
-
-What the West fails to grasp about China’s strategy to lead the world The World Today iallan.drupal 8 September 2026 Xi Jinping wants to forge ‘a common destiny for humankind’ by winning over the Global South and taking Taiwan. But if America and Europe are to counter this ‘double pivot’, they must better understand ‘Xi Thought’, argues Steve Tsang. This article is published as part of ‘The World Tomorrow’, the magazine’s new strand for fresh ideas about the direction of global order. On 18 October 2017, delegates at the Chinese Communist Party’s National Congress listened to their leader…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/what-west-fails-grasp-about-chinas-strategy-lead-world)
-
----
-
-### The India–China reset will continue at the BRICS summit
-*Chatham House — 2026-09-08*
-
-The India–China reset will continue at the BRICS summit Expert comment jon.wallace 8 September 2026 So will disagreement over the purpose of BRICS. India will host the 18th BRICS summit in New Delhi on 12–13 September at a time when the rest of the world is increasingly seeking to emulate its longstanding policy of strategic autonomy. The Ukraine and Iran wars, continuing US–China rivalry, and the second administration of President Donald Trump have made New Delhi’s long-held commitment to strategic hedging and middle power diplomacy seem wise, if not urgent underpinnings for modern…
-
-[Read more](https://www.chathamhouse.org/2026/09/india-china-reset-will-continue-brics-summit)
-
----
-
-### Israel’s global isolation is growing – so why is it off the election agenda?
-*Chatham House — 2026-09-08*
-
-Israel’s global isolation is growing – so why is it off the election agenda? The World Today iallan.drupal 8 September 2026 Israelis across the spectrum dismiss criticism from old allies and propose new partnerships. But better relations with the US and Europe remain crucial for national security, argues Yaakov Katz. For years, Israelis have learned to live with being unpopular. Governments have come and gone, wars have erupted, condemnations have been issued at the United Nations and protests have broken out across university campuses. Israelis absorb the criticism, complain about the double…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/israels-global-isolation-growing-so-why-it-election-agenda)
-
----
-
-### How will the Iran war reshape the Persian Gulf?
-*Chatham House — 2026-09-08*
-
-How will the Iran war reshape the Persian Gulf? The World Today iallan.drupal 8 September 2026 When the fighting ends, America’s predominance in the region is likely to be eroded as Iran reasserts itself, the Arab monarchies reconsider their security – and China sees an opportunity. By Mohsen Milani. Regional orders rarely collapse overnight. More often, they erode gradually. The US-Israel war of choice against Iran may ultimately be remembered for its outcome and its challenge to the foundations of Pax Americana in the Persian Gulf – the post-Cold War order built on American predominance.…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/how-will-iran-war-reshape-persian-gulf)
-
----
-
-### UK’s armed forces can keep control of their AI kill switch – here’s how
-*Chatham House — 2026-09-08*
-
-UK’s armed forces can keep control of their AI kill switch – here’s how The World Today iallan.drupal 8 September 2026 The US offers the most advanced defence technology at the expense of sovereignty. Yet Britain can develop AI and other hi-tech capabilities without sacrificing autonomy or its transatlantic alliance, writes Phil Tinline. As the celebrations of American independence over the summer should have reminded us, Britain’s relationship with the United States has often been more difficult than we might like to think. Nonetheless, over the past 18 months, the bond has come under…
-
-[Read more](https://www.chathamhouse.org/publications/the-world-today/2026-09/uks-armed-forces-can-keep-control-their-ai-kill-switch-heres)
-
----
-
-### Partnering for Social Cohesion in the Sahel: Lessons for Donors
-*SIPRI — 2026-09-08*
-
-This policy brief is intended for donors seeking to strengthen humanitarian–development–peace nexus programming by drawing on lessons from SIPRI’s research on the Sahel Resilience Partnership.
-
-[Read more](https://www.sipri.org/publications/2026/sipri-policy-briefs/partnering-social-cohesion-sahel-lessons-donors)
-
----
-
-### UNGA81: climate action central to leadership through today’s accelerating crises
-*E3G — 2026-09-07*
-
-Taking place from tomorrow against a backdrop of accelerating climate impacts, alongside intensifying conflicts, instability, economic pressures and global tensions, UNGA81 and Climate Week NYC are critical places to reinforce climate action, cooperation, and the clean energy transition not as separate issues, but as central to the response to today’s crises and opportunities– strengthening security and stability, reducing geopolitical vulnerabilities, building resilience, and supporting prosperity. Leaders must recognise the growing costs and devastation of escalating impacts and respond…
-
-[Read more](https://www.e3g.org/news/cwny-unga2026-climate-central-to-leadership/?utm_source=rss&utm_medium=rss&utm_campaign=cwny-unga2026-climate-central-to-leadership)
-
----
-
-### The AfD’s victory in Saxony-Anhalt marks a turning point for Germany – but perspective is important
-*Chatham House — 2026-09-07*
-
-The AfD’s victory in Saxony-Anhalt marks a turning point for Germany – but perspective is important Expert comment jon.wallace 7 September 2026 Ulrich Siegmund’s highly successful campaign points to a more durable AfD electorate and flags the tests ahead for Chancellor Merz’s government, the CDU and the federal institutions that have shaped post-war German democracy. The Alternative for Germany (AfD)’s victory in Saxony-Anhalt’s election is a historic breakthrough and, without doubt, a turning point in German democracy. Since 1945 no party labelled extreme right has secured such a win in a…
-
-[Read more](https://www.chathamhouse.org/2026/09/afds-victory-saxony-anhalt-marks-turning-point-germany-perspective-important)
+[Read more](https://www.crisisgroup.org/vis/asia-pacific/myanmar/jade-fighting-profits-stone-heaven)
 
 ---
