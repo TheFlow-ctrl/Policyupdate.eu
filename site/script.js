@@ -819,7 +819,7 @@ function renderEntry(entry) {
   const date = escapeHtml(entry.date || "");
   const link = entry.link || "#";
   const actorLabel = ACTOR_LABELS[entry.actor_type] || "";
-  const summary = entry.summary ? `<p class="entry-summary">${escapeHtml(stripHtml(entry.summary)).slice(0, 280)}</p>` : "";
+  const summary = entry.summary ? `<p class="entry-summary">${escapeHtml(displaySummary(stripHtml(entry.summary)))}</p>` : "";
   const tags = (entry.tags || [])
     .map((t) => `<span class="entry-tag">${escapeHtml(TOPIC_LABELS[t] || t)}</span>`)
     .join("");
@@ -850,6 +850,27 @@ function escapeHtml(str) {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+// Mirrors display_summary() in fetch_digest.py -- must stay in sync with
+// it. Truncates to `limit` characters at a word boundary (never mid-word),
+// then always appends " (...)" so every entry visibly reads as a preview
+// of the linked original, whether or not this function itself had to cut
+// it -- previously this was just a hard `.slice(0, 280)` with no boundary
+// check and no trailing marker, which is why entries read like they
+// stopped abruptly mid-sentence. Any ellipsis the excerpt already ended
+// with upstream is stripped first so the result never doubles up
+// ("…" + "(...)").
+function displaySummary(text, limit = 280) {
+  let stripped = (text || "").trim();
+  if (!stripped) return "";
+  if (stripped.length > limit) {
+    const cut = stripped.slice(0, limit);
+    const lastSpace = cut.lastIndexOf(" ");
+    stripped = (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd();
+  }
+  stripped = stripped.replace(/[.…]+\s*$/, "").trimEnd();
+  return stripped ? `${stripped} (...)` : "";
 }
 
 // Fixed anchor points for the 3 outer policy dimensions the Visualisation
