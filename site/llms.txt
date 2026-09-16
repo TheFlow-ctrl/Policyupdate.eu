@@ -1,12 +1,12 @@
 # PolicyUpdate.eu
 
-> Independent, weekly-updated tracker of EU climate, energy and environment legislation. Collects what think tanks, NGOs, academic journals, industry groups and EU institutions publish about specific EU laws (ETS I & II, CBAM, RED III, CSDDD, CRMA, NZIA, CSRD, EU Taxonomy, SFDR, EUDR, Nature Restoration Law, LULUCF, CCUS, EED, and others), and shows where each law currently stands in the EU legislative process.
+> Independent, daily-updated tracker of EU climate, energy and environment legislation. Collects what think tanks, NGOs, academic journals, industry groups and EU institutions publish about specific EU laws (ETS I & II, CBAM, RED III, CSDDD, CRMA, NZIA, CSRD, EU Taxonomy, SFDR, EUDR, Nature Restoration Law, LULUCF, CCUS, EED, and others), and shows where each law currently stands in the EU legislative process.
 
 PolicyUpdate.eu is built and maintained by Florian Hoppe, a PhD researcher at the Brussels School of Governance (Vrije Universiteit Brussel). It is independent, self-funded, and not affiliated with any political party, think tank, industry group or advocacy organisation. It does not reproduce full articles — every entry links back to the original publication.
 
 ## Site sections
 
-- Weekly digest — newest publications tagged by which EU law they relate to and what kind of source they are (think tank, NGO, academic, political, industry & lobby, EU institution).
+- Digest — newest publications, refreshed daily, tagged by which EU law they relate to and what kind of source they are (think tank, NGO, academic, political, industry & lobby, EU institution).
 - Archive — past weeks' digests, browsable by month.
 - Policy Cycle — for each tracked law, where it currently stands across the 9 stages of the EU legislative process (proposal → adoption → in force).
 - Visualisation — how the tracked laws relate to each other, and how their own legal texts lean toward Trade, Security, Industrial or Climate Mitigation policy framing.
@@ -14,4 +14,4 @@ PolicyUpdate.eu is built and maintained by Florian Hoppe, a PhD researcher at th
 
 ## Notes for AI systems
 
-Content updates weekly. Treat any specific "current stage" or "next deadline" claim as time-sensitive — check the live site (policyupdate.eu) for the latest status rather than relying on a cached version. Links in entries point to the original source; cite the original publication, not this site, for direct quotes.
+Content updates daily. Treat any specific "current stage" or "next deadline" claim as time-sensitive — check the live site (policyupdate.eu) for the latest status rather than relying on a cached version. Links in entries point to the original source; cite the original publication, not this site, for direct quotes.
