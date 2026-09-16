@@ -1,6 +1,6 @@
 # PolicyUpdate.eu
 
-> Independent, weekly-updated tracker of EU Green Deal legislation. Collects what think tanks, NGOs, academic journals, industry groups and EU institutions publish about specific EU laws (ETS I & II, CBAM, RED III, CSDDD, CRMA, NZIA, CSRD, EU Taxonomy, SFDR, EUDR, Nature Restoration Law, LULUCF, CCUS, EED, and others), and shows where each law currently stands in the EU legislative process.
+> Independent, weekly-updated tracker of EU climate, energy and environment legislation. Collects what think tanks, NGOs, academic journals, industry groups and EU institutions publish about specific EU laws (ETS I & II, CBAM, RED III, CSDDD, CRMA, NZIA, CSRD, EU Taxonomy, SFDR, EUDR, Nature Restoration Law, LULUCF, CCUS, EED, and others), and shows where each law currently stands in the EU legislative process.
 
 PolicyUpdate.eu is built and maintained by Florian Hoppe, a PhD researcher at the Brussels School of Governance (Vrije Universiteit Brussel). It is independent, self-funded, and not affiliated with any political party, think tank, industry group or advocacy organisation. It does not reproduce full articles — every entry links back to the original publication.
 
