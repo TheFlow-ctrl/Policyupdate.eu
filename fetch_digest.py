@@ -858,6 +858,31 @@ def _escape_html(text):
     return (text or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+_TRAILING_ELLIPSIS_RE = re.compile(r"[.…]+\s*$")
+
+
+def display_summary(text, limit=280):
+    """Mirrors displaySummary() in script.js -- must stay in sync with it.
+
+    Truncates to `limit` characters at a word boundary (never mid-word),
+    then always appends " (...)" so every entry visibly reads as a preview
+    of the linked original, whether or not this function itself had to cut
+    it -- previously this just hard-sliced to 280 chars with no boundary
+    check and no trailing marker, which is why entries read like they
+    stopped abruptly mid-sentence. Any ellipsis the excerpt already ended
+    with upstream (see bounded_excerpt()/backend_scrapers._clean_text())
+    is stripped first so the result never doubles up ("…" + "(...)")."""
+    stripped = (text or "").strip()
+    if not stripped:
+        return ""
+    if len(stripped) > limit:
+        cut = stripped[:limit]
+        last_space = cut.rfind(" ")
+        stripped = (cut[:last_space] if last_space > 0 else cut).rstrip()
+    stripped = _TRAILING_ELLIPSIS_RE.sub("", stripped).rstrip()
+    return f"{stripped} (...)" if stripped else ""
+
+
 def render_entry_html(entry):
     """Python port of renderEntry() in script.js -- must stay in sync with
     it, since this generates the static (no-JS) snapshot of the same
@@ -873,8 +898,8 @@ def render_entry_html(entry):
     # entry["summary"] is already HTML-stripped by clean_text() earlier in
     # this same pipeline (unlike script.js's stripHtml(), which defends
     # against raw JSON that might still contain markup) -- so this only
-    # needs the same 280-char slice script.js applies for display.
-    summary_text = (entry.get("summary") or "")[:280]
+    # needs the same display_summary() truncation script.js applies.
+    summary_text = display_summary(entry.get("summary") or "")
     summary_html = f'<p class="entry-summary">{_escape_html(summary_text)}</p>' if summary_text else ""
     tags_html = "".join(
         f'<span class="entry-tag">{_escape_html(TOPIC_LABELS.get(t, t))}</span>'
