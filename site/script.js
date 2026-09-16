@@ -43,6 +43,15 @@ const ACTOR_LABELS = {
   "eu-institution": "EU Institutions",
 };
 
+// Kept in sync with FORMAT_LABELS in fetch_digest.py -- entry.content_type
+// is computed server-side by classify_content_type() and just displayed
+// here, not recomputed client-side.
+const FORMAT_LABELS = {
+  podcast: "Podcast",
+  report: "Report",
+  interview: "Interview",
+};
+
 // Plain-language explainer + "why it matters" + link to the original legal
 // text for each law, shown as an info card whenever that topic filter is
 // active. Written for a general reader, not a policy specialist. Keep ids
@@ -812,10 +821,14 @@ function renderEntry(entry) {
     .map((t) => `<span class="entry-tag">${escapeHtml(TOPIC_LABELS[t] || t)}</span>`)
     .join("");
   const tagsHtml = tags ? `<div class="entry-tags">${tags}</div>` : "";
+  const formatLabel = FORMAT_LABELS[entry.content_type];
+  const formatBadge = formatLabel
+    ? `<span class="format-badge format-badge-${entry.content_type}">${formatLabel}</span>`
+    : "";
 
   return `
     <article class="entry-card">
-      <h3><a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
+      <h3>${formatBadge}<a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
       <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}</div>
       ${summary}
       ${tagsHtml}
