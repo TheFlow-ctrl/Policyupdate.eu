@@ -1771,7 +1771,12 @@
       <h2>Get the weekly digest by email</h2>
       <p>One email a week. No spam, unsubscribe any time.</p>
 
-      <iframe class="substack-embed" src="https://policyupdatedoteu.substack.com/embed" width="480" height="320" frameborder="0" scrolling="no"></iframe>
+      <!-- height lowered from 320 to 150 -- Substack's embed widget switches
+           to a compact title+form layout (no large publication icon) below
+           roughly this height. Cross-origin iframe, so we can't restyle its
+           contents directly -- only its size, which is what drives the
+           layout Substack renders inside. Adjust if it looks cramped. -->
+      <iframe class="substack-embed" src="https://policyupdatedoteu.substack.com/embed" width="480" height="150" frameborder="0" scrolling="no"></iframe>
     </section>
 
   </main>
