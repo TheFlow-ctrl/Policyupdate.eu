@@ -483,6 +483,38 @@ h1, h2, h3 {
   line-height: 1.35;
 }
 
+/* Content-format badge (Podcast / Report / Interview) -- purely
+   informational, set by classify_content_type() in fetch_digest.py.
+   Solid pills, distinct from the outlined .entry-tag pills used for
+   legislation topics below, so the two don't visually blend together. */
+.format-badge {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  margin-right: 8px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: white;
+}
+
+.format-badge-podcast {
+  background: var(--revision-accent);
+}
+
+.format-badge-report {
+  background: var(--navy-800);
+}
+
+.format-badge-interview {
+  background: var(--gold-dark);
+}
+
 .entry-card h3 a {
   color: var(--navy-950);
   text-decoration: none;
