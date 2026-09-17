@@ -852,6 +852,38 @@ h1, h2, h3 {
   color: var(--muted);
 }
 
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.team-member-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-dark);
+  flex-shrink: 0;
+}
+
+.team-member-name {
+  margin: 0;
+  font-family: "Source Serif 4", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy-950);
+}
+
+.team-member-role {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .info-page-body a {
   color: var(--navy-950);
   font-weight: 600;
