@@ -1,28 +1,6 @@
 {
-  "generated": "2026-09-16",
+  "generated": "2026-09-17",
   "entries": [
-    {
-      "org": "SWP (German Institute for International and Security Affairs)",
-      "field": "security",
-      "title": "Political Instability Meets Fiscal Limits: Is France the Euro\u2019s Next Big Stress Test?",
-      "link": "https://www.swp-berlin.org/en/publication/political-instability-meets-fiscal-limits-is-france-the-euros-next-big-stress-test",
-      "date": "2026-09-10",
-      "summary": "With around half a year remaining before the next presidential election, France is in danger of becoming a stress test for the eurozone: a political crisis, a deteriorating fiscal position and growing market doubts about the country\u2019s ability to finance its mounting debt burden are all converging. France faces a significant structural imbalance in its public finances. The budget deficit exceeds 5 per cent of GDP , while public expenditure stands at around 57 per cent of GDP. At the same time, public debt is rising steadily and could, without sufficient fiscal consolidation measures, exceed\u2026",
-      "actor_type": "think-tank",
-      "content_type": "report",
-      "tags": []
-    },
-    {
-      "org": "ECFR",
-      "field": "security",
-      "title": "Booted, then suited: Veterans and the making of Putin\u2019s new proto-elite",
-      "link": "https://ecfr.eu/publication/booted-then-suited-veterans-and-the-making-of-putins-new-proto-elite/",
-      "date": "2026-09-10",
-      "summary": "Cover image: picture alliance / TASS | Sergei Bulkin Summary The Kremlin is promoting Ukraine war veterans and, in so doing, cultivating a proto-elite to fill future vacancies and reinforce Russia\u2019s militarised course. Through programmes such as \u201cTime of Heroes\u201d, and through elections, at least several thousand actual and nominal veterans now already hold political or government posts. The new preference for war credentials has supplanted the earlier trend of hiring technocrats. Russian cadre policy has shifted towards \u201cmaking loyal people competent\u201d, as in other consolidated autocracies.\u2026",
-      "actor_type": "think-tank",
-      "content_type": "report",
-      "tags": []
-    },
     {
       "org": "FIIA (Finnish Institute of International Affairs)",
       "field": "security",
@@ -52,6 +30,17 @@
       "link": "https://ecfr.eu/publication/life-of-the-party-democrats-and-the-search-for-a-post-trump-future/",
       "date": "2026-09-15",
       "summary": "Summary The Democrats could win big in the US midterm elections. This won\u2019t matter much for constraining Trump, but it will start to establish what politics comes after him. Our research finds three camps of Democrats, all with different diagnoses of America\u2019s problems: the revolutionaries see the system as unjust and needing structural change; the renovators see it as corrupt and needing reform; and the revivalists blame right-wing populism for breaking a system of bipartisan cooperation. What these camps see as broken in American domestic politics translates to how they view US foreign\u2026",
+      "actor_type": "think-tank",
+      "content_type": "report",
+      "tags": []
+    },
+    {
+      "org": "SWP (German Institute for International and Security Affairs)",
+      "field": "security",
+      "title": "Canada\u2019s Offer to Europe: More Than Just a Trading Partner",
+      "link": "https://www.swp-berlin.org/en/publication/canadas-offer-to-europe-more-than-just-a-trading-partner",
+      "date": "2026-09-16",
+      "summary": "In seeking partners for his \u201cmiddle powers\u201d strategy, Canadian Prime Minister Mark Carney is looking to Europe first and foremost. On the day he broke off trade talks with the United States, he announced that Canada would negotiate a \u201cstronger and deeper security and economic partnership\u201d with the EU. On 17 September, he is also due to address the European Parliament. Canada has close economic ties to the United States. However, because Canada\u2019s economy is far smaller than that of its neighbour, it is at a severe disadvantage when it acts alone. Carney hopes that the EU will provide a\u2026",
       "actor_type": "think-tank",
       "content_type": "report",
       "tags": []
@@ -127,7 +116,7 @@
       "field": "green-deal",
       "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -138,7 +127,7 @@
       "field": "green-deal",
       "title": "Public Procurement and the EU\u2019s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "summary": "The European Union\u2019s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal\u2019s agenda, which placed climate and environmental challenges as this generation\u2019s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -171,7 +160,7 @@
       "field": "green-deal",
       "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -184,6 +173,17 @@
       "link": "https://thegreentank.gr/en/2026/09/15/nm-vima-batteries-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-vima-batteries-en",
       "date": "2026-09-15",
       "summary": "Batteries are already helping to reduce the amount of renewable energy being lost in Greece, while also reducing the need for electricity generation from costly fossil gas. However, the country is still far from the desired level of battery deployment. This is highlighted by data from IPTO\u2019s day-ahead scheduling analysed by The Green Tank and featured in an article by Mahi Tratsa in To Vima tis Kyriakis and ot.gr. The post The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use first appeared on The Green Tank .",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Chatham House",
+      "field": "security",
+      "title": "China is weathering the Hormuz energy crisis. But copying its model comes with risks",
+      "link": "https://www.chathamhouse.org/2026/09/china-weathering-hormuz-energy-crisis-copying-its-model-comes-risks",
+      "date": "2026-09-17",
+      "summary": "China is weathering the Hormuz energy crisis. But copying its model comes with risks Expert comment thilton.drupal 17 September 2026 China absorbed the shock by drawing on stockpiles and a decade of electrification. Europe needs electrification for security, but it needs to decide which parts of the system it is willing to buy from Beijing. Resources are no longer \u2018king\u2019 when it comes to energy, wrote Zhao Hongtu and Chen Wenlin in the 1 September 2026 edition of Qiushi , the Chinese Communist Party\u2019s flagship theoretical journal. Mineral-rich economies may have some leverage, but the\u2026",
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []
@@ -204,7 +204,7 @@
       "field": "green-deal",
       "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-      "date": "2026-09-16",
+      "date": "2026-09-17",
       "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -233,34 +233,23 @@
       "tags": []
     },
     {
+      "org": "Chatham House",
+      "field": "security",
+      "title": "Imbalances are a feature of the global financial system, not a bug",
+      "link": "https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug",
+      "date": "2026-09-17",
+      "summary": "Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on \u2018global imbalances\u2019 is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters\u2019 summit. Seemingly this focus on global imbalances is justified. China\u2019s trade in goods surplus now alarms Europe\u2019s leaders as much as it worries America\u2019s. The US\u2019s net liability to the world \u2013 the degree\u2026",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "ECFR",
       "field": "security",
       "title": "Indian summer: The BRICS summit and warming New Delhi-Beijing relations",
       "link": "https://ecfr.eu/article/indian-summer-the-brics-summit-and-warming-new-delhi-beijing-relations/",
       "date": "2026-09-15",
       "summary": "Cover image: picture alliance / ZUMAPRESS.com | Pib Handout/Press Information Problem The BRICS summit concluded in New Delhi on Sunday, with Indian prime minister Narendra Modi having hosted the two-day gathering as chair. As with many meetings of the group of emerging economies, this edition brought together the leaders of China, India and Russia and featured plenty of anti-Western rhetoric. This was also Chinese leader Xi Jinping\u2019s first visit to India for more than six years, in the latest example of Sino-Indian normalisation following a sustained period of tensions. New Delhi\u2019s\u2026",
-      "actor_type": "think-tank",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "European Liberal Forum (Renew)",
-      "field": "security",
-      "title": "Too\u00a0Close\u00a0to\u00a0Call:\u00a0Sweden\u2019s\u00a0Political\u00a0Centre Is Back in the Game",
-      "link": "https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/",
-      "date": "2026-09-16",
-      "summary": "Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed \u2013 maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest\u2026",
-      "actor_type": "political",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "Chatham House",
-      "field": "security",
-      "title": "Will the UN vote to sustain Haiti\u2019s Gang Suppression Force?",
-      "link": "https://www.chathamhouse.org/2026/09/will-un-vote-sustain-haitis-gang-suppression-force",
-      "date": "2026-09-10",
-      "summary": "Will the UN vote to sustain Haiti\u2019s Gang Suppression Force? Expert comment jon.wallace 10 September 2026 Sustaining the force is essential. But so too are funding commitments to restore the health and education services Haitians desperately need. On 30 September the UN Security Council will vote on renewing the Gang Suppression Force (GSF) for Haiti. Now is not the time to pull the plug on GSF and its security effort. If anything, the Security Council vote should be an opportunity to swiftly renew the force and then confront an additional uncomfortable issue: How can development assistance be\u2026",
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []
@@ -310,6 +299,17 @@
       "tags": []
     },
     {
+      "org": "Wilfried Martens Centre (EPP)",
+      "field": "security",
+      "title": "Iceland\u2019s No, and the Membership It Was Never Offered",
+      "link": "https://www.martenscentre.eu/blog/icelands-no-and-the-membership-it-was-never-offered/",
+      "date": "2026-09-16",
+      "summary": "On Saturday 29 August 2026, Icelandic voters were asked a narrow question: should Iceland resume the EU accession talks it shelved in 2013? They said no, 52.84 to 47.16 per cent. It settled nothing about EEA membership, Schengen, or the practical cooperation that continues regardless. But it was only the latest in a now five-decades-old story: a small, wealthy, resource-dependent North Atlantic state, offered formal accession, once again declined even the first procedural step. Strip away the campaign noise, and what the No vote expressed was a judgment about sovereignty \u2014 not hostility to\u2026",
+      "actor_type": "political",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "International Crisis Group",
       "field": "security",
       "title": "What Future for Venezuela after the U.S. Oil Carve-up?",
@@ -328,6 +328,17 @@
       "date": "2026-09-11",
       "summary": "Cover image: picture alliance / NurPhoto | Daniel Gnap On September 30th, the European Commission is expected to unveil a comprehensive document on EU enlargement, which will be used as a basis for discussion by the European Council in October. The paper is likely to confirm that Montenegro and Albania could finish negotiations soon . But it should also propose ideas on how other countries in the region without this perspective can move forward in their own EU accession journeys. Any Western Balkan country that joins the EU after waiting over 20 years deserves to be celebrated; the two\u2026",
       "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "European Liberal Forum (Renew)",
+      "field": "security",
+      "title": "Sweden\u2019s\u00a0Political\u00a0Centre Is Back in the Game",
+      "link": "https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/",
+      "date": "2026-09-16",
+      "summary": "Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed \u2013 maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest\u2026",
+      "actor_type": "political",
       "content_type": null,
       "tags": []
     },
@@ -372,17 +383,6 @@
       "date": "2026-09-11",
       "summary": "Attacks on civil society are no longer just a problem for those countries and organisations normally associated with democratic backsliding. It is a European trend that, unfortunately, no longer excludes even progressive parties. The arrests of thousands of activists in the UK for holding up signs in support of Palestine Action in the UK under Labour\u2019s rule are a particularly stark example. Progressive parties that are of civil society. Historically sharing roots, constituencies and leaders. Mutually dependent on the creative cross-fertilisation of ideas, experience and trust for our shared\u2026",
       "actor_type": "political",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "Chatham House",
-      "field": "security",
-      "title": "Can the UK escape the public debt trap?",
-      "link": "https://www.chathamhouse.org/2026/09/can-uk-escape-public-debt-trap",
-      "date": "2026-09-10",
-      "summary": "Can the UK escape the public debt trap? Expert comment jon.wallace 10 September 2026 The UK\u2019s mix of high fiscal deficits, rising bond yields, anaemic growth, high taxes and an impatient electorate can only be solved with politically brave choices. All major advanced economies have seen rising long-term bond yields over the past year. But with the ten-year gilt yield at 5.2 per cent on 9 Sept 2026, the UK\u2019s long-term rates are the highest in the G7. US ten-year yields are 4.8 per cent, Germany\u2019s are 3.4 per cent and Japan\u2019s 2.9 per cent. Reasons for the UK\u2019s relative weakness The UK\u2019s\u2026",
-      "actor_type": "think-tank",
       "content_type": null,
       "tags": []
     },
@@ -475,17 +475,6 @@
       "tags": []
     },
     {
-      "org": "The Green Tank",
-      "field": "green-deal",
-      "title": "How much do electricity exports cost us?",
-      "link": "https://thegreentank.gr/en/2026/09/10/electricity-exports-gas-report-en/?utm_source=rss&utm_medium=rss&utm_campaign=electricity-exports-gas-report-en",
-      "date": "2026-09-10",
-      "summary": "The Green Tank\u2019s new analysis [in Greek], titled \u201cElectricity exports from fossil gas: the cost to the Greek market and the climate\u201d, quantitatively examines the impact of this additional use of fossil gas for electricity exports on Greece\u2019s wholesale electricity market and on emissions from the power sector. The post How much do electricity exports cost us? first appeared on The Green Tank .",
-      "actor_type": "think-tank",
-      "content_type": null,
-      "tags": []
-    },
-    {
       "org": "IEEP",
       "field": "green-deal",
       "title": "Event | Ready for the EUDR: perspectives from business",
@@ -512,6 +501,17 @@
     {
       "org": "SIPRI",
       "field": "security",
+      "title": "As military spending mounts, parliamentary oversight must keep pace",
+      "link": "https://www.sipri.org/commentary/essay/2026/military-spending-mounts-parliamentary-oversight-must-keep-pace",
+      "date": "2026-09-17",
+      "summary": "This SIPRI Essay examines how rising military spending and exceptional funding mechanisms challenge parliamentary oversight, and explores ways to strengthen scrutiny, transparency and cooperation between parliaments and the United Nations.",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "SIPRI",
+      "field": "security",
       "title": "Combating new bioweapon risks: A Q&A with Dr Miranda Smith on the European Biotech Act",
       "link": "https://www.sipri.org/commentary/topical-backgrounder/2026/combating-new-bioweapon-risks-qa-dr-miranda-smith-european-biotech-act",
       "date": "2026-09-16",
@@ -523,32 +523,21 @@
     {
       "org": "SIPRI",
       "field": "security",
+      "title": "SIPRI hosts dialogue on state\u2013industry collaboration for lawful military AI",
+      "link": "https://www.sipri.org/news/2026/sipri-hosts-dialogue-state-industry-collaboration-lawful-military-ai",
+      "date": "2026-09-17",
+      "summary": "On 9\u201310 September, SIPRI\u2019s Governance of AI Programme hosted a closed in-person dialogue on how states and industry actors can collaborate to support the lawful development and use of AI in the military domain.",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "SIPRI",
+      "field": "security",
       "title": "Explore SIPRI\u2019s latest data visualizations",
       "link": "https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations",
       "date": "2026-09-15",
       "summary": "SIPRI\u2019s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute\u2019s major data launches.",
-      "actor_type": "think-tank",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "Agora Energiewende",
-      "field": "green-deal",
-      "title": "New Agora and INETTT tool helps translate clean energy ambition into actionable policy reform",
-      "link": "https://www.agora-energiewende.org/news-events/new-agora-and-inettt-tool-helps-translate-clean-energy-ambition-into-actionable-policy-reform",
-      "date": "2026-09-10",
-      "summary": "News: New Agora and INETTT tool helps translate clean energy ambition into actionable policy reform",
-      "actor_type": "think-tank",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "Agora Energiewende",
-      "field": "green-deal",
-      "title": "How the EU Industrial Accelerator Act can de-risk low-carbon steel investments",
-      "link": "https://www.agora-industry.org/news-events/how-the-eu-industrial-accelerator-act-can-de-risk-low-carbon-steel-investments",
-      "date": "2026-09-10",
-      "summary": "Press Release: How the EU Industrial Accelerator Act can de-risk low-carbon steel investments",
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []

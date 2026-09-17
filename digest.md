@@ -1,22 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-16
-
-### Political Instability Meets Fiscal Limits: Is France the Euro’s Next Big Stress Test?
-*SWP (German Institute for International and Security Affairs) — 2026-09-10*
-
-With around half a year remaining before the next presidential election, France is in danger of becoming a stress test for the eurozone: a political crisis, a deteriorating fiscal position and growing market doubts about the country’s ability to finance its mounting debt burden are all converging. France faces a significant structural imbalance in its public finances. The budget deficit exceeds 5 per cent of GDP , while public expenditure stands at around 57 per cent of GDP. At the same time, public debt is rising steadily and could, without sufficient fiscal consolidation measures, exceed…
-
-[Read more](https://www.swp-berlin.org/en/publication/political-instability-meets-fiscal-limits-is-france-the-euros-next-big-stress-test)
-
----
-
-### Booted, then suited: Veterans and the making of Putin’s new proto-elite
-*ECFR — 2026-09-10*
-
-Cover image: picture alliance / TASS | Sergei Bulkin Summary The Kremlin is promoting Ukraine war veterans and, in so doing, cultivating a proto-elite to fill future vacancies and reinforce Russia’s militarised course. Through programmes such as “Time of Heroes”, and through elections, at least several thousand actual and nominal veterans now already hold political or government posts. The new preference for war credentials has supplanted the earlier trend of hiring technocrats. Russian cadre policy has shifted towards “making loyal people competent”, as in other consolidated autocracies.…
-
-[Read more](https://ecfr.eu/publication/booted-then-suited-veterans-and-the-making-of-putins-new-proto-elite/)
-
----
+# Weekly Climate, Energy & Environment Digest — 2026-09-17
 
 ### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
 *FIIA (Finnish Institute of International Affairs) — 2026-09-15*
@@ -42,6 +24,15 @@ Turkish President Recep Tayyip Erdogan during the press conference at the NATO S
 Summary The Democrats could win big in the US midterm elections. This won’t matter much for constraining Trump, but it will start to establish what politics comes after him. Our research finds three camps of Democrats, all with different diagnoses of America’s problems: the revolutionaries see the system as unjust and needing structural change; the renovators see it as corrupt and needing reform; and the revivalists blame right-wing populism for breaking a system of bipartisan cooperation. What these camps see as broken in American domestic politics translates to how they view US foreign…
 
 [Read more](https://ecfr.eu/publication/life-of-the-party-democrats-and-the-search-for-a-post-trump-future/)
+
+---
+
+### Canada’s Offer to Europe: More Than Just a Trading Partner
+*SWP (German Institute for International and Security Affairs) — 2026-09-16*
+
+In seeking partners for his “middle powers” strategy, Canadian Prime Minister Mark Carney is looking to Europe first and foremost. On the day he broke off trade talks with the United States, he announced that Canada would negotiate a “stronger and deeper security and economic partnership” with the EU. On 17 September, he is also due to address the European Parliament. Canada has close economic ties to the United States. However, because Canada’s economy is far smaller than that of its neighbour, it is at a severe disadvantage when it acts alone. Carney hopes that the EU will provide a…
+
+[Read more](https://www.swp-berlin.org/en/publication/canadas-offer-to-europe-more-than-just-a-trading-partner)
 
 ---
 
@@ -100,7 +91,7 @@ ABSTRACT European Union (EU) strategies for food supply address challenges of in
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-16*
+*European Environmental Law Review — 2026-09-17*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -109,7 +100,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-16*
+*European Environmental Law Review — 2026-09-17*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -136,7 +127,7 @@ The Houthis’ capture of Mocha has transformed the war in Yemen – and the geo
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-16*
+*European Environmental Law Review — 2026-09-17*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -153,6 +144,15 @@ Batteries are already helping to reduce the amount of renewable energy being los
 
 ---
 
+### China is weathering the Hormuz energy crisis. But copying its model comes with risks
+*Chatham House — 2026-09-17*
+
+China is weathering the Hormuz energy crisis. But copying its model comes with risks Expert comment thilton.drupal 17 September 2026 China absorbed the shock by drawing on stockpiles and a decade of electrification. Europe needs electrification for security, but it needs to decide which parts of the system it is willing to buy from Beijing. Resources are no longer ‘king’ when it comes to energy, wrote Zhao Hongtu and Chen Wenlin in the 1 September 2026 edition of Qiushi , the Chinese Communist Party’s flagship theoretical journal. Mineral-rich economies may have some leverage, but the…
+
+[Read more](https://www.chathamhouse.org/2026/09/china-weathering-hormuz-energy-crisis-copying-its-model-comes-risks)
+
+---
+
 ### Nuclear Deterrence in Europe (and another round of U.S. Ukraine-Russia diplomacy)
 *International Crisis Group — 2026-09-11*
 
@@ -163,7 +163,7 @@ Nuclear Deterrence in Europe (and another round of U.S. Ukraine-Russia diplomacy
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-16*
+*European Environmental Law Review — 2026-09-17*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -189,30 +189,21 @@ Putin is far from isolated. Europe must play him at the long game Expert comment
 
 ---
 
+### Imbalances are a feature of the global financial system, not a bug
+*Chatham House — 2026-09-17*
+
+Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on ‘global imbalances’ is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters’ summit. Seemingly this focus on global imbalances is justified. China’s trade in goods surplus now alarms Europe’s leaders as much as it worries America’s. The US’s net liability to the world – the degree…
+
+[Read more](https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug)
+
+---
+
 ### Indian summer: The BRICS summit and warming New Delhi-Beijing relations
 *ECFR — 2026-09-15*
 
 Cover image: picture alliance / ZUMAPRESS.com | Pib Handout/Press Information Problem The BRICS summit concluded in New Delhi on Sunday, with Indian prime minister Narendra Modi having hosted the two-day gathering as chair. As with many meetings of the group of emerging economies, this edition brought together the leaders of China, India and Russia and featured plenty of anti-Western rhetoric. This was also Chinese leader Xi Jinping’s first visit to India for more than six years, in the latest example of Sino-Indian normalisation following a sustained period of tensions. New Delhi’s…
 
 [Read more](https://ecfr.eu/article/indian-summer-the-brics-summit-and-warming-new-delhi-beijing-relations/)
-
----
-
-### Too Close to Call: Sweden’s Political Centre Is Back in the Game
-*European Liberal Forum (Renew) — 2026-09-16*
-
-Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed – maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest…
-
-[Read more](https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/)
-
----
-
-### Will the UN vote to sustain Haiti’s Gang Suppression Force?
-*Chatham House — 2026-09-10*
-
-Will the UN vote to sustain Haiti’s Gang Suppression Force? Expert comment jon.wallace 10 September 2026 Sustaining the force is essential. But so too are funding commitments to restore the health and education services Haitians desperately need. On 30 September the UN Security Council will vote on renewing the Gang Suppression Force (GSF) for Haiti. Now is not the time to pull the plug on GSF and its security effort. If anything, the Security Council vote should be an opportunity to swiftly renew the force and then confront an additional uncomfortable issue: How can development assistance be…
-
-[Read more](https://www.chathamhouse.org/2026/09/will-un-vote-sustain-haitis-gang-suppression-force)
 
 ---
 
@@ -252,6 +243,15 @@ Written By: Nicos Rompapas, President at Center for Liberal Studies – Markos D
 
 ---
 
+### Iceland’s No, and the Membership It Was Never Offered
+*Wilfried Martens Centre (EPP) — 2026-09-16*
+
+On Saturday 29 August 2026, Icelandic voters were asked a narrow question: should Iceland resume the EU accession talks it shelved in 2013? They said no, 52.84 to 47.16 per cent. It settled nothing about EEA membership, Schengen, or the practical cooperation that continues regardless. But it was only the latest in a now five-decades-old story: a small, wealthy, resource-dependent North Atlantic state, offered formal accession, once again declined even the first procedural step. Strip away the campaign noise, and what the No vote expressed was a judgment about sovereignty — not hostility to…
+
+[Read more](https://www.martenscentre.eu/blog/icelands-no-and-the-membership-it-was-never-offered/)
+
+---
+
 ### What Future for Venezuela after the U.S. Oil Carve-up?
 *International Crisis Group — 2026-09-11*
 
@@ -267,6 +267,15 @@ What Future for Venezuela after the U.S. Oil Carve-up? pzeiler Fri, 09/11/2026 -
 Cover image: picture alliance / NurPhoto | Daniel Gnap On September 30th, the European Commission is expected to unveil a comprehensive document on EU enlargement, which will be used as a basis for discussion by the European Council in October. The paper is likely to confirm that Montenegro and Albania could finish negotiations soon . But it should also propose ideas on how other countries in the region without this perspective can move forward in their own EU accession journeys. Any Western Balkan country that joins the EU after waiting over 20 years deserves to be celebrated; the two…
 
 [Read more](https://ecfr.eu/article/the-eus-unfinished-business-in-the-western-balkans/)
+
+---
+
+### Sweden’s Political Centre Is Back in the Game
+*European Liberal Forum (Renew) — 2026-09-16*
+
+Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed – maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest…
+
+[Read more](https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/)
 
 ---
 
@@ -303,15 +312,6 @@ Is AI really getting out of control? Expert comment jon.wallace 14 September 202
 Attacks on civil society are no longer just a problem for those countries and organisations normally associated with democratic backsliding. It is a European trend that, unfortunately, no longer excludes even progressive parties. The arrests of thousands of activists in the UK for holding up signs in support of Palestine Action in the UK under Labour’s rule are a particularly stark example. Progressive parties that are of civil society. Historically sharing roots, constituencies and leaders. Mutually dependent on the creative cross-fertilisation of ideas, experience and trust for our shared…
 
 [Read more](https://feps-europe.eu/will-you-stand-with-civil-society/)
-
----
-
-### Can the UK escape the public debt trap?
-*Chatham House — 2026-09-10*
-
-Can the UK escape the public debt trap? Expert comment jon.wallace 10 September 2026 The UK’s mix of high fiscal deficits, rising bond yields, anaemic growth, high taxes and an impatient electorate can only be solved with politically brave choices. All major advanced economies have seen rising long-term bond yields over the past year. But with the ten-year gilt yield at 5.2 per cent on 9 Sept 2026, the UK’s long-term rates are the highest in the G7. US ten-year yields are 4.8 per cent, Germany’s are 3.4 per cent and Japan’s 2.9 per cent. Reasons for the UK’s relative weakness The UK’s…
-
-[Read more](https://www.chathamhouse.org/2026/09/can-uk-escape-public-debt-trap)
 
 ---
 
@@ -387,15 +387,6 @@ Plastic waste in rivers and seas is a global environmental problem. But how does
 
 ---
 
-### How much do electricity exports cost us?
-*The Green Tank — 2026-09-10*
-
-The Green Tank’s new analysis [in Greek], titled “Electricity exports from fossil gas: the cost to the Greek market and the climate”, quantitatively examines the impact of this additional use of fossil gas for electricity exports on Greece’s wholesale electricity market and on emissions from the power sector. The post How much do electricity exports cost us? first appeared on The Green Tank .
-
-[Read more](https://thegreentank.gr/en/2026/09/10/electricity-exports-gas-report-en/?utm_source=rss&utm_medium=rss&utm_campaign=electricity-exports-gas-report-en)
-
----
-
 ### Event | Ready for the EUDR: perspectives from business
 *IEEP — 2026-09-15*
 
@@ -414,6 +405,15 @@ Two years on, the HiEFFICIENT project continues to drive a new era of electromob
 
 ---
 
+### As military spending mounts, parliamentary oversight must keep pace
+*SIPRI — 2026-09-17*
+
+This SIPRI Essay examines how rising military spending and exceptional funding mechanisms challenge parliamentary oversight, and explores ways to strengthen scrutiny, transparency and cooperation between parliaments and the United Nations.
+
+[Read more](https://www.sipri.org/commentary/essay/2026/military-spending-mounts-parliamentary-oversight-must-keep-pace)
+
+---
+
 ### Combating new bioweapon risks: A Q&A with Dr Miranda Smith on the European Biotech Act
 *SIPRI — 2026-09-16*
 
@@ -423,30 +423,21 @@ In this Q&A, Smith talks about why the European Biotech Act is significant, the 
 
 ---
 
+### SIPRI hosts dialogue on state–industry collaboration for lawful military AI
+*SIPRI — 2026-09-17*
+
+On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-person dialogue on how states and industry actors can collaborate to support the lawful development and use of AI in the military domain.
+
+[Read more](https://www.sipri.org/news/2026/sipri-hosts-dialogue-state-industry-collaboration-lawful-military-ai)
+
+---
+
 ### Explore SIPRI’s latest data visualizations
 *SIPRI — 2026-09-15*
 
 SIPRI’s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute’s major data launches.
 
 [Read more](https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations)
-
----
-
-### New Agora and INETTT tool helps translate clean energy ambition into actionable policy reform
-*Agora Energiewende — 2026-09-10*
-
-News: New Agora and INETTT tool helps translate clean energy ambition into actionable policy reform
-
-[Read more](https://www.agora-energiewende.org/news-events/new-agora-and-inettt-tool-helps-translate-clean-energy-ambition-into-actionable-policy-reform)
-
----
-
-### How the EU Industrial Accelerator Act can de-risk low-carbon steel investments
-*Agora Energiewende — 2026-09-10*
-
-Press Release: How the EU Industrial Accelerator Act can de-risk low-carbon steel investments
-
-[Read more](https://www.agora-industry.org/news-events/how-the-eu-industrial-accelerator-act-can-de-risk-low-carbon-steel-investments)
 
 ---
 
