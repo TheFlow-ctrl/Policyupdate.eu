@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-18
+# Weekly Climate, Energy & Environment Digest — 2026-09-19
 
 ### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
 *FIIA (Finnish Institute of International Affairs) — 2026-09-15*
@@ -6,24 +6,6 @@
 New publication in the NB8 policy brief series by Justinas Lingevicius (VU IIRPS) and Markus Holmgren (FIIA). Drone incursions in the Baltic States and Finland have made clear that this is no longer a distant battlefield concern. This brief argues that as the NB8 framework matures into an increasingly like-minded security community, drone cooperation could stimulate market integration. A standardised, modular drone platform architecture, a European drone defence “Platform market” model, could give the countries the economy of scale that they otherwise lack. Read publication The Nordic-Baltic…
 
 [Read more](https://fiia.fi/en/news/the-nordic-baltic-eight-policy-brief-nb8-and-the-drone-challenge)
-
----
-
-### An outsider within: The paradox of the Europe-Turkey relationship
-*ECFR — 2026-09-16*
-
-Turkish President Recep Tayyip Erdogan during the press conference at the NATO Summit in Ankara, Turkiye on July 8, 2026. (Photo by Jakub Porzycki/NurPhoto) | picture alliance / NurPhoto | Jakub Porzycki Summary Europe still expects Turkey to pick a side. It has refused, and a post-Erdogan government would refuse too. Turkey has become an embedded outsider: a middle power that builds strategic autonomy from inside the Western system—because that is where its leverage comes from. Ankara has now tools of its own: troops abroad, a $10bn arms industry, partners in the global south, a geography…
-
-[Read more](https://ecfr.eu/publication/an-outsider-within-the-paradox-of-the-europe-turkey-relationship/)
-
----
-
-### Life of the party: Democrats and the search for a post-Trump future
-*ECFR — 2026-09-15*
-
-Summary The Democrats could win big in the US midterm elections. This won’t matter much for constraining Trump, but it will start to establish what politics comes after him. Our research finds three camps of Democrats, all with different diagnoses of America’s problems: the revolutionaries see the system as unjust and needing structural change; the renovators see it as corrupt and needing reform; and the revivalists blame right-wing populism for breaking a system of bipartisan cooperation. What these camps see as broken in American domestic politics translates to how they view US foreign…
-
-[Read more](https://ecfr.eu/publication/life-of-the-party-democrats-and-the-search-for-a-post-trump-future/)
 
 ---
 
@@ -82,7 +64,7 @@ ABSTRACT European Union (EU) strategies for food supply address challenges of in
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-18*
+*European Environmental Law Review — 2026-09-19*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -91,7 +73,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-18*
+*European Environmental Law Review — 2026-09-19*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -109,7 +91,7 @@ The Houthis’ capture of Mocha has transformed the war in Yemen – and the geo
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-18*
+*European Environmental Law Review — 2026-09-19*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -123,15 +105,6 @@ This article examines whether European Union (EU) rule-of-law principles constra
 Batteries are already helping to reduce the amount of renewable energy being lost in Greece, while also reducing the need for electricity generation from costly fossil gas. However, the country is still far from the desired level of battery deployment. This is highlighted by data from IPTO’s day-ahead scheduling analysed by The Green Tank and featured in an article by Mahi Tratsa in To Vima tis Kyriakis and ot.gr. The post The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use first appeared on The Green Tank .
 
 [Read more](https://thegreentank.gr/en/2026/09/15/nm-vima-batteries-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-vima-batteries-en)
-
----
-
-### Associate membership could transform EU-Canada ties. First, Brussels has to define it
-*ECFR — 2026-09-18*
-
-Cover image: picture alliance / ZUMAPRESS.com | Justin Tang Problem European Commission president Ursula von der Leyen’s offer this week of “associate membership” for Canada was received rapturously in the European Parliament. But member states, noting that the EU treaties say nothing about “associate membership”, have already tempered expectations , as has the Canadian ambassador to the EU. Make no mistake, “associate membership” does not mean that Canada will join the single market or become bound by EU directives anytime soon. The offer is currently a rhetorical gesture that, without a…
-
-[Read more](https://ecfr.eu/article/associate-membership-could-transform-eu-canada-ties-first-brussels-has-to-define-it/)
 
 ---
 
@@ -154,7 +127,7 @@ China is weathering the Hormuz energy crisis. But copying its model comes with r
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-18*
+*European Environmental Law Review — 2026-09-19*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -204,15 +177,6 @@ Putin is far from isolated. Europe must play him at the long game Expert comment
 Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on ‘global imbalances’ is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters’ summit. Seemingly this focus on global imbalances is justified. China’s trade in goods surplus now alarms Europe’s leaders as much as it worries America’s. The US’s net liability to the world – the degree…
 
 [Read more](https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug)
-
----
-
-### Indian summer: The BRICS summit and warming New Delhi-Beijing relations
-*ECFR — 2026-09-15*
-
-Cover image: picture alliance / ZUMAPRESS.com | Pib Handout/Press Information Problem The BRICS summit concluded in New Delhi on Sunday, with Indian prime minister Narendra Modi having hosted the two-day gathering as chair. As with many meetings of the group of emerging economies, this edition brought together the leaders of China, India and Russia and featured plenty of anti-Western rhetoric. This was also Chinese leader Xi Jinping’s first visit to India for more than six years, in the latest example of Sino-Indian normalisation following a sustained period of tensions. New Delhi’s…
-
-[Read more](https://ecfr.eu/article/indian-summer-the-brics-summit-and-warming-new-delhi-beijing-relations/)
 
 ---
 
@@ -306,12 +270,12 @@ On the morning of Wednesday September 16 th , European Commission President Ursu
 
 ---
 
-### Ukraine’s Winter of Pressure
-*ECFR — 2026-09-18*
+### Chatham House welcomes 2026 interns
+*Chatham House — 2026-09-17*
 
-This week, Mark Leonard is joined by Jana Kobzova , co-director of ECFR’s European Security programme, to discuss the mounting pressures facing Ukraine as it enters another wartime winter. Despite Ukraine’s success in disrupting Russian logistics and energy infrastructure, Russia has intensified its attacks on cities, energy networks and civilian targets, while Kyiv faces growing domestic political and economic strains. Jana explains how shortages of air-defence interceptors, political infighting, corruption investigations and economic challenges are converging at a particularly difficult…
+Chatham House welcomes 2026 interns News release jon.wallace 17 September 2026 Our internships offers an invaluable learning experience through a six-month placement. Chatham House is excited to welcome the 2026-2027 cohort to the Molchanov Sustainability Internship Programme. Introduced in January 2021, the programme has been made possible following the gift of Pavel Molchanov, to support the next generation of leaders in sustainability. The internships grant practical learning opportunities at a world-famous think-tank, helping a new generation of policymakers understand how to shape…
 
-[Read more](https://ecfr.eu/podcasts/episode/ukraines-winter-of-pressure/)
+[Read more](https://www.chathamhouse.org/2026/09/chatham-house-welcomes-2026-interns)
 
 ---
 
@@ -393,15 +357,6 @@ On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-per
 SIPRI’s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute’s major data launches.
 
 [Read more](https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations)
-
----
-
-### Sustainability criteria can help unlock demand for biomass-derived products
-*Cefic — 2026-09-18*
-
-Cefic is calling for an EU-wide sustainability framework for biomass used in products tied to market-pull measures.
-
-[Read more](https://cefic.org/news/sustainability-criteria-can-help-unlock-demand-for-biomass-derived-products/)
 
 ---
 
