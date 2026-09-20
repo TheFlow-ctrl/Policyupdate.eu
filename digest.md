@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-19
+# Weekly Climate, Energy & Environment Digest — 2026-09-20
 
 ### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
 *FIIA (Finnish Institute of International Affairs) — 2026-09-15*
@@ -64,7 +64,7 @@ ABSTRACT European Union (EU) strategies for food supply address challenges of in
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-19*
+*European Environmental Law Review — 2026-09-20*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -73,7 +73,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-19*
+*European Environmental Law Review — 2026-09-20*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -91,7 +91,7 @@ The Houthis’ capture of Mocha has transformed the war in Yemen – and the geo
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-19*
+*European Environmental Law Review — 2026-09-20*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -127,7 +127,7 @@ China is weathering the Hormuz energy crisis. But copying its model comes with r
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-19*
+*European Environmental Law Review — 2026-09-20*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -357,6 +357,15 @@ On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-per
 SIPRI’s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute’s major data launches.
 
 [Read more](https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations)
+
+---
+
+### Sustainability criteria can help unlock demand for biomass-derived products
+*Cefic — 2026-09-18*
+
+Cefic is calling for an EU-wide sustainability framework for biomass used in products tied to market-pull measures.
+
+[Read more](https://cefic.org/news/sustainability-criteria-can-help-unlock-demand-for-biomass-derived-products/)
 
 ---
 
