@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-20
+# Weekly Climate, Energy & Environment Digest — 2026-09-21
 
 ### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
 *FIIA (Finnish Institute of International Affairs) — 2026-09-15*
@@ -18,42 +18,6 @@ In seeking partners for his “middle powers” strategy, Canadian Prime Ministe
 
 ---
 
-### Yet Another Sham Election in Russia
-*SWP (German Institute for International and Security Affairs) — 2026-09-14*
-
-The Upcoming Ballot for the Ninth State Duma So far, 2026 is not proving a good year for the Putin regime. The front line in Ukraine is barely moving, Ukrainian drones and missiles are striking targets deep inside Russian territory, the economy is faltering and public sentiment is deteriorating. Under these difficult conditions, the Kremlin administration has to engineer another victory for the ruling United Russia party, as the State Duma elections are due to take place from 18 to 20 September. Yet the Russian parliament is scarcely able to fulfil its function as a source of legitimacy in…
-
-[Read more](https://www.swp-berlin.org/en/publication/yet-another-sham-election-in-russia)
-
----
-
-### Arms at the Frontier
-*SWP (German Institute for International and Security Affairs) — 2026-09-14*
-
-What Turkey’s Africa Engagement Reveals about Its Defence-Industrial Model Turkey’s defence engagement in Africa is often read through the lens of geopolitics, drone use, and conflict dynamics. Yet the deeper story is industrial and strategic. Africa remains central to Turkey’s defence-export strategy because it helps resolve structural pressures within Turkey’s defence-industrial ecosystem by sustaining pro­duction, easing competitive pressures, and creating external demand for an increasingly export-dependent industry. As Turkish and European companies become more closely connected, these…
-
-[Read more](https://www.swp-berlin.org/en/publication/arms-at-the-frontier)
-
----
-
-### Challenges and Priorities for Germany’s Climate Diplomacy
-*Ecologic Institute — 2026-09-13*
-
-A policy brief from Ariadne, a Kopernikus project funded by the German Federal Ministry of Research, Technology and Space, sets out why Germany and the EU should maintain ambitious climate policies and examines the instruments and formats through which they can promote climate action internationally while safeguarding domestic efforts.
-
-[Read more](https://www.ecologic.eu/20145)
-
----
-
-### Unlocking textile circularity in the EU: from challenges to opportunities
-*CEPS — 2026-09-14*
-
-Transitioning towards a circular textile economy has become a central objective of the European Union’s sustainability policy. Moving away from the currently li
-
-[Read more](https://www.ceps.eu/ceps-publications/unlocking-textile-circularity-in-the-eu-from-challenges-to-opportunities/)
-
----
-
 ### Governing Agriculture or Farmers? Problem Representations of Biodiversity and Farm Loss in Swedens Strategy for the Common Agricultural Policy
 *Environmental Policy and Governance — 2026-09-15*
 
@@ -64,7 +28,7 @@ ABSTRACT European Union (EU) strategies for food supply address challenges of in
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-20*
+*European Environmental Law Review — 2026-09-21*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -73,7 +37,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-20*
+*European Environmental Law Review — 2026-09-21*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -81,17 +45,17 @@ The European Union’s legally binding objective of climate neutrality by 2050 r
 
 ---
 
-### The Houthis’ capture of Mocha has transformed the war in Yemen – and the geopolitics of the Red Sea
-*Chatham House — 2026-09-14*
+### Chatham House fellow gives evidence at UK parliament committee on global AI governance and risks
+*Chatham House — 2026-09-21*
 
-The Houthis’ capture of Mocha has transformed the war in Yemen – and the geopolitics of the Red Sea Expert comment thilton.drupal 14 September 2026 Iran and its allies can now exert pressure on two strategic maritime chokepoints, with global implications. A more coherent international approach to Yemen is needed. The Houthi armed group recently captured the strategic port city of Mocha in southwestern Yemen and advanced along the coast of the Bab al-Mandab Strait. This represents the most consequential change in territorial control in Yemen for years. For Yemen, the offensive risks reopening…
+Chatham House fellow gives evidence at UK parliament committee on global AI governance and risks News release thilton.drupal 21 September 2026 Senior Research Fellow Isabella Wilkinson spoke to the House of Lords International Relations and Defence Committee at a time when many are calling for greater regulation of AI in the light of emerging risks. Isabella Wilkinson, Senior Research Fellow with Chatham House’s Digital Society Programme, gave evidence on the global governance of AI to the UK House of Lords International Relations and Defence Committee on 16 September. Wilkinson outlined the…
 
-[Read more](https://www.chathamhouse.org/2026/09/houthis-capture-mocha-has-transformed-war-yemen-and-geopolitics-red-sea)
+[Read more](https://www.chathamhouse.org/2026/09/chatham-house-fellow-gives-evidence-uk-parliament-committee-global-ai-governance-and-risks)
 
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-20*
+*European Environmental Law Review — 2026-09-21*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -127,7 +91,7 @@ China is weathering the Hormuz energy crisis. But copying its model comes with r
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-20*
+*European Environmental Law Review — 2026-09-21*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -150,15 +114,6 @@ This article focuses on appraising the progress of efforts by the European Union
 In last week’s parliamentary elections in Sweden, the Swedish Social Democratic Party undoubtedly became the largest party, with the support of 28 per cent of voters and a strong chance of leading the next government by replacing the incumbent right-wing one. Yet, within Swedish Social Democracy, a sense of dissatisfaction prevails. How did this come about? In a fragmented parliament with eight parties, 28 per cent of the popular vote is not a disaster – especially not from a European perspective. When conservative Prime Minister Ulf Kristersson steps down after four years, it will be the…
 
 [Read more](https://feps-europe.eu/swedens-2026-election-social-democrats-lost-the-battle-but-won-the-war/)
-
----
-
-### Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait?
-*International Crisis Group — 2026-09-14*
-
-Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait? hschaub Mon, 09/14/2026 - 17:03 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Middle East & North Africa 14 September 2026 1 minute Special Episode: Will the Houthis Shut Down the Bab al-Mandab Strait? In this special episode of Hold Your Fire!, Richard speaks with Crisis Group expert Ahmed Nagi about the rapid Houthi advances along Yemen’s Red Sea coast, what they mean for Saudi Arabia and the wider region,…
-
-[Read more](https://www.crisisgroup.org/pod/middle-east-north-africa/yemen/special-episode-will-houthis-shut-down-bab-al-mandab-strait)
 
 ---
 
@@ -243,21 +198,12 @@ Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an 
 
 ---
 
-### Ten Challenges for the UN in 2026-2027
-*International Crisis Group — 2026-09-14*
+### Owning Europe’s Future Starts with Our Children
+*European Liberal Forum (Renew) — 2026-09-21*
 
-Ten Challenges for the UN in 2026-2027 eschelhaas Mon, 09/14/2026 - 10:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Candidates for United Nations Secretary-General position participate in a debate at the UN General Assembly Hall in New York, on July 23, 2026. Leonardo MUNOZ / AFP Special Briefing 15 / Multilateral Diplomacy 14 September 2026 20+ minutes Ten Challenges for the UN in 2026-2027 As the 2026 General Assembly begins, the UN remains hobbled by cost cutting and big-power…
+Written by: MEP Hristo Petrov, Chair of the Working Group on the European Child Guarantee of the European Parliament MEP Fabienne Keller, Quaestor Alva Finn, Executive Director ELF Liberalism has always put forward the simple promise that liberal democracy will make each generation more secure, more prosperous and freer. The motto of the European Liberal Forum is own the future. But we can’t own the future if liberals fail children in Europe: In 2024, about 24.2% of children (19.5 million) in the EU faced the risk of poverty or social exclusion, according to Eurostat . Beyond economic…
 
-[Read more](https://www.crisisgroup.org/sbr/global/sb15-ten-challenges-un-2026-2027)
-
----
-
-### Is AI really getting out of control?
-*Chatham House — 2026-09-14*
-
-Is AI really getting out of control? Expert comment jon.wallace 14 September 2026 Anthropic’s warning should be taken seriously – but not as cover for entrenching US labs or escalating rivalry with Beijing. This weekend current and former employees of US AI laboratories and their leaders issued dire warnings of a near-term apocalypse at the hands of AI. Out-of-control AI development could mean ‘ we could all die in the immediate future ’ said one former lab employee. This was followed by a proposal from Dario Amodei, the CEO of AI company Anthropic, to slow down AI development to ensure the…
-
-[Read more](https://www.chathamhouse.org/2026/09/ai-really-getting-out-control)
+[Read more](https://liberalforum.eu/updates/owning-europes-future-starts-with-our-children/)
 
 ---
 
@@ -270,6 +216,15 @@ On the morning of Wednesday September 16 th , European Commission President Ursu
 
 ---
 
+### Can a fortress be attractive?
+*FEPS (S&D) — 2026-09-21*
+
+The final speech before the decisive battle. This is how one might describe the State of the Union address delivered on 16 September by EU Commission President Ursula von der Leyen to the European Parliament – though with the ambition of speaking to the whole of Europe and the world. It was the last major policy address before the fateful spring of 2027, when elections in France, Italy and Spain (not to mention possible snap elections in Germany) will shape the continent’s political future. An unmissable opportunity to try to spread a message capable of stemming the anti-democratic tide that…
+
+[Read more](https://feps-europe.eu/can-a-fortress-be-attractive/)
+
+---
+
 ### Chatham House welcomes 2026 interns
 *Chatham House — 2026-09-17*
 
@@ -279,30 +234,21 @@ Chatham House welcomes 2026 interns News release jon.wallace 17 September 2026 O
 
 ---
 
-### Natural Capital, Biodiversity and the Economy: Why Nature Is an Investment in Our Future
-*The Green Tank — 2026-09-14*
+### Plastics Europe’s Position on the EU ETS Review
+*PlasticsEurope — 2026-09-21*
 
-In an interview with ESG+ Stories, Ioli Christopoulou, Policy Director and co-founder of The Green Tank, discusses the need to rethink how we measure wealth and well-being. She explains why GDP alone is no longer enough to capture a country’s true prosperity, and why nature should be recognised as a form of capital and an asset that underpins our economy and society. The post Natural Capital, Biodiversity and the Economy: Why Nature Is an Investment in Our Future first appeared on The Green Tank .
+Plastics Europe calls for an EU ETS revision that preserves Europe’s industrial competitiveness while maintaining the system’s role in reducing emissions. The reform must provide effective carbon leakage protection, maintain free allocation where no proven equivalent alternative exists, and align the phase-out of allowances with the real availability of enabling conditions for industrial decarbonisation. Plastics Europe_ETS review position_final Download The post Plastics Europe’s Position on the EU ETS Review appeared first on Plastics Europe .
 
-[Read more](https://thegreentank.gr/en/2026/09/14/ic-natural-capital-esgstories-en/?utm_source=rss&utm_medium=rss&utm_campaign=ic-natural-capital-esgstories-en)
+[Read more](https://plasticseurope.org/media/plastics-europe-position-on-eu-ets-review/)
 
 ---
 
 ### How Can We Tackle the Plastic Pollution Problem?
 *Ecologic Institute — 2026-09-14*
 
-Plastic waste in rivers and seas is a global environmental problem. But how does this waste end up in our waterways – and what can policymakers, scientists and society do about it? Doris Knoblauch, Director of the Resources Programme at Ecologic Institute, will discuss these questions live on WDR 5's "Quarks – Wissenschaft und mehr" on 15 September 2026 at 15:05. Listeners can call in during the programme and put their questions directly to the expert.
+Plastic is now found virtually everywhere in the environment – including in our rivers. But how does it get there, even in a country like Germany with a comparatively well-functioning waste management and recycling system? And what needs to change to prevent plastic from entering rivers and, ultimately, the oceans? Doris Knoblauch, Director of the Resources Programme at Ecologic Institute, discussed these questions on the German radio programme WDR 5 Quarks – Wissenschaft und mehr.
 
 [Read more](https://www.ecologic.eu/20662)
-
----
-
-### International conference on environmental taxes and climate finance
-*PIK Potsdam — 2026-09-14*
-
-How can environmental and climate taxes be designed at the international level so that they are effective, workable and fair? The Potsdam Institute for Climate Impact Research (PIK) is bringing together research and practical experience from around the world at an international conference in Berlin.
-
-[Read more](https://www.pik-potsdam.de/en/news/latest-news/international-conference-on-environmental-taxes-and-climate-finance)
 
 ---
 
@@ -312,15 +258,6 @@ How can environmental and climate taxes be designed at the international level s
 WRI and IEEP will host a lively and solutions-focused event on 29 September in Brussels that puts one message front and centre: business is ready to implement the EU Deforestation Regulation (EUDR). The post Event | Ready for the EUDR: perspectives from business appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/event-ready-for-the-eudr-perspectives-from-business/)
-
----
-
-### Catching up with HiEFFICIENT: powering tomorrow’s electric vehicles for greener European transport
-*CORDIS — 2026-09-14*
-
-Two years on, the HiEFFICIENT project continues to drive a new era of electromobility across Europe. Its legacy lives on through commercial products, new spin-offs and follow-up initiatives that redefine sustainable transport.
-
-[Read more](https://cordis.europa.eu/article/rcn/467377/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467377&WT.rss_ev=a)
 
 ---
 
@@ -369,11 +306,11 @@ Cefic is calling for an EU-wide sustainability framework for biomass used in pro
 
 ---
 
-### Economic Competitiveness and European Citizens
-*Wilfried Martens Centre (EPP) — 2026-09-14*
+### What is a carbon sink?
+*ClientEarth — 2026-09-21*
 
-A stakeholder report by EUobserver quoting our Policy Director, Peter Hefele.
+What is a carbon sink?
 
-[Read more](https://www.martenscentre.eu/media-mentions/economic-competitiveness-and-european-citizens/)
+[Read more](https://www.clientearth.org/latest/news/what-is-a-carbon-sink/)
 
 ---
