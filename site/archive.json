@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21",
+  "generated": "2026-09-22",
   "months": [
     {
       "key": "2026-09",
@@ -283,6 +283,17 @@
           "tags": []
         },
         {
+          "org": "EEA (European Environment Agency) \u2014 Publications",
+          "field": "green-deal",
+          "title": "EEA-Eionet horizon scan \u2013 emerging trends in production and consumption",
+          "link": "https://www.eea.europa.eu/en/analysis/publications/eea-eionet-horizon-scan-emerging-trends-in-production-and-consumption",
+          "date": "2026-09-22",
+          "summary": "Europe\u2019s progress towards sustainability requires new means of consumption and production with significantly lower impacts. This horizon scan explores those rapidly developing digital trends and technologies, and some of the opportunities and risks they present for sustainability.",
+          "actor_type": "eu-institution",
+          "content_type": "report",
+          "tags": []
+        },
+        {
           "org": "SIPRI",
           "field": "security",
           "title": "Partnering for Social Cohesion in the Sahel: Lessons for Donors",
@@ -331,7 +342,7 @@
           "field": "green-deal",
           "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-          "date": "2026-09-21",
+          "date": "2026-09-22",
           "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
           "actor_type": "academic",
           "content_type": null,
@@ -355,7 +366,7 @@
           "field": "green-deal",
           "title": "Public Procurement and the EU\u2019s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009",
-          "date": "2026-09-21",
+          "date": "2026-09-22",
           "summary": "The European Union\u2019s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal\u2019s agenda, which placed climate and environmental challenges as this generation\u2019s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully\u2026",
           "actor_type": "academic",
           "content_type": null,
@@ -421,7 +432,7 @@
           "field": "green-deal",
           "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-          "date": "2026-09-21",
+          "date": "2026-09-22",
           "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
           "actor_type": "academic",
           "content_type": null,
@@ -483,6 +494,17 @@
           "tags": []
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "The UN\u2019s High Level Week, Secretary-General Selection and \u201cMiddle Power\u201d Problem",
+          "link": "https://www.crisisgroup.org/pod/global/uns-high-level-week-secretary-general-selection-and-middle-power-problem",
+          "date": "2026-09-18",
+          "summary": "The UN\u2019s High Level Week, Secretary-General Selection and \u201cMiddle Power\u201d Problem hschaub Fri, 09/18/2026 - 17:29 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Global 18 September 2026 1 minute The UN\u2019s High Level Week, Secretary-General Selection and \u201cMiddle Power\u201d Problem This week on Hold Your Fire!, Richard Atwood is joined by Crisis Group experts Richard Gowan and Daniel Forti to discuss next week\u2019s UN General Assembly high-level week and whether a new Secretary-General\u2026",
+          "actor_type": "think-tank",
+          "content_type": "podcast",
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "China is weathering the Hormuz energy crisis. But copying its model comes with risks",
@@ -503,6 +525,17 @@
           "actor_type": "think-tank",
           "tags": [],
           "content_type": null
+        },
+        {
+          "org": "Chatham House",
+          "field": "security",
+          "title": "Can Gulf Arab countries help break the deadlock over Trump\u2019s Gaza peace plan?",
+          "link": "https://www.chathamhouse.org/2026/09/can-gulf-arab-countries-help-break-deadlock-over-trumps-gaza-peace-plan",
+          "date": "2026-09-21",
+          "summary": "Can Gulf Arab countries help break the deadlock over Trump\u2019s Gaza peace plan? Expert comment LToremark 21 September 2026 Gulf Arab states increasingly view Israel as the main obstacle to progress on the peace plan \u2013 and may hope for an opening after Israel\u2019s October elections. Almost a year after US President Donald Trump unveiled his 20-point peace plan for Gaza, which was adopted by both Israel and Hamas and paved the way for the release of all Israeli hostages, the peace process appears to have hit a wall. The two sides remain fundamentally divided over the sequencing of demilitarization\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
         },
         {
           "org": "International Crisis Group",
@@ -527,6 +560,17 @@
           "content_type": null
         },
         {
+          "org": "Chatham House",
+          "field": "security",
+          "title": "Trump\u2013Xi summit: Why the US and China should not underestimate each other",
+          "link": "https://www.chathamhouse.org/2026/09/trump-xi-summit-why-us-and-china-should-not-underestimate-each-other",
+          "date": "2026-09-22",
+          "summary": "Trump\u2013Xi summit: Why the US and China should not underestimate each other Expert comment LToremark 22 September 2026 The US and China both face serious domestic strains. As Trump and Xi meet this week to discuss trade, AI and Taiwan, neither side should mistake the other\u2019s weaknesses for strategic decline. A superpower summit is a big deal. As US President Donald Trump and China\u2019s President Xi Jinping meet in Washington this week, they have a lot to cover. They will try to extend a trade truce that expires in November, including China\u2019s pause on rare earth export controls and America\u2019s delay\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "ECFR",
           "field": "security",
           "title": "Against war, drought and hunger: A global coalition to prevent a food crisis",
@@ -542,7 +586,7 @@
           "field": "green-deal",
           "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-          "date": "2026-09-21",
+          "date": "2026-09-22",
           "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
           "actor_type": "academic",
           "content_type": null,
@@ -683,6 +727,17 @@
         {
           "org": "International Crisis Group",
           "field": "security",
+          "title": "Somalia Awaits a New Security Order as Mission Drawdown Looms",
+          "link": "https://www.crisisgroup.org/cmt/africa/somalia/somalia-awaits-new-security-order-mission-drawdown-looms",
+          "date": "2026-09-18",
+          "summary": "Somalia Awaits a New Security Order as Mission Drawdown Looms pfranz Fri, 09/18/2026 - 21:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Somali police officers walk along a road median while patrolling a busy street in Mogadishu, on November 10, 2025. TONY KARUMBA / AFP Commentary / Africa 18 September 2026 16 minutes Somalia Awaits a New Security Order as Mission Drawdown Looms The multilateral missions that have helped the Somali government fight Al-Shabaab for nearly two decades\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
           "title": "An Historic Poll Puts Peace to the Test in the Philippines",
           "link": "https://www.crisisgroup.org/qna/asia-pacific/philippines/historic-poll-puts-peace-test-philippines",
           "date": "2026-09-11",
@@ -755,6 +810,17 @@
           "summary": "Artificial Intelligence, Real Fears: Is it time to slow down? Audio sseth.drupal@c\u2026 18 September 2026 On this week\u2019s episode of Independent Thinking, our experts discuss the growing fears around the development of AI. A call by leaders of the tech giants on the frontier of Artificial Intelligence to \u2018slow the pace\u2019 of its development has sparked debate over the risks associated with AI. Does AI represent an existential threat, and if so, how urgent are the warnings? Or can humanity harness this powerful technology to our benefit? Our experts discuss the implications for international\u2026",
           "actor_type": "think-tank",
           "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "The Houthis, the Saudis and the New Red Sea Politics",
+          "link": "https://www.crisisgroup.org/pod/africa/horn-africa/houthis-saudis-and-new-red-sea-politics",
+          "date": "2026-09-18",
+          "summary": "The Houthis, the Saudis and the New Red Sea Politics hschaub Fri, 09/18/2026 - 15:17 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 18 September 2026 1 minutes The Houthis, the Saudis and the New Red Sea Politics This week on The Horn , Alan talks with Crisis Group experts Yasmine Farouk and Ahmed Nagi about what\u2019s behind the Houthi offensive in Yemen, Saudi Arabia\u2019s response and the implications of emerging Saudi-backed security partnerships for the Red Sea and the Horn\u2026",
+          "actor_type": "think-tank",
+          "content_type": "podcast",
           "tags": []
         },
         {
@@ -1000,6 +1066,28 @@
           "tags": []
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Updates from the UN General Assembly 2026",
+          "link": "https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026",
+          "date": "2026-09-21",
+          "summary": "Updates from the UN General Assembly 2026 eschelhaas Mon, 09/21/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 21 September 2026 7 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN\u2019s efforts to promote international peace and security. This page includes updates from the\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Closing the New War Front in Yemen",
+          "link": "https://www.crisisgroup.org/stm/middle-east-north-africa/yemen-saudi-arabia-iran/closing-new-war-front-yemen",
+          "date": "2026-09-18",
+          "summary": "Closing the New War Front in Yemen cthuratong Fri, 09/18/2026 - 13:46 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Internally displaced (IDP) Yemenis who fled their homes due to renewed clashes between Yemen's Saudi-backed government forces and the country's Houthi rebels drive to the safety of al-Kadah in the Taiz Governorate, southwestern Yemen on September 6, 2026. Ahmad Al-Basha / AFP Statement / Middle East & North Africa 18 September 2026 9 minutes Closing the New War Front in\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "Can the UK escape the public debt trap?",
@@ -1136,8 +1224,8 @@
           "field": "security",
           "title": "On Our Radar",
           "link": "https://www.crisisgroup.org/sco/global/our-radar",
-          "date": "2026-09-10",
-          "summary": "On Our Radar eschelhaas Fri, 09/11/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 11 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky E-post Facebook Linkedin Twitter\u2026",
+          "date": "2026-09-17",
+          "summary": "On Our Radar eschelhaas Fri, 09/18/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 18 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter\u2026",
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -1301,6 +1389,28 @@
           "tags": []
         },
         {
+          "org": "Wilfried Martens Centre (EPP)",
+          "field": "security",
+          "title": "Auditors find EU cyber\u2011attack response is weakened by overlapping systems and secretive member states",
+          "link": "https://www.martenscentre.eu/media-mentions/auditors-find-eu-cyber-attack-response-is-weakened-by-overlapping-systems-and-secretive-member-states/",
+          "date": "2026-09-21",
+          "summary": "\u201cMember states have their own established institutions and technical competencies and overall philosophy when it comes to cybersecurity,\u201c said Dimitar Lilkov.",
+          "actor_type": "political",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "SIPRI",
+          "field": "security",
+          "title": "SIPRI and the African Union sign memorandum of understanding",
+          "link": "https://www.sipri.org/news/2026/sipri-and-african-union-sign-memorandum-understanding",
+          "date": "2026-09-22",
+          "summary": "On 21 September, SIPRI and the African Union (AU) signed a memorandum of understanding (MOU) in New York for collaboration on peace research.",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "SIPRI",
           "field": "security",
           "title": "Explore SIPRI\u2019s latest data visualizations",
@@ -1363,6 +1473,17 @@
           "date": "2026-09-14",
           "summary": "A stakeholder report by EUobserver quoting our Policy Director, Peter Hefele.",
           "actor_type": "political",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "ClientEarth",
+          "field": "green-deal",
+          "title": "How can the law fight climate change?",
+          "link": "https://www.clientearth.org/latest/news/how-can-the-law-fight-climate-change/",
+          "date": "2026-09-22",
+          "summary": "How can the law fight climate change?",
+          "actor_type": "ngo",
           "content_type": null,
           "tags": []
         },

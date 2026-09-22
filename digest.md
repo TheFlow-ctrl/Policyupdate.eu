@@ -1,13 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-21
-
-### The Nordic-Baltic Eight policy brief: NB8 and the drone challenge
-*FIIA (Finnish Institute of International Affairs) — 2026-09-15*
-
-New publication in the NB8 policy brief series by Justinas Lingevicius (VU IIRPS) and Markus Holmgren (FIIA). Drone incursions in the Baltic States and Finland have made clear that this is no longer a distant battlefield concern. This brief argues that as the NB8 framework matures into an increasingly like-minded security community, drone cooperation could stimulate market integration. A standardised, modular drone platform architecture, a European drone defence “Platform market” model, could give the countries the economy of scale that they otherwise lack. Read publication The Nordic-Baltic…
-
-[Read more](https://fiia.fi/en/news/the-nordic-baltic-eight-policy-brief-nb8-and-the-drone-challenge)
-
----
+# Weekly Climate, Energy & Environment Digest — 2026-09-22
 
 ### Canada’s Offer to Europe: More Than Just a Trading Partner
 *SWP (German Institute for International and Security Affairs) — 2026-09-16*
@@ -15,6 +6,15 @@ New publication in the NB8 policy brief series by Justinas Lingevicius (VU IIRPS
 In seeking partners for his “middle powers” strategy, Canadian Prime Minister Mark Carney is looking to Europe first and foremost. On the day he broke off trade talks with the United States, he announced that Canada would negotiate a “stronger and deeper security and economic partnership” with the EU. On 17 September, he is also due to address the European Parliament. Canada has close economic ties to the United States. However, because Canada’s economy is far smaller than that of its neighbour, it is at a severe disadvantage when it acts alone. Carney hopes that the EU will provide a…
 
 [Read more](https://www.swp-berlin.org/en/publication/canadas-offer-to-europe-more-than-just-a-trading-partner)
+
+---
+
+### EEA-Eionet horizon scan – emerging trends in production and consumption
+*EEA (European Environment Agency) — Publications — 2026-09-22*
+
+Europe’s progress towards sustainability requires new means of consumption and production with significantly lower impacts. This horizon scan explores those rapidly developing digital trends and technologies, and some of the opportunities and risks they present for sustainability.
+
+[Read more](https://www.eea.europa.eu/en/analysis/publications/eea-eionet-horizon-scan-emerging-trends-in-production-and-consumption)
 
 ---
 
@@ -28,7 +28,7 @@ ABSTRACT European Union (EU) strategies for food supply address challenges of in
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-21*
+*European Environmental Law Review — 2026-09-22*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -37,7 +37,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-21*
+*European Environmental Law Review — 2026-09-22*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -55,20 +55,11 @@ Chatham House fellow gives evidence at UK parliament committee on global AI gove
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-21*
+*European Environmental Law Review — 2026-09-22*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
-
----
-
-### The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use
-*The Green Tank — 2026-09-15*
-
-Batteries are already helping to reduce the amount of renewable energy being lost in Greece, while also reducing the need for electricity generation from costly fossil gas. However, the country is still far from the desired level of battery deployment. This is highlighted by data from IPTO’s day-ahead scheduling analysed by The Green Tank and featured in an article by Mahi Tratsa in To Vima tis Kyriakis and ot.gr. The post The Green Tank in To Vima on the role of batteries in reducing renewable energy curtailment and fossil gas use first appeared on The Green Tank .
-
-[Read more](https://thegreentank.gr/en/2026/09/15/nm-vima-batteries-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-vima-batteries-en)
 
 ---
 
@@ -81,6 +72,15 @@ With Climate Week NYC kicking off shortly alongside the ongoing UN General Assem
 
 ---
 
+### The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem
+*International Crisis Group — 2026-09-18*
+
+The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem hschaub Fri, 09/18/2026 - 17:29 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Global 18 September 2026 1 minute The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem This week on Hold Your Fire!, Richard Atwood is joined by Crisis Group experts Richard Gowan and Daniel Forti to discuss next week’s UN General Assembly high-level week and whether a new Secretary-General…
+
+[Read more](https://www.crisisgroup.org/pod/global/uns-high-level-week-secretary-general-selection-and-middle-power-problem)
+
+---
+
 ### China is weathering the Hormuz energy crisis. But copying its model comes with risks
 *Chatham House — 2026-09-17*
 
@@ -90,8 +90,26 @@ China is weathering the Hormuz energy crisis. But copying its model comes with r
 
 ---
 
+### Can Gulf Arab countries help break the deadlock over Trump’s Gaza peace plan?
+*Chatham House — 2026-09-21*
+
+Can Gulf Arab countries help break the deadlock over Trump’s Gaza peace plan? Expert comment LToremark 21 September 2026 Gulf Arab states increasingly view Israel as the main obstacle to progress on the peace plan – and may hope for an opening after Israel’s October elections. Almost a year after US President Donald Trump unveiled his 20-point peace plan for Gaza, which was adopted by both Israel and Hamas and paved the way for the release of all Israeli hostages, the peace process appears to have hit a wall. The two sides remain fundamentally divided over the sequencing of demilitarization…
+
+[Read more](https://www.chathamhouse.org/2026/09/can-gulf-arab-countries-help-break-deadlock-over-trumps-gaza-peace-plan)
+
+---
+
+### Trump–Xi summit: Why the US and China should not underestimate each other
+*Chatham House — 2026-09-22*
+
+Trump–Xi summit: Why the US and China should not underestimate each other Expert comment LToremark 22 September 2026 The US and China both face serious domestic strains. As Trump and Xi meet this week to discuss trade, AI and Taiwan, neither side should mistake the other’s weaknesses for strategic decline. A superpower summit is a big deal. As US President Donald Trump and China’s President Xi Jinping meet in Washington this week, they have a lot to cover. They will try to extend a trade truce that expires in November, including China’s pause on rare earth export controls and America’s delay…
+
+[Read more](https://www.chathamhouse.org/2026/09/trump-xi-summit-why-us-and-china-should-not-underestimate-each-other)
+
+---
+
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-21*
+*European Environmental Law Review — 2026-09-22*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -117,21 +135,21 @@ In last week’s parliamentary elections in Sweden, the Swedish Social Democrati
 
 ---
 
-### Putin is far from isolated. Europe must play him at the long game
-*Chatham House — 2026-09-15*
-
-Putin is far from isolated. Europe must play him at the long game Expert comment jon.wallace 15 September 2026 The SCO and BRICS summits indicate Russia retains sufficient value to China, India and other non-Western powers to pursue its war objectives. Europe needs to adjust to that reality. The past fortnight has seen President Vladimir Putin undertake plenty of summit diplomacy. Throughout he has shown no sign he is open to compromise on Russia’s war aims in Ukraine. On the contrary, escalation has accelerated. Europe seems inclined to read this increased aggression as a sign of desperation…
-
-[Read more](https://www.chathamhouse.org/2026/09/putin-far-isolated-europe-must-play-him-long-game)
-
----
-
 ### Imbalances are a feature of the global financial system, not a bug
 *Chatham House — 2026-09-17*
 
 Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on ‘global imbalances’ is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters’ summit. Seemingly this focus on global imbalances is justified. China’s trade in goods surplus now alarms Europe’s leaders as much as it worries America’s. The US’s net liability to the world – the degree…
 
 [Read more](https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug)
+
+---
+
+### Somalia Awaits a New Security Order as Mission Drawdown Looms
+*International Crisis Group — 2026-09-18*
+
+Somalia Awaits a New Security Order as Mission Drawdown Looms pfranz Fri, 09/18/2026 - 21:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Somali police officers walk along a road median while patrolling a busy street in Mogadishu, on November 10, 2025. TONY KARUMBA / AFP Commentary / Africa 18 September 2026 16 minutes Somalia Awaits a New Security Order as Mission Drawdown Looms The multilateral missions that have helped the Somali government fight Al-Shabaab for nearly two decades…
+
+[Read more](https://www.crisisgroup.org/cmt/africa/somalia/somalia-awaits-new-security-order-mission-drawdown-looms)
 
 ---
 
@@ -159,6 +177,15 @@ Von der Leyen delivers annual state of the EU speech © Eric De Mildt / Greenpea
 Artificial Intelligence, Real Fears: Is it time to slow down? Audio sseth.drupal@c… 18 September 2026 On this week’s episode of Independent Thinking, our experts discuss the growing fears around the development of AI. A call by leaders of the tech giants on the frontier of Artificial Intelligence to ‘slow the pace’ of its development has sparked debate over the risks associated with AI. Does AI represent an existential threat, and if so, how urgent are the warnings? Or can humanity harness this powerful technology to our benefit? Our experts discuss the implications for international…
 
 [Read more](https://www.chathamhouse.org/2026/09/artificial-intelligence-real-fears-time-slow-down-independent-thinking-podcast)
+
+---
+
+### The Houthis, the Saudis and the New Red Sea Politics
+*International Crisis Group — 2026-09-18*
+
+The Houthis, the Saudis and the New Red Sea Politics hschaub Fri, 09/18/2026 - 15:17 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 18 September 2026 1 minutes The Houthis, the Saudis and the New Red Sea Politics This week on The Horn , Alan talks with Crisis Group experts Yasmine Farouk and Ahmed Nagi about what’s behind the Houthi offensive in Yemen, Saudi Arabia’s response and the implications of emerging Saudi-backed security partnerships for the Red Sea and the Horn…
+
+[Read more](https://www.crisisgroup.org/pod/africa/horn-africa/houthis-saudis-and-new-red-sea-politics)
 
 ---
 
@@ -207,6 +234,24 @@ Written by: MEP Hristo Petrov, Chair of the Working Group on the European Child 
 
 ---
 
+### Updates from the UN General Assembly 2026
+*International Crisis Group — 2026-09-21*
+
+Updates from the UN General Assembly 2026 eschelhaas Mon, 09/21/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 21 September 2026 7 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN’s efforts to promote international peace and security. This page includes updates from the…
+
+[Read more](https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026)
+
+---
+
+### Closing the New War Front in Yemen
+*International Crisis Group — 2026-09-18*
+
+Closing the New War Front in Yemen cthuratong Fri, 09/18/2026 - 13:46 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Internally displaced (IDP) Yemenis who fled their homes due to renewed clashes between Yemen's Saudi-backed government forces and the country's Houthi rebels drive to the safety of al-Kadah in the Taiz Governorate, southwestern Yemen on September 6, 2026. Ahmad Al-Basha / AFP Statement / Middle East & North Africa 18 September 2026 9 minutes Closing the New War Front in…
+
+[Read more](https://www.crisisgroup.org/stm/middle-east-north-africa/yemen-saudi-arabia-iran/closing-new-war-front-yemen)
+
+---
+
 ### 5 Messages That Stood out From the SOTEU
 *Wilfried Martens Centre (EPP) — 2026-09-16*
 
@@ -234,30 +279,21 @@ Chatham House welcomes 2026 interns News release jon.wallace 17 September 2026 O
 
 ---
 
+### On Our Radar
+*International Crisis Group — 2026-09-17*
+
+On Our Radar eschelhaas Fri, 09/18/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 18 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter…
+
+[Read more](https://www.crisisgroup.org/sco/global/our-radar)
+
+---
+
 ### Plastics Europe’s Position on the EU ETS Review
 *PlasticsEurope — 2026-09-21*
 
 Plastics Europe calls for an EU ETS revision that preserves Europe’s industrial competitiveness while maintaining the system’s role in reducing emissions. The reform must provide effective carbon leakage protection, maintain free allocation where no proven equivalent alternative exists, and align the phase-out of allowances with the real availability of enabling conditions for industrial decarbonisation. Plastics Europe_ETS review position_final Download The post Plastics Europe’s Position on the EU ETS Review appeared first on Plastics Europe .
 
 [Read more](https://plasticseurope.org/media/plastics-europe-position-on-eu-ets-review/)
-
----
-
-### How Can We Tackle the Plastic Pollution Problem?
-*Ecologic Institute — 2026-09-14*
-
-Plastic is now found virtually everywhere in the environment – including in our rivers. But how does it get there, even in a country like Germany with a comparatively well-functioning waste management and recycling system? And what needs to change to prevent plastic from entering rivers and, ultimately, the oceans? Doris Knoblauch, Director of the Resources Programme at Ecologic Institute, discussed these questions on the German radio programme WDR 5 Quarks – Wissenschaft und mehr.
-
-[Read more](https://www.ecologic.eu/20662)
-
----
-
-### Event | Ready for the EUDR: perspectives from business
-*IEEP — 2026-09-15*
-
-WRI and IEEP will host a lively and solutions-focused event on 29 September in Brussels that puts one message front and centre: business is ready to implement the EU Deforestation Regulation (EUDR). The post Event | Ready for the EUDR: perspectives from business appeared first on IEEP AISBL .
-
-[Read more](https://ieep.eu/news/event-ready-for-the-eudr-perspectives-from-business/)
 
 ---
 
@@ -288,12 +324,21 @@ On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-per
 
 ---
 
-### Explore SIPRI’s latest data visualizations
-*SIPRI — 2026-09-15*
+### Auditors find EU cyber‑attack response is weakened by overlapping systems and secretive member states
+*Wilfried Martens Centre (EPP) — 2026-09-21*
 
-SIPRI’s data visualizations page brings together a selection of graphics, maps and charts that depict trends emerging from the institute’s major data launches.
+“Member states have their own established institutions and technical competencies and overall philosophy when it comes to cybersecurity,“ said Dimitar Lilkov.
 
-[Read more](https://www.sipri.org/news/2026/explore-sipris-latest-data-visualizations)
+[Read more](https://www.martenscentre.eu/media-mentions/auditors-find-eu-cyber-attack-response-is-weakened-by-overlapping-systems-and-secretive-member-states/)
+
+---
+
+### SIPRI and the African Union sign memorandum of understanding
+*SIPRI — 2026-09-22*
+
+On 21 September, SIPRI and the African Union (AU) signed a memorandum of understanding (MOU) in New York for collaboration on peace research.
+
+[Read more](https://www.sipri.org/news/2026/sipri-and-african-union-sign-memorandum-understanding)
 
 ---
 
@@ -303,6 +348,15 @@ SIPRI’s data visualizations page brings together a selection of graphics, maps
 Cefic is calling for an EU-wide sustainability framework for biomass used in products tied to market-pull measures.
 
 [Read more](https://cefic.org/news/sustainability-criteria-can-help-unlock-demand-for-biomass-derived-products/)
+
+---
+
+### How can the law fight climate change?
+*ClientEarth — 2026-09-22*
+
+How can the law fight climate change?
+
+[Read more](https://www.clientearth.org/latest/news/how-can-the-law-fight-climate-change/)
 
 ---
 
