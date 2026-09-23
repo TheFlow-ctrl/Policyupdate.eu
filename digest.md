@@ -1,11 +1,11 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-22
+# Weekly Climate, Energy & Environment Digest — 2026-09-23
 
-### Canada’s Offer to Europe: More Than Just a Trading Partner
-*SWP (German Institute for International and Security Affairs) — 2026-09-16*
+### EU ETS amendments: what matters
+*Sandbag — 2026-09-23*
 
-In seeking partners for his “middle powers” strategy, Canadian Prime Minister Mark Carney is looking to Europe first and foremost. On the day he broke off trade talks with the United States, he announced that Canada would negotiate a “stronger and deeper security and economic partnership” with the EU. On 17 September, he is also due to address the European Parliament. Canada has close economic ties to the United States. However, because Canada’s economy is far smaller than that of its neighbour, it is at a severe disadvantage when it acts alone. Carney hopes that the EU will provide a…
+Our position paper analyses the proposals by the Commission and EU ETS rapporteur MEP Peter Liese and presents Sandbag’s proposals. Download the position paper On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. During a public press briefing, Mr. Liese…
 
-[Read more](https://www.swp-berlin.org/en/publication/canadas-offer-to-europe-more-than-just-a-trading-partner)
+[Read more](https://sandbag.be/2026/09/23/eu-ets-amendments/)
 
 ---
 
@@ -18,17 +18,8 @@ Europe’s progress towards sustainability requires new means of consumption and
 
 ---
 
-### Governing Agriculture or Farmers? Problem Representations of Biodiversity and Farm Loss in Swedens Strategy for the Common Agricultural Policy
-*Environmental Policy and Governance — 2026-09-15*
-
-ABSTRACT European Union (EU) strategies for food supply address challenges of increasing, or at least maintaining, today's level of agricultural food production. At the same time, European farmland biodiversity continues to deteriorate despite considerable investments in measures to promote environmentally friendly farming practices. In this paper, we analyse the Swedish strategy for the EU's Common Agricultural Policy (CAP) and discuss how it represents biodiversity and farm loss. We apply Carol Bacchi's critical policy approach, What's the problem represented to be? (WPR), to identify how…
-
-[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70138?af=R)
-
----
-
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-22*
+*European Environmental Law Review — 2026-09-23*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -37,7 +28,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-22*
+*European Environmental Law Review — 2026-09-23*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -55,7 +46,7 @@ Chatham House fellow gives evidence at UK parliament committee on global AI gove
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-22*
+*European Environmental Law Review — 2026-09-23*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -109,7 +100,7 @@ Trump–Xi summit: Why the US and China should not underestimate each other Expe
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-22*
+*European Environmental Law Review — 2026-09-23*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -153,24 +144,6 @@ Somalia Awaits a New Security Order as Mission Drawdown Looms pfranz Fri, 09/18/
 
 ---
 
-### SOTEU 2026: Europe’s “summer of truth” must now lead to action
-*EEB (European Environmental Bureau) — 2026-09-16*
-
-BRUSSELS, 16 September 2026 – Reacting to European Commission President Ursula von der Leyen’s State of the European Union address, the European Environmental Bureau (EEB) calls for Europe to take action to face the globe’s most significant security challenges posed by growing climate, environmental and pollution risks. Patrick ten Brink, Secretary General of the European Environmental Bureau, said: “Europe has lived through what President von der Leyen called a ‘summer of truth’. After another summer of heat, drought and devastating fires, the question now is what we do with that truth.…
-
-[Read more](https://eeb.org/en/soteu-2026-europes-summer-of-truth-must-now-lead-to-action/)
-
----
-
-### It was the hottest of summers, it was the meekest of responses
-*Greenpeace EU — 2026-09-16*
-
-Von der Leyen delivers annual state of the EU speech © Eric De Mildt / Greenpeace Brussels, 16 September 2026 – Commenting on European Commission president Ursula von der Leyen’s annual state of the European Union speech , Greenpeace EU Programme Director Magda Stoczkiewicz said: “It was the hottest of summers, it was the meekest of responses. The droughts and wildfires of this summer made it impossible for von der Leyen to ignore the impact of the climate crisis on people across Europe. This is something many of her political allies are still reluctant to admit. But her speech does not…
-
-[Read more](https://www.greenpeace.org/eu-unit/issues/climate-energy/48541/meek-von-der-leyen-state-of-the-eu-speech/)
-
----
-
 ### Artificial Intelligence, Real Fears: Is it time to slow down?
 *Chatham House — 2026-09-18*
 
@@ -195,15 +168,6 @@ The Houthis, the Saudis and the New Red Sea Politics hschaub Fri, 09/18/2026 - 1
 The State of the Union is a very special exercise for the president of the European Commission. Its main purpose is to show that the Commission has a clear vision to tackle the numerous challenges and perils the Union is facing, and that, despite the complex environment, there is an experienced pilot at the helm. Indeed, this year’s statement takes place at an exceptionally difficult time, as President Ursula von der Leyen has said from the outset. Her description and diagnosis of the geopolitical and internal challenges and transformation are accurate enough. But what about her answers and…
 
 [Read more](https://feps-europe.eu/a-state-of-the-union-bereft-of-coherence-and-clarity/)
-
----
-
-### Iceland’s No, and the Membership It Was Never Offered
-*Wilfried Martens Centre (EPP) — 2026-09-16*
-
-On Saturday 29 August 2026, Icelandic voters were asked a narrow question: should Iceland resume the EU accession talks it shelved in 2013? They said no, 52.84 to 47.16 per cent. It settled nothing about EEA membership, Schengen, or the practical cooperation that continues regardless. But it was only the latest in a now five-decades-old story: a small, wealthy, resource-dependent North Atlantic state, offered formal accession, once again declined even the first procedural step. Strip away the campaign noise, and what the No vote expressed was a judgment about sovereignty — not hostility to…
-
-[Read more](https://www.martenscentre.eu/blog/icelands-no-and-the-membership-it-was-never-offered/)
 
 ---
 
@@ -252,15 +216,6 @@ Closing the New War Front in Yemen cthuratong Fri, 09/18/2026 - 13:46 Latest Upd
 
 ---
 
-### 5 Messages That Stood out From the SOTEU
-*Wilfried Martens Centre (EPP) — 2026-09-16*
-
-On the morning of Wednesday September 16 th , European Commission President Ursula von der Leyen delivered her annual State of the European Union. At a time of heightened geopolitical uncertainty and societal upheaval, her address served as a reminder of the many issues facing the European Union, along with an outline of the paths available to the EU to respond to these various challenges. Five elements in particular emerged from her speech: Europe’s Changing Priorities – Tomi Huhtanen, Executive Director: The annual State of the European Union can be analysed as an update of the EU…
-
-[Read more](https://www.martenscentre.eu/blog/5-messages-that-stood-out-from-the-soteu/)
-
----
-
 ### Can a fortress be attractive?
 *FEPS (S&D) — 2026-09-21*
 
@@ -276,6 +231,15 @@ The final speech before the decisive battle. This is how one might describe the 
 Chatham House welcomes 2026 interns News release jon.wallace 17 September 2026 Our internships offers an invaluable learning experience through a six-month placement. Chatham House is excited to welcome the 2026-2027 cohort to the Molchanov Sustainability Internship Programme. Introduced in January 2021, the programme has been made possible following the gift of Pavel Molchanov, to support the next generation of leaders in sustainability. The internships grant practical learning opportunities at a world-famous think-tank, helping a new generation of policymakers understand how to shape…
 
 [Read more](https://www.chathamhouse.org/2026/09/chatham-house-welcomes-2026-interns)
+
+---
+
+### Webinar: Options for the EU ETS
+*Sandbag — 2026-09-23*
+
+Watch the webinar Background Background On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. In a public webinar, we presented Sandbag’s analysis of the carbon market under different design options, and discussed proposals to mitigate its potential negative…
+
+[Read more](https://sandbag.be/2026/09/23/webinar-options-for-the-eu-ets/)
 
 ---
 
@@ -306,12 +270,21 @@ This SIPRI Essay examines how rising military spending and exceptional funding m
 
 ---
 
-### Combating new bioweapon risks: A Q&A with Dr Miranda Smith on the European Biotech Act
-*SIPRI — 2026-09-16*
+### True cost accounting reveals climate impact of food systems
+*CORDIS — 2026-09-22*
 
-In this Q&A, Smith talks about why the European Biotech Act is significant, the new biosecurity risks emerging in the era of rapidly developing artificial intelligence (AI), and what the Act can and cannot do.
+The EU-funded FOODCoST project has developed methodologies to show the true cost of food production, accounting for climate and environmental impacts. This can help businesses and policymakers identify and adopt more sustainable strategies.
 
-[Read more](https://www.sipri.org/commentary/topical-backgrounder/2026/combating-new-bioweapon-risks-qa-dr-miranda-smith-european-biotech-act)
+[Read more](https://cordis.europa.eu/article/rcn/467343/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467343&WT.rss_ev=a)
+
+---
+
+### Moving from emergency alert to actionable intelligence
+*CORDIS — 2026-09-22*
+
+To meet the growing challenges of climate change, the EU-funded GOBEYOND project developed next-generation early warning systems that include tailored risk assessments, helping to anticipate impacts and prevent loss of life and property.
+
+[Read more](https://cordis.europa.eu/article/rcn/467342/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467342&WT.rss_ev=a)
 
 ---
 
@@ -321,6 +294,15 @@ In this Q&A, Smith talks about why the European Biotech Act is significant, the 
 On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-person dialogue on how states and industry actors can collaborate to support the lawful development and use of AI in the military domain.
 
 [Read more](https://www.sipri.org/news/2026/sipri-hosts-dialogue-state-industry-collaboration-lawful-military-ai)
+
+---
+
+### How green infrastructure can grow economic and climate resilience
+*CORDIS — 2026-09-22*
+
+Europe’s cities are facing the local impacts of climate change. Nature-based solutions demonstrated through the EU-funded Upsurge project are acting as ‘lighthouses’ to show the way to urban climate resilience.
+
+[Read more](https://cordis.europa.eu/article/rcn/467355/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467355&WT.rss_ev=a)
 
 ---
 
