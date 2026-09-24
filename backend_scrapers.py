@@ -894,6 +894,68 @@ def scrape_zenodo(cutoff):
 
 
 # ---------------------------------------------------------------------------
+# industriAll Europe (trade union -- industry & manufacturing workers)
+# ---------------------------------------------------------------------------
+def scrape_industriall_europe(cutoff):
+    """
+    https://news.industriall-europe.eu/News (custom ASP.NET-style CMS, no
+    RSS feed anywhere on the site -- confirmed via browser DOM inspection).
+
+    Server-rendered cards (confirmed against the live page, not guessed):
+
+        <div class="light-article">
+          <a class="light-article-image" href="/Article/1597">
+            <img ... alt="Title" src="...">
+          </a>
+          <div class="light-article-text">
+            <a href="/Article/1597">
+              <div>
+                <h4>Title</h4>
+                <p>
+                  <span class="date">Wednesday 23 September 2026</span> - Summary...<br>
+                </p>
+              </div>
+            </a>
+            <a class="tag-item" href="/Tag/179"><span id="179">TAG</span></a>
+            ...
+          </div>
+        </div>
+
+    Date format is "%A %d %B %Y" (full weekday name included). Summary is
+    the <p> text with the leading "<date> - " clause stripped off; falls
+    back to the title if there's no " - " separator (a few items, e.g.
+    short wire-service republishes, have no lead-in text before the ellipsis).
+    """
+    org = "industriAll Europe"
+    base = "https://news.industriall-europe.eu"
+    items = []
+    try:
+        soup = _get_soup("https://news.industriall-europe.eu/News")
+        for card in soup.select("div.light-article"):
+            text_a = card.select_one("div.light-article-text > a")
+            title_el = card.select_one("h4")
+            date_el = card.select_one("span.date")
+            p_el = card.select_one("p")
+            if not text_a or not text_a.get("href") or not title_el or not date_el or not p_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%A %d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, text_a["href"])
+            full_text = p_el.get_text(" ", strip=True)
+            summary = full_text.split(" - ", 1)[1].strip() if " - " in full_text else title
+
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_industriall_europe failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
     "transport_environment": scrape_transport_environment,
@@ -909,4 +971,5 @@ SCRAPERS = {
     "cefic": scrape_cefic,
     "eurofer": scrape_eurofer,
     "zenodo": scrape_zenodo,
+    "industriall_europe": scrape_industriall_europe,
 }
