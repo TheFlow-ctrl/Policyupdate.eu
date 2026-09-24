@@ -956,6 +956,166 @@ def scrape_industriall_europe(cutoff):
 
 
 # ---------------------------------------------------------------------------
+# Fern (forests -- EUDR-relevant NGO)
+# ---------------------------------------------------------------------------
+def scrape_fern(cutoff):
+    """
+    https://www.fern.org/publications-insight/news/ (TYPO3 CMS, ll_catalog
+    extension). Confirmed structure via live DOM inspection:
+
+        <div class="record">
+          <a href="/publications-insight/article/<slug>/">
+            <div class="photo">...</div>
+            <div class="details">
+              <h4 class="variant">News</h4>
+              <h2>Title</h2>
+              <p>Teaser paragraph one...</p>
+              <p>Teaser paragraph two...</p>
+              <p class="date">18/09/2026</p>
+            </div>
+          </a>
+        </div>
+
+    Date is day-first (%d/%m/%Y). Summary is every <p> inside .details
+    except the date paragraph, joined together (there are usually two
+    short teaser paragraphs, no single one is reliably "the" excerpt).
+    """
+    org = "Fern"
+    base = "https://www.fern.org"
+    items = []
+    try:
+        soup = _get_soup("https://www.fern.org/publications-insight/news/")
+        for card in soup.select("div.record"):
+            a = card.select_one("a")
+            title_el = card.select_one("h2")
+            date_el = card.select_one("p.date")
+            if not a or not a.get("href") or not title_el or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d/%m/%Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, a["href"])
+            teaser_ps = [
+                p.get_text(strip=True)
+                for p in card.select("div.details > p")
+                if p is not date_el
+            ]
+            summary = " ".join(teaser_ps).strip() or title
+
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_fern failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Cement Europe (formerly CEMBUREAU -- cement industry, a CBAM sector)
+# ---------------------------------------------------------------------------
+def scrape_cembureau(cutoff):
+    """
+    https://www.cementeurope.eu/resources/press-releases/ -- CEMBUREAU
+    rebranded to "Cement Europe" in October 2025 (see the "From CEMBUREAU
+    to Cement Europe" press release in their own archive); cembureau.eu
+    redirects here. Confirmed structure via live DOM inspection:
+
+        <div class="... resource_grid_col" data-title="Title text"
+             data-type="Press Release" data-topics="Climate &amp; CO2 Strategy">
+          <div class="resource_grid_tile">
+            <div class="resource_grid_details">
+              <div class="resource_grid_date ...">
+                <span class="resource_grid_type"></span>
+                <span class="resource_grid_date">17 July 2026</span>
+              </div>
+              <div class="resource_grid_title"><span>Title text</span></div>
+              <div class="resource_grid_action">
+                <a href="/media/.../press-release.pdf" target="_blank">Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    Each press release IS a PDF -- there's no separate HTML landing page,
+    so the entry links straight to the PDF (same pattern as other
+    PDF-only press outlets elsewhere in this pipeline). No excerpt text on
+    the listing; falls back to the data-topics tag (e.g. "Climate & CO2
+    Strategy"), or the title if that's also empty.
+    """
+    org = "Cement Europe (CEMBUREAU)"
+    base = "https://www.cementeurope.eu"
+    items = []
+    try:
+        soup = _get_soup("https://www.cementeurope.eu/resources/press-releases/")
+        for card in soup.select("div[data-title]"):
+            title = (card.get("data-title") or "").strip()
+            date_el = card.select_one("span.resource_grid_date")
+            link_el = card.select_one("div.resource_grid_action a")
+            if not title or not date_el or not link_el or not link_el.get("href"):
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            link = urljoin(base, link_el["href"])
+            topics = (card.get("data-topics") or "").strip()
+            summary = topics or title
+
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_cembureau failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# IETA (International Emissions Trading Association -- carbon markets/ETS)
+# ---------------------------------------------------------------------------
+def scrape_ieta(cutoff):
+    """
+    https://www.ieta.org/news (server-rendered, though the page also
+    carries a lot of client-side chrome). Confirmed structure via live DOM
+    inspection:
+
+        <div class="col-border-inner card-news">
+          <figure><img ...></figure>
+          <div class="card-body pt-0 pb-0">
+            <h3 class="news-title mt-0">Title</h3>
+            <div class="resource-date mb-1">Sep 21, 2026</div>
+          </div>
+          <a href="https://www.ieta.org/news/<slug>" class="link-cover"></a>
+        </div>
+
+    No excerpt text on the listing; summary falls back to the title (same
+    as ClientEarth's scraper above -- IETA's cards don't carry one either).
+    """
+    org = "IETA"
+    items = []
+    try:
+        soup = _get_soup("https://www.ieta.org/news")
+        for card in soup.select("div.card-news"):
+            title_el = card.select_one("h3.news-title")
+            date_el = card.select_one("div.resource-date")
+            link_el = card.select_one("a.link-cover")
+            if not title_el or not date_el or not link_el or not link_el.get("href"):
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%b %d, %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            items.append(_make_item(org, title, link_el["href"], dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_ieta failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
     "transport_environment": scrape_transport_environment,
@@ -972,4 +1132,7 @@ SCRAPERS = {
     "eurofer": scrape_eurofer,
     "zenodo": scrape_zenodo,
     "industriall_europe": scrape_industriall_europe,
+    "fern": scrape_fern,
+    "cembureau": scrape_cembureau,
+    "ieta": scrape_ieta,
 }
