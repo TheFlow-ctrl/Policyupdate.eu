@@ -492,13 +492,14 @@ ACTOR_LABELS = {
     "academic": "Academic Journal",
     "political": "Political",
     "industry": "Industry & Lobby Groups",
+    "trade-union": "Trade Unions",
     "ngo": "NGO & Advocacy",
     "eu-institution": "EU Institutions",
 }
 
 # Display order for the public Sources page -- matches the actor-tabs order
 # in index.html.
-ACTOR_ORDER = ["think-tank", "academic", "political", "industry", "ngo", "eu-institution"]
+ACTOR_ORDER = ["think-tank", "academic", "political", "industry", "trade-union", "ngo", "eu-institution"]
 
 # Homepage URL for sources.yaml entries that use a "scraper" key instead of
 # a "url" (so there's no feed URL to derive a homepage from). Pulled from
@@ -516,6 +517,7 @@ SCRAPER_HOMEPAGES = {
     "pik_potsdam": "https://www.pik-potsdam.de",
     "iddri": "https://www.iddri.org",
     "agora_energiewende": "https://www.agora-energiewende.org",
+    "industriall_europe": "https://news.industriall-europe.eu",
     "epc": "https://www.epc.eu",
     "bc3": "https://www.bc3research.org",
     "eera": "https://www.eera-set.eu",
