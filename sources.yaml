@@ -25,6 +25,10 @@
 #                    Academic sources section below for notes on each)
 #   political     -- political-party-affiliated (EP group foundations etc.)
 #   industry      -- trade associations and corporate/sector lobby groups
+#   trade-union   -- labour/worker organisations (distinct from ngo: they
+#                    represent members' employment interests, not a public-
+#                    interest advocacy mandate; distinct from industry: they
+#                    sit opposite employers, not alongside them)
 #   ngo           -- advocacy NGOs, campaign groups, watchdog organisations
 #   eu-institution -- an official EU institution/agency publishing about
 #                    itself or its own work (EPRS, CORDIS, EEA...) -- not
@@ -215,6 +219,123 @@ sources:
     field: green-deal
     actor_type: industry
     # Cross-industry. Confirmed to exist but currently empty.
+  - name: WindEurope
+    url: https://windeurope.org/feed/
+    field: green-deal
+    actor_type: industry
+    # Wind industry. Confirmed working, actively updated.
+  - name: nucleareurope
+    url: https://www.nucleareurope.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Nuclear industry. Confirmed working, actively updated.
+  - name: ACEA (European Automobile Manufacturers' Association)
+    url: https://www.acea.auto/feed/
+    field: green-deal
+    actor_type: industry
+    # Automotive manufacturers -- CO2 standards, ETS2 fuel pass-through.
+    # Confirmed to exist (valid RSS structure) but currently empty, same
+    # pattern as European Aluminium/Concawe/BusinessEurope above.
+  - name: Hydrogen Europe
+    url: https://hydrogeneurope.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Hydrogen industry (RED III/RFNBO relevance). Confirmed working,
+    # actively updated.
+
+  # --- Trade unions ------------------------------------------------------
+  # Labour's voice in the EU Green Deal debate -- distinct from both the
+  # ngo and industry categories (see actor_type note above).
+  - name: industriAll Europe
+    scraper: industriall_europe
+    field: green-deal
+    actor_type: trade-union
+    # European federation for industry & manufacturing workers. No RSS
+    # feed exists (custom CMS) -- see scrape_industriall_europe() in
+    # backend_scrapers.py, confirmed against the live page's DOM. Covers a
+    # lot of general labour-relations content (collective bargaining,
+    # health & safety, youth network...) well beyond Green Deal, so relies
+    # on the standard field: green-deal keyword filter to narrow it down,
+    # same as Corporate Europe Observatory above.
+  - name: DGB (German Trade Union Confederation)
+    url: https://www.dgb.de/pressemitteilungen-rss-feed.xml
+    field: green-deal
+    actor_type: trade-union
+    # National confederation (not EU-level, but a major voice in EU
+    # climate/energy policy debates via its industrial unions). German-
+    # language only -- confirmed real feed via the site's own RSS
+    # subscribe links (the /service/rss and /unsere-rss-feeds/ landing
+    # pages don't expose the actual .xml URLs in their raw HTML, only via
+    # JS-rendered buttons, so this was found by inspecting the live DOM).
+  - name: IG Metall
+    url: https://www.igmetall.de/igmetall.rss
+    field: green-deal
+    actor_type: trade-union
+    # Germany's largest industrial union (metal, electrical, steel, auto)
+    # -- heavily exposed to CBAM/ETS2/industrial decarbonisation debates.
+    # German-language only; no English feed (the /en/ site pages are
+    # machine-translated on the fly, but the RSS feed itself is not).
+  - name: EFFAT (European Federation of Food, Agriculture and Tourism Trade Unions)
+    url: https://effat.org/feed/
+    field: green-deal
+    actor_type: trade-union
+    # Confirmed working, actively updated.
+  - name: EuroCOP (European Confederation of Police)
+    url: https://eurocop.org/feed/
+    field: green-deal
+    actor_type: trade-union
+    # Confirmed working feed, but content is almost entirely policing/
+    # security-focused -- expect it to contribute close to zero items to
+    # the green-deal digest via the keyword filter. Included anyway since
+    # it costs nothing (same reasoning as other broad-coverage sources),
+    # but don't expect much from it.
+  - name: European Federation of Journalists
+    url: https://europeanjournalists.org/feed/
+    field: green-deal
+    actor_type: trade-union
+    # NOT the same URL as the ifj.org link Flo originally sent (that's
+    # IFJ, the global federation) -- europeanjournalists.org is the actual
+    # European Federation of Journalists site. Confirmed working, but like
+    # EuroCOP, content is almost entirely press-freedom/media-freedom
+    # focused, not EU climate/energy/environment -- expect near-zero yield.
+  - name: UNI Europa
+    url: https://www.uni-europa.org/feed/
+    field: green-deal
+    actor_type: trade-union
+    # Services & communications workers. Confirmed valid feed structure
+    # but currently stale (last item seen from May 2025) -- same
+    # "kept in case it starts posting again" reasoning as European
+    # Aluminium/Concawe/BusinessEurope above.
+
+  # NOT added (no RSS found, would need a scraper -- see note above):
+  #  - ETUC (European Trade Union Confederation, etuc.org) -- the umbrella
+  #    body Flo asked about; no RSS/Atom anywhere discoverable (checked
+  #    common paths + live DOM inspection for <link rel="alternate"> and
+  #    RSS-labelled links, found nothing).
+  #  - ÖGB (Austrian Trade Union Federation, oegb.at) -- same, nothing
+  #    discoverable via DOM inspection.
+  #  - ETF (European Transport Workers' Federation, etf-europe.org) -- the
+  #    site's own footer links to https://www.etf-europe.org/feed/ as its
+  #    RSS feed, but that URL 404s on the live site (Drupal feed route
+  #    appears broken) -- a real gap on their end, not a discovery miss.
+  #  - EPSU (European Federation of Public Service Unions, epsu.org),
+  #    ETUCE/CSEE (European Trade Union Committee for Education,
+  #    csee-etuce.org), EFBWW/FETBB (European Federation of Building and
+  #    Woodworkers -- efbww.org/.eu, custom Sitefinity-style CMS with News
+  #    at /news, would need a scraper like industriAll Europe's), EAEA
+  #    (European Arts and Entertainment Alliance, iaea-globalunion.org/eaea
+  #    -- also low relevance to Green Deal even if it had one) -- no RSS
+  #    found for any of these.
+  #  - SolarPower Europe -- solarpowereurope.org, WordPress-adjacent but no
+  #    working feed found at common paths.
+  #  - Hydropower Europe -- hydropower-europe.eu, no feed found.
+  #  - CarbonFuture -- carbonfuture.earth, a private carbon-removal registry
+  #    company rather than a trade association; no feed found, and likely
+  #    thin/product-focused output even if scraped.
+  #  - EDF, Enel, ENGIE, Statkraft, Vattenfall, Uniper, E.ON -- individual
+  #    utilities, no public RSS feed found for any of them (checked common
+  #    paths and press-room subscribe pages; ENGIE explicitly advertises an
+  #    "RSS feed" subscribe link that no longer resolves to one).
 
   # --- NGOs ------------------------------------------------------------------
   - name: Greenpeace EU
