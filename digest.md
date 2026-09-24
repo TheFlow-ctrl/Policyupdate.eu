@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-23
+# Weekly Climate, Energy & Environment Digest — 2026-09-24
 
 ### EU ETS amendments: what matters
 *Sandbag — 2026-09-23*
@@ -18,21 +18,21 @@ Europe’s progress towards sustainability requires new means of consumption and
 
 ---
 
-### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-23*
+### Sustainable blue tourism: From local initiatives to systemic change
+*IDDRI — 2026-09-24*
 
-This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
+Authors: Angelo Sciacca, Julien Rochette, Céline Kauffmann
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
+[Read more](https://www.iddri.org/en/publications-and-events/blog-post/sustainable-blue-tourism-local-initiatives-systemic-change)
 
 ---
 
-### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-23*
+### On the Economization of Environmental Policy: Examining the Workings of Green Competitiveness in the Pursuit of Emissions Reduction
+*Global Environmental Politics — 2026-09-20*
 
-The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
+Abstract Hybrid, transnational governance frameworks such as the European Union’s Renewable Energy Directive (EU-RED) are designed to shape production and trade practices in third countries by linking market access to compliance with sustainability criteria. Evidence on their effectiveness in these contexts, however, remains limited. This article examines why such frameworks often fail to achieve their environmental goals, focusing on EU-RED’s regulation of biofuels in the Argentina–EU biodiesel global value chain. We argue that EU-RED is based on a form of economization of environmental…
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
+[Read more](https://direct.mit.edu/glep/article/doi/10.1162/GLEP.a.800/139096/On-the-Economization-of-Environmental-Policy)
 
 ---
 
@@ -42,15 +42,6 @@ The European Union’s legally binding objective of climate neutrality by 2050 r
 Chatham House fellow gives evidence at UK parliament committee on global AI governance and risks News release thilton.drupal 21 September 2026 Senior Research Fellow Isabella Wilkinson spoke to the House of Lords International Relations and Defence Committee at a time when many are calling for greater regulation of AI in the light of emerging risks. Isabella Wilkinson, Senior Research Fellow with Chatham House’s Digital Society Programme, gave evidence on the global governance of AI to the UK House of Lords International Relations and Defence Committee on 16 September. Wilkinson outlined the…
 
 [Read more](https://www.chathamhouse.org/2026/09/chatham-house-fellow-gives-evidence-uk-parliament-committee-global-ai-governance-and-risks)
-
----
-
-### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-23*
-
-This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
 
 ---
 
@@ -72,15 +63,6 @@ The UN’s High Level Week, Secretary-General Selection and “Middle Power” P
 
 ---
 
-### China is weathering the Hormuz energy crisis. But copying its model comes with risks
-*Chatham House — 2026-09-17*
-
-China is weathering the Hormuz energy crisis. But copying its model comes with risks Expert comment thilton.drupal 17 September 2026 China absorbed the shock by drawing on stockpiles and a decade of electrification. Europe needs electrification for security, but it needs to decide which parts of the system it is willing to buy from Beijing. Resources are no longer ‘king’ when it comes to energy, wrote Zhao Hongtu and Chen Wenlin in the 1 September 2026 edition of Qiushi , the Chinese Communist Party’s flagship theoretical journal. Mineral-rich economies may have some leverage, but the…
-
-[Read more](https://www.chathamhouse.org/2026/09/china-weathering-hormuz-energy-crisis-copying-its-model-comes-risks)
-
----
-
 ### Can Gulf Arab countries help break the deadlock over Trump’s Gaza peace plan?
 *Chatham House — 2026-09-21*
 
@@ -99,12 +81,12 @@ Trump–Xi summit: Why the US and China should not underestimate each other Expe
 
 ---
 
-### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-23*
+### Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying
+*Chatham House — 2026-09-24*
 
-This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
+Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying Expert comment jon.wallace 24 September 2026 Denmark used its soft power to rally support and took the dispute out of the limelight – addressing underlying US interests instead of President Trump’s unacceptable public position. This week, Denmark has extricated itself from a period of coercive US diplomacy over Greenland. The agreement announced on 22 September elegantly resolves the dispute over the territory, without forcing Denmark or the government of Greenland to give up very much. Even before the dispute,…
 
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
+[Read more](https://www.chathamhouse.org/2026/09/denmarks-greenland-deal-trump-victory-diplomacy-over-bullying)
 
 ---
 
@@ -132,6 +114,15 @@ In last week’s parliamentary elections in Sweden, the Swedish Social Democrati
 Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on ‘global imbalances’ is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters’ summit. Seemingly this focus on global imbalances is justified. China’s trade in goods surplus now alarms Europe’s leaders as much as it worries America’s. The US’s net liability to the world – the degree…
 
 [Read more](https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug)
+
+---
+
+### Why Putin Still Needs Elections – and What It Means for Europe
+*Wilfried Martens Centre (EPP) — 2026-09-24*
+
+Russia’s parliamentary elections produced few surprises. United Russia won 57.83 per cent of the party-list vote and secured 355 of the State Duma’s 450 seats, comfortably preserving its constitutional majority. But the result may be less interesting than a question that arose before voting even began: why hold election s at all? That question was debated inside the Kremlin establishment. The Russian leadership supposedly debated postponing the State Duma elections. In June, Meduza , citing sources close to the presidential administration, reported that senior security officials had urged…
+
+[Read more](https://www.martenscentre.eu/blog/why-putin-still-needs-elections-and-what-it-means-for-europe/)
 
 ---
 
@@ -171,21 +162,12 @@ The State of the Union is a very special exercise for the president of the Europ
 
 ---
 
-### A Pivotal Moment in Uniting Post-Assad Syria
-*International Crisis Group — 2026-09-17*
+### Wind energy is hiring. Here’s how to get a job in it
+*WindEurope — 2026-09-24*
 
-A Pivotal Moment in Uniting Post-Assad Syria eschelhaas Thu, 09/17/2026 - 12:17 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Syrian President Ahmed Al-Shara, right, and Syrian Democratic Forces commander Mazloum Abdi, left, attend a session at the presidential palace in Damascus. Rami Alsayed / NurPhoto / via AFP Commentary / Middle East & North Africa 17 September 2026 15 minutes A Pivotal Moment in Uniting Post-Assad Syria The Kurdish-led Syrian Democratic Forces, which long enjoyed…
+Europe’s wind industry will create over 100,000 new positions between now and 2030. Meanwhile, 15% of EU citizens under 25 are unemployed. WindEurope today launched its Careers Hub – a single-entry point for careers in wind energy. The Careers Hub helps students, jobseekers and workers from other sectors explore where they fit in the wind industry. They can explore job profiles and career paths, find training opportunities and contact employers – all in one place. Wind is the one clean technology that Europe makes from start to finish. Project development, supply chain, manufacturing,…
 
-[Read more](https://www.crisisgroup.org/cmt/middle-east-north-africa/syria/pivotal-moment-uniting-post-assad-syria)
-
----
-
-### Sweden’s Political Centre Is Back in the Game
-*European Liberal Forum (Renew) — 2026-09-16*
-
-Written by: Matilde Molander, CEO, Fores This Sunday night in Sweden was not an election night we are used to. No victory speeches from winning candidates, no stepping down of failed party leaders, no disappointed activists and no happy dancing after months of intense campaigning. The mood at the election watch parties was dominated by tension rather than joy or disappointment. The cathartic moment of truth is postponed – maybe even by months. At the moment of publishing this article, only 32 000 votes are between a right-wing and a left-wing government coalition, after one of the closest…
-
-[Read more](https://liberalforum.eu/updates/too-close-to-call-swedens-political-centre-is-back-in-the-game/)
+[Read more](https://windeurope.org/news/wind-energy-is-hiring-heres-how-to-get-a-job-in-it/)
 
 ---
 
@@ -261,6 +243,15 @@ Plastics Europe calls for an EU ETS revision that preserves Europe’s industria
 
 ---
 
+### Sustainability in EU FTAs: Monitoring briefings
+*IEEP — 2026-09-24*
+
+This briefing series monitors upcoming free trade agreements (FTAs) that are either being negotiated or concluded by the European Union and conducts assessments for their sustainability provisions. The post Sustainability in EU FTAs: Monitoring briefings appeared first on IEEP AISBL .
+
+[Read more](https://ieep.eu/news/sustainability-in-eu-ftas-monitoring-briefings/)
+
+---
+
 ### As military spending mounts, parliamentary oversight must keep pace
 *SIPRI — 2026-09-17*
 
@@ -279,21 +270,21 @@ The EU-funded FOODCoST project has developed methodologies to show the true cost
 
 ---
 
+### ARIES promotes sustainable innovation at SOMMa Connect 2026
+*BC3 — 2026-09-23*
+
+BC3 took part this week in SOMMa Connect 2026, the meeting organised in Barcelona by the Severo Ochoa Alliance of Centres of Excellence and María de Maeztu Units of Excellence (SOMMa), alongside the Centre for Genomic Regulation (CRG).
+
+[Read more](https://www.bc3research.org/en/2026/09/aries-promotes-sustainable-innovation-at-somma-connect-2026/)
+
+---
+
 ### Moving from emergency alert to actionable intelligence
 *CORDIS — 2026-09-22*
 
 To meet the growing challenges of climate change, the EU-funded GOBEYOND project developed next-generation early warning systems that include tailored risk assessments, helping to anticipate impacts and prevent loss of life and property.
 
 [Read more](https://cordis.europa.eu/article/rcn/467342/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467342&WT.rss_ev=a)
-
----
-
-### SIPRI hosts dialogue on state–industry collaboration for lawful military AI
-*SIPRI — 2026-09-17*
-
-On 9–10 September, SIPRI’s Governance of AI Programme hosted a closed in-person dialogue on how states and industry actors can collaborate to support the lawful development and use of AI in the military domain.
-
-[Read more](https://www.sipri.org/news/2026/sipri-hosts-dialogue-state-industry-collaboration-lawful-military-ai)
 
 ---
 
