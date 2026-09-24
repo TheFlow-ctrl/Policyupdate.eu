@@ -242,6 +242,39 @@ sources:
     actor_type: industry
     # Hydrogen industry (RED III/RFNBO relevance). Confirmed working,
     # actively updated.
+  - name: CLEPA (European Association of Automotive Suppliers)
+    url: https://www.clepa.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # CO2 standards, Euro 7, Industrial Accelerator Act, CBAM-adjacent
+    # supply-chain content. Confirmed working, very actively updated.
+  - name: EASE (European Association for Storage of Energy)
+    url: https://energystorageeurope.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Battery/grid storage -- REPowerEU, Electricity Market Design,
+    # renewables permitting. Confirmed working, actively updated.
+  - name: EGEC (European Geothermal Energy Council)
+    url: https://www.egec.org/feed/
+    field: green-deal
+    actor_type: industry
+    # Confirmed working, actively updated.
+  - name: Cement Europe (CEMBUREAU)
+    scraper: cembureau
+    field: green-deal
+    actor_type: industry
+    # Cement industry -- one of the six sectors CBAM covers. Rebranded
+    # from "CEMBUREAU" to "Cement Europe" in October 2025 (cembureau.eu
+    # now redirects to cementeurope.eu). No RSS feed; see scrape_cembureau()
+    # in backend_scrapers.py, confirmed against the live page's DOM. Each
+    # press release links straight to a PDF (no HTML landing page).
+  - name: IETA (International Emissions Trading Association)
+    scraper: ieta
+    field: green-deal
+    actor_type: industry
+    # Global carbon-market industry body -- EU ETS review/reform is a
+    # recurring topic. No RSS feed; see scrape_ieta() in
+    # backend_scrapers.py, confirmed against the live page's DOM.
 
   # --- Trade unions ------------------------------------------------------
   # Labour's voice in the EU Green Deal debate -- distinct from both the
@@ -352,6 +385,29 @@ sources:
     actor_type: ngo
     # Grantmaking/coordinating foundation, advocacy-adjacent -- borderline
     # think-tank/lobby call, went with lobby given its network-building role.
+  - name: Bankwatch
+    url: https://bankwatch.org/feed
+    field: green-deal
+    actor_type: ngo
+    # EU public-finance/investment watchdog (EIB, cohesion funds, gas
+    # infrastructure). Feed structurally valid (real WordPress feed,
+    # correctly formed channel) but returned literally zero <item>
+    # entries at last check -- unusual enough that it might be a fetch
+    # quirk rather than a genuinely post-free feed. Worth revisiting if it
+    # stays empty after a few runs.
+  - name: ECOS (Environmental Coalition on Standards)
+    url: https://ecostandard.org/feed/
+    field: green-deal
+    actor_type: ngo
+    # Standard-setting / ecodesign / CBAM-adjacent. Same caveat as
+    # Bankwatch above -- structurally valid feed, zero items at last
+    # check.
+  - name: Fern
+    scraper: fern
+    field: green-deal
+    actor_type: ngo
+    # Forests -- directly EUDR-relevant. No RSS feed; see scrape_fern() in
+    # backend_scrapers.py, confirmed against the live page's DOM.
   - name: YEE (Youth and Environment Europe)
     url: https://yeenet.eu/feed/
     field: green-deal
@@ -681,12 +737,22 @@ sources:
 #    asd-europe.org/news-media/news-events/news/
 #  - FuelsEurope (oil/gas refining industry) -- custom CMS, no RSS found.
 #    Listing page: fuelseurope.eu/publications
+#  - Fertilizers Europe (fertilizerseurope.com) -- CBAM-sector gap
+#    (ammonia/fertilizers), and has a real feed URL, but it's dead: last
+#    item dated December 2022. Not worth adding as-is.
+# CEMBUREAU, IETA, and Fern now have scrapers -- see the industry and ngo
+# sections below.
 #  - WWF European Policy Office -- NOT actually abandoned (re-checked Aug
 #    2026: newsletter archive runs to Nov 2025, live articles dated Aug
 #    2026 findable via search) -- the earlier "stale since 2013" read was
 #    from a broken legacy fallback served to simple fetches, likely a
-#    JS-rendered/legacy CMS quirk. No RSS discoverable. Listing page (a
-#    real scraper target, just not built yet): wwf.eu/wwf_news/media_centre/
+#    JS-rendered/legacy CMS quirk. No RSS discoverable. STILL not built
+#    (Sep 2026 attempt): the entire wwf.eu domain returned a hard 403
+#    Forbidden to a real browser, not just a plain HTTP fetch -- this
+#    looks like WAF/bot-blocking at the domain level, not a JS-rendering
+#    problem, so a scraper couldn't be built without first confirming
+#    some other access path works. Listing page (target once reachable):
+#    wwf.eu/wwf_news/media_centre/
 #  - JRC Publications Repository -- database/search-driven, PDF-only,
 #    not feed- or easily scraper-friendly
 #  - TNO, EIPA, New Direction -- checked, excluded as too broad/generic,
