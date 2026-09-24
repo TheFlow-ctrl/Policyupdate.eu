@@ -108,15 +108,6 @@ In last week’s parliamentary elections in Sweden, the Swedish Social Democrati
 
 ---
 
-### Imbalances are a feature of the global financial system, not a bug
-*Chatham House — 2026-09-17*
-
-Imbalances are a feature of the global financial system, not a bug Expert comment jon.wallace 17 September 2026 The current focus on ‘global imbalances’ is too easily used by policymakers as a smokescreen for their own domestic failings. Global imbalances are back on the international finance agenda this year, prompting a flagship G7 report and creating discord at the G20 finance minsters’ summit. Seemingly this focus on global imbalances is justified. China’s trade in goods surplus now alarms Europe’s leaders as much as it worries America’s. The US’s net liability to the world – the degree…
-
-[Read more](https://www.chathamhouse.org/2026/09/imbalances-are-feature-global-financial-system-not-bug)
-
----
-
 ### Why Putin Still Needs Elections – and What It Means for Europe
 *Wilfried Martens Centre (EPP) — 2026-09-24*
 
@@ -180,6 +171,15 @@ Written by: MEP Hristo Petrov, Chair of the Working Group on the European Child 
 
 ---
 
+### What can DRC’s national dialogue achieve?
+*Chatham House — 2026-09-24*
+
+What can DRC’s national dialogue achieve? Expert comment jon.wallace 24 September 2026 President Tshisekedi and the opposition both want national dialogue. But it remains to be seen whether they can agree on the nature of the DRC’s problems, let alone their solutions. When President of the Democratic Republic of the Congo (DRC) Félix Tshisekedi finally announced a ‘national dialogue’ on 27 August, he evoked the country’s long history of previous negotiations. Too often, he said, they had been about elite power sharing, had not meaningfully included the Congolese people, and had legitimized…
+
+[Read more](https://www.chathamhouse.org/2026/09/what-can-drcs-national-dialogue-achieve)
+
+---
+
 ### Updates from the UN General Assembly 2026
 *International Crisis Group — 2026-09-21*
 
@@ -204,15 +204,6 @@ Closing the New War Front in Yemen cthuratong Fri, 09/18/2026 - 13:46 Latest Upd
 The final speech before the decisive battle. This is how one might describe the State of the Union address delivered on 16 September by EU Commission President Ursula von der Leyen to the European Parliament – though with the ambition of speaking to the whole of Europe and the world. It was the last major policy address before the fateful spring of 2027, when elections in France, Italy and Spain (not to mention possible snap elections in Germany) will shape the continent’s political future. An unmissable opportunity to try to spread a message capable of stemming the anti-democratic tide that…
 
 [Read more](https://feps-europe.eu/can-a-fortress-be-attractive/)
-
----
-
-### Chatham House welcomes 2026 interns
-*Chatham House — 2026-09-17*
-
-Chatham House welcomes 2026 interns News release jon.wallace 17 September 2026 Our internships offers an invaluable learning experience through a six-month placement. Chatham House is excited to welcome the 2026-2027 cohort to the Molchanov Sustainability Internship Programme. Introduced in January 2021, the programme has been made possible following the gift of Pavel Molchanov, to support the next generation of leaders in sustainability. The internships grant practical learning opportunities at a world-famous think-tank, helping a new generation of policymakers understand how to shape…
-
-[Read more](https://www.chathamhouse.org/2026/09/chatham-house-welcomes-2026-interns)
 
 ---
 
@@ -249,15 +240,6 @@ Plastics Europe calls for an EU ETS revision that preserves Europe’s industria
 This briefing series monitors upcoming free trade agreements (FTAs) that are either being negotiated or concluded by the European Union and conducts assessments for their sustainability provisions. The post Sustainability in EU FTAs: Monitoring briefings appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/sustainability-in-eu-ftas-monitoring-briefings/)
-
----
-
-### As military spending mounts, parliamentary oversight must keep pace
-*SIPRI — 2026-09-17*
-
-This SIPRI Essay examines how rising military spending and exceptional funding mechanisms challenge parliamentary oversight, and explores ways to strengthen scrutiny, transparency and cooperation between parliaments and the United Nations.
-
-[Read more](https://www.sipri.org/commentary/essay/2026/military-spending-mounts-parliamentary-oversight-must-keep-pace)
 
 ---
 
@@ -303,6 +285,15 @@ Europe’s cities are facing the local impacts of climate change. Nature-based s
 “Member states have their own established institutions and technical competencies and overall philosophy when it comes to cybersecurity,“ said Dimitar Lilkov.
 
 [Read more](https://www.martenscentre.eu/media-mentions/auditors-find-eu-cyber-attack-response-is-weakened-by-overlapping-systems-and-secretive-member-states/)
+
+---
+
+### New Vision Paper Launch - Canada’s Carbon Market Opportunity: A Vision for Climate Competitiveness and Growth
+*IETA — 2026-09-21*
+
+New Vision Paper Launch - Canada’s Carbon Market Opportunity: A Vision for Climate Competitiveness and Growth
+
+[Read more](https://www.ieta.org/news/new-vision-paper-launch-canadas-carbon-market-opportunity-a-vision-for-climate-competitiveness-and-growth)
 
 ---
 
