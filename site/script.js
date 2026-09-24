@@ -42,6 +42,7 @@ const ACTOR_LABELS = {
   academic: "Academic Journal",
   political: "Political",
   industry: "Industry & Lobby Groups",
+  "trade-union": "Trade Unions",
   ngo: "NGO & Advocacy",
   "eu-institution": "EU Institutions",
 };
