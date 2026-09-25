@@ -524,6 +524,11 @@ SCRAPER_HOMEPAGES = {
     "epc": "https://www.epc.eu",
     "bc3": "https://www.bc3research.org",
     "eera": "https://www.eera-set.eu",
+    "euromines": "https://euromines.org",
+    "eurogas": "https://www.eurogas.org",
+    "influencemap": "https://influencemap.org",
+    "copa_cogeca": "https://www.copa-cogeca.eu",
+    "council_eu": "https://www.consilium.europa.eu",
 }
 
 
