@@ -1495,3 +1495,23 @@ SCRAPERS = {
     "council_eu": scrape_council_eu,
     "acer": scrape_acer,
 }
+
+# Headless-browser scrapers (browser_scrapers.py) live in a separate module
+# so that Playwright is only imported -- and its browser binary only
+# needed -- for the handful of sources.yaml entries that actually require
+# it (see that module's docstring). Merged into the same SCRAPERS dict so
+# fetch_digest.py's dispatch logic (backend_scrapers.SCRAPERS.get(...))
+# doesn't need to know or care which underlying mechanism a given source
+# uses. This import happens after backend_scrapers' own functions are
+# defined above -- browser_scrapers.py imports several of them back
+# (_make_item, _parse_date, _passes_cutoff), which only resolves cleanly
+# at this point in the file.
+try:
+    from browser_scrapers import BROWSER_SCRAPERS
+
+    SCRAPERS.update(BROWSER_SCRAPERS)
+except ImportError as exc:
+    print(
+        f"[backend_scrapers] browser_scrapers.py not importable ({exc}); "
+        f"sources using a headless-browser scraper will be skipped"
+    )
