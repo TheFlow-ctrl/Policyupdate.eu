@@ -1414,6 +1414,61 @@ def scrape_council_eu(cutoff):
 
 
 # ---------------------------------------------------------------------------
+def scrape_acer(cutoff):
+    """
+    https://acer.europa.eu/news-and-events/news (Drupal "Views" listing --
+    note the canonical/working host is the bare acer.europa.eu, not
+    www.acer.europa.eu; the www host intermittently failed to load in
+    testing while the bare host worked reliably both via a plain HTTP
+    fetch and a real browser). No RSS feed found anywhere on the site.
+    Server-rendered cards, confirmed via live DOM inspection:
+
+        <div class="views-row row col-12">
+          <div class="related-news-wrapper ...">
+            <div class="related-new-date">22nd September 2026</div>
+            <div class="title-wrapper">
+              <a href="/news/acer-amends-...">Title</a>
+            </div>
+            <div class="intro-wrapper">Summary...</div>
+            <a class="btn-related ..." href="/news/acer-amends-...">Read More</a>
+          </div>
+          <div class="news-list-img ...">...</div>
+        </div>
+
+    Date includes an ordinal suffix ("22nd", "1st", "3rd") which is
+    stripped before parsing (same technique as IDDRI's scraper). EU energy
+    regulator -- grid/electricity market rules, cross-border capacity,
+    REMIT, hydrogen market monitoring: directly Green Deal/energy-
+    transition relevant, if a bit technical/niche in tone.
+    """
+    org = "ACER"
+    base = "https://acer.europa.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news-and-events/news")
+        for card in soup.select("div.views-row"):
+            date_el = card.select_one(".related-new-date")
+            title_a = card.select_one(".title-wrapper a")
+            summary_el = card.select_one(".intro-wrapper")
+            if not date_el or not title_a or not title_a.get("href"):
+                continue
+
+            date_text = re.sub(r"(\d+)(st|nd|rd|th)\b", r"\1", date_el.get_text(strip=True))
+            dt = _parse_date(date_text, ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = urljoin(base, title_a["href"])
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_acer failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
     "transport_environment": scrape_transport_environment,
@@ -1438,4 +1493,5 @@ SCRAPERS = {
     "influencemap": scrape_influencemap,
     "copa_cogeca": scrape_copa_cogeca,
     "council_eu": scrape_council_eu,
+    "acer": scrape_acer,
 }
