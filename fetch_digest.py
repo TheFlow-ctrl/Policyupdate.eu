@@ -224,6 +224,48 @@ def is_eu_relevant(title, excerpt):
     text_lower = text.lower()
     return any(k in text_lower for k in _INHERENTLY_EU_KEYWORDS)
 
+
+# Stricter relevance gate applied ONLY to actor_type == "international-org"
+# sources (IEA, UNEP, WMO, Orgalim's neighbours-in-spirit -- global/
+# international bodies, not EU institutions). These publish globally, so a
+# topic-only GREEN_DEAL_KEYWORDS match lets through a lot of non-EU content
+# (Indian steel demand, US methane rules, Pacific meteorology). Unlike the
+# academic gate above (a strict "must be EU-relevant" AND-gate), this one is
+# an OR-gate: an item passes if it's EU-relevant (same check as academic
+# sources) OR it reports one of the handful of global climate-policy
+# benchmarks that matter to Green Deal debates even without an EU angle --
+# the whole point of including WMO/UNEP is exactly this kind of "state of
+# the global climate" / 1.5C-goal reporting, which a strict EU-only gate
+# would filter out entirely.
+IO_GLOBAL_BENCHMARK_KEYWORDS = [
+    "1.5c", "1.5 c", "1.5°c", "1.5 degrees", "2 degrees celsius",
+    "paris agreement", "paris goals", "global warming", "global temperature",
+    "hottest year", "warmest year", "hottest month", "warmest month",
+    "climate tipping point", "tipping points", "overshoot",
+    "state of the global climate", "global climate report", "ipcc",
+    "global stocktake", "nationally determined contribution",
+    "nationally determined contributions", "cop28", "cop29", "cop30", "cop31",
+    "un climate conference", "world climate conference",
+    "net zero by 2050", "global emissions", "global carbon budget",
+    "global temperature rise", "world meteorological",
+]
+
+_IO_GLOBAL_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in IO_GLOBAL_BENCHMARK_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+
+def is_io_relevant(title, excerpt):
+    """True if the text is EU-relevant (same gate as academic sources) OR
+    reports a global climate-policy benchmark (1.5C, global stocktake,
+    state of the global climate, etc.) -- see IO_GLOBAL_BENCHMARK_KEYWORDS
+    above for why this is an OR, not an AND, unlike the academic gate."""
+    if is_eu_relevant(title, excerpt):
+        return True
+    text = f"{title or ''} {excerpt or ''}"
+    return bool(_IO_GLOBAL_PATTERN.search(text))
+
 # Filters out event listings and calls for abstracts/papers -- these are
 # administrative notices, not policy publications, and were showing up
 # in the digest (e.g. a Chatham House "Climate and energy 2027" conference
@@ -495,11 +537,15 @@ ACTOR_LABELS = {
     "trade-union": "Trade Unions",
     "ngo": "NGO & Advocacy",
     "eu-institution": "EU Institutions",
+    "international-org": "International Organisations",
 }
 
 # Display order for the public Sources page -- matches the actor-tabs order
 # in index.html.
-ACTOR_ORDER = ["think-tank", "academic", "political", "industry", "trade-union", "ngo", "eu-institution"]
+ACTOR_ORDER = [
+    "think-tank", "academic", "political", "industry", "trade-union", "ngo",
+    "eu-institution", "international-org",
+]
 
 # Homepage URL for sources.yaml entries that use a "scraper" key instead of
 # a "url" (so there's no feed URL to derive a homepage from). Pulled from
@@ -532,6 +578,10 @@ SCRAPER_HOMEPAGES = {
     "acer": "https://acer.europa.eu",
     "echa": "https://echa.europa.eu",
     "eca": "https://www.eca.europa.eu",
+    "orgalim": "https://orgalim.eu",
+    "iea": "https://www.iea.org",
+    "unep": "https://www.unep.org",
+    "wmo": "https://wmo.int",
 }
 
 
@@ -628,6 +678,13 @@ def apply_relevance_filter(entries, field, actor_type=None):
     top (see is_eu_relevant()), since these are global journals that
     publish plenty of non-EU climate/energy research a topic-only filter
     would happily let through.
+
+    For actor_type == "international-org" (IEA, UNEP, WMO, ...), the topic
+    check is the default (news-style) one, but a second check is layered on
+    top too -- is_io_relevant(), an OR-gate (EU-relevant OR a global
+    climate-benchmark keyword) rather than the academic gate's strict AND,
+    since these sources are worth keeping for their global "1.5C stocktake"
+    reporting just as much as for EU-specific coverage.
     """
     if field != "green-deal":
         return entries
@@ -635,6 +692,7 @@ def apply_relevance_filter(entries, field, actor_type=None):
     kept = []
     skipped = 0
     eu_skipped = 0
+    io_skipped = 0
     for entry in entries:
         if not is_relevant(entry["title"], entry["summary"], actor_type):
             skipped += 1
@@ -642,12 +700,17 @@ def apply_relevance_filter(entries, field, actor_type=None):
         if actor_type == "academic" and not is_eu_relevant(entry["title"], entry["summary"]):
             eu_skipped += 1
             continue
+        if actor_type == "international-org" and not is_io_relevant(entry["title"], entry["summary"]):
+            io_skipped += 1
+            continue
         kept.append(entry)
 
     if skipped:
         print(f"  filtered out {skipped} off-topic item(s)")
     if eu_skipped:
         print(f"  filtered out {eu_skipped} non-EU academic item(s)")
+    if io_skipped:
+        print(f"  filtered out {io_skipped} non-EU/non-global-benchmark international-org item(s)")
 
     return kept
 
