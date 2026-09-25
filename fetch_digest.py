@@ -529,6 +529,7 @@ SCRAPER_HOMEPAGES = {
     "influencemap": "https://influencemap.org",
     "copa_cogeca": "https://www.copa-cogeca.eu",
     "council_eu": "https://www.consilium.europa.eu",
+    "acer": "https://acer.europa.eu",
 }
 
 
