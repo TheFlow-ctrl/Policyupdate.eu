@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-24
+# Weekly Climate, Energy & Environment Digest — 2026-09-25
 
 ### EU ETS amendments: what matters
 *Sandbag — 2026-09-23*
@@ -36,6 +36,33 @@ Abstract Hybrid, transnational governance frameworks such as the European Union�
 
 ---
 
+### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
+*European Environmental Law Review — 2026-09-25*
+
+This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
+
+---
+
+### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
+*European Environmental Law Review — 2026-09-25*
+
+The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
+
+---
+
+### New energy and trade routes could bypass Hormuz and change the Middle East. But major challenges remain
+*Chatham House — 2026-09-25*
+
+New energy and trade routes could bypass Hormuz and change the Middle East. But major challenges remain Expert comment thilton.drupal 25 September 2026 The Strait of Hormuz crisis is accelerating a wider reordering of the region, as Iraq, Syria and Lebanon plan new oil pipelines and transport corridors. But whether they can seize the opportunity to diversify will ultimately depend on wider reforms. The war on Iran and the resulting disruption to the Strait of Hormuz has exposed the vulnerability of existing trade and energy routes and unsettled the old balance of power across the Middle East.…
+
+[Read more](https://www.chathamhouse.org/2026/09/new-energy-and-trade-routes-could-bypass-hormuz-and-change-middle-east-major-challenges)
+
+---
+
 ### Chatham House fellow gives evidence at UK parliament committee on global AI governance and risks
 *Chatham House — 2026-09-21*
 
@@ -45,21 +72,12 @@ Chatham House fellow gives evidence at UK parliament committee on global AI gove
 
 ---
 
-### E3G at Climate Week NYC and UNGA81: key events and spokespersons on the ground
-*E3G — 2026-09-17*
+### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
+*European Environmental Law Review — 2026-09-25*
 
-With Climate Week NYC kicking off shortly alongside the ongoing UN General Assembly, E3G is pleased to share some of our programming for the week and offer comment on key moments for interested media. We have an expert team in New York all week who can provide insights and comment on the significant moments for diplomacy set out below. We are bringing together leaders across policy, industry, and finance around the issues central to our work in high-level convenings on energy security , electrification, adaptation , and mobilizing capital for the energy transition . We will also host specific…
+This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
-[Read more](https://www.e3g.org/news/e3g-at-climate-week-nyc-and-unga81/?utm_source=rss&utm_medium=rss&utm_campaign=e3g-at-climate-week-nyc-and-unga81)
-
----
-
-### The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem
-*International Crisis Group — 2026-09-18*
-
-The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem hschaub Fri, 09/18/2026 - 17:29 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Global 18 September 2026 1 minute The UN’s High Level Week, Secretary-General Selection and “Middle Power” Problem This week on Hold Your Fire!, Richard Atwood is joined by Crisis Group experts Richard Gowan and Daniel Forti to discuss next week’s UN General Assembly high-level week and whether a new Secretary-General…
-
-[Read more](https://www.crisisgroup.org/pod/global/uns-high-level-week-secretary-general-selection-and-middle-power-problem)
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
 
 ---
 
@@ -90,21 +108,48 @@ Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying E
 
 ---
 
-### ‘Coupling without fusion’: Canada and Europe test a new kind of alliance
-*Chatham House — 2026-09-18*
+### Invasive Alien Species and European Union Regulation: Some Reflections
+*European Environmental Law Review — 2026-09-25*
 
-‘Coupling without fusion’: Canada and Europe test a new kind of alliance Expert comment jon.wallace 18 September 2026 The deeper relationship proposed by Carney and von der Leyen could send a powerful geopolitical message. But can agreement be reached without antagonizing EU candidate countries? There is something rather extraordinary about the geopolitical times we live in. They are making what seemed impossible yesterday possible today, and what once sounded laughable increasingly credible. This week’s proposals for closer integration between Canada and the EU undoubtedly belongs to that…
+This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
-[Read more](https://www.chathamhouse.org/2026/09/coupling-without-fusion-canada-and-europe-test-new-kind-alliance)
+[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
 
 ---
 
-### Sweden’s 2026 election: Social Democrats lost the battle but won the war?
-*FEPS (S&D) — 2026-09-18*
+### The Climate Briefing: Contested waters in international politics
+*Chatham House — 2026-09-25*
 
-In last week’s parliamentary elections in Sweden, the Swedish Social Democratic Party undoubtedly became the largest party, with the support of 28 per cent of voters and a strong chance of leading the next government by replacing the incumbent right-wing one. Yet, within Swedish Social Democracy, a sense of dissatisfaction prevails. How did this come about? In a fragmented parliament with eight parties, 28 per cent of the popular vote is not a disaster – especially not from a European perspective. When conservative Prime Minister Ulf Kristersson steps down after four years, it will be the…
+The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
 
-[Read more](https://feps-europe.eu/swedens-2026-election-social-democrats-lost-the-battle-but-won-the-war/)
+[Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
+
+---
+
+### The Climate Briefing: Contested waters in international politics
+*Chatham House — 2026-09-25*
+
+The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
+
+[Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
+
+---
+
+### Equal rights, unequal choices: making gender equality real for Gen Z
+*FEPS (S&D) — 2026-09-25*
+
+What does gender equality mean if you can work full-time and still not afford to live independently, or if caring for others comes at the cost of your career? For Gen Z, equality cannot be reduced to rights on paper. It must mean having the real freedom and the material means to choose how to live. Gen Z has grown up with more formal gender equality than any previous generation. Yet the material freedom needed to make that equality real is becoming harder to secure. Young people have more rights, more awareness and more freedom on paper, but increasingly fewer of the material conditions…
+
+[Read more](https://feps-europe.eu/equal-rights-unequal-choices-making-gender-equality-real-for-gen-z/)
+
+---
+
+### Europe’s Responsibility: Defending the Universal Idea of Science
+*Wilfried Martens Centre (EPP) — 2026-09-25*
+
+A recent speech by Esra Albayrak , a Turkish sociologist and daughter of President Recep Tayyip Erdoğan, at the World Decolonisation Forum in Istanbul is a wake-up call for a debate Europe can no longer avoid. Albayrak called for new centres of knowledge beyond Paris, London and New York, arguing that science is never neutral and that knowledge is shaped by class, power and geography. Nothing new, you might say: this criticism is decades old. It is now widely acknowledged in the so-called “Western sciences” that modern scientific institutions did not develop outside history; colonial and…
+
+[Read more](https://www.martenscentre.eu/blog/europes-responsibility-defending-the-universal-idea-of-science/)
 
 ---
 
@@ -126,30 +171,30 @@ Somalia Awaits a New Security Order as Mission Drawdown Looms pfranz Fri, 09/18/
 
 ---
 
-### Artificial Intelligence, Real Fears: Is it time to slow down?
-*Chatham House — 2026-09-18*
+### China rising, America in decline? The Trump-Xi summit
+*Chatham House — 2026-09-25*
 
-Artificial Intelligence, Real Fears: Is it time to slow down? Audio sseth.drupal@c… 18 September 2026 On this week’s episode of Independent Thinking, our experts discuss the growing fears around the development of AI. A call by leaders of the tech giants on the frontier of Artificial Intelligence to ‘slow the pace’ of its development has sparked debate over the risks associated with AI. Does AI represent an existential threat, and if so, how urgent are the warnings? Or can humanity harness this powerful technology to our benefit? Our experts discuss the implications for international…
+China rising, America in decline? The Trump-Xi summit Audio sseth.drupal@c… 25 September 2026 In this week’s episode of Independent Thinking, our experts discuss the Trump-Xi summit in Washington and the increasing competition between the two superpowers. President Donald Trump welcomes Xi Jinping to Washington with the US-China dynamic in a moment of historic flux. China is rising economically and militarily, while the US is mired in the Iran war, alienating allies and pursuing Trump’s unpredictable trade and tariff disputes. What do the two leaders want from this meeting, and will they get…
 
-[Read more](https://www.chathamhouse.org/2026/09/artificial-intelligence-real-fears-time-slow-down-independent-thinking-podcast)
-
----
-
-### The Houthis, the Saudis and the New Red Sea Politics
-*International Crisis Group — 2026-09-18*
-
-The Houthis, the Saudis and the New Red Sea Politics hschaub Fri, 09/18/2026 - 15:17 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 18 September 2026 1 minutes The Houthis, the Saudis and the New Red Sea Politics This week on The Horn , Alan talks with Crisis Group experts Yasmine Farouk and Ahmed Nagi about what’s behind the Houthi offensive in Yemen, Saudi Arabia’s response and the implications of emerging Saudi-backed security partnerships for the Red Sea and the Horn…
-
-[Read more](https://www.crisisgroup.org/pod/africa/horn-africa/houthis-saudis-and-new-red-sea-politics)
+[Read more](https://www.chathamhouse.org/2026/09/china-rising-america-decline-trump-xi-summit-independent-thinking-podcast)
 
 ---
 
-### A State of the Union bereft of coherence and clarity
-*FEPS (S&D) — 2026-09-18*
+### FIIA appoints 13 non-resident fellows for 2026–2029
+*FIIA (Finnish Institute of International Affairs) — 2026-09-25*
 
-The State of the Union is a very special exercise for the president of the European Commission. Its main purpose is to show that the Commission has a clear vision to tackle the numerous challenges and perils the Union is facing, and that, despite the complex environment, there is an experienced pilot at the helm. Indeed, this year’s statement takes place at an exceptionally difficult time, as President Ursula von der Leyen has said from the outset. Her description and diagnosis of the geopolitical and internal challenges and transformation are accurate enough. But what about her answers and…
+The Finnish Institute of International Affairs is pleased to announce the appointment of 13 distinguished experts as non-resident fellows for the 2026–2029 term. The fellows will strengthen FIIA’s four research programmes by increasing the depth and breadth of expertise at FIIA and by contributing to publications and events. Their profiles can be found on the Researchers page . Finland and Northern European Security research programme Valtteri Vuorisalo , Digital Defence Ecosystem The European Union and Strategic Competition Manuel Müller , University of Helsinki Russia, Eastern Europe and…
 
-[Read more](https://feps-europe.eu/a-state-of-the-union-bereft-of-coherence-and-clarity/)
+[Read more](https://fiia.fi/en/news/fiia-appoints-13-non-resident-fellows-for-2026-2029)
+
+---
+
+### Gen Z’s political divide isn’t really about gender
+*FEPS (S&D) — 2026-09-25*
+
+Progressives risk misreading Generation Z by treating social media, the manosphere and changing gender norms as the main explanation for young people’s political divergence. These forces matter. But the evidence points to something deeper: economic insecurity, institutional distrust and individualisation are shaping an entire generation, even if men and women often express that malaise differently. When progressives discuss young people, one story increasingly dominates. Young men are drifting to the right because TikTok, YouTube and the manosphere expose them to antifeminist ideas; young…
+
+[Read more](https://feps-europe.eu/gen-zs-political-divide-isnt-really-about-gender/)
 
 ---
 
@@ -189,15 +234,6 @@ Updates from the UN General Assembly 2026 eschelhaas Mon, 09/21/2026 - 15:56 Lat
 
 ---
 
-### Closing the New War Front in Yemen
-*International Crisis Group — 2026-09-18*
-
-Closing the New War Front in Yemen cthuratong Fri, 09/18/2026 - 13:46 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Internally displaced (IDP) Yemenis who fled their homes due to renewed clashes between Yemen's Saudi-backed government forces and the country's Houthi rebels drive to the safety of al-Kadah in the Taiz Governorate, southwestern Yemen on September 6, 2026. Ahmad Al-Basha / AFP Statement / Middle East & North Africa 18 September 2026 9 minutes Closing the New War Front in…
-
-[Read more](https://www.crisisgroup.org/stm/middle-east-north-africa/yemen-saudi-arabia-iran/closing-new-war-front-yemen)
-
----
-
 ### Can a fortress be attractive?
 *FEPS (S&D) — 2026-09-21*
 
@@ -216,15 +252,6 @@ Watch the webinar Background Background On 17 July 2026, the European Commission
 
 ---
 
-### On Our Radar
-*International Crisis Group — 2026-09-17*
-
-On Our Radar eschelhaas Fri, 09/18/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 18 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter…
-
-[Read more](https://www.crisisgroup.org/sco/global/our-radar)
-
----
-
 ### Plastics Europe’s Position on the EU ETS Review
 *PlasticsEurope — 2026-09-21*
 
@@ -240,6 +267,15 @@ Plastics Europe calls for an EU ETS revision that preserves Europe’s industria
 This briefing series monitors upcoming free trade agreements (FTAs) that are either being negotiated or concluded by the European Union and conducts assessments for their sustainability provisions. The post Sustainability in EU FTAs: Monitoring briefings appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/sustainability-in-eu-ftas-monitoring-briefings/)
+
+---
+
+### Speech by President von der Leyen at the High-Level meeting on Climate Action and Just Transition
+*European Commission — Press Corner — 2026-09-23*
+
+European Commission Speech New York, 24 Sep 2026 President Erdoğan, Prime Minister Albanese, It is good to be back in the United Nations to discuss climate and energy policy. I think this summer was a summer o...
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1955)
 
 ---
 
@@ -288,6 +324,15 @@ Europe’s cities are facing the local impacts of climate change. Nature-based s
 
 ---
 
+### Circular raw materials for strong industry and quality jobs
+*industriAll Europe — 2026-09-25*
+
+Europe’s circular economy must become a central pillar of an ambitious industrial policy that secures access to critical raw materials, strengthens manufacturin...
+
+[Read more](https://news.industriall-europe.eu/Article/1598)
+
+---
+
 ### New Vision Paper Launch - Canada’s Carbon Market Opportunity: A Vision for Climate Competitiveness and Growth
 *IETA — 2026-09-21*
 
@@ -306,12 +351,12 @@ On 21 September, SIPRI and the African Union (AU) signed a memorandum of underst
 
 ---
 
-### Sustainability criteria can help unlock demand for biomass-derived products
-*Cefic — 2026-09-18*
+### Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
+*IETA — 2026-09-25*
 
-Cefic is calling for an EU-wide sustainability framework for biomass used in products tied to market-pull measures.
+Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
 
-[Read more](https://cefic.org/news/sustainability-criteria-can-help-unlock-demand-for-biomass-derived-products/)
+[Read more](https://www.ieta.org/news/malaysia-advances-carbon-market-implementation-through-public-private-dialogue)
 
 ---
 
