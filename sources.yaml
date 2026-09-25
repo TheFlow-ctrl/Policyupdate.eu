@@ -627,6 +627,23 @@ sources:
     # the full firehose feed (not a topic-tag-scoped one) since EPRS's
     # climate-tagging is inconsistent post-to-post -- relies on the site's
     # own keyword filter like CEPS/EPC do for the same broad-source reason.
+  - name: European Parliament — Press releases (Health and environment)
+    url: https://www.europarl.europa.eu/rss/topic/911/en.xml
+    field: green-deal
+    actor_type: eu-institution
+    # The Parliament's own official press office -- distinct from EPRS
+    # above (EPRS is the in-house research service; this is Parliament's
+    # actual news/press output: plenary votes, committee decisions,
+    # legislative announcements). Confirmed live Sep 2026, e.g. a real item
+    # on the deforestation law (EUDR) postponement/simplification deal.
+    # Parliament's RSS feeds are split by topic, not a single firehose;
+    # "Health and environment" (topic id 911) is the closest fit -- also
+    # carries some non-GD public-health/consumer items (worker mental
+    # health, a customs authority hearing), screened out by the standard
+    # keyword filter same as every other broad source in this file. A
+    # plenary-only or committee-only feed also exists
+    # (rss/doc/press-releases-plenary or -committees) if this one proves
+    # too broad in practice.
   - name: EEA (European Environment Agency) — Press releases
     url: https://www.eea.europa.eu/en/newsroom/rss-feeds/eeas-press-releases-rss/rss.xml
     field: green-deal
@@ -680,6 +697,33 @@ sources:
   # EIB climate finance is genuinely relevant (it's the EU's climate bank,
   # ~50% of lending is climate-related) so this is a real gap, not a
   # dismissal -- would need some other access path to become reachable.
+  - name: ACER (Agency for the Cooperation of Energy Regulators)
+    scraper: acer
+    field: green-deal
+    actor_type: eu-institution
+    # Grid/electricity market regulation -- cross-border capacity, REMIT
+    # enforcement, hydrogen market monitoring. No RSS feed. The www host
+    # (www.acer.europa.eu) intermittently failed to load this session; the
+    # canonical bare host (acer.europa.eu) worked reliably both via a
+    # plain fetch and a real browser -- the scraper uses that one. See
+    # scrape_acer() in backend_scrapers.py, confirmed against the live
+    # page's DOM.
+
+  # NOT added: ECHA (European Chemicals Agency) -- REACH, CLP, PFAS
+  # restrictions, all directly relevant, and a real gap. No RSS feed
+  # found anywhere on the site (checked the page <head> for an
+  # alternate/RSS link too -- none). The News page is gated behind an
+  # Azure WAF "checking you're not a bot" JS challenge that resolved in
+  # ~6s in a real browser without any click needed -- but a plain
+  # requests.get() (no JS execution) doesn't just hang on that challenge,
+  # it gets served a stale legacy snapshot of the page instead (confirmed:
+  # returned real-looking but years-old items from 2019/2020, not current
+  # news) -- the same "broken legacy fallback served to simple fetches"
+  # pattern documented for WWF elsewhere in this file. That makes it worse
+  # than a clean block: a naive scraper wouldn't error, it would silently
+  # return stale content that just happens to always fail the cutoff
+  # check today. Would need headless-browser infrastructure
+  # (Playwright/Selenium) to clear the JS challenge and see real content.
 
   # NOT added: European Court of Auditors (ECA). No RSS/Atom feed exists --
   # confirmed via a research agent that actually rendered the JS-driven
