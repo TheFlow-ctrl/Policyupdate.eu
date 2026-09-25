@@ -1115,6 +1115,304 @@ def scrape_ieta(cutoff):
     return items
 
 
+def scrape_euromines(cutoff):
+    """
+    https://euromines.org/news/ (WordPress + Elementor + a "Unite Loop"-style
+    filterable-list shortcode plugin, no RSS feed anywhere on the site --
+    confirmed via browser DOM inspection). Server-rendered cards:
+
+        <article class="ul-card ul-card--blue-split">
+          <div class="ul-card--blue-split__content">
+            <div class="ul-card--blue-split__date">22 September 2026</div>
+            <h3 class="ul-card--blue-split__title">
+              <a href="https://euromines.org/member-spotlight-.../">Title</a>
+            </h3>
+            <div class="ul-card--blue-split__excerpt">Summary...</div>
+          </div>
+          <div class="ul-card--blue-split__cta">
+            <a class="ul-btn--view" href="...">More Details</a>
+          </div>
+        </article>
+
+    Date format is "%d %B %Y" (no leading zero, confirmed against both
+    "22 September 2026" and "8 September 2026"). Mining/raw-materials trade
+    body -- CRMA and permitting reform are the main EU-policy angle.
+    """
+    org = "Euromines"
+    items = []
+    try:
+        soup = _get_soup("https://euromines.org/news/")
+        for card in soup.select("article.ul-card--blue-split"):
+            date_el = card.select_one(".ul-card--blue-split__date")
+            title_a = card.select_one(".ul-card--blue-split__title a")
+            excerpt_el = card.select_one(".ul-card--blue-split__excerpt")
+            if not date_el or not title_a or not title_a.get("href"):
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            summary = excerpt_el.get_text(strip=True) if excerpt_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_euromines failed: {exc}")
+        return []
+    return items
+
+
+def scrape_eurogas(cutoff):
+    """
+    https://www.eurogas.org/resources/news-press-releases/ (WordPress with a
+    custom "search-filter" plugin; the site's own /feed/ endpoint exists but
+    reliably returns zero <item> entries -- confirmed on two separate
+    checks -- so this scrapes the actual listing page instead). Server-
+    rendered cards:
+
+        <div class="list-item news">           <!-- or "list-item press-release" -->
+          <div class="list-item-wrapper has-image">
+            <a class="list-thumbnail" href="...">...</a>
+            <div class="list-content-wrapper">
+              <div class="list-content-header">
+                <span class="list-tag">News</span>   <!-- or "Press Release" -->
+              </div>
+              <div class="list-content-body">
+                <h4 class="list-title"><a href="...">Title</a></h4>
+              </div>
+              <div class="list-content-footer">
+                <a class="list-read-more">Read more</a>
+                <span class="list-date">27/07/2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    Date format is "%d/%m/%Y". No excerpt text on the listing; summary
+    falls back to the title (same as IETA/ClientEarth above). Mix of actual
+    policy press releases and routine internal news (hiring, new members)
+    -- left as-is since the pipeline's own keyword filter screens for
+    relevance, same approach as every other broad-feed source in this file.
+    """
+    org = "Eurogas"
+    items = []
+    try:
+        soup = _get_soup("https://www.eurogas.org/resources/news-press-releases/")
+        for card in soup.select("div.list-item"):
+            title_a = card.select_one(".list-title a")
+            date_el = card.select_one(".list-date")
+            if not title_a or not title_a.get("href") or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d/%m/%Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_eurogas failed: {exc}")
+        return []
+    return items
+
+
+def scrape_influencemap(cutoff):
+    """
+    https://influencemap.org/reports (custom CMS, no RSS feed). Server-
+    rendered cards -- confirmed via live DOM inspection:
+
+        <div class="imcard imcard-briefing imcard-lobbymap ...">
+          <div class="row"><div class="col-sm-12">
+            <a href="/briefing/EU-Emissions-Trading-System-...-39984">
+              <div class="imcard-image"><img ...></div>
+            </a>
+          </div></div>
+          <div class="row"><div class="col-sm-12"><div class="imcard-inner">
+            <a href="/briefing/...-39984"><h3>Title</h3></a>
+            <h4 class="timestamp">September 2026</h4>
+            <p>Summary...</p>
+            <div class="macro-tag-list tag-list">...</div>
+          </div></div></div>
+        </div>
+
+    Date format is "%B %Y" -- month + year only, no day (defaults to the
+    1st via strptime, which is fine for a "last N days" cutoff check at
+    this granularity). Report links are relative (/briefing/...), joined
+    against the site root. InfluenceMap's own corporate-lobbying research
+    is squarely this tracker's beat -- covers EU ETS, CBAM-adjacent heavy
+    industry, and sector-specific climate-policy engagement analysis.
+    """
+    org = "InfluenceMap"
+    base = "https://influencemap.org"
+    items = []
+    try:
+        soup = _get_soup("https://influencemap.org/reports")
+        for card in soup.select("div.imcard"):
+            title_el = card.select_one("h3")
+            date_el = card.select_one("h4.timestamp")
+            link_el = card.select_one("a[href]")
+            summary_el = card.select_one("p")
+            if not title_el or not date_el or not link_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, link_el["href"])
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_influencemap failed: {exc}")
+        return []
+    return items
+
+
+def scrape_copa_cogeca(cutoff):
+    """
+    https://www.copa-cogeca.eu/press-releases -- the listing itself is a
+    DevExtreme JS data grid with no server-rendered rows (a plain fetch
+    only returns the empty grid shell), but it turned out to be backed by
+    a plain, unauthenticated JSON API, found via live network-request
+    inspection while the grid loaded:
+
+        GET /pluriworks/v1/Publications?action=Get&skip=0&take=<n>
+            &requireTotalCount=true&sort=[{"selector":"Date","desc":true}]
+            &category=&prefilter=Custom.WebsiteSection=1
+
+    Response shape (confirmed against a live pull):
+        {"data": [
+            {"ThreadID": 13656212,
+             "Name": "Press Release - ...",
+             "Date": "2026-09-15T14:39:38.787",   # local time, no tz suffix
+             "Files": [
+                {"ID": 13656227, "Language": "en", "Extension": ".docx",
+                 "Title": "..."},
+                {"ID": 13657110, "Language": "de", ...}, ...
+             ]},
+            ...
+        ]}
+
+    No plain-language excerpt in the payload -- summary falls back to the
+    title, same as several RSS-less industry sources above. No HTML
+    landing page either: every item is a multi-language document bundle,
+    so the link goes straight to the English .docx via
+    /Flexpage/DownloadFile/?id=<file id> (falls back to whichever language
+    comes first if no English file is listed) -- same "link straight to a
+    document, not a webpage" pattern as Cement Europe's press releases.
+    This is an internal API, not a documented public interface, so it
+    could change or start requiring auth without notice -- unlike the
+    other scrapers in this file it isn't HTML-selector-fragile, but it is
+    endpoint-fragile in its own way.
+    """
+    org = "Copa-Cogeca"
+    base = "https://www.copa-cogeca.eu"
+    items = []
+    try:
+        resp = requests.get(
+            f"{base}/pluriworks/v1/Publications",
+            headers=HEADERS,
+            params={
+                "action": "Get",
+                "skip": 0,
+                "take": 40,
+                "requireTotalCount": "true",
+                "sort": '[{"selector":"Date","desc":true}]',
+                "category": "",
+                "prefilter": "Custom.WebsiteSection=1",
+            },
+            timeout=REQUEST_TIMEOUT,
+        )
+        resp.raise_for_status()
+        for entry in resp.json().get("data", []):
+            title = entry.get("Name")
+            if not title:
+                continue
+            dt = _parse_date(entry.get("Date", ""), ["%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            files = entry.get("Files") or []
+            file_ = next((f for f in files if f.get("Language") == "en"), None) or (files[0] if files else None)
+            if not file_ or not file_.get("ID"):
+                continue
+
+            link = f"{base}/Flexpage/DownloadFile/?id={file_['ID']}"
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_copa_cogeca failed: {exc}")
+        return []
+    return items
+
+
+def scrape_council_eu(cutoff):
+    """
+    https://www.consilium.europa.eu/en/press/press-releases/ (Council of
+    the EU + European Council joint press listing, "GSC" CMS). Server-
+    rendered cards -- confirmed via live DOM inspection:
+
+        <li class="gsc-excerpt-item" data-theme="ceu">
+          <a class="gsc-excerpt-item__link" href="/en/press/press-releases/2026/09/25/...">
+            <div class="gsc-excerpt-item__header">
+              <span class="gsc-excerpt-item__title ...">Title</span>
+              <time datetime="9/25/2026 1:10:00 PM" class="gsc-date__date gsc-time-badge">13:10</time>
+            </div>
+            <div id="excerpt-text"><p>Summary...</p></div>
+            <footer class="gsc-excerpt-item__footer">
+              <span class="gsc-tag">Council of the EU</span>  <!-- or "European Council" -->
+            </footer>
+          </a>
+        </li>
+
+    Uses the <time datetime="..."> attribute rather than the human "13:10"
+    text -- it carries the full date, format "%m/%d/%Y %I:%M:%S %p".
+    Covers both the Council of the EU and the European Council (the
+    gsc-tag footer distinguishes them, not split into separate feeds here
+    since both bodies' press releases matter for this tracker and the
+    volume doesn't warrant it). Caution: this domain sits behind
+    Cloudflare, and one browser session hit an interactive "verify you're
+    human" challenge on this exact URL while a separate plain HTTP fetch
+    on the same URL, and a later browser reload, both got real content
+    straight through -- the challenge appears intermittent/session-based
+    rather than a hard block, but a run could still occasionally return
+    zero items if it's re-triggered. _get_soup's normal try/except means
+    that shows up as an empty result for this source that run, not a
+    crash of the whole pipeline.
+    """
+    org_ceu = "Council of the EU"
+    org_euco = "European Council"
+    base = "https://www.consilium.europa.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/en/press/press-releases/")
+        for card in soup.select("li.gsc-excerpt-item"):
+            link_el = card.select_one("a.gsc-excerpt-item__link")
+            title_el = card.select_one(".gsc-excerpt-item__title")
+            time_el = card.select_one("time")
+            text_el = card.select_one("#excerpt-text p")
+            tag_el = card.select_one(".gsc-tag")
+            if not link_el or not link_el.get("href") or not title_el or not time_el:
+                continue
+
+            dt = _parse_date(time_el.get("datetime", ""), ["%m/%d/%Y %I:%M:%S %p"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, link_el["href"])
+            summary = text_el.get_text(strip=True) if text_el else title
+            tag = tag_el.get_text(strip=True) if tag_el else ""
+            org = org_euco if "european council" in tag.lower() else org_ceu
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_council_eu failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -1135,4 +1433,9 @@ SCRAPERS = {
     "fern": scrape_fern,
     "cembureau": scrape_cembureau,
     "ieta": scrape_ieta,
+    "euromines": scrape_euromines,
+    "eurogas": scrape_eurogas,
+    "influencemap": scrape_influencemap,
+    "copa_cogeca": scrape_copa_cogeca,
+    "council_eu": scrape_council_eu,
 }
