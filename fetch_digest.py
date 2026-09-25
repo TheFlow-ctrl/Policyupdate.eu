@@ -530,6 +530,8 @@ SCRAPER_HOMEPAGES = {
     "copa_cogeca": "https://www.copa-cogeca.eu",
     "council_eu": "https://www.consilium.europa.eu",
     "acer": "https://acer.europa.eu",
+    "echa": "https://echa.europa.eu",
+    "eca": "https://www.eca.europa.eu",
 }
 
 
