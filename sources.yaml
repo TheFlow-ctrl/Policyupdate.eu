@@ -276,6 +276,62 @@ sources:
     # recurring topic. No RSS feed; see scrape_ieta() in
     # backend_scrapers.py, confirmed against the live page's DOM.
 
+  - name: Eurogas
+    scraper: eurogas
+    field: green-deal
+    actor_type: industry
+    # Gas industry -- REPowerEU, methane regulation, renewable/low-carbon
+    # gas rules. The site's WordPress /feed/ endpoint exists but reliably
+    # returns zero <item> entries (checked twice); scrapes the actual News
+    # & Press Releases listing page instead, see scrape_eurogas() in
+    # backend_scrapers.py. Mix of real press releases and routine internal
+    # news (hiring, new members) -- relies on the standard keyword filter
+    # to surface the policy-relevant ones, same as other broad sources.
+  - name: Euromines
+    scraper: euromines
+    field: green-deal
+    actor_type: industry
+    # Mining/raw materials -- Critical Raw Materials Act, permitting
+    # reform, ETS. No RSS feed; see scrape_euromines() in
+    # backend_scrapers.py, confirmed against the live page's DOM.
+  - name: ECSA (European Community Shipowners' Associations)
+    url: https://ecsa.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Maritime shipping -- FuelEU Maritime, EU ETS extension to shipping,
+    # ship recycling regulation. Confirmed working, actively updated
+    # (real item dated within the past week at last check).
+  - name: EURACOAL (European Association for Coal and Lignite)
+    url: https://euracoal.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Coal phase-out, just-transition funding, methane rules for mining.
+    # Confirmed working but low-frequency (last item ~6 months old at last
+    # check) -- a naturally sparse feed given the sector's decline, not
+    # treated as abandoned the way the 18-24-month-stale feeds elsewhere
+    # in this file are (e.g. Friends of the Earth Europe, Fertilizers
+    # Europe).
+
+  - name: Copa-Cogeca
+    scraper: copa_cogeca
+    field: green-deal
+    actor_type: industry
+    # EU farmers' & agri-cooperatives' umbrella -- CAP, Farm to Fork,
+    # Nitrates Directive, pesticides, CBAM (agri-input costs). One of the
+    # most active lobbies on Green Deal agri-files. The press-releases
+    # listing itself is a DevExtreme JS data grid with no server-rendered
+    # rows (same limitation as the European Court of Auditors, see below)
+    # -- but it turned out to be backed by a plain, unauthenticated JSON
+    # API, found via live network-request inspection while the grid
+    # loaded. See scrape_copa_cogeca() in backend_scrapers.py. No HTML
+    # landing page -- links go straight to the English .docx of each
+    # (usually multi-language) press release.
+
+  # NOT added: FoodDrinkEurope. No RSS feed found, and the homepage/news
+  # section renders almost no content through a plain fetch (likely
+  # heavily JS-driven) -- not pursued further given the low initial
+  # signal; worth a second look with more time.
+
   # --- Trade unions ------------------------------------------------------
   # Labour's voice in the EU Green Deal debate -- distinct from both the
   # ngo and industry categories (see actor_type note above).
@@ -418,6 +474,25 @@ sources:
     # Articles and Position papers content. Broad-topic feed like Corporate
     # Europe Observatory above -- relies on the standard green-deal keyword
     # filter to surface only its EU-policy-relevant posts.
+
+  # NOT added: Friends of the Earth Europe. Correct live domain is
+  # friendsoftheearth.eu (foeeurope.org, the name Flo would expect, is dead
+  # -- returns nothing). Feed at friendsoftheearth.eu/feed/ is structurally
+  # valid but stale: lastBuildDate and the one item present are both dated
+  # Dec 2024, ~21 months old as of this check (Sep 2026) -- effectively
+  # abandoned, same call as Fertilizers Europe/CarbonFuture elsewhere in
+  # this file. Worth re-checking periodically in case they've moved back
+  # to it or onto a different platform.
+  - name: InfluenceMap
+    scraper: influencemap
+    field: green-deal
+    actor_type: ngo
+    # Corporate climate-lobbying research -- EU ETS, CBAM-adjacent heavy
+    # industry, sector-specific policy-engagement analysis. No RSS feed
+    # (influencemap.org/rss returns nothing); scrapes the Reports listing
+    # instead, see scrape_influencemap() in backend_scrapers.py, confirmed
+    # against the live page's DOM. Dates on that page are month+year only
+    # (no day), which is fine at this granularity for a cutoff check.
 
   # --- Academic journals -----------------------------------------------------
   # Confirmed working feeds (fetched live and checked for real, current
@@ -563,6 +638,48 @@ sources:
     # Both EEA feeds are general (EEA doesn't split by sub-topic, only by
     # content type), but since EEA's entire remit is environment/climate,
     # that's narrow enough on its own -- confirmed live, real dated entries.
+  - name: European Commission — Press Corner
+    url: "https://ec.europa.eu/commission/presscorner/api/rss?type=news&pagesize=25"
+    field: green-deal
+    actor_type: eu-institution
+    # The Commission's own official press-release/speech/statement wire --
+    # confirmed live Sep 2026 (real dated items). This is the single most
+    # authoritative voice missing from the tracker before now: actual
+    # Commission announcements, not third-party commentary on them. Very
+    # broad by design (covers every policy area: foreign affairs, health,
+    # trade...), and the API's topics=/policyarea= query params were tested
+    # and silently ignored server-side (identical unfiltered results either
+    # way), so there's no way to pre-scope this one at the source -- it
+    # leans entirely on the site's own keyword filter, same as EPRS/CORDIS
+    # above. Worth the noise for the items that DO match (climate action,
+    # ETS, CBAM, Green Deal legislative announcements straight from DG
+    # COMM) -- confirmed via a live pull that a CLIMACTION-tagged item
+    # (VP von der Leyen's UN climate speech) was present in the same feed.
+  - name: Council of the EU / European Council — Press releases
+    scraper: council_eu
+    field: green-deal
+    actor_type: eu-institution
+    # Member states' own voice at EU level -- Council/Environment Council
+    # conclusions and formal Council positions are frequently Green Deal-
+    # relevant (e.g. a live example seen at check time: "Market stability
+    # reserve: Council agrees targeted amendment for a resilient and
+    # predictable carbon market"). No RSS feed (the historical rss.aspx
+    # and ?rss=true endpoints are gone); see scrape_council_eu() in
+    # backend_scrapers.py, confirmed against the live page's DOM. Domain
+    # sits behind Cloudflare and one check hit an interactive challenge on
+    # this URL before a later check went through cleanly -- see the
+    # scraper's own docstring for the caveat; not expected to break the
+    # pipeline, just to occasionally return fewer items on a bad run.
+
+  # NOT added: European Investment Bank (EIB) press. No public RSS feed
+  # found at the expected /en/press/rss path (empty response, not a
+  # redirect). Scraper attempt (Sep 2026) also failed: eib.org/en/press/all
+  # returned a hard Cloudflare "Attention Required" block even to a real
+  # browser session -- same domain-level WAF/bot-blocking as WWF above, not
+  # a JS-rendering problem, so there's no DOM to build selectors against.
+  # EIB climate finance is genuinely relevant (it's the EU's climate bank,
+  # ~50% of lending is climate-related) so this is a real gap, not a
+  # dismissal -- would need some other access path to become reachable.
 
   # NOT added: European Court of Auditors (ECA). No RSS/Atom feed exists --
   # confirmed via a research agent that actually rendered the JS-driven
