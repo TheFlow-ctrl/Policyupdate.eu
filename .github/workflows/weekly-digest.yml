@@ -25,6 +25,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install Playwright's Chromium browser
+        # Only needed for the headless-browser scrapers in
+        # browser_scrapers.py (currently: ECHA, gated behind a JS bot
+        # check that plain requests can't clear). --with-deps also
+        # installs the system libraries Chromium needs on this runner --
+        # skipping it is the #1 cause of "works locally, fails in CI" for
+        # Playwright.
+        run: playwright install --with-deps chromium
+
       - name: Run digest script
         run: python fetch_digest.py
 
