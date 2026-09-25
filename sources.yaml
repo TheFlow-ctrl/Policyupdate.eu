@@ -688,15 +688,37 @@ sources:
     # scraper's own docstring for the caveat; not expected to break the
     # pipeline, just to occasionally return fewer items on a bad run.
 
+  - name: European Ombudsman
+    url: "https://www.ombudsman.europa.eu/rest/rss?lang=en"
+    field: green-deal
+    actor_type: eu-institution
+    # Maladministration inquiries into EU institutions -- occasionally
+    # Green Deal-adjacent (transparency of Commission stakeholder
+    # meetings, access-to-documents rulings on climate-relevant dossiers).
+    # No feed is advertised as a plain link anywhere on the site; found by
+    # using the site's own RSS-generator UI (Newsroom > RSS), which builds
+    # a URL at /rest/rss -- the *unfiltered* default (no query params)
+    # mixes in every language the site publishes in, which is mostly
+    # noise, so this uses that endpoint's lang=en query param to get an
+    # English-only feed instead. Confirmed live Sep 2026. Broad (all
+    # content types: speeches, decisions, declarations, not just news) --
+    # relies on the standard keyword filter like every other broad source
+    # in this file.
+
   # NOT added: European Investment Bank (EIB) press. No public RSS feed
   # found at the expected /en/press/rss path (empty response, not a
-  # redirect). Scraper attempt (Sep 2026) also failed: eib.org/en/press/all
-  # returned a hard Cloudflare "Attention Required" block even to a real
-  # browser session -- same domain-level WAF/bot-blocking as WWF above, not
-  # a JS-rendering problem, so there's no DOM to build selectors against.
-  # EIB climate finance is genuinely relevant (it's the EU's climate bank,
-  # ~50% of lending is climate-related) so this is a real gap, not a
-  # dismissal -- would need some other access path to become reachable.
+  # redirect). Re-confirmed blocked (Sep 2026, specifically re-tested
+  # after building headless-browser infrastructure for ECHA/ECA):
+  # eib.org/en/press/all returns a hard Cloudflare "Sorry, you have been
+  # blocked" page, not a JS challenge or interactive CAPTCHA -- there's no
+  # puzzle to solve or JS to wait out, it's an unconditional WAF deny rule.
+  # A headless browser makes the exact same kind of request from the same
+  # kind of environment, so it hits the identical block; this is NOT a
+  # case headless-browser scraping solves, unlike ECHA/ECA. EIB climate
+  # finance is genuinely relevant (it's the EU's climate bank, ~50% of
+  # lending is climate-related) so this stays flagged as a real gap, not
+  # a dismissal -- would need some other access path (e.g. a mirror, or a
+  # non-datacenter IP) to become reachable, not more scraper cleverness.
   - name: ACER (Agency for the Cooperation of Energy Regulators)
     scraper: acer
     field: green-deal
@@ -709,35 +731,41 @@ sources:
     # scrape_acer() in backend_scrapers.py, confirmed against the live
     # page's DOM.
 
-  # NOT added: ECHA (European Chemicals Agency) -- REACH, CLP, PFAS
-  # restrictions, all directly relevant, and a real gap. No RSS feed
-  # found anywhere on the site (checked the page <head> for an
-  # alternate/RSS link too -- none). The News page is gated behind an
-  # Azure WAF "checking you're not a bot" JS challenge that resolved in
-  # ~6s in a real browser without any click needed -- but a plain
-  # requests.get() (no JS execution) doesn't just hang on that challenge,
-  # it gets served a stale legacy snapshot of the page instead (confirmed:
-  # returned real-looking but years-old items from 2019/2020, not current
-  # news) -- the same "broken legacy fallback served to simple fetches"
-  # pattern documented for WWF elsewhere in this file. That makes it worse
-  # than a clean block: a naive scraper wouldn't error, it would silently
-  # return stale content that just happens to always fail the cutoff
-  # check today. Would need headless-browser infrastructure
-  # (Playwright/Selenium) to clear the JS challenge and see real content.
+  - name: ECHA (European Chemicals Agency)
+    scraper: echa
+    field: green-deal
+    actor_type: eu-institution
+    # REACH, CLP, PFAS restrictions -- directly relevant chemicals
+    # regulation. No RSS feed anywhere on the site. The News page is
+    # gated behind an Azure WAF "checking you're not a bot" JS challenge
+    # -- a plain requests.get() doesn't hang on it, it silently gets
+    # served a stale legacy snapshot instead (years-old 2019/2020 items),
+    # the same "broken legacy fallback" pattern documented for WWF
+    # elsewhere in this file. So this is the one source in the whole list
+    # that goes through a headless browser instead of a plain HTTP
+    # request: see scrape_echa() in browser_scrapers.py (Playwright drives
+    # a real, invisible Chromium that runs the page's JS and waits for the
+    # real content to appear, same as WWF's blocker would eventually need
+    # if that domain's block ever turns out to be JS-gated rather than a
+    # hard WAF wall). Only shows the handful of most-recent items (no
+    # pagination scraped), which is fine for a weekly-cutoff digest.
+    # Needs `playwright install chromium` to have been run once -- see
+    # the CI workflow and requirements.txt.
 
-  # NOT added: European Court of Auditors (ECA). No RSS/Atom feed exists --
-  # confirmed via a research agent that actually rendered the JS-driven
-  # SharePoint site: it loads news/publications via an internal, undocumented
-  # SharePoint WCF POST endpoint (NewsService.svc/Search), not a public feed.
-  # ECA does publish audit special reports directly relevant to Green Deal
-  # spending (EU ETS, biodiversity funding, energy transition...), so it's
-  # worth adding later, but doing so would mean either standing up a
-  # headless-browser scraper (Playwright/Selenium -- a real new dependency,
-  # unlike the requests+BeautifulSoup scrapers in backend_scrapers.py) or
-  # reverse-engineering that internal API, which could break without notice
-  # since it's not a documented public interface. Flagging as a real gap
-  # rather than skipping silently -- worth a deliberate call on whether it's
-  # worth the added infrastructure.
+  - name: European Court of Auditors (ECA)
+    scraper: eca
+    field: green-deal
+    actor_type: eu-institution
+    # Independent EU spending audits -- REPowerEU governance, energy-
+    # renovation cost-effectiveness, critical-infrastructure resilience
+    # are all real examples seen live. No RSS/Atom feed exists (the
+    # listing is backed by an internal, undocumented SharePoint WCF POST
+    # endpoint, not a public interface worth depending on). SharePoint +
+    # React: a plain fetch returns an essentially empty page, the news
+    # cards only exist after client-side JS runs -- so, like ECHA above,
+    # this goes through browser_scrapers.py's headless Chromium instead
+    # of a plain HTTP request. See scrape_eca() there, confirmed against
+    # the live page's DOM once rendered.
 
   - name: Global Environmental Politics
     url: https://direct.mit.edu/rss/site_1000041/advanceAccess_1000023.xml
@@ -911,9 +939,15 @@ sources:
 #    (Sep 2026 attempt): the entire wwf.eu domain returned a hard 403
 #    Forbidden to a real browser, not just a plain HTTP fetch -- this
 #    looks like WAF/bot-blocking at the domain level, not a JS-rendering
-#    problem, so a scraper couldn't be built without first confirming
-#    some other access path works. Listing page (target once reachable):
-#    wwf.eu/wwf_news/media_centre/
+#    problem. Re-confirmed (Sep 2026, re-tested specifically after
+#    building headless-browser infrastructure for ECHA/ECA, see
+#    browser_scrapers.py): still a bare "403 Forbidden" with no
+#    interactive challenge or JS puzzle of any kind -- a headless browser
+#    makes the same request from the same kind of environment and hits
+#    the identical wall, so this is confirmed NOT a headless-browser-
+#    solvable case, unlike ECHA/ECA. Would need a genuinely different
+#    access path (not scraper cleverness) to become reachable. Listing
+#    page (target once reachable): wwf.eu/wwf_news/media_centre/
 #  - JRC Publications Repository -- database/search-driven, PDF-only,
 #    not feed- or easily scraper-friendly
 #  - TNO, EIPA, New Direction -- checked, excluded as too broad/generic,
