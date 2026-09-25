@@ -47,6 +47,20 @@ FIELD = "green-deal"
 # scrape_ceps below). Keeps the scraper polite and fast.
 CEPS_DETAIL_PAGE_CAP = 15
 
+# Same idea as CEPS_DETAIL_PAGE_CAP, for Orgalim's listing (also has no
+# per-item date on the listing page itself -- see scrape_orgalim below).
+ORGALIM_DETAIL_PAGE_CAP = 15
+
+# WMO's news listing uses Tailwind utility classes rather than semantic
+# ones for its date element, which are more likely to change/be
+# regenerated than a real class name -- scrape_wmo() below parses the
+# date out of the card's text via this regex instead of a brittle exact
+# class-combination selector.
+_WMO_DATE_RE = re.compile(
+    r"\b\d{1,2} (?:January|February|March|April|May|June|July|August|"
+    r"September|October|November|December) \d{4}\b"
+)
+
 
 def _get_soup(url, params=None):
     """Fetch a URL and return a BeautifulSoup object, or None on failure."""
@@ -1468,6 +1482,235 @@ def scrape_acer(cutoff):
     return items
 
 
+def scrape_orgalim(cutoff):
+    """
+    https://orgalim.eu/en/news/ (WordPress + a custom "lazyblock" news
+    listing widget). No RSS feed. Server-rendered cards, but with NO
+    per-item date anywhere in the listing markup -- not even hidden:
+
+        <div class="row pb-4 news-item-wrapper clickable-row">
+          <div class="d-flex align-items-center">
+            <div class="news-menu-item-image col-md-6 me-3">...</div>
+            <div class="col-md-6">
+              <div class="news-menu-item-title mb-2">
+                <h4><a href="https://orgalim.eu/en/<slug>/">Title</a></h4>
+              </div>
+              <div class="news-menu-item-cta mt-auto">
+                <a href="...">Learn more ...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    So, same approach as scrape_ceps() above: visits each article's own
+    page to resolve the date/summary from its OpenGraph meta tags
+    (confirmed live -- article:published_time and og:description are
+    both present), capped at ORGALIM_DETAIL_PAGE_CAP to stay polite and
+    fast. Represents Europe's technology industries (engineering,
+    machinery, electronics) -- Ecodesign, circular economy, industrial
+    strategy relevant.
+    """
+    org = "Orgalim"
+    items = []
+    try:
+        soup = _get_soup("https://orgalim.eu/en/news/")
+        cards = soup.select("div.news-item-wrapper")
+        for card in cards[:ORGALIM_DETAIL_PAGE_CAP]:
+            title_a = card.select_one("h4 a")
+            if not title_a or not title_a.get("href"):
+                continue
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+
+            dt = None
+            summary = ""
+            try:
+                detail_soup = _get_soup(link)
+                pub_meta = detail_soup.find(
+                    "meta", attrs={"property": "article:published_time"}
+                )
+                if pub_meta and pub_meta.get("content"):
+                    try:
+                        dt = datetime.fromisoformat(pub_meta["content"])
+                        if dt.tzinfo is not None:
+                            dt = dt.replace(tzinfo=None)
+                    except ValueError:
+                        dt = None
+                desc_meta = detail_soup.find("meta", attrs={"property": "og:description"})
+                if desc_meta and desc_meta.get("content"):
+                    summary = desc_meta["content"]
+            except requests.RequestException as exc:
+                print(f"[backend_scrapers] Orgalim detail fetch failed for {link}: {exc}")
+
+            if not _passes_cutoff(dt, cutoff):
+                continue
+            items.append(_make_item(org, title, link, dt, summary or title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_orgalim failed: {exc}")
+        return []
+    return items
+
+
+def scrape_iea(cutoff):
+    """
+    https://www.iea.org/news. No RSS feed found. Server-rendered cards,
+    confirmed via live DOM inspection:
+
+        <div class="m-news-detailed-listing">
+          <a href="/news/<slug>" class="m-news-detailed-listing__link">
+            <div class="m-news-detailed-listing__content">
+              <span class="a-tag-small">electrification</span>
+              <h5 class="m-news-detailed-listing__title">
+                <span class="m-news-detailed-listing__hover">Title</span>
+              </h5>
+            </div>
+            <div class="m-news-detailed-listing__img">
+              <div class="m-news-detailed-listing__date">22 September 2026</div>
+              ...
+            </div>
+          </a>
+        </div>
+
+    Date format "%d %B %Y". No excerpt on the listing; summary falls back
+    to the title. Global energy authority (World Energy Outlook etc.) --
+    not an EU institution, so this is one of the "international-org"
+    actor_type sources this project runs through a stricter relevance
+    gate (see is_io_relevant() in fetch_digest.py): EU-specific energy-
+    security coverage (e.g. "EU phase-out of Russian gas...") is common
+    enough on this feed to be worth including, but a lot of the firehose
+    is generically global (India, China, US energy news) and gets
+    filtered back out by that gate.
+    """
+    org = "IEA"
+    base = "https://www.iea.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news")
+        for card in soup.select("div.m-news-detailed-listing"):
+            link_el = card.select_one("a.m-news-detailed-listing__link")
+            title_el = card.select_one(".m-news-detailed-listing__title")
+            date_el = card.select_one(".m-news-detailed-listing__date")
+            if not link_el or not link_el.get("href") or not title_el or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, link_el["href"])
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_iea failed: {exc}")
+        return []
+    return items
+
+
+def scrape_unep(cutoff):
+    """
+    https://www.unep.org/news-and-stories. No RSS feed found. Server-
+    rendered cards, confirmed via live DOM inspection:
+
+        <div class="news_whitearea_additional_item">
+          <img ...>
+          <div class="news_whitearea_item_text">
+            <div class="news_whitearea_item_text_meta">
+              02 Sep 2026
+              | Story
+            </div>
+            <a href="/news-and-stories/story/<slug>">Title</a>
+          </div>
+        </div>
+
+    Date format "%d %b %Y" -- the meta div mixes the date and content
+    type together separated by "|", so the date is everything before
+    that separator. Only the ~6 most-recent items are on this block (no
+    pagination scraped) -- UNEP publishes often enough that this is fine
+    for a weekly digest. Global remit, not an EU institution -- see
+    is_io_relevant() in fetch_digest.py for the stricter gate this
+    actor_type goes through; this is exactly the source the "1.5C /
+    global warming" half of that gate was built for (e.g. the live
+    "World set to cross 1.5C global warming" item seen at check time).
+    """
+    org = "UNEP"
+    base = "https://www.unep.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news-and-stories")
+        for card in soup.select("div.news_whitearea_additional_item"):
+            title_a = card.select_one(".news_whitearea_item_text a")
+            meta_el = card.select_one(".news_whitearea_item_text_meta")
+            if not title_a or not title_a.get("href") or not meta_el:
+                continue
+
+            meta_text = meta_el.get_text(" ", strip=True)
+            date_text = meta_text.split("|")[0].strip()
+            dt = _parse_date(date_text, ["%d %b %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = urljoin(base, title_a["href"])
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_unep failed: {exc}")
+        return []
+    return items
+
+
+def scrape_wmo(cutoff):
+    """
+    https://wmo.int/news. No RSS feed found. Server-rendered cards
+    (Drupal, but styled with Tailwind utility classes rather than
+    semantic ones -- the date is parsed out of the card's text via
+    _WMO_DATE_RE rather than chasing a specific utility-class combination
+    that's more likely to be regenerated/changed than a real class name):
+
+        <div class="views-row">
+          <a href="/media/news/<slug>" class="...">
+            <article class="...">
+              <figure>...</figure>
+              <div class="...">
+                <div class="...">News</div>
+                <span class="...">25 September 2026</span>
+              </div>
+              <h2 class="...">Title</h2>
+            </article>
+          </a>
+        </div>
+
+    Global remit, not an EU institution -- see is_io_relevant() in
+    fetch_digest.py for the stricter gate this actor_type goes through.
+    This is the definitive "state of the global climate" voice (record-
+    heat / temperature-goal reporting), exactly the kind of content that
+    gate's global-benchmark half exists to keep even without an EU angle.
+    """
+    org = "WMO"
+    base = "https://wmo.int"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news")
+        for card in soup.select("div.views-row"):
+            link_el = card.select_one("a[href]")
+            title_el = card.select_one("h2")
+            if not link_el or not link_el.get("href") or not title_el:
+                continue
+
+            card_text = card.get_text(" ", strip=True)
+            date_match = _WMO_DATE_RE.search(card_text)
+            dt = _parse_date(date_match.group(0), ["%d %B %Y"]) if date_match else None
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, link_el["href"])
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_wmo failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -1494,6 +1737,10 @@ SCRAPERS = {
     "copa_cogeca": scrape_copa_cogeca,
     "council_eu": scrape_council_eu,
     "acer": scrape_acer,
+    "orgalim": scrape_orgalim,
+    "iea": scrape_iea,
+    "unep": scrape_unep,
+    "wmo": scrape_wmo,
 }
 
 # Headless-browser scrapers (browser_scrapers.py) live in a separate module
