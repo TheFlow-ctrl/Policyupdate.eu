@@ -34,6 +34,11 @@
 #                    itself or its own work (EPRS, CORDIS, EEA...) -- not
 #                    independent, not peer-reviewed academic output, not
 #                    party-affiliated, so none of the other categories fit
+#   international-org -- a global/international body (IEA, UNEP, WMO...),
+#                    distinct from eu-institution: these are NOT EU bodies
+#                    and publish about the whole world, not the EU
+#                    specifically -- see the stricter relevance gate note
+#                    just below for why that distinction matters here.
 # This is a judgment call for a few borderline orgs (documented inline
 # where relevant) -- adjust freely if you disagree with a classification.
 #
@@ -43,6 +48,13 @@
 # a topic-only match (e.g. "renewable energy policy") says nothing about
 # whether the piece is even about the EU. See fetch_digest.py's
 # EU_CONTEXT_KEYWORDS / ACADEMIC_TOPIC_KEYWORDS for the exact logic.
+#
+# international-org sources get a DIFFERENT extra layer: is_io_relevant()
+# is an OR-gate (EU-relevant OR a global climate-policy benchmark like
+# "1.5C" / "state of the global climate" / IPCC), not the academic gate's
+# strict AND -- these sources are worth keeping for genuinely global
+# headline climate reporting just as much as for EU-specific coverage. See
+# fetch_digest.py's IO_GLOBAL_BENCHMARK_KEYWORDS for the exact list.
 #
 # Entries with a "scraper" key (instead of "url") are handled by
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
@@ -589,6 +601,22 @@ sources:
     url: https://open-research-europe.ec.europa.eu/published/rss
     field: green-deal
     actor_type: academic
+  - name: Grantham Research Institute (LSE)
+    url: https://www.lse.ac.uk/granthaminstitute/feed/
+    field: green-deal
+    actor_type: academic
+    # One of the most prominent climate economics/policy institutes
+    # globally (Nicholas Stern's institute) -- EU carbon pricing, climate
+    # finance and Green Deal economics are regular subjects. Feed is
+    # structurally valid and actively maintained (fresh lastBuildDate) but
+    # returned zero <item> entries at last check -- same "confirmed live,
+    # zero items today" call already made for Bankwatch/ECOS elsewhere in
+    # this file, not treated as a dead feed.
+
+  # NOT added: OECD. No RSS feed confirmed working at the paths tried --
+  # unlike IEA/UNEP/WMO below (see the International organisations section),
+  # no working listing page was found either, so this one stays out rather
+  # than getting a custom scraper. Revisit if a working page/feed turns up.
     # Broad by necessity: ORE is EU-funded (Horizon Europe) open-access
     # publishing across ALL research disciplines, and its query parameter
     # is confirmed to NOT scope the feed (tested -- ?q=climate returns the
@@ -766,6 +794,72 @@ sources:
     # this goes through browser_scrapers.py's headless Chromium instead
     # of a plain HTTP request. See scrape_eca() there, confirmed against
     # the live page's DOM once rendered.
+
+  # --- International organisations ---------------------------------------
+  # Global bodies, not EU institutions -- these publish about the whole
+  # world, not the EU specifically. Gated by is_io_relevant() in
+  # fetch_digest.py: EU-relevant OR a global climate-policy benchmark (1.5C,
+  # global stocktake, IPCC, state of the global climate, etc.) -- an OR-gate,
+  # deliberately looser than the academic sources' strict EU-specificity
+  # AND-gate, so that genuinely global headline climate reporting is kept
+  # alongside EU-specific coverage. See IO_GLOBAL_BENCHMARK_KEYWORDS there
+  # for the exact keyword list.
+  - name: Orgalim (Europe's Technology Industries)
+    scraper: orgalim
+    field: green-deal
+    actor_type: international-org
+    # Not actually global (it's a European industry federation -- engineering,
+    # machinery, electronics), but grouped here rather than under industry
+    # since it's a federation-of-federations voice rather than a single
+    # company/sector lobby -- Ecodesign, circular economy, industrial
+    # strategy relevant. No RSS feed, and the listing cards carry no date at
+    # all -- uses the same "fetch each article's detail page for its date"
+    # approach CEPS uses (see CEPS_DETAIL_PAGE_CAP/ORGALIM_DETAIL_PAGE_CAP in
+    # backend_scrapers.py), since Orgalim's article pages carry the same
+    # article:published_time/og:description meta tags CEPS's do.
+  - name: IEA (International Energy Agency)
+    scraper: iea
+    field: green-deal
+    actor_type: international-org
+    # The single most authoritative global energy-transition voice --
+    # World Energy Outlook, renewables/electricity market reports, and
+    # frequent EU-specific analysis (REPowerEU, EU gas storage, ETS). No RSS
+    # feed found. Server-rendered news listing, confirmed via a plain fetch
+    # -- see scrape_iea() in backend_scrapers.py.
+  - name: UNEP (UN Environment Programme)
+    scraper: unep
+    field: green-deal
+    actor_type: international-org
+    # Emissions Gap Report, Adaptation Gap Report and similar flagship
+    # annual assessments are genuinely global-benchmark content (reaches
+    # this tracker via the 1.5C/global-warming OR-gate even without an EU
+    # angle) alongside EU-specific items (EU environmental diplomacy, COP
+    # coordination). No RSS feed found. Server-rendered news listing,
+    # confirmed via a plain fetch -- see scrape_unep() in backend_scrapers.py.
+  - name: WMO (World Meteorological Organization)
+    scraper: wmo
+    field: green-deal
+    actor_type: international-org
+    # State of the Global Climate reports and similar are the clearest
+    # possible case for the global-benchmark OR-gate (temperature records,
+    # warmest year/month) -- rarely EU-specific but exactly the kind of
+    # headline climate reporting the user asked to keep. No RSS feed found;
+    # listing cards carry no semantic date markup, so date is extracted via
+    # a regex over the card's text (see _WMO_DATE_RE in backend_scrapers.py)
+    # rather than a fragile exact-class CSS selector, since WMO's classes
+    # look like regeneratable Tailwind utility classes. Confirmed via a
+    # plain fetch -- see scrape_wmo() in backend_scrapers.py.
+
+  # NOT added: WFP (World Food Programme). Has a working news
+  # search/listing, but checked its full output (2185 results) and it's
+  # overwhelmingly humanitarian/conflict/famine-response content -- Gaza,
+  # Sudan, Yemen and similar crises dominate -- with only a thin, sparse
+  # "Climate Disasters" tag threaded through it. Even with the OR-gate, this
+  # would mean scraping thousands of irrelevant humanitarian-crisis items to
+  # surface a handful of climate-tagged ones, which is a bad cost/signal
+  # trade-off compared to IEA/UNEP/WMO above -- not built. Revisit only if a
+  # feed or endpoint scoped specifically to the "Climate Disasters" tag
+  # turns up.
 
   - name: Global Environmental Politics
     url: https://direct.mit.edu/rss/site_1000041/advanceAccess_1000023.xml
