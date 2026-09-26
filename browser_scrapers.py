@@ -179,7 +179,119 @@ def scrape_eca(cutoff):
     return items
 
 
+def scrape_shareaction(cutoff):
+    """
+    https://shareaction.org/news (Next.js). No RSS/Atom feed exists
+    (the /feed.xml link some pages advertise 404s). A plain fetch
+    returns only the page shell with no article list -- the news grid
+    is populated client-side -- so, like ECHA/ECA above, this goes
+    through a real headless browser instead of a plain HTTP request.
+
+    Rendered cards, confirmed via live DOM inspection:
+
+        <a href="https://shareaction.org/news/defending-your-right-to-attend-agms-in-person"
+           class="block w-1/2 pl-10 mb-10 md:w-1/4">
+          <time class="block py-2 text-xs ...">23 Sept 2026</time>
+          <div class="..."><img ...></div>
+          <h6>Defending your right to attend AGMs in person</h6>
+        </a>
+
+    ShareAction is a UK-based responsible-investment NGO, not an EU
+    body -- most of its campaign content is UK-specific (Living Wage,
+    UK retailers' AGMs) with only occasional EU-policy pieces (SFDR,
+    EU ETS lobbying, EU competitiveness/sustainability-rules debates).
+    Marked eu_gate: true in sources.yaml so only the EU-relevant items
+    surface -- see apply_relevance_filter()'s eu_gate handling in
+    fetch_digest.py. The site's date format is inconsistent -- every
+    month EXCEPT September is a standard 3-letter abbreviation ("Jul",
+    "Aug"), but September itself is spelled "Sept" (4 letters), which
+    Python's %b directive won't match -- normalised to "Sep" before
+    parsing.
+    """
+    org = "ShareAction"
+    items = []
+    try:
+        html = _fetch_rendered_html(
+            "https://shareaction.org/news", 'a[href*="/news/"] time'
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        for link_el in soup.select('a[href*="/news/"]'):
+            time_el = link_el.select_one("time")
+            title_el = link_el.select_one("h6")
+            if not time_el or not title_el:
+                continue
+
+            date_text = time_el.get_text(strip=True).replace("Sept", "Sep")
+            dt = _parse_date(date_text, ["%d %b %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = link_el["href"]
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[browser_scrapers] scrape_shareaction failed: {exc}")
+        return []
+    return items
+
+
+def scrape_eurocities(cutoff):
+    """
+    https://eurocities.eu/topics/climate-environment/. No RSS feed. The
+    site pre-scopes its own "Latest" feed to this Climate & Environment
+    topic (same idea as CORDIS's pre-scoped query elsewhere in this
+    project) -- no keyword filter needed at all, every item on this page
+    is already about climate/environment by the site's own tagging.
+    A plain fetch returns only the topic's static description text (the
+    news list itself is populated client-side), so this goes through a
+    real headless browser instead, like ECHA/ECA/ShareAction above.
+
+    Rendered cards, confirmed via live DOM inspection:
+
+        <li>
+          <span class="meta-cat">Press release</span>
+          <span class="date">25 June 2026</span>
+          <h3 class="h4">
+            <a href="https://eurocities.eu/latest/slug/">Title</a>
+          </h3>
+          <p><a href="https://eurocities.eu/latest/slug/">Summary...</a></p>
+        </li>
+
+    Eurocities is a network of 200+ European cities -- classified ngo
+    (advocacy/network association) rather than eu-institution, same
+    "closest fit" judgment call as Netzero Cities elsewhere in this file.
+    """
+    org = "Eurocities"
+    items = []
+    try:
+        html = _fetch_rendered_html(
+            "https://eurocities.eu/topics/climate-environment/", "ul.other-story-list li"
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        for card in soup.select("ul.other-story-list li"):
+            title_a = card.select_one("h3 a[href]")
+            date_el = card.select_one(".date")
+            summary_a = card.select_one("p a[href]")
+            if not title_a or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            summary = summary_a.get_text(strip=True) if summary_a else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[browser_scrapers] scrape_eurocities failed: {exc}")
+        return []
+    return items
+
+
 BROWSER_SCRAPERS = {
     "echa": scrape_echa,
     "eca": scrape_eca,
+    "shareaction": scrape_shareaction,
+    "eurocities": scrape_eurocities,
 }
