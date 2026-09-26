@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-25
+# Weekly Climate, Energy & Environment Digest — 2026-09-26
 
 ### EU ETS amendments: what matters
 *Sandbag — 2026-09-23*
@@ -37,7 +37,7 @@ Abstract Hybrid, transnational governance frameworks such as the European Union�
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-25*
+*European Environmental Law Review — 2026-09-26*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -46,7 +46,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-25*
+*European Environmental Law Review — 2026-09-26*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -73,7 +73,7 @@ Chatham House fellow gives evidence at UK parliament committee on global AI gove
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-25*
+*European Environmental Law Review — 2026-09-26*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -109,7 +109,7 @@ Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying E
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-25*
+*European Environmental Law Review — 2026-09-26*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -159,15 +159,6 @@ A recent speech by Esra Albayrak , a Turkish sociologist and daughter of Preside
 Russia’s parliamentary elections produced few surprises. United Russia won 57.83 per cent of the party-list vote and secured 355 of the State Duma’s 450 seats, comfortably preserving its constitutional majority. But the result may be less interesting than a question that arose before voting even began: why hold election s at all? That question was debated inside the Kremlin establishment. The Russian leadership supposedly debated postponing the State Duma elections. In June, Meduza , citing sources close to the presidential administration, reported that senior security officials had urged…
 
 [Read more](https://www.martenscentre.eu/blog/why-putin-still-needs-elections-and-what-it-means-for-europe/)
-
----
-
-### Somalia Awaits a New Security Order as Mission Drawdown Looms
-*International Crisis Group — 2026-09-18*
-
-Somalia Awaits a New Security Order as Mission Drawdown Looms pfranz Fri, 09/18/2026 - 21:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Somali police officers walk along a road median while patrolling a busy street in Mogadishu, on November 10, 2025. TONY KARUMBA / AFP Commentary / Africa 18 September 2026 16 minutes Somalia Awaits a New Security Order as Mission Drawdown Looms The multilateral missions that have helped the Somali government fight Al-Shabaab for nearly two decades…
-
-[Read more](https://www.crisisgroup.org/cmt/africa/somalia/somalia-awaits-new-security-order-mission-drawdown-looms)
 
 ---
 
