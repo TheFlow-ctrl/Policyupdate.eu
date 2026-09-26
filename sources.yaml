@@ -39,6 +39,11 @@
 #                    and publish about the whole world, not the EU
 #                    specifically -- see the stricter relevance gate note
 #                    just below for why that distinction matters here.
+#   media         -- independent journalism/analysis outlets (Clean Energy
+#                    Wire, Carbon Brief), distinct from every category
+#                    above: not an official body's own voice, not an org's
+#                    own advocacy or research output, not a global body's
+#                    own reporting -- a third party reporting ON all of them.
 # This is a judgment call for a few borderline orgs (documented inline
 # where relevant) -- adjust freely if you disagree with a classification.
 #
@@ -56,6 +61,18 @@
 # headline climate reporting just as much as for EU-specific coverage. See
 # fetch_digest.py's IO_GLOBAL_BENCHMARK_KEYWORDS for the exact list.
 #
+# eu_gate: true is a separate, per-source flag (independent of actor_type)
+# for globally-focused sources that are NOT academic journals or official
+# international bodies -- e.g. Ember (global energy think tank), Carbon
+# Brief (global climate journalism), Climate Bonds Initiative (global
+# green-bond standard-setter), ShareAction (UK-based investor-advocacy
+# NGO). These get the SAME strict EU-specificity AND-gate as academic
+# sources (is_eu_relevant()), not the looser international-org OR-gate --
+# per the user's explicit instruction, a "rigid" EU-relevance filter on
+# globally-focused outlets, with no benefit-of-the-doubt for a purely
+# global item just because it hits a 1.5C-style benchmark keyword. See
+# apply_relevance_filter()'s eu_gate handling in fetch_digest.py.
+#
 # Entries with a "scraper" key (instead of "url") are handled by
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
 #
@@ -67,6 +84,21 @@ sources:
     url: https://www.bruegel.org/rss.xml
     field: green-deal
     actor_type: think-tank
+  - name: Ember
+    url: https://ember-energy.org/feed/
+    field: green-deal
+    actor_type: think-tank
+    eu_gate: true
+    # Global electricity-transition think tank (the standard reference for
+    # world/EU power-sector decarbonisation data) -- genuinely global by
+    # design (World Electricity Review covers every country), so marked
+    # eu_gate: true per the user's instruction that globally-focused
+    # outlets get the same strict EU-specificity AND-gate as academic
+    # sources (is_eu_relevant()) rather than just the topic keyword filter.
+    # Feed is real and actively maintained (fresh lastBuildDate) but
+    # returned zero <item> entries at last check -- same "confirmed live,
+    # zero items today" call already made for Bankwatch/ECOS/Grantham
+    # elsewhere in this file, not treated as a dead feed.
   - name: E3G
     url: https://www.e3g.org/feed
     field: green-deal
@@ -339,10 +371,70 @@ sources:
     # landing page -- links go straight to the English .docx of each
     # (usually multi-language) press release.
 
+  - name: Ocean Energy Europe
+    url: https://www.oceanenergy-europe.eu/feed/
+    field: green-deal
+    actor_type: industry
+    # Marine/tidal/wave renewables industry. Confirmed working, very
+    # actively updated (real items dated within days of check, Sep 2026).
+  - name: European Banking Federation (EBF)
+    scraper: ebf
+    field: green-deal
+    actor_type: industry
+    # Banking-sector federation -- CRR/CRD, sustainable-finance taxonomy,
+    # ESG disclosure, Clean Industrial Deal bankability. No RSS feed
+    # (/feed and /newsroom/ both empty/404); see scrape_ebf() in
+    # backend_scrapers.py, confirmed against the live page's DOM.
+  - name: Insurance Europe
+    scraper: insurance_europe
+    field: green-deal
+    actor_type: industry
+    # Insurance/reinsurance federation -- climate risk, natural
+    # catastrophes, Solvency II, EU Taxonomy disclosures. No RSS feed; see
+    # scrape_insurance_europe() in backend_scrapers.py, confirmed against
+    # the live page's DOM.
+  - name: Bioenergy Europe
+    scraper: bioenergy_europe
+    field: green-deal
+    actor_type: industry
+    # Bioenergy/biomass industry -- Ecodesign, RED III, biomass
+    # sustainability criteria. No RSS feed; see scrape_bioenergy_europe()
+    # in backend_scrapers.py, confirmed against the live page's DOM.
+  - name: IFOAM Organics Europe
+    url: https://www.organicseurope.bio/feed/
+    field: green-deal
+    actor_type: industry
+    # Organic farming sector federation -- Farm to Fork, pesticides,
+    # organic action plan. Feed is real (fresh lastBuildDate) but returned
+    # zero <item> entries at last check -- same "confirmed live, zero
+    # items today" call as Ember/Bankwatch/ECOS/Grantham elsewhere in this
+    # file.
+
   # NOT added: FoodDrinkEurope. No RSS feed found, and the homepage/news
   # section renders almost no content through a plain fetch (likely
   # heavily JS-driven) -- not pursued further given the low initial
   # signal; worth a second look with more time.
+  # NOT added: AFME (Association for Financial Markets in Europe). No RSS
+  # feed found. Press-releases page is a React/styled-components SPA
+  # (hashed class names, no server-rendered article list) -- would need a
+  # 4th headless-browser scraper. Deprioritised: EBF above already covers
+  # similar ground (bank sustainable-finance advocacy) at a fraction of
+  # the build cost.
+  # NOT added: ENTSO-E (electricity grid operators' association). No RSS
+  # feed at the advertised /news/rss path (empty response). The news
+  # listing itself (news-events/news/) is client-rendered -- a plain fetch
+  # returns only the mega-menu navigation, no article cards -- so, like
+  # AFME above, would need a headless-browser scraper. Genuinely relevant
+  # (grid planning/TYNDP, offshore hub, network codes are all Green
+  # Deal-adjacent) so flagged as a real gap, not a dismissal -- a good
+  # candidate for a 4th headless-browser scraper if this proves worth
+  # revisiting.
+  # NOT added: ENTSOG (gas grid operators' association). Has an
+  # advertised rss.xml, but it's a dead/mismatched feed: exactly one
+  # <item>, titled "Partnerships", dated 15 Nov 2018 -- looks like a
+  # leftover from an unrelated content type rather than an actual news
+  # feed. No working news listing found in the time available; not
+  # pursued further.
 
   # --- Trade unions ------------------------------------------------------
   # Labour's voice in the EU Green Deal debate -- distinct from both the
@@ -505,6 +597,62 @@ sources:
     # instead, see scrape_influencemap() in backend_scrapers.py, confirmed
     # against the live page's DOM. Dates on that page are month+year only
     # (no day), which is fine at this granularity for a cutoff check.
+  - name: Finance Watch
+    url: https://www.finance-watch.org/feed/
+    field: green-deal
+    actor_type: ngo
+    # EU financial-reform NGO -- sustainable finance, EU Taxonomy, SFDR,
+    # transition-finance rules, fossil-fuel-expansion-in-transition-funds
+    # campaigning. Inherently EU-focused (Brussels-based, EU financial
+    # regulation is its entire remit) -- no eu_gate needed. Confirmed
+    # working, actively updated.
+  - name: Climate Bonds Initiative
+    scraper: climate_bonds
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # UK-registered charity setting green/sustainable-bond standards and
+    # certifying green bonds worldwide -- genuinely global (live examples
+    # at check time: Japan, Guatemala, Trinidad & Tobago, Australia,
+    # China), so marked eu_gate: true per the user's instruction on
+    # globally-focused outlets. EU green-bond-market and EU Taxonomy
+    # content does surface (it's a major reference point for the EU
+    # Green Bond Standard) and passes the gate normally. No RSS feed; see
+    # scrape_climate_bonds() in backend_scrapers.py, confirmed against the
+    # live page's DOM.
+  - name: ShareAction
+    scraper: shareaction
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # UK-based responsible-investment advocacy NGO -- most campaign
+    # content is UK-specific (Living Wage, UK retailers' AGMs) with only
+    # occasional EU-policy pieces (SFDR, EU ETS investor lobbying, EU
+    # sustainability-rules simplification debates), so marked eu_gate:
+    # true. No RSS feed (/feed.xml 404s); the news grid is populated
+    # client-side (Next.js) -- goes through a headless browser, see
+    # scrape_shareaction() in browser_scrapers.py.
+  - name: Eurocities
+    scraper: eurocities
+    field: green-deal
+    actor_type: ngo
+    # Network of 200+ European cities -- classified ngo (advocacy/network
+    # association), same "closest fit" call as Netzero Cities below. No
+    # RSS feed; scrapes the site's own Climate & Environment topic page
+    # (eurocities.eu/topics/climate-environment/), which the site itself
+    # pre-scopes -- same idea as CORDIS's pre-scoped query, no extra
+    # keyword filter needed. Client-rendered (a plain fetch returns only
+    # the topic description, not the article list) -- goes through a
+    # headless browser, see scrape_eurocities() in browser_scrapers.py.
+  - name: Energy Cities
+    url: https://energy-cities.eu/feed/
+    field: green-deal
+    actor_type: ngo
+    # Network of European local authorities on energy transition --
+    # building renovation, energy communities, heat networks, just
+    # transition. Confirmed working, very actively updated (real items
+    # dated within days of check, Sep 2026, including direct SOTEU 2026
+    # commentary).
 
   # --- Academic journals -----------------------------------------------------
   # Confirmed working feeds (fetched live and checked for real, current
@@ -861,6 +1009,40 @@ sources:
   # feed or endpoint scoped specifically to the "Climate Disasters" tag
   # turns up.
 
+  - name: Committee of the Regions
+    scraper: committee_of_regions
+    field: green-deal
+    actor_type: eu-institution
+    # Member states' local/regional governments' own voice at EU level --
+    # cohesion-fund energy-renovation projects, Zero Pollution Forum,
+    # Water Resilience Stakeholder Platform, individual cities'
+    # climate-adaptation stories. No RSS feed; see
+    # scrape_committee_of_regions() in backend_scrapers.py, confirmed
+    # against the live page's DOM.
+  - name: CEN-CENELEC
+    scraper: cen_cenelec
+    field: green-deal
+    actor_type: eu-institution
+    # The EU-recognised European standardisation bodies (harmonised
+    # standards under EU law, e.g. Ecodesign) -- classified eu-institution
+    # despite being formally private nonprofit associations, since their
+    # standardisation mandates come directly from the European Commission.
+    # Very broad multi-topic output (medical devices, AI, sport as well as
+    # circular economy/Ecodesign/energy standards) -- relies on the
+    # standard keyword filter. No RSS feed (/rss and /news/rss both 404);
+    # see scrape_cen_cenelec() in backend_scrapers.py, confirmed against
+    # the live page's DOM.
+  - name: EU Covenant of Mayors
+    scraper: covenant_of_mayors
+    field: green-deal
+    actor_type: eu-institution
+    # European Commission-run initiative (DG ENER/JRC) for local climate
+    # and energy action -- essentially every item is inherently Green
+    # Deal-relevant (climate resilience, building renovation, energy
+    # poverty, renewables permitting) rather than needing much filtering.
+    # No RSS feed; see scrape_covenant_of_mayors() in backend_scrapers.py,
+    # confirmed against the live page's DOM.
+
   - name: Global Environmental Politics
     url: https://direct.mit.edu/rss/site_1000041/advanceAccess_1000023.xml
     field: green-deal
@@ -872,6 +1054,46 @@ sources:
     # since it updates continuously as articles are accepted, matching how
     # the other journals' feeds behave -- "Current Issue Only" would sit
     # unchanged between print issues.
+
+  # --- Media & independent journalism -------------------------------------
+  # Independent journalism/analysis outlets, distinct from eu-institution
+  # (an official body's own voice), think-tank/ngo (an org's own advocacy or
+  # research output) and international-org (a global body's own reporting).
+  - name: Clean Energy Wire (CLEW)
+    url: https://www.cleanenergywire.org/rss.xml
+    field: green-deal
+    actor_type: media
+    # Dedicated German/EU energy-transition journalism outlet, widely
+    # cited by EU energy-policy specialists. Inherently EU/Germany-focused
+    # by its own remit -- no eu_gate needed. Confirmed working (the
+    # advertised /feed path returns nothing; /rss.xml is the real one).
+  - name: Carbon Brief
+    url: https://www.carbonbrief.org/feed/
+    field: green-deal
+    actor_type: media
+    eu_gate: true
+    # UK-based, grant-funded specialist climate-science/policy journalism
+    # -- widely regarded as an independent, non-partisan outlet rather
+    # than a commercial subscription product (distinct from Euractiv, see
+    # the "NOT added" note below). Coverage is overwhelmingly global/UK
+    # (China emissions data, US climate policy, UK net zero, IPCC
+    # coverage) rather than EU-specific, so marked eu_gate: true per the
+    # user's instruction. Confirmed working, large and active feed.
+
+  # NOT added: Euractiv (Energy, Environment & Transport section). Found
+  # the real section archive (euractiv.com/sections/eet/, confirmed via
+  # live DOM inspection: real, frequently-updated, dated cards -- server-
+  # rendered <time datetime> plus a same-day HH:MM / older-day DD.MM.YYYY
+  # display quirk). NOT built for two separate reasons: (1) this session's
+  # own fetch tooling has euractiv.com on an explicit blocklist, a signal
+  # not to build automated scraping infrastructure against this domain
+  # from here; (2) more fundamentally, most of its Green Deal-relevant
+  # content is paywalled ("PRO" articles) -- Euractiv is a commercial
+  # subscription journalism product, not an org's own self-published press
+  # release like every other scraped source in this file, which is a
+  # meaningfully different situation from Carbon Brief/CLEW above (both
+  # freely accessible, grant- or membership-funded). Recommend a personal
+  # Euractiv Pro subscription over an automated scraper for this one.
 
   # --- Green Deal sources with no RSS feed -> custom scrapers ---------------
   # See backend_scrapers.py. All confirmed against real fetched HTML,
