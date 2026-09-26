@@ -538,13 +538,14 @@ ACTOR_LABELS = {
     "ngo": "NGO & Advocacy",
     "eu-institution": "EU Institutions",
     "international-org": "International Organisations",
+    "media": "Media & Journalism",
 }
 
 # Display order for the public Sources page -- matches the actor-tabs order
 # in index.html.
 ACTOR_ORDER = [
     "think-tank", "academic", "political", "industry", "trade-union", "ngo",
-    "eu-institution", "international-org",
+    "eu-institution", "international-org", "media",
 ]
 
 # Homepage URL for sources.yaml entries that use a "scraper" key instead of
@@ -582,6 +583,15 @@ SCRAPER_HOMEPAGES = {
     "iea": "https://www.iea.org",
     "unep": "https://www.unep.org",
     "wmo": "https://wmo.int",
+    "insurance_europe": "https://www.insuranceeurope.eu",
+    "climate_bonds": "https://www.climatebonds.net",
+    "covenant_of_mayors": "https://eu-mayors.ec.europa.eu",
+    "shareaction": "https://shareaction.org",
+    "cen_cenelec": "https://www.cencenelec.eu",
+    "ebf": "https://www.ebf.eu",
+    "bioenergy_europe": "https://bioenergyeurope.org",
+    "eurocities": "https://eurocities.eu",
+    "committee_of_regions": "https://www.cor.europa.eu",
 }
 
 
@@ -663,7 +673,7 @@ def is_relevant(title, excerpt, actor_type=None):
     return bool(pattern.search(text))
 
 
-def apply_relevance_filter(entries, field, actor_type=None):
+def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     """Keyword-filter entries, but ONLY for field == 'green-deal'.
 
     Other fields (security, tech, health) are source-segregated instead --
@@ -685,6 +695,19 @@ def apply_relevance_filter(entries, field, actor_type=None):
     climate-benchmark keyword) rather than the academic gate's strict AND,
     since these sources are worth keeping for their global "1.5C stocktake"
     reporting just as much as for EU-specific coverage.
+
+    `eu_gate` is a separate, per-source YAML flag (independent of
+    actor_type) for globally-focused sources that AREN'T academic journals
+    or official international bodies -- e.g. Ember (global electricity
+    think tank), Carbon Brief (global climate journalism), Climate Bonds
+    Initiative (global green-bond standard-setter), ShareAction (UK-based
+    investor-advocacy NGO). These get the SAME strict EU-specificity
+    AND-gate as academic sources (is_eu_relevant()), not the looser
+    international-org OR-gate, since the user's instruction was for a
+    "rigid" filter on globally-focused outlets -- unlike IEA/UNEP/WMO,
+    there's no case here for keeping a purely-global item just because it
+    hits a 1.5C-style benchmark keyword. See the eu_gate: true entries in
+    sources.yaml for which sources use this.
     """
     if field != "green-deal":
         return entries
@@ -703,12 +726,19 @@ def apply_relevance_filter(entries, field, actor_type=None):
         if actor_type == "international-org" and not is_io_relevant(entry["title"], entry["summary"]):
             io_skipped += 1
             continue
+        if (
+            actor_type not in ("academic", "international-org")
+            and eu_gate
+            and not is_eu_relevant(entry["title"], entry["summary"])
+        ):
+            eu_skipped += 1
+            continue
         kept.append(entry)
 
     if skipped:
         print(f"  filtered out {skipped} off-topic item(s)")
     if eu_skipped:
-        print(f"  filtered out {eu_skipped} non-EU academic item(s)")
+        print(f"  filtered out {eu_skipped} non-EU item(s) (EU-specificity gate)")
     if io_skipped:
         print(f"  filtered out {io_skipped} non-EU/non-global-benchmark international-org item(s)")
 
@@ -1424,6 +1454,7 @@ def main():
         name = source["name"]
         field = source.get("field", "green-deal")
         actor_type = source.get("actor_type", "think-tank")
+        eu_gate = source.get("eu_gate", False)
         print(f"Checking {name} ({field}, {actor_type})...")
 
         try:
@@ -1457,7 +1488,7 @@ def main():
         # through so academic sources get the widened topic check + EU
         # gate (see apply_relevance_filter()).
         try:
-            primary_entries = apply_relevance_filter(raw_entries, field, actor_type)
+            primary_entries = apply_relevance_filter(raw_entries, field, actor_type, eu_gate)
         except Exception as exc:
             print(f"  [warning] unexpected error filtering {name}, skipping: {exc}")
             primary_entries = []
