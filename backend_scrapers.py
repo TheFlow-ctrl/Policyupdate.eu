@@ -1711,6 +1711,366 @@ def scrape_wmo(cutoff):
     return items
 
 
+def scrape_insurance_europe(cutoff):
+    """
+    https://www.insuranceeurope.eu/news. No RSS feed found. Server-
+    rendered cards (Umbraco-based CMS), confirmed via a plain fetch --
+    no JS rendering needed, unlike ECHA/ECA:
+
+        <div class="inner">
+          <div class="tag property">Climate change</div>
+          <h3 class="property title">
+            <a href="/news/3589/insurance-europe-comments-...">Title</a>
+          </h3>
+          <div class="date bottom property">23-6-2026</div>
+        </div>
+
+    Selecting on `h3.property.title a` rather than the containing
+    `.el-objectnews` wrapper: the page nests a second, near-duplicate
+    `.el-objectnews` div directly inside the first one for the same
+    article (confirmed via live DOM inspection), so selecting the
+    wrapper class would double-count every item -- the title link is the
+    one element that appears exactly once per article. Mix of genuine
+    EU climate/sustainable-finance content (EU Taxonomy, EIOPA natural-
+    catastrophe risk, Solvency II) and routine insurance-sector news
+    (Solvency II filings, DEI, PRIIPs) -- relies on the standard
+    keyword filter to surface the Green Deal-relevant items, same as
+    other broad industry-association sources in this file.
+    """
+    org = "Insurance Europe"
+    base = "https://www.insuranceeurope.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news")
+        for title_a in soup.select("h3.property.title a[href]"):
+            inner = title_a.find_parent("div", class_="inner")
+            date_el = inner.select_one(".date.bottom.property") if inner else None
+            if not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d-%m-%Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = urljoin(base, title_a["href"])
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_insurance_europe failed: {exc}")
+        return []
+    return items
+
+
+def scrape_climate_bonds(cutoff):
+    """
+    https://www.climatebonds.net/resources/press-releases (redirects to
+    /news-events/press-room/press-releases). No RSS feed found. Server-
+    rendered cards, confirmed via a plain fetch:
+
+        <div class="card w-full h-fit ...">
+          <a href="https://www.climatebonds.net/news-events/.../slug"
+             class="stretched-link ...">Title</a>
+          <div class="text-azure ..."><p>25 September 2026</p></div>
+        </div>
+
+    Selecting on the semantic "card" class only (not the full Tailwind
+    utility-class combination, which is more likely to be regenerated --
+    same reasoning as WMO's card selector above). Genuinely global (this
+    is a UK-registered charity setting green/sustainable-bond standards
+    worldwide -- live examples seen at check time: press releases about
+    Japan, Guatemala, Trinidad & Tobago, Australia, China), so this
+    source is marked eu_gate: true in sources.yaml -- see
+    apply_relevance_filter()'s eu_gate handling in fetch_digest.py. Some
+    press releases are duplicated in a local language (e.g. a Japanese-
+    and English-language version of the same story); harmless since the
+    EU-specificity gate rejects both unless the underlying story is
+    actually EU-relevant.
+    """
+    org = "Climate Bonds Initiative"
+    items = []
+    try:
+        soup = _get_soup("https://www.climatebonds.net/resources/press-releases")
+        for card in soup.select("div.card"):
+            link_el = card.select_one("a.stretched-link[href]")
+            date_el = card.select_one(".text-azure p")
+            if not link_el or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = link_el.get_text(strip=True)
+            link = link_el["href"]
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_climate_bonds failed: {exc}")
+        return []
+    return items
+
+
+def scrape_covenant_of_mayors(cutoff):
+    """
+    https://eu-mayors.ec.europa.eu/en/news. No RSS feed found. Server-
+    rendered cards, built on the European Commission's own ECL (Europa
+    Component Library) design system, confirmed via a plain fetch:
+
+        <article class="ecl-content-item">
+          <ul class="ecl-content-block__primary-meta-container">
+            <li><time datetime="2026-09-15T12:00:00Z">15 September 2026</time></li>
+            <li>New Resource</li>
+          </ul>
+          <div class="ecl-content-block__title">
+            <a href="/en/news/unlock-potential-energy-communities">Title</a>
+          </div>
+          <div class="ecl-content-block__description">Summary...</div>
+        </article>
+
+    The Covenant of Mayors is a European Commission-run initiative (DG
+    ENER/JRC), not an independent NGO, so classified eu-institution like
+    ECHA/ECA above rather than ngo -- and, being an EU Commission
+    programme by definition, gets no eu_gate. The `time[datetime]`
+    attribute is a clean ISO-8601 timestamp (ending in "Z"), parsed
+    directly rather than the human-readable text alongside it.
+    """
+    org = "EU Covenant of Mayors"
+    base = "https://eu-mayors.ec.europa.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/en/news")
+        for card in soup.select("article.ecl-content-item"):
+            time_el = card.select_one("time[datetime]")
+            title_a = card.select_one(".ecl-content-block__title a[href]")
+            summary_el = card.select_one(".ecl-content-block__description")
+            if not time_el or not title_a:
+                continue
+
+            dt = None
+            raw_dt = time_el["datetime"]
+            try:
+                dt = datetime.fromisoformat(raw_dt.replace("Z", "+00:00"))
+                if dt.tzinfo is not None:
+                    dt = dt.replace(tzinfo=None)
+            except ValueError:
+                dt = None
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = urljoin(base, title_a["href"])
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_covenant_of_mayors failed: {exc}")
+        return []
+    return items
+
+
+def scrape_committee_of_regions(cutoff):
+    """
+    https://www.cor.europa.eu/en/news. No RSS feed found. Server-rendered
+    cards (Drupal 11), confirmed via a plain fetch -- no JS rendering
+    needed:
+
+        <article class="c-card ...">
+          <h3 class="c-card__title">
+            <a href="/en/news/slug" class="overlay-link">Title</a>
+          </h3>
+          <div class="c-card__content"><p class="c-card__text">Summary…</p></div>
+          <div class="c-card__footer">
+            <div class="c-card__date"><time datetime="2026-09-22T12:00:00Z">22 September 2026</time></div>
+          </div>
+        </article>
+
+    Same card markup for both the "Press releases" and "News" sections on
+    this page. Member states' and regions' own voice at EU level -- Green
+    Deal-relevant items include cohesion-fund energy renovation projects,
+    Zero Pollution Forum, Water Resilience Stakeholder Platform, and
+    individual cities' climate-adaptation stories. Broad (covers all CoR
+    activity, not just environment), relies on the standard keyword filter
+    like other broad EU-institution sources in this file. `time[datetime]`
+    is a clean ISO-8601 timestamp, parsed the same way as Covenant of
+    Mayors above.
+    """
+    org = "Committee of the Regions"
+    base = "https://www.cor.europa.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/en/news")
+        for card in soup.select("article.c-card"):
+            title_a = card.select_one(".c-card__title a[href]")
+            time_el = card.select_one("time[datetime]")
+            summary_el = card.select_one(".c-card__text")
+            if not title_a or not time_el:
+                continue
+
+            dt = None
+            try:
+                dt = datetime.fromisoformat(time_el["datetime"].replace("Z", "+00:00"))
+                if dt.tzinfo is not None:
+                    dt = dt.replace(tzinfo=None)
+            except ValueError:
+                dt = None
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = urljoin(base, title_a["href"])
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_committee_of_regions failed: {exc}")
+        return []
+    return items
+
+
+def scrape_cen_cenelec(cutoff):
+    """
+    https://www.cencenelec.eu/news-events/news/. No RSS feed (the /rss and
+    /news/rss paths both 404). Server-rendered cards, confirmed via a plain
+    fetch -- no JS rendering needed:
+
+        <div class="card-content">
+          <div class="card-tag">Research &amp; Innovation</div>
+          <div class="card-date">2026-09-24</div>
+          <div class="card-title">Title</div>
+          <div><p>Summary...</p></div>
+          <a href="/news-events/news/2026/brief-news/...">READ MORE</a>
+        </div>
+
+    CEN and CENELEC are the EU-recognised European standardisation bodies
+    (harmonised standards under EU law, e.g. Ecodesign) -- classified
+    eu-institution despite being formally private nonprofit associations,
+    since their standardisation mandates come directly from the European
+    Commission. Very broad multi-topic output (medical devices, AI, sport,
+    quality management as well as circular economy/Ecodesign/energy
+    standards) -- relies on the standard keyword filter to surface the
+    Green Deal-relevant items, same as CEPS/EPC/CEN-CENELEC-style broad
+    sources elsewhere in this file. Date is a clean ISO YYYY-MM-DD string.
+    """
+    org = "CEN-CENELEC"
+    base = "https://www.cencenelec.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news-events/news/")
+        for card in soup.select("div.card-content"):
+            title_el = card.select_one(".card-title")
+            date_el = card.select_one(".card-date")
+            link_el = card.select_one("a[href]")
+            summary_el = card.select_one("div > p")
+            if not title_el or not date_el or not link_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%Y-%m-%d"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, link_el["href"])
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_cen_cenelec failed: {exc}")
+        return []
+    return items
+
+
+def scrape_ebf(cutoff):
+    """
+    https://www.ebf.eu/category/ebf-media-centre/updates/. No RSS feed
+    (/feed and /newsroom/ both empty/404). Server-rendered cards (Enfold
+    WordPress theme), confirmed via a plain fetch:
+
+        <article class="post-entry ...">
+          <h2 class="post-title entry-title">
+            <a href="https://www.ebf.eu/.../slug/">Title</a>
+          </h2>
+          <span class="post-meta-infos">
+            <time class="date-container minor-meta updated">14 September 2026</time>
+          </span>
+        </article>
+
+    European Banking Federation -- inherently EU-focused (banking
+    regulation, CRR/CRD, sustainable finance/taxonomy, ESG disclosure), so
+    no eu_gate needed. No excerpt in the listing itself (entry-content is
+    empty besides a "Read more" link) -- title used as summary, same
+    fallback as ACER/Euromines elsewhere in this file. A good number of
+    items are genuinely Green Deal-relevant (EU Circular Economy financing,
+    energy-renovation recommendations, Clean Industrial Deal bankability),
+    mixed with routine banking-regulation news -- relies on the standard
+    keyword filter.
+    """
+    org = "European Banking Federation"
+    base = "https://www.ebf.eu"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/category/ebf-media-centre/updates/")
+        for card in soup.select("article.post-entry"):
+            title_a = card.select_one("h2.post-title a[href]")
+            date_el = card.select_one("time.date-container")
+            if not title_a or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_ebf failed: {exc}")
+        return []
+    return items
+
+
+def scrape_bioenergy_europe(cutoff):
+    """
+    https://bioenergyeurope.org/news/. No RSS feed found. Server-rendered
+    cards (Elementor "Posts" widget on WordPress), confirmed via a plain
+    fetch:
+
+        <article class="elementor-post ...">
+          <h3 class="elementor-post__title">
+            <a href="https://bioenergyeurope.org/slug/">Title</a>
+          </h3>
+          <div class="elementor-post__excerpt"><p>Summary...</p></div>
+          <div class="elementor-post__meta-data">
+            <span class="elementor-post-date">September 23, 2026</span>
+          </div>
+        </article>
+
+    Bioenergy industry association -- Ecodesign/RED III/biomass
+    sustainability-criteria relevant. Only the first page of the widget is
+    scraped (no pagination followed) -- fine for a weekly-cutoff digest,
+    same shallow-depth approach as several other lean sources in this file.
+    """
+    org = "Bioenergy Europe"
+    base = "https://bioenergyeurope.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news/")
+        for card in soup.select("article.elementor-post"):
+            title_a = card.select_one(".elementor-post__title a[href]")
+            date_el = card.select_one(".elementor-post-date")
+            summary_el = card.select_one(".elementor-post__excerpt")
+            if not title_a or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%B %d, %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_bioenergy_europe failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -1741,6 +2101,13 @@ SCRAPERS = {
     "iea": scrape_iea,
     "unep": scrape_unep,
     "wmo": scrape_wmo,
+    "insurance_europe": scrape_insurance_europe,
+    "climate_bonds": scrape_climate_bonds,
+    "covenant_of_mayors": scrape_covenant_of_mayors,
+    "cen_cenelec": scrape_cen_cenelec,
+    "ebf": scrape_ebf,
+    "bioenergy_europe": scrape_bioenergy_europe,
+    "committee_of_regions": scrape_committee_of_regions,
 }
 
 # Headless-browser scrapers (browser_scrapers.py) live in a separate module
