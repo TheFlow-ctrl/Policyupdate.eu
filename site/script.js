@@ -46,6 +46,7 @@ const ACTOR_LABELS = {
   ngo: "NGO & Advocacy",
   "eu-institution": "EU Institutions",
   "international-org": "International Organisations",
+  media: "Media & Journalism",
 };
 
 // Kept in sync with FORMAT_LABELS in fetch_digest.py -- entry.content_type
