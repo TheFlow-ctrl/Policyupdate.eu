@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-26
+# Weekly Climate, Energy & Environment Digest — 2026-09-27
 
 ### EU ETS amendments: what matters
 *Sandbag — 2026-09-23*
@@ -27,17 +27,8 @@ Authors: Angelo Sciacca, Julien Rochette, Céline Kauffmann
 
 ---
 
-### On the Economization of Environmental Policy: Examining the Workings of Green Competitiveness in the Pursuit of Emissions Reduction
-*Global Environmental Politics — 2026-09-20*
-
-Abstract Hybrid, transnational governance frameworks such as the European Union’s Renewable Energy Directive (EU-RED) are designed to shape production and trade practices in third countries by linking market access to compliance with sustainability criteria. Evidence on their effectiveness in these contexts, however, remains limited. This article examines why such frameworks often fail to achieve their environmental goals, focusing on EU-RED’s regulation of biofuels in the Argentina–EU biodiesel global value chain. We argue that EU-RED is based on a form of economization of environmental…
-
-[Read more](https://direct.mit.edu/glep/article/doi/10.1162/GLEP.a.800/139096/On-the-Economization-of-Environmental-Policy)
-
----
-
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-26*
+*European Environmental Law Review — 2026-09-27*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -46,7 +37,7 @@ This article examines the evolving role of the Transmission System Operator (TSO
 ---
 
 ### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-26*
+*European Environmental Law Review — 2026-09-27*
 
 The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
 
@@ -73,7 +64,7 @@ Chatham House fellow gives evidence at UK parliament committee on global AI gove
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-26*
+*European Environmental Law Review — 2026-09-27*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -109,7 +100,7 @@ Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying E
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-26*
+*European Environmental Law Review — 2026-09-27*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -132,6 +123,15 @@ The Climate Briefing: Contested waters in international politics Audio thilton.d
 The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
 
 [Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
+
+---
+
+### Local flexibility: Utrecht’s shared cars become batteries for the city
+*Energy Cities — 2026-09-23*
+
+As solar panels spread across Europe’s cities, a new challenge is emerging: how can all that clean electricity be used when it is produced, without overwhelming already congested grids? Utrecht is turning part of the answer into an everyday service. Its shared electric cars do more than moving people from one place to another. When parked, 50 of them can store locally produced solar power and return electricity to the grid when demand rises. The bold result of this vehicle-to-grid equipped car sharing is more local grid flexibility—and a reminder that cities do not have to wait for grid…
+
+[Read more](https://energy-cities.eu/utrechts-cars-become-batteries/)
 
 ---
 
@@ -315,6 +315,24 @@ Europe’s cities are facing the local impacts of climate change. Nature-based s
 
 ---
 
+### The CoR to host the first Zero Pollution Forum in December
+*Committee of the Regions — 2026-09-22*
+
+The first EU Zero Pollution Forum will take place at the European Committee of the Regions on 7 December. Jessika Roswall, Commissioner for Environment, Water Resilience and a Competitive Circular…
+
+[Read more](https://www.cor.europa.eu/en/news/cor-host-first-zero-pollution-forum-december)
+
+---
+
+### Do not comment on the leak!
+*Bioenergy Europe — 2026-09-23*
+
+In this op-ed, Bioenergy Europe’s Secretary General Jean-Marc Jossart makes the case for giving Member States and regions the flexibility to use their own renewable resources, including sustainable bioenergy.
+
+[Read more](https://bioenergyeurope.org/do-not-comment-on-the-leak/)
+
+---
+
 ### Circular raw materials for strong industry and quality jobs
 *industriAll Europe — 2026-09-25*
 
@@ -339,6 +357,15 @@ New Vision Paper Launch - Canada’s Carbon Market Opportunity: A Vision for Cli
 On 21 September, SIPRI and the African Union (AU) signed a memorandum of understanding (MOU) in New York for collaboration on peace research.
 
 [Read more](https://www.sipri.org/news/2026/sipri-and-african-union-sign-memorandum-understanding)
+
+---
+
+### Germany presents fossil fuel transition plan, reaffirms 2045 climate target
+*Clean Energy Wire (CLEW) — 2026-09-24*
+
+Germany presents fossil fuel transition plan, reaffirms 2045 climate target j.wettengel Thu, 24 Sep 2026 - 13:43
+
+[Read more](https://www.cleanenergywire.org/news/germany-presents-fossil-fuel-transition-plan-reaffirms-2045-climate-target)
 
 ---
 
