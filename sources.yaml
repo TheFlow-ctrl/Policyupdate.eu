@@ -1342,10 +1342,11 @@ sources:
     # output lives in a custom "publications" post type that isn't in the
     # default WordPress feed. Uses CERRE's own public REST API instead
     # (/wp-json/wp/v2/publications) -- see scrape_cerre() in
-    # backend_scrapers.py for the confirmed JSON shape and a known
-    # limitation (excerpt/content are empty in the API response, so
-    # matching only ever sees the title, not the full text -- a real recall
-    # gap on ambiguously-titled pieces, documented in the scraper itself).
+    # backend_scrapers.py for the confirmed JSON shape. excerpt/content are
+    # empty in the API response itself, so the scraper additionally fetches
+    # each in-cutoff item's own detail page (_extract_cerre_body(), capped
+    # at CERRE_DETAIL_PAGE_CAP) to get real body text for keyword matching,
+    # rather than matching on the title alone.
   - name: ECIPE
     url: https://ecipe.org/feed/
     field: competition
