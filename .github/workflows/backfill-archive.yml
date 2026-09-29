@@ -1,0 +1,63 @@
+name: One-off Archive Backfill
+
+# Manual-only, one-off job: backfills site/archive.json back to a given
+# start month using backfill.py's WordPress-date-archive approach (see
+# that file's docstring for what it can/can't cover). Not on a schedule --
+# trigger it by hand from the Actions tab when you actually want to run
+# it, and expect it to take a while (it's making requests against 100+
+# external sites). archive.json is committed incrementally as sources
+# finish, so if you cancel the run partway through, whatever completed is
+# still saved.
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: "Backfill starting from this year"
+        required: false
+        default: "2020"
+      start_month:
+        description: "Backfill starting from this month (1-12)"
+        required: false
+        default: "1"
+      max_pages_per_month:
+        description: "Max archive pages to paginate through per source per month"
+        required: false
+        default: "3"
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340  # comfortably under GitHub's 6h hard cap
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run backfill
+        run: |
+          python backfill.py \
+            --start-year "${{ inputs.start_year }}" \
+            --start-month "${{ inputs.start_month }}" \
+            --max-pages-per-month "${{ inputs.max_pages_per_month }}"
+
+      - name: Commit archive after each attempt
+        # backfill.py already calls update_archive() (which writes
+        # site/archive.json) after every single source, so archive.json
+        # on disk reflects everything completed so far even if the run
+        # errors, times out, or you cancel it from the Actions tab
+        # partway through -- `if: always()` is what makes that safe: a
+        # cancelled/failed previous step would otherwise skip this one
+        # entirely and lose whatever progress was already made.
+        if: always()
+        run: |
+          git config user.name "green-deal-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/archive.json
+          git diff --cached --quiet || git commit -m "Historical archive backfill"
+          git push
