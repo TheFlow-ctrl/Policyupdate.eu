@@ -125,8 +125,8 @@ COMPETITION_KEYWORDS = [
     "competition law", "competition policy", "competition enforcement",
     "competition investigation", "antitrust investigation",
     "market investigation", "sector inquiry",
-    "digital markets act", "gatekeeper", "gatekeepers",
-    "foreign subsidies regulation", "fsr investigation",
+    "digital markets act", "dma", "gatekeeper", "gatekeepers",
+    "foreign subsidies regulation", "fsr", "fsr investigation",
     "interim measures", "commitments decision", "fine imposed",
     "dawn raid", "leniency", "merger notification",
     "competition commissioner", "directorate-general for competition",
@@ -622,10 +622,10 @@ COMPETITION_LEGISLATION_TAGS = [
         "important projects of common european interest",
     ]),
     ("dma", "Digital Markets Act", [
-        "digital markets act", "gatekeeper", "gatekeepers",
+        "digital markets act", "dma", "gatekeeper", "gatekeepers",
     ]),
     ("fsr", "Foreign Subsidies Regulation", [
-        "foreign subsidies regulation", "fsr investigation",
+        "foreign subsidies regulation", "fsr", "fsr investigation",
     ]),
     ("nzia", "NZIA", [
         "net zero industry act", "nzia",
@@ -724,6 +724,7 @@ SCRAPER_HOMEPAGES = {
     "bioenergy_europe": "https://bioenergyeurope.org",
     "eurocities": "https://eurocities.eu",
     "committee_of_regions": "https://www.cor.europa.eu",
+    "cerre": "https://cerre.eu",
 }
 
 
@@ -984,10 +985,25 @@ def fetch_source(source, cutoff):
             print(f"  [warning] unknown scraper key '{source['scraper']}' for {name}")
             return []
         try:
-            return scraper_fn(cutoff)
+            entries = scraper_fn(cutoff)
         except Exception as exc:
             print(f"  [warning] scraper for {name} failed: {exc}")
             return []
+        # Every backend_scrapers.py/browser_scrapers.py scrape_*() function
+        # hardcodes "field": "green-deal" on the items it builds (via
+        # backend_scrapers.FIELD / _make_item()) -- true for every scraper
+        # that existed before the competition field, since they were all
+        # green-deal sources. Now that a *scraper-based* source can also be
+        # tagged field: competition in sources.yaml (or, like CEPS, reused
+        # as a second entry under a different field), the scraper's own
+        # hardcoded value can no longer be trusted -- override it here with
+        # the field this sources.yaml ENTRY actually declares, same as
+        # fetch_recent_entries() already does correctly for RSS sources
+        # below. Without this, a scraper-based competition source would
+        # silently mistag its own items as green-deal.
+        for entry in entries:
+            entry["field"] = field
+        return entries
 
     try:
         return fetch_recent_entries(name, source["url"], field, cutoff)
