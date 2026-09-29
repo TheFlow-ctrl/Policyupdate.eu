@@ -1,21 +1,30 @@
 # List of feeds/scrapers to track, grouped by policy field.
 # "field" must match one of the tab IDs in site/index.html
-# (green-deal, security, tech, health) so the website can filter by it.
+# (green-deal, security, tech, health, competition) so the website can
+# filter by it.
 #
 # Every entry with field: green-deal is additionally checked against the
 # GREEN_DEAL_KEYWORDS list in fetch_digest.py before being included, since
 # some sources (Corporate Europe Observatory) cover topics well beyond
-# the Green Deal / environmental policy. Sources tagged with other fields
-# are NOT keyword-filtered against the FULL feed -- but see the
-# cross-tagging note below.
+# the Green Deal / environmental policy. field: competition sources get
+# the SAME treatment against a separate list, COMPETITION_KEYWORDS (see
+# the dedicated Competition law section below) -- both fields need a
+# keyword gate because their broad official sources (a Commissioner's
+# press corner feed, a multi-topic standards body) aren't narrowly
+# scoped to just that one topic. Sources tagged with other fields
+# (security, tech, health) are NOT keyword-filtered against the FULL
+# feed -- every source under those fields is already handpicked to be
+# single-topic -- but see the cross-tagging note below.
 #
 # Cross-tagging: sources whose primary field isn't green-deal (the
-# security-tagged ones below) are STILL checked against the green-deal
-# keyword filter. Any of their entries that match get an *additional* copy
-# tagged field: green-deal (their own entries stay under their primary
-# field too). This is how e.g. an ECFR piece specifically about EU climate
-# diplomacy can surface on the Green Deal tab without moving all of
-# ECFR's foreign-policy content there.
+# security- and competition-tagged ones) are STILL checked against the
+# green-deal keyword filter. Any of their entries that match get an
+# *additional* copy tagged field: green-deal (their own entries stay
+# under their primary field too). This is how e.g. an ECFR piece
+# specifically about EU climate diplomacy can surface on the Green Deal
+# tab without moving all of ECFR's foreign-policy content there -- and,
+# for competition, how a State-aid decision approving a renewable-energy
+# scheme can surface on both tabs.
 #
 # actor_type classifies the SOURCE itself (not the article), one of:
 #   think-tank    -- independent research institute
@@ -72,6 +81,22 @@
 # globally-focused outlets, with no benefit-of-the-doubt for a purely
 # global item just because it hits a 1.5C-style benchmark keyword. See
 # apply_relevance_filter()'s eu_gate handling in fetch_digest.py.
+#
+# field: competition (added Sep 2026, at the request of law-firm contacts
+# interested in EU competition-law tracking) -- scoped to "core + digital
+# markets": antitrust/cartel enforcement, merger control, State aid, and
+# the Digital Markets Act, not the full breadth of EU economic regulation
+# (no consumer protection, no procurement, no sector-specific regulatory
+# regimes). Sources are weighted toward official bodies per that same
+# decision -- the Commission's own Competition Press Corner feed and the
+# DMA's own news feed, plus a couple of practitioner-facing legal-analysis
+# blogs. Kept HIDDEN (disabled "Coming soon" tab in site/index.html) until
+# reviewed, same as security currently is, even though (unlike security)
+# it has its own keyword filter -- see COMPETITION_KEYWORDS in
+# fetch_digest.py. National competition authorities (Autorité de la
+# concurrence, Bundeskartellamt, etc.) and the EU courts (CJEU/General
+# Court case law) are deliberately out of scope for now -- see the notes
+# in the Competition law section below for why.
 #
 # Entries with a "scraper" key (instead of "url") are handled by
 # backend_scrapers.py, for sites with no working RSS/Atom feed.
@@ -1228,6 +1253,103 @@ sources:
     field: security
     actor_type: think-tank
     # Confirmed exact URL (valid RSS content-type) -- currently empty.
+
+  # --- Competition law (field exists on the site but the tab is still --
+  # --- disabled, pending review -- added Sep 2026 at the request of --
+  # --- law-firm contacts. Scoped to "core + digital markets": antitrust,
+  # --- cartels, merger control, State aid, and the DMA. Every entry here
+  # --- is checked against COMPETITION_KEYWORDS in fetch_digest.py before
+  # --- being included -- see the header note above. Also cross-tagged
+  # --- into green-deal when an entry matches, same as security above --
+  # --- e.g. a State aid decision approving a renewable-energy scheme.)
+  - name: European Commission (Competition Press Corner)
+    url: "https://ec.europa.eu/commission/presscorner/api/rss?type=news&pagesize=25&dotyp=MEX,AC,IP,SPEECH,STATEMENT&commissioner=2099"
+    field: competition
+    actor_type: eu-institution
+    # The Commission's general Press Corner RSS (already tracked under
+    # green-deal via a different query) silently ignores topic-scoping
+    # query params, but DOES honour commissioner= -- 2099 is Teresa
+    # Ribera, the Executive Vice-President for Clean, Just Transition and
+    # Competition. That portfolio is itself split across both of this
+    # site's fields: her feed carries genuine antitrust/merger/State aid
+    # content (kept here, via COMPETITION_KEYWORDS) alongside unrelated
+    # portfolio items (an Affordable Housing Act announcement, a data-
+    # centre energy-efficiency proposal) that the keyword filter correctly
+    # drops. Confirmed live and active (Sep 2026): a strong, steady mix of
+    # antitrust guidelines, merger Statements of Objections, and (heavily)
+    # State aid clearances -- several of the latter explicitly reference
+    # the Clean Industrial Deal, so expect regular cross-tagging into
+    # green-deal too.
+  - name: Digital Markets Act (European Commission)
+    url: https://digital-markets-act.ec.europa.eu/node/2/rss_en
+    field: competition
+    actor_type: eu-institution
+    # The DMA's own dedicated news microsite. Confirmed a real, working
+    # RSS feed (unusual among EU microsites in this project -- most need a
+    # scraper) with clean content: gatekeeper designations, non-compliance
+    # fines (e.g. the Google €890m DMA fine), market investigations (cloud
+    # computing), and guidance/consultations. Every item is inherently
+    # DMA-relevant by construction (it's the DMA's own site), but still
+    # routed through COMPETITION_KEYWORDS like every other field:
+    # competition source for consistency -- "gatekeeper"/"digital markets
+    # act" are both in that list, so nothing real gets dropped. Note: the
+    # RSS feed lagged the live news page by about one item/one week at
+    # last check (a minor, apparently routine sync delay, not a broken
+    # feed) -- acceptable given the 7-day rolling window.
+  - name: Kluwer Competition Law Blog
+    url: https://legalblogs.wolterskluwer.com/competition-blog/rss.xml
+    field: competition
+    actor_type: media
+    eu_gate: true
+    # Practitioner/academic analysis blog (Wolters Kluwer's Kluwer Law
+    # International) -- moved platforms since it was last checked; the
+    # old competitionlawblog.kluwercompetitionlaw.com/feed/ address now
+    # redirects here (legalblogs.wolterskluwer.com/competition-blog/),
+    # confirmed via the site's own RSS link, not guessed. High volume
+    # (multiple posts/week) and mostly EU/TFEU-focused (Article 101/102,
+    # FSR, DMA case law), but also covers global competition-law debates
+    # (confirmed live examples: a Brazilian Supreme Court soy-moratorium
+    # antitrust ruling, an AfCFTA African competition-protocol piece) --
+    # marked eu_gate: true for the same reason as ShareAction/Carbon
+    # Brief, so only the EU-relevant posts surface.
+  - name: Chillin'Competition
+    url: https://www.chillingcompetition.com/feed/
+    field: competition
+    actor_type: media
+    # Long-running Brussels-based EU competition-law blog (Alfonso
+    # Lamadrid and other Brussels practitioners) -- unlike Kluwer above,
+    # its content is inherently EU/TFEU-specific by the authors' own
+    # focus (Article 101/102 case notes, EU State aid, DMA), so no
+    # eu_gate needed on top of the topic filter. Confirmed live but
+    # low-frequency: last post 31 Jul 2026 (~2 months stale as of Sep
+    # 2026) -- same "confirmed live, not dead, just infrequent" call
+    # already made elsewhere in this file for EURACOAL/Bankwatch/ECOS/
+    # Grantham/Ember.
+  # Checked and NOT added:
+  #  - Concurrences (concurrences.com) -- its "e-Competitions" bulletin,
+  #    the actual news/case-note content, sits behind a paywall. Same
+  #    reasoning as Euractiv elsewhere in this file: scraping a
+  #    commercial subscription publication's paywalled content at scale
+  #    is a different situation from scraping an org's own free
+  #    press releases, so not built.
+  #  - Global Competition Review (globalcompetitionreview.com) -- a
+  #    subscription trade publication; a plain fetch timed out after
+  #    180s with no result, consistent with (not just guessed from) its
+  #    known paywall/bot-defended business model. Not built.
+  #  - CJEU / General Court (curia.europa.eu) -- would be the single best
+  #    source for actual competition-law developments (merger appeals,
+  #    Article 101/102 rulings), but the site runs on a legacy JBoss
+  #    "JCMS Portlet" CMS with non-semantic auto-generated element IDs and
+  #    unstable direct-link redirects (confirmed by hand: several direct
+  #    case-law URLs either 302-redirected to the homepage or returned
+  #    raw portlet-config data instead of content). A real, named gap --
+  #    revisit if a cleaner access path turns up (an EUR-Lex case-law RSS
+  #    query, for instance), but not worth the fragile scraper right now.
+  #  - National competition authorities (Bundeskartellamt, Autorité de la
+  #    concurrence, ACM, etc.) -- deliberately out of scope for now, per
+  #    the "core + digital markets" scoping decision: this field tracks EU
+  #    -level competition law, not the 27 member states' national
+  #    enforcement individually. Revisit if there's demand for it.
 
 # Removed after real content-quality problems (not a feed/technical issue):
 #  - VTT (Finland) -- had a working feed, but as a large multi-domain
