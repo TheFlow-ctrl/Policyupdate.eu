@@ -1,4 +1,13 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-28
+# Weekly Climate, Energy & Environment Digest — 2026-09-29
+
+### Multilateral Cooperation and Confidence-Building in Cyberspace
+*SWP (German Institute for International and Security Affairs) — 2026-09-29*
+
+The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incidents involving state actors and state-controlled actors is rising worldwide – particularly in the OSCE region – yet the diplomatic instruments designed to contain such incidents receive comparatively little attention. The OSCE (Organisation for Security and Co-operation in Europe) and other regional organisations have adopted a range of confidence-building measures (CBMs) in the cyber domain that provide a basis for deeper multilateral cooperation. It remains unclear, however, to what extent these measures respond…
+
+[Read more](https://www.swp-berlin.org/en/publication/multilateral-cooperation-and-confidence-building-in-cyberspace)
+
+---
 
 ### EU ETS amendments: what matters
 *Sandbag — 2026-09-23*
@@ -6,15 +15,6 @@
 Our position paper analyses the proposals by the Commission and EU ETS rapporteur MEP Peter Liese and presents Sandbag’s proposals. Download the position paper On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. During a public press briefing, Mr. Liese…
 
 [Read more](https://sandbag.be/2026/09/23/eu-ets-amendments/)
-
----
-
-### EEA-Eionet horizon scan – emerging trends in production and consumption
-*EEA (European Environment Agency) — Publications — 2026-09-22*
-
-Europe’s progress towards sustainability requires new means of consumption and production with significantly lower impacts. This horizon scan explores those rapidly developing digital trends and technologies, and some of the opportunities and risks they present for sustainability.
-
-[Read more](https://www.eea.europa.eu/en/analysis/publications/eea-eionet-horizon-scan-emerging-trends-in-production-and-consumption)
 
 ---
 
@@ -28,20 +28,11 @@ Authors: Angelo Sciacca, Julien Rochette, Céline Kauffmann
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-28*
+*European Environmental Law Review — 2026-09-29*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
-
----
-
-### Public Procurement and the EU’s Path to Climate Neutrality: Retooling the Principle of Environmental Integration?
-*European Environmental Law Review — 2026-09-28*
-
-The European Union’s legally binding objective of climate neutrality by 2050 represents its most ambitious response to the escalating global climate crisis and a central expression of its commitments under the 2015 Paris Agreement. This originates in the European Green Deal’s agenda, which placed climate and environmental challenges as this generation’s defining task. More recently, the European Commission has advanced an intermediate 2040 target of a 90% net reduction in greenhouse gas (GHG) emissions compared to 1990 levels, in line with the Clean Industrial Deal agenda for a fully…
-
-[Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.2/EELR2026009)
 
 ---
 
@@ -51,6 +42,15 @@ The European Union’s legally binding objective of climate neutrality by 2050 r
 New energy and trade routes could bypass Hormuz and change the Middle East. But major challenges remain Expert comment thilton.drupal 25 September 2026 The Strait of Hormuz crisis is accelerating a wider reordering of the region, as Iraq, Syria and Lebanon plan new oil pipelines and transport corridors. But whether they can seize the opportunity to diversify will ultimately depend on wider reforms. The war on Iran and the resulting disruption to the Strait of Hormuz has exposed the vulnerability of existing trade and energy routes and unsettled the old balance of power across the Middle East.…
 
 [Read more](https://www.chathamhouse.org/2026/09/new-energy-and-trade-routes-could-bypass-hormuz-and-change-middle-east-major-challenges)
+
+---
+
+### What didn’t work: Gaps, delays, and difficult lessons from the first phase of South Africa’s JETP
+*E3G — 2026-09-29*
+
+South Africa’s Just Energy Transition Partnership (JETP) has helped mobilise international support for the country’s energy transition, but its first phase has also exposed the challenges of turning ambition into delivery. Understanding what has held implementation back, and what can be done differently, will be critical as the JETP moves into its next phase. Financing gaps, debt risks, and delayed delivery The JETP’s first phase exposed a large gap between South Africa’s transition needs and the finance available to meet them. The Just Energy Transition Investment Plan estimated that about…
+
+[Read more](https://www.e3g.org/news/what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp/?utm_source=rss&utm_medium=rss&utm_campaign=what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp)
 
 ---
 
@@ -64,7 +64,7 @@ Descarcă PDF-ul România are potențialul de a deveni un producător regional c
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-28*
+*European Environmental Law Review — 2026-09-29*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -72,12 +72,12 @@ This article examines whether European Union (EU) rule-of-law principles constra
 
 ---
 
-### Trump–Xi summit: Why the US and China should not underestimate each other
-*Chatham House — 2026-09-22*
+### Pre-COP: A moment to carry the Pacific’s climate action fight forward, not dilute it
+*E3G — 2026-09-29*
 
-Trump–Xi summit: Why the US and China should not underestimate each other Expert comment LToremark 22 September 2026 The US and China both face serious domestic strains. As Trump and Xi meet this week to discuss trade, AI and Taiwan, neither side should mistake the other’s weaknesses for strategic decline. A superpower summit is a big deal. As US President Donald Trump and China’s President Xi Jinping meet in Washington this week, they have a lot to cover. They will try to extend a trade truce that expires in November, including China’s pause on rare earth export controls and America’s delay…
+“1.5C to stay alive is not a slogan, it’s a lifeline.” That was the Pacific Leaders’ message at the Pacific Islands Forum (PIF), as a new United Nations Environment Programme report was published warning that 1.5C is now widely assessed as unavoidable under current policies. That warning carried through to UN General Assembly (UNGA), where Leaders and the UN Secretary-General linked fossil fuel dependence directly to “havoc” . From the PIF to UNGA, the diagnosis is converging, but momentum now needs to land. The Pre-COP, 5-8 October, is the final major diplomatic moment before COP31 and the…
 
-[Read more](https://www.chathamhouse.org/2026/09/trump-xi-summit-why-us-and-china-should-not-underestimate-each-other)
+[Read more](https://www.e3g.org/news/precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it/?utm_source=rss&utm_medium=rss&utm_campaign=precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it)
 
 ---
 
@@ -90,8 +90,17 @@ Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying E
 
 ---
 
+### SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities
+*Energy Cities — 2026-09-29*
+
+SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to March 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
+
+[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
+
+---
+
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-28*
+*European Environmental Law Review — 2026-09-29*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -144,6 +153,24 @@ What does gender equality mean if you can work full-time and still not afford to
 
 ---
 
+### US midterms polls: Are Democrats winning or is Trump losing?
+*Chatham House — 2026-09-28*
+
+US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans’ chances have been dragged down by President Donald Trump’s near-record…
+
+[Read more](https://www.chathamhouse.org/2026/09/us-midterms-polls-are-democrats-winning-or-trump-losing)
+
+---
+
+### Arresting the Dangerous Descent Back into War in Northern Ethiopia
+*International Crisis Group — 2026-09-25*
+
+Arresting the Dangerous Descent Back into War in Northern Ethiopia eschelhaas Fri, 09/25/2026 - 14:01 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Members of the Tigray People's Liberation Front (TPLF) walk along a main road in Mekelle on September 23, 2026, as tensions intensify in northern Ethiopia after Tigrayan rebels seized control of airports in the region. AFP Statement / Africa 25 September 2026 9 minutes Arresting the Dangerous Descent Back into War in Northern Ethiopia…
+
+[Read more](https://www.crisisgroup.org/stm/africa/ethiopia-eritrea/arresting-dangerous-descent-back-war-northern-ethiopia)
+
+---
+
 ### Europe’s Responsibility: Defending the Universal Idea of Science
 *Wilfried Martens Centre (EPP) — 2026-09-25*
 
@@ -189,6 +216,15 @@ The Finnish Institute of International Affairs is pleased to announce the appoin
 
 ---
 
+### What Peacemaking Loses When Women Are Left Out
+*International Crisis Group — 2026-09-25*
+
+What Peacemaking Loses When Women Are Left Out cthuratong Fri, 09/25/2026 - 13:39 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Gender and Conflict 25 September 2026 1 minute What Peacemaking Loses When Women Are Left Out Originally published in TIME Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Cristal Downing Project Director, Gender and Conflict https://twitter.com/cristaldowning?lang=en Related Tags Multilateral Diplomacy Global Wars exact a heavy toll on…
+
+[Read more](https://www.crisisgroup.org/opd/global/what-peacemaking-loses-when-women-are-left-out)
+
+---
+
 ### Gen Z’s political divide isn’t really about gender
 *FEPS (S&D) — 2026-09-25*
 
@@ -216,12 +252,48 @@ What can DRC’s national dialogue achieve? Expert comment jon.wallace 24 Septem
 
 ---
 
+### Updates from the UN General Assembly 2026
+*International Crisis Group — 2026-09-25*
+
+Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 25 September 2026 8 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN’s efforts to promote international peace and security. This page includes updates from the…
+
+[Read more](https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026)
+
+---
+
 ### Webinar: Options for the EU ETS
 *Sandbag — 2026-09-23*
 
 Watch the webinar Background Background On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. In a public webinar, we presented Sandbag’s analysis of the carbon market under different design options, and discussed proposals to mitigate its potential negative…
 
 [Read more](https://sandbag.be/2026/09/23/webinar-options-for-the-eu-ets/)
+
+---
+
+### The UN’s decline is a choice
+*International Crisis Group — 2026-09-24*
+
+The UN’s decline is a choice cthuratong Thu, 09/24/2026 - 14:13 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Multilateral Diplomacy 24 September 2026 1 minute The UN’s decline is a choice Originally published in El País The selection of a new chief is an opportunity for governments to rally round the ailing organization and choose a ‘general’, not a ‘secretary,’ to lead the charge Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Also available in Español…
+
+[Read more](https://www.crisisgroup.org/opd/global/uns-decline-choice)
+
+---
+
+### Iraq’s Post-coalition Test
+*International Crisis Group — 2026-09-24*
+
+Iraq’s Post-coalition Test saureli Thu, 09/24/2026 - 15:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Video / Middle East & North Africa 24 September 2026 1 minute Iraq’s Post-coalition Test In this video, Crisis Group Deputy Director for MENA, Lahib Higel, explains why pressuring Baghdad into a military confrontation could weaken the Iraqi state even more. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Iraq The U.S.-led coalition against ISIS is…
+
+[Read more](https://www.crisisgroup.org/vid/middle-east-north-africa/iraq/iraqs-post-coalition-test)
+
+---
+
+### On Our Radar
+*International Crisis Group — 2026-09-24*
+
+On Our Radar eschelhaas Fri, 09/25/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 25 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter…
+
+[Read more](https://www.crisisgroup.org/sco/global/our-radar)
 
 ---
 
@@ -234,6 +306,15 @@ The Green Tank submitted comments to the Special Managing Authority for the Just
 
 ---
 
+### Hydrogen on track: new standards support fuel-cell-powered rolling stock
+*CEN-CENELEC — 2026-09-29*
+
+As Europe continues its transition towards cleaner and more sustainable mobility, hydrogen is emerging as one of the technologies that could help reduce the environmental impact of rail transport, particularly on lines where conventional electrification is difficult or economically challenging.
+
+[Read more](https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-09-29-en-iec-63341-series/)
+
+---
+
 ### Sustainability in EU FTAs: Monitoring briefings
 *IEEP — 2026-09-24*
 
@@ -243,12 +324,12 @@ This briefing series monitors upcoming free trade agreements (FTAs) that are eit
 
 ---
 
-### True cost accounting reveals climate impact of food systems
-*CORDIS — 2026-09-22*
+### Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland’s EU presidency to recognise their efforts
+*Committee of the Regions — 2026-09-29*
 
-The EU-funded FOODCoST project has developed methodologies to show the true cost of food production, accounting for climate and environmental impacts. This can help businesses and policymakers identify and adopt more sustainable strategies.
+Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government…
 
-[Read more](https://cordis.europa.eu/article/rcn/467343/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467343&WT.rss_ev=a)
+[Read more](https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise)
 
 ---
 
@@ -261,30 +342,30 @@ BC3 took part this week in SOMMa Connect 2026, the meeting organised in Barcelon
 
 ---
 
-### Moving from emergency alert to actionable intelligence
-*CORDIS — 2026-09-22*
+### GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology
+*Hydrogen Europe — 2026-09-29*
 
-To meet the growing challenges of climate change, the EU-funded GOBEYOND project developed next-generation early warning systems that include tailored risk assessments, helping to anticipate impacts and prevent loss of life and property.
+[…] The post GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology appeared first on Hydrogen Europe .
 
-[Read more](https://cordis.europa.eu/article/rcn/467342/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467342&WT.rss_ev=a)
-
----
-
-### How green infrastructure can grow economic and climate resilience
-*CORDIS — 2026-09-22*
-
-Europe’s cities are facing the local impacts of climate change. Nature-based solutions demonstrated through the EU-funded Upsurge project are acting as ‘lighthouses’ to show the way to urban climate resilience.
-
-[Read more](https://cordis.europa.eu/article/rcn/467355/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467355&WT.rss_ev=a)
+[Read more](https://hydrogeneurope.eu/gen-h-plans-200-300-mw-zero-emission-balancing-power-facility-in-finland-based-on-hycamite-methane-pyrolysis-technology/)
 
 ---
 
-### The CoR to host the first Zero Pollution Forum in December
-*Committee of the Regions — 2026-09-22*
+### Factsheet - How the DMA ensures businesses using Booking.com are free to set their prices on and off Booking.com
+*Digital Markets Act (European Commission) — 2026-09-28*
 
-The first EU Zero Pollution Forum will take place at the European Committee of the Regions on 7 December. Jessika Roswall, Commissioner for Environment, Water Resilience and a Competitive Circular…
+The Commission’s regulatory dialogues with gatekeepers in the framework of its enforcement of the Digital Markets Act (DMA) are delivering more fairness and transparency.
 
-[Read more](https://www.cor.europa.eu/en/news/cor-host-first-zero-pollution-forum-december)
+[Read more](https://digital-markets-act.ec.europa.eu/factsheet-how-dma-ensures-businesses-using-bookingcom-are-free-set-their-prices-and-bookingcom-2026-09-28_en)
+
+---
+
+### Improving Energy Efficiency: An Obvious and Urgent Next Step...
+*Orgalim — 2026-09-29*
+
+From industry associations to environmental and civil-society bodies, a total of 93 organisations spanning are asking European Commission President Ursula von der Leyen for a binding energy efficiency target for 2040.
+
+[Read more](https://orgalim.eu/en/improving-energy-efficiency-an-obvious-and-urgent-next-step/)
 
 ---
 
@@ -297,15 +378,6 @@ In this op-ed, Bioenergy Europe’s Secretary General Jean-Marc Jossart makes th
 
 ---
 
-### Circular raw materials for strong industry and quality jobs
-*industriAll Europe — 2026-09-25*
-
-Europe’s circular economy must become a central pillar of an ambitious industrial policy that secures access to critical raw materials, strengthens manufacturin...
-
-[Read more](https://news.industriall-europe.eu/Article/1598)
-
----
-
 ### More Dangerous than Splitting the Atom: Learning from Previous Technology Panics
 *Lisbon Council — 2026-09-28*
 
@@ -315,21 +387,21 @@ The post More Dangerous than Splitting the Atom: Learning from Previous Technolo
 
 ---
 
-### SIPRI and the African Union sign memorandum of understanding
-*SIPRI — 2026-09-22*
-
-On 21 September, SIPRI and the African Union (AU) signed a memorandum of understanding (MOU) in New York for collaboration on peace research.
-
-[Read more](https://www.sipri.org/news/2026/sipri-and-african-union-sign-memorandum-understanding)
-
----
-
 ### Germany presents fossil fuel transition plan, reaffirms 2045 climate target
 *Clean Energy Wire (CLEW) — 2026-09-24*
 
 Germany presents fossil fuel transition plan, reaffirms 2045 climate target j.wettengel Thu, 24 Sep 2026 - 13:43
 
 [Read more](https://www.cleanenergywire.org/news/germany-presents-fossil-fuel-transition-plan-reaffirms-2045-climate-target)
+
+---
+
+### IETA welcomes Canada's initiative to develop Article 6 participation framework
+*IETA — 2026-09-29*
+
+IETA welcomes Canada's initiative to develop Article 6 participation framework
+
+[Read more](https://www.ieta.org/news/ieta-welcomes-canadas-initiative-to-develop-article-6-participation-framework)
 
 ---
 
@@ -348,14 +420,5 @@ Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
 SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.
 
 [Read more](https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda)
-
----
-
-### How can the law fight climate change?
-*ClientEarth — 2026-09-22*
-
-How can the law fight climate change?
-
-[Read more](https://www.clientearth.org/latest/news/how-can-the-law-fight-climate-change/)
 
 ---

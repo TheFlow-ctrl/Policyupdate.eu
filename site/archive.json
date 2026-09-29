@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28",
+  "generated": "2026-09-29",
   "months": [
     {
       "key": "2026-09",
@@ -116,6 +116,17 @@
           "actor_type": "think-tank",
           "tags": [],
           "content_type": "report"
+        },
+        {
+          "org": "SWP (German Institute for International and Security Affairs)",
+          "field": "security",
+          "title": "Multilateral Cooperation and Confidence-Building in Cyberspace",
+          "link": "https://www.swp-berlin.org/en/publication/multilateral-cooperation-and-confidence-building-in-cyberspace",
+          "date": "2026-09-29",
+          "summary": "The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incidents involving state actors and state-controlled actors is rising worldwide \u2013 particularly in the OSCE region \u2013 yet the diplomatic instruments designed to contain such incidents receive comparatively little attention. The OSCE (Organisation for Security and Co-operation in Europe) and other regional organisations have adopted a range of confidence-building measures (CBMs) in the cyber domain that provide a basis for deeper multilateral cooperation. It remains unclear, however, to what extent these measures respond\u2026",
+          "actor_type": "think-tank",
+          "content_type": "report",
+          "tags": []
         },
         {
           "org": "ECFR",
@@ -379,7 +390,7 @@
           "field": "green-deal",
           "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
           "actor_type": "academic",
           "content_type": null,
@@ -465,6 +476,17 @@
           "content_type": null
         },
         {
+          "org": "E3G",
+          "field": "green-deal",
+          "title": "What didn\u2019t work: Gaps, delays, and difficult lessons from the first phase of South Africa\u2019s JETP",
+          "link": "https://www.e3g.org/news/what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp/?utm_source=rss&utm_medium=rss&utm_campaign=what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp",
+          "date": "2026-09-29",
+          "summary": "South Africa\u2019s Just Energy Transition Partnership (JETP) has helped mobilise international support for the country\u2019s energy transition, but its first phase has also exposed the challenges of turning ambition into delivery. Understanding what has held implementation back, and what can be done differently, will be critical as the JETP moves into its next phase. Financing gaps, debt risks, and delayed delivery The JETP\u2019s first phase exposed a large gap between South Africa\u2019s transition needs and the finance available to meet them. The Just Energy Transition Investment Plan estimated that about\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "Chatham House fellow gives evidence at UK parliament committee on global AI governance and risks",
@@ -491,9 +513,20 @@
           "field": "green-deal",
           "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
           "actor_type": "academic",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "E3G",
+          "field": "green-deal",
+          "title": "Pre-COP: A moment to carry the Pacific\u2019s climate action fight forward, not dilute it",
+          "link": "https://www.e3g.org/news/precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it/?utm_source=rss&utm_medium=rss&utm_campaign=precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it",
+          "date": "2026-09-29",
+          "summary": "\u201c1.5C to stay alive is not a slogan, it\u2019s a lifeline.\u201d That was the Pacific Leaders\u2019 message at the Pacific Islands Forum (PIF), as a new United Nations Environment Programme report was published warning that 1.5C is now widely assessed as unavoidable under current policies. That warning carried through to UN General Assembly (UNGA), where Leaders and the UN Secretary-General linked fossil fuel dependence directly to \u201chavoc\u201d . From the PIF to UNGA, the diagnosis is converging, but momentum now needs to land. The Pre-COP, 5-8 October, is the final major diplomatic moment before COP31 and the\u2026",
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -656,9 +689,20 @@
           "field": "green-deal",
           "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-          "date": "2026-09-28",
+          "date": "2026-09-29",
           "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
           "actor_type": "academic",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Energy Cities",
+          "field": "green-deal",
+          "title": "SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities",
+          "link": "https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/",
+          "date": "2026-09-29",
+          "summary": "SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to March 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions\u2026",
+          "actor_type": "ngo",
           "content_type": null,
           "tags": []
         },
@@ -819,6 +863,17 @@
         {
           "org": "Chatham House",
           "field": "security",
+          "title": "US midterms polls: Are Democrats winning or is Trump losing?",
+          "link": "https://www.chathamhouse.org/2026/09/us-midterms-polls-are-democrats-winning-or-trump-losing",
+          "date": "2026-09-28",
+          "summary": "US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans\u2019 chances have been dragged down by President Donald Trump\u2019s near-record\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Chatham House",
+          "field": "security",
           "title": "Banning UK trade with illegal Israeli settlements is long overdue",
           "link": "https://www.chathamhouse.org/2026/09/banning-uk-trade-illegal-israeli-settlements-long-overdue",
           "date": "2026-09-04",
@@ -835,6 +890,17 @@
           "date": "2026-09-25",
           "summary": "A recent speech by Esra Albayrak , a Turkish sociologist and daughter of President Recep Tayyip Erdo\u011fan, at the World Decolonisation Forum in Istanbul is a wake-up call for a debate Europe can no longer avoid. Albayrak called for new centres of knowledge beyond Paris, London and New York, arguing that science is never neutral and that knowledge is shaped by class, power and geography. Nothing new, you might say: this criticism is decades old. It is now widely acknowledged in the so-called \u201cWestern sciences\u201d that modern scientific institutions did not develop outside history; colonial and\u2026",
           "actor_type": "political",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Arresting the Dangerous Descent Back into War in Northern Ethiopia",
+          "link": "https://www.crisisgroup.org/stm/africa/ethiopia-eritrea/arresting-dangerous-descent-back-war-northern-ethiopia",
+          "date": "2026-09-25",
+          "summary": "Arresting the Dangerous Descent Back into War in Northern Ethiopia eschelhaas Fri, 09/25/2026 - 14:01 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Members of the Tigray People's Liberation Front (TPLF) walk along a main road in Mekelle on September 23, 2026, as tensions intensify in northern Ethiopia after Tigrayan rebels seized control of airports in the region. AFP Statement / Africa 25 September 2026 9 minutes Arresting the Dangerous Descent Back into War in Northern Ethiopia\u2026",
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -1072,6 +1138,17 @@
         {
           "org": "International Crisis Group",
           "field": "security",
+          "title": "What Peacemaking Loses When Women Are Left Out",
+          "link": "https://www.crisisgroup.org/opd/global/what-peacemaking-loses-when-women-are-left-out",
+          "date": "2026-09-25",
+          "summary": "What Peacemaking Loses When Women Are Left Out cthuratong Fri, 09/25/2026 - 13:39 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Gender and Conflict 25 September 2026 1 minute What Peacemaking Loses When Women Are Left Out Originally published in TIME Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Cristal Downing Project Director, Gender and Conflict https://twitter.com/cristaldowning?lang=en Related Tags Multilateral Diplomacy Global Wars exact a heavy toll on\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
           "title": "What Future for Venezuela after the U.S. Oil Carve-up?",
           "link": "https://www.crisisgroup.org/qna/latin-america-caribbean/venezuela-united-states/what-future-venezuela-after-us-oil-carve",
           "date": "2026-09-11",
@@ -1272,8 +1349,8 @@
           "field": "security",
           "title": "Updates from the UN General Assembly 2026",
           "link": "https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026",
-          "date": "2026-09-21",
-          "summary": "Updates from the UN General Assembly 2026 eschelhaas Mon, 09/21/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 21 September 2026 7 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN\u2019s efforts to promote international peace and security. This page includes updates from the\u2026",
+          "date": "2026-09-25",
+          "summary": "Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 25 September 2026 8 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN\u2019s efforts to promote international peace and security. This page includes updates from the\u2026",
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -1424,6 +1501,28 @@
           "tags": []
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "The UN\u2019s decline is a choice",
+          "link": "https://www.crisisgroup.org/opd/global/uns-decline-choice",
+          "date": "2026-09-24",
+          "summary": "The UN\u2019s decline is a choice cthuratong Thu, 09/24/2026 - 14:13 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Multilateral Diplomacy 24 September 2026 1 minute The UN\u2019s decline is a choice Originally published in El Pa\u00eds The selection of a new chief is an opportunity for governments to rally round the ailing organization and choose a \u2018general\u2019, not a \u2018secretary,\u2019 to lead the charge Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Also available in Espa\u00f1ol\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Iraq\u2019s Post-coalition Test",
+          "link": "https://www.crisisgroup.org/vid/middle-east-north-africa/iraq/iraqs-post-coalition-test",
+          "date": "2026-09-24",
+          "summary": "Iraq\u2019s Post-coalition Test saureli Thu, 09/24/2026 - 15:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Video / Middle East & North Africa 24 September 2026 1 minute Iraq\u2019s Post-coalition Test In this video, Crisis Group Deputy Director for MENA, Lahib Higel, explains why pressuring Baghdad into a military confrontation could weaken the Iraqi state even more. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Iraq The U.S.-led coalition against ISIS is\u2026",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "Annual Review 2025\u201326",
@@ -1439,8 +1538,8 @@
           "field": "security",
           "title": "On Our Radar",
           "link": "https://www.crisisgroup.org/sco/global/our-radar",
-          "date": "2026-09-17",
-          "summary": "On Our Radar eschelhaas Fri, 09/18/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 18 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter\u2026",
+          "date": "2026-09-24",
+          "summary": "On Our Radar eschelhaas Fri, 09/25/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 25 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter\u2026",
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -1547,6 +1646,17 @@
           "tags": []
         },
         {
+          "org": "CEN-CENELEC",
+          "field": "green-deal",
+          "title": "Hydrogen on track: new standards support fuel-cell-powered rolling stock",
+          "link": "https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-09-29-en-iec-63341-series/",
+          "date": "2026-09-29",
+          "summary": "As Europe continues its transition towards cleaner and more sustainable mobility, hydrogen is emerging as one of the technologies that could help reduce the environmental impact of rail transport, particularly on lines where conventional electrification is difficult or economically challenging.",
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "PIK Potsdam",
           "field": "green-deal",
           "title": "International conference on environmental taxes and climate finance",
@@ -1588,6 +1698,17 @@
           "link": "https://cordis.europa.eu/article/rcn/467377/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467377&WT.rss_ev=a",
           "date": "2026-09-14",
           "summary": "Two years on, the HiEFFICIENT project continues to drive a new era of electromobility across Europe. Its legacy lives on through commercial products, new spin-offs and follow-up initiatives that redefine sustainable transport.",
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Committee of the Regions",
+          "field": "green-deal",
+          "title": "Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland\u2019s EU presidency to recognise their efforts",
+          "link": "https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise",
+          "date": "2026-09-29",
+          "summary": "Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government\u2026",
           "actor_type": "eu-institution",
           "content_type": null,
           "tags": []
@@ -1659,6 +1780,17 @@
           "tags": []
         },
         {
+          "org": "Hydrogen Europe",
+          "field": "green-deal",
+          "title": "GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology",
+          "link": "https://hydrogeneurope.eu/gen-h-plans-200-300-mw-zero-emission-balancing-power-facility-in-finland-based-on-hycamite-methane-pyrolysis-technology/",
+          "date": "2026-09-29",
+          "summary": "[\u2026] The post GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology appeared first on Hydrogen Europe .",
+          "actor_type": "industry",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "SIPRI",
           "field": "security",
           "title": "SIPRI hosts dialogue on state\u2013industry collaboration for lawful military AI",
@@ -1666,6 +1798,30 @@
           "date": "2026-09-17",
           "summary": "On 9\u201310 September, SIPRI\u2019s Governance of AI Programme hosted a closed in-person dialogue on how states and industry actors can collaborate to support the lawful development and use of AI in the military domain.",
           "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Digital Markets Act (European Commission)",
+          "field": "competition",
+          "title": "Factsheet - How the DMA ensures businesses using Booking.com are free to set their prices on and off Booking.com",
+          "link": "https://digital-markets-act.ec.europa.eu/factsheet-how-dma-ensures-businesses-using-bookingcom-are-free-set-their-prices-and-bookingcom-2026-09-28_en",
+          "date": "2026-09-28",
+          "summary": "The Commission\u2019s regulatory dialogues with gatekeepers in the framework of its enforcement of the Digital Markets Act (DMA) are delivering more fairness and transparency.",
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": [
+            "dma"
+          ]
+        },
+        {
+          "org": "Orgalim",
+          "field": "green-deal",
+          "title": "Improving Energy Efficiency: An Obvious and Urgent Next Step...",
+          "link": "https://orgalim.eu/en/improving-energy-efficiency-an-obvious-and-urgent-next-step/",
+          "date": "2026-09-29",
+          "summary": "From industry associations to environmental and civil-society bodies, a total of 93 organisations spanning are asking European Commission President Ursula von der Leyen for a binding energy efficiency target for 2040.",
+          "actor_type": "international-org",
           "content_type": null,
           "tags": []
         },
@@ -1822,6 +1978,17 @@
           "actor_type": "think-tank",
           "tags": [],
           "content_type": null
+        },
+        {
+          "org": "IETA",
+          "field": "green-deal",
+          "title": "IETA welcomes Canada's initiative to develop Article 6 participation framework",
+          "link": "https://www.ieta.org/news/ieta-welcomes-canadas-initiative-to-develop-article-6-participation-framework",
+          "date": "2026-09-29",
+          "summary": "IETA welcomes Canada's initiative to develop Article 6 participation framework",
+          "actor_type": "industry",
+          "content_type": null,
+          "tags": []
         },
         {
           "org": "IETA",
