@@ -410,6 +410,29 @@ sources:
     # ESG disclosure, Clean Industrial Deal bankability. No RSS feed
     # (/feed and /newsroom/ both empty/404); see scrape_ebf() in
     # backend_scrapers.py, confirmed against the live page's DOM.
+  - name: KfW
+    scraper: kfw
+    field: green-deal
+    actor_type: industry
+    # German state development bank -- doesn't cleanly fit any actor_type
+    # here (a national promotional bank, not an EU institution, not a
+    # multilateral body like IEA/OECD, not a lobby/trade association) --
+    # classified industry as the closest fit, matching how EBF (a
+    # financial-sector body) is classified just below, same "closest fit"
+    # judgment call as Netzero Cities/Eurocities elsewhere in this file.
+    # English-language press releases (kfw.de/About-KfW/Newsroom/...),
+    # confirmed JS-required (client-side search widget) -- see scrape_kfw()
+    # in browser_scrapers.py. No RSS feed (legacy RssPressDe.xml-style URLs
+    # all 404 now). Confirmed English updates same-day as German, not a
+    # lagging translation. Content is overwhelmingly transactional/self-
+    # promotional (own SME surveys, individual loan/bond deals, country
+    # financing deals) rather than policy analysis -- expect the keyword
+    # filter to reject most items and pass through mainly genuine green-
+    # finance/energy-transition news (green bonds, energy-efficiency
+    # financing) when it occurs. No eu_gate: KfW's own transactional
+    # releases rarely say "Europe"/"EU" explicitly even when the underlying
+    # deal is EU-relevant, so an EU-specificity AND-gate on top of the
+    # topic filter would likely zero this source out entirely.
   - name: Insurance Europe
     scraper: insurance_europe
     field: green-deal
@@ -631,6 +654,46 @@ sources:
     # campaigning. Inherently EU-focused (Brussels-based, EU financial
     # regulation is its entire remit) -- no eu_gate needed. Confirmed
     # working, actively updated.
+  - name: Carbon Gap
+    scraper: carbon_gap
+    field: green-deal
+    actor_type: think-tank
+    # Brussels-based carbon-removal (CDR) advocacy think tank -- EU ETS
+    # integration of removals, EU carbon-removal certification framework
+    # (CRCF), engineered-removal policy. Brussels-based and EU-policy-
+    # focused by design -- no eu_gate needed. No RSS feed; the insights
+    # page is server-rendered but has two inconsistent card layouts, see
+    # scrape_carbon_gap() in backend_scrapers.py (landmark-based
+    # extraction via img[alt] + a date regex, not positional). Note:
+    # correct live domain is carbongap.org, NOT the hyphenated
+    # carbon-gap.org.
+  - name: Carbon Management Europe
+    url: https://carbonmanagementeurope.org/feed/
+    field: green-deal
+    actor_type: think-tank
+    # Industry-adjacent CCS/CCU advocacy and research body -- EU carbon
+    # capture/storage policy, Net-Zero Industry Act, CO2 transport
+    # infrastructure. EU-focused by name and remit -- no eu_gate needed.
+    # Confirmed working RSS feed.
+  # Checked and NOT added (from Flo's Sept 2026 carbon-market/think-tank
+  # batch):
+  #  - Ekko (ekko.earth) -- not a policy or research body at all; it's a
+  #    UK consumer fintech product (a debit card/banking app that funds
+  #    carbon offsetting per purchase). Zero climate-policy content to
+  #    track. Excluded as out-of-scope rather than low-yield.
+  #  - Council on Foreign Relations (CFR, US) -- confirmed real and
+  #    active, but its energy/environment coverage is dominated by US
+  #    domestic energy politics and Middle East geopolitics, with EU
+  #    content a small minority; no RSS feed on the relevant section.
+  #    Same weak cost/signal trade-off as WFP elsewhere in this file --
+  #    not a productive dedicated EU source. (Note: DGAP, "German Council
+  #    on Foreign Relations", already tracked in the Security section
+  #    below, is a different organisation and not a duplicate of this.)
+  #  - Chatham House and Carbon Market Watch were also on this list but
+  #    are already tracked sources (Chatham House under Security, field:
+  #    security, surfaces onto Green Deal/Competition automatically via
+  #    cross-tagging; Carbon Market Watch under Green Deal, near the top
+  #    of this file) -- no new entries needed.
   - name: Climate Bonds Initiative
     scraper: climate_bonds
     field: green-deal
@@ -645,6 +708,63 @@ sources:
     # Green Bond Standard) and passes the gate normally. No RSS feed; see
     # scrape_climate_bonds() in backend_scrapers.py, confirmed against the
     # live page's DOM.
+  - name: ICVCM (Integrity Council for the Voluntary Carbon Market)
+    url: https://icvcm.org/feed/
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # Global voluntary-carbon-credit integrity body -- sets the Core
+    # Carbon Principles (CCPs) and rules on which offset programmes/
+    # methodologies qualify as high-integrity (BioCarbon Standard,
+    # Cercarbono, Plan Vivo, etc.). Genuinely global standard-setting, not
+    # EU-specific -- eu_gate: true, same treatment as Climate Bonds
+    # Initiative just above. Confirmed working RSS feed, full-content
+    # items. (Flo asked for "ICVM" -- disambiguated as ICVCM given the
+    # carbon-market context of the rest of that request; ICMM,
+    # International Council on Mining and Metals, is a different body
+    # with no carbon-market remit.)
+  - name: Gold Standard Foundation
+    scraper: gold_standard
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # Global voluntary carbon-credit certification standard (Switzerland-
+    # based) -- methodologies, Article 6.2 reporting tools, project news.
+    # Genuinely global, not EU-specific -- eu_gate: true, same treatment
+    # as Climate Bonds Initiative/ICVCM. No RSS feed; see
+    # scrape_gold_standard() in backend_scrapers.py, confirmed against the
+    # live page's DOM (server-rendered despite being a Vue/Nuxt site).
+  - name: Greenhouse Gas Management Institute (GHGMI)
+    url: https://ghginstitute.org/feed/
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # US-based GHG-accounting/MRV training and research institute --
+    # global remit, content skews heavily toward training programmes,
+    # capacity-building and awards rather than policy analysis (checked
+    # live: recent items were staff/alumni awards and a Nigeria industrial-
+    # emissions capacity-building piece). Genuinely global, not EU-
+    # specific -- eu_gate: true. Confirmed working RSS feed. Expect this
+    # source to contribute rarely -- kept for the occasional genuine EU
+    # MRV/CBAM-adjacent piece, same "confirmed live, just low-yield"
+    # category as IMF/KfW elsewhere in this file.
+  - name: Stockholm Environment Institute (SEI)
+    scraper: sei
+    field: green-deal
+    actor_type: think-tank
+    eu_gate: true
+    # Major international research institute (climate, water, land,
+    # energy, health) -- huge output (3,900+ publications) that skews
+    # heavily non-EU in practice (checked live: Bolivia water projects,
+    # Kenya community resilience, African critical-minerals trade,
+    # humanitarian-energy finance were the majority of recent items) --
+    # eu_gate: true is essential here or this single source would swamp
+    # the digest with non-EU content, same treatment as Ember/Carbon
+    # Brief. No RSS feed; see scrape_sei() in backend_scrapers.py. Uses
+    # the page's own "Latest" sort (?sort-by=ndate) rather than the
+    # default "Last Updated" sort, which surfaces recently-EDITED old
+    # publications ahead of genuinely new ones (confirmed live: a July
+    # 2025 publication outranked September 2026 ones under the default).
   - name: ShareAction
     scraper: shareaction
     field: green-deal
@@ -1023,6 +1143,52 @@ sources:
     # look like regeneratable Tailwind utility classes. Confirmed via a
     # plain fetch -- see scrape_wmo() in backend_scrapers.py.
 
+  - name: World Bank Group
+    scraper: world_bank_climate
+    field: green-deal
+    actor_type: international-org
+    # blogs.worldbank.org/en/climatechange ("Development and a Changing
+    # Climate"). Server-rendered, no browser needed -- see
+    # scrape_world_bank_climate() in backend_scrapers.py. No RSS feed found
+    # (checked several guessed patterns, all empty/404). Content is mostly
+    # global/developing-country framed (Africa, Latin America, South Asia
+    # project case studies) with only occasional Europe & Central Asia
+    # regional pieces -- relies on the same EU-relevant-OR-global-climate-
+    # benchmark OR-gate as IEA/UNEP/WMO above. Posts roughly monthly, so
+    # this is a low-volume but genuine source.
+  - name: IMF
+    scraper: imf_blog
+    field: green-deal
+    actor_type: international-org
+    # IMFBlog (imf.org/en/blogs). Server-rendered, no browser needed -- see
+    # scrape_imf_blog() in backend_scrapers.py. No RSS feed exists (imf.org/
+    # en/news/rss and similar redirect to an HTML page, not real XML); IMF's
+    # actual news search is a client-side SPA that would need Playwright --
+    # IMFBlog is the much cheaper plain-HTML alternative. Checked content
+    # directly: IMFBlog is overwhelmingly macro/fiscal/financial-stability/
+    # AI commentary, NOT climate- or competition-focused -- IMF's genuine
+    # climate-fiscal-policy output (carbon pricing, green subsidy reform)
+    # lives in Working Papers/Selected Issues Papers this landing page
+    # doesn't surface cleanly. Expect this source to contribute rarely;
+    # kept anyway for the occasional genuinely on-topic EU fiscal/carbon-
+    # pricing analysis, same "confirmed live, just low-yield" category as
+    # several other sources in this file.
+  - name: OECD
+    scraper: oecd_climate
+    field: green-deal
+    actor_type: international-org
+    # oecd.org/en/topics/climate-change.html's "Related publications"
+    # widget. Confirmed JS-required (a plain fetch returns pure nav markup,
+    # zero dated content) -- see scrape_oecd_climate()/_parse_oecd_cards()
+    # in browser_scrapers.py. No RSS feed exists anywhere on oecd.org
+    # (oecd.org/rss, oecd.org/rssfeeds/, search.oecd.org/rssfeeds/ all
+    # return empty). Genuinely mixed EU/global output (member-state reviews
+    # for the US/Japan alongside EU members) -- relies on the same OR-gate
+    # as IEA/UNEP/WMO/World Bank above. See also the OECD Competition entry
+    # under Competition-focused think tanks below -- same organisation, two
+    # separate topic feeds, each independently keyword-filtered per field
+    # (same dual-entry pattern as Bruegel/CEPS).
+
   # NOT added: WFP (World Food Programme). Has a working news
   # search/listing, but checked its full output (2185 results) and it's
   # overwhelmingly humanitarian/conflict/famine-response content -- Gaza,
@@ -1389,6 +1555,26 @@ sources:
     # backend_scrapers.FIELD, so without that fix this entry's items would
     # have silently ended up mistagged as green-deal instead of
     # competition. See the comment on fetch_source() there.
+  - name: OECD
+    scraper: oecd_competition
+    field: competition
+    actor_type: international-org
+    # Same organisation, same dual-entry pattern as Bruegel/CEPS above --
+    # see the green-deal OECD entry (International organisations section)
+    # for the shared "Related publications" card structure and why a real
+    # browser is needed. oecd.org/en/topics/competition.html: dedicated
+    # Competition Committee output, "OECD Competition Trends" annual
+    # analysis, and frequent EU-member-state-specific enforcement studies
+    # (e.g. a live "Fighting Bid Rigging in Public Procurement in Austria,
+    # Bulgaria, Croatia, Cyprus, Greece and Romania" report). actor_type:
+    # international-org rather than think-tank (unlike the rest of this
+    # section) since OECD is a genuine multilateral body -- this means
+    # is_io_relevant()'s OR-gate applies rather than a flat topic filter,
+    # though its second branch (climate-benchmark keywords) will
+    # essentially never fire for competition-topic content, so in practice
+    # this behaves like "topic match AND EU-relevant", which is the right
+    # strictness level here (no competition-policy equivalent of a global
+    # climate benchmark to justify a looser gate).
   # Checked and NOT added:
   #  - GCLC (Global Competition Law Centre, College of Europe, Bruges) --
   #    a real, dedicated EU/global competition-law research centre
