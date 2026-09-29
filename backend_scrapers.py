@@ -2099,12 +2099,17 @@ def _extract_cerre_body(url):
     one extra request per candidate item.
 
     Extraction is landmark-based rather than CSS-class-based: collect <p>
-    text following the page's <h1> title, stopping at the "Document(s)" /
-    "Author(s)" / "More publications" section headings that mark the end of
-    the actual article (author bios and the "more on this sector" sidebar
-    are noise for keyword matching, not signal). Elementor's own class names
-    are long, auto-generated, and far more likely to change on a redesign
-    than the fact that the page has an <h1> and heading elements.
+    AND <li> text following the page's <h1> title, stopping at the
+    "Document(s)" / "Author(s)" / "More publications" section headings that
+    mark the end of the actual article (author bios and the "more on this
+    sector" sidebar are noise for keyword matching, not signal). <li> is
+    included alongside <p> because CERRE publication pages regularly
+    summarise their actual findings as a bulleted list (confirmed live on
+    this exact example -- the paper's four key takeaways are <li> elements,
+    not <p> text), so a <p>-only extraction would miss real substance.
+    Elementor's own class names are long, auto-generated, and far more
+    likely to change on a redesign than the fact that the page has an <h1>
+    and heading elements.
 
     Best-effort: any failure (network error, no <h1> found, structure
     changed) returns "", and the caller falls back to the title alone --
@@ -2128,7 +2133,7 @@ def _extract_cerre_body(url):
         if el.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
             if el.get_text(strip=True).lower() in stop_headings:
                 break
-        elif el.name == "p":
+        elif el.name in ("p", "li"):
             text = el.get_text(" ", strip=True)
             if text:
                 paragraphs.append(text)
