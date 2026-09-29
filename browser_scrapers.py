@@ -289,9 +289,207 @@ def scrape_eurocities(cutoff):
     return items
 
 
+def _parse_oecd_cards(html, base, cutoff):
+    """Shared parsing logic for OECD topic pages (see scrape_oecd_climate/
+    scrape_oecd_competition below) -- both pages use the same site-wide
+    "Related publications" card component, so this is the same extraction
+    for either, just called with different fetched HTML.
+
+    Cards, confirmed via live DOM inspection on both the Climate change and
+    Competition topic pages:
+
+        <div class="card report-summary-page card--silent-theme">
+          <div class="card__content">
+            <div class="card__tags"><div class="tag tag--small">Working paper</div></div>
+            <div class="card__title">
+              <a class="card__title-link" href="/en/publications/slug_id-en.html">Title</a>
+            </div>
+          </div>
+          <div class="card__metadata">
+            <div class="card__date">30 September 2026</div>
+            <div class="card__pages">51 Pages</div>
+          </div>
+        </div>
+
+    This card class is specific to the "Related publications" widget --
+    confirmed the page's other widgets (Latest insights' videos, Roundtable
+    notes, Related events) use different card classes entirely, so
+    selecting div.card.report-summary-page site-wide, with no further
+    section-scoping, cleanly picks up only the publications and nothing
+    else -- verified live: exactly 5 matches on the Competition page, all
+    Working paper/Report/Policy paper, zero Video/Roundtable/event items.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    items = []
+    for card in soup.select("div.card.report-summary-page"):
+        title_a = card.select_one(".card__title-link")
+        date_el = card.select_one(".card__date")
+        if not title_a or not title_a.get("href") or not date_el:
+            continue
+
+        dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+        if not _passes_cutoff(dt, cutoff):
+            continue
+
+        title = title_a.get_text(strip=True)
+        href = title_a["href"]
+        link = href if href.startswith("http") else base + href
+        items.append(_make_item("OECD", title, link, dt, title))
+    return items
+
+
+def scrape_oecd_climate(cutoff):
+    """
+    https://www.oecd.org/en/topics/climate-change.html -- see
+    _parse_oecd_cards() above for the shared card structure. Confirmed JS-
+    required: a plain fetch of this URL returns ~79,000 characters of pure
+    navigation/mega-menu markup and zero dated content (grepped for years/
+    "Report"/"Publication" -- no matches); a JS-executing browser on the
+    identical URL shows the populated "Related publications" widget. No
+    RSS feed exists anywhere on oecd.org (oecd.org/rss, oecd.org/rssfeeds/,
+    and search.oecd.org/rssfeeds/ -- the URL commonly cited as OECD's own
+    feed portal -- all return empty).
+
+    No excerpt text available in the card (only a content-type tag,
+    title, date, page count) -- summary falls back to the title, same as
+    several other lean sources in this file.
+
+    OECD's Environment/Climate output is genuinely mixed EU/global (US,
+    Japan, and other non-EU members' reviews alongside EU-member-state
+    ones -- e.g. "OECD Environmental Performance Reviews: Slovenia 2026"
+    seen live) -- relies on actor_type: international-org's is_io_relevant()
+    OR-gate, same reasoning as IEA/UNEP/WMO/World Bank.
+    """
+    base = "https://www.oecd.org"
+    try:
+        html = _fetch_rendered_html(
+            f"{base}/en/topics/climate-change.html", "div.card.report-summary-page"
+        )
+        return _parse_oecd_cards(html, base, cutoff)
+    except Exception as exc:
+        print(f"[browser_scrapers] scrape_oecd_climate failed: {exc}")
+        return []
+
+
+def scrape_oecd_competition(cutoff):
+    """
+    https://www.oecd.org/en/topics/competition.html -- see
+    _parse_oecd_cards() above for the shared card structure and
+    scrape_oecd_climate() above for why this needs a real browser (same
+    site, same JS-rendered widget, same absence of any RSS feed).
+
+    OECD runs the closest thing to a genuine peer to DG COMP outside the
+    EU itself -- a dedicated Competition Committee, "OECD Competition
+    Trends" annual analysis, and frequent EU-member-state-specific
+    enforcement studies (e.g. "Fighting Bid Rigging in Public Procurement
+    in Austria, Bulgaria, Croatia, Cyprus, Greece and Romania" seen live).
+    field: competition, actor_type: international-org -- is_io_relevant()'s
+    OR-gate degrades gracefully here: its second branch (climate-benchmark
+    keywords) will essentially never fire for competition-topic content, so
+    this effectively requires EU-relevance, which is the right level of
+    strictness for a globally-reporting competition body (there's no
+    competition-policy equivalent of a "1.5C" global benchmark the way
+    climate has one).
+    """
+    base = "https://www.oecd.org"
+    try:
+        html = _fetch_rendered_html(
+            f"{base}/en/topics/competition.html", "div.card.report-summary-page"
+        )
+        return _parse_oecd_cards(html, base, cutoff)
+    except Exception as exc:
+        print(f"[browser_scrapers] scrape_oecd_competition failed: {exc}")
+        return []
+
+
+def scrape_kfw(cutoff):
+    """
+    KfW (German state development bank) English-language press releases --
+    https://www.kfw.de/About-KfW/Newsroom/Latest-News/Press-Releases/
+    index.jsp, with a query string (?facet.filter.language=en&...) that a
+    research pass found the page's own search widget adds client-side on
+    load. Confirmed JS-required: this is a client-side search-results
+    widget (Coveo-style), not server-rendered HTML.
+
+    No RSS feed exists -- the legacy feed URLs referenced in KfW's own
+    "RSS-Feed" help page (kfw.de/.../RssPressDe.xml and similar) all 404;
+    KfW's current "Newsdienste" page only offers email newsletter signup.
+
+    Cards, confirmed via live DOM inspection:
+
+        <div class="search-result-item-wrapper news_press">
+          <div class="spitzmarke"><p class="smk-1">29.09.2026 | KfW Research</p></div>
+          <div class="title">
+            <a class="link type-headline hl-5" href="https://www.kfw.de/.../News-Details_908608.html"
+               aria-label="KfW-ifo SME Barometer: September 2026">
+              <span class="link-container"><span class="link-labeling">KfW-ifo SME Barometer: September 2026</span></span>
+            </a>
+          </div>
+          <div class="description">Sentiment continues to rise</div>
+        </div>
+
+    The date/business-division line is one text node ("29.09.2026 | KfW
+    Research") -- split on " | ", first part is the date.
+
+    Confirmed English content updates in lockstep with German (same-day
+    releases in both languages, not a lagging translation) -- viable as an
+    English-only source under this project's language policy. That said,
+    KfW's real-time output is overwhelmingly transactional/self-
+    promotional (its own SME survey results, individual loan/bond deals,
+    country financing announcements) rather than policy analysis -- expect
+    the keyword filter to reject most of it and pass through only genuine
+    green-finance/energy-transition items (green bond issuances, energy-
+    efficiency financing programmes) when they occur. field: green-deal,
+    NOT actor_type: international-org (KfW is a national promotional bank,
+    not a multilateral body -- doesn't fit the IEA/UNEP/WMO/OECD/World Bank
+    "reports on the whole world" category this actor_type exists for), so
+    the plain GREEN_DEAL_KEYWORDS topic filter applies with no additional
+    EU-relevance gate. No eu_gate either: unlike Ember/Carbon Brief/
+    ShareAction (globally-reporting outlets needing a strict EU-specificity
+    AND-gate), KfW's transactional press releases rarely say "Europe"/"EU"
+    explicitly even when the underlying deal is EU-relevant (e.g. a German
+    SME energy-efficiency loan programme) -- an EU-relevance AND-gate on
+    top of the topic filter would likely zero out this source entirely;
+    the topic filter alone is the right amount of gating here.
+    """
+    org = "KfW"
+    url = (
+        "https://www.kfw.de/About-KfW/Newsroom/Latest-News/Press-Releases/"
+        "index.jsp?rows=10&facet.filter.language=en&query=*%3A*&page=1"
+        "&sortBy=relevance_sort&sortOrder=desc&groups=1&dymFailover=true"
+    )
+    items = []
+    try:
+        html = _fetch_rendered_html(url, "div.search-result-item-wrapper.news_press")
+        soup = BeautifulSoup(html, "html.parser")
+        for card in soup.select("div.search-result-item-wrapper.news_press"):
+            meta_el = card.select_one(".spitzmarke p")
+            title_a = card.select_one(".title a[href]")
+            desc_el = card.select_one(".description")
+            if not meta_el or not title_a:
+                continue
+
+            date_text = meta_el.get_text(strip=True).split("|")[0].strip()
+            dt = _parse_date(date_text, ["%d.%m.%Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            summary = desc_el.get_text(strip=True) if desc_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[browser_scrapers] scrape_kfw failed: {exc}")
+        return []
+    return items
+
+
 BROWSER_SCRAPERS = {
     "echa": scrape_echa,
     "eca": scrape_eca,
     "shareaction": scrape_shareaction,
     "eurocities": scrape_eurocities,
+    "oecd_climate": scrape_oecd_climate,
+    "oecd_competition": scrape_oecd_competition,
+    "kfw": scrape_kfw,
 }
