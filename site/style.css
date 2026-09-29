@@ -245,6 +245,23 @@ h1, h2, h3 {
   letter-spacing: 0.03em;
 }
 
+/* Trial-launch marker for a live-but-unproven field tab (see Competition).
+   Mirrors .pro-badge's solid gold/navy pill so it reads as part of the same
+   design system rather than a bolted-on warning label. */
+.beta-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--gold);
+  color: var(--navy-950);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
 .topic-tabs {
   display: flex;
   flex-wrap: wrap;
