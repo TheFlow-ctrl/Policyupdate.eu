@@ -2249,6 +2249,375 @@ def scrape_cerre(cutoff):
     return items
 
 
+def scrape_world_bank_climate(cutoff):
+    """
+    https://blogs.worldbank.org/en/climatechange ("Development and a
+    Changing Climate" blog series). Server-rendered (AEM/CQ) -- a plain
+    fetch returns the full card list directly, no browser needed.
+
+    No RSS/Atom feed exists (checked /rss.xml, /rss, /feed and variants,
+    all empty/404; no <link rel="alternate" type="application/rss+xml">
+    in the page head either).
+
+    Cards, confirmed via live DOM inspection:
+
+        <div class="blog_teaser">
+          <div class="blog_teaser__content">
+            <h3 class="blog_teaser__title">
+              <a href="/en/climatechange/slug">Title</a>
+            </h3>
+            <div class="blog_teaser__link_container">
+              <span><time>June 18, 2026</time></span>
+              <ul><li><a href="/en/team/...">Author Name</a></li></ul>
+            </div>
+          </div>
+        </div>
+
+    Only ~8 cards on the page (no pagination scraped) -- fine for a "last N
+    days" digest, and this blog posts roughly monthly, so 8 already covers
+    well over a typical cutoff window. No excerpt/description text in the
+    card itself, so summary falls back to the title, same as several other
+    lean sources in this file. Links are relative, need the base URL.
+
+    World Bank's climate output is mostly global/developing-country framed
+    (Africa, Latin America, South Asia project case studies) rather than
+    EU-policy-specific, with only occasional Europe & Central Asia regional
+    pieces -- relies on actor_type: international-org's is_io_relevant()
+    OR-gate (EU-relevant OR global-climate-benchmark) in fetch_digest.py,
+    same as IEA/UNEP/WMO, so genuinely global "state of climate finance"
+    -type content is kept even without an EU angle.
+    """
+    org = "World Bank Group"
+    base = "https://blogs.worldbank.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/en/climatechange")
+        for card in soup.select("div.blog_teaser"):
+            title_a = card.select_one("h3.blog_teaser__title a[href]")
+            time_el = card.select_one("time")
+            if not title_a or not time_el:
+                continue
+
+            dt = _parse_date(time_el.get_text(strip=True), ["%B %d, %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            href = title_a["href"]
+            link = href if href.startswith("http") else base + href
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_world_bank_climate failed: {exc}")
+        return []
+    return items
+
+
+def scrape_imf_blog(cutoff):
+    """
+    https://www.imf.org/en/blogs (IMFBlog). Server-rendered -- a plain
+    fetch returns the full card list directly, no browser needed. No RSS
+    feed found (imf.org/en/news/rss and similar guesses all redirect to an
+    HTML page, not real RSS XML; IMF's actual news search is a client-
+    side-rendered SPA that would need Playwright -- IMFBlog is the much
+    cheaper, plain-HTML alternative and covers the same kind of analytical
+    content).
+
+    Cards, confirmed via live DOM inspection:
+
+        <div class="card">
+          <div class="card-body p-0">
+            <div class="topic-type"><a href="...">Prices</a></div>
+            <h2 class="card-subtitle">
+              <a href="/en/blogs/articles/2026/09/17/slug" class="belt-link">Title</a>
+            </h2>
+            <div class="card-date mb-2">
+              <time datetime="9/17/2026, 3:00 PM">September 17, 2026</time>
+            </div>
+            <div class="card-author">...</div>
+            <p class="card-text"><a href="..."><span>Summary...</span></a></p>
+          </div>
+        </div>
+
+    The same article appears inside multiple promotional widgets on this
+    one landing page (a "Latest Blogs" grid, a topic-highlight belt, a
+    "Read More" carousel, ...) -- confirmed live (one title matched 4
+    separate <a class="belt-link"> elements). Rather than trying to scope
+    to exactly one of those widgets (fragile -- the page's own layout
+    changes which widgets appear), this selects every h2.card-subtitle on
+    the page and dedupes by link, keeping the first (topmost) copy of each.
+
+    IMF's general blog is overwhelmingly macro/fiscal/financial-stability/
+    AI content, NOT climate- or competition-law-focused -- IMF's genuine
+    climate-fiscal-policy output (carbon pricing, green subsidies) lives in
+    Working Papers/Selected Issues Papers this landing page doesn't surface
+    cleanly. Expect this source to contribute rarely; kept anyway (same
+    "confirmed live, just infrequent/low-yield" category as several other
+    sources in this file) since an occasional genuinely on-topic IMF blog
+    post (EU fiscal/carbon-pricing analysis) is worth catching when it
+    happens. actor_type: international-org, so is_io_relevant()'s EU-
+    relevant-OR-global-climate-benchmark gate applies same as IEA/UNEP/WMO.
+    """
+    org = "IMF"
+    base = "https://www.imf.org"
+    items = []
+    seen_links = set()
+    try:
+        soup = _get_soup(f"{base}/en/blogs")
+        for heading in soup.select("h2.card-subtitle"):
+            title_a = heading.select_one("a[href]")
+            if not title_a:
+                continue
+            href = title_a["href"]
+            link = href if href.startswith("http") else base + href
+            if link in seen_links:
+                continue
+
+            card = heading.find_parent("div", class_="card-body") or heading.parent
+            time_el = card.select_one(".card-date time") if card else None
+            if not time_el:
+                continue
+            datetime_attr = time_el.get("datetime", "")
+            dt = None
+            if datetime_attr:
+                # e.g. "9/17/2026, 3:00 PM" -- date part only, time doesn't matter
+                date_part = datetime_attr.split(",")[0].strip()
+                dt = _parse_date(date_part, ["%m/%d/%Y"])
+            if dt is None:
+                dt = _parse_date(time_el.get_text(strip=True), ["%B %d, %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            seen_links.add(link)
+            title = title_a.get_text(strip=True)
+            summary_el = card.select_one(".card-text") if card else None
+            summary = summary_el.get_text(strip=True) if summary_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_imf_blog failed: {exc}")
+        return []
+    return items
+
+
+def scrape_gold_standard(cutoff):
+    """
+    https://www.goldstandard.org/newsroom -- Gold Standard's voluntary
+    carbon-credit certification body. Server-rendered (Nuxt/Vue SSR,
+    confirmed via a plain fetch returning real titles/dates directly, no
+    browser needed) despite the data-v-* Vue scoped-style attributes.
+
+    No RSS/Atom feed exists (/feed, /feed/, /rss.xml, /feed.xml all
+    empty).
+
+    Cards, confirmed via live DOM inspection:
+
+        <li>
+          <article>
+            <header>...<a href="/news/slug">...</a>...</header>
+            <main>
+              <a href="/newsroom?type=opinion">opinion</a>
+              <a href="/news/slug"><h4 class="title bold w-full">Title</h4></a>
+            </main>
+            <footer>
+              <div class="card-news__info-text">
+                <span class="text-mini"> <time datetime="2026-09-29T07:00:00+0000"> Sep 29, 2026 </time> ...
+              </div>
+            </footer>
+          </article>
+        </li>
+
+    Uses the time element's machine-readable datetime attribute rather than
+    its display text, avoiding a date-format guess entirely. No excerpt
+    text in the card -- summary falls back to the title, same as several
+    other lean sources in this file.
+
+    Global voluntary-carbon-market standard-setter (Switzerland-based), not
+    EU-specific -- eu_gate: true in sources.yaml, same treatment as Climate
+    Bonds Initiative (another global standard-setting NGO).
+    """
+    org = "Gold Standard Foundation"
+    base = "https://www.goldstandard.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/newsroom")
+        for article in soup.select("article"):
+            title_el = article.select_one("h4.title")
+            time_el = article.select_one("time[datetime]")
+            if not title_el or not time_el:
+                continue
+            title_a = title_el.find_parent("a")
+            if not title_a or not title_a.get("href"):
+                continue
+
+            datetime_attr = time_el["datetime"]
+            try:
+                dt = datetime.fromisoformat(datetime_attr)
+                dt = dt.replace(tzinfo=None)
+            except ValueError:
+                continue
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            href = title_a["href"]
+            link = href if href.startswith("http") else base + href
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_gold_standard failed: {exc}")
+        return []
+    return items
+
+
+_CARBON_GAP_DATE_RE = re.compile(
+    r"\b(\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)[a-z]*\s+\d{4})\b"
+)
+
+
+def scrape_carbon_gap(cutoff):
+    """
+    https://carbongap.org/insights/ (note: the real domain is carbongap.org
+    -- the hyphenated carbon-gap.org does not resolve). Brussels-based
+    carbon-dioxide-removal (CDR) EU-policy advocacy org. Server-rendered
+    Next.js -- confirmed via a plain fetch, no browser needed.
+
+    No RSS/Atom feed exists.
+
+    Cards use Tailwind utility classes only (no stable semantic class
+    names) and, confirmed via live DOM inspection, at least two different
+    card layouts on the same listing page with the date/title <p> elements
+    in a DIFFERENT order between them -- positional extraction (first <p>
+    is always the date, say) is not reliable here. Two structural anchors
+    ARE reliable across every card layout observed, though:
+
+      - the card's <img alt="..."> attribute always exactly matches the
+        article title (confirmed against every card checked, including
+        the swapped-order one)
+      - a date substring (e.g. "22 Sept 2026") always appears somewhere in
+        the card's flattened text, found here via regex rather than by
+        assuming which element holds it
+
+    The same href can also appear twice on the page (a "featured" card
+    plus its regular grid copy) -- deduped here the same way the IMF/World
+    Bank scrapers handle their own repeated-card situations.
+
+    "Sept" (4-letter) alongside standard 3-letter abbreviations elsewhere
+    on the page -- same normalisation ShareAction's scraper needed for the
+    same reason (a %b-format strptime won't match a 4-letter month).
+
+    No excerpt in the reliable-anchor set above -- summary falls back to
+    the title. Thoroughly EU-specific content by nature (EU ETS, LULUCF,
+    CRCF, Commission consultations) -- no eu_gate needed, same as CERRE/
+    ECIPE/other Brussels-based single-issue advocates in this file.
+    """
+    org = "Carbon Gap"
+    base = "https://carbongap.org"
+    items = []
+    seen_links = set()
+    try:
+        soup = _get_soup(f"{base}/insights")
+        for card in soup.select('a[href^="/insights/"]'):
+            href = card["href"]
+            link = base + href
+            if link in seen_links:
+                continue
+
+            img = card.select_one("img[alt]")
+            if not img or not img.get("alt"):
+                continue
+            title = img["alt"].strip()
+
+            card_text = card.get_text(" ", strip=True)
+            date_match = _CARBON_GAP_DATE_RE.search(card_text)
+            if not date_match:
+                continue
+            date_text = date_match.group(1).replace("Sept", "Sep")
+            dt = _parse_date(date_text, ["%d %b %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            seen_links.add(link)
+            items.append(_make_item(org, title, link, dt, title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_carbon_gap failed: {exc}")
+        return []
+    return items
+
+
+def scrape_sei(cutoff):
+    """
+    https://www.sei.org/publications/?sort-by=ndate (Stockholm Environment
+    Institute). Server-rendered -- confirmed via a plain fetch, no browser
+    needed. The ?sort-by=ndate query param is required: the page's DEFAULT
+    sort is "Last Updated" (a metadata-edit timestamp, not the actual
+    publish date -- confirmed live: a July 2025 publication that had been
+    recently edited sorted ABOVE genuinely new September 2026 items under
+    the default sort). "ndate" is the site's own "Latest" sort option
+    (found via the page's sort-by <select> element's option values),
+    sorting by actual publish date instead.
+
+    No RSS/Atom feed exists.
+
+    Cards, confirmed via live DOM inspection:
+
+        <article class="c-card">
+          <div class="c-card__link-wrapper">
+            <div class="c-card__text-wrapper">
+              <a class="c-card__link" href="https://www.sei.org/publications/slug/">
+                <span class="c-card__title">Title</span>
+              </a>
+              <p class="c-card__description">...</p>
+              <div class="c-card__bottom-meta">
+                <p class="c-card__bottom-meta-text">
+                  <span class="c-card__date">21 July 2025 /</span>
+                  ...
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+    The page ALSO includes a handful of "related content" nav cards
+    (class "c-card c-card--in-menu") reusing the exact same c-card
+    structure but with no c-card__date element at all -- filtering to only
+    cards that HAVE a .c-card__date cleanly excludes those without needing
+    a separate class-based exclusion rule.
+
+    SEI is a huge (3,900+ publication), genuinely globally-focused research
+    institute -- recent output observed live skews heavily non-EU (Bolivia,
+    Kenya, African critical minerals, humanitarian energy/refugee finance)
+    -- eu_gate: true in sources.yaml is essential here, same strict
+    treatment as Ember/Carbon Brief/Climate Bonds Initiative, or this
+    single source would dominate the digest with non-EU content.
+    """
+    org = "Stockholm Environment Institute"
+    base = "https://www.sei.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/publications/", params={"sort-by": "ndate"})
+        for card in soup.select("article.c-card"):
+            date_el = card.select_one(".c-card__date")
+            if not date_el:
+                continue
+            title_el = card.select_one(".c-card__title")
+            link_a = card.select_one("a.c-card__link")
+            if not title_el or not link_a or not link_a.get("href"):
+                continue
+
+            date_text = date_el.get_text(strip=True).rstrip("/").strip()
+            dt = _parse_date(date_text, ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = link_a["href"]
+            desc_el = card.select_one(".c-card__description")
+            summary = desc_el.get_text(" ", strip=True) if desc_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_sei failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -2287,6 +2656,11 @@ SCRAPERS = {
     "bioenergy_europe": scrape_bioenergy_europe,
     "committee_of_regions": scrape_committee_of_regions,
     "cerre": scrape_cerre,
+    "world_bank_climate": scrape_world_bank_climate,
+    "imf_blog": scrape_imf_blog,
+    "gold_standard": scrape_gold_standard,
+    "carbon_gap": scrape_carbon_gap,
+    "sei": scrape_sei,
 }
 
 # Headless-browser scrapers (browser_scrapers.py) live in a separate module
