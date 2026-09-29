@@ -24,6 +24,16 @@ import yaml
 
 import backend_scrapers
 
+try:
+    from langdetect import DetectorFactory as _LangDetectorFactory
+    from langdetect import LangDetectException
+    from langdetect import detect_langs as _detect_langs
+
+    _LangDetectorFactory.seed = 0  # deterministic results across runs
+except ImportError:  # pragma: no cover -- see requirements.txt
+    _detect_langs = None
+    LangDetectException = Exception
+
 SOURCES_FILE = Path(__file__).parent / "sources.yaml"
 OUTPUT_FILE = Path(__file__).parent / "digest.md"
 JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
@@ -497,6 +507,93 @@ def filter_out_low_value(entries):
     return kept, skipped
 
 
+# Minimum title length before trusting a language-detection result at all.
+# langdetect is unreliable on very short strings -- e.g. bare "EU ETS"
+# detects as Spanish -- so below this length a title is assumed English
+# rather than risking a false-positive drop of legitimate short content.
+_LANG_DETECT_MIN_LEN = 15
+
+# Minimum top-language confidence (from detect_langs()) before trusting a
+# NON-English classification enough to drop an entry over it. Confidence
+# only gates the drop decision, not the keep decision -- a low-confidence
+# "en" result is harmless either way, since "keep" is already the default.
+# Calibrated against a real false-positive case caught in testing: "CBAM:
+# Carbon Border Adjustment Mechanism enters definitive regime" (genuinely
+# English, acronym/proper-noun-heavy and only 65 characters) misdetects as
+# German at just 0.71 confidence -- langdetect's probability spread across
+# candidate languages on short, unusual text can be nearly flat. Genuine
+# Romanian titles from the EPG Thinktank case that motivated this whole
+# check scored >=0.9999 confidence, i.e. nowhere near this ambiguous. 0.90
+# sits comfortably between the two and still clears every genuine English
+# title checked (all scored >=0.857, but those don't need to clear this
+# threshold at all -- they're only compared against it if misdetected as
+# non-English, which none were).
+_LANG_DETECT_MIN_CONFIDENCE = 0.90
+
+
+def is_non_english_title(title):
+    """Best-effort per-entry language check, catching an individual
+    foreign-language item from a source whose feed otherwise reads as
+    English.
+
+    This exists alongside, not instead of, the channel-level <language> tag
+    check in fetch_recent_entries(): that check only catches a feed that's
+    ENTIRELY non-English and declares itself so honestly, which does
+    nothing for a genuinely bilingual site. Concrete case this fixes: EPG
+    Thinktank's feed declares <language>en-US</language> at the channel
+    level, but actually publishes a mix of English and Romanian-original
+    posts in the same feed (e.g. "Viitorul industriei metalurgice
+    românești..." alongside "The Urban Cooling Paradox..."). The
+    channel-level check can never catch this by construction, since it can
+    only see one declared language for the whole feed -- this runs
+    per-entry instead, downstream of both feed-based and scraper-based
+    sources (see its call site in main()).
+
+    Checked on the title alone, not title+excerpt: some feeds' excerpt
+    field is contaminated with an English WordPress boilerplate tail ("The
+    post ... first appeared on ...") that could skew detection toward "en"
+    even for a genuinely foreign-language post; the title has no such
+    contamination and is normally long enough on its own for langdetect to
+    be reliable (verified against this exact feed's real titles, both with
+    and without Romanian diacritics).
+
+    Deliberately conservative in every direction it can fail -- langdetect
+    not installed, title too short to trust, detection raises, or the top
+    non-English guess doesn't clear _LANG_DETECT_MIN_CONFIDENCE -- this
+    returns False (i.e. "assume English, don't drop") rather than risk
+    silently dropping legitimate English content over a shaky guess.
+    Mirrors the channel-level check's own stated policy: "a missing/blank
+    language field is not treated as a signal either way."
+    """
+    if _detect_langs is None:
+        return False
+    if not title or len(title.strip()) < _LANG_DETECT_MIN_LEN:
+        return False
+    try:
+        langs = _detect_langs(title)
+    except LangDetectException:
+        return False
+    if not langs:
+        return False
+    top = langs[0]
+    if top.lang == "en":
+        return False
+    return top.prob >= _LANG_DETECT_MIN_CONFIDENCE
+
+
+def filter_out_non_english(entries):
+    """Drop entries whose title reads as non-English, returning
+    (kept_entries, number_skipped). See is_non_english_title() above."""
+    kept = []
+    skipped = 0
+    for entry in entries:
+        if is_non_english_title(entry.get("title", "")):
+            skipped += 1
+        else:
+            kept.append(entry)
+    return kept, skipped
+
+
 # Content-format classification: purely cosmetic (drives a small badge next
 # to the entry title on the site, via FORMAT_LABELS) -- unlike
 # EXCLUDED_URLS/is_low_value_link above, nothing here removes an entry.
@@ -785,6 +882,14 @@ SCRAPER_HOMEPAGES = {
     "eurocities": "https://eurocities.eu",
     "committee_of_regions": "https://www.cor.europa.eu",
     "cerre": "https://cerre.eu",
+    "world_bank_climate": "https://blogs.worldbank.org/en/climatechange",
+    "imf_blog": "https://www.imf.org/en/blogs",
+    "oecd_climate": "https://www.oecd.org/en/topics/climate-change.html",
+    "oecd_competition": "https://www.oecd.org/en/topics/competition.html",
+    "kfw": "https://www.kfw.de",
+    "gold_standard": "https://www.goldstandard.org",
+    "carbon_gap": "https://carbongap.org",
+    "sei": "https://www.sei.org",
 }
 
 
@@ -1102,6 +1207,18 @@ def update_archive(new_entries):
     existing_entries, archive_pruned = filter_out_low_value(existing_entries)
     if archive_pruned:
         print(f"  [archive] pruned {archive_pruned} now-denylisted archived entr{'y' if archive_pruned == 1 else 'ies'}")
+
+    # Same self-heal, for filter_out_non_english() (added after a Romanian-
+    # language EPG Thinktank item -- see is_non_english_title() -- was
+    # already live in archive.json by the time the language check existed).
+    # Without this, the fix would only stop NEW non-English items from
+    # being archived going forward; this line also retroactively clears the
+    # one that's already there, on the very next pipeline run, with no
+    # manual archive.json edit needed.
+    existing_entries, archive_lang_pruned = filter_out_non_english(existing_entries)
+    if archive_lang_pruned:
+        print(f"  [archive] pruned {archive_lang_pruned} now-non-English archived entr{'y' if archive_lang_pruned == 1 else 'ies'}")
+
     for entry in existing_entries:
         entry["content_type"] = classify_content_type(
             entry.get("title", ""), entry.get("link", ""), entry.get("summary", "")
@@ -1701,6 +1818,10 @@ def main():
         raw_entries, low_value_skipped = filter_out_low_value(raw_entries)
         if low_value_skipped:
             print(f"  filtered out {low_value_skipped} podcast/known-bad item(s)")
+
+        raw_entries, non_english_skipped = filter_out_non_english(raw_entries)
+        if non_english_skipped:
+            print(f"  filtered out {non_english_skipped} non-English item(s)")
 
         for entry in raw_entries:
             entry["actor_type"] = actor_type
