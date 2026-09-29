@@ -1,6 +1,6 @@
 // Loads digest.json (written by fetch_digest.py) and renders it as cards,
 // filtered by three independent dimensions:
-//   1. field (Climate/Energy/Environment, Security, Tech, Health)
+//   1. field (Climate/Energy/Environment, Security, Competition, Tech, Health)
 //   2. topic -- which EU law an entry mentions, within Climate/Energy/Environment
 //      (see TOPIC_LABELS, kept in sync with LEGISLATION_TAGS in fetch_digest.py)
 //   3. actor type -- what kind of source it is (see ACTOR_LABELS, kept in
@@ -13,6 +13,7 @@
 const FIELD_LABELS = {
   "green-deal": "Climate, Energy & Environment",
   security: "Security",
+  competition: "Competition",
   tech: "Tech",
   health: "Health",
 };
@@ -34,6 +35,20 @@ const TOPIC_LABELS = {
   lulucf: "LULUCF",
   ccus: "CCUS",
   eed: "EED",
+  // Keep in sync with COMPETITION_LEGISLATION_TAGS in fetch_digest.py.
+  // "crma"/"nzia" above are reused as-is (same law, same label) --
+  // deliberate, not a duplicate: see the comment on
+  // COMPETITION_LEGISLATION_TAGS in fetch_digest.py.
+  "art-101": "Article 101 TFEU",
+  "art-102": "Article 102 TFEU",
+  "merger-control": "EU Merger Regulation",
+  "state-aid": "State Aid Rules",
+  cisaf: "Clean Industrial Deal State Aid Framework",
+  ipcei: "IPCEI",
+  dma: "Digital Markets Act",
+  fsr: "Foreign Subsidies Regulation",
+  "chips-act": "European Chips Act",
+  "eu-competitiveness": "EU Competitiveness Agenda",
 };
 
 // Keep in sync with actor_type values in sources.yaml.
@@ -183,6 +198,90 @@ const TOPIC_INFO = {
       "Using less energy in the first place is usually the cheapest way to cut emissions, and it directly affects things like building renovation rules.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
   },
+  // Below: competition-field tags. Keep in sync with
+  // COMPETITION_LEGISLATION_TAGS in fetch_digest.py. nzia/crma reuse the
+  // entries above (same law, same id) rather than duplicating them here.
+  "art-101": {
+    instrument: "Article 101 TFEU (Treaty on the Functioning of the EU)",
+    description:
+      "Bans agreements between companies that restrict competition — price-fixing cartels, market-sharing deals, and other coordination that would normally happen only if firms were competing freely.",
+    whyItMatters:
+      "It's the EU's core tool against cartels — the kind of secret price-fixing or bid-rigging that costs consumers and businesses money without them ever seeing it happen.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016E/TXT",
+  },
+  "art-102": {
+    instrument: "Article 102 TFEU (Treaty on the Functioning of the EU)",
+    description:
+      "Bans a dominant company from abusing that position — for example by charging unfairly, locking out rivals, or tying products together to squeeze out competition.",
+    whyItMatters:
+      "It's the legal basis for the EU's biggest tech antitrust cases — Google, Apple, Microsoft — whenever the question is whether a powerful company used its position unfairly rather than just won on the merits.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016E/TXT",
+  },
+  "merger-control": {
+    instrument: "Regulation (EC) No 139/2004 (EU Merger Regulation)",
+    description:
+      "Requires companies above certain size thresholds to notify the Commission before merging or acquiring each other, so it can block or attach conditions to deals that would significantly reduce competition.",
+    whyItMatters:
+      "It's why large cross-border mergers need EU sign-off before they can close, and why the Commission can require a company to sell off part of a business as the price of approval.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32004R0139",
+  },
+  "state-aid": {
+    instrument: "Articles 107–109 TFEU, applied via Regulation (EU) 2015/1589",
+    description:
+      "Requires EU governments to notify the Commission before giving public money to individual companies or sectors, so it can check the support doesn't unfairly distort competition with rivals elsewhere in the EU.",
+    whyItMatters:
+      "It's the rulebook behind almost every \"Commission approves €X million in State aid\" headline — from farm subsidies to battery factories — and increasingly the main channel through which EU industrial policy gets implemented.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1589",
+  },
+  cisaf: {
+    instrument: "Commission Communication C/2025/3602 (adopted 25 June 2025)",
+    description:
+      "The current State aid rulebook specifically for clean-tech and industrial-decarbonisation subsidies — renewable energy, battery manufacturing, sustainable fuels — replacing the previous crisis-era framework.",
+    whyItMatters:
+      "It's the mechanism through which most Clean Industrial Deal subsidy announcements actually get legally cleared, making it the clearest point where EU industrial policy and competition law meet.",
+    eurlexUrl: "https://eur-lex.europa.eu/EN/legal-content/summary/clean-industrial-deal-state-aid-framework.html",
+  },
+  ipcei: {
+    instrument: "Commission Communication 2021/C 528/02",
+    description:
+      "Sets the conditions under which several EU governments can jointly fund a large cross-border strategic project — semiconductors, batteries, hydrogen — without it counting as unlawful State aid.",
+    whyItMatters:
+      "It's the legal vehicle behind Europe's biggest joint industrial projects, and another place where competition-law clearance and industrial strategy directly overlap.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021XC1230(02)",
+  },
+  dma: {
+    instrument: "Regulation (EU) 2022/1925",
+    description:
+      "Imposes a fixed set of do's and don'ts directly on the largest tech platforms (\"gatekeepers\") — interoperability, no self-preferencing, no forced bundling — without needing to prove a competition-law case first.",
+    whyItMatters:
+      "It's a deliberate shortcut around how slow traditional antitrust cases are against fast-moving digital markets: obligations apply automatically once a company is designated, rather than after years of investigation.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2022/1925/oj/eng",
+  },
+  fsr: {
+    instrument: "Regulation (EU) 2022/2560",
+    description:
+      "Lets the Commission investigate and, if needed, block or unwind mergers and public contracts where a company benefited from subsidies given by a non-EU government.",
+    whyItMatters:
+      "It closes a gap traditional State aid rules couldn't reach — those only cover EU governments' own subsidies — amid growing concern about Chinese and other foreign state support distorting competition in the EU market.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32022R2560",
+  },
+  "chips-act": {
+    instrument: "Regulation (EU) 2023/1781",
+    description:
+      "Combines public funding for semiconductor manufacturing in Europe with a monitoring and crisis-response mechanism for chip supply shortages.",
+    whyItMatters:
+      "Semiconductor subsidies and fab investments raise exactly the State aid and merger questions competition law exists to police, making chip-sector cases one of the clearest tests of the industrial-policy/competition-law tension.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2023/1781/oj/eng",
+  },
+  "eu-competitiveness": {
+    instrument:
+      "Commission Communication COM(2025) 30 final (Competitiveness Compass), building on the September 2024 Draghi report",
+    description:
+      "Not a law but the current policy direction: a Commission strategy paper, prompted by Mario Draghi's independent report on EU competitiveness, arguing that EU merger and State aid rules should be applied with more regard for building globally competitive \"European champions\".",
+    whyItMatters:
+      "It's the live debate behind any future reform of merger review or State aid policy — worth tracking even though nothing here has legal force yet, since it's shaping how today's cases get argued and decided.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0030",
+  },
 };
 
 let digestData = null;
@@ -286,6 +385,15 @@ function setupFieldTabs() {
         showVisualisationView();
       } else {
         activeField = tab.dataset.field;
+        // Reset the law/topic filter on every field switch: green-deal and
+        // competition have separate, non-overlapping tag vocabularies (see
+        // syncTopicTabsForField()), so a tag selected under one field would
+        // just silently match nothing under the other rather than showing
+        // an obviously-wrong result.
+        activeTopic = "all";
+        document.querySelectorAll(".topic-tab").forEach((t) => {
+          t.classList.toggle("active", t.dataset.topic === "all");
+        });
         showDigestView();
         renderActiveField();
       }
@@ -345,17 +453,36 @@ function hideAllSections() {
   document.getElementById("contact-section").hidden = true;
 }
 
+// The law/topic filter bar isn't one-size-fits-all: green-deal and
+// competition each have their own tag vocabulary (LEGISLATION_TAGS /
+// COMPETITION_LEGISLATION_TAGS in fetch_digest.py), rendered as two
+// separate <nav id="topic-tabs">/<nav id="competition-topic-tabs"> bars in
+// index.html. This shows whichever bar matches `field` and hides the
+// other -- pass null to hide both (views with no per-law filter at all).
+// Fields with no tag vocabulary of their own yet (security/tech/health)
+// also resolve to "hide both" via the `|| null` fallthrough below.
+function syncTopicTabsForField(field) {
+  const bars = { "green-deal": "topic-tabs", competition: "competition-topic-tabs" };
+  const visibleId = bars[field] || null;
+  Object.values(bars).forEach((id) => {
+    document.getElementById(id).hidden = id !== visibleId;
+  });
+}
+
 function showDigestView() {
   hideAllSections();
   document.getElementById("digest-section").hidden = false;
-  document.getElementById("topic-tabs").hidden = false;
+  syncTopicTabsForField(activeField);
   document.getElementById("actor-tabs").hidden = false;
 }
 
 function showArchiveView() {
   hideAllSections();
   document.getElementById("archive-section").hidden = false;
-  document.getElementById("topic-tabs").hidden = false;
+  // The archive only ever holds green-deal entries (see renderArchive()),
+  // regardless of which field tab was active before -- always the
+  // green-deal bar, not syncTopicTabsForField(activeField).
+  syncTopicTabsForField("green-deal");
   document.getElementById("actor-tabs").hidden = false;
   loadArchive();
 }
@@ -365,10 +492,12 @@ function showArchiveView() {
 // doesn't apply to a law's own legislative status, so that bar stays
 // hidden, along with the per-law info card (description/EUR-Lex link),
 // which would otherwise duplicate what each diagram's caption already says.
+// Policy Cycle only covers the 15 green-deal laws (POLICY_CYCLE_LAW_ORDER),
+// so -- like Archive above -- this always pins to the green-deal bar.
 function showPolicyCycleView() {
   hideAllSections();
   document.getElementById("policy-cycle-section").hidden = false;
-  document.getElementById("topic-tabs").hidden = false;
+  syncTopicTabsForField("green-deal");
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadPolicyCycle();
@@ -382,7 +511,7 @@ function showPolicyCycleView() {
 function showVisualisationView() {
   hideAllSections();
   document.getElementById("visualisation-section").hidden = false;
-  document.getElementById("topic-tabs").hidden = true;
+  syncTopicTabsForField(null);
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadVisualisation();
@@ -394,7 +523,7 @@ function showVisualisationView() {
 function showInfoView(sectionId) {
   hideAllSections();
   document.getElementById(sectionId).hidden = false;
-  document.getElementById("topic-tabs").hidden = true;
+  syncTopicTabsForField(null);
   document.getElementById("actor-tabs").hidden = true;
   document.getElementById("topic-info").hidden = true;
 }
