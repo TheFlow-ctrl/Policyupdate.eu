@@ -1325,7 +1325,113 @@ sources:
     # 2026) -- same "confirmed live, not dead, just infrequent" call
     # already made elsewhere in this file for EURACOAL/Bankwatch/ECOS/
     # Grantham/Ember.
+
+  # --- Competition-focused think tanks (added Sep 2026, per user request --
+  # --- also checked several specific links the user supplied directly).
+  - name: CERRE (Centre on Regulation in Europe)
+    scraper: cerre
+    field: competition
+    actor_type: think-tank
+    # Brussels regulatory-economics think tank; describes itself as one of
+    # Europe's leading think tanks, dedicated to energy/mobility/tech-media-
+    # telecom regulation, with real, current competition/digital-markets/
+    # industrial-policy output (e.g. a Sep 2026 paper on the "European
+    # champions" industrial-collaboration debate, presented at CERRE's own
+    # "EU Competitiveness Summit"). The site's default /feed/ RSS is a
+    # dead end -- well-formed but zero <item> elements, since CERRE's real
+    # output lives in a custom "publications" post type that isn't in the
+    # default WordPress feed. Uses CERRE's own public REST API instead
+    # (/wp-json/wp/v2/publications) -- see scrape_cerre() in
+    # backend_scrapers.py for the confirmed JSON shape and a known
+    # limitation (excerpt/content are empty in the API response, so
+    # matching only ever sees the title, not the full text -- a real recall
+    # gap on ambiguously-titled pieces, documented in the scraper itself).
+  - name: ECIPE
+    url: https://ecipe.org/feed/
+    field: competition
+    actor_type: think-tank
+    # Brussels trade/competitiveness economics think tank. Confirmed live
+    # and active (posted same-day at last check). Broad output beyond
+    # competition law (patent/IP policy, EU-China trade, even a NATO/Black
+    # Sea security piece seen live) -- relies on COMPETITION_KEYWORDS to
+    # surface only the relevant subset. No eu_gate: EU-policy-focused, not
+    # a globally-reporting outlet the way Ember/Carbon Brief are.
+  - name: Bruegel
+    url: https://www.bruegel.org/rss.xml
+    field: competition
+    actor_type: think-tank
+    # Same name AND same feed as the existing green-deal Bruegel entry
+    # above -- deliberate duplication, not an error. It's genuinely the
+    # same feed fetched twice (once per field), each run through that
+    # field's own keyword filter (GREEN_DEAL_KEYWORDS vs
+    # COMPETITION_KEYWORDS) independently, so Bruegel's real merger-policy/
+    # State-aid/digital-markets analysis can surface here without a
+    # green-deal-only tagging hiding it. Reusing the identical name (rather
+    # than e.g. "Bruegel (Competition)") is also deliberate: it means
+    # render_sources_list()'s dedupe-by-name in fetch_digest.py collapses
+    # both entries into a single "Bruegel" line on the public Sources page,
+    # rather than listing what looks like two different organisations.
+    # Fetched twice per run rather than cached/shared -- no fetch-sharing
+    # infrastructure exists anywhere else in this project either, and the
+    # extra request is cheap.
+  - name: CEPS
+    scraper: ceps
+    field: competition
+    actor_type: think-tank
+    # Same name AND same scraper as the existing green-deal CEPS entry --
+    # deliberate duplication, see the Bruegel entry just above for the
+    # full reasoning (identical name so the public Sources page shows one
+    # "CEPS" line, not two). CEPS runs a dedicated competition-policy
+    # research unit alongside its climate work. This entry specifically
+    # depends on fetch_source()'s field-override fix in fetch_digest.py --
+    # every scrape_*() function used to hardcode field: "green-deal" via
+    # backend_scrapers.FIELD, so without that fix this entry's items would
+    # have silently ended up mistagged as green-deal instead of
+    # competition. See the comment on fetch_source() there.
   # Checked and NOT added:
+  #  - GCLC (Global Competition Law Centre, College of Europe, Bruges) --
+  #    a real, dedicated EU/global competition-law research centre
+  #    (peer-reviewed working papers, conferences, lunch talks) -- but its
+  #    Working Papers series, the one channel that would make a clean
+  #    source, has been dead since October 2016 (checked the archive
+  #    directly: newest entry is dated Oct 2016, browsable back to <2008).
+  #    No dedicated GCLC-specific news feed exists separate from the whole
+  #    College of Europe's general News section, which is far too broad
+  #    (covers all of the College's activities, not just GCLC). A real,
+  #    well-regarded institution with no trackable live channel right now.
+  #  - Jacques Delors Centre (Hertie School, delorscentre.eu) -- real,
+  #    active EU economic-governance think tank whose competitiveness-
+  #    debate commentary would fit well here, but the entire domain sits
+  #    behind a Cloudflare bot-check challenge ("Just a moment...",
+  #    confirmed via a real browser, not just a blocked plain fetch) --
+  #    same "not headless-browser-solvable, needs a genuinely different
+  #    access path" category as wwf.eu elsewhere in this file.
+  #  - EAGCP (Economic Advisory Group on Competition Policy,
+  #    competition-policy.ec.europa.eu) -- DG Competition's own official
+  #    academic advisory group. Real and current (a plenary session as
+  #    recently as Nov 2025), but the page itself is a slow-moving
+  #    institutional reference (member CVs, plenary-session agendas ~2x/
+  #    year, an "other documents" list last added to in 2020) rather than
+  #    news-style content -- a poor fit for a 7-day rolling digest. Worth
+  #    knowing about, not worth tracking as a feed.
+  #  - EPRS "EU competition policy" tag (epthinktank.eu/tag/eu-competition-
+  #    policy) -- a real, genuinely pre-scoped RSS feed (same idea as
+  #    Eurocities' topic page elsewhere in this file), confirmed working --
+  #    but effectively dormant: newest tagged post is from Sep 2024, over a
+  #    year old at last check, before that Oct 2023. Too infrequent to be
+  #    worth a dedicated entry, unlike Chillin'Competition's ~2-month gap
+  #    above -- EPRS's own general feed is already tracked under
+  #    green-deal separately.
+  #  - BCCP (Brussels Centre for Competition Policy, VUB,
+  #    bccp.research.vub.be) -- a real, current competition-and-industrial-
+  #    -policy research centre (active project list, includes VUB's own
+  #    Brussels School of Governance). Its own site has no news/blog
+  #    section at all (Home/Members/Sunajust/Publications/Events only),
+  #    and "Publications" links out to VUB's CRIS research portal
+  #    (cris.vub.be), which redirected to a VUB login page (cris-idp.vub.be)
+  #    on a plain browser visit -- no accessible RSS/export link found.
+  #    Worth a second look with inside knowledge of the CRIS system, since
+  #    this is the user's own institution.
   #  - Concurrences (concurrences.com) -- its "e-Competitions" bulletin,
   #    the actual news/case-note content, sits behind a paywall. Same
   #    reasoning as Euractiv elsewhere in this file: scraping a
