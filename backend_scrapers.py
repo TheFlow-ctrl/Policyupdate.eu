@@ -51,6 +51,13 @@ CEPS_DETAIL_PAGE_CAP = 15
 # per-item date on the listing page itself -- see scrape_orgalim below).
 ORGALIM_DETAIL_PAGE_CAP = 15
 
+# Cap on CERRE publication detail-page fetches per run (see scrape_cerre
+# below). Unlike CEPS/Orgalim, CERRE's REST API already gives a reliable
+# per-item date, so the cutoff filter runs BEFORE this cap is applied --
+# it only bounds the (usually much smaller) set of items already known to
+# be within the current run's date window, not the full 20-item page.
+CERRE_DETAIL_PAGE_CAP = 15
+
 # WMO's news listing uses Tailwind utility classes rather than semantic
 # ones for its date element, which are more likely to change/be
 # regenerated than a real class name -- scrape_wmo() below parses the
@@ -2071,6 +2078,172 @@ def scrape_bioenergy_europe(cutoff):
     return items
 
 
+def _extract_cerre_body(url):
+    """Fetch a CERRE publication detail page and pull the real article body
+    text out of the rendered HTML.
+
+    Why this exists: CERRE's REST API leaves both excerpt.rendered AND
+    content.rendered empty for every item (confirmed directly against the
+    live API -- see scrape_cerre's docstring), so title-only matching missed
+    real hits. Concrete case that motivated this: "​​Airbus of…
+    ​Lessons for European Industrial Collaboration" never says
+    "industrial policy" in its title -- only in the body ("a recurring
+    feature of European industrial policy debates") -- so it was silently
+    dropped even though it's squarely on-topic.
+
+    Confirmed (via a direct fetch of the live publication page) that the
+    rendered HTML is plain server-side WordPress/Elementor markup, not
+    client-side-JS-injected, and that cerre.eu itself has no Cloudflare-style
+    bot gate (unlike delorscentre.eu) -- so a second plain GET per item is a
+    reliable way to reach text the REST API doesn't expose, at the cost of
+    one extra request per candidate item.
+
+    Extraction is landmark-based rather than CSS-class-based: collect <p>
+    text following the page's <h1> title, stopping at the "Document(s)" /
+    "Author(s)" / "More publications" section headings that mark the end of
+    the actual article (author bios and the "more on this sector" sidebar
+    are noise for keyword matching, not signal). Elementor's own class names
+    are long, auto-generated, and far more likely to change on a redesign
+    than the fact that the page has an <h1> and heading elements.
+
+    Best-effort: any failure (network error, no <h1> found, structure
+    changed) returns "", and the caller falls back to the title alone --
+    same degraded behaviour as before this existed, never worse.
+    """
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+    except Exception as exc:
+        print(f"[backend_scrapers] CERRE detail fetch failed for {url}: {exc}")
+        return ""
+
+    h1 = soup.find("h1")
+    if h1 is None:
+        return ""
+
+    stop_headings = {"document(s)", "author(s)", "more publications"}
+    paragraphs = []
+    for el in h1.find_all_next():
+        if el.name in ("h1", "h2", "h3", "h4", "h5", "h6"):
+            if el.get_text(strip=True).lower() in stop_headings:
+                break
+        elif el.name == "p":
+            text = el.get_text(" ", strip=True)
+            if text:
+                paragraphs.append(text)
+
+    return " ".join(paragraphs).strip()
+
+
+def scrape_cerre(cutoff):
+    """
+    https://cerre.eu/publications/. CERRE's real output (reports, not blog
+    posts) lives in a custom "publications" post type -- the site's default
+    /feed/ RSS only covers ordinary WordPress "posts", which CERRE doesn't
+    seem to use for its actual output (confirmed: /feed/ returns a
+    well-formed but completely empty <channel>, zero <item> elements, even
+    though the Publications page itself shows real, current entries dated
+    as recently as this week).
+
+    Rather than scrape the publications listing page's HTML, this hits
+    CERRE's public WordPress REST API directly -- confirmed available and
+    unauthenticated via /wp-json/wp/v2/types, which lists a "publications"
+    custom post type with rest_base "publications":
+
+        GET https://cerre.eu/wp-json/wp/v2/publications?per_page=20&orderby=date&order=desc
+
+        [{
+          "date": "2026-09-08T05:00:00", "date_gmt": "2026-09-08T03:00:00",
+          "link": "https://cerre.eu/publications/airbus-of-lessons-for-european-industrial-collaboration/",
+          "title": {"rendered": "​​Airbus of… ​Lessons for European Industrial Collaboration"},
+          "excerpt": {"rendered": ""},
+          ...
+        }, ...]
+
+    Using date_gmt (explicit UTC) rather than date (ambiguous local/site
+    timezone) for cutoff comparison. excerpt.rendered is consistently empty
+    in practice, so summary falls back to the title, same as several other
+    lean sources in this file. Titles carry leading zero-width spaces
+    (U+200B) and HTML entities (e.g. an ellipsis as "&#8230;") that
+    _clean_text() alone won't strip -- html.unescape() first, then strip
+    zero-width characters explicitly.
+
+    CERRE is a broad regulatory-economics think tank (energy, mobility,
+    tech/media/telecom sectors, not just competition law), so this relies
+    on COMPETITION_KEYWORDS in fetch_digest.py to surface only the
+    genuinely competition/industrial-policy-relevant output and drop the
+    rest (e.g. a piece on AVMSD media-regulation reform). No eu_gate --
+    CERRE is Brussels-based and EU-regulation-focused, not a globally-
+    reporting outlet the way Ember/Carbon Brief are.
+
+    Previously-known limitation, now fixed: both excerpt.rendered and
+    content.rendered are consistently empty across every item sampled from
+    this endpoint (CERRE apparently doesn't populate WordPress's usual
+    excerpt field for this post type), so summary used to fall back to the
+    title alone -- the keyword filter only ever saw the title text, not the
+    piece's actual content. Confirmed real-world consequence: "​​Airbus
+    of… ​Lessons for European Industrial Collaboration" (a paper squarely
+    about the "European champions" industrial-policy debate, presented at
+    CERRE's own "EU Competitiveness Summit") got filtered OUT, because
+    neither "competitiveness compass" nor "european champions" nor any
+    other COMPETITION_KEYWORDS phrase happens to appear in the title itself
+    -- the connection was only clear from the body text.
+
+    Fixed by fetching each in-cutoff item's own detail page and extracting
+    the real body text via _extract_cerre_body() above -- capped at
+    CERRE_DETAIL_PAGE_CAP items per run (cutoff is applied first, so the cap
+    only bounds an already-small, already-relevant-by-date set, not the
+    full 20-item API page). Re-verified against the live "Airbus of..."
+    page: the extracted body contains "a recurring feature of European
+    industrial policy debates", which does match COMPETITION_KEYWORDS'
+    bare "industrial policy" -- this item now survives the topic filter.
+    If a detail-page fetch fails for a given item, summary falls back to
+    the title alone (the old behaviour) rather than dropping the item.
+    """
+    org = "CERRE"
+    items = []
+    try:
+        resp = requests.get(
+            "https://cerre.eu/wp-json/wp/v2/publications",
+            headers=HEADERS,
+            params={"per_page": 20, "orderby": "date", "order": "desc"},
+            timeout=REQUEST_TIMEOUT,
+        )
+        resp.raise_for_status()
+        candidates = []
+        for post in resp.json():
+            date_gmt = post.get("date_gmt")
+            if not date_gmt:
+                continue
+            try:
+                dt = datetime.fromisoformat(date_gmt)
+            except ValueError:
+                continue
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            raw_title = post.get("title", {}).get("rendered", "")
+            title = html.unescape(raw_title).replace("​", "").strip()
+            link = post.get("link", "")
+            if not title or not link:
+                continue
+
+            candidates.append((title, link, dt))
+
+        for i, (title, link, dt) in enumerate(candidates):
+            summary = title
+            if i < CERRE_DETAIL_PAGE_CAP:
+                body = _extract_cerre_body(link)
+                if body:
+                    summary = body
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_cerre failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -2108,6 +2281,7 @@ SCRAPERS = {
     "ebf": scrape_ebf,
     "bioenergy_europe": scrape_bioenergy_europe,
     "committee_of_regions": scrape_committee_of_regions,
+    "cerre": scrape_cerre,
 }
 
 # Headless-browser scrapers (browser_scrapers.py) live in a separate module
