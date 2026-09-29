@@ -195,6 +195,66 @@ _CROSS_TAG_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Symmetric counterpart to CROSS_TAG_KEYWORDS, for cross-tagging content
+# INTO competition from sources whose primary field isn't competition (see
+# the second cross-tagging block in main()). Same reasoning as above, same
+# discipline (a tighter subset of the primary keyword list, tuned for
+# arbitrary cross-field content rather than an already-dedicated feed) --
+# just run in the other direction, since several genuinely competition-
+# relevant items get published by green-deal/security/other sources with no
+# path onto the competition tab otherwise (e.g. a green-deal NGO covering a
+# State aid case for a wind farm, or IPCEI/NZIA/CRMA coverage that's
+# already a green-deal legislation tag but also has a real State-aid
+# dimension).
+#
+# Dropped from the full COMPETITION_KEYWORDS list, and why: "cartel" (drug
+# cartels dominate this word's use outside a dedicated competition feed --
+# a real risk given several security/foreign-policy sources in this
+# project); "dominant position", "dominant company/companies" (generic
+# descriptors used well beyond antitrust -- political/military dominance,
+# market-share commentary with no legal angle); "article 101"/"article 102"
+# and bare "tfeu" (numbered-article references are ambiguous outside a feed
+# that's already competition-law-dedicated -- could be a different treaty
+# article entirely); "market investigation" (used loosely in general
+# economics writing); bare "dma" (Digital Markets Act is far from the only
+# expansion -- direct marketing, generic "domain", others) and "gatekeeper"/
+# "gatekeepers" (a heavily overloaded term: health system gatekeeping,
+# information gatekeeping, etc., long before the DMA sense); "fsr" bare and
+# "fsr investigation" (same ambiguous-acronym problem as dma); "interim
+# measures" (routine legal/medical phrase with no competition-specific
+# meaning on its own); "fine imposed" (any regulator fines people); bare
+# "leniency" (criminal sentencing, tax amnesties, etc. use this constantly);
+# and bare "industrial policy" -- by far the biggest risk of all, since it's
+# a completely ordinary phrase in general EU/economic-policy writing with no
+# competition-law angle whatsoever (defence industrial policy, US
+# industrial policy, etc.) -- cross-tagging on this alone would flood the
+# competition tab with unrelated green-deal/security content.
+COMPETITION_CROSS_TAG_KEYWORDS = [
+    "antitrust", "abuse of dominance",
+    "exclusionary abuse", "exclusionary conduct", "exclusionary practices",
+    "exploitative abuse",
+    "merger control", "merger review", "gun jumping", "merger notification",
+    "state aid", "state-aid", "unlawful aid", "illegal state aid",
+    "competition law", "competition policy", "competition enforcement",
+    "competition investigation", "antitrust investigation", "sector inquiry",
+    "digital markets act", "foreign subsidies regulation",
+    "commitments decision", "dawn raid",
+    "competition commissioner", "directorate-general for competition",
+    "dg competition", "dg comp",
+    "clean industrial deal state aid framework", "cisaf",
+    "important project of common european interest",
+    "important projects of common european interest", "ipcei",
+    "net zero industry act", "nzia",
+    "critical raw materials act", "crma",
+    "chips act", "european chips act",
+    "competitiveness compass", "draghi report", "european champions",
+]
+
+_COMPETITION_CROSS_TAG_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in COMPETITION_CROSS_TAG_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
 # Additional, academic-register vocabulary used ONLY to widen the topic
 # check for actor_type == "academic" sources (see is_relevant()). Journal
 # abstracts describe the same substance as think-tank/NGO output in more
@@ -1690,6 +1750,33 @@ def main():
                 all_entries.append(cross_entry)
             if cross_matches:
                 print(f"  +{len(cross_matches)} also surfaced under green-deal (cross-topic match)")
+
+        # Symmetric cross-tagging into competition: same mechanism, opposite
+        # direction. The competition field's own dedicated sources (DG COMP
+        # press, CERRE, ECIPE, Bruegel, CEPS...) proved genuinely broad --
+        # several off-field sources incidentally publish real competition-
+        # law content too (a green-deal NGO covering a State aid case for a
+        # wind farm; a security source noting an FDI-screening/merger-
+        # control overlap), with no path onto the competition tab before
+        # this. Uses its own tight, cross-context-safe keyword subset
+        # (COMPETITION_CROSS_TAG_KEYWORDS above) for the same reason
+        # CROSS_TAG_KEYWORDS is narrower than the primary keyword list --
+        # bare "cartel"/"dma"/"leniency"/"industrial policy" etc. are far
+        # too generic once you're outside a dedicated competition feed.
+        if field != "competition":
+            competition_cross_matches = [
+                e for e in raw_entries
+                if _COMPETITION_CROSS_TAG_PATTERN.search(f"{e['title']} {e['summary']}")
+            ]
+            for match in competition_cross_matches:
+                cross_entry = dict(match)  # copy -- don't mutate the original
+                cross_entry["field"] = "competition"
+                cross_entry["tags"] = tag_legislation(
+                    cross_entry["title"], cross_entry["summary"], "competition"
+                )
+                all_entries.append(cross_entry)
+            if competition_cross_matches:
+                print(f"  +{len(competition_cross_matches)} also surfaced under competition (cross-topic match)")
 
     # Importance-first ordering: reports and longer, more substantive
     # contributions (e.g. a full analysis) surface above short press
