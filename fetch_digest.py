@@ -1,9 +1,10 @@
 """
 Pulls the last 7 days of publications from the RSS feeds and scrapers listed
-in sources.yaml, filters them to EU Green Deal / environmental-policy-relevant
-content (green-deal sources only -- other fields are not topic-filtered), and
-writes them to digest.md (human-readable) and site/digest.json (what the
-website reads to display entries).
+in sources.yaml, filters them to topic-relevant content for the fields that
+use a keyword filter (green-deal, competition -- security/tech/health are
+source-segregated instead and not topic-filtered), and writes them to
+digest.md (human-readable) and site/digest.json (what the website reads to
+display entries).
 
 Usage:
     pip install -r requirements.txt
@@ -66,7 +67,8 @@ EXCERPT_CHARS = 600
 # (see apply_relevance_filter()). Sources tagged security/tech/health are
 # NOT run through this filter -- it would incorrectly reject almost
 # everything from a general-topic source, since e.g. a defense/foreign-policy
-# article has no reason to mention "climate" or "carbon".
+# article has no reason to mention "climate" or "carbon". field: competition
+# sources use their own separate list, COMPETITION_KEYWORDS, below.
 GREEN_DEAL_KEYWORDS = [
     "climate change", "climate crisis", "climate policy", "climate diplomacy",
     "climate action", "climate finance", "climate adaptation", "climate mitigation",
@@ -100,6 +102,55 @@ GREEN_DEAL_KEYWORDS = [
 
 _KEYWORD_PATTERN = re.compile(
     r"\b(" + "|".join(re.escape(k) for k in GREEN_DEAL_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# Topic filter for field == "competition" (added for law-firm-facing EU
+# competition-law coverage: antitrust/cartel enforcement, merger control,
+# State aid, and digital markets (DMA) -- scoped per the "core + digital
+# markets" decision, not the full breadth of EU economic regulation).
+# Mirrors GREEN_DEAL_KEYWORDS' role: applied only to this field's sources
+# (see apply_relevance_filter()), since the same "broad official source,
+# needs its own keyword gate" situation applies here -- the Commission's
+# Competition Press Corner feed (commissioner-scoped, not topic-scoped)
+# and CEN-CENELEC-style broad outlets would otherwise leak unrelated
+# Commission news into this field.
+COMPETITION_KEYWORDS = [
+    "antitrust", "cartel", "abuse of dominance", "dominant position",
+    "dominant company", "dominant companies", "exclusionary abuse",
+    "exclusionary conduct", "exclusionary practices", "exploitative abuse",
+    "merger control", "merger review", "gun jumping",
+    "article 101", "article 102", "tfeu",
+    "state aid", "state-aid", "unlawful aid", "illegal state aid",
+    "competition law", "competition policy", "competition enforcement",
+    "competition investigation", "antitrust investigation",
+    "market investigation", "sector inquiry",
+    "digital markets act", "gatekeeper", "gatekeepers",
+    "foreign subsidies regulation", "fsr investigation",
+    "interim measures", "commitments decision", "fine imposed",
+    "dawn raid", "leniency", "merger notification",
+    "competition commissioner", "directorate-general for competition",
+    "dg competition", "dg comp",
+    # Industrial policy, to the extent it runs through competition-law
+    # channels (State aid clearances, merger review of strategic sectors) --
+    # added per the user's decision to fold industrial policy INTO the
+    # competition field rather than giving it a separate one. Deliberately
+    # narrower than green-deal's own industrial-policy coverage: these are
+    # the terms that signal a *competition-law* angle on industrial policy,
+    # not industrial policy generally (a pure "EU announces chip factory
+    # funding" story with no State aid/merger/competition angle stays out).
+    "clean industrial deal state aid framework", "cisaf",
+    "important project of common european interest",
+    "important projects of common european interest", "ipcei",
+    "net zero industry act", "nzia",
+    "critical raw materials act", "crma",
+    "chips act", "european chips act",
+    "competitiveness compass", "draghi report",
+    "european champions", "industrial policy",
+]
+
+_COMPETITION_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in COMPETITION_KEYWORDS) + r")\b",
     re.IGNORECASE,
 )
 
@@ -524,9 +575,90 @@ _LEGISLATION_PATTERNS = {
     for tag_id, _label, keywords in LEGISLATION_TAGS
 }
 
+# Sub-categories under the competition field, same idea as LEGISLATION_TAGS
+# above but for EU competition law. Includes the industrial-policy
+# instruments that run through competition-law channels (CISAF, IPCEI, and
+# -- per the user's decision to fold industrial policy INTO this field
+# rather than giving it a separate one -- NZIA, CRMA, and the Chips Act
+# too). "nzia"/"crma" deliberately reuse the SAME tag ids as
+# LEGISLATION_TAGS above: an entry can only ever carry one or the other
+# depending on which field its source belongs to (a competition source
+# gets tagged from this list, a green-deal source from the list above), so
+# there's no collision -- and reusing the id means TOPIC_INFO in script.js
+# only needs one description per law, not two.
+#
+# "eu-competitiveness" is a deliberate exception to the "named law" pattern
+# every other tag here follows: it covers the live merger-policy-reform /
+# "European champions" debate (the Draghi report, the Competitiveness
+# Compass) rather than an enacted instrument. Included anyway since it's
+# specifically the kind of live dossier the user's law-firm contacts care
+# about -- see its keywords below.
+#
+# (tag id, display label, keyword phrases to match)
+COMPETITION_LEGISLATION_TAGS = [
+    ("art-101", "Article 101 TFEU", [
+        "article 101", "art. 101 tfeu", "101 tfeu", "cartel", "restrictive agreement",
+        "anti-competitive agreement", "anticompetitive agreement",
+    ]),
+    ("art-102", "Article 102 TFEU", [
+        "article 102", "art. 102 tfeu", "102 tfeu", "abuse of dominance",
+        "abuse of a dominant position", "exclusionary abuse", "exclusionary conduct",
+        "exploitative abuse",
+    ]),
+    ("merger-control", "EU Merger Regulation", [
+        "merger regulation", "eumr", "merger control", "merger review",
+        "phase ii investigation", "phase i investigation", "gun jumping",
+        "merger notification",
+    ]),
+    ("state-aid", "State Aid Rules", [
+        "state aid", "state-aid", "unlawful aid", "illegal state aid", "gber",
+        "general block exemption regulation",
+    ]),
+    ("cisaf", "Clean Industrial Deal State Aid Framework", [
+        "cisaf", "clean industrial deal state aid framework",
+    ]),
+    ("ipcei", "IPCEI", [
+        "ipcei", "important project of common european interest",
+        "important projects of common european interest",
+    ]),
+    ("dma", "Digital Markets Act", [
+        "digital markets act", "gatekeeper", "gatekeepers",
+    ]),
+    ("fsr", "Foreign Subsidies Regulation", [
+        "foreign subsidies regulation", "fsr investigation",
+    ]),
+    ("nzia", "NZIA", [
+        "net zero industry act", "nzia",
+    ]),
+    ("crma", "CRMA", [
+        "critical raw materials act", "crma",
+    ]),
+    ("chips-act", "European Chips Act", [
+        "chips act", "european chips act",
+    ]),
+    ("eu-competitiveness", "EU Competitiveness Agenda", [
+        "competitiveness compass", "draghi report", "european champions",
+        "merger policy reform", "merger guidelines review",
+    ]),
+]
+
+_COMPETITION_LEGISLATION_PATTERNS = {
+    tag_id: re.compile(
+        r"\b(" + "|".join(re.escape(k) for k in keywords) + r")\b",
+        re.IGNORECASE,
+    )
+    for tag_id, _label, keywords in COMPETITION_LEGISLATION_TAGS
+}
+
 # Kept in sync with TOPIC_LABELS in script.js -- used only to render the
-# tag pills in the static (pre-rendered) HTML below.
-TOPIC_LABELS = {tag_id: label for tag_id, label, _keywords in LEGISLATION_TAGS}
+# tag pills in the static (pre-rendered) HTML below. Merges both green-deal
+# and competition tag vocabularies into one lookup (safe: the two id sets
+# only deliberately overlap on nzia/crma, where the label is identical
+# either way).
+TOPIC_LABELS = {
+    tag_id: label
+    for tag_id, label, _keywords in LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS
+}
 
 # Kept in sync with ACTOR_LABELS in script.js.
 ACTOR_LABELS = {
@@ -595,14 +727,21 @@ SCRAPER_HOMEPAGES = {
 }
 
 
-def tag_legislation(title, excerpt):
+def tag_legislation(title, excerpt, field="green-deal"):
     """Return the list of legislation-tag ids whose keywords appear in
-    title+excerpt. An entry can match zero, one, or several tags."""
+    title+excerpt. An entry can match zero, one, or several tags. Uses
+    COMPETITION_LEGISLATION_TAGS when field == 'competition', otherwise
+    the green-deal LEGISLATION_TAGS (the default, for backwards
+    compatibility with existing call sites)."""
     text = f"{title or ''} {excerpt or ''}"
+    if field == "competition":
+        tags, patterns = COMPETITION_LEGISLATION_TAGS, _COMPETITION_LEGISLATION_PATTERNS
+    else:
+        tags, patterns = LEGISLATION_TAGS, _LEGISLATION_PATTERNS
     return [
         tag_id
-        for tag_id, _label, _keywords in LEGISLATION_TAGS
-        if _LEGISLATION_PATTERNS[tag_id].search(text)
+        for tag_id, _label, _keywords in tags
+        if patterns[tag_id].search(text)
     ]
 
 _TAG_RE = re.compile(r"<[^>]+>")
@@ -667,19 +806,29 @@ def entry_text_fields(entry):
     return title, excerpt
 
 
-def is_relevant(title, excerpt, actor_type=None):
+def is_relevant(title, excerpt, actor_type=None, field=None):
     text = f"{title or ''} {excerpt or ''}"
-    pattern = _ACADEMIC_KEYWORD_PATTERN if actor_type == "academic" else _KEYWORD_PATTERN
+    if field == "competition":
+        pattern = _COMPETITION_PATTERN
+    elif actor_type == "academic":
+        pattern = _ACADEMIC_KEYWORD_PATTERN
+    else:
+        pattern = _KEYWORD_PATTERN
     return bool(pattern.search(text))
 
 
 def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
-    """Keyword-filter entries, but ONLY for field == 'green-deal'.
+    """Keyword-filter entries, but ONLY for field in ('green-deal',
+    'competition').
 
     Other fields (security, tech, health) are source-segregated instead --
     every source tagged with one of those fields is already handpicked for
-    that topic, so running them through GREEN_DEAL_KEYWORDS would wrongly
-    reject nearly everything.
+    that topic, so running them through a keyword filter would wrongly
+    reject nearly everything. Competition is different from those: its
+    sources include broad official Commission feeds (the Competition Press
+    Corner is commissioner-scoped, not topic-scoped) that need their own
+    keyword gate (COMPETITION_KEYWORDS) the same way green-deal's broad
+    sources need GREEN_DEAL_KEYWORDS -- see is_relevant() above.
 
     For actor_type == "academic", two things differ from the default path:
     the topic check itself is widened (GREEN_DEAL_KEYWORDS + the more
@@ -709,7 +858,7 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     hits a 1.5C-style benchmark keyword. See the eu_gate: true entries in
     sources.yaml for which sources use this.
     """
-    if field != "green-deal":
+    if field not in ("green-deal", "competition"):
         return entries
 
     kept = []
@@ -717,7 +866,7 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     eu_skipped = 0
     io_skipped = 0
     for entry in entries:
-        if not is_relevant(entry["title"], entry["summary"], actor_type):
+        if not is_relevant(entry["title"], entry["summary"], actor_type, field):
             skipped += 1
             continue
         if actor_type == "academic" and not is_eu_relevant(entry["title"], entry["summary"]):
@@ -1495,8 +1644,8 @@ def main():
 
         for entry in primary_entries:
             entry["tags"] = (
-                tag_legislation(entry["title"], entry["summary"])
-                if field == "green-deal"
+                tag_legislation(entry["title"], entry["summary"], field)
+                if field in ("green-deal", "competition")
                 else []
             )
 
