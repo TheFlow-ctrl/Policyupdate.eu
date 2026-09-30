@@ -933,12 +933,43 @@ function renderArchive() {
     return;
   }
 
-  monthsEl.innerHTML = filteredMonths
-    .map((month, i) => `
-      <details class="archive-month"${i === 0 ? " open" : ""}>
-        <summary>${escapeHtml(month.label)} <span class="archive-count">(${month.entries.length})</span></summary>
-        <div class="entries">
-          ${month.entries.map(renderEntry).join("")}
+  // Group into years so a click on the year reveals its months, and a
+  // click on a month reveals its entries -- important once the archive
+  // spans multiple years (see backfill.py), or a flat list of 70+ months
+  // becomes unwieldy to scan. filteredMonths is already sorted newest
+  // first (see update_archive() in fetch_digest.py), and every month in
+  // a given year is contiguous within that ordering, so grouping by
+  // first-encounter order preserves the overall newest-first sort with
+  // no extra sorting needed.
+  const yearGroups = [];
+  const yearIndex = new Map();
+  for (const month of filteredMonths) {
+    const year = month.key.split("-")[0];
+    let group = yearIndex.get(year);
+    if (!group) {
+      group = { year, months: [], count: 0 };
+      yearIndex.set(year, group);
+      yearGroups.push(group);
+    }
+    group.months.push(month);
+    group.count += month.entries.length;
+  }
+
+  monthsEl.innerHTML = yearGroups
+    .map((group, yi) => `
+      <details class="archive-year"${yi === 0 ? " open" : ""}>
+        <summary>${escapeHtml(group.year)} <span class="archive-count">(${group.count})</span></summary>
+        <div class="archive-year-months">
+          ${group.months
+            .map((month, mi) => `
+              <details class="archive-month"${yi === 0 && mi === 0 ? " open" : ""}>
+                <summary>${escapeHtml(month.label)} <span class="archive-count">(${month.entries.length})</span></summary>
+                <div class="entries">
+                  ${month.entries.map(renderEntry).join("")}
+                </div>
+              </details>
+            `)
+            .join("")}
         </div>
       </details>
     `)
