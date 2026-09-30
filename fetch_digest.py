@@ -1397,17 +1397,44 @@ def render_archive_months(archive_data):
     if not filtered_months:
         return '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
 
+    # Group into years, same as the year/month nesting in renderArchive()
+    # (script.js) -- filtered_months is already newest-first and every
+    # month of a given year is contiguous, so grouping by first-encounter
+    # order preserves that ordering with no extra sort needed.
+    year_groups = []
+    year_index = {}
+    for month in filtered_months:
+        year = month["key"].split("-")[0]
+        group = year_index.get(year)
+        if group is None:
+            group = {"year": year, "months": [], "count": 0}
+            year_index[year] = group
+            year_groups.append(group)
+        group["months"].append(month)
+        group["count"] += len(month["entries"])
+
     parts = []
-    for i, month in enumerate(filtered_months):
-        open_attr = " open" if i == 0 else ""
-        label = _escape_html(month.get("label", ""))
-        count = len(month["entries"])
-        entries_html = "".join(render_entry_html(e) for e in month["entries"])
+    for yi, group in enumerate(year_groups):
+        year_open_attr = " open" if yi == 0 else ""
+        month_parts = []
+        for mi, month in enumerate(group["months"]):
+            month_open_attr = " open" if yi == 0 and mi == 0 else ""
+            label = _escape_html(month.get("label", ""))
+            count = len(month["entries"])
+            entries_html = "".join(render_entry_html(e) for e in month["entries"])
+            month_parts.append(f"""
+              <details class="archive-month"{month_open_attr}>
+                <summary>{label} <span class="archive-count">({count})</span></summary>
+                <div class="entries">
+                  {entries_html}
+                </div>
+              </details>
+            """)
         parts.append(f"""
-      <details class="archive-month"{open_attr}>
-        <summary>{label} <span class="archive-count">({count})</span></summary>
-        <div class="entries">
-          {entries_html}
+      <details class="archive-year"{year_open_attr}>
+        <summary>{_escape_html(group["year"])} <span class="archive-count">({group["count"]})</span></summary>
+        <div class="archive-year-months">
+          {"".join(month_parts)}
         </div>
       </details>
     """)
