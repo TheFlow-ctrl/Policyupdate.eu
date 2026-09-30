@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-29
+# Weekly Climate, Energy & Environment Digest — 2026-09-30
 
 ### Multilateral Cooperation and Confidence-Building in Cyberspace
 *SWP (German Institute for International and Security Affairs) — 2026-09-29*
@@ -6,15 +6,6 @@
 The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incidents involving state actors and state-controlled actors is rising worldwide – particularly in the OSCE region – yet the diplomatic instruments designed to contain such incidents receive comparatively little attention. The OSCE (Organisation for Security and Co-operation in Europe) and other regional organisations have adopted a range of confidence-building measures (CBMs) in the cyber domain that provide a basis for deeper multilateral cooperation. It remains unclear, however, to what extent these measures respond…
 
 [Read more](https://www.swp-berlin.org/en/publication/multilateral-cooperation-and-confidence-building-in-cyberspace)
-
----
-
-### EU ETS amendments: what matters
-*Sandbag — 2026-09-23*
-
-Our position paper analyses the proposals by the Commission and EU ETS rapporteur MEP Peter Liese and presents Sandbag’s proposals. Download the position paper On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. During a public press briefing, Mr. Liese…
-
-[Read more](https://sandbag.be/2026/09/23/eu-ets-amendments/)
 
 ---
 
@@ -28,7 +19,7 @@ Authors: Angelo Sciacca, Julien Rochette, Céline Kauffmann
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-29*
+*European Environmental Law Review — 2026-09-30*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -64,7 +55,7 @@ Descarcă PDF-ul România are potențialul de a deveni un producător regional c
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-29*
+*European Environmental Law Review — 2026-09-30*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -81,6 +72,42 @@ This article examines whether European Union (EU) rule-of-law principles constra
 
 ---
 
+### Report: Climate risks could multiply disruptions to Finland’s security of supply
+*FIIA (Finnish Institute of International Affairs) — 2026-09-30*
+
+Climate change threatens Finland’s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). “Climate risks cannot be treated as something that we can circle back to once military crises are over,” says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and…
+
+[Read more](https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply)
+
+---
+
+### Report: Climate risks could multiply disruptions to Finland’s security of supply
+*FIIA (Finnish Institute of International Affairs) — 2026-09-30*
+
+Climate change threatens Finland’s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). “Climate risks cannot be treated as something that we can circle back to once military crises are over,” says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and…
+
+[Read more](https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply)
+
+---
+
+### Escaping the Hormuz trap: What should an agreement to reopen the Strait look like?
+*Chatham House — 2026-09-30*
+
+Escaping the Hormuz trap: What should an agreement to reopen the Strait look like? Expert comment jon.wallace 30 September 2026 A detailed, reciprocal, and verifiable process is essential to ensure that any agreement holds. The war between the United States and Iran has entered an uncertain phase between escalation and diplomacy. At the UN General Assembly, Iran offered a proposal to reopen the Strait of Hormuz and resume nuclear talks – if various conditions were met. That has apparently been rejected by President Donald Trump. Subsequent reports claimed the president was considering new…
+
+[Read more](https://www.chathamhouse.org/2026/09/escaping-hormuz-trap-what-should-agreement-reopen-strait-look)
+
+---
+
+### SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities
+*Energy Cities — 2026-09-29*
+
+SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to Autumn 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
+
+[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
+
+---
+
 ### Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying
 *Chatham House — 2026-09-24*
 
@@ -90,17 +117,8 @@ Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying E
 
 ---
 
-### SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities
-*Energy Cities — 2026-09-29*
-
-SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to March 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
-
-[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
-
----
-
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-29*
+*European Environmental Law Review — 2026-09-30*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -117,6 +135,15 @@ Brazil’s presidential election is more than just another polarized contest Exp
 
 ---
 
+### What could a climate council unlock for Indonesia’s climate agenda?
+*E3G — 2026-09-30*
+
+With a draft climate bill introduced, Indonesia may be entering a new era of climate governance. Establishing a climate council is one option on the table . Drawing on models from over 25 countries, where similar institutions have demonstrated their value, a new climate institution could unlock climate finance, improve carbon markets and bring government, researchers, business and civil society closer together in addressing Indonesia’s risks and opportunities for climate action. Good climate governance needs climate councils Governments need institutions that support them to address climate…
+
+[Read more](https://www.e3g.org/news/what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda/?utm_source=rss&utm_medium=rss&utm_campaign=what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda)
+
+---
+
 ### The Climate Briefing: Contested waters in international politics
 *Chatham House — 2026-09-25*
 
@@ -132,15 +159,6 @@ The Climate Briefing: Contested waters in international politics Audio thilton.d
 The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
 
 [Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
-
----
-
-### Local flexibility: Utrecht’s shared cars become batteries for the city
-*Energy Cities — 2026-09-23*
-
-As solar panels spread across Europe’s cities, a new challenge is emerging: how can all that clean electricity be used when it is produced, without overwhelming already congested grids? Utrecht is turning part of the answer into an everyday service. Its shared electric cars do more than moving people from one place to another. When parked, 50 of them can store locally produced solar power and return electricity to the grid when demand rises. The bold result of this vehicle-to-grid equipped car sharing is more local grid flexibility—and a reminder that cities do not have to wait for grid…
-
-[Read more](https://energy-cities.eu/utrechts-cars-become-batteries/)
 
 ---
 
@@ -252,21 +270,21 @@ What can DRC’s national dialogue achieve? Expert comment jon.wallace 24 Septem
 
 ---
 
+### Living better while living longer
+*FEPS (S&D) — 2026-09-30*
+
+Europeans are living longer. This is one of the achievements of our social model. The question is whether we are living those additional years in good physical and mental health and whether this progress is shared equally across society. The pursuit of longevity cannot simply mean adding years to life. It just as well means adding life to those years. In other words, extending the time in which we can take a full part in society, keep our relationships, feel accomplished and live with dignity. Importantly, though, healthy longevity must not become another privilege that correlates with income…
+
+[Read more](https://feps-europe.eu/living-better-while-living-longer/)
+
+---
+
 ### Updates from the UN General Assembly 2026
 *International Crisis Group — 2026-09-25*
 
 Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 25 September 2026 8 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN’s efforts to promote international peace and security. This page includes updates from the…
 
 [Read more](https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026)
-
----
-
-### Webinar: Options for the EU ETS
-*Sandbag — 2026-09-23*
-
-Watch the webinar Background Background On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese’s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system’s ambition. In a public webinar, we presented Sandbag’s analysis of the carbon market under different design options, and discussed proposals to mitigate its potential negative…
-
-[Read more](https://sandbag.be/2026/09/23/webinar-options-for-the-eu-ets/)
 
 ---
 
@@ -297,12 +315,12 @@ On Our Radar eschelhaas Fri, 09/25/2026 - 00:00 Latest Updates Africa Asia-Pacif
 
 ---
 
-### The Green Tank comments on the new Just Transition Programme 2021–2027 measures
-*The Green Tank — 2026-09-23*
+### Trends in electricity production – August 2026
+*The Green Tank — 2026-09-30*
 
-The Green Tank submitted comments to the Special Managing Authority for the Just Development Transition on two implementation documents included in the 11th written procedure of the Just Development Transition Programme (JTP) 2021–2027. The post The Green Tank comments on the new Just Transition Programme 2021–2027 measures first appeared on The Green Tank .
+Renewables reached a new all-time monthly high in August, at 3,312 GWh. However, wholesale market prices hit a yearly high of €133.4/MWh, driven by increased gas usage, and higher gas prices rose in August due to the escalating crisis. Batteries prevented 15.4% of August’s RES curtailments, which were limited to 158.6 GWh for the month, but nevertheless approached 2 TWh (1,905 GWh) since the beginning of the year. The post Trends in electricity production – August 2026 first appeared on The Green Tank .
 
-[Read more](https://thegreentank.gr/en/2026/09/23/pdam-new-measures-en/?utm_source=rss&utm_medium=rss&utm_campaign=pdam-new-measures-en)
+[Read more](https://thegreentank.gr/en/2026/09/30/admie-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-aug26-en)
 
 ---
 
@@ -312,6 +330,15 @@ The Green Tank submitted comments to the Special Managing Authority for the Just
 As Europe continues its transition towards cleaner and more sustainable mobility, hydrogen is emerging as one of the technologies that could help reduce the environmental impact of rail transport, particularly on lines where conventional electrification is difficult or economically challenging.
 
 [Read more](https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-09-29-en-iec-63341-series/)
+
+---
+
+### Public innovation and Energy Communities towards participatory democracies
+*EU Covenant of Mayors — 2026-09-30*
+
+Energy communities are opening up new ways for people and local actors to collectively engage in the energy system. With public purpose and support, they can go beyond sustainability: strengthening local cooperation, tackling energy poverty and building shared ownership and trust.
+
+[Read more](https://eu-mayors.ec.europa.eu/en/news/public-innovation-and-energy-communities-towards-participatory-democracies)
 
 ---
 
@@ -333,12 +360,12 @@ Last summer's record heatwaves, wildfires and other extreme weather events acros
 
 ---
 
-### ARIES promotes sustainable innovation at SOMMa Connect 2026
-*BC3 — 2026-09-23*
+### Without Fear or Favour: The European Commission’s DMA Non-Compliance Decision Against Google’s Self-Preferencing (Case DMA.100193)
+*Kluwer Competition Law Blog — 2026-09-30*
 
-BC3 took part this week in SOMMa Connect 2026, the meeting organised in Barcelona by the Severo Ochoa Alliance of Centres of Excellence and María de Maeztu Units of Excellence (SOMMa), alongside the Centre for Genomic Regulation (CRG).
+In July, the European Commission issued its non-compliance decision against gatekeeper Google for its breach of the self-preferencing prohibition under Article 6(5) DMA.
 
-[Read more](https://www.bc3research.org/en/2026/09/aries-promotes-sustainable-innovation-at-somma-connect-2026/)
+[Read more](https://legalblogs.wolterskluwer.com/competition-blog/without-fear-or-favour-the-european-commissions-dma-non-compliance-decision-against-googles-self-preferencing-case-dma100193/)
 
 ---
 
@@ -369,12 +396,21 @@ From industry associations to environmental and civil-society bodies, a total of
 
 ---
 
-### Do not comment on the leak!
-*Bioenergy Europe — 2026-09-23*
+### Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold
+*Hydrogen Europe — 2026-09-30*
 
-In this op-ed, Bioenergy Europe’s Secretary General Jean-Marc Jossart makes the case for giving Member States and regions the flexibility to use their own renewable resources, including sustainable bioenergy.
+[…] The post Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold appeared first on Hydrogen Europe .
 
-[Read more](https://bioenergyeurope.org/do-not-comment-on-the-leak/)
+[Read more](https://hydrogeneurope.eu/reverion-raises-175m-series-b-to-scale-production-of-its-dispatchable-carbon-negative-power-plants-tenfold/)
+
+---
+
+### Green Deal Funding Alert – September 2026
+*Committee of the Regions — 2026-09-29*
+
+This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.
+
+[Read more](https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026)
 
 ---
 
@@ -393,6 +429,15 @@ The post More Dangerous than Splitting the Atom: Learning from Previous Technolo
 Germany presents fossil fuel transition plan, reaffirms 2045 climate target j.wettengel Thu, 24 Sep 2026 - 13:43
 
 [Read more](https://www.cleanenergywire.org/news/germany-presents-fossil-fuel-transition-plan-reaffirms-2045-climate-target)
+
+---
+
+### The 2026 Stockholm Forum to launch Youth Advisory Board
+*SIPRI — 2026-09-24*
+
+The 2026 Stockholm Forum on Peace and Development will launch a Youth Advisory Board to expand youth participation in the event.
+
+[Read more](https://www.sipri.org/news/2026/2026-stockholm-forum-launch-youth-advisory-board)
 
 ---
 
@@ -420,5 +465,23 @@ Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
 SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.
 
 [Read more](https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda)
+
+---
+
+### Unlocking corporate demand for carbon removal starts with clear guidance
+*Carbon Gap — 2026-09-30*
+
+Unlocking corporate demand for carbon removal starts with clear guidance
+
+[Read more](https://carbongap.org/insights/unlocking-corporate-demand-for-carbon-removal-starts-with-clear-guidance)
+
+---
+
+### Setting the course for novel marine carbon removal in Europe
+*Carbon Gap — 2026-11-05*
+
+Setting the course for novel marine carbon removal in Europe
+
+[Read more](https://carbongap.org/insights/setting-the-course-for-novel-marine-carbon-removal-in-europe)
 
 ---

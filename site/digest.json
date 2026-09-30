@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29",
+  "generated": "2026-09-30",
   "entries": [
     {
       "org": "SWP (German Institute for International and Security Affairs)",
@@ -11,19 +11,6 @@
       "actor_type": "think-tank",
       "content_type": "report",
       "tags": []
-    },
-    {
-      "org": "Sandbag",
-      "field": "green-deal",
-      "title": "EU ETS amendments: what matters",
-      "link": "https://sandbag.be/2026/09/23/eu-ets-amendments/",
-      "date": "2026-09-23",
-      "summary": "Our position paper analyses the proposals by the Commission and EU ETS rapporteur MEP Peter Liese and presents Sandbag\u2019s proposals. Download the position paper On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese\u2019s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system\u2019s ambition. During a public press briefing, Mr. Liese\u2026",
-      "actor_type": "ngo",
-      "content_type": "report",
-      "tags": [
-        "ets1"
-      ]
     },
     {
       "org": "IDDRI",
@@ -41,7 +28,7 @@
       "field": "green-deal",
       "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-      "date": "2026-09-29",
+      "date": "2026-09-30",
       "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -85,7 +72,7 @@
       "field": "green-deal",
       "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-      "date": "2026-09-29",
+      "date": "2026-09-30",
       "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -103,6 +90,50 @@
       "tags": []
     },
     {
+      "org": "FIIA (Finnish Institute of International Affairs)",
+      "field": "security",
+      "title": "Report: Climate risks could multiply disruptions to Finland\u2019s security of supply",
+      "link": "https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply",
+      "date": "2026-09-30",
+      "summary": "Climate change threatens Finland\u2019s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). \u201cClimate risks cannot be treated as something that we can circle back to once military crises are over,\u201d says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and\u2026",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "FIIA (Finnish Institute of International Affairs)",
+      "field": "green-deal",
+      "title": "Report: Climate risks could multiply disruptions to Finland\u2019s security of supply",
+      "link": "https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply",
+      "date": "2026-09-30",
+      "summary": "Climate change threatens Finland\u2019s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). \u201cClimate risks cannot be treated as something that we can circle back to once military crises are over,\u201d says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and\u2026",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Chatham House",
+      "field": "security",
+      "title": "Escaping the Hormuz trap: What should an agreement to reopen the Strait look like?",
+      "link": "https://www.chathamhouse.org/2026/09/escaping-hormuz-trap-what-should-agreement-reopen-strait-look",
+      "date": "2026-09-30",
+      "summary": "Escaping the Hormuz trap: What should an agreement to reopen the Strait look like? Expert comment jon.wallace 30 September 2026 A detailed, reciprocal, and verifiable process is essential to ensure that any agreement holds. The war between the United States and Iran has entered an uncertain phase between escalation and diplomacy. At the UN General Assembly, Iran offered a proposal to reopen the Strait of Hormuz and resume nuclear talks \u2013 if various conditions were met. That has apparently been rejected by President Donald Trump. Subsequent reports claimed the president was considering new\u2026",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Energy Cities",
+      "field": "green-deal",
+      "title": "SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities",
+      "link": "https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/",
+      "date": "2026-09-29",
+      "summary": "SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to Autumn 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions\u2026",
+      "actor_type": "ngo",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "Chatham House",
       "field": "security",
       "title": "Denmark\u2019s Greenland deal with Trump is a victory for diplomacy over bullying",
@@ -114,22 +145,11 @@
       "tags": []
     },
     {
-      "org": "Energy Cities",
-      "field": "green-deal",
-      "title": "SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities",
-      "link": "https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/",
-      "date": "2026-09-29",
-      "summary": "SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to March 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions\u2026",
-      "actor_type": "ngo",
-      "content_type": null,
-      "tags": []
-    },
-    {
       "org": "European Environmental Law Review",
       "field": "green-deal",
       "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-      "date": "2026-09-29",
+      "date": "2026-09-30",
       "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
       "actor_type": "academic",
       "content_type": null,
@@ -147,6 +167,17 @@
       "tags": []
     },
     {
+      "org": "E3G",
+      "field": "green-deal",
+      "title": "What could a climate council unlock for Indonesia\u2019s climate agenda?",
+      "link": "https://www.e3g.org/news/what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda/?utm_source=rss&utm_medium=rss&utm_campaign=what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda",
+      "date": "2026-09-30",
+      "summary": "With a draft climate bill introduced, Indonesia may be entering a new era of climate governance. Establishing a climate council is one option on the table . Drawing on models from over 25 countries, where similar institutions have demonstrated their value, a new climate institution could unlock climate finance, improve carbon markets and bring government, researchers, business and civil society closer together in addressing Indonesia\u2019s risks and opportunities for climate action. Good climate governance needs climate councils Governments need institutions that support them to address climate\u2026",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "Chatham House",
       "field": "security",
       "title": "The Climate Briefing: Contested waters in international politics",
@@ -165,17 +196,6 @@
       "date": "2026-09-25",
       "summary": "The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what\u2019s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions\u2026",
       "actor_type": "think-tank",
-      "content_type": null,
-      "tags": []
-    },
-    {
-      "org": "Energy Cities",
-      "field": "green-deal",
-      "title": "Local flexibility: Utrecht\u2019s shared cars become batteries for the city",
-      "link": "https://energy-cities.eu/utrechts-cars-become-batteries/",
-      "date": "2026-09-23",
-      "summary": "As solar panels spread across Europe\u2019s cities, a new challenge is emerging: how can all that clean electricity be used when it is produced, without overwhelming already congested grids? Utrecht is turning part of the answer into an everyday service. Its shared electric cars do more than moving people from one place to another. When parked, 50 of them can store locally produced solar power and return electricity to the grid when demand rises. The bold result of this vehicle-to-grid equipped car sharing is more local grid flexibility\u2014and a reminder that cities do not have to wait for grid\u2026",
-      "actor_type": "ngo",
       "content_type": null,
       "tags": []
     },
@@ -312,6 +332,17 @@
       "tags": []
     },
     {
+      "org": "FEPS (S&D)",
+      "field": "security",
+      "title": "Living better while living longer",
+      "link": "https://feps-europe.eu/living-better-while-living-longer/",
+      "date": "2026-09-30",
+      "summary": "Europeans are living longer. This is one of the achievements of our social model. The question is whether we are living those additional years in good physical and mental health and whether this progress is shared equally across society. The pursuit of longevity cannot simply mean adding years to life. It just as well means adding life to those years. In other words, extending the time in which we can take a full part in society, keep our relationships, feel accomplished and live with dignity. Importantly, though, healthy longevity must not become another privilege that correlates with income\u2026",
+      "actor_type": "political",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "International Crisis Group",
       "field": "security",
       "title": "Updates from the UN General Assembly 2026",
@@ -321,19 +352,6 @@
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []
-    },
-    {
-      "org": "Sandbag",
-      "field": "green-deal",
-      "title": "Webinar: Options for the EU ETS",
-      "link": "https://sandbag.be/2026/09/23/webinar-options-for-the-eu-ets/",
-      "date": "2026-09-23",
-      "summary": "Watch the webinar Background Background On 17 July 2026, the European Commission published its review of the EU ETS Directive and MSR Decision. On 11 September, EU ETS rapporteur MEP Peter Liese published a preliminary draft report of the EU ETS review. Both the Commission and Mr. Liese\u2019s proposals increase free allocation, channel revenues from the sale of emission allowances to industry, and decrease the system\u2019s ambition. In a public webinar, we presented Sandbag\u2019s analysis of the carbon market under different design options, and discussed proposals to mitigate its potential negative\u2026",
-      "actor_type": "ngo",
-      "content_type": null,
-      "tags": [
-        "ets1"
-      ]
     },
     {
       "org": "International Crisis Group",
@@ -371,10 +389,10 @@
     {
       "org": "The Green Tank",
       "field": "green-deal",
-      "title": "The Green Tank comments on the new Just Transition Programme 2021\u20132027 measures",
-      "link": "https://thegreentank.gr/en/2026/09/23/pdam-new-measures-en/?utm_source=rss&utm_medium=rss&utm_campaign=pdam-new-measures-en",
-      "date": "2026-09-23",
-      "summary": "The Green Tank submitted comments to the Special Managing Authority for the Just Development Transition on two implementation documents included in the 11th written procedure of the Just Development Transition Programme (JTP) 2021\u20132027. The post The Green Tank comments on the new Just Transition Programme 2021\u20132027 measures first appeared on The Green Tank .",
+      "title": "Trends in electricity production \u2013 August 2026",
+      "link": "https://thegreentank.gr/en/2026/09/30/admie-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-aug26-en",
+      "date": "2026-09-30",
+      "summary": "Renewables reached a new all-time monthly high in August, at 3,312 GWh. However, wholesale market prices hit a yearly high of \u20ac133.4/MWh, driven by increased gas usage, and higher gas prices rose in August due to the escalating crisis. Batteries prevented 15.4% of August\u2019s RES curtailments, which were limited to 158.6 GWh for the month, but nevertheless approached 2 TWh (1,905 GWh) since the beginning of the year. The post Trends in electricity production \u2013 August 2026 first appeared on The Green Tank .",
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []
@@ -386,6 +404,17 @@
       "link": "https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-09-29-en-iec-63341-series/",
       "date": "2026-09-29",
       "summary": "As Europe continues its transition towards cleaner and more sustainable mobility, hydrogen is emerging as one of the technologies that could help reduce the environmental impact of rail transport, particularly on lines where conventional electrification is difficult or economically challenging.",
+      "actor_type": "eu-institution",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "EU Covenant of Mayors",
+      "field": "green-deal",
+      "title": "Public innovation and Energy Communities towards participatory democracies",
+      "link": "https://eu-mayors.ec.europa.eu/en/news/public-innovation-and-energy-communities-towards-participatory-democracies",
+      "date": "2026-09-30",
+      "summary": "Energy communities are opening up new ways for people and local actors to collectively engage in the energy system. With public purpose and support, they can go beyond sustainability: strengthening local cooperation, tackling energy poverty and building shared ownership and trust.",
       "actor_type": "eu-institution",
       "content_type": null,
       "tags": []
@@ -413,15 +442,17 @@
       "tags": []
     },
     {
-      "org": "BC3",
-      "field": "green-deal",
-      "title": "ARIES promotes sustainable innovation at SOMMa Connect 2026",
-      "link": "https://www.bc3research.org/en/2026/09/aries-promotes-sustainable-innovation-at-somma-connect-2026/",
-      "date": "2026-09-23",
-      "summary": "BC3 took part this week in SOMMa Connect 2026, the meeting organised in Barcelona by the Severo Ochoa Alliance of Centres of Excellence and Mar\u00eda de Maeztu Units of Excellence (SOMMa), alongside the Centre for Genomic Regulation (CRG).",
-      "actor_type": "think-tank",
+      "org": "Kluwer Competition Law Blog",
+      "field": "competition",
+      "title": "Without Fear or Favour: The European Commission\u2019s DMA Non-Compliance Decision Against Google\u2019s Self-Preferencing (Case DMA.100193)",
+      "link": "https://legalblogs.wolterskluwer.com/competition-blog/without-fear-or-favour-the-european-commissions-dma-non-compliance-decision-against-googles-self-preferencing-case-dma100193/",
+      "date": "2026-09-30",
+      "summary": "In July, the European Commission issued its non-compliance decision against gatekeeper Google for its breach of the self-preferencing prohibition under Article 6(5) DMA.",
+      "actor_type": "media",
       "content_type": null,
-      "tags": []
+      "tags": [
+        "dma"
+      ]
     },
     {
       "org": "Hydrogen Europe",
@@ -459,13 +490,24 @@
       "tags": []
     },
     {
-      "org": "Bioenergy Europe",
+      "org": "Hydrogen Europe",
       "field": "green-deal",
-      "title": "Do not comment on the leak!",
-      "link": "https://bioenergyeurope.org/do-not-comment-on-the-leak/",
-      "date": "2026-09-23",
-      "summary": "In this op-ed, Bioenergy Europe\u2019s Secretary General Jean-Marc Jossart makes the case for giving Member States and regions the flexibility to use their own renewable resources, including sustainable bioenergy.",
+      "title": "Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold",
+      "link": "https://hydrogeneurope.eu/reverion-raises-175m-series-b-to-scale-production-of-its-dispatchable-carbon-negative-power-plants-tenfold/",
+      "date": "2026-09-30",
+      "summary": "[\u2026] The post Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold appeared first on Hydrogen Europe .",
       "actor_type": "industry",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Committee of the Regions",
+      "field": "green-deal",
+      "title": "Green Deal Funding Alert \u2013 September 2026",
+      "link": "https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026",
+      "date": "2026-09-29",
+      "summary": "This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.",
+      "actor_type": "eu-institution",
       "content_type": null,
       "tags": []
     },
@@ -488,6 +530,17 @@
       "date": "2026-09-24",
       "summary": "Germany presents fossil fuel transition plan, reaffirms 2045 climate target j.wettengel Thu, 24 Sep 2026 - 13:43",
       "actor_type": "media",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "SIPRI",
+      "field": "security",
+      "title": "The 2026 Stockholm Forum to launch Youth Advisory Board",
+      "link": "https://www.sipri.org/news/2026/2026-stockholm-forum-launch-youth-advisory-board",
+      "date": "2026-09-24",
+      "summary": "The 2026 Stockholm Forum on Peace and Development will launch a Youth Advisory Board to expand youth participation in the event.",
+      "actor_type": "think-tank",
       "content_type": null,
       "tags": []
     },
@@ -520,6 +573,28 @@
       "link": "https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda",
       "date": "2026-09-28",
       "summary": "SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Carbon Gap",
+      "field": "green-deal",
+      "title": "Unlocking corporate demand for carbon removal starts with clear guidance",
+      "link": "https://carbongap.org/insights/unlocking-corporate-demand-for-carbon-removal-starts-with-clear-guidance",
+      "date": "2026-09-30",
+      "summary": "Unlocking corporate demand for carbon removal starts with clear guidance",
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Carbon Gap",
+      "field": "green-deal",
+      "title": "Setting the course for novel marine carbon removal in Europe",
+      "link": "https://carbongap.org/insights/setting-the-course-for-novel-marine-carbon-removal-in-europe",
+      "date": "2026-11-05",
+      "summary": "Setting the course for novel marine carbon removal in Europe",
       "actor_type": "think-tank",
       "content_type": null,
       "tags": []
