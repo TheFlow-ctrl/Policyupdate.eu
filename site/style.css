@@ -566,6 +566,43 @@ h1, h2, h3 {
   margin: 0 0 40px;
 }
 
+.archive-year {
+  border-bottom: 1px solid var(--navy-950);
+  padding: 4px 0;
+}
+
+.archive-year summary {
+  cursor: pointer;
+  padding: 14px 4px;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--navy-950);
+  list-style: none;
+}
+
+.archive-year summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive-year summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1em;
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.archive-year[open] summary::before {
+  content: "–";
+}
+
+.archive-year-months {
+  padding: 0 0 4px 20px;
+  border-left: 2px solid var(--border);
+  margin-left: 6px;
+}
+
 .archive-month {
   border-bottom: 1px solid var(--border);
   padding: 4px 0;
