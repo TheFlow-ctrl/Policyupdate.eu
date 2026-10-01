@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-09-30
+# Weekly Climate, Energy & Environment Digest — 2026-10-01
 
 ### Multilateral Cooperation and Confidence-Building in Cyberspace
 *SWP (German Institute for International and Security Affairs) — 2026-09-29*
@@ -9,17 +9,8 @@ The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incid
 
 ---
 
-### Sustainable blue tourism: From local initiatives to systemic change
-*IDDRI — 2026-09-24*
-
-Authors: Angelo Sciacca, Julien Rochette, Céline Kauffmann
-
-[Read more](https://www.iddri.org/en/publications-and-events/blog-post/sustainable-blue-tourism-local-initiatives-systemic-change)
-
----
-
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-09-30*
+*European Environmental Law Review — 2026-10-01*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -55,11 +46,20 @@ Descarcă PDF-ul România are potențialul de a deveni un producător regional c
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-09-30*
+*European Environmental Law Review — 2026-10-01*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
+
+---
+
+### EEB pull out of Critical Chemicals Alliance over industry capture and deregulation risks
+*EEB (European Environmental Bureau) — 2026-10-01*
+
+Brussels, 1 October – The European Environmental Bureau (EEB) today announced its withdrawal from the Critical Chemicals Alliance (CCA) , warning that the initiative is set to preserve current chemical production, including hazardous, carbon-intensive and fossil-dependent chemicals, rather than driving the transformation Europe needs. The CCA, launched by the European Commission to identify chemicals and production capacities considered critical to Europe’s economy and address concerns around supply and competitiveness [1], is approaching the adoption of its recommendations at its second…
+
+[Read more](https://eeb.org/en/eeb-pull-out-of-crittical-chemicals-alliance-over-industry-capture-and-deregulation-risks/)
 
 ---
 
@@ -90,6 +90,15 @@ Climate change threatens Finland’s security of supply by increasing the likeli
 
 ---
 
+### Europe’s clean industrial strategy needs a comprehensive lead-market architecture
+*E3G — 2026-10-01*
+
+Last month the European Commission published its proposal for the revision of Europe’s public procurement rulebook, the Public Procurement Act. This proposal follows the Industrial Accelerator Act, published in March, and forms a key part of the Commission’s attempt to secure Europe’s industrial capacity by creating demand for low-carbon materials and products. With the two instruments now on the table, the architecture for European lead markets is taking shape. Yet the measures still fall short of providing the scale and certainty of demand needed to turn planned investments into European…
+
+[Read more](https://www.e3g.org/news/europe-s-clean-industrial-strategy-needs-a-comprehensive-lead-market-architecture/?utm_source=rss&utm_medium=rss&utm_campaign=europe-s-clean-industrial-strategy-needs-a-comprehensive-lead-market-architecture)
+
+---
+
 ### Escaping the Hormuz trap: What should an agreement to reopen the Strait look like?
 *Chatham House — 2026-09-30*
 
@@ -108,17 +117,8 @@ SPARKLE supports cities across Europe to accelerate their local energy transitio
 
 ---
 
-### Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying
-*Chatham House — 2026-09-24*
-
-Denmark’s Greenland deal with Trump is a victory for diplomacy over bullying Expert comment jon.wallace 24 September 2026 Denmark used its soft power to rally support and took the dispute out of the limelight – addressing underlying US interests instead of President Trump’s unacceptable public position. This week, Denmark has extricated itself from a period of coercive US diplomacy over Greenland. The agreement announced on 22 September elegantly resolves the dispute over the territory, without forcing Denmark or the government of Greenland to give up very much. Even before the dispute,…
-
-[Read more](https://www.chathamhouse.org/2026/09/denmarks-greenland-deal-trump-victory-diplomacy-over-bullying)
-
----
-
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-09-30*
+*European Environmental Law Review — 2026-10-01*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -132,6 +132,24 @@ This article focuses on appraising the progress of efforts by the European Union
 Brazil’s presidential election is more than just another polarized contest Expert comment jon.wallace 28 September 2026 A Bolsonaro victory would mean Trump-aligned governments dominate South America. The first round of Brazil’s presidential election is scheduled for 4 October, with 13 candidates competing to occupy the Brazilian presidential palace, Planalto. For now, the contest is dominated by two men. Only a few percentage points (depending on the poll) separate 80-year-old President Luiz Inácio Lula da Silva of the Workers’ Party (PT) – running for his fourth term – and 45-year-old…
 
 [Read more](https://www.chathamhouse.org/2026/09/brazils-presidential-election-more-just-another-polarized-contest)
+
+---
+
+### Can Demand Side Response Keep Romania’s Lights on Under System Stress?
+*EPG Thinktank — 2026-10-01*
+
+Download the PDF Demand Side Response (DSR) could provide a credible alternative to keeping coal capacity online while supporting Romania’s longer-term energy transition, with energy storage and increased low carbon capacities. Romania’s DSR potential is estimated at up to 235 MW of industrial use and 1,800 MW at the household level. Some Romanian officials continue to argue that coal is indispensable on the grounds that it’s the only guarantee of security of supply in both summer and winter. However, a scaled-up DSR mechanism could cover these adequacy gaps and incur savings of around EUR…
+
+[Read more](https://www.epg-thinktank.org/can-demand-side-response-keep-romanias-lights-on-under-system-stress/)
+
+---
+
+### War has returned to Tigray. This time it may not stay in Ethiopia
+*Chatham House — 2026-10-01*
+
+War has returned to Tigray. This time it may not stay in Ethiopia Expert comment LToremark 1 October 2026 As fighting escalates in Tigray and neighbouring areas, there are fears that Ethiopia’s internal instability could spill over into the wider Horn of Africa region. Conflict returned to Ethiopia’s northern region of Tigray on 23 September, as the Tigray People’s Liberation Front (TPLF) forces stormed three national airports in Tigray. In what the TPLF claimed was defensive combat , ground offensives were also expanded along Tigray’s southern and eastern borders with the neighbouring Amhara…
+
+[Read more](https://www.chathamhouse.org/2026/10/war-has-returned-tigray-time-it-may-not-stay-ethiopia)
 
 ---
 
@@ -198,15 +216,6 @@ A recent speech by Esra Albayrak , a Turkish sociologist and daughter of Preside
 
 ---
 
-### Why Putin Still Needs Elections – and What It Means for Europe
-*Wilfried Martens Centre (EPP) — 2026-09-24*
-
-Russia’s parliamentary elections produced few surprises. United Russia won 57.83 per cent of the party-list vote and secured 355 of the State Duma’s 450 seats, comfortably preserving its constitutional majority. But the result may be less interesting than a question that arose before voting even began: why hold election s at all? That question was debated inside the Kremlin establishment. The Russian leadership supposedly debated postponing the State Duma elections. In June, Meduza , citing sources close to the presidential administration, reported that senior security officials had urged…
-
-[Read more](https://www.martenscentre.eu/blog/why-putin-still-needs-elections-and-what-it-means-for-europe/)
-
----
-
 ### New EU greenwashing law makes sustainable shopping easier
 *EEB (European Environmental Bureau) — 2026-09-28*
 
@@ -222,6 +231,15 @@ Sustainable consumption will become easier across the EU, as the Directive on Em
 China rising, America in decline? The Trump-Xi summit Audio sseth.drupal@c… 25 September 2026 In this week’s episode of Independent Thinking, our experts discuss the Trump-Xi summit in Washington and the increasing competition between the two superpowers. President Donald Trump welcomes Xi Jinping to Washington with the US-China dynamic in a moment of historic flux. China is rising economically and militarily, while the US is mired in the Iran war, alienating allies and pursuing Trump’s unpredictable trade and tariff disputes. What do the two leaders want from this meeting, and will they get…
 
 [Read more](https://www.chathamhouse.org/2026/09/china-rising-america-decline-trump-xi-summit-independent-thinking-podcast)
+
+---
+
+### The Carbon Footprint of Electricity Production –  August 2026
+*The Green Tank — 2026-10-01*
+
+The upward trend in power sector emissions continued in August, reaching 1.38 million tonnes (+7.8% compared with July), driven by increased use of lignite and fossil gas, despite the record level of renewable energy generation recorded in the same month. With the addition of August’s emissions, cumulative sector emissions since the beginning of 2026 reached 9.6 million tonnes, exceeding the carbon budget set under the National Energy and Climate Plan (NECP) for the whole of 2026. The post The Carbon Footprint of Electricity Production – August 2026 first appeared on The Green Tank .
+
+[Read more](https://thegreentank.gr/en/2026/10/01/emissionswatch-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=emissionswatch-aug26-en)
 
 ---
 
@@ -252,21 +270,12 @@ Progressives risk misreading Generation Z by treating social media, the manosphe
 
 ---
 
-### Wind energy is hiring. Here’s how to get a job in it
-*WindEurope — 2026-09-24*
+### Migration Update August-September 2026
+*Wilfried Martens Centre (EPP) — 2026-09-30*
 
-Europe’s wind industry will create over 100,000 new positions between now and 2030. Meanwhile, 15% of EU citizens under 25 are unemployed. WindEurope today launched its Careers Hub – a single-entry point for careers in wind energy. The Careers Hub helps students, jobseekers and workers from other sectors explore where they fit in the wind industry. They can explore job profiles and career paths, find training opportunities and contact employers – all in one place. Wind is the one clean technology that Europe makes from start to finish. Project development, supply chain, manufacturing,…
+Welcome to the Migration Update August-September 2026. This curated news selection brings together many of the most important developments in the migration policy area over the last month, including recent ones tied to the ongoing conflict in Ukraine. The purpose of these news summaries is to provide a factual base for migration debates within the European centre-right. Vít Novotný is responsible for the selection of information items from the media, governments and social media. The value of these summaries is in the categorisation of information items and in listing those items that readers…
 
-[Read more](https://windeurope.org/news/wind-energy-is-hiring-heres-how-to-get-a-job-in-it/)
-
----
-
-### What can DRC’s national dialogue achieve?
-*Chatham House — 2026-09-24*
-
-What can DRC’s national dialogue achieve? Expert comment jon.wallace 24 September 2026 President Tshisekedi and the opposition both want national dialogue. But it remains to be seen whether they can agree on the nature of the DRC’s problems, let alone their solutions. When President of the Democratic Republic of the Congo (DRC) Félix Tshisekedi finally announced a ‘national dialogue’ on 27 August, he evoked the country’s long history of previous negotiations. Too often, he said, they had been about elite power sharing, had not meaningfully included the Congolese people, and had legitimized…
-
-[Read more](https://www.chathamhouse.org/2026/09/what-can-drcs-national-dialogue-achieve)
+[Read more](https://www.martenscentre.eu/migration-update/migration-update-august-september-2026/)
 
 ---
 
@@ -288,24 +297,6 @@ Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Lat
 
 ---
 
-### The UN’s decline is a choice
-*International Crisis Group — 2026-09-24*
-
-The UN’s decline is a choice cthuratong Thu, 09/24/2026 - 14:13 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Multilateral Diplomacy 24 September 2026 1 minute The UN’s decline is a choice Originally published in El País The selection of a new chief is an opportunity for governments to rally round the ailing organization and choose a ‘general’, not a ‘secretary,’ to lead the charge Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Also available in Español…
-
-[Read more](https://www.crisisgroup.org/opd/global/uns-decline-choice)
-
----
-
-### Iraq’s Post-coalition Test
-*International Crisis Group — 2026-09-24*
-
-Iraq’s Post-coalition Test saureli Thu, 09/24/2026 - 15:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Video / Middle East & North Africa 24 September 2026 1 minute Iraq’s Post-coalition Test In this video, Crisis Group Deputy Director for MENA, Lahib Higel, explains why pressuring Baghdad into a military confrontation could weaken the Iraqi state even more. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Iraq The U.S.-led coalition against ISIS is…
-
-[Read more](https://www.crisisgroup.org/vid/middle-east-north-africa/iraq/iraqs-post-coalition-test)
-
----
-
 ### On Our Radar
 *International Crisis Group — 2026-09-24*
 
@@ -324,6 +315,15 @@ Renewables reached a new all-time monthly high in August, at 3,312 GWh. However,
 
 ---
 
+### Three months countdown: from political debate to execution of the EU Deforestation Regulation
+*IEEP — 2026-10-01*
+
+With three months to go before the EU Deforestation Regulation (EUDR) is enforced, IEEP and World Resources Institute brought together the European Commission and business voices to address the question: are you ready for the EUDR? The answer was a resounding ‘yes’. The post Three months countdown: from political debate to execution of the EU Deforestation Regulation appeared first on IEEP AISBL .
+
+[Read more](https://ieep.eu/news/three-months-countdown-from-political-debate-to-execution-of-the-eu-deforestation-regulation/)
+
+---
+
 ### Hydrogen on track: new standards support fuel-cell-powered rolling stock
 *CEN-CENELEC — 2026-09-29*
 
@@ -339,15 +339,6 @@ As Europe continues its transition towards cleaner and more sustainable mobility
 Energy communities are opening up new ways for people and local actors to collectively engage in the energy system. With public purpose and support, they can go beyond sustainability: strengthening local cooperation, tackling energy poverty and building shared ownership and trust.
 
 [Read more](https://eu-mayors.ec.europa.eu/en/news/public-innovation-and-energy-communities-towards-participatory-democracies)
-
----
-
-### Sustainability in EU FTAs: Monitoring briefings
-*IEEP — 2026-09-24*
-
-This briefing series monitors upcoming free trade agreements (FTAs) that are either being negotiated or concluded by the European Union and conducts assessments for their sustainability provisions. The post Sustainability in EU FTAs: Monitoring briefings appeared first on IEEP AISBL .
-
-[Read more](https://ieep.eu/news/sustainability-in-eu-ftas-monitoring-briefings/)
 
 ---
 
@@ -405,6 +396,15 @@ From industry associations to environmental and civil-society bodies, a total of
 
 ---
 
+### European Semester must deliver for industrial workers and support a just transition
+*industriAll Europe — 2026-09-29*
+
+IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
+
+[Read more](https://news.industriall-europe.eu/Article/1599)
+
+---
+
 ### Green Deal Funding Alert – September 2026
 *Committee of the Regions — 2026-09-29*
 
@@ -414,30 +414,39 @@ This is the latest edition of the Green Deal Funding Alert, this edition focuses
 
 ---
 
+### Divided EU cyber defence faces real-life Russian and Chinese threats
+*Wilfried Martens Centre (EPP) — 2026-09-30*
+
+“For Dimitar Lilkov from the Wilfried Martens Centre for European Studies, there were three main sources of friction: national security, trust and money”.
+
+[Read more](https://www.martenscentre.eu/media-mentions/divided-eu-cyber-defence-faces-real-life-russian-and-chinese-threats/)
+
+---
+
+### Circular raw materials for strong industry and quality jobs
+*industriAll Europe — 2026-09-25*
+
+Europe’s circular economy must become a central pillar of an ambitious industrial policy that secures access to critical raw materials, strengthens manufacturin...
+
+[Read more](https://news.industriall-europe.eu/Article/1598)
+
+---
+
+### Sustainable European sovereignty must deliver for workers
+*industriAll Europe — 2026-10-01*
+
+Europe’s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...
+
+[Read more](https://news.industriall-europe.eu/Article/1603)
+
+---
+
 ### More Dangerous than Splitting the Atom: Learning from Previous Technology Panics
 *Lisbon Council — 2026-09-28*
 
 The post More Dangerous than Splitting the Atom: Learning from Previous Technology Panics appeared first on The Lisbon Council .
 
 [Read more](https://lisboncouncil.net/more-dangerous-than-splitting-the-atom/)
-
----
-
-### Germany presents fossil fuel transition plan, reaffirms 2045 climate target
-*Clean Energy Wire (CLEW) — 2026-09-24*
-
-Germany presents fossil fuel transition plan, reaffirms 2045 climate target j.wettengel Thu, 24 Sep 2026 - 13:43
-
-[Read more](https://www.cleanenergywire.org/news/germany-presents-fossil-fuel-transition-plan-reaffirms-2045-climate-target)
-
----
-
-### The 2026 Stockholm Forum to launch Youth Advisory Board
-*SIPRI — 2026-09-24*
-
-The 2026 Stockholm Forum on Peace and Development will launch a Youth Advisory Board to expand youth participation in the event.
-
-[Read more](https://www.sipri.org/news/2026/2026-stockholm-forum-launch-youth-advisory-board)
 
 ---
 
@@ -456,15 +465,6 @@ IETA welcomes Canada's initiative to develop Article 6 participation framework
 Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
 
 [Read more](https://www.ieta.org/news/malaysia-advances-carbon-market-implementation-through-public-private-dialogue)
-
----
-
-### SIPRI hosts discussion on human security and the WPS agenda
-*SIPRI — 2026-09-28*
-
-SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.
-
-[Read more](https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda)
 
 ---
 
