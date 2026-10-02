@@ -86,7 +86,7 @@ def _clean_text(text, max_len=600):
     return text
 
 
-def _make_item(org, title, link, dt, summary):
+def _make_item(org, title, link, dt, summary, image=None):
     return {
         "org": org,
         "field": FIELD,
@@ -94,6 +94,14 @@ def _make_item(org, title, link, dt, summary):
         "link": link,
         "date": dt.strftime("%Y-%m-%d") if dt else "unknown date",
         "summary": _clean_text(summary),
+        # Optional -- for the Instagram-style "picture over caption" card
+        # layout (see entry_image()/render_entry_html() in fetch_digest.py).
+        # None for the large majority of scrapers in this file, which
+        # were written before that feature existed and don't extract an
+        # image URL from their listing page's DOM; only pass a real
+        # value from a scraper that's been specifically checked to have
+        # one in its confirmed-live markup, not guessed.
+        "image": image,
     }
 
 
@@ -2618,6 +2626,215 @@ def scrape_sei(cutoff):
     return items
 
 
+def scrape_newclimate(cutoff):
+    """NewClimate Institute's /news listing (Drupal, server-rendered, no
+    feed found at /feed/, /rss.xml). Confirmed live DOM:
+
+        <div class="teaser">
+          <div class="teaser__content">
+            <a href="/news/slug" class="h3 teaser__title"><span>Title</span></a>
+            <div class="event-details">
+              <div class="event-details__item">
+                <span class="event-details__name ...">Publication date</span>
+                <span class="event-details__value">17 Sep 2026</span>
+              </div>
+            </div>
+            <div class="teaser__description"><p>Summary...</p></div>
+          </div>
+        </div>
+    """
+    org = "NewClimate Institute"
+    base = "https://newclimate.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news")
+        for teaser in soup.select("div.teaser"):
+            link_a = teaser.select_one("a.teaser__title")
+            date_el = teaser.select_one(".event-details__value")
+            if not link_a or not link_a.get("href") or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %b %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = link_a.get_text(strip=True)
+            link = urljoin(base, link_a["href"])
+            desc_el = teaser.select_one(".teaser__description p")
+            summary = desc_el.get_text(" ", strip=True) if desc_el else title
+            items.append(_make_item(org, title, link, dt, summary))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_newclimate failed: {exc}")
+        return []
+    return items
+
+
+def scrape_climate_analytics(cutoff):
+    """Climate Analytics' /news-and-events/press-releases listing (server-
+    rendered, no feed found). Confirmed live DOM:
+
+        <article aria-labelledby="card-heading-...">
+          ...
+          <date class="text-grey-darker uppercase text-sm">1 October 2026</date>
+          <div ...><h2 ...><a href="https://.../press-releases/slug">Title</a></h2></div>
+          <div class="prose ..."><p>Summary...</p></div>
+        </article>
+
+    The page also has a handful of non-press-release <article> cards (e.g.
+    an "About us" nav card) that reuse the generic article tag but have no
+    <date> child -- filtering to articles that HAVE a <date> element
+    cleanly excludes those, same pattern as SEI's c-card filtering above.
+
+    Genuinely global institute (recent live output: Australian coal mines,
+    UNEP overshoot report, sea-level rise, alongside real EU content like a
+    European heatwave-economics study) -- eu_gate: true in sources.yaml,
+    same treatment as SEI/Ember/Carbon Brief.
+    """
+    org = "Climate Analytics"
+    base = "https://climateanalytics.org"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news-and-events/press-releases")
+        for article in soup.select("article"):
+            date_el = article.find("date")
+            title_a = article.select_one("h2 a[href]")
+            if not date_el or not title_a:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %B %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_a.get_text(strip=True)
+            link = title_a["href"]
+            desc_el = article.select_one(".prose p")
+            summary = desc_el.get_text(" ", strip=True) if desc_el else title
+            img_el = article.select_one("img[src]")
+            image = img_el["src"] if img_el else None
+            items.append(_make_item(org, title, link, dt, summary, image=image))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_climate_analytics failed: {exc}")
+        return []
+    return items
+
+
+def scrape_unfccc(cutoff):
+    """UNFCCC's /news listing (Drupal, server-rendered; /news/feed is
+    empty and /rss.xml is a valid-but-unpopulated feed shell with zero
+    <item> elements -- confirmed, not just assumed dead). Confirmed live
+    DOM:
+
+        <article class="... node--type-news ...">
+          <div class="node__content ...">
+            <a href="/news/slug" class="news-teaser" data-title="Full title text">
+              ...
+              <div class="info-container">
+                <div class="date">29 Sep 2026</div>
+                <span>Title text (shorter/truncated in some cases)</span>
+                <div class="field ...field-page-type-of-news...">Article</div>
+              </div>
+            </a>
+          </div>
+        </article>
+
+    data-title is used for the title (not the inner <span>, which can be
+    visually truncated) -- cleaner and more reliable. No excerpt on the
+    listing page, so summary falls back to the title, same as several
+    other listing-only scrapers in this file.
+
+    Near-entirely global/multilateral-process content (COP logistics, NDC
+    submissions, Article 6 governance) with only occasional EU-specific
+    items -- eu_gate: true in sources.yaml is essential here, same
+    treatment as the other international-org sources with eu_gate.
+    """
+    org = "UNFCCC"
+    base = "https://unfccc.int"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/news")
+        for article in soup.select("article.node--type-news"):
+            link_a = article.select_one("a.news-teaser[href]")
+            date_el = article.select_one(".date")
+            if not link_a or not date_el:
+                continue
+
+            dt = _parse_date(date_el.get_text(strip=True), ["%d %b %Y"])
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = link_a.get("data-title") or link_a.get_text(strip=True)
+            link = urljoin(base, link_a["href"])
+            img_el = article.select_one("img[src]")
+            image = urljoin(base, img_el["src"]) if img_el else None
+            items.append(_make_item(org, title, link, dt, title, image=image))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_unfccc failed: {exc}")
+        return []
+    return items
+
+
+def scrape_perspectives_climate(cutoff):
+    """Perspectives Climate Group's /insights/ listing (Astro, statically
+    pre-rendered -- confirmed server-rendered via plain fetch, no JS
+    needed). Confirmed live DOM:
+
+        <div class="ingroup" id="cat-news" data-archive-group="">
+          <h2 class="shn">News</h2>
+          <div class="feed">
+            <a class="feeditem reveal" href="/insights/slug">
+              <span class="fdate"><time datetime="2025-12-22"> 22 Dec 2025 </time></span>
+              ...
+              <span class="fkind">News</span>
+              <h2>Title text</h2>
+            </a>
+          </div>
+        </div>
+
+    Items are grouped into News/Events/Publications sections, each as a
+    separate .feed container, but a.feeditem selects every item across
+    all three groups regardless. The <time datetime="..."> attribute is
+    an exact ISO date, so no text-format date parsing is needed. No
+    excerpt on the listing page, summary falls back to the title.
+
+    Perspectives Climate Research (the non-profit research arm) and
+    Perspectives Climate Group (the paid advisory arm) are deliberately
+    run as one site/feed -- content mixes genuine EU/international
+    climate-policy analysis (Article 6, PACM funding, EU Power-to-X
+    policy) with consultancy-adjacent noise (management transitions,
+    newsletters, workshop write-ups). Included as a judgment call given
+    the real policy content present; the existing filter_out_events/
+    filter_out_low_value passes plus the topic-keyword relevance filter
+    should catch a fair amount of the noise automatically.
+    """
+    org = "Perspectives Climate Group"
+    base = "https://perspectives.cc"
+    items = []
+    try:
+        soup = _get_soup(f"{base}/insights/")
+        for item in soup.select("a.feeditem[href]"):
+            time_el = item.select_one("time[datetime]")
+            title_el = item.find("h2")
+            if not time_el or not title_el:
+                continue
+
+            try:
+                dt = datetime.strptime(time_el["datetime"][:10], "%Y-%m-%d")
+            except (KeyError, ValueError):
+                continue
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = title_el.get_text(strip=True)
+            link = urljoin(base, item["href"])
+            img_el = item.select_one("img[src]")
+            image = urljoin(base, img_el["src"]) if img_el else None
+            items.append(_make_item(org, title, link, dt, title, image=image))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_perspectives_climate failed: {exc}")
+        return []
+    return items
+
+
 # ---------------------------------------------------------------------------
 SCRAPERS = {
     "ceps": scrape_ceps,
@@ -2661,6 +2878,10 @@ SCRAPERS = {
     "gold_standard": scrape_gold_standard,
     "carbon_gap": scrape_carbon_gap,
     "sei": scrape_sei,
+    "newclimate": scrape_newclimate,
+    "climate_analytics": scrape_climate_analytics,
+    "unfccc": scrape_unfccc,
+    "perspectives_climate": scrape_perspectives_climate,
 }
 
 # Headless-browser scrapers (browser_scrapers.py) live in a separate module
