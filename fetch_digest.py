@@ -39,7 +39,16 @@ SOURCES_FILE = Path(__file__).parent / "sources.yaml"
 OUTPUT_FILE = Path(__file__).parent / "digest.md"
 JSON_OUTPUT_FILE = Path(__file__).parent / "site" / "digest.json"
 ARCHIVE_FILE = Path(__file__).parent / "site" / "archive.json"
+RSS_FILE = Path(__file__).parent / "site" / "feed.xml"
 DAYS_BACK = 7
+
+# How many of the most recent archived entries go into PolicyUpdate's own
+# RSS feed (site/feed.xml) -- not just this run's new entries, since a
+# feed reader that subscribes mid-week should still get a reasonable
+# backlog to show, not an empty feed until the next run happens to find
+# something. 60 is a common rolling-window size for this kind of feed
+# (comparable to what most publications ship).
+RSS_ITEM_COUNT = 60
 
 # IndexNow: pings Bing/Yandex/Seznam.cz/Naver that the homepage changed, so
 # they can recrawl promptly instead of waiting for their own schedule.
@@ -1346,6 +1355,144 @@ def update_archive(new_entries):
     print(f"Archive now has {total} entries across {len(ordered_months)} month(s)")
 
 
+# Locale-independent weekday/month abbreviations for RFC 822 date
+# formatting (RSS's required pubDate/lastBuildDate format) -- strftime's
+# %a/%b depend on the running system's locale, which a CI runner isn't
+# guaranteed to have set to English, so this avoids silently emitting
+# e.g. French abbreviations into the feed.
+_RFC822_DAY_ABBR = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_RFC822_MONTH_ABBR = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+]
+
+
+def _rfc822_date(date_str, fallback=None):
+    """Formats a "YYYY-MM-DD" date string as RFC 822 (what RSS's pubDate/
+    lastBuildDate elements require), at midnight UTC -- entries only ever
+    carry day-level precision (see fetch_recent_entries()), so there's no
+    real publish *time* to report. Returns `fallback` (or None) for a
+    missing/unparseable date rather than raising, since one bad date
+    shouldn't take down the whole feed."""
+    try:
+        parsed = dt.datetime.strptime(date_str, "%Y-%m-%d")
+    except (TypeError, ValueError):
+        return fallback
+    weekday = _RFC822_DAY_ABBR[parsed.weekday()]
+    month = _RFC822_MONTH_ABBR[parsed.month - 1]
+    return f"{weekday}, {parsed.day:02d} {month} {parsed.year} 00:00:00 GMT"
+
+
+def write_rss_feed():
+    """Writes site/feed.xml -- PolicyUpdate's own RSS 2.0 feed, so someone
+    can subscribe to PolicyUpdate itself in their own feed reader instead
+    of checking the site or waiting for the weekly email. Reads back the
+    just-updated site/archive.json (rather than being passed this run's
+    entries directly) so the feed always reflects the most recent
+    RSS_ITEM_COUNT entries overall -- including entries from an earlier
+    run -- rather than going empty on a week nothing new was found.
+
+    Item <link>/<guid> point at the ORIGINAL source article, not a
+    PolicyUpdate.eu URL -- consistent with the rest of the site (see the
+    "Links go to the original publication" line in the footer): this is a
+    tracker, not a republisher, and there's no per-entry page on
+    PolicyUpdate.eu to link to instead.
+    """
+    if not ARCHIVE_FILE.exists():
+        return
+
+    try:
+        archive_data = json.loads(ARCHIVE_FILE.read_text())
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"  [warning] could not read archive for RSS feed: {exc}")
+        return
+
+    all_entries = [
+        entry
+        for month in archive_data.get("months", [])
+        for entry in month.get("entries", [])
+    ]
+    # Months (and entries within a month) are already newest-first (see
+    # update_archive() above) and contiguous, so concatenating them in
+    # order preserves a global newest-first sort with no extra sorting.
+    recent = all_entries[:RSS_ITEM_COUNT]
+
+    # Built locally from LEGISLATION_TAGS/COMPETITION_LEGISLATION_TAGS
+    # (defined above, each a list of (tag_id, label, keywords) tuples --
+    # same source of truth TOPIC_LABELS in script.js mirrors) rather than
+    # kept as a standalone module-level dict, so there's exactly one place
+    # ("ets1" -> "ETS I" etc.) that can drift instead of two.
+    tag_labels = {tag_id: label for tag_id, label, _ in LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS}
+
+    items_xml = []
+    for entry in recent:
+        link = entry.get("link", "")
+        if not link:
+            continue  # an item with no link is useless to a feed reader
+        title = html.escape(entry.get("title") or "(no title)")
+        org = html.escape(entry.get("org") or "")
+        summary = html.escape(entry.get("summary") or "")
+        pub_date = _rfc822_date(entry.get("date"))
+        pub_date_xml = f"<pubDate>{pub_date}</pubDate>" if pub_date else ""
+        description = f"{org} — {summary}" if org else summary
+
+        categories = []
+        actor_label = ACTOR_RSS_LABELS.get(entry.get("actor_type"))
+        if actor_label:
+            categories.append(actor_label)
+        for tag in entry.get("tags") or []:
+            categories.append(tag_labels.get(tag, tag))
+        categories_xml = "".join(f"<category>{html.escape(c)}</category>" for c in categories)
+
+        items_xml.append(f"""    <item>
+      <title>{title}</title>
+      <link>{html.escape(link)}</link>
+      <guid isPermaLink="true">{html.escape(link)}</guid>
+      {pub_date_xml}
+      <description>{description}</description>
+      {f"<dc:creator>{org}</dc:creator>" if org else ""}
+      {categories_xml}
+    </item>""")
+
+    last_build_date = _rfc822_date(dt.date.today().isoformat(), fallback="")
+    channel_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>PolicyUpdate.eu — Weekly Digest</title>
+    <link>{INDEXNOW_SITE_URL}</link>
+    <atom:link href="{INDEXNOW_SITE_URL}feed.xml" rel="self" type="application/rss+xml"/>
+    <description>The latest Think Tank, NGO &amp; Industry contributions to EU policy debates — collected daily.</description>
+    <language>en</language>
+    <lastBuildDate>{last_build_date}</lastBuildDate>
+{chr(10).join(items_xml)}
+  </channel>
+</rss>
+"""
+
+    RSS_FILE.parent.mkdir(parents=True, exist_ok=True)
+    RSS_FILE.write_text(channel_xml)
+    print(f"Wrote {len(items_xml)} items to {RSS_FILE}")
+
+
+# Display labels for RSS <category> elements -- separate from script.js's
+# ACTOR_LABELS/TOPIC_LABELS (which drive the website's own UI) because an
+# RSS feed is read by apps/readers that never load script.js, so these
+# have to exist standalone here. Kept in sync with the actor_type values
+# in sources.yaml and LEGISLATION_TAGS below, same as ACTOR_LABELS/
+# TOPIC_LABELS in script.js are.
+ACTOR_RSS_LABELS = {
+    "think-tank": "Think Tank",
+    "academic": "Academic Journal",
+    "political": "Political",
+    "industry": "Industry & Lobby Groups",
+    "trade-union": "Trade Unions",
+    "ngo": "NGO & Advocacy",
+    "eu-institution": "EU Institutions",
+    "international-org": "International Organisations",
+    "media": "Media & Journalism",
+}
+
+
 INDEX_HTML_FILE = Path(__file__).parent / "site" / "index.html"
 POLICY_STAGES_FILE = Path(__file__).parent / "site" / "policy_stages.json"
 
@@ -2055,6 +2202,7 @@ def main():
     print(f"Wrote {len(all_entries)} entries to {JSON_OUTPUT_FILE}")
 
     update_archive(all_entries)
+    write_rss_feed()  # reads the archive.json update_archive() just wrote
     update_static_html(
         all_entries,
         dt.date.today().isoformat(),
