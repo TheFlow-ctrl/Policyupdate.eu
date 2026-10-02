@@ -21,6 +21,7 @@ from urllib.parse import urlparse
 import feedparser
 import requests
 import yaml
+from bs4 import BeautifulSoup
 
 import backend_scrapers
 
@@ -976,7 +977,25 @@ def entry_text_fields(entry):
     return title, excerpt
 
 
-_IMG_SRC_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+def _is_emoji_glyph_image(img_tag):
+    """True if <img> is a WordPress "smiley" emoji glyph (e.g. the little
+    (TM)/(C)/emoji pictograms WordPress renders as literal <img> tags for
+    cross-platform consistency), not a real content photo.
+
+    These show up inline in article bodies -- e.g. "...marketed as
+    Teflon(TM), used to..." -- and can be the very first <img> in the
+    content, which previously fooled the naive "first image wins" fallback
+    into using a pixelated TM/emoji glyph as the entry's thumbnail.
+    """
+    classes = img_tag.get("class") or []
+    if isinstance(classes, str):
+        classes = classes.split()
+    if "wp-smiley" in classes:
+        return True
+    src = img_tag.get("src") or ""
+    if "s.w.org/images/core/emoji" in src:
+        return True
+    return False
 
 
 def entry_image(entry):
@@ -988,10 +1007,13 @@ def entry_image(entry):
        the media RSS namespace -- common on WordPress feeds with a
        featured-image plugin).
     2. An <enclosure> whose type is an image/* mimetype.
-    3. The first <img src="..."> found in the raw (pre-HTML-stripped)
+    3. The first real <img src="..."> found in the raw (pre-HTML-stripped)
        content:encoded/description -- many feeds embed the article's
        lead image directly in the body rather than as separate feed
-       metadata.
+       metadata. WordPress emoji/smiley glyph images (e.g. a tiny (TM)
+       or (C) rendered inline as an <img>) are skipped, since they are
+       not real photos -- just text-sized Unicode symbols WordPress
+       swaps for an <img> for cross-platform rendering consistency.
 
     Many feeds have none of these, which is fine and expected -- an
     entry with no image just renders without one (see render_entry_html()
@@ -1012,8 +1034,16 @@ def entry_image(entry):
 
     content_list = entry.get("content")
     raw = content_list[0].get("value", "") if content_list else entry.get("summary", "")
-    match = _IMG_SRC_RE.search(raw or "")
-    return match.group(1) if match else None
+    if not raw:
+        return None
+    soup = BeautifulSoup(raw, "html.parser")
+    for img in soup.find_all("img"):
+        if _is_emoji_glyph_image(img):
+            continue
+        src = img.get("src")
+        if src:
+            return src
+    return None
 
 
 def is_relevant(title, excerpt, actor_type=None, field=None):
