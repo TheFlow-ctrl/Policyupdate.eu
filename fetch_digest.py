@@ -890,6 +890,10 @@ SCRAPER_HOMEPAGES = {
     "gold_standard": "https://www.goldstandard.org",
     "carbon_gap": "https://carbongap.org",
     "sei": "https://www.sei.org",
+    "newclimate": "https://newclimate.org",
+    "climate_analytics": "https://climateanalytics.org",
+    "unfccc": "https://unfccc.int",
+    "perspectives_climate": "https://perspectives.cc",
 }
 
 
@@ -970,6 +974,46 @@ def entry_text_fields(entry):
     cleaned = clean_text(raw)
     excerpt = bounded_excerpt(cleaned)
     return title, excerpt
+
+
+_IMG_SRC_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+
+
+def entry_image(entry):
+    """Best-effort image URL for an RSS entry, for the Instagram-style
+    "picture over caption" card layout -- tried in order:
+
+    1. <media:content>/<media:thumbnail> (feedparser parses these into
+       entry.media_content / entry.media_thumbnail when a feed declares
+       the media RSS namespace -- common on WordPress feeds with a
+       featured-image plugin).
+    2. An <enclosure> whose type is an image/* mimetype.
+    3. The first <img src="..."> found in the raw (pre-HTML-stripped)
+       content:encoded/description -- many feeds embed the article's
+       lead image directly in the body rather than as separate feed
+       metadata.
+
+    Many feeds have none of these, which is fine and expected -- an
+    entry with no image just renders without one (see render_entry_html()
+    and renderEntry() in script.js), not as a broken layout.
+    """
+    for key in ("media_content", "media_thumbnail"):
+        media = entry.get(key)
+        if media:
+            url = media[0].get("url")
+            if url:
+                return url
+
+    for enclosure in entry.get("enclosures") or []:
+        enc_type = enclosure.get("type", "")
+        href = enclosure.get("href") or enclosure.get("url")
+        if href and enc_type.startswith("image/"):
+            return href
+
+    content_list = entry.get("content")
+    raw = content_list[0].get("value", "") if content_list else entry.get("summary", "")
+    match = _IMG_SRC_RE.search(raw or "")
+    return match.group(1) if match else None
 
 
 def is_relevant(title, excerpt, actor_type=None, field=None):
@@ -1116,6 +1160,7 @@ def fetch_recent_entries(name, url, field, cutoff):
                 "link": entry.get("link", ""),
                 "date": published.strftime("%Y-%m-%d") if published else "unknown date",
                 "summary": excerpt,
+                "image": entry_image(entry),
             }
         )
 
@@ -1362,9 +1407,26 @@ def render_entry_html(entry):
         if format_label
         else ""
     )
+    # Instagram-style "picture over caption" layout -- only rendered when a
+    # source actually provided an image (see entry_image() and the
+    # scraper-level "image" field); most sources won't have one, which is
+    # fine, the card just renders without it. onerror="this.remove()" means
+    # a dead/hotlink-blocked image URL (scraped images aren't guaranteed to
+    # stay valid) silently disappears rather than showing a broken-image
+    # icon -- same failure mode as a missing image, not a visibly broken
+    # page.
+    image = entry.get("image")
+    image_html = (
+        f'<a href="{link}" target="_blank" rel="noopener">'
+        f'<img class="entry-image" src="{_escape_html(image)}" alt="" loading="lazy" '
+        f'onerror="this.remove()"></a>'
+        if image
+        else ""
+    )
 
     return f"""
     <article class="entry-card">
+      {image_html}
       <h3>{format_badge}<a href="{link}" target="_blank" rel="noopener">{title}</a></h3>
       <div class="entry-meta">{meta}</div>
       {summary_html}
