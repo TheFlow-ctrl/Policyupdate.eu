@@ -500,6 +500,21 @@ h1, h2, h3 {
   line-height: 1.35;
 }
 
+/* Instagram-style "picture over caption" layout -- only present when a
+   source's feed/scraper actually supplied an image (see entry_image() in
+   fetch_digest.py); most entries won't have one and render without this
+   block at all. Fixed aspect ratio + object-fit avoids layout jank while
+   the image loads, same reasoning as a social-feed image placeholder. */
+.entry-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 0 0 10px;
+  background: var(--card-bg);
+}
+
 /* Content-format badge (Podcast / Report / Interview) -- purely
    informational, set by classify_content_type() in fetch_digest.py.
    Solid pills, distinct from the outlined .entry-tag pills used for
