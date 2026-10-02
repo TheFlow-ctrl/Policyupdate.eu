@@ -369,6 +369,8 @@ let visualisationRendered = false;
 let activeField = "green-deal";
 let activeTopic = "all";
 let activeActor = "all";
+let searchQuery = ""; // always lowercase -- see matchesFilters()
+let currentDisplayedEntries = []; // whatever's currently on screen -- see exportCsv()
 
 // Fixed display order for the 15 laws in the Policy Cycle view -- matches
 // the order the law tabs already appear in, in index.html.
@@ -398,7 +400,10 @@ async function loadDigest() {
 function matchesFilters(entry) {
   const topicOk = activeTopic === "all" || (entry.tags || []).includes(activeTopic);
   const actorOk = activeActor === "all" || (entry.actor_type || "think-tank") === activeActor;
-  return topicOk && actorOk;
+  const searchOk =
+    !searchQuery ||
+    `${entry.title || ""} ${entry.summary || ""} ${entry.org || ""}`.toLowerCase().includes(searchQuery);
+  return topicOk && actorOk && searchOk;
 }
 
 function renderTopicInfo() {
@@ -434,12 +439,14 @@ function renderActiveField() {
   const filtered = digestData.entries.filter(
     (e) => (e.field || "green-deal") === activeField && matchesFilters(e)
   );
+  currentDisplayedEntries = filtered; // what "Export CSV" exports -- see exportCsv()
 
   if (filtered.length === 0) {
-    entriesEl.innerHTML = activeTopic === "all" && activeActor === "all"
+    entriesEl.innerHTML = activeTopic === "all" && activeActor === "all" && !searchQuery
       ? '<p class="empty">No new publications this week — check back soon.</p>'
       : '<p class="empty">No entries this week match that filter.</p>';
     updateActorScrollSpyTargets();
+    announceResultsCount(0);
     return;
   }
 
@@ -458,6 +465,20 @@ function renderActiveField() {
     entriesEl.innerHTML = filtered.map(renderEntry).join("");
     updateActorScrollSpyTargets();
   }
+  announceResultsCount(filtered.length);
+}
+
+// Tells screen reader users how many entries are now showing, whenever a
+// filter/search change re-renders the list -- see the #results-status
+// live region in index.html. The visible "No entries match that filter"
+// text rendered into #entries for count === 0 is a separate element the
+// person would have to navigate to on their own; announcing it here too
+// means they hear the outcome immediately, the same way they'd see it.
+function announceResultsCount(count) {
+  const el = document.getElementById("results-status");
+  if (!el) return;
+  el.textContent =
+    count === 0 ? "No entries match." : `${count} ${count === 1 ? "entry" : "entries"} shown.`;
 }
 
 // Mirrors _importance_sort_key() in fetch_digest.py -- must stay in sync
@@ -595,7 +616,7 @@ function applyActorScrollSpy() {
 
   document.querySelectorAll(".actor-tab").forEach((tab) => {
     const isCurrent = current === null ? tab.dataset.actor === "all" : tab.dataset.actor === current;
-    tab.classList.toggle("active", isCurrent);
+    setActiveState(tab, isCurrent);
   });
 }
 
@@ -613,14 +634,41 @@ function setupActorScrollSpy() {
   window.addEventListener("scroll", onWindowScrollForActorSpy, { passive: true });
 }
 
+// --- Accessibility: toggle-button state -------------------------------
+// The field/topic/actor tabs and utility-nav links are all "pick one"
+// toggle buttons (clicking one visually marks it "active" and un-marks
+// the rest) rather than true ARIA tabs with roving-tabindex keyboard
+// navigation -- field-tabs in particular mixes switching the visible
+// field (green-deal/competition) with switching to a whole different
+// section (Archive, Policy Cycle), which doesn't fit the single-tabpanel
+// assumption the ARIA tablist pattern expects. aria-pressed, kept in sync
+// with the .active class via this one helper, is the accurate, low-risk
+// description of what these buttons actually do: a screen reader
+// announces "button, pressed" / "button, not pressed" rather than saying
+// nothing at all about which filter is currently selected.
+function setActiveState(el, isActive) {
+  el.classList.toggle("active", isActive);
+  el.setAttribute("aria-pressed", isActive ? "true" : "false");
+}
+
+// Sets the initial aria-pressed state from whichever buttons index.html
+// already marked "active" by default (green-deal field tab, "All" topic
+// tab, "All voices" actor tab) -- called once at startup so every button
+// has a correct aria-pressed value from the very first render, before any
+// click (real or simulated via applyStateFromUrl()) has happened.
+function initAriaPressed() {
+  document.querySelectorAll(".field-tab, .topic-tab, .actor-tab, .utility-link").forEach((el) => {
+    el.setAttribute("aria-pressed", el.classList.contains("active") ? "true" : "false");
+  });
+}
+
 function setupFieldTabs() {
   const tabs = document.querySelectorAll(".field-tab");
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       if (tab.disabled) return;
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      document.querySelectorAll(".utility-link").forEach((l) => l.classList.remove("active"));
+      tabs.forEach((t) => setActiveState(t, t === tab));
+      document.querySelectorAll(".utility-link").forEach((l) => setActiveState(l, false));
 
       if (tab.dataset.view === "archive") {
         showArchiveView();
@@ -637,11 +685,12 @@ function setupFieldTabs() {
         // an obviously-wrong result.
         activeTopic = "all";
         document.querySelectorAll(".topic-tab").forEach((t) => {
-          t.classList.toggle("active", t.dataset.topic === "all");
+          setActiveState(t, t.dataset.topic === "all");
         });
         showDigestView();
         renderActiveField();
       }
+      syncUrlFromState();
     });
   });
 }
@@ -650,10 +699,10 @@ function setupTopicTabs() {
   const tabs = document.querySelectorAll(".topic-tab");
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
+      tabs.forEach((t) => setActiveState(t, t === tab));
       activeTopic = tab.dataset.topic;
       rerenderCurrentView();
+      syncUrlFromState();
     });
   });
 }
@@ -697,10 +746,10 @@ function setupActorTabs() {
       // as any other "take me there" navigation action above.
       const enteringGroupedView = actor === "all" && activeActor !== "all" && digestVisible;
 
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
+      tabs.forEach((t) => setActiveState(t, t === tab));
       activeActor = actor;
       rerenderCurrentView();
+      syncUrlFromState();
 
       if (enteringGroupedView) {
         document.getElementById("entries").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -719,6 +768,167 @@ function rerenderCurrentView() {
   } else {
     renderActiveField();
   }
+}
+
+// Debounced so re-filtering (which re-renders potentially hundreds of
+// entries) doesn't run on every single keystroke -- only once typing
+// pauses for SEARCH_DEBOUNCE_MS. The clear ("x") button and native
+// type="search" clear control both bypass the debounce and re-render
+// immediately, since clearing is a single, deliberate action rather than
+// a stream of keystrokes.
+const SEARCH_DEBOUNCE_MS = 250;
+let searchDebounceTimer = null;
+
+function applySearchQuery(rawValue) {
+  searchQuery = rawValue.trim().toLowerCase();
+  document.getElementById("search-clear").hidden = searchQuery === "";
+  rerenderCurrentView();
+  syncUrlFromState();
+}
+
+function setupSearch() {
+  const input = document.getElementById("search-input");
+  const clearBtn = document.getElementById("search-clear");
+
+  input.addEventListener("input", () => {
+    clearTimeout(searchDebounceTimer);
+    const value = input.value;
+    searchDebounceTimer = setTimeout(() => applySearchQuery(value), SEARCH_DEBOUNCE_MS);
+  });
+
+  // Covers both the native type="search" clear control (fires a "search"
+  // event in most browsers when its field becomes empty that way) and
+  // pressing Escape while focused -- either should clear instantly, not
+  // wait out the debounce.
+  input.addEventListener("search", () => {
+    clearTimeout(searchDebounceTimer);
+    applySearchQuery(input.value);
+  });
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && input.value) {
+      clearTimeout(searchDebounceTimer);
+      input.value = "";
+      applySearchQuery("");
+    }
+  });
+
+  clearBtn.addEventListener("click", () => {
+    clearTimeout(searchDebounceTimer);
+    input.value = "";
+    input.focus();
+    applySearchQuery("");
+  });
+}
+
+// --- Shareable/bookmarkable URL state ---------------------------------
+// Mirrors the current view + filters into the URL's query string (via
+// history.replaceState -- no new history entries for every filter click,
+// just a continuously up-to-date address bar) so a person can copy the
+// link and send someone straight to, say, CBAM entries from NGOs. Only
+// non-default values are written, to keep plain default-view URLs clean.
+
+// Only letters/digits/underscore/hyphen -- every real field/topic/actor/
+// view id is built from this character set (see sources.yaml's actor_type
+// values, LEGISLATION_TAGS, etc.), so anything else in a query param is
+// either a typo'd link or someone poking at the URL, not a value we
+// recognize. Used to validate URL params before they're interpolated into
+// a querySelector() attribute selector below -- a stray quote/bracket in
+// an unvalidated value could otherwise throw a SyntaxError there.
+const SAFE_URL_TOKEN = /^[\w-]+$/;
+
+function safeUrlParam(params, key, fallback) {
+  const value = params.get(key);
+  return value && SAFE_URL_TOKEN.test(value) ? value : fallback;
+}
+
+// Which top-level section is currently showing, as the short id used in
+// the "view" URL param -- "digest" (the default) is never written to the
+// URL itself, but is what a missing/unrecognized view param falls back to.
+function currentViewId() {
+  const sectionToView = {
+    "digest-section": "digest",
+    "archive-section": "archive",
+    "policy-cycle-section": "policy-cycle",
+    "visualisation-section": "visualisation",
+    "mission-section": "mission",
+    "team-section": "team",
+    "funding-section": "funding",
+    "sources-section": "sources",
+    "contact-section": "contact",
+  };
+  for (const [id, view] of Object.entries(sectionToView)) {
+    const el = document.getElementById(id);
+    if (el && !el.hidden) return view;
+  }
+  return "digest";
+}
+
+function syncUrlFromState() {
+  const view = currentViewId();
+  const params = new URLSearchParams();
+
+  if (view !== "digest") params.set("view", view);
+  // Field/topic/actor/search only mean anything on Digest/Archive (see
+  // matchesFilters()) -- left out everywhere else so, say, a Policy Cycle
+  // link doesn't carry stale filter params that view doesn't use.
+  if (view === "digest" || view === "archive") {
+    if (view === "digest" && activeField !== "green-deal") params.set("field", activeField);
+    if (activeTopic !== "all") params.set("topic", activeTopic);
+    if (activeActor !== "all") params.set("actor", activeActor);
+    if (searchQuery) params.set("q", searchQuery);
+  }
+
+  const qs = params.toString();
+  const newUrl = qs ? `${location.pathname}?${qs}` : location.pathname;
+  history.replaceState(null, "", newUrl);
+}
+
+// Restores view/field/topic/actor/search from the URL on initial load.
+// Rather than re-implementing each click handler's active-class and
+// show*View() side effects here (and risking it drifting out of sync with
+// the real handlers over time), this just finds the matching button for
+// each URL param and calls .click() on it -- the exact same code path a
+// real visitor clicking through to that state would take. Entries
+// themselves render later once loadDigest()/loadArchive() resolve; this
+// only has to get the filter *state* right before that happens.
+function applyStateFromUrl() {
+  const params = new URLSearchParams(location.search);
+  const view = safeUrlParam(params, "view", "digest");
+  const field = safeUrlParam(params, "field", "green-deal");
+  const topic = safeUrlParam(params, "topic", null);
+  const actor = safeUrlParam(params, "actor", null);
+  const q = (params.get("q") || "").slice(0, 200);
+
+  if (["archive", "policy-cycle", "visualisation"].includes(view)) {
+    const btn = document.querySelector(`.field-tab[data-view="${view}"]`);
+    if (btn) btn.click();
+  } else if (["mission", "team", "funding", "sources", "contact"].includes(view)) {
+    const btn = document.querySelector(`.utility-link[data-view="${view}"]`);
+    if (btn) btn.click();
+  } else {
+    const btn =
+      document.querySelector(`.field-tab[data-field="${field}"]`) ||
+      document.querySelector('.field-tab[data-field="green-deal"]');
+    if (btn) btn.click();
+  }
+
+  // Topic/actor only apply once the right view (and, for topic, the right
+  // green-deal-vs-competition tag bar) is already showing from above.
+  if (topic && topic !== "all") {
+    const topicBtn = document.querySelector(`.topic-tabs:not([hidden]) .topic-tab[data-topic="${topic}"]`);
+    if (topicBtn) topicBtn.click();
+  }
+  if (actor && actor !== "all") {
+    const actorBtn = document.querySelector(`.actor-tab[data-actor="${actor}"]`);
+    if (actorBtn) actorBtn.click();
+  }
+  if (q) {
+    const input = document.getElementById("search-input");
+    input.value = q;
+    applySearchQuery(q);
+  }
+
+  syncUrlFromState(); // normalize away any unrecognized/stray params
 }
 
 // The three info-page sections (Our Team / Funding / Contact) are reached
@@ -758,6 +968,7 @@ function showDigestView() {
   document.getElementById("digest-section").hidden = false;
   syncTopicTabsForField(activeField);
   document.getElementById("actor-tabs").hidden = false;
+  document.getElementById("search-bar").hidden = false;
 }
 
 function showArchiveView() {
@@ -768,6 +979,7 @@ function showArchiveView() {
   // green-deal bar, not syncTopicTabsForField(activeField).
   syncTopicTabsForField("green-deal");
   document.getElementById("actor-tabs").hidden = false;
+  document.getElementById("search-bar").hidden = false;
   loadArchive();
 }
 
@@ -783,6 +995,7 @@ function showPolicyCycleView() {
   document.getElementById("policy-cycle-section").hidden = false;
   syncTopicTabsForField("green-deal");
   document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadPolicyCycle();
 }
@@ -797,6 +1010,7 @@ function showVisualisationView() {
   document.getElementById("visualisation-section").hidden = false;
   syncTopicTabsForField(null);
   document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadVisualisation();
 }
@@ -809,6 +1023,7 @@ function showInfoView(sectionId) {
   document.getElementById(sectionId).hidden = false;
   syncTopicTabsForField(null);
   document.getElementById("actor-tabs").hidden = true;
+  document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
 }
 
@@ -855,10 +1070,10 @@ function setupUtilityNav() {
   };
   links.forEach((link) => {
     link.addEventListener("click", () => {
-      links.forEach((l) => l.classList.remove("active"));
-      link.classList.add("active");
-      document.querySelectorAll(".field-tab").forEach((t) => t.classList.remove("active"));
+      links.forEach((l) => setActiveState(l, l === link));
+      document.querySelectorAll(".field-tab").forEach((t) => setActiveState(t, false));
       showInfoView(sectionIds[link.dataset.view]);
+      syncUrlFromState();
     });
   });
 
@@ -881,14 +1096,15 @@ function jumpToLawInfoCard(lawId) {
   activeTopic = lawId;
 
   document.querySelectorAll(".field-tab").forEach((t) => {
-    t.classList.toggle("active", t.dataset.field === "green-deal");
+    setActiveState(t, t.dataset.field === "green-deal");
   });
   document.querySelectorAll(".topic-tab").forEach((t) => {
-    t.classList.toggle("active", t.dataset.topic === lawId);
+    setActiveState(t, t.dataset.topic === lawId);
   });
 
   showDigestView();
   renderActiveField();
+  syncUrlFromState();
 
   const infoEl = document.getElementById("topic-info");
   if (infoEl) infoEl.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1198,6 +1414,7 @@ function renderArchive() {
 
   if (!archiveData || !archiveData.months || archiveData.months.length === 0) {
     monthsEl.innerHTML = '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>';
+    currentDisplayedEntries = [];
     return;
   }
 
@@ -1210,10 +1427,16 @@ function renderArchive() {
     }))
     .filter((month) => month.entries.length > 0);
 
+  // What "Export CSV" exports (see exportCsv()) -- flattened in the same
+  // newest-month-first, importance-sorted order the page itself displays,
+  // so the CSV row order matches what you'd see scrolling down the page.
+  currentDisplayedEntries = filteredMonths.flatMap((month) => month.entries);
+
   if (filteredMonths.length === 0) {
-    monthsEl.innerHTML = activeTopic === "all" && activeActor === "all"
+    monthsEl.innerHTML = activeTopic === "all" && activeActor === "all" && !searchQuery
       ? '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
       : '<p class="empty">No archived entries match that filter yet.</p>';
+    announceResultsCount(0);
     return;
   }
 
@@ -1258,6 +1481,7 @@ function renderArchive() {
       </details>
     `)
     .join("");
+  announceResultsCount(currentDisplayedEntries.length);
 }
 
 function renderEntry(entry) {
@@ -1285,11 +1509,17 @@ function renderEntry(entry) {
     ? `<a href="${link}" target="_blank" rel="noopener"><img class="entry-image" src="${escapeHtml(entry.image)}" alt="" loading="lazy" onerror="this.remove()"></a>`
     : "";
 
+  // Data attributes carry the fields buildCitation() needs -- read via a
+  // single delegated click listener on #entries/#archive-months (see
+  // setupCiteButtons()) rather than a handler per card, since entries are
+  // replaced wholesale on every re-render.
+  const citeBtn = `<button type="button" class="cite-btn" data-title="${title}" data-org="${org}" data-date="${date}" data-link="${escapeHtml(link)}" title="Copy a citation for this entry">Cite</button>`;
+
   return `
     <article class="entry-card">
       ${image}
       <h3>${formatBadge}<a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
-      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}</div>
+      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date} · ${citeBtn}</div>
       ${summary}
       ${tagsHtml}
     </article>
@@ -1302,11 +1532,133 @@ function stripHtml(str) {
   return tmp.textContent || tmp.innerText || "";
 }
 
+// Escapes for both text-content AND attribute-value contexts (quotes
+// included) -- a superset of what text-content alone needs, but every
+// call site here ends up inside an HTML string that's just as often an
+// attribute (src="...", data-title="...") as it is text between tags, so
+// one escaper that's safe for both avoids a quote in, say, an entry title
+// ("EU unveils 'Green Deal 2.0'") breaking out of a data-title="..."
+// attribute -- see the cite buttons in renderEntry().
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// --- Citation + CSV export ---------------------------------------------
+// Both read whatever's currently on screen (a single entry for "Cite", the
+// whole filtered/visible list for "Export CSV") rather than re-deriving
+// it from digestData/archiveData + the active filters -- reusing exactly
+// what render already decided to show means these can never disagree
+// with what the person is actually looking at.
+
+// Informal but complete enough for a bibliography/reading-list entry --
+// not a strict APA/Chicago citation, since which style a researcher wants
+// varies; this gives them the pieces (who, when, what, where) to reformat
+// however their citation manager needs.
+function buildCitation(title, org, date, link) {
+  const year = (date.match(/^\d{4}/) || [])[0];
+  const when = year ? ` (${year})` : "";
+  const today = new Date().toISOString().slice(0, 10);
+  return `${org}${when}. ${title}. Retrieved from ${link} (via PolicyUpdate.eu, accessed ${today}).`;
+}
+
+async function copyCitation(button) {
+  const { title, org, date, link } = button.dataset;
+  const citation = buildCitation(title, org, date, link);
+  const originalText = button.textContent;
+
+  function showCopied() {
+    button.textContent = "Copied!";
+    button.classList.add("cite-btn-copied");
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.classList.remove("cite-btn-copied");
+    }, 1500);
+  }
+
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(citation);
+      showCopied();
+    } else {
+      throw new Error("Clipboard API unavailable");
+    }
+  } catch {
+    // Clipboard API blocked (older browser, non-HTTPS, permissions) --
+    // fall back to a manual-copy prompt rather than silently doing
+    // nothing, since the citation is otherwise just lost.
+    window.prompt("Copy this citation:", citation);
+  }
+}
+
+// Delegated listener: #entries and #archive-months are stable containers
+// that only ever get their innerHTML replaced (see renderActiveField()/
+// renderArchive()), so one listener attached here (rather than one per
+// .cite-btn, which would need re-attaching on every single re-render)
+// keeps working across every future render.
+function setupCiteButtons() {
+  ["entries", "archive-months"].forEach((id) => {
+    const container = document.getElementById(id);
+    if (!container) return;
+    container.addEventListener("click", (event) => {
+      const button = event.target.closest(".cite-btn");
+      if (button) copyCitation(button);
+    });
+  });
+}
+
+function csvEscape(value) {
+  const str = String(value ?? "");
+  // Quote any field containing a comma, quote, or newline -- doubling
+  // embedded quotes, per RFC 4180. Plain fields are left bare so the
+  // common case stays readable when the file is opened in a text editor.
+  return /[",\r\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
+}
+
+function entriesToCsv(entries) {
+  const headers = ["Title", "Organisation", "Actor Type", "Date", "Field", "Topics", "Format", "Link", "Summary"];
+  const rows = entries.map((e) => [
+    e.title || "",
+    e.org || "",
+    ACTOR_LABELS[e.actor_type] || e.actor_type || "",
+    e.date || "",
+    FIELD_LABELS[e.field] || e.field || "",
+    (e.tags || []).map((t) => TOPIC_LABELS[t] || t).join("; "),
+    FORMAT_LABELS[e.content_type] || "",
+    e.link || "",
+    stripHtml(e.summary || ""),
+  ]);
+  return [headers, ...rows].map((row) => row.map(csvEscape).join(",")).join("\r\n");
+}
+
+function exportCsv() {
+  if (!currentDisplayedEntries.length) {
+    alert("No entries to export with the current filters.");
+    return;
+  }
+  const csv = entriesToCsv(currentDisplayedEntries);
+  // UTF-8 BOM so Excel (which otherwise guesses the wrong encoding for
+  // non-ASCII characters -- common here, e.g. accented org names) opens
+  // this correctly rather than showing mojibake.
+  const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `policyupdate-export-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function setupExportButtons() {
+  document.querySelectorAll(".export-csv-btn").forEach((btn) => {
+    btn.addEventListener("click", exportCsv);
+  });
 }
 
 // Mirrors display_summary() in fetch_digest.py -- must stay in sync with
@@ -1582,5 +1934,10 @@ setupTopicTabs();
 setupActorTabs();
 setupUtilityNav();
 setupActorScrollSpy();
+setupSearch();
+setupCiteButtons();
+setupExportButtons();
+initAriaPressed();
+applyStateFromUrl(); // must run after the setup*() calls above, since it drives them via .click()
 animateSourceCount();
 loadDigest();
