@@ -991,9 +991,19 @@ function renderEntry(entry) {
   const formatBadge = formatLabel
     ? `<span class="format-badge format-badge-${entry.content_type}">${formatLabel}</span>`
     : "";
+  // Instagram-style "picture over caption" layout -- mirrors
+  // render_entry_html() in fetch_digest.py, must stay in sync with it.
+  // Only rendered when entry.image is set (see entry_image() there);
+  // most sources won't have one. onerror="this.remove()" means a dead or
+  // hotlink-blocked image URL silently disappears instead of showing a
+  // broken-image icon.
+  const image = entry.image
+    ? `<a href="${link}" target="_blank" rel="noopener"><img class="entry-image" src="${escapeHtml(entry.image)}" alt="" loading="lazy" onerror="this.remove()"></a>`
+    : "";
 
   return `
     <article class="entry-card">
+      ${image}
       <h3>${formatBadge}<a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
       <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}</div>
       ${summary}
