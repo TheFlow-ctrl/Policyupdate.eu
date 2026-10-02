@@ -543,15 +543,18 @@ function renderGroupedEntries(entries) {
       // data), so interpolating directly here is safe -- same reasoning
       // as the escapeHtml() calls just below it on actual data fields.
       const icon = ACTOR_ICONS[group.actorType];
-      // width/height are set directly on the tag (not just via the
-      // .actor-group-icon CSS class) so the icon is correctly sized even
-      // if the stylesheet hasn't applied yet -- without an explicit size,
-      // a bare inline <svg> falls back to the browser's default replaced-
-      // element size (300x150px in most browsers), which is almost
-      // certainly what made the icons render "massive" when this was
-      // CSS-only.
+      // width/height/fill/stroke are all set directly on the tag (not
+      // just via the .actor-group-icon CSS class) so the icon renders
+      // correctly even if the stylesheet hasn't applied yet -- a bare
+      // inline <svg> with no size falls back to the browser's default
+      // replaced-element size (what made the icons render "massive"
+      // earlier), and a shape with no fill="none" falls back to SVG's
+      // default solid black fill -- which is what turns a thin-ringed
+      // icon like the globe's <circle> into a solid black dot. The CSS
+      // rule still applies on top of these once the stylesheet loads
+      // (same color/width values), this is just the fallback.
       const iconHtml = icon
-        ? `<svg class="actor-group-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>`
+        ? `<svg class="actor-group-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#8A6F1E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon}</svg>`
         : "";
       return `
         <section class="actor-group" data-actor="${escapeHtml(group.actorType)}">
