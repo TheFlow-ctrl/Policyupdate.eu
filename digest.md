@@ -153,24 +153,6 @@ With a draft climate bill introduced, Indonesia may be entering a new era of cli
 
 ---
 
-### The Climate Briefing: Contested waters in international politics
-*Chatham House — 2026-09-25*
-
-The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
-
-[Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
-
----
-
-### The Climate Briefing: Contested waters in international politics
-*Chatham House — 2026-09-25*
-
-The Climate Briefing: Contested waters in international politics Audio thilton.drupal 25 September 2026 Climate change, rising demand, and geopolitical rivalry are reshaping the politics of water. Bhargabi, Beatrice, and their guests discuss what’s at stake for cooperation on shared water resources. This season of droughts, heatwaves, and wildfires has shone a light on a growing vulnerability: the security of our water resources. Following the Stockholm World Water Week that took place last month and an upcoming UN Water Conference in Abu Dhabi later this year, this episode explores questions…
-
-[Read more](https://www.chathamhouse.org/2026/09/climate-briefing-contested-waters-international-politics)
-
----
-
 ### US midterms polls: Are Democrats winning or is Trump losing?
 *Chatham House — 2026-09-28*
 
@@ -222,15 +204,6 @@ Welcome to the Migration Update August-September 2026. This curated news selecti
 Europeans are living longer. This is one of the achievements of our social model. The question is whether we are living those additional years in good physical and mental health and whether this progress is shared equally across society. The pursuit of longevity cannot simply mean adding years to life. It just as well means adding life to those years. In other words, extending the time in which we can take a full part in society, keep our relationships, feel accomplished and live with dignity. Importantly, though, healthy longevity must not become another privilege that correlates with income…
 
 [Read more](https://feps-europe.eu/living-better-while-living-longer/)
-
----
-
-### Updates from the UN General Assembly 2026
-*International Crisis Group — 2026-09-25*
-
-Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 25 September 2026 8 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN’s efforts to promote international peace and security. This page includes updates from the…
-
-[Read more](https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026)
 
 ---
 
@@ -321,6 +294,15 @@ In July, the European Commission issued its non-compliance decision against gate
 […] The post GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology appeared first on Hydrogen Europe .
 
 [Read more](https://hydrogeneurope.eu/gen-h-plans-200-300-mw-zero-emission-balancing-power-facility-in-finland-based-on-hycamite-methane-pyrolysis-technology/)
+
+---
+
+### G7 Leaders' Statement on global energy security and market stability
+*European Commission — Press Corner — 2026-10-02*
+
+European Commission Statement Brussels, 02 Oct 2026 Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil ...
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2057)
 
 ---
 
