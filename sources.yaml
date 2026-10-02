@@ -149,6 +149,174 @@ sources:
     field: green-deal
     actor_type: ngo
     # NGO watchdog -- advocacy-oriented.
+  - name: NewClimate Institute
+    scraper: newclimate
+    field: green-deal
+    actor_type: think-tank
+    # Germany-based (Cologne/Berlin) climate policy research institute --
+    # genuinely EU-relevant work (German climate policy, EU climate
+    # diplomacy, European Climate Neutrality Observatory) alongside global
+    # projects (Southeast Asia energy, Article 6, NDC tracking). No
+    # eu_gate -- mixed EU/global rather than EU-minority, and the existing
+    # topic-keyword filter already does the real work of excluding the
+    # purely non-EU project content. No RSS feed (/feed/, /rss.xml both
+    # dead); listing page is server-rendered Drupal, see scrape_newclimate()
+    # in backend_scrapers.py, confirmed against the live page's DOM.
+  - name: Carbon Tracker
+    url: https://carbontracker.org/feed/
+    field: green-deal
+    actor_type: think-tank
+    eu_gate: true
+    # London-based financial think tank on stranded-asset/"unburnable
+    # carbon" analysis -- covers EU ETS and EU fossil subsidies, but also
+    # US, Asia and global capital-markets content with no EU angle --
+    # eu_gate: true, same treatment as Climate Bonds Initiative/ICVCM.
+    # Confirmed working RSS feed.
+  - name: Climate Analytics
+    scraper: climate_analytics
+    field: green-deal
+    actor_type: think-tank
+    eu_gate: true
+    # Berlin-HQ'd global climate science and policy institute (offices in
+    # the Caribbean, South Asia, Australia-Pacific, Africa, North
+    # America) -- genuinely global remit, recent live output skewed
+    # non-EU (Australian coal mines, a UNEP overshoot report, sea-level
+    # rise) alongside real EU content (a European heatwave-economics
+    # study) -- eu_gate: true, same treatment as SEI/Ember/Carbon Brief.
+    # No RSS feed; see scrape_climate_analytics() in backend_scrapers.py,
+    # confirmed against the live page's DOM (the listing page also
+    # carries a few non-press-release nav cards reusing the same
+    # <article> tag, filtered out by requiring a <date> child element,
+    # same pattern as SEI's .c-card__date filtering).
+  - name: Climate Focus
+    url: https://climatefocus.com/feed/
+    field: green-deal
+    actor_type: ngo
+    # Amsterdam-founded "mission-driven" climate law/policy organisation
+    # (carbon markets, REDD+, forests, climate finance) with an advisory
+    # practice alongside its policy work -- content observed live is
+    # substantively policy-relevant (e.g. a panel on whether the Paris
+    # Agreement Crediting Mechanism meets EU integrity standards,
+    # presented at the European Climate Summit) rather than vendor PR, so
+    # no eu_gate. Confirmed working RSS feed with full article bodies.
+  - name: UNFCCC (UN Climate Change)
+    scraper: unfccc
+    field: green-deal
+    actor_type: international-org
+    eu_gate: true
+    # The UN's climate secretariat -- authoritative, but almost entirely
+    # global/multilateral-process content (COP logistics, NDC
+    # submissions, Article 6 governance); EU-specific items are rare and
+    # incidental. eu_gate: true is essential here or this would flood the
+    # digest with irrelevant multilateral-process content, same treatment
+    # as World Bank/IMF/OECD. No working feed (/news/feed empty;
+    # /rss.xml is a valid-but-unpopulated shell with zero <item>
+    # elements -- confirmed, not just assumed dead); listing page is
+    # server-rendered Drupal, see scrape_unfccc() in backend_scrapers.py.
+  - name: Perspectives Climate Group
+    scraper: perspectives_climate
+    field: green-deal
+    actor_type: think-tank
+    # Freiburg, Germany-based -- run as two linked entities (a non-profit
+    # research arm, Perspectives Climate Research, and a paid advisory
+    # arm, Perspectives Climate Group), deliberately kept separate "so
+    # the evidence stays independent" per their own site, but published
+    # as one combined feed. Content mixes genuine EU/international
+    # climate-policy material (Article 6 negotiations, PACM funding, EU
+    # Power-to-X policy) with consultancy-adjacent noise (management
+    # transitions, newsletters, workshop write-ups) -- a judgment call to
+    # include given the real policy content present; the existing
+    # filter_out_events/filter_out_low_value passes and the topic-keyword
+    # relevance filter should catch a fair share of the noise
+    # automatically. No RSS feed; listing page is a statically
+    # pre-rendered Astro site, see scrape_perspectives_climate() in
+    # backend_scrapers.py, confirmed against the live page's DOM.
+  - name: Anthesis Group
+    url: https://www.anthesisgroup.com/insights/feed/
+    field: green-deal
+    actor_type: industry
+    eu_gate: true
+    # Self-described "world's largest dedicated sustainability consulting
+    # group" -- fundamentally a commercial ESG/sustainability consultancy
+    # (closest-fit actor_type: industry, same judgment call as KfW
+    # elsewhere in this file), but maintains a genuinely substantive,
+    # actively-updated "Regulations & Disclosures" hub tracking CBAM,
+    # CSDDD, CSRD, EUDR, ESPR, PPWR, ESRS and more -- real regulatory
+    # analysis (e.g. "The ESRS are Final: The Time for Action Starts
+    # Now"), not just sales copy, which is why it's included despite
+    # being a consultancy (same category of judgment call as Perspectives
+    # Climate Group just above). Genuinely global client base and case
+    # studies observed live (Brazil, South America) alongside the EU
+    # regulation content -- eu_gate: true. Confirmed working, actively-
+    # updated RSS feed.
+  # Checked and NOT added (from Flo's Oct 2026 LinkedIn "people also
+  # viewed" batch #2 -- an Australian-carbon-market-heavy list):
+  #  - Climate Friendly (climatefriendly.com) -- "Australia's Trusted
+  #    Carbon Farming & Nature Repair Partner," Sydney-based ACCU project
+  #    developer. 100% Australian, same exclude category as Carbon
+  #    Market Institute below.
+  #  - GreenCollar, Corporate Carbon, Tasman Environmental Markets (TEM),
+  #    Clean Energy Regulator, Anthesis APAC, Department of Climate
+  #    Change, Energy, the Environment and Water, Indigenous Carbon
+  #    Industry Network -- all unmistakably part of the Australian carbon
+  #    market/ACCU ecosystem (the last two are literally the Australian
+  #    federal government's own regulator and department); not
+  #    individually re-researched given overwhelming geographic signal,
+  #    same reasoning as Carbon Market Institute below.
+  #  - Carbon Neutral / Climate Impact Partners (carbonneutral.com) --
+  #    commercial carbon-offset certification vendor selling "CarbonNeutral(R)
+  #    certification" to companies (Microsoft, Brooks Running, Lime
+  #    examples on their homepage); "News"/"Insights" content is generic
+  #    explainer material ("What is Decarbonization?"), not policy
+  #    analysis. Same exclude category as South Pole/Relae.
+  #  - Pollination (pollinationgroup.com) -- commercial climate
+  #    investment/advisory firm (London/Sydney/Melbourne/Washington).
+  #    Does have some genuine content (a Nature Finance Focus report, a
+  #    Homes and Habitats report with WWF-Australia), but update cadence
+  #    is sparse and irregular (checked live: "in the news" mentions
+  #    dated back to Dec 2024) and no RSS feed -- poor cost/signal
+  #    trade-off, same category as the WFP exclusion elsewhere in this
+  #    file.
+  #  - Green Climate Fund (greenclimate.fund) -- real, major UN-
+  #    affiliated climate finance body, but its entire mission is
+  #    explicitly financing developing-country mitigation/adaptation
+  #    projects (Africa, Asia-Pacific, Latin America & Caribbean, Central
+  #    Asia) -- checked live, recent items were project announcements in
+  #    Syria, Nepal, Indonesia, Kyrgyzstan/Tajikistan, with no EU angle
+  #    even incidentally. Unlike World Bank/IMF (included, broader
+  #    global-economic-policy commentary genuinely touches the EU), GCF's
+  #    content is country-project-announcement-specific with essentially
+  #    no EU signal to gate for -- same poor cost/signal trade-off as WFP.
+  #  - Carbon Market Institute (CMI) -- real membership-based policy
+  #    institute, but 100% Australian (Safeguard Mechanism, ACCUs,
+  #    Climate Active) with zero EU content ever observed -- not a
+  #    "global org that occasionally touches EU," purely domestic, so not
+  #    worth onboarding even with eu_gate.
+  #  - Relae (relae.co) -- the Sept 2026 rebrand of Carbon Direct, a US
+  #    commercial decarbonization/carbon-market advisory firm. Homepage is
+  #    pure sales copy; its "Insights" content is gated behind a
+  #    HubSpot lead-capture form (business email/name/company required),
+  #    not public. Excluded as a commercial vendor with no public policy
+  #    content, same category as South Pole below.
+  #  - Climate Action Tracker (climateactiontracker.org) -- a joint
+  #    project of NewClimate Institute and Climate Analytics (both now
+  #    tracked above, confirmed via its own footer co-branding).
+  #    Onboarding it separately would triple-count the same researchers'
+  #    output; its content already surfaces through those two orgs
+  #    (NewClimate's listing already showed CAT-branded items, e.g. "CAT's
+  #    first four Article 6 country evaluations").
+  #  - South Pole (southpole.com) -- pure commercial carbon-offset/
+  #    sustainability consultancy (Zurich); its /news page is server-
+  #    rendered but content is company PR (CEO appointments, assurance
+  #    milestones, product launches) rather than policy analysis. No RSS.
+  #  - Carbon Pulse (carbon-pulse.com) -- confirmed paywalled trade
+  #    journal: RSS feed works mechanically but only exposes the same
+  #    1-2 sentence teaser the paywall itself shows ("A subscription is
+  #    required to read this content..."), confirmed by opening a live
+  #    article. Would also need eu_gate (global scope: US, Australia,
+  #    LatAm, Africa mixed with EU/ETS). Not a usable extraction target
+  #    given the pipeline needs real article text, not a subscription
+  #    prompt.
   - name: Zero Waste Europe
     url: https://www.zerowasteeurope.eu/feed/
     field: green-deal
@@ -723,6 +891,18 @@ sources:
     # carbon-market context of the rest of that request; ICMM,
     # International Council on Mining and Metals, is a different body
     # with no carbon-market remit.)
+  - name: Verra
+    url: https://verra.org/news/feed/
+    field: green-deal
+    actor_type: ngo
+    eu_gate: true
+    # Global non-profit that runs the Verified Carbon Standard (VCS) --
+    # the world's leading voluntary GHG crediting programme (2,579+
+    # projects, 132+ countries) -- plus REDD+, Scope 3, and plastic-waste
+    # standards. Same category as ICVCM/Gold Standard just above:
+    # genuinely global standard-setting, not EU-specific -- eu_gate:
+    # true. Confirmed working, actively-updated RSS feed (confirmed live:
+    # items dated the same day as the check).
   - name: Gold Standard Foundation
     scraper: gold_standard
     field: green-deal
