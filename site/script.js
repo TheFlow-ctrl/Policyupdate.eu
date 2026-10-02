@@ -90,6 +90,66 @@ const ACTOR_GROUP_ORDER = [
   "academic",
 ];
 
+// Hand-drawn (no icon font/library) 16x16 line icons, one per category
+// heading in the grouped "All voices" view -- purely decorative scanning
+// aids, kept to a single stroke color via CSS (.actor-group-icon) rather
+// than colored per category, to match the site's muted navy/gold palette.
+// Each value is just the inner markup for a <svg viewBox="0 0 16 16">
+// wrapper -- see renderGroupedEntries(). No entry for "all" since that
+// tab is never rendered as a group heading.
+const ACTOR_ICONS = {
+  "eu-institution": `
+    <path d="M8 1.3 1.6 5h12.8z"/>
+    <line x1="1.6" y1="5" x2="14.4" y2="5"/>
+    <line x1="3.2" y1="6.4" x2="3.2" y2="12"/>
+    <line x1="6.4" y1="6.4" x2="6.4" y2="12"/>
+    <line x1="9.6" y1="6.4" x2="9.6" y2="12"/>
+    <line x1="12.8" y1="6.4" x2="12.8" y2="12"/>
+    <line x1="1.6" y1="13.6" x2="14.4" y2="13.6"/>
+    <line x1="1" y1="14.7" x2="15" y2="14.7"/>
+  `,
+  "international-org": `
+    <circle cx="8" cy="8" r="6.4"/>
+    <ellipse cx="8" cy="8" rx="2.7" ry="6.4"/>
+    <line x1="1.6" y1="8" x2="14.4" y2="8"/>
+  `,
+  "think-tank": `
+    <path d="M8 1.6a4.3 4.3 0 0 0-2.3 7.9c.5.4.8 1 .8 1.6v.5h3v-.5c0-.6.3-1.2.8-1.6A4.3 4.3 0 0 0 8 1.6z"/>
+    <line x1="6.3" y1="13.6" x2="9.7" y2="13.6"/>
+    <line x1="6.7" y1="14.8" x2="9.3" y2="14.8"/>
+  `,
+  political: `
+    <rect x="1.6" y="6.6" width="12.8" height="8" rx="0.8"/>
+    <path d="M1.6 6.6 4 1.8h8l2.4 4.8"/>
+    <path d="M6 9.6l1.3 1.5 2.5-2.9"/>
+  `,
+  industry: `
+    <path d="M1.6 14.4V8.6l3.1 2.2V8.6l3.1 2.2V6.4l3.1 2.2V3.6h3.1v10.8z"/>
+    <line x1="1.6" y1="14.4" x2="14.4" y2="14.4"/>
+  `,
+  ngo: `
+    <path d="M8 14 2.3 8.5a3 3 0 0 1 4.3-4.3L8 5.5l1.4-1.3a3 3 0 0 1 4.3 4.3z"/>
+  `,
+  "trade-union": `
+    <circle cx="5.4" cy="5.2" r="1.9"/>
+    <circle cx="10.6" cy="5.2" r="1.9"/>
+    <path d="M1.8 13.4c0-2.2 1.6-3.9 3.6-3.9s3.6 1.7 3.6 3.9"/>
+    <path d="M7.2 13.4c0-2.2 1.6-3.9 3.6-3.9s3.6 1.7 3.6 3.9"/>
+  `,
+  media: `
+    <rect x="1.6" y="3.2" width="9.6" height="10.6" rx="0.5"/>
+    <line x1="3.3" y1="5.6" x2="9.5" y2="5.6"/>
+    <line x1="3.3" y1="7.3" x2="9.5" y2="7.3"/>
+    <line x1="3.3" y1="9" x2="7" y2="9"/>
+    <path d="M11.2 6.2h2a0.8 0.8 0 0 1 0.8 0.8v5.8a1.2 1.2 0 0 1-1.2 1.2h-1.8"/>
+  `,
+  academic: `
+    <path d="M8 2.1 1.2 5.5 8 8.9l6.8-3.4z"/>
+    <path d="M4.2 7v3.2c0 1 1.7 1.8 3.8 1.8s3.8-.8 3.8-1.8V7"/>
+    <line x1="13.8" y1="5.5" x2="13.8" y2="10.3"/>
+  `,
+};
+
 // Plain-language explainer + "why it matters" + link to the original legal
 // text for each law, shown as an info card whenever that topic filter is
 // active. Written for a general reader, not a policy specialist. Keep ids
@@ -457,16 +517,21 @@ function groupEntriesByActor(entries) {
 
 function renderGroupedEntries(entries) {
   return groupEntriesByActor(entries)
-    .map(
-      (group) => `
+    .map((group) => {
+      // ACTOR_ICONS entries are fixed, hand-authored SVG markup (not user
+      // data), so interpolating directly here is safe -- same reasoning
+      // as the escapeHtml() calls just below it on actual data fields.
+      const icon = ACTOR_ICONS[group.actorType];
+      const iconHtml = icon ? `<svg class="actor-group-icon" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>` : "";
+      return `
         <section class="actor-group" data-actor="${escapeHtml(group.actorType)}">
-          <h3 class="actor-group-heading">${escapeHtml(group.label)} <span class="actor-group-count">(${group.entries.length})</span></h3>
+          <h3 class="actor-group-heading">${iconHtml}${escapeHtml(group.label)} <span class="actor-group-count">(${group.entries.length})</span></h3>
           <div class="entries">
             ${group.entries.map(renderEntry).join("")}
           </div>
         </section>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
@@ -584,14 +649,53 @@ function setupTopicTabs() {
   });
 }
 
+// Jumps straight to a category's section within the grouped "All voices"
+// view (see renderGroupedEntries()), rather than hiding every other
+// category -- used by setupActorTabs() below. Returns false (no scroll
+// happened) when that category has no section in the current render, so
+// the caller can fall back to the old hard-filter behavior instead of a
+// dead click.
+function scrollToActorGroup(actorType) {
+  const el = document.querySelector(`.actor-group[data-actor="${actorType}"]`);
+  if (!el) return false;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  return true;
+}
+
 function setupActorTabs() {
   const tabs = document.querySelectorAll(".actor-tab");
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      const actor = tab.dataset.actor;
+      const digestVisible = !document.getElementById("digest-section").hidden;
+
+      // On the digest's grouped "All voices" view, a category tab is a
+      // navigation shortcut now -- scroll to that section while keeping
+      // every other category visible, instead of hard-filtering them
+      // away. Falls through to the old filter behavior when there's
+      // nothing to scroll to (no entries in that category this week) or
+      // on views without a grouped layout (e.g. the Archive), where
+      // filtering is still the only way to narrow by actor type.
+      if (actor !== "all" && digestVisible && activeActor === "all") {
+        if (scrollToActorGroup(actor)) {
+          applyActorScrollSpy(); // sync the highlight immediately, don't wait for a scroll event
+          return;
+        }
+      }
+
+      // Switching from a single-category filter back to "All voices"
+      // rebuilds the grouped view -- scroll back to the top of it, same
+      // as any other "take me there" navigation action above.
+      const enteringGroupedView = actor === "all" && activeActor !== "all" && digestVisible;
+
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
-      activeActor = tab.dataset.actor;
+      activeActor = actor;
       rerenderCurrentView();
+
+      if (enteringGroupedView) {
+        document.getElementById("entries").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   });
 }
