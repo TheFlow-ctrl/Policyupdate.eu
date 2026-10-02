@@ -73,6 +73,23 @@ const FORMAT_LABELS = {
   interview: "Interview",
 };
 
+// Fixed display order for the "All voices" view's category grouping --
+// chosen by the user, not alphabetical or by volume. Any actor_type not
+// listed here (there shouldn't be any -- this should stay a superset of
+// every key in ACTOR_LABELS) falls into a trailing "Other" bucket rather
+// than silently vanishing.
+const ACTOR_GROUP_ORDER = [
+  "eu-institution",
+  "international-org",
+  "think-tank",
+  "political",
+  "industry",
+  "ngo",
+  "trade-union",
+  "media",
+  "academic",
+];
+
 // Plain-language explainer + "why it matters" + link to the original legal
 // text for each law, shown as an info card whenever that topic filter is
 // active. Written for a general reader, not a policy specialist. Keep ids
@@ -362,10 +379,164 @@ function renderActiveField() {
     entriesEl.innerHTML = activeTopic === "all" && activeActor === "all"
       ? '<p class="empty">No new publications this week — check back soon.</p>'
       : '<p class="empty">No entries this week match that filter.</p>';
+    updateActorScrollSpyTargets();
     return;
   }
 
-  entriesEl.innerHTML = filtered.map(renderEntry).join("");
+  // "All voices" (no single actor type picked): the feed gets crammed once
+  // enough sources are tracked, so instead of one long reverse-chronological
+  // list, group entries by category (ACTOR_GROUP_ORDER) with reports/longer
+  // contributions surfaced above short press releases within each group
+  // (see sortByImportance()). Picking one specific actor type already
+  // narrows things down to a single, manageable category, so that case
+  // keeps the plain flat list digest.json already arrives sorted in.
+  if (activeActor === "all") {
+    entriesEl.innerHTML = renderGroupedEntries(filtered);
+    updateActorScrollSpyTargets();
+    applyActorScrollSpy(); // sync the pad to the current scroll position right away
+  } else {
+    entriesEl.innerHTML = filtered.map(renderEntry).join("");
+    updateActorScrollSpyTargets();
+  }
+}
+
+// Mirrors _importance_sort_key() in fetch_digest.py -- must stay in sync
+// with it. There: reports first, then by combined title+summary length,
+// used as a secondary tie-break on top of a date-desc sort. Here, within
+// an already-narrow category bucket, importance is the PRIMARY sort (per
+// user request) -- date only breaks ties between equally-"big" entries,
+// so a months-old report doesn't get buried under this week's press
+// release just because it's more recent.
+function importanceRank(entry) {
+  const isReport = entry.content_type === "report" ? 1 : 0;
+  const length = (entry.summary || "").length + (entry.title || "").length;
+  return { isReport, length };
+}
+
+function sortByImportance(entries) {
+  return [...entries].sort((a, b) => {
+    const ra = importanceRank(a);
+    const rb = importanceRank(b);
+    if (rb.isReport !== ra.isReport) return rb.isReport - ra.isReport;
+    if (rb.length !== ra.length) return rb.length - ra.length;
+    return (b.date || "").localeCompare(a.date || "");
+  });
+}
+
+// Buckets entries by actor_type into ACTOR_GROUP_ORDER's fixed order
+// (skipping empty categories), each sorted by importance -- see
+// sortByImportance(). Falls back to "think-tank" for an entry with no
+// actor_type, same default matchesFilters() already uses, so grouping and
+// filtering never disagree about which bucket an entry belongs in. Any
+// actor_type genuinely outside ACTOR_GROUP_ORDER (shouldn't happen -- see
+// the comment on that constant) lands in a trailing "Other" bucket instead
+// of silently disappearing from the feed.
+function groupEntriesByActor(entries) {
+  const buckets = new Map();
+  for (const entry of entries) {
+    const actorType = entry.actor_type || "think-tank";
+    if (!buckets.has(actorType)) buckets.set(actorType, []);
+    buckets.get(actorType).push(entry);
+  }
+
+  const groups = [];
+  for (const actorType of ACTOR_GROUP_ORDER) {
+    const bucket = buckets.get(actorType);
+    if (bucket && bucket.length) {
+      groups.push({ actorType, label: ACTOR_LABELS[actorType] || actorType, entries: sortByImportance(bucket) });
+      buckets.delete(actorType);
+    }
+  }
+  // Leftover actor_type(s) not in ACTOR_GROUP_ORDER, if any.
+  for (const [actorType, bucket] of buckets) {
+    groups.push({ actorType, label: ACTOR_LABELS[actorType] || "Other", entries: sortByImportance(bucket) });
+  }
+
+  return groups;
+}
+
+function renderGroupedEntries(entries) {
+  return groupEntriesByActor(entries)
+    .map(
+      (group) => `
+        <section class="actor-group" data-actor="${escapeHtml(group.actorType)}">
+          <h3 class="actor-group-heading">${escapeHtml(group.label)} <span class="actor-group-count">(${group.entries.length})</span></h3>
+          <div class="entries">
+            ${group.entries.map(renderEntry).join("")}
+          </div>
+        </section>
+      `
+    )
+    .join("");
+}
+
+// --- Actor-tabs scroll-spy -------------------------------------------
+// While the "All voices" grouped view is showing, the actor-tabs pad's
+// highlighted button tracks whichever category section the person has
+// scrolled into, instead of staying frozen on "All voices" -- purely a
+// visual overlay on top of the real .active state (which still reflects
+// activeActor); it never touches activeActor or triggers a re-render, so
+// clicking a tab afterwards behaves exactly as it always has.
+let actorScrollSpyGroups = []; // [{ actorType, el }], top to bottom
+
+// Re-collects the current grouped sections from the DOM. Called after
+// every render -- with an empty array when the view isn't the grouped
+// "All voices" digest, so applyActorScrollSpy() has nothing stale to act
+// on once the person switches to a single-actor filter or another view.
+function updateActorScrollSpyTargets() {
+  actorScrollSpyGroups = Array.from(document.querySelectorAll(".actor-group")).map((el) => ({
+    actorType: el.dataset.actor,
+    el,
+  }));
+}
+
+// How far from the top of the viewport a group's heading has to scroll
+// before it counts as "the current section" -- a small buffer so the
+// switch doesn't happen the instant a heading merely touches the very top
+// edge of the screen.
+const ACTOR_SCROLL_SPY_OFFSET = 32;
+
+function applyActorScrollSpy() {
+  // Guard on the digest section actually being visible, not just
+  // activeActor === "all": a hidden section's children all report
+  // getBoundingClientRect().top === 0, which would otherwise look like
+  // every group has already scrolled past and wrongly pin the highlight
+  // to the last category while looking at the Archive or another view.
+  const digestSection = document.getElementById("digest-section");
+  if (!digestSection || digestSection.hidden || activeActor !== "all" || actorScrollSpyGroups.length === 0) {
+    return;
+  }
+
+  // Groups are in top-to-bottom document order, so the first one that
+  // *hasn't* cleared the offset tells us the previous one (if any) is the
+  // current section.
+  let current = null; // null = still above the first group -> highlight "All voices"
+  for (const { actorType, el } of actorScrollSpyGroups) {
+    if (el.getBoundingClientRect().top <= ACTOR_SCROLL_SPY_OFFSET) {
+      current = actorType;
+    } else {
+      break;
+    }
+  }
+
+  document.querySelectorAll(".actor-tab").forEach((tab) => {
+    const isCurrent = current === null ? tab.dataset.actor === "all" : tab.dataset.actor === current;
+    tab.classList.toggle("active", isCurrent);
+  });
+}
+
+let actorScrollSpyTicking = false;
+function onWindowScrollForActorSpy() {
+  if (actorScrollSpyTicking) return;
+  actorScrollSpyTicking = true;
+  requestAnimationFrame(() => {
+    actorScrollSpyTicking = false;
+    applyActorScrollSpy();
+  });
+}
+
+function setupActorScrollSpy() {
+  window.addEventListener("scroll", onWindowScrollForActorSpy, { passive: true });
 }
 
 function setupFieldTabs() {
@@ -1297,5 +1468,6 @@ setupFieldTabs();
 setupTopicTabs();
 setupActorTabs();
 setupUtilityNav();
+setupActorScrollSpy();
 animateSourceCount();
 loadDigest();
