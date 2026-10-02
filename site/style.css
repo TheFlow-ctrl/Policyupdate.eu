@@ -481,6 +481,36 @@ h1, h2, h3 {
   flex-direction: column;
 }
 
+/* Category groups in the "All voices" view (see renderGroupedEntries() in
+   script.js) -- a plain heading rather than a collapsible <details> like
+   the archive's year/month groups, since here every category is meant to
+   be visible at once for scanning/scroll-spying, not tucked away. */
+.actor-group {
+  margin: 0 0 4px;
+}
+
+.actor-group:first-of-type .actor-group-heading {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.actor-group-heading {
+  margin: 32px 0 2px;
+  padding: 10px 4px 8px;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  border-bottom: 2px solid var(--gold);
+}
+
+.actor-group-count {
+  color: var(--muted);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
 .entry-card {
   background: var(--card-bg);
   border-bottom: 1px solid var(--border);
