@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-01
+# Weekly Climate, Energy & Environment Digest — 2026-10-02
 
 ### Multilateral Cooperation and Confidence-Building in Cyberspace
 *SWP (German Institute for International and Security Affairs) — 2026-09-29*
@@ -10,20 +10,11 @@ The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incid
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-01*
+*European Environmental Law Review — 2026-10-02*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
-
----
-
-### New energy and trade routes could bypass Hormuz and change the Middle East. But major challenges remain
-*Chatham House — 2026-09-25*
-
-New energy and trade routes could bypass Hormuz and change the Middle East. But major challenges remain Expert comment thilton.drupal 25 September 2026 The Strait of Hormuz crisis is accelerating a wider reordering of the region, as Iraq, Syria and Lebanon plan new oil pipelines and transport corridors. But whether they can seize the opportunity to diversify will ultimately depend on wider reforms. The war on Iran and the resulting disruption to the Strait of Hormuz has exposed the vulnerability of existing trade and energy routes and unsettled the old balance of power across the Middle East.…
-
-[Read more](https://www.chathamhouse.org/2026/09/new-energy-and-trade-routes-could-bypass-hormuz-and-change-middle-east-major-challenges)
 
 ---
 
@@ -46,7 +37,7 @@ Descarcă PDF-ul România are potențialul de a deveni un producător regional c
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-01*
+*European Environmental Law Review — 2026-10-02*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -118,7 +109,7 @@ SPARKLE supports cities across Europe to accelerate their local energy transitio
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-01*
+*European Environmental Law Review — 2026-10-02*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -180,39 +171,12 @@ The Climate Briefing: Contested waters in international politics Audio thilton.d
 
 ---
 
-### Equal rights, unequal choices: making gender equality real for Gen Z
-*FEPS (S&D) — 2026-09-25*
-
-What does gender equality mean if you can work full-time and still not afford to live independently, or if caring for others comes at the cost of your career? For Gen Z, equality cannot be reduced to rights on paper. It must mean having the real freedom and the material means to choose how to live. Gen Z has grown up with more formal gender equality than any previous generation. Yet the material freedom needed to make that equality real is becoming harder to secure. Young people have more rights, more awareness and more freedom on paper, but increasingly fewer of the material conditions…
-
-[Read more](https://feps-europe.eu/equal-rights-unequal-choices-making-gender-equality-real-for-gen-z/)
-
----
-
 ### US midterms polls: Are Democrats winning or is Trump losing?
 *Chatham House — 2026-09-28*
 
 US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans’ chances have been dragged down by President Donald Trump’s near-record…
 
 [Read more](https://www.chathamhouse.org/2026/09/us-midterms-polls-are-democrats-winning-or-trump-losing)
-
----
-
-### Arresting the Dangerous Descent Back into War in Northern Ethiopia
-*International Crisis Group — 2026-09-25*
-
-Arresting the Dangerous Descent Back into War in Northern Ethiopia eschelhaas Fri, 09/25/2026 - 14:01 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Members of the Tigray People's Liberation Front (TPLF) walk along a main road in Mekelle on September 23, 2026, as tensions intensify in northern Ethiopia after Tigrayan rebels seized control of airports in the region. AFP Statement / Africa 25 September 2026 9 minutes Arresting the Dangerous Descent Back into War in Northern Ethiopia…
-
-[Read more](https://www.crisisgroup.org/stm/africa/ethiopia-eritrea/arresting-dangerous-descent-back-war-northern-ethiopia)
-
----
-
-### Europe’s Responsibility: Defending the Universal Idea of Science
-*Wilfried Martens Centre (EPP) — 2026-09-25*
-
-A recent speech by Esra Albayrak , a Turkish sociologist and daughter of President Recep Tayyip Erdoğan, at the World Decolonisation Forum in Istanbul is a wake-up call for a debate Europe can no longer avoid. Albayrak called for new centres of knowledge beyond Paris, London and New York, arguing that science is never neutral and that knowledge is shaped by class, power and geography. Nothing new, you might say: this criticism is decades old. It is now widely acknowledged in the so-called “Western sciences” that modern scientific institutions did not develop outside history; colonial and…
-
-[Read more](https://www.martenscentre.eu/blog/europes-responsibility-defending-the-universal-idea-of-science/)
 
 ---
 
@@ -225,12 +189,12 @@ Sustainable consumption will become easier across the EU, as the Directive on Em
 
 ---
 
-### China rising, America in decline? The Trump-Xi summit
-*Chatham House — 2026-09-25*
+### Why the Houthis' Red Sea power play makes Iran even stronger
+*Chatham House — 2026-10-02*
 
-China rising, America in decline? The Trump-Xi summit Audio sseth.drupal@c… 25 September 2026 In this week’s episode of Independent Thinking, our experts discuss the Trump-Xi summit in Washington and the increasing competition between the two superpowers. President Donald Trump welcomes Xi Jinping to Washington with the US-China dynamic in a moment of historic flux. China is rising economically and militarily, while the US is mired in the Iran war, alienating allies and pursuing Trump’s unpredictable trade and tariff disputes. What do the two leaders want from this meeting, and will they get…
+Why the Houthis' Red Sea power play makes Iran even stronger Audio sseth.drupal@c… 2 October 2026 On this week’s episode of Independent Thinking, our experts discuss what Houthi control of the Bab al-Mandab strait means for the wider region. The Iranian-backed Houthi rebels’ capture of Yemen’s port city of Mocha means that Iran now effectively controls two crucial waterways in the region – the Bab al-Mandab Strait to the Red Sea and thus the Suez Canal, as well as the Hormuz Strait. Why has this simmering conflict exploded again? What do Iran and the Houthis want? How serious is this…
 
-[Read more](https://www.chathamhouse.org/2026/09/china-rising-america-decline-trump-xi-summit-independent-thinking-podcast)
+[Read more](https://www.chathamhouse.org/2026/10/houthis-red-sea-power-play-makes-iran-stronger-independent-thinking-podcast)
 
 ---
 
@@ -240,33 +204,6 @@ China rising, America in decline? The Trump-Xi summit Audio sseth.drupal@c… 25
 The upward trend in power sector emissions continued in August, reaching 1.38 million tonnes (+7.8% compared with July), driven by increased use of lignite and fossil gas, despite the record level of renewable energy generation recorded in the same month. With the addition of August’s emissions, cumulative sector emissions since the beginning of 2026 reached 9.6 million tonnes, exceeding the carbon budget set under the National Energy and Climate Plan (NECP) for the whole of 2026. The post The Carbon Footprint of Electricity Production – August 2026 first appeared on The Green Tank .
 
 [Read more](https://thegreentank.gr/en/2026/10/01/emissionswatch-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=emissionswatch-aug26-en)
-
----
-
-### FIIA appoints 13 non-resident fellows for 2026–2029
-*FIIA (Finnish Institute of International Affairs) — 2026-09-25*
-
-The Finnish Institute of International Affairs is pleased to announce the appointment of 13 distinguished experts as non-resident fellows for the 2026–2029 term. The fellows will strengthen FIIA’s four research programmes by increasing the depth and breadth of expertise at FIIA and by contributing to publications and events. Their profiles can be found on the Researchers page . Finland and Northern European Security research programme Valtteri Vuorisalo , Digital Defence Ecosystem The European Union and Strategic Competition Manuel Müller , University of Helsinki Russia, Eastern Europe and…
-
-[Read more](https://fiia.fi/en/news/fiia-appoints-13-non-resident-fellows-for-2026-2029)
-
----
-
-### What Peacemaking Loses When Women Are Left Out
-*International Crisis Group — 2026-09-25*
-
-What Peacemaking Loses When Women Are Left Out cthuratong Fri, 09/25/2026 - 13:39 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Op-Ed / Gender and Conflict 25 September 2026 1 minute What Peacemaking Loses When Women Are Left Out Originally published in TIME Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Cristal Downing Project Director, Gender and Conflict https://twitter.com/cristaldowning?lang=en Related Tags Multilateral Diplomacy Global Wars exact a heavy toll on…
-
-[Read more](https://www.crisisgroup.org/opd/global/what-peacemaking-loses-when-women-are-left-out)
-
----
-
-### Gen Z’s political divide isn’t really about gender
-*FEPS (S&D) — 2026-09-25*
-
-Progressives risk misreading Generation Z by treating social media, the manosphere and changing gender norms as the main explanation for young people’s political divergence. These forces matter. But the evidence points to something deeper: economic insecurity, institutional distrust and individualisation are shaping an entire generation, even if men and women often express that malaise differently. When progressives discuss young people, one story increasingly dominates. Young men are drifting to the right because TikTok, YouTube and the manosphere expose them to antifeminist ideas; young…
-
-[Read more](https://feps-europe.eu/gen-zs-political-divide-isnt-really-about-gender/)
 
 ---
 
@@ -294,15 +231,6 @@ Europeans are living longer. This is one of the achievements of our social model
 Updates from the UN General Assembly 2026 eschelhaas Fri, 09/25/2026 - 15:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Flags at United Nations Headquarters. New York, USA. Diegograndi Special Coverage / Global 25 September 2026 8 minutes Updates from the UN General Assembly 2026 Marking the opening of the 81st UN General Assembly, Crisis Group experts discuss challenges facing the UN’s efforts to promote international peace and security. This page includes updates from the…
 
 [Read more](https://www.crisisgroup.org/sco/global/updates-un-general-assembly-2026)
-
----
-
-### On Our Radar
-*International Crisis Group — 2026-09-24*
-
-On Our Radar eschelhaas Fri, 09/25/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 25 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter…
-
-[Read more](https://www.crisisgroup.org/sco/global/our-radar)
 
 ---
 
@@ -342,6 +270,33 @@ Energy communities are opening up new ways for people and local actors to collec
 
 ---
 
+### Joint statement: A Circular Economy Act delivering a strong EU market for secondary raw materials
+*PlasticsEurope — 2026-10-02*
+
+A Circular Economy Act delivering a strong EU market for secondary raw materials Download The post Joint statement: A Circular Economy Act delivering a strong EU market for secondary raw materials appeared first on Plastics Europe .
+
+[Read more](https://plasticseurope.org/media/joint-statement-a-circular-economy-act-delivering-a-strong-eu-market-for-secondary-raw-materials/)
+
+---
+
+### Commission approves €170 million Bulgarian State aid for farmers facing increased fuel and fertiliser prices
+*European Commission — Press Corner — 2026-10-01*
+
+European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2019)
+
+---
+
+### Commission approves €170 million Bulgarian State aid for farmers facing increased fuel and fertiliser prices
+*European Commission (Competition Press Corner) — 2026-10-01*
+
+European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2019)
+
+---
+
 ### Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland’s EU presidency to recognise their efforts
 *Committee of the Regions — 2026-09-29*
 
@@ -370,7 +325,7 @@ In July, the European Commission issued its non-compliance decision against gate
 ---
 
 ### Factsheet - How the DMA ensures businesses using Booking.com are free to set their prices on and off Booking.com
-*Digital Markets Act (European Commission) — 2026-09-28*
+*Digital Markets Act (European Commission) — 2026-10-02*
 
 The Commission’s regulatory dialogues with gatekeepers in the framework of its enforcement of the Digital Markets Act (DMA) are delivering more fairness and transparency.
 
@@ -423,21 +378,21 @@ This is the latest edition of the Green Deal Funding Alert, this edition focuses
 
 ---
 
-### Circular raw materials for strong industry and quality jobs
-*industriAll Europe — 2026-09-25*
-
-Europe’s circular economy must become a central pillar of an ambitious industrial policy that secures access to critical raw materials, strengthens manufacturin...
-
-[Read more](https://news.industriall-europe.eu/Article/1598)
-
----
-
 ### Sustainable European sovereignty must deliver for workers
 *industriAll Europe — 2026-10-01*
 
 Europe’s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...
 
 [Read more](https://news.industriall-europe.eu/Article/1603)
+
+---
+
+### Workers must shape Europe’s industrial transformation
+*industriAll Europe — 2026-10-02*
+
+The BRIDGES 5.0 project has concluded after four years of work on how Europe’s green and digital transitions can become more human-centred, sustainable and resi...
+
+[Read more](https://news.industriall-europe.eu/Article/1601)
 
 ---
 
@@ -459,12 +414,12 @@ IETA welcomes Canada's initiative to develop Article 6 participation framework
 
 ---
 
-### Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
-*IETA — 2026-09-25*
+### SIPRI hosts discussion on human security and the WPS agenda
+*SIPRI — 2026-09-28*
 
-Malaysia Advances Carbon Market Implementation Through Public-Private Dialogue
+SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.
 
-[Read more](https://www.ieta.org/news/malaysia-advances-carbon-market-implementation-through-public-private-dialogue)
+[Read more](https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda)
 
 ---
 
