@@ -522,7 +522,16 @@ function renderGroupedEntries(entries) {
       // data), so interpolating directly here is safe -- same reasoning
       // as the escapeHtml() calls just below it on actual data fields.
       const icon = ACTOR_ICONS[group.actorType];
-      const iconHtml = icon ? `<svg class="actor-group-icon" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>` : "";
+      // width/height are set directly on the tag (not just via the
+      // .actor-group-icon CSS class) so the icon is correctly sized even
+      // if the stylesheet hasn't applied yet -- without an explicit size,
+      // a bare inline <svg> falls back to the browser's default replaced-
+      // element size (300x150px in most browsers), which is almost
+      // certainly what made the icons render "massive" when this was
+      // CSS-only.
+      const iconHtml = icon
+        ? `<svg class="actor-group-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>`
+        : "";
       return `
         <section class="actor-group" data-actor="${escapeHtml(group.actorType)}">
           <h3 class="actor-group-heading">${iconHtml}${escapeHtml(group.label)} <span class="actor-group-count">(${group.entries.length})</span></h3>
