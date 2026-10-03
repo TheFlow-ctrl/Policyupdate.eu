@@ -883,6 +883,17 @@ h1, h2, h3 {
   padding-bottom: 8px;
 }
 
+/* A month with multiple entries now renders as category groups (same
+   grouped "All voices" layout as the weekly digest -- see
+   renderGroupedEntries() in script.js and renderArchive()'s use of it),
+   not the single flat .entries list above -- same bottom breathing room
+   before the next month/year starts. First group also loses the grouped
+   view's own top margin reset here, since the month's <summary> already
+   provides that spacing. */
+.archive-month .actor-group:last-child {
+  margin-bottom: 8px;
+}
+
 .policy-cycle {
   margin: 0 0 40px;
 }
