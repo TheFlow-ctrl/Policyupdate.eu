@@ -1755,6 +1755,371 @@ sources:
     # this behaves like "topic match AND EU-relevant", which is the right
     # strictness level here (no competition-policy equivalent of a global
     # climate benchmark to justify a looser gate).
+  # --- Competition: EU institutions, political & civil-society voices -----
+  # (added Oct 2026, per a curated list Flo supplied covering EU
+  # institutions, international organisations, think tanks, political
+  # stakeholders, industry & lobby groups, NGOs, trade unions, media and
+  # academic journals for the competition field. Each entry below was
+  # checked for a real, fetchable feed before being added -- see the
+  # "Checked and NOT added" block at the end of this section for the many
+  # names on Flo's list that turned out to have no trackable channel.)
+  - name: European Economic and Social Committee (EESC)
+    url: https://www.eesc.europa.eu/en/news-media/news.rss
+    field: competition
+    actor_type: eu-institution
+    # Advisory body -- issues formal opinions on competition-policy
+    # proposals, state aid rules and merger-review reform (e.g. its
+    # Industrial Accelerator Act opinion). RSS link confirmed directly in
+    # the page's own markup (Drupal site, /en/news-media/news carries a
+    # visible "RSS" link to this exact URL). Broad multi-topic feed (all
+    # EESC policy areas, not just competition) -- relies on the standard
+    # COMPETITION_KEYWORDS filter like every other broad source here.
+  - name: European Parliament — ECON Committee
+    url: https://www.europarl.europa.eu/rss/committee/econ/en.xml
+    field: competition
+    actor_type: eu-institution
+    # ECON holds the Parliament's scrutiny hearings with the Executive
+    # Vice-President for Competition and co-legislates on market
+    # regulatory frameworks. URL follows the europarl.europa.eu/rss/
+    # committee/<code>/en.xml pattern confirmed live for other committees
+    # (ENVI, ITRE, via a third-party feed aggregator that had fetched and
+    # titled both) -- NOT independently content-verified for the econ code
+    # specifically, since this sandbox's fetch tool returns raw XML as
+    # empty for this host (confirmed on the already-working topic/911 feed
+    # above, which returns empty here too despite being live in
+    # production) -- so there's no way to directly confirm the econ feed
+    # has real items from here. If it turns out dead, this is a cheap entry
+    # to prune on the next review. ECON's own broad remit (monetary policy,
+    # banking, taxation) means most items will be filtered out by
+    # COMPETITION_KEYWORDS -- expect a low but real yield.
+  - name: European Ombudsman
+    url: "https://www.ombudsman.europa.eu/rest/rss?lang=en"
+    field: competition
+    actor_type: eu-institution
+    # Same feed as the existing green-deal entry above -- deliberate
+    # duplication (see the Bruegel/CEPS/OECD dual-entry pattern elsewhere
+    # in this file). Reviews complaints on administrative fairness and
+    # transparency in Commission antitrust/merger investigations and
+    # stakeholder-meeting access -- a real, if occasional, competition-
+    # adjacent angle distinct from its green-deal relevance.
+  - name: Committee of the Regions
+    scraper: committee_of_regions
+    field: competition
+    actor_type: eu-institution
+    # Same scraper as the existing green-deal entry above -- deliberate
+    # duplication. Issues formal opinions on regional state aid rules and
+    # competition-policy impact assessments for local/regional government.
+  - name: Council of the European Union (Competitiveness Council)
+    scraper: council_eu
+    field: competition
+    actor_type: eu-institution
+    # Same scraper as the existing green-deal Council entry above --
+    # deliberate duplication. The Competitiveness Council (COMPET)
+    # configuration is where national ministers debate state aid
+    # flexibility, merger policy reform and the "European champions" IPCEI/
+    # industrial-policy debate -- real examples surface in Council
+    # conclusions picked up by the general scraper, filtered through
+    # COMPETITION_KEYWORDS same as every other broad EU-institution source.
+  - name: European Policy Centre (EPC)
+    scraper: epc
+    field: competition
+    actor_type: think-tank
+    # Same scraper as the existing green-deal EPC entry above -- deliberate
+    # duplication (same dual-entry pattern as Bruegel/CEPS/OECD). Covers
+    # broader EU economic governance, industrial policy and the balance
+    # between market openness and strategic autonomy -- genuinely
+    # competition-relevant alongside its green-deal output.
+
+  # --- Competition: industry & lobby groups --------------------------------
+  - name: CCIA Europe (Computer & Communications Industry Association)
+    url: https://ccianet.org/feed/
+    field: competition
+    actor_type: industry
+    eu_gate: true
+    # Confirmed working, actively-updated RSS feed with real content
+    # (e.g. a live DMA/Digital Networks Act "network fees" explainer). The
+    # feed is CCIA's single global feed (US + EU content mixed, and
+    # US-dominant by volume -- H-1B visa fees, FCC spectrum, FTC
+    # rulemaking) -- marked eu_gate: true so only the EU-relevant posts
+    # surface, same treatment as Kluwer Competition Law Blog/Carbon Brief.
+    # A dedicated /category/europe/feed/ exists but returned a
+    # structurally valid, zero-item channel at check -- using the main
+    # feed with the EU gate instead, since CCIA Europe's own posts do
+    # appear in it (confirmed: the DNA article was categorised "European
+    # Commission"/"European Union").
+  - name: DIGITALEUROPE
+    url: https://www.digitaleurope.org/feed/
+    field: competition
+    actor_type: industry
+    # Represents the digital technology industry on tech regulation, fair
+    # competition and data accessibility, incl. DMA compliance. Confirmed
+    # working, actively-updated RSS feed.
+  - name: European Round Table for Industry (ERT)
+    url: https://ert.eu/feed/
+    field: competition
+    actor_type: industry
+    # CEOs of major European multinationals advocating for merger/scale
+    # rules that let European firms compete globally -- directly aligned
+    # with the "European champions"/EU-competitiveness debate. Feed is
+    # structurally valid (real WordPress feed, correctly formed channel)
+    # but returned zero <item> entries at check -- same "confirmed live,
+    # zero items today" call already made elsewhere in this file for
+    # Ember/Bankwatch/ECOS/Green10.
+  - name: European DIGITAL SME Alliance
+    url: https://www.digitalsme.eu/feed/
+    field: competition
+    actor_type: industry
+    # Represents ICT SMEs on fair access to digital ecosystems and tech
+    # sovereignty (EU Inc., 28th Regime, AI/cloud sovereignty). Confirmed
+    # working, actively-updated RSS feed.
+  - name: Coalition for App Fairness (CAF)
+    url: https://appfairness.org/feed/
+    field: competition
+    actor_type: industry
+    # App developers' coalition lobbying against app-store lock-in and
+    # fees under the DMA -- confirmed working, actively-updated RSS feed
+    # with directly on-topic content (DMA non-compliance decisions, Apple/
+    # Google steering disputes). One of the strongest-fit sources added in
+    # this batch.
+  - name: BusinessEurope
+    url: https://www.businesseurope.eu/feed/
+    field: competition
+    actor_type: industry
+    # Same feed as the existing green-deal entry above -- deliberate
+    # duplication. Cross-industry umbrella body with a real stake in
+    # merger-threshold and state-aid-rule debates. Confirmed to exist but
+    # currently empty, same as the green-deal entry -- kept in case it
+    # starts publishing through the feed.
+  - name: Cefic
+    scraper: cefic
+    field: competition
+    actor_type: industry
+    # Same scraper as the existing green-deal entry above -- deliberate
+    # duplication. Chemical industry -- state aid for the clean transition
+    # has a direct competition-law dimension (CISAF, IPCEI).
+  - name: ACEA (European Automobile Manufacturers' Association)
+    url: https://www.acea.auto/feed/
+    field: competition
+    actor_type: industry
+    # Same feed as the existing green-deal entry above -- deliberate
+    # duplication. Automotive state aid, merger review of strategic
+    # sectors. Confirmed to exist but currently empty, same as the
+    # green-deal entry.
+  - name: European Banking Federation (EBF)
+    scraper: ebf
+    field: competition
+    actor_type: industry
+    # Same scraper as the existing green-deal entry above -- deliberate
+    # duplication. Banking-sector state aid, fintech competition, merger
+    # review of financial institutions.
+
+  # --- Competition: NGO & advocacy groups -----------------------------------
+  - name: BEUC (The European Consumer Organisation)
+    url: https://www.beuc.eu/rss.xml
+    field: competition
+    actor_type: ngo
+    # The dominant consumer-advocacy voice in Brussels, regularly
+    # intervening as a formal third party in antitrust/merger proceedings.
+    # Confirmed working, actively-updated, substantial RSS feed with
+    # directly on-topic content (e.g. video-game platforms antitrust
+    # referrals, digital-markets consumer-protection reform).
+  - name: Euroconsumers
+    url: https://www.euroconsumers.org/feed/
+    field: competition
+    actor_type: ngo
+    # Alliance of national consumer organisations (Test-Achats, Altroconsumo
+    # etc.) campaigning on cross-border consumer/market-fairness issues
+    # (CPC Regulation reform, Digital Fairness Act, ticket-resale markets).
+    # Confirmed working, actively-updated RSS feed -- broad consumer-rights
+    # remit beyond competition specifically, relies on the standard
+    # keyword filter.
+  - name: Balanced Economy Project
+    url: "https://www.balancedeconomy.org/latest?format=rss"
+    field: competition
+    actor_type: ngo
+    # International anti-monopoly/structural-reform advocacy org --
+    # directly on-topic output (EU Merger Guidelines submissions, DMA
+    # enforcement campaigns, CMA merger-investigation requests). Note the
+    # live domain is balancedeconomy.org, not the .net Flo gave -- .net
+    # redirects there. Squarespace site; RSS via the platform's standard
+    # ?format=rss query param (confirmed live on the page itself, next to
+    # a "Subscribe to our newsletter" link). Confirmed working, large and
+    # actively-updated feed.
+  - name: Open Markets Institute
+    url: "https://www.openmarketsinstitute.org/publications?format=rss"
+    field: competition
+    actor_type: ngo
+    eu_gate: true
+    # US-based anti-monopoly think tank/advocacy org -- confirmed working,
+    # large and actively-updated Squarespace RSS feed (?format=rss, same
+    # pattern as Balanced Economy Project), but content is overwhelmingly
+    # US-focused (FTC/DOJ actions, US court cases, US mergers) -- marked
+    # eu_gate: true so only the genuinely EU-relevant pieces surface (it
+    # does cover the EU Tech Sovereignty Package, DMA cloud-gatekeeper
+    # designations). A separate "OMI Europe" entity exists at
+    # openmarketsinstitute.eu -- not independently checked for its own
+    # feed given time; worth a second look on a future review.
+  - name: Foxglove
+    url: https://www.foxglove.org.uk/feed/
+    field: competition
+    actor_type: ngo
+    # UK-based legal non-profit pursuing public-interest litigation and
+    # advocacy against tech-platform monopolies (Meta antitrust fights,
+    # Big Tech data-centre planning challenges). Confirmed working,
+    # actively-updated RSS feed.
+  - name: Transparency International EU
+    url: https://transparency.eu/feed/
+    field: competition
+    actor_type: ngo
+    # Tracks lobbying influence and conflicts of interest in EU decision-
+    # making, incl. Commission/Parliament dealings with industry --
+    # intersects with competition policy where lobbying-transparency and
+    # antitrust/state-aid oversight meet. Note the live domain is
+    # transparency.eu, not a transparency.org EU page. Confirmed working,
+    # actively-updated RSS feed; broad integrity/anti-corruption remit
+    # beyond competition specifically, relies on the standard keyword
+    # filter -- expect a modest but real yield.
+  - name: Corporate Europe Observatory
+    url: https://corporateeurope.org/en/rss.xml
+    field: competition
+    actor_type: ngo
+    # Same feed as the existing green-deal entry above -- deliberate
+    # duplication (same dual-entry pattern as Bruegel/CEPS/OECD/EPC).
+    # Lobbying-transparency watchdog -- its competition-relevant output
+    # covers Big Tech/industry influence over antitrust and state-aid
+    # decisions specifically, distinct from its green-deal lobbying beat.
+
+  # --- Competition: trade unions ---------------------------------------------
+  - name: UNI Europa
+    url: https://www.uni-europa.org/feed/
+    field: competition
+    actor_type: trade-union
+    # Same feed as the existing green-deal entry above -- deliberate
+    # duplication. Services-sector union federation campaigning against
+    # monopsony power and platform-labour dominance -- a direct
+    # competition-policy angle distinct from its green-deal relevance.
+    # Confirmed valid feed structure but currently stale (same caveat as
+    # the green-deal entry).
+  - name: industriAll Europe
+    scraper: industriall_europe
+    field: competition
+    actor_type: trade-union
+    # Same scraper as the existing green-deal entry above -- deliberate
+    # duplication. Advocates for strategic state aid and industrial
+    # policies protecting European industrial employment -- a real
+    # competition-law (state aid) angle on top of its green-deal content.
+
+  # --- Competition: academic journals -----------------------------------------
+  - name: World Competition
+    url: https://kluwerlawonline.com/feeds/WOCO
+    field: competition
+    actor_type: academic
+    # Kluwer Law International's flagship competition law & economics
+    # journal. Same kluwerlawonline.com/feeds/<CODE> pattern as the
+    # existing European Environmental Law Review entry (green-deal
+    # section) -- confirmed working, current content (e.g. a live DMA
+    # "Brussels Effect" empirical study). Gets the standard academic-source
+    # EU-specificity AND-gate (is_eu_relevant()) on top of the topic
+    # filter, same as every other actor_type: academic source -- a case
+    # note that doesn't name the EU/Europe explicitly may not surface
+    # despite being genuinely EU competition-law content; acceptable
+    # given this is the same tradeoff already accepted for the green-deal
+    # academic sources.
+  - name: Common Market Law Review
+    url: https://kluwerlawonline.com/feeds/COLA
+    field: competition
+    actor_type: academic
+    # The pre-eminent EU law journal generally (not competition-law-only),
+    # included here since it regularly carries major Article 101/102/
+    # merger-control case notes (e.g. a live Google Shopping non-
+    # discriminatory-access piece) alongside its broader EU-law content --
+    # relies on COMPETITION_KEYWORDS to surface just the competition-law
+    # subset, same broad-source pattern as Bruegel/CEPS. Confirmed working
+    # RSS feed, same kluwerlawonline.com/feeds/<CODE> pattern as World
+    # Competition above.
+
+  # Checked and NOT added (Oct 2026 batch, from Flo's curated list):
+  #  - European Competition Network (ECN) & National Competition
+  #    Authorities -- the ECN is a Commission microsite, not a publisher in
+  #    its own right; its only periodic output is the "ECN Brief"
+  #    newsletter (published a few times a year, no RSS found). NCAs
+  #    themselves (Autorité de la concurrence, Bundeskartellamt, AGCM, ACM)
+  #    are deliberately out of scope per this file's existing "core +
+  #    digital markets, EU-level not national" decision noted earlier in
+  #    this section.
+  #  - Hearing Officers of the European Commission
+  #    (competition-policy.ec.europa.eu/about/hearing-officers_en) -- a
+  #    real procedural office, but not a news-publishing body; no content
+  #    to track, same category as EAGCP below.
+  #  - International Competition Network (ICN,
+  #    internationalcompetitionnetwork.org) -- real and active, but its
+  #    /news page returns no server-rendered content (client-side
+  #    rendered) and no RSS feed found at common paths.
+  #  - UNCTAD (Competition and Consumer Protection programme) -- real UN
+  #    focal point for competition policy, but its output is slow-moving
+  #    institutional content (an annual Intergovernmental Group of Experts
+  #    session, occasional webinars) rather than news-style publications --
+  #    no RSS found, and the content cadence is a poor fit for a 7-day
+  #    digest even if one existed, same category as EAGCP below.
+  #  - WTO -- no RSS found at the main news listing; not pursued further
+  #    given the weak direct competition-law fit (WTO's lens is trade/
+  #    subsidies, not antitrust enforcement).
+  #  - World Bank Group (Competition and Consumer Protection Practice) --
+  #    no dedicated feed or blog found scoped to competition specifically
+  #    (distinct from the already-tracked green-deal World Bank climate
+  #    blog, which does have one).
+  #  - CEPR (Centre for Economic Policy Research, cepr.org) -- real and
+  #    active, but cepr.org/rss.xml is a taxonomy/topic-listing feed, not
+  #    an article feed, and no topic-scoped (Industrial Organization/
+  #    Competition Policy) article feed was found.
+  #  - Florence School of Regulation (FSR / EUI) -- real, dedicated
+  #    competition-law-and-economics programme, but no RSS feed found on
+  #    fsr.eui.eu.
+  #  - European Parliament political groups (EPP, S&D, Renew Europe,
+  #    Greens/EFA, ECR, The Left) -- all real, active newsrooms (EPP's own
+  #    Newsroom page, for instance, is genuinely server-rendered with
+  #    current content) but none expose a working RSS feed at /feed,
+  #    /feed/, or /rss.xml -- all are Drupal sites with "Load more"
+  #    client-side pagination and no visible feed-autodiscovery link,
+  #    unlike EESC above. Real gap, not a dismissal; would need a
+  #    JS-aware scraper.
+  #  - National economic/trade ministries (France's Ministère de
+  #    l'Économie, Germany's BMWK) -- no RSS found for either, and both
+  #    would be French/German-language-only even if a feed existed,
+  #    consistent with this file's English-only scope.
+  #  - European Entrepreneurs CEA-PME (ceapme.eu), ETNO (European
+  #    Telecommunications Network Operators' Association), ECTA (European
+  #    Competitive Telecommunications Association, ectaportal.com) -- no
+  #    RSS feed found for any of the three.
+  #  - MLex Market Insight, Policy and Regulatory Report (PaRR) -- both
+  #    confirmed subscription trade-intelligence products with no free
+  #    RSS/public content, same category as Carbon Pulse elsewhere in this
+  #    file.
+  #  - POLITICO Europe (Competition Pro), Financial Times (Brussels
+  #    Bureau/Antitrust coverage) -- both paywalled subscription
+  #    journalism, same reasoning as Euractiv (see "NOT added: Euractiv"
+  #    note earlier in this file) -- not built.
+  #  - Reuters (EU Competition Desk) -- Reuters discontinued its public
+  #    RSS feeds entirely in June 2020; no working feed exists for any
+  #    Reuters section any more.
+  #  - Euractiv (Economy & Competition section) -- same already-documented
+  #    "NOT added: Euractiv" reasoning elsewhere in this file (paywalled
+  #    "PRO" content) applies equally to its Economy section.
+  #  - Journal of Competition Law & Economics (JCLE) and Journal of
+  #    European Competition Law & Practice (JECLAP), both Oxford Academic
+  #    (academic.oup.com) -- Oxford University Press discontinued RSS
+  #    feeds for its journals platform-wide; no working feed exists for
+  #    any OUP journal any more (confirmed via OUP's own technical-help
+  #    guidance, not just a dead link at this one title).
+  #  - European Competition Journal (Taylor & Francis, tandfonline.com,
+  #    code RECJ20) -- unlike the green-deal section's Tandfonline
+  #    journals (Climate Policy, JEPP, etc.), the showFeed endpoint
+  #    returned empty for this code and the journal's own TOC page
+  #    returned no content either -- not confirmed working, not added
+  #    rather than guessed at.
+  #  - European Competition Law Review (ECLR, Sweet & Maxwell) -- a
+  #    Thomson Reuters/Westlaw product; no free RSS feed exists for it.
+
   # Checked and NOT added:
   #  - GCLC (Global Competition Law Centre, College of Europe, Bruges) --
   #    a real, dedicated EU/global competition-law research centre
