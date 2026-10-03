@@ -1,4 +1,4 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-02
+# Weekly Climate, Energy & Environment Digest — 2026-10-03
 
 ### Multilateral Cooperation and Confidence-Building in Cyberspace
 *SWP (German Institute for International and Security Affairs) — 2026-09-29*
@@ -6,6 +6,15 @@
 The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incidents involving state actors and state-controlled actors is rising worldwide – particularly in the OSCE region – yet the diplomatic instruments designed to contain such incidents receive comparatively little attention. The OSCE (Organisation for Security and Co-operation in Europe) and other regional organisations have adopted a range of confidence-building measures (CBMs) in the cyber domain that provide a basis for deeper multilateral cooperation. It remains unclear, however, to what extent these measures respond…
 
 [Read more](https://www.swp-berlin.org/en/publication/multilateral-cooperation-and-confidence-building-in-cyberspace)
+
+---
+
+### Bridging Policy Gaps in Transition Times: How Local Actors Navigate Low Policy Coherence for Advancing a Circular Built Environment
+*Environmental Policy and Governance — 2026-10-02*
+
+ABSTRACT The construction sector is a major contributor to the climate crisis, accounting for over one‐third of global energy‐related CO2 emissions. In response, the European Commission identified the circular economy as a means of achieving green growth and prioritized the construction sector in its Circular Economy Action Plan. Since then, national and local governments have begun developing policy regimes to promote the circular economy in the built environment (CEBE). However, implementation remains limited, and policy coherence—the alignment of objectives and instruments across…
+
+[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70123?af=R)
 
 ---
 
@@ -321,6 +330,24 @@ The Commission’s regulatory dialogues with gatekeepers in the framework of its
 From industry associations to environmental and civil-society bodies, a total of 93 organisations spanning are asking European Commission President Ursula von der Leyen for a binding energy efficiency target for 2040.
 
 [Read more](https://orgalim.eu/en/improving-energy-efficiency-an-obvious-and-urgent-next-step/)
+
+---
+
+### Identifying leaks in the pipeline from science to biodiversity protection
+*BC3 — 2026-09-29*
+
+A newly published global review highlights the importance of relationships with scientists, relevant research, and organisational resources in shaping how scientific evidence informs conservation decisions.
+
+[Read more](https://www.bc3research.org/en/2026/09/identifying-leaks-in-the-pipeline-from-science-to-biodiversity-protection/)
+
+---
+
+### The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity
+*BC3 — 2026-10-02*
+
+The Karakoram mountain range is one of the most remote and difficult to study in High Mountain Asia, located in the center and southeast of the continent.
+
+[Read more](https://www.bc3research.org/en/2026/10/the-first-chemical-analysis-of-snow-accumulated-on-the-godwin-austen-glacier-shows-pollution-from-human-activity/)
 
 ---
 

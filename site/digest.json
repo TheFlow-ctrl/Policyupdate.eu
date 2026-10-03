@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-03",
   "entries": [
     {
       "org": "SWP (German Institute for International and Security Affairs)",
@@ -11,6 +11,18 @@
       "image": null,
       "actor_type": "think-tank",
       "content_type": "report",
+      "tags": []
+    },
+    {
+      "org": "Environmental Policy and Governance",
+      "field": "green-deal",
+      "title": "Bridging Policy Gaps in Transition Times: How Local Actors Navigate Low Policy Coherence for Advancing a Circular Built Environment",
+      "link": "https://onlinelibrary.wiley.com/doi/10.1002/eet.70123?af=R",
+      "date": "2026-10-02",
+      "summary": "ABSTRACT The construction sector is a major contributor to the climate crisis, accounting for over one\u2010third of global energy\u2010related CO2 emissions. In response, the European Commission identified the circular economy as a means of achieving green growth and prioritized the construction sector in its Circular Economy Action Plan. Since then, national and local governments have begun developing policy regimes to promote the circular economy in the built environment (CEBE). However, implementation remains limited, and policy coherence\u2014the alignment of objectives and instruments across\u2026",
+      "image": null,
+      "actor_type": "academic",
+      "content_type": null,
       "tags": []
     },
     {
@@ -440,6 +452,30 @@
       "summary": "From industry associations to environmental and civil-society bodies, a total of 93 organisations spanning are asking European Commission President Ursula von der Leyen for a binding energy efficiency target for 2040.",
       "image": null,
       "actor_type": "international-org",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "BC3",
+      "field": "green-deal",
+      "title": "Identifying leaks in the pipeline from science to biodiversity protection",
+      "link": "https://www.bc3research.org/en/2026/09/identifying-leaks-in-the-pipeline-from-science-to-biodiversity-protection/",
+      "date": "2026-09-29",
+      "summary": "A newly published global review highlights the importance of relationships with scientists, relevant research, and organisational resources in shaping how scientific evidence informs conservation decisions.",
+      "image": null,
+      "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "BC3",
+      "field": "green-deal",
+      "title": "The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity",
+      "link": "https://www.bc3research.org/en/2026/10/the-first-chemical-analysis-of-snow-accumulated-on-the-godwin-austen-glacier-shows-pollution-from-human-activity/",
+      "date": "2026-10-02",
+      "summary": "The Karakoram mountain range is one of the most remote and difficult to study in High Mountain Asia, located in the center and southeast of the continent.",
+      "image": null,
+      "actor_type": "think-tank",
       "content_type": null,
       "tags": []
     },
