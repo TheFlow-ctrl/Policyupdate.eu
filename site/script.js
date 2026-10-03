@@ -578,14 +578,21 @@ function renderGroupedEntries(entries) {
 let actorScrollSpyGroups = []; // [{ actorType, el }], top to bottom
 
 // Re-collects the current grouped sections from the DOM. Called after
-// every render -- with an empty array when the view isn't the grouped
-// "All voices" digest, so applyActorScrollSpy() has nothing stale to act
-// on once the person switches to a single-actor filter or another view.
+// every render -- with an empty array when the view isn't a grouped
+// "All voices" view (digest or archive), so applyActorScrollSpy() has
+// nothing stale to act on once the person switches to a single-actor
+// filter or another view.
+//
+// Filtered to visible sections only (offsetParent !== null) -- on the
+// archive, every open month renders its own full set of `.actor-group`
+// sections, but a collapsed month's sections are still present in the DOM
+// (just display:none via the closed <details>), and getBoundingClientRect()
+// on a display:none element always reports top: 0, which would otherwise
+// look exactly like "already scrolled past" and wrongly pin the highlight.
 function updateActorScrollSpyTargets() {
-  actorScrollSpyGroups = Array.from(document.querySelectorAll(".actor-group")).map((el) => ({
-    actorType: el.dataset.actor,
-    el,
-  }));
+  actorScrollSpyGroups = Array.from(document.querySelectorAll(".actor-group"))
+    .filter((el) => el.offsetParent !== null)
+    .map((el) => ({ actorType: el.dataset.actor, el }));
 }
 
 // How far from the top of the viewport a group's heading has to scroll
@@ -595,13 +602,18 @@ function updateActorScrollSpyTargets() {
 const ACTOR_SCROLL_SPY_OFFSET = 32;
 
 function applyActorScrollSpy() {
-  // Guard on the digest section actually being visible, not just
-  // activeActor === "all": a hidden section's children all report
+  // Guard on the digest OR archive section actually being visible, not
+  // just activeActor === "all": a hidden section's children all report
   // getBoundingClientRect().top === 0, which would otherwise look like
   // every group has already scrolled past and wrongly pin the highlight
-  // to the last category while looking at the Archive or another view.
+  // to the last category while looking at Policy Cycle or another view
+  // entirely. Both sections render the same grouped "All voices" layout
+  // (see renderActiveField()/renderArchive()), so either one being
+  // visible is a valid target for the spy.
   const digestSection = document.getElementById("digest-section");
-  if (!digestSection || digestSection.hidden || activeActor !== "all" || actorScrollSpyGroups.length === 0) {
+  const archiveSection = document.getElementById("archive-section");
+  const groupedSectionVisible = (digestSection && !digestSection.hidden) || (archiveSection && !archiveSection.hidden);
+  if (!groupedSectionVisible || activeActor !== "all" || actorScrollSpyGroups.length === 0) {
     return;
   }
 
@@ -635,6 +647,27 @@ function onWindowScrollForActorSpy() {
 
 function setupActorScrollSpy() {
   window.addEventListener("scroll", onWindowScrollForActorSpy, { passive: true });
+
+  // Opening/closing an archive year or month changes which .actor-group
+  // sections are visible (see updateActorScrollSpyTargets()'s visibility
+  // filter) without the page itself scrolling, so the regular scroll
+  // listener above never fires for it on its own -- re-sync explicitly on
+  // every <details> toggle instead. The native "toggle" event does NOT
+  // bubble (per spec), so a plain delegated listener on #archive-months
+  // would never see it; listening in the capture phase still catches it on
+  // the way down to the actual <details> element, which is the standard
+  // workaround.
+  const archiveMonthsEl = document.getElementById("archive-months");
+  if (archiveMonthsEl) {
+    archiveMonthsEl.addEventListener(
+      "toggle",
+      () => {
+        updateActorScrollSpyTargets();
+        applyActorScrollSpy();
+      },
+      true
+    );
+  }
 }
 
 // --- Accessibility: toggle-button state -------------------------------
@@ -710,16 +743,24 @@ function setupTopicTabs() {
   });
 }
 
-// Jumps straight to a category's section within the grouped "All voices"
-// view (see renderGroupedEntries()), rather than hiding every other
-// category -- used by setupActorTabs() below. Returns false (no scroll
-// happened) when that category has no section in the current render, so
-// the caller can fall back to the old hard-filter behavior instead of a
-// dead click.
+// Jumps straight to a category's section within a grouped "All voices"
+// view (see renderGroupedEntries()) -- the digest, or the archive, where
+// every open month renders its own full set of category sections (see
+// renderArchive()), so there can be several `.actor-group[data-actor=...]`
+// elements in the document at once, most of them tucked inside collapsed
+// <details> months. Picks the first one that's actually visible (offsetParent
+// is null for anything inside a closed <details>, same check
+// updateActorScrollSpyTargets() below uses) -- on the digest there's only
+// ever one match anyway, so this is a no-op there; on the archive it lands
+// on the newest month's section, since that's the one open by default.
+// Returns false (no scroll happened) when there's no *visible* section for
+// that category in the current render, so the caller can fall back to the
+// old hard-filter behavior instead of a dead click.
 function scrollToActorGroup(actorType) {
-  const el = document.querySelector(`.actor-group[data-actor="${actorType}"]`);
-  if (!el) return false;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const matches = document.querySelectorAll(`.actor-group[data-actor="${actorType}"]`);
+  const visible = Array.from(matches).find((el) => el.offsetParent !== null);
+  if (!visible) return false;
+  visible.scrollIntoView({ behavior: "smooth", block: "start" });
   return true;
 }
 
@@ -729,15 +770,20 @@ function setupActorTabs() {
     tab.addEventListener("click", () => {
       const actor = tab.dataset.actor;
       const digestVisible = !document.getElementById("digest-section").hidden;
+      const archiveVisible = !document.getElementById("archive-section").hidden;
+      // Both the digest and the archive render a grouped "All voices" view
+      // (see renderActiveField()/renderArchive()) -- a category tab is a
+      // navigation shortcut on either of them.
+      const groupedViewVisible = digestVisible || archiveVisible;
 
-      // On the digest's grouped "All voices" view, a category tab is a
-      // navigation shortcut now -- scroll to that section while keeping
-      // every other category visible, instead of hard-filtering them
-      // away. Falls through to the old filter behavior when there's
-      // nothing to scroll to (no entries in that category this week) or
-      // on views without a grouped layout (e.g. the Archive), where
-      // filtering is still the only way to narrow by actor type.
-      if (actor !== "all" && digestVisible && activeActor === "all") {
+      // On a grouped "All voices" view, a category tab is a navigation
+      // shortcut -- scroll to that section while keeping every other
+      // category visible, instead of hard-filtering them away. Falls
+      // through to the old filter behavior when there's nothing to scroll
+      // to (no entries in that category, or -- on the archive -- only in
+      // months that are currently collapsed; see scrollToActorGroup()) or
+      // on views without a grouped layout.
+      if (actor !== "all" && groupedViewVisible && activeActor === "all") {
         if (scrollToActorGroup(actor)) {
           applyActorScrollSpy(); // sync the highlight immediately, don't wait for a scroll event
           return;
@@ -747,7 +793,7 @@ function setupActorTabs() {
       // Switching from a single-category filter back to "All voices"
       // rebuilds the grouped view -- scroll back to the top of it, same
       // as any other "take me there" navigation action above.
-      const enteringGroupedView = actor === "all" && activeActor !== "all" && digestVisible;
+      const enteringGroupedView = actor === "all" && activeActor !== "all" && groupedViewVisible;
 
       tabs.forEach((t) => setActiveState(t, t === tab));
       activeActor = actor;
@@ -755,7 +801,8 @@ function setupActorTabs() {
       syncUrlFromState();
 
       if (enteringGroupedView) {
-        document.getElementById("entries").scrollIntoView({ behavior: "smooth", block: "start" });
+        const targetId = archiveVisible ? "archive-months" : "entries";
+        document.getElementById(targetId).scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   });
@@ -1465,6 +1512,16 @@ function renderArchive() {
     group.count += month.entries.length;
   }
 
+  // Same "All voices" grouping/importance-sort treatment as the weekly
+  // digest's renderActiveField() (see renderGroupedEntries()) -- a single
+  // month can easily hold 20+ entries once enough sources are tracked,
+  // so it gets the same category headings (with icons, sticky while
+  // scrolling) and reports-before-press-releases ordering within each
+  // category, rather than one long flat list per month. Picking one
+  // specific actor type already narrows a month down to a single,
+  // manageable category, so that case keeps the plain flat list (in
+  // archive.json's existing order) exactly as before -- mirrors
+  // renderActiveField()'s own activeActor === "all" branch precisely.
   monthsEl.innerHTML = yearGroups
     .map((group, yi) => `
       <details class="archive-year"${yi === 0 ? " open" : ""}>
@@ -1474,9 +1531,11 @@ function renderArchive() {
             .map((month, mi) => `
               <details class="archive-month"${yi === 0 && mi === 0 ? " open" : ""}>
                 <summary>${escapeHtml(month.label)} <span class="archive-count">(${month.entries.length})</span></summary>
-                <div class="entries">
-                  ${month.entries.map(renderEntry).join("")}
-                </div>
+                ${
+                  activeActor === "all"
+                    ? renderGroupedEntries(month.entries)
+                    : `<div class="entries">${month.entries.map(renderEntry).join("")}</div>`
+                }
               </details>
             `)
             .join("")}
@@ -1485,6 +1544,11 @@ function renderArchive() {
     `)
     .join("");
   announceResultsCount(currentDisplayedEntries.length);
+  // Re-collect .actor-group sections (now possibly many -- one set per
+  // open month) and sync the actor-tabs pad's highlight, same as the
+  // digest's own renderActiveField() does after rendering.
+  updateActorScrollSpyTargets();
+  applyActorScrollSpy();
 }
 
 function renderEntry(entry) {
