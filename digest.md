@@ -1,4 +1,22 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-03
+# Weekly Climate, Energy & Environment Digest — 2026-10-04
+
+### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
+*World Competition — 2026-10-04*
+
+This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/World+Competition/49.3 [pre-publication]/WOCO2026021)
+
+---
+
+### THE ‘INTERNAL MARKET DETOUR’ FOR DEFENDING DEMOCRACY [pre-publication]
+*Common Market Law Review — 2026-10-04*
+
+This article examines the EU’s recent approach to defending democracy through internal market legislation. It analyses three central instruments – the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive – to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this ‘internal market detour’ is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the…
+
+[Read more](https://kluwerlawonline.com/JournalArticle/Common+Market+Law+Review/63.5 [pre-publication]/COLA2026072)
+
+---
 
 ### Multilateral Cooperation and Confidence-Building in Cyberspace
 *SWP (German Institute for International and Security Affairs) — 2026-09-29*
@@ -19,7 +37,7 @@ ABSTRACT The construction sector is a major contributor to the climate crisis, a
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-02*
+*European Environmental Law Review — 2026-10-04*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -46,7 +64,7 @@ Descarcă PDF-ul România are potențialul de a deveni un producător regional c
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-02*
+*European Environmental Law Review — 2026-10-04*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -118,7 +136,7 @@ SPARKLE supports cities across Europe to accelerate their local energy transitio
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-02*
+*European Environmental Law Review — 2026-10-04*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -168,6 +186,15 @@ With a draft climate bill introduced, Indonesia may be entering a new era of cli
 US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans’ chances have been dragged down by President Donald Trump’s near-record…
 
 [Read more](https://www.chathamhouse.org/2026/09/us-midterms-polls-are-democrats-winning-or-trump-losing)
+
+---
+
+### CCIA Welcomes FCC Actions Enabling Satellite Connectivity
+*CCIA Europe (Computer & Communications Industry Association) — 2026-09-29*
+
+Washington – The FCC is scheduled to vote September 30 on two Report and Orders (R&O) that will enable greater competition and innovation in satellite connectivity. The first R&O, Modernizing the Commission’s National Environmental Policy Act Rules, would modernize the Commission’s approach to conducting environmental reviews as required by the National Environmental Policy Act (NEPA). These reviews are a necessary part of the licensing process, but years of expansion in scope and processes turned them into a barrier for innovation rather than a tool for informed decision-making. The second,…
+
+[Read more](https://ccianet.org/news/2026/09/ccia-welcomes-fcc-actions-enabling-satellite-connectivity/)
 
 ---
 
@@ -288,6 +315,15 @@ Last summer's record heatwaves, wildfires and other extreme weather events acros
 
 ---
 
+### Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland’s EU presidency to recognise their efforts
+*Committee of the Regions — 2026-09-29*
+
+Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government…
+
+[Read more](https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise)
+
+---
+
 ### Without Fear or Favour: The European Commission’s DMA Non-Compliance Decision Against Google’s Self-Preferencing (Case DMA.100193)
 *Kluwer Competition Law Blog — 2026-09-30*
 
@@ -342,6 +378,15 @@ A newly published global review highlights the importance of relationships with 
 
 ---
 
+### Automotive transition: new EC-OECD evidence strengthens case for anticipation, quality jobs and industrial policy
+*industriAll Europe — 2026-09-30*
+
+New European Commission-OECD research shows the severe and lasting impact of automotive job losses and strengthens the case for anticipating change, protecting ...
+
+[Read more](https://news.industriall-europe.eu/Article/1602)
+
+---
+
 ### The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity
 *BC3 — 2026-10-02*
 
@@ -366,6 +411,24 @@ The Karakoram mountain range is one of the most remote and difficult to study in
 IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
 
 [Read more](https://news.industriall-europe.eu/Article/1599)
+
+---
+
+### European Semester must deliver for industrial workers and support a just transition
+*industriAll Europe — 2026-09-29*
+
+IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
+
+[Read more](https://news.industriall-europe.eu/Article/1599)
+
+---
+
+### Green Deal Funding Alert – September 2026
+*Committee of the Regions — 2026-09-29*
+
+This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.
+
+[Read more](https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026)
 
 ---
 
@@ -396,6 +459,15 @@ Europe’s push for greater sovereignty must strengthen its industrial base, del
 
 ---
 
+### Sustainable European sovereignty must deliver for workers
+*industriAll Europe — 2026-10-01*
+
+Europe’s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...
+
+[Read more](https://news.industriall-europe.eu/Article/1603)
+
+---
+
 ### Workers must shape Europe’s industrial transformation
 *industriAll Europe — 2026-10-02*
 
@@ -411,6 +483,15 @@ The BRIDGES 5.0 project has concluded after four years of work on how Europe’s
 The post More Dangerous than Splitting the Atom: Learning from Previous Technology Panics appeared first on The Lisbon Council .
 
 [Read more](https://lisboncouncil.net/more-dangerous-than-splitting-the-atom/)
+
+---
+
+### Europe’s Circular Economy: Closing the loop on strategic dependencies
+*European DIGITAL SME Alliance — 2026-09-28*
+
+The post Europe’s Circular Economy: Closing the loop on strategic dependencies appeared first on European DIGITAL SME Alliance .
+
+[Read more](https://www.digitalsme.eu/europes-circular-economy-closing-the-loop-on-strategic-dependencies/)
 
 ---
 

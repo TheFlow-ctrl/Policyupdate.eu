@@ -1,6 +1,32 @@
 {
-  "generated": "2026-10-03",
+  "generated": "2026-10-04",
   "entries": [
+    {
+      "org": "World Competition",
+      "field": "competition",
+      "title": "Selective Confusion: An Empirical Analysis of the DMA\u2019s Brussels Effect [pre-publication]",
+      "link": "https://kluwerlawonline.com/JournalArticle/World+Competition/49.3 [pre-publication]/WOCO2026021",
+      "date": "2026-10-04",
+      "summary": "This article examines the extent to which designated \u201cgatekeepers\u201d implement the provisions of the EU\u2019s Digital Markets Act (DMA) outside its territorial scope (\u201cBrussels Effect\u201d). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance\u2026",
+      "image": null,
+      "actor_type": "academic",
+      "content_type": "report",
+      "tags": [
+        "dma"
+      ]
+    },
+    {
+      "org": "Common Market Law Review",
+      "field": "competition",
+      "title": "THE \u2018INTERNAL MARKET DETOUR\u2019 FOR DEFENDING DEMOCRACY [pre-publication]",
+      "link": "https://kluwerlawonline.com/JournalArticle/Common+Market+Law+Review/63.5 [pre-publication]/COLA2026072",
+      "date": "2026-10-04",
+      "summary": "This article examines the EU\u2019s recent approach to defending democracy through internal market legislation. It analyses three central instruments \u2013 the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive \u2013 to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this \u2018internal market detour\u2019 is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the\u2026",
+      "image": null,
+      "actor_type": "academic",
+      "content_type": "report",
+      "tags": []
+    },
     {
       "org": "SWP (German Institute for International and Security Affairs)",
       "field": "security",
@@ -30,7 +56,7 @@
       "field": "green-deal",
       "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-      "date": "2026-10-02",
+      "date": "2026-10-04",
       "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
       "image": null,
       "actor_type": "academic",
@@ -66,7 +92,7 @@
       "field": "green-deal",
       "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-      "date": "2026-10-02",
+      "date": "2026-10-04",
       "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
       "image": null,
       "actor_type": "academic",
@@ -162,7 +188,7 @@
       "field": "green-deal",
       "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
       "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-      "date": "2026-10-02",
+      "date": "2026-10-04",
       "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
       "image": null,
       "actor_type": "academic",
@@ -226,6 +252,18 @@
       "summary": "US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans\u2019 chances have been dragged down by President Donald Trump\u2019s near-record\u2026",
       "image": "https://www.chathamhouse.org/sites/default/files/styles/chat_social_twitter_1200_600/public/2026-09/2026-09-29-us-midterms-election-vote-booth--2295317499.jpg?itok=Hn4j3s8F",
       "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "CCIA Europe (Computer & Communications Industry Association)",
+      "field": "green-deal",
+      "title": "CCIA Welcomes FCC Actions Enabling Satellite Connectivity",
+      "link": "https://ccianet.org/news/2026/09/ccia-welcomes-fcc-actions-enabling-satellite-connectivity/",
+      "date": "2026-09-29",
+      "summary": "Washington \u2013 The FCC is scheduled to vote September 30 on two Report and Orders (R&O) that will enable greater competition and innovation in satellite connectivity. The first R&O, Modernizing the Commission\u2019s National Environmental Policy Act Rules, would modernize the Commission\u2019s approach to conducting environmental reviews as required by the National Environmental Policy Act (NEPA). These reviews are a necessary part of the licensing process, but years of expansion in scope and processes turned them into a barrier for innovation rather than a tool for informed decision-making. The second,\u2026",
+      "image": "https://i0.wp.com/ccianet.org/wp-content/uploads/2026/09/Perez.FCC_.09292026.rev_.png?fit=1600%2C900&quality=80&ssl=1",
+      "actor_type": "industry",
       "content_type": null,
       "tags": []
     },
@@ -392,6 +430,18 @@
       "tags": []
     },
     {
+      "org": "Committee of the Regions",
+      "field": "green-deal",
+      "title": "Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland\u2019s EU presidency to recognise their efforts",
+      "link": "https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise",
+      "date": "2026-09-29",
+      "summary": "Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government\u2026",
+      "image": null,
+      "actor_type": "eu-institution",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "Kluwer Competition Law Blog",
       "field": "competition",
       "title": "Without Fear or Favour: The European Commission\u2019s DMA Non-Compliance Decision Against Google\u2019s Self-Preferencing (Case DMA.100193)",
@@ -468,6 +518,18 @@
       "tags": []
     },
     {
+      "org": "industriAll Europe",
+      "field": "competition",
+      "title": "Automotive transition: new EC-OECD evidence strengthens case for anticipation, quality jobs and industrial policy",
+      "link": "https://news.industriall-europe.eu/Article/1602",
+      "date": "2026-09-30",
+      "summary": "New European Commission-OECD research shows the severe and lasting impact of automotive job losses and strengthens the case for anticipating change, protecting ...",
+      "image": null,
+      "actor_type": "trade-union",
+      "content_type": null,
+      "tags": []
+    },
+    {
       "org": "BC3",
       "field": "green-deal",
       "title": "The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity",
@@ -500,6 +562,30 @@
       "summary": "IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...",
       "image": null,
       "actor_type": "trade-union",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "industriAll Europe",
+      "field": "green-deal",
+      "title": "European Semester must deliver for industrial workers and support a just transition",
+      "link": "https://news.industriall-europe.eu/Article/1599",
+      "date": "2026-09-29",
+      "summary": "IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...",
+      "image": null,
+      "actor_type": "trade-union",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "Committee of the Regions",
+      "field": "green-deal",
+      "title": "Green Deal Funding Alert \u2013 September 2026",
+      "link": "https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026",
+      "date": "2026-09-29",
+      "summary": "This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.",
+      "image": null,
+      "actor_type": "eu-institution",
       "content_type": null,
       "tags": []
     },
@@ -542,6 +628,18 @@
     {
       "org": "industriAll Europe",
       "field": "green-deal",
+      "title": "Sustainable European sovereignty must deliver for workers",
+      "link": "https://news.industriall-europe.eu/Article/1603",
+      "date": "2026-10-01",
+      "summary": "Europe\u2019s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...",
+      "image": null,
+      "actor_type": "trade-union",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "industriAll Europe",
+      "field": "green-deal",
       "title": "Workers must shape Europe\u2019s industrial transformation",
       "link": "https://news.industriall-europe.eu/Article/1601",
       "date": "2026-10-02",
@@ -560,6 +658,18 @@
       "summary": "The post More Dangerous than Splitting the Atom: Learning from Previous Technology Panics appeared first on The Lisbon Council .",
       "image": null,
       "actor_type": "think-tank",
+      "content_type": null,
+      "tags": []
+    },
+    {
+      "org": "European DIGITAL SME Alliance",
+      "field": "green-deal",
+      "title": "Europe\u2019s Circular Economy: Closing the loop on strategic dependencies",
+      "link": "https://www.digitalsme.eu/europes-circular-economy-closing-the-loop-on-strategic-dependencies/",
+      "date": "2026-09-28",
+      "summary": "The post Europe\u2019s Circular Economy: Closing the loop on strategic dependencies appeared first on European DIGITAL SME Alliance .",
+      "image": null,
+      "actor_type": "industry",
       "content_type": null,
       "tags": []
     },
