@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-04
+# Weekly Climate, Energy & Environment Digest — 2026-10-05
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-04*
+*World Competition — 2026-10-05*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -10,7 +10,7 @@ This article examines the extent to which designated “gatekeepers” implement
 ---
 
 ### THE ‘INTERNAL MARKET DETOUR’ FOR DEFENDING DEMOCRACY [pre-publication]
-*Common Market Law Review — 2026-10-04*
+*Common Market Law Review — 2026-10-05*
 
 This article examines the EU’s recent approach to defending democracy through internal market legislation. It analyses three central instruments – the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive – to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this ‘internal market detour’ is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the…
 
@@ -27,6 +27,15 @@ The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incid
 
 ---
 
+### Hidden ‘Network Fee’ Backdoors in EU Digital Networks Act Exposed as Big Telcos Push for Mandatory Payments Behind Closed Doors
+*CCIA Europe (Computer & Communications Industry Association) — 2026-10-01*
+
+Brussels, BELGIUM – As Europe’s largest telecom operators gather in Brussels today, the Computer & Communications Industry Association (CCIA Europe) has launched a new policy explainer revealing how the European Commission’s proposed Digital Networks Act (DNA) creates two legal pathways for mandatory ‘network fees’. The explainer, Beyond Speculation: How the DNA Codifies Pathways Towards Network Fees , warns that the threat is no longer theoretical: mechanisms that could introduce network fees are already written into the text being negotiated by EU co-legislators. Yet after years of publicly…
+
+[Read more](https://ccianet.org/news/2026/10/hidden-network-fee-backdoors-in-eu-digital-networks-act-exposed-as-big-telcos-push-for-mandatory-payments-behind-closed-doors/)
+
+---
+
 ### Bridging Policy Gaps in Transition Times: How Local Actors Navigate Low Policy Coherence for Advancing a Circular Built Environment
 *Environmental Policy and Governance — 2026-10-02*
 
@@ -36,12 +45,57 @@ ABSTRACT The construction sector is a major contributor to the climate crisis, a
 
 ---
 
+### AlgorithmWatch kritisiert im Wirtschaftsausschuss: Weniger Effizienz bei Rechenzentren kostet die Wirtschaft Milliarden
+*AlgorithmWatch — 2026-10-02*
+
+Berlin, 2. Oktober 2026 – In seiner Stellungnahme vor dem Wirtschaftsausschuss des Bundestags bemängelt Dr. Julian Bothe, Senior Policy Manager bei AlgorithmWatch, mehrere zentrale Punkte des Gesetzentwurfs. Er kritisiert, dass Effizienzanforderungen und Transparenz für Rechenzentren geschwächt und die Pflicht zur Nutzung erneuerbarer Energien verschoben werden sollen, ebenso wie den Versuch, zusätzliche Ausnahmen bei der Abwärmenutzung zu schaffen. Angesichts der zahlreichen laufenden Bauprojekte widerspricht Dr. Bothe zudem der Annahme der Bundesregierung, dass es überhaupt notwendig ist,…
+
+[Read more](https://algorithmwatch.org/de/algorithmwatch-kritisiert-im-wirtschaftsausschuss-weniger-effizienz-bei-rechenzentren-kostet-die-wirtschaft-milliarden/)
+
+---
+
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-04*
+*European Environmental Law Review — 2026-10-05*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
+
+---
+
+### Studie: Verschlechterungen von Effizienzstandards bei Rechenzentren führen zu sehr großen zusätzlichen Energiebedarfen
+*AlgorithmWatch — 2026-10-02*
+
+Eine einfache Berechnung auf Basis der verfügbaren Daten und unter Annahme eines starken Wachstums zeigt: Bereits eine geringe Verschlechterung von Effizienzstandards bei Rechenzentren führt zu sehr großen zusätzlichen Strom- und Wärmebedarfen. Im Jahr 2045 entspricht der zusätzliche Energieverbrauch der Stromproduktion von sieben Gaskraftwerken. Die zusätzlich zu erzeugende Wärmemenge im Jahr 2045 entspricht der Wärme-Importmenge, die mit elf großen LNG-Tankschiffen transportiert werden kann. Akkumuliert über die Jahre 2026 bis 2045 führen sowohl der Strommehrverbrauch als auch die…
+
+[Read more](https://algorithmwatch.org/de/verschlechterungen-von-effizienzstandards-bei-rechenzentren-fuhren-zu-zusatzlichen-energiebedarfen/)
+
+---
+
+### Stellungnahme zur öffentlichen Anhörung anlässlich der geplanten Novelle des Energieeffizienzgesetzes
+*AlgorithmWatch — 2026-10-01*
+
+Der vorliegende Gesetzentwurf, beschlossen von der Bundesregierung am 10.7.2026, ändert das Energieeffizienzgesetz (EnEfG) vom 13.11.2023, das Energiedienstleistungsgesetz (EDL-G) vom 04.11.2010 sowie mehrere Verordnungen. Diese Stellungnahme beschränkt sich aus Zeitgründen auf die Änderungen im Energieeffizienzgesetz (EnEfG-E) und darin auf die Änderungen mit direktem Bezug zu Rechenzentren (insbesondere Abschnitt 4 „Energieeffizienz in Rechenzentren“, §§ 11-15). Anlass der Novelle ist zum einen die Neufassung der Europäischen Energieeffizienzrichtlinie (EED) vom 10. Oktober 2023 und zum…
+
+[Read more](https://algorithmwatch.org/de/stellungnahme-novelle-energieeffizienzgesetz/)
+
+---
+
+### Call for Inputs on the review of the regulatory framework for regulated intra-EU communications
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-02*
+
+Call for Inputs on the review of the regulatory framework for regulated intra-EU communications yannick.stephan Fri, 02/10/2026 - 12:10 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 6 November 2026 Background The European Commission has invited BEREC to assess the functioning of the market and to provide its views on the regulatory framework, including the transition towards the application of the principle that retail prices for regulated intra-EU calls and SMS should not differ from domestic retail prices from 1 January 2029, subject to the applicable…
+
+[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/call-for-inputs-on-the-review-of-the-regulatory-framework-for-regulated-intra-eu-communications)
+
+---
+
+### Stellungnahme zum Gesetz zur Fortentwicklung polizeirechtlicher Maßnahmen in Schleswig-Holstein
+*AlgorithmWatch — 2026-09-30*
+
+AlgorithmWatch fokussiert sich in dieser Stellungnahme auf die Datenerhebung bei öffentlichen Veranstaltungen und Ansammlungen sowie an allgemein zugänglichen Orten (§ 184), die Echtzeit-Fernidentifizierung in öffentlich zugänglichen Räumen (§ 184b), die Durchführung der Echtzeit-Fernidentifizierung in öffentlich zugänglichen Räumen (§ 184c), die nachträgliche Fernidentifizierung (§ 195b) sowie die Durchführung der nachträglichen Fernidentifizierung (§ 195c). Die nachträgliche Fernidentifizierung per Abgleich biometrischer Daten mit biometrischen Daten aus dem Internet schafft die technischen…
+
+[Read more](https://algorithmwatch.org/de/stellungnahme-zum-gesetz-zur-fortentwicklung-polizeirechtlicher-masnahmen-in-schleswig-holstein/)
 
 ---
 
@@ -54,21 +108,30 @@ South Africa’s Just Energy Transition Partnership (JETP) has helped mobilise i
 
 ---
 
-### Viitorul industriei metalurgice românești: între transformare, revitalizare și riscul declinului
-*EPG Thinktank — 2026-09-28*
+### Site Surveys and Managing Geohazard Assessments of Wind Farms: Building Confidence from Seabed to Site Design
+*IOGP — 2026-10-05*
 
-Descarcă PDF-ul România are potențialul de a deveni un producător regional competitiv de metale cu emisii scăzute de carbon. Măsurile care vor fi adoptate în următorii ani de către industrie și decidenți vor determina transformarea sau declinul industriei metalurgice românești. Sunt necesare măsuri concrete de sprijin, corelate cu prioritățile asumate prin Pactul pentru o Industrie Curată și orientate către transpunerea inițiativelor europene în soluții concrete care răspund provocărilor din sector. Concluziile autoarei: „Contextul actual oferă României o oportunitate fără precedent de a…
+On 24 September 2026, the IOGP Geomatics Committee’s Geophysical Operations Subcommittee hosted its Members-Only workshop, “Site Surveys and Managing Geohazard Assessments of Wind Farms.” The event brought together geoscientists, survey specialists, offshore wind developers, and geohazard practitioners to explore how effective site investigations and geohazard assessments support the safe, sustainable, and cost-efficient development of offshore wind projects. With over 45 attendees representing more than 18 member companies, the workshop showcased the growing importance of site…
 
-[Read more](https://www.epg-thinktank.org/viitorul-industriei-metalurgice-romanesti-intre-transformare-revitalizare-si-riscul-declinului/)
+[Read more](https://www.iogp.org/blog/news/site-surveys-and-managing-geohazard-assessments-of-wind-farms-building-confidence-from-seabed-to-site-design/)
 
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-04*
+*European Environmental Law Review — 2026-10-05*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014)
+
+---
+
+### CCIA Publishes Paper on Top Digital Trade Barriers in the G20 Ahead of Trade Ministerial
+*CCIA Europe (Computer & Communications Industry Association) — 2026-09-28*
+
+Washington – The Computer & Communications Industry Association released a paper on its members’ top G20 digital trade priorities on Monday, ahead of the G20 Trade Ministerial in Milwaukee from September 30, 2026 to October 1, 2026. The paper highlights key issues in priority markets, including the European Union, Australia, South Korea, India, and Indonesia. US digital services exports to the G20 are worth about $666 billion, with current barriers in the G20 implicating at least $300 billion in forgone revenue for US companies. The following can be attributed to Computer & Communications…
+
+[Read more](https://ccianet.org/news/2026/09/ccia-publishes-paper-on-top-digital-trade-barriers-in-the-g20-ahead-of-trade-ministerial/)
 
 ---
 
@@ -126,30 +189,21 @@ Escaping the Hormuz trap: What should an agreement to reopen the Strait look lik
 
 ---
 
-### SPARKLE Peer-to-Peer Sessions: exchange with and learn from other cities
-*Energy Cities — 2026-09-29*
+### Slovenia must protect independent and sustainable funding for RTV Slovenija
+*European Federation of Journalists — 2026-10-05*
 
-SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to Autumn 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
+The European Federation of Journalists (EFJ) stands with its Slovenian affiliates, the Trade Union of Slovenian Journalists (SNS) and the Slovenian Association of Journalists (DNS), in their defense of independent, sustainable and predictable funding for the public service media RTV Slovenija. On 11 October 2026, Slovenian citizens will vote in a consultative referendum on the proposed abolition of the mandatory RTV contribution that finances RTV Slovenija. The referendum question reads: “Are you in favour of abolishing the mandatory payment of the contribution for Radiotelevizija Slovenija…
 
-[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
+[Read more](https://europeanjournalists.org/blog/2026/10/05/slovenia-must-protect-independent-and-sustainable-funding-for-rtv-slovenija/)
 
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-04*
+*European Environmental Law Review — 2026-10-05*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
-
----
-
-### Brazil’s presidential election is more than just another polarized contest
-*Chatham House — 2026-09-28*
-
-Brazil’s presidential election is more than just another polarized contest Expert comment jon.wallace 28 September 2026 A Bolsonaro victory would mean Trump-aligned governments dominate South America. The first round of Brazil’s presidential election is scheduled for 4 October, with 13 candidates competing to occupy the Brazilian presidential palace, Planalto. For now, the contest is dominated by two men. Only a few percentage points (depending on the poll) separate 80-year-old President Luiz Inácio Lula da Silva of the Workers’ Party (PT) – running for his fourth term – and 45-year-old…
-
-[Read more](https://www.chathamhouse.org/2026/09/brazils-presidential-election-more-just-another-polarized-contest)
 
 ---
 
@@ -180,6 +234,42 @@ With a draft climate bill introduced, Indonesia may be entering a new era of cli
 
 ---
 
+### CCIA Europe Strengthens Brussels Team with Three New Appointments
+*CCIA Europe (Computer & Communications Industry Association) — 2026-09-30*
+
+Brussels, BELGIUM – The Computer & Communications Industry Association (CCIA Europe) has strengthened its Brussels office with new staff appointments across its policy and communications teams. Albane Vannier, Alessia Loi, and Beatriz Tomé Rodríguez join CCIA Europe as it continues to advocate for a thriving EU digital economy, a role the Association has played since 2009. Albane Vannier joins CCIA Europe as Policy Manager, leading the Association’s advocacy on consumer protection, online safety, and platform-related issues. Prior to this role, Vannier worked as a public affairs consultant in…
+
+[Read more](https://ccianet.org/news/2026/09/ccia-europe-strengthens-brussels-team-with-three-new-appointments/)
+
+---
+
+### Peer-to-Peer Sessions: exchange with and learn from other cities
+*Energy Cities — 2026-09-29*
+
+SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to Autumn 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
+
+[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
+
+---
+
+### How the insurance industry can help society adapt to climate change
+*Chatham House — 2026-10-01*
+
+How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
+
+[Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
+
+---
+
+### How the insurance industry can help society adapt to climate change
+*Chatham House — 2026-10-01*
+
+How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
+
+[Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
+
+---
+
 ### US midterms polls: Are Democrats winning or is Trump losing?
 *Chatham House — 2026-09-28*
 
@@ -189,21 +279,21 @@ US midterms polls: Are Democrats winning or is Trump losing? Expert comment thil
 
 ---
 
-### CCIA Welcomes FCC Actions Enabling Satellite Connectivity
-*CCIA Europe (Computer & Communications Industry Association) — 2026-09-29*
+### Key points for consumers: Future-proofing electricity bills
+*BEUC (The European Consumer Organisation) — 2026-10-05*
 
-Washington – The FCC is scheduled to vote September 30 on two Report and Orders (R&O) that will enable greater competition and innovation in satellite connectivity. The first R&O, Modernizing the Commission’s National Environmental Policy Act Rules, would modernize the Commission’s approach to conducting environmental reviews as required by the National Environmental Policy Act (NEPA). These reviews are a necessary part of the licensing process, but years of expansion in scope and processes turned them into a barrier for innovation rather than a tool for informed decision-making. The second,…
+Key points for consumers: Future-proofing electricity bills sandrine.carpentier Mon 05/10/2026 - 10:55 The 2026 Middle East war shows that Europe's fossil fuel dependence leaves consumers vulnerable to price shocks. The electrification of homes and cars, powered by renewable energy, addresses the issue by reducing this dependence. The speed of this energy transition rests on a complex set of factors tackled by the European Commission's proposal on 'future-proofing electricity bills': how electricity is taxed, how much households pay to use the grid, and how efficiently the grid is operated.…
 
-[Read more](https://ccianet.org/news/2026/09/ccia-welcomes-fcc-actions-enabling-satellite-connectivity/)
+[Read more](https://www.beuc.eu/tools/key-points-consumers-future-proofing-electricity-bills)
 
 ---
 
-### New EU greenwashing law makes sustainable shopping easier
-*EEB (European Environmental Bureau) — 2026-09-28*
+### Public consultation on the draft BEREC Work Programme 2027
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
 
-Sustainable consumption will become easier across the EU, as the Directive on Empowering Consumers in the Green Transition comes into effect today. The European Environmental Bureau (EEB) welcomes the new rules and calls on EU governments to apply them promptly. The law aims to defend consumers from greenwashing tactics by prohibiting a series of unfair and dishonest marketing practices that make it difficult to choose the most sustainable option. Three out of four products on the EU market carry an implicit or explicit green claim , yet over half of these claims are vague, misleading or…
+Public consultation on the draft BEREC Work Programme 2027 yannick.stephan Thu, 01/10/2026 - 09:00 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 31 October 2026 In January this year, BEREC adopted the Outline BEREC Work Programme 2027 , which reflected BEREC's objectives for the upcoming year. BEREC launched a first Call for inputs on the Work Programme 2027 from 27 February to 15 April. During the call for proposals, several additional actions were identified. Considering the early input received, during the 68th BEREC ordinary meetings (1-2 October…
 
-[Read more](https://eeb.org/en/new-eu-greenwashing-law-makes-sustainable-shopping-easier/)
+[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-work-programme-2027)
 
 ---
 
@@ -225,6 +315,24 @@ The upward trend in power sector emissions continued in August, reaching 1.38 mi
 
 ---
 
+### Europe sets the rules, Heat Heroes make them work
+*Energy Cities — 2026-10-05*
+
+No directive will heat a single home on its own. That work happens in cities and towns, led by local authorities and the people we call our Heat Heroes. So what does it take to get them there? Europe’s ambition to leave fossil fuel behind Over the past few years, the EU has been building clearer frameworks to move away from fossil fuels towards cleaner, more secure and more affordable energy systems. Since the European Green Deal, this ambition has been translated into legislation, from the recast Energy Efficiency Directive to the Electrification Action Plan published last July , which aims…
+
+[Read more](https://energy-cities.eu/europe-sets-the-rules-heat-heroes-make-them-work/)
+
+---
+
+### Michel Van Bellinghen elected BEREC Chair 2028
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
+
+Michel Van Bellinghen elected BEREC Chair 2028 yannick.stephan Thu, 01/10/2026 - 08:59 Latest News At its plenary meeting on 1 October 2026, the Board of Regulators elected Michel Van Bellinghen , Chair of the BIPT Council (Belgium), as the BEREC Chair for 2028. In the year preceding the chairmanship, he will join the Mini-Board and work closely with the incoming Chair, Alejandra de Iturriaga Gandini ( CNMC , Spain), helping to ensure a smooth handover of responsibilities and continuity in BEREC’s work. This will be the second time Michel Van Bellinghen serves as BEREC Chair. BEREC leadership…
+
+[Read more](https://www.berec.europa.eu/en/news/latest-news/michel-van-bellinghen-elected-berec-chair-2028)
+
+---
+
 ### Migration Update August-September 2026
 *Wilfried Martens Centre (EPP) — 2026-09-30*
 
@@ -243,6 +351,24 @@ Europeans are living longer. This is one of the achievements of our social model
 
 ---
 
+### September 2026
+*Wilfried Martens Centre (EPP) — 2026-10-02*
+
+September brings not only the start of a new policy season but also a renewed conversation about where the EU is heading, marked by the annual State of the Union address. In a Martens Centre blog post Klaus Welle, Tomi Huhtanen, Peter Hefele, Dimitar Lilkov and Gavin Synnott highlight five elements that emerged from SOTEU. Check it out here ! In this edition of our monthly newsletter, we also bring together our latest media mentions , events , and research touching upon key issues for Europe: from competitiveness and security to digitalising Europe’s economy and cross-border resilience . Head…
+
+[Read more](https://www.martenscentre.eu/newsletter/september-2026/)
+
+---
+
+### Targeted consultation to support a better copyright environment for creativity and innovation
+*European Commission -- Shaping Europe's Digital Future — 2026-09-29*
+
+Targeted consultation to support a better copyright environment for creativity and innovation Anonymous (not verified) Tue, 09/29/2026 - 10:15 Opening: 29 September 2026 Closing: 03 November 2026 The Commission has launched a targeted consultation in preparation of a possible initiative for a better copyright environment for creativity and innovation. © anyaberkut Main link https://ec.europa.eu/eusurvey/runner/targetedconsultationcopyright Related topics Research and Innovation Copyright Artificial intelligence
+
+[Read more](https://digital-strategy.ec.europa.eu/en/consultations/targeted-consultation-support-better-copyright-environment-creativity-and-innovation)
+
+---
+
 ### Trends in electricity production – August 2026
 *The Green Tank — 2026-09-30*
 
@@ -252,12 +378,30 @@ Renewables reached a new all-time monthly high in August, at 3,312 GWh. However,
 
 ---
 
+### The KIDS Act will make the internet less safe
+*EDRi (European Digital Rights) — 2026-09-30*
+
+On 16 September, the European Commission presented the KIDS ACT, its plan for making online experiences safer for young people. Far from being a move to lead the EU towards better digital environments, this move is a missed opportunity to address the root cause of why online platforms are harmful to children – and everyone else. This blog analyse the proposal’s shortcomings. The post The KIDS Act will make the internet less safe appeared first on European Digital Rights (EDRi) .
+
+[Read more](https://edri.org/our-work/the-kids-act-will-make-the-internet-less-safe/)
+
+---
+
 ### Three months countdown: from political debate to execution of the EU Deforestation Regulation
 *IEEP — 2026-10-01*
 
 With three months to go before the EU Deforestation Regulation (EUDR) is enforced, IEEP and World Resources Institute brought together the European Commission and business voices to address the question: are you ready for the EUDR? The answer was a resounding ‘yes’. The post Three months countdown: from political debate to execution of the EU Deforestation Regulation appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/three-months-countdown-from-political-debate-to-execution-of-the-eu-deforestation-regulation/)
+
+---
+
+### An RFCS-CRiT conference
+*EURACOAL (European Association for Coal and Lignite) — 2026-10-05*
+
+The conference “Clean Energy, Restored Lands: The Path Forward for Coal Regions” examined how European coal and lignite regions can transition from fossil fuel production to sustainable economic development through research, innovation, site restoration, and regional regeneration. Organised in partnership with EURACOAL for the EU Research Fund for Coal and Steel (RFCS) and the Coal … Continue reading An RFCS-CRiT conference →
+
+[Read more](https://euracoal.eu/2026/10/05/an-rfcs-crit-conference/)
 
 ---
 
@@ -294,24 +438,6 @@ A Circular Economy Act delivering a strong EU market for secondary raw materials
 European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
 
 [Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2019)
-
----
-
-### Commission approves €170 million Bulgarian State aid for farmers facing increased fuel and fertiliser prices
-*European Commission (Competition Press Corner) — 2026-10-01*
-
-European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
-
-[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2019)
-
----
-
-### Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland’s EU presidency to recognise their efforts
-*Committee of the Regions — 2026-09-29*
-
-Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government…
-
-[Read more](https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise)
 
 ---
 
@@ -414,21 +540,12 @@ IndustriAll Europe participated on 28 September, alongside the ETUC, in the Impl
 
 ---
 
-### European Semester must deliver for industrial workers and support a just transition
-*industriAll Europe — 2026-09-29*
+### The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe’s Future Competitiveness
+*Lisbon Council — 2026-10-05*
 
-IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
+The post The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe’s Future Competitiveness appeared first on The Lisbon Council .
 
-[Read more](https://news.industriall-europe.eu/Article/1599)
-
----
-
-### Green Deal Funding Alert – September 2026
-*Committee of the Regions — 2026-09-29*
-
-This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.
-
-[Read more](https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026)
+[Read more](https://lisboncouncil.net/the-1-trillion-why-an-obscure-copyright-acronym-could-decide-europes-future-competitiveness/)
 
 ---
 
@@ -459,15 +576,6 @@ Europe’s push for greater sovereignty must strengthen its industrial base, del
 
 ---
 
-### Sustainable European sovereignty must deliver for workers
-*industriAll Europe — 2026-10-01*
-
-Europe’s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...
-
-[Read more](https://news.industriall-europe.eu/Article/1603)
-
----
-
 ### Workers must shape Europe’s industrial transformation
 *industriAll Europe — 2026-10-02*
 
@@ -477,21 +585,12 @@ The BRIDGES 5.0 project has concluded after four years of work on how Europe’s
 
 ---
 
-### More Dangerous than Splitting the Atom: Learning from Previous Technology Panics
-*Lisbon Council — 2026-09-28*
+### SIPRI co-convenes human security dialogue in Rome
+*SIPRI — 2026-10-05*
 
-The post More Dangerous than Splitting the Atom: Learning from Previous Technology Panics appeared first on The Lisbon Council .
+On 16–17 September, SIPRI, IAI and UNTFHS convened a two-day dialogue in Rome on human security in Europe and the Mediterranean.
 
-[Read more](https://lisboncouncil.net/more-dangerous-than-splitting-the-atom/)
-
----
-
-### Europe’s Circular Economy: Closing the loop on strategic dependencies
-*European DIGITAL SME Alliance — 2026-09-28*
-
-The post Europe’s Circular Economy: Closing the loop on strategic dependencies appeared first on European DIGITAL SME Alliance .
-
-[Read more](https://www.digitalsme.eu/europes-circular-economy-closing-the-loop-on-strategic-dependencies/)
+[Read more](https://www.sipri.org/news/2026/sipri-co-convenes-human-security-dialogue-rome)
 
 ---
 
@@ -501,15 +600,6 @@ The post Europe’s Circular Economy: Closing the loop on strategic dependencies
 IETA welcomes Canada's initiative to develop Article 6 participation framework
 
 [Read more](https://www.ieta.org/news/ieta-welcomes-canadas-initiative-to-develop-article-6-participation-framework)
-
----
-
-### SIPRI hosts discussion on human security and the WPS agenda
-*SIPRI — 2026-09-28*
-
-SIPRI convened an online event focused on integrating the WPS agenda into peacebuilding.
-
-[Read more](https://www.sipri.org/news/2026/sipri-hosts-discussion-human-security-and-wps-agenda)
 
 ---
 
