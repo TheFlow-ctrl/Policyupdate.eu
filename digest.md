@@ -126,12 +126,12 @@ This article examines whether European Union (EU) rule-of-law principles constra
 
 ---
 
-### CCIA Publishes Paper on Top Digital Trade Barriers in the G20 Ahead of Trade Ministerial
-*CCIA Europe (Computer & Communications Industry Association) — 2026-09-28*
+### CLEPA joins call for workable CBAM rules that protect the entire automotive value chain
+*CLEPA (European Association of Automotive Suppliers) — 2026-10-05*
 
-Washington – The Computer & Communications Industry Association released a paper on its members’ top G20 digital trade priorities on Monday, ahead of the G20 Trade Ministerial in Milwaukee from September 30, 2026 to October 1, 2026. The paper highlights key issues in priority markets, including the European Union, Australia, South Korea, India, and Indonesia. US digital services exports to the G20 are worth about $666 billion, with current barriers in the G20 implicating at least $300 billion in forgone revenue for US companies. The following can be attributed to Computer & Communications…
+CLEPA, together with ACEA and Tyres Europe, has called on EU institutions to ensure that the proposed extension of the Carbon Border Adjustment Mechanism (CBAM) works for the whole automotive value chain, including automotive suppliers, vehicle manufacturers, and tyre producers. In a joint letter ahead of the interinstitutional negotiations on CBAM downstream extension, the signatories express support for CBAM’s objective of preventing carbon leakage, but warn that the current direction of the talks risks creating significant compliance burdens and costs for downstream industries. They urge…
 
-[Read more](https://ccianet.org/news/2026/09/ccia-publishes-paper-on-top-digital-trade-barriers-in-the-g20-ahead-of-trade-ministerial/)
+[Read more](https://www.clepa.eu/insights-updates/news/clepa-joins-call-for-workable-cbam-rules-that-protect-the-entire-automotive-value-chain/)
 
 ---
 
@@ -198,6 +198,15 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 
 ---
 
+### Sánchez’s gamble: This ‘all-in’ election will have international impact
+*Chatham House — 2026-10-05*
+
+Sánchez’s gamble: This ‘all-in’ election will have international impact Expert comment jon.wallace 5 October 2026 Announcing the election, Sánchez set himself in opposition to President Trump and Javier Milei as well as Spain’s populist right. Much will depend on the prime minister’s ability to rally a fragmented left. The decision by Prime Minister Pedro Sánchez to call a snap election is a risky move, but he will have felt he had little choice. His decision fires the starting gun on a year of vital and polarized elections across Europe. The announcement is not entirely unexpected. Spain was…
+
+[Read more](https://www.chathamhouse.org/2026/10/sanchezs-gamble-all-election-will-have-international-impact)
+
+---
+
 ### Invasive Alien Species and European Union Regulation: Some Reflections
 *European Environmental Law Review — 2026-10-05*
 
@@ -243,6 +252,15 @@ Brussels, BELGIUM – The Computer & Communications Industry Association (CCIA E
 
 ---
 
+### Nepal’s floods put the global loss and damage system to the test
+*Chatham House — 2026-10-05*
+
+Nepal’s floods put the global loss and damage system to the test Expert comment jon.wallace 5 October 2026 Nepal’s recovery from August’s catastrophic glacial flood will test the efficiency of the UN’s Fund for Responding to Loss and Damage. It will also resurface questions about the responsibilities of the greatest carbon emitters. On 26 August 2026, a glacial disaster high in the Himalayas sent a wall of meltwater and debris tearing through Nepal’s Bhotekoshi and Rasuwa region at speeds of nearly 188 km per hour. The flood has claimed over 1400 lives, with thousands still missing. Nepal is…
+
+[Read more](https://www.chathamhouse.org/2026/10/nepals-floods-put-global-loss-and-damage-system-test)
+
+---
+
 ### Peer-to-Peer Sessions: exchange with and learn from other cities
 *Energy Cities — 2026-09-29*
 
@@ -267,15 +285,6 @@ How the insurance industry can help society adapt to climate change Expert comme
 How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
 
 [Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
-
----
-
-### US midterms polls: Are Democrats winning or is Trump losing?
-*Chatham House — 2026-09-28*
-
-US midterms polls: Are Democrats winning or is Trump losing? Expert comment thilton.drupal 28 September 2026 Polls suggest Democrats will take control of the House of Representatives as American voters are dissatisfied with President Trump and his policies. Americans go to the polls on 3 November to elect a third of the US Senate and all the House of Representatives. The Republicans currently have majorities in both chambers of Congress. But their prospects of retaining this control look increasingly dire. The Republicans’ chances have been dragged down by President Donald Trump’s near-record…
-
-[Read more](https://www.chathamhouse.org/2026/09/us-midterms-polls-are-democrats-winning-or-trump-losing)
 
 ---
 
@@ -402,6 +411,15 @@ With three months to go before the EU Deforestation Regulation (EUDR) is enforce
 The conference “Clean Energy, Restored Lands: The Path Forward for Coal Regions” examined how European coal and lignite regions can transition from fossil fuel production to sustainable economic development through research, innovation, site restoration, and regional regeneration. Organised in partnership with EURACOAL for the EU Research Fund for Coal and Steel (RFCS) and the Coal … Continue reading An RFCS-CRiT conference →
 
 [Read more](https://euracoal.eu/2026/10/05/an-rfcs-crit-conference/)
+
+---
+
+### Commission finds Polish support for MAN Trucks factory expansion incompatible State aid
+*European Commission — Press Corner — 2026-10-04*
+
+European Commission Press release Brussels, 05 Oct 2026 The European Commission has concluded that Poland's plan to support the extension of capacity of a factory of truck producer MAN Trucks Sp. z o. o. in Niepołomice in the Małopolskie region is not in line with EU State aid rules. Therefore, Poland cannot disburse the aid.
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2056)
 
 ---
 
@@ -537,6 +555,15 @@ The Karakoram mountain range is one of the most remote and difficult to study in
 IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
 
 [Read more](https://news.industriall-europe.eu/Article/1599)
+
+---
+
+### Chips Act 2.0 must put Europe’s industrial capacity and workers at its core
+*industriAll Europe — 2026-10-05*
+
+Semiconductors are essential to Europe’s industries, technological sovereignty and quality jobs. industriAll Europe calls for Chips Act 2.0 to strengthen the en...
+
+[Read more](https://news.industriall-europe.eu/Article/1606)
 
 ---
 
