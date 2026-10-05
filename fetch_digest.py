@@ -454,6 +454,16 @@ EXCLUDED_URLS = {
     # A "register for our WhatsApp updates" utility page, not a policy
     # contribution -- matched the keyword filter incidentally.
     "https://www.e3g.org/news/e3g-whatsapp-registration-for-updates/",
+    # US telecom item (FCC satellite-spectrum votes) that matched the
+    # green-deal cross-tag filter only because of the phrase "National
+    # Environmental Policy Act" -- fixed at the source by
+    # _CROSS_TAG_FALSE_POSITIVE_RE/eu_gate in main(); listed here so the
+    # copy already sitting in archive.json/digest.json is purged too.
+    "https://ccianet.org/news/2026/09/ccia-welcomes-fcc-actions-enabling-satellite-connectivity/",
+    # Romanian-language EPG Thinktank post. is_non_english_title() already
+    # catches it (langdetect: ro, 0.99999), so this is belt-and-braces to
+    # purge any copy still sitting in already-generated output.
+    "https://www.epg-thinktank.org/viitorul-industriei-metalurgice-romanesti-intre-transformare-revitalizare-si-riscul-declinului/",
 }
 
 # Sources whose entire output is unusable for this English-language
@@ -1108,6 +1118,13 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     sources.yaml for which sources use this.
     """
     if field not in ("green-deal", "competition"):
+        # No topic keyword gate for these fields (see above), but the
+        # per-source eu_gate flag must still be honoured -- previously this
+        # returned early and silently ignored eu_gate for security/tech/
+        # health sources, so e.g. a US-only CCIA post or a non-EU Access Now
+        # item sailed straight through.
+        if eu_gate:
+            return [e for e in entries if is_eu_relevant(e["title"], e["summary"])]
         return entries
 
     kept = []
@@ -1141,6 +1158,57 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
         print(f"  filtered out {io_skipped} non-EU/non-global-benchmark international-org item(s)")
 
     return kept
+
+
+# Phrases that contain a cross-tag keyword but mean something unrelated.
+# Concrete case: CCIA's post on FCC satellite-spectrum rules mentioned the
+# US "National Environmental Policy Act" (NEPA), which matched the
+# "environmental policy" cross-tag keyword and surfaced a US telecom item
+# on the Green Deal tab. Stripped from the text before keyword matching.
+_CROSS_TAG_FALSE_POSITIVE_RE = re.compile(
+    r"national environmental policy act|\bnepa\b", re.IGNORECASE
+)
+
+
+def _cross_tag_match(entry, pattern, eu_gate=False):
+    """True if `entry` should be cross-tagged into another field.
+
+    Applies the false-positive phrase scrub above, and -- for sources
+    flagged eu_gate: true -- the same EU-specificity gate the primary path
+    uses. Without that, cross-tagging bypassed eu_gate entirely: a globally-
+    focused source's non-EU item was correctly dropped from its own field
+    but still copied into green-deal/competition."""
+    text = _CROSS_TAG_FALSE_POSITIVE_RE.sub(
+        " ", f"{entry['title']} {entry['summary']}"
+    )
+    if not pattern.search(text):
+        return False
+    if eu_gate and not is_eu_relevant(entry["title"], entry["summary"]):
+        return False
+    return True
+
+
+def dedupe_entries(entries):
+    """Drop repeated (field, link) pairs, keeping the first occurrence.
+
+    The same organisation is deliberately tracked under several fields via
+    separate sources.yaml entries sharing one feed/scraper (Committee of the
+    Regions, industriAll Europe, Bruegel...). Each such entry also
+    cross-tags its items into green-deal, so the same post reached the
+    digest twice under green-deal: once from the green-deal entry and once
+    as a cross-tag copy from the competition/tech entry. Returns
+    (kept, number_dropped)."""
+    seen = set()
+    kept = []
+    dropped = 0
+    for e in entries:
+        key = (e.get("field"), e.get("link"))
+        if key in seen:
+            dropped += 1
+            continue
+        seen.add(key)
+        kept.append(e)
+    return kept, dropped
 
 
 def load_sources():
@@ -2126,7 +2194,7 @@ def main():
         if field != "green-deal":
             cross_matches = [
                 e for e in raw_entries
-                if _CROSS_TAG_PATTERN.search(f"{e['title']} {e['summary']}")
+                if _cross_tag_match(e, _CROSS_TAG_PATTERN, eu_gate)
             ]
             for match in cross_matches:
                 cross_entry = dict(match)  # copy -- don't mutate the original
@@ -2153,7 +2221,7 @@ def main():
         if field != "competition":
             competition_cross_matches = [
                 e for e in raw_entries
-                if _COMPETITION_CROSS_TAG_PATTERN.search(f"{e['title']} {e['summary']}")
+                if _cross_tag_match(e, _COMPETITION_CROSS_TAG_PATTERN, eu_gate)
             ]
             for match in competition_cross_matches:
                 cross_entry = dict(match)  # copy -- don't mutate the original
@@ -2164,6 +2232,10 @@ def main():
                 all_entries.append(cross_entry)
             if competition_cross_matches:
                 print(f"  +{len(competition_cross_matches)} also surfaced under competition (cross-topic match)")
+
+    all_entries, duplicates_dropped = dedupe_entries(all_entries)
+    if duplicates_dropped:
+        print(f"\nDropped {duplicates_dropped} duplicate (field, link) entr{'y' if duplicates_dropped == 1 else 'ies'}")
 
     # Importance-first ordering: reports and longer, more substantive
     # contributions (e.g. a full analysis) surface above short press
