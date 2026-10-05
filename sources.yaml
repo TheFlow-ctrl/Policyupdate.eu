@@ -1280,12 +1280,13 @@ sources:
   - name: Orgalim (Europe's Technology Industries)
     scraper: orgalim
     field: green-deal
-    actor_type: international-org
-    # Not actually global (it's a European industry federation -- engineering,
-    # machinery, electronics), but grouped here rather than under industry
-    # since it's a federation-of-federations voice rather than a single
-    # company/sector lobby -- Ecodesign, circular economy, industrial
-    # strategy relevant. No RSS feed, and the listing cards carry no date at
+    actor_type: industry
+    # European industry federation (engineering, machinery, electronics) --
+    # an industry voice, not an international organisation. (Previously
+    # filed under international-org as a "federation-of-federations", which
+    # also wrongly subjected it to the international-org relevance gate and
+    # showed it under the wrong heading on the site.) Ecodesign, circular
+    # economy, industrial strategy relevant. No RSS feed, and the listing cards carry no date at
     # all -- uses the same "fetch each article's detail page for its date"
     # approach CEPS uses (see CEPS_DETAIL_PAGE_CAP/ORGALIM_DETAIL_PAGE_CAP in
     # backend_scrapers.py), since Orgalim's article pages carry the same
@@ -2234,13 +2235,226 @@ sources:
 #    exactly this kind of voice -- see above, Cefic now has a scraper and
 #    BusinessEurope's feed is tracked defensively)
 
-# Future policy fields (tech, health) -- no sources yet. The website
-# already has tabs wired up for these (currently shown as "coming soon"
-# and disabled in site/index.html) as well as for security (see above,
-# security sources exist but the tab itself is still disabled).
-#  - name: Some tech policy org
-#    url: https://example.org/feed
-#    field: tech
+# --- Digital & Tech policy (added Oct 2026, at Flo's request) -----------
+# Scope: AI Act/AI governance, DSA/DMA platform regulation, data
+# protection/GDPR, and cybersecurity/telecoms -- the same "pick the
+# obviously-relevant official bodies, trade associations, NGOs, and
+# journals" approach used for the Competition law section above. No
+# TECH_KEYWORDS filter exists (or is needed) in fetch_digest.py: like
+# security, every source below is already handpicked to be single-topic,
+# per the "Sources tagged with other fields... are NOT keyword-filtered"
+# note at the top of this file. Cross-tagging into green-deal still
+# applies automatically (fetch_digest.py's `if field != "green-deal":`
+# check is field-agnostic), so a tech source covering e.g. AI's energy
+# footprint can still surface on the Green Deal tab without a code change.
+# Kept HIDDEN (disabled "Coming soon" tab in site/index.html) until
+# reviewed, same as security and competition currently are.
+  - name: European Data Protection Board (EDPB)
+    url: https://www.edpb.europa.eu/rss.xml
+    field: tech
+    actor_type: eu-institution
+    # Confirmed live with real, current content (GDPR fines, DSA-GDPR
+    # interplay guidelines, cross-regulatory cooperation statements).
+  - name: European Commission -- Shaping Europe's Digital Future
+    url: https://digital-strategy.ec.europa.eu/en/rss.xml
+    field: tech
+    actor_type: eu-institution
+    # The Commission's own digital-policy news hub -- confirmed live with
+    # real content (KIDS Act, DSA platform designations, AI Act-related
+    # consultations). This is also where EU AI Office announcements
+    # surface, so no separate AI Office entry was added.
+  - name: BEREC (Body of European Regulators for Electronic Communications)
+    url: https://www.berec.europa.eu/en/rss.xml
+    field: tech
+    actor_type: eu-institution
+    # Confirmed live with real content (Digital Networks Act position
+    # papers, mobile-network interface consultations).
+  - name: European Parliament -- ITRE Committee
+    url: https://www.europarl.europa.eu/rss/committee/itre/en.xml
+    field: tech
+    actor_type: eu-institution
+    # Same europarl.europa.eu/rss/committee/<code>/en.xml pattern used for
+    # the ECON Committee in the Competition law section -- see that
+    # entry's comment for the full caveat. For ITRE specifically, a prior
+    # session confirmed this exact URL live via a third-party aggregator
+    # (feedbagel.com); this session's own fetch attempts against the URL
+    # directly returned empty (same tool/host limitation documented for
+    # ECON), so it's pattern-matched plus one independent live-confirmation,
+    # not directly content-verified by this tool.
+  - name: European Parliament -- LIBE Committee
+    url: https://www.europarl.europa.eu/rss/committee/libe/en.xml
+    field: tech
+    actor_type: eu-institution
+    # Same URL pattern as ITRE above, but WITHOUT even the third-party
+    # aggregator confirmation -- this one is pattern-matched only. Covers
+    # data protection, law enforcement AI, and the CSAM/"Chat Control"
+    # debate, all core LIBE business.
+  - name: European Parliament -- IMCO Committee
+    url: https://www.europarl.europa.eu/rss/committee/imco/en.xml
+    field: tech
+    actor_type: eu-institution
+    # Same pattern-matched-only caveat as LIBE above. Covers DSA/DMA
+    # internal-market aspects and consumer-facing digital rules.
+  - name: Ada Lovelace Institute
+    url: https://www.adalovelaceinstitute.org/feed/
+    field: tech
+    actor_type: think-tank
+    eu_gate: true
+    # UK-based (not EU) independent AI/data research institute -- confirmed
+    # live, structurally valid feed. Marked eu_gate: true since it's a
+    # globally/UK-focused outlet, same treatment as Ember/CCIA elsewhere.
+  - name: CERRE (Centre on Regulation in Europe)
+    url: https://cerre.eu/feed/
+    field: tech
+    actor_type: think-tank
+    # European regulatory economics think tank covering tech/telecom/media
+    # sectors specifically. Confirmed live, structurally valid feed but
+    # zero items at last check -- same "confirmed live, zero items today"
+    # call already made for Ember/Bankwatch/ECOS elsewhere in this file.
+  - name: DIGITALEUROPE
+    url: https://www.digitaleurope.org/feed
+    field: tech
+    actor_type: industry
+    # Dup-entry of the same org already tracked under field: competition
+    # (see Industry & lobby section above) -- AI Act/DSA/cybersecurity is
+    # squarely DIGITALEUROPE's core beat, more so than competition law.
+  - name: CCIA Europe (Computer & Communications Industry Association)
+    url: https://ccianet.org/feed/
+    field: tech
+    actor_type: industry
+    eu_gate: true
+    # Dup-entry, same feed as the competition-field CCIA Europe entry
+    # above -- see that entry's comment for the eu_gate reasoning (global
+    # US+EU feed, US-dominant by volume).
+  - name: GSMA
+    url: https://www.gsma.com/newsroom/feed/
+    field: tech
+    actor_type: industry
+    eu_gate: true
+    # Global mobile-operator trade body -- confirmed live, but the feed is
+    # heavily non-EU by volume (Africa/Asia connectivity, US FCC items).
+    # Marked eu_gate: true for the same reason as CCIA Europe/GSMA Europe
+    # content is a minority of the global newsroom feed.
+  - name: EDRi (European Digital Rights)
+    url: https://edri.org/feed/
+    field: tech
+    actor_type: ngo
+    # Confirmed live (edri.org/feed/ -- NOT archives.edri.org, which is an
+    # old archived site with a stale feed). Real current content: KIDS
+    # Act critique, Digital Omnibus/GDPR simplification pushback.
+  - name: Access Now
+    url: https://accessnow.org/feed/
+    field: tech
+    actor_type: ngo
+    eu_gate: true
+    # Confirmed live. Genuinely global digital-rights NGO (operates across
+    # Africa, Asia, Latin America, not just Europe) -- eu_gate: true per
+    # the same globally-focused-outlet reasoning as Ember/CCIA.
+  - name: AlgorithmWatch
+    url: https://algorithmwatch.org/en/feed/
+    field: tech
+    actor_type: ngo
+    # Confirmed live. Berlin/Zurich-based NGO focused specifically on
+    # algorithmic/AI accountability -- core AI Act beat.
+  - name: noyb (My Privacy is None of Your Business)
+    url: https://noyb.eu/en/rss.xml
+    field: tech
+    actor_type: ngo
+    # Confirmed live with real content (strategic GDPR litigation against
+    # SCHUFA, cookie-banner complaints). Austrian NGO, EU-focused by design.
+  - name: Bits of Freedom
+    url: https://www.bitsoffreedom.nl/feed/
+    field: tech
+    actor_type: ngo
+    # Confirmed live (Dutch digital-rights NGO; content in Dutch, covers
+    # AI/surveillance/biometrics -- fetch_digest.py's langdetect handling
+    # already covers non-English sources elsewhere in this file).
+  - name: Panoptykon Foundation
+    url: https://en.panoptykon.org/rss.xml
+    field: tech
+    actor_type: ngo
+    # Confirmed live with real content (DSA implementation in Poland,
+    # spyware, recommender-system advocacy). Polish NGO, EN-language feed.
+  - name: epicenter.works
+    url: https://en.epicenter.works/rss.xml
+    field: tech
+    actor_type: ngo
+    # Confirmed live with real content (AI-in-government, digital euro,
+    # EU Digital Identity, facial recognition). Austrian digital-rights NGO.
+  - name: UNI Europa
+    url: https://www.uni-europa.org/feed/
+    field: tech
+    actor_type: trade-union
+    # Dup-entry of the same org already tracked under field: competition
+    # (see Trade unions section above) -- platform/gig work and AI-at-work
+    # are core UNI Europa beats, arguably more so than competition law.
+    # industriAll Europe, also dup-tagged under competition, was NOT
+    # dup-tagged here: its output skews manufacturing/industrial rather
+    # than platform work or AI -- a judgment call, revisit if there's
+    # demand for a dedicated industriAll AI-at-work angle.
+  - name: The Record (Recorded Future News)
+    url: https://therecord.media/feed
+    field: tech
+    actor_type: media
+    eu_gate: true
+    # Confirmed live with real content. Global cybersecurity-journalism
+    # outlet (not EU-specific) -- eu_gate: true per the same reasoning as
+    # other globally-focused media sources elsewhere in this file.
+  - name: European Data Protection Law Review (EDPL)
+    url: https://www.lexxion.eu/edpl/feed/
+    field: tech
+    actor_type: academic
+    # Confirmed live, structurally valid Lexxion-hosted feed (same
+    # publisher pattern as other Lexxion journals) but zero items at last
+    # check -- same "confirmed live, zero items today" call as CERRE above.
+
+# Checked and NOT added (Oct 2026 tech-field research pass):
+#  - ENISA (EU Agency for Cybersecurity) -- checked /rss.xml,
+#    /front-page/rss, /front-page/rss.xml, /front_page_RSS, and
+#    /media/news-items/news-wires/RSS (the URL pattern cited in old press
+#    releases) -- all returned empty. No working feed found.
+#  - EDPS (European Data Protection Supervisor) -- checked /rss.xml,
+#    /feed/news, /node/feed, and a press-releases?rss=1 query-param
+#    variant -- all empty. No working feed found.
+#  - EU AI Office -- no feed of its own; its announcements already surface
+#    via the Commission's Shaping Europe's Digital Future feed above.
+#  - OECD.AI / OECD AI Policy Observatory -- no RSS (consistent with
+#    OECD's site-wide lack of feeds, already documented for the
+#    green-deal and competition OECD entries elsewhere in this file).
+#    COULD be added the same way as scrape_oecd_climate/
+#    scrape_oecd_competition in browser_scrapers.py (a browser-scraper
+#    against oecd.org/en/topics/artificial-intelligence.html reusing
+#    _parse_oecd_cards(), which the code there documents as a site-wide
+#    card structure) -- but that's a new scraper function, out of scope
+#    for a sources-only pass. Flagging as a good next addition.
+#  - Council of Europe (AI Framework Convention work) -- no RSS
+#    discoverable at coe.int/en/web/artificial-intelligence.
+#  - ITU (International Telecommunication Union) -- a genuinely global
+#    standards body like GSMA above would need the same eu_gate
+#    treatment; not pursued this pass, candidate for a future one.
+#  - ETNO (telecom operators) -- checked /feed, /feed/, /news/rss,
+#    /rss.xml, /news.xml -- all empty. No working feed found.
+#  - DOT Europe (formerly EDiMA, platform companies) -- checked /feed,
+#    /feed/, /news/feed/ -- all empty. No working feed found.
+#  - IAPP (International Association of Privacy Professionals) -- feed URL
+#    blocked by this tool's URL blocklist; separately, IAPP's substantive
+#    content sits behind a membership paywall -- same reasoning as
+#    MLex/PaRR in the Competition law section.
+#  - Euractiv Digital section -- fetch blocked by this tool's URL
+#    blocklist; Euractiv is already documented elsewhere in this file as
+#    paywalled for in-depth coverage.
+#  - Politico Tech / Politico Europe -- paywalled, same precedent already
+#    documented for Politico Europe in the Competition law section.
+#  - Computer Law & Security Review (Elsevier/ScienceDirect) -- no RSS
+#    found on the journal's ScienceDirect page.
+#  - International Data Privacy Law (IDPL, Oxford) -- Oxford Academic has
+#    discontinued RSS feeds platform-wide, same precedent already
+#    documented for JCLE/JECLAP in the Competition law section. Both this
+#    and Computer Law & Security Review are paywalled anyway.
+
+# Future policy fields (health) -- no sources yet. The website already
+# has a tab wired up for this (currently shown as "coming soon" and
+# disabled in site/index.html).
 #  - name: Some health policy org
 #    url: https://example.org/feed
 #    field: health
