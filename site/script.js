@@ -60,8 +60,19 @@ const ACTOR_LABELS = {
   "trade-union": "Trade Unions",
   ngo: "NGO & Advocacy",
   "eu-institution": "EU Institutions",
+  "eu27-ministry": "EU 27 Ministries",
   "international-org": "International Organisations",
   media: "Media & Journalism",
+};
+
+// Language names for the "machine-translated from X" note -- kept in sync
+// with LANGUAGE_NAMES in translation.py.
+const LANGUAGE_NAMES = {
+  bg: "Bulgarian", hr: "Croatian", cs: "Czech", da: "Danish", nl: "Dutch",
+  et: "Estonian", fi: "Finnish", fr: "French", de: "German", el: "Greek",
+  hu: "Hungarian", it: "Italian", lv: "Latvian", lt: "Lithuanian",
+  mt: "Maltese", pl: "Polish", pt: "Portuguese", ro: "Romanian",
+  sk: "Slovak", sl: "Slovenian", es: "Spanish", sv: "Swedish",
 };
 
 // Kept in sync with FORMAT_LABELS in fetch_digest.py -- entry.content_type
@@ -80,6 +91,7 @@ const FORMAT_LABELS = {
 // than silently vanishing.
 const ACTOR_GROUP_ORDER = [
   "eu-institution",
+  "eu27-ministry",
   "international-org",
   "think-tank",
   "political",
@@ -107,6 +119,11 @@ const ACTOR_ICONS = {
     <line x1="12.8" y1="6.4" x2="12.8" y2="12"/>
     <line x1="1.6" y1="13.6" x2="14.4" y2="13.6"/>
     <line x1="1" y1="14.7" x2="15" y2="14.7"/>
+  `,
+  "eu27-ministry": `
+    <line x1="3.4" y1="1.4" x2="3.4" y2="14.8"/>
+    <path d="M3.4 2.2h8.6l-1.7 2.7 1.7 2.7H3.4"/>
+    <line x1="1.6" y1="14.8" x2="8" y2="14.8"/>
   `,
   "international-org": `
     <circle cx="8" cy="8" r="6.4"/>
@@ -1582,11 +1599,17 @@ function renderEntry(entry) {
   // replaced wholesale on every re-render.
   const citeBtn = `<button type="button" class="cite-btn" data-title="${title}" data-org="${org}" data-date="${date}" data-link="${escapeHtml(link)}" title="Copy a citation for this entry">Cite</button>`;
 
+  // Machine-translated items (EU 27 Ministries with no English stream --
+  // see translation.py). Mirrors render_entry_html() in fetch_digest.py.
+  const translatedNote = entry.translated_from
+    ? ` · <span class="translated-note" title="${escapeHtml(entry.original_title ? "Original title: " + entry.original_title : "Machine-translated")}">machine-translated from ${escapeHtml(LANGUAGE_NAMES[entry.translated_from] || entry.translated_from)}</span>`
+    : "";
+
   return `
     <article class="entry-card">
       ${image}
       <h3>${formatBadge}<a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
-      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date} · ${citeBtn}</div>
+      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}${translatedNote} · ${citeBtn}</div>
       ${summary}
       ${tagsHtml}
     </article>
