@@ -755,6 +755,14 @@ h1, h2, h3 {
   text-decoration: underline;
 }
 
+.entry-meta .translated-note {
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: help;
+}
+
 .entry-meta {
   color: var(--muted);
   font-size: 0.75rem;
