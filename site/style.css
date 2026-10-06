@@ -781,41 +781,53 @@ h1, h2, h3 {
 }
 
 .entry-card h3 {
-  padding-right: 34px; /* keep long titles clear of the cite button */
+  padding-right: 42px; /* keep long titles clear of the cite button */
 }
 
+/* Solid navy circle with a gold quotation mark: high contrast so it is
+   easy to spot in the top-right corner of every card. */
 .cite-btn {
   position: absolute;
-  top: 10px;
-  right: 6px;
-  width: 28px;
-  height: 28px;
+  top: 12px;
+  right: 8px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border: 1px solid var(--border);
+  margin: 0;
+  padding: 7px 0 0; /* optically centres the glyph, which sits high */
+  border: 2px solid var(--navy-950);
   border-radius: 50%;
-  background: var(--card-bg);
-  color: var(--muted);
+  background: var(--navy-950);
+  color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   line-height: 1;
-  padding-top: 6px; /* optically centres the glyph, which sits high */
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 1px 3px rgba(11, 31, 51, 0.25);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .cite-btn:hover,
 .cite-btn:focus-visible {
-  color: var(--gold-dark);
+  background: var(--gold);
   border-color: var(--gold);
+  color: var(--navy-950);
+  outline: none;
+}
+
+.cite-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.45);
 }
 
 .cite-btn-copied {
-  color: var(--gold-dark);
+  background: var(--gold);
   border-color: var(--gold);
-  font-size: 1rem;
+  color: var(--navy-950);
+  font-size: 1.1rem;
   padding-top: 0;
 }
 
