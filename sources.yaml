@@ -438,7 +438,25 @@ sources:
     scraper: eurelectric
     field: green-deal
     actor_type: industry
-    # Electricity industry.
+    topic_gate: false
+    # Electricity industry. topic_gate: false = skip the green-deal keyword
+    # filter for this source (it is single-topic by nature; its press
+    # release titles often contain no keyword). Added Oct 2026 after the
+    # Power Barometer 2026 release ("Electricity weathered energy shocks in
+    # 2026, but storage and flexibility must catch up", 30 Sep) was dropped
+    # by the keyword filter even though the scraper had picked it up.
+    # Other single-topic energy sources could use the same flag if similar
+    # misses show up.
+  - name: German Federal Environment Ministry (BMUKN)
+    scraper: bmukn
+    field: green-deal
+    actor_type: eu27-ministry
+    # Moved to the "EU 27 Ministries" category (Oct 2026) -- see that
+    # section further down. English press releases only; the usual
+    # green-deal keyword filter drops its non-climate ones (nuclear safety,
+    # species protection...). No RSS feed exists -- see scrape_bmukn() in
+    # backend_scrapers.py. Added Oct 2026 after Germany's Roadmap for
+    # Transitioning Away from Fossil Fuels (press release 121/26) was missed.
   - name: European Aluminium
     url: https://european-aluminium.eu/feed/
     field: green-deal
@@ -2451,6 +2469,168 @@ sources:
 #    discontinued RSS feeds platform-wide, same precedent already
 #    documented for JCLE/JECLAP in the Competition law section. Both this
 #    and Computer Law & Security Review are paywalled anyway.
+
+# ===========================================================================
+# EU 27 Ministries (actor_type: eu27-ministry) -- added Oct 2026
+# ===========================================================================
+# National climate / energy / environment ministries of the member states,
+# English-language output only (scope chosen by the site owner). All are
+# field: green-deal, so they go through the usual green-deal keyword filter
+# (no ministry is exempt) and the non-English title filter. Germany's BMUKN
+# also belongs here but sits in the Industry & lobby block above, where it
+# was first added -- it carries the same actor_type.
+# The category is deliberately a "best English coverage available" list:
+# most ministries publish in their national language only or without RSS,
+# see the NOT-added block below.
+  - name: Polish Ministry of Climate and Environment
+    scraper: poland_climate_ministry
+    field: green-deal
+    actor_type: eu27-ministry
+    # No RSS (gov.pl/web/climate/rss redirects to the gov.pl home page).
+    # English news listing confirmed server-rendered (date, title link,
+    # summary per item; newest first). Scraper written against the visible
+    # structure, not verified against live HTML -- if this source returns
+    # nothing, look for "scrape_poland_climate_ministry failed" or zero
+    # items in the Actions log.
+  - name: Luxembourg Ministry of the Environment, Climate and Biodiversity
+    url: https://environnement.gouvernement.lu/en/actualites.rss
+    field: green-deal
+    actor_type: eu27-ministry
+    # Confirmed live (redirects to mecb.gouvernement.lu), items current to
+    # 28 Sep 2026. The feed MIXES French and English items; the French ones
+    # are removed by the non-English title filter, so expect only the
+    # English-language releases (e.g. EEA visit, Santa Marta commitments).
+  - name: Lithuanian Ministry of Environment
+    url: https://am.lrv.lt/en/news/rss/
+    field: green-deal
+    actor_type: eu27-ministry
+    # Confirmed live, English, items current to 30 Sep 2026 (Social Climate
+    # Fund agreement, Council Presidency 2027 prep, nature restoration plan).
+    # Also publishes housing/construction items that the keyword filter
+    # will mostly drop.
+  - name: Estonian Ministry of Climate
+    url: https://kliimaministeerium.ee/en/rss-feeds/rss.xml
+    field: green-deal
+    actor_type: eu27-ministry
+    # Confirmed live, language=en, items current to 4 Sep 2026 (Nordic-Baltic
+    # energy ministers, nuclear energy act draft, GHG emissions). Low volume
+    # (roughly 1-3 items a month). Covers energy, climate, environment and
+    # (until the keyword filter) transport/construction.
+  - name: Slovenian Ministry of the Environment and Spatial Planning
+    url: https://www.gov.si/en/news/rss/?orgID%5B0%5D=31
+    field: green-deal
+    actor_type: eu27-ministry
+    # Confirmed live, English, items current to 23 Sep 2026. NOTE the feed
+    # also carries releases from other ministries (e.g. Local Self-
+    # Government / Cohesion funding approvals) because gov.si groups news by
+    # organisation id; the keyword filter drops the unrelated ones.
+  - name: Bulgarian Ministry of Environment and Water
+    scraper: bulgaria_moew
+    field: green-deal
+    actor_type: eu27-ministry
+    # No RSS found. English national-news listing confirmed server-rendered
+    # (title link + "10 Aug, 2026 | 14:31" stamp + teaser). Scraper written
+    # against the visible structure, not verified against live HTML.
+    # Heavy on local items (dams, protected trees, inspections); the keyword
+    # filter keeps only the climate/energy/policy ones.
+  - name: Swedish Government Offices (press releases, all ministries)
+    scraper: sweden_government
+    field: green-deal
+    actor_type: eu27-ministry
+    # No working RSS (government.se only offers e-mail subscription). The
+    # English press-release list is server-rendered; this reads the 3
+    # newest pages and relies on the green-deal keyword filter to drop the
+    # defence / foreign-affairs majority. Scraper written against the
+    # visible structure, not verified against live HTML.
+  - name: Dutch Government (government.nl, all ministries)
+    url: https://feeds.government.nl/news.rss
+    field: green-deal
+    actor_type: eu27-ministry
+    # Confirmed valid English RSS, but it is the ALL-ministries feed: the
+    # per-ministry feeds listed at government.nl/rss (incl. Economic Affairs
+    # and Climate Policy, Infrastructure and Water Management) returned
+    # empty in this environment, and the guessed slug for the new climate
+    # ministry returned empty too. The green-deal keyword filter reduces
+    # this to climate/energy items. At last check the feed's build date
+    # was Mar 2026 (possibly a stale cache on the fetch side) -- if it
+    # stays empty on the live site, swap in a per-ministry URL from
+    # government.nl/rss.
+
+# --- Native-language ministries, machine-translated (translate_from) ------
+# These publish no English stream. `translate_from` makes fetch_digest.py
+# translate title + summary to English before filtering (translation.py /
+# translate_node.cjs, the Linguist engine); the site marks each item
+# "machine-translated from <Language>" with the original title on hover.
+# If translation fails, the items are dropped, never shown untranslated.
+  - name: Czech Ministry of the Environment
+    url: https://mzp.gov.cz/cz/rss.xml
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: cs
+    # RSS confirmed to exist (Czech). English path /en/rss.xml was empty.
+  - name: Greek Ministry of Environment and Energy
+    url: https://ypen.gov.gr/feed/
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: el
+    # WordPress RSS, confirmed live in Greek (current to 2 Oct 2026).
+  - name: Romanian Ministry of Environment, Waters and Forests
+    url: https://www.mmediu.ro/feed/
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: ro
+    # WordPress feed URL; not confirmed to return items in this environment.
+    # If empty, try https://www.mmediu.ro/comunicare/comunicate-de-presa/feed/
+  - name: Spanish Ministry for the Ecological Transition (MITECO)
+    scraper: spain_miteco
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: es
+    # Static press-release list; scraper unverified against live HTML.
+  - name: Latvian Ministry of Climate and Energy
+    scraper: latvia_kem
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: lv
+    # Static news list; scraper unverified against live HTML.
+  - name: Portuguese Government (news, Environment and Energy items)
+    scraper: portugal_gov
+    field: green-deal
+    actor_type: eu27-ministry
+    translate_from: pt
+    # JS-rendered (Playwright), unverified. Covers all government news; the
+    # keyword filter keeps climate/energy items.
+
+# --- JS-rendered English ministry sites (Playwright; UNVERIFIED) -----------
+# Config lives in browser_scrapers.py (LISTING_SITES). Plain fetch returned
+# an empty shell for all of them, so selectors/href patterns could not be
+# checked. Check the first Actions run for "<key> failed" / zero items.
+  - name: Irish Dept. of Climate, Energy and the Environment
+    scraper: ireland_decc
+    field: green-deal
+    actor_type: eu27-ministry
+  - name: Danish Ministry of Climate, Energy and Utilities
+    scraper: denmark_kefm
+    field: green-deal
+    actor_type: eu27-ministry
+  - name: Hungarian Government (kormany.hu, English news)
+    scraper: hungary_kormany
+    field: green-deal
+    actor_type: eu27-ministry
+  - name: Government of Malta (DOI press releases)
+    scraper: malta_doi
+    field: green-deal
+    actor_type: eu27-ministry
+  - name: Cyprus Press and Information Office
+    scraper: cyprus_pio
+    field: green-deal
+    actor_type: eu27-ministry
+
+# Still NOT covered (Oct 2026): France (ecologie.gouv.fr), Italy (MASE),
+# Finland (YM), Austria (BMLUK), Slovakia (MŽP SR), Croatia (MINGOR),
+# Belgium. Plain fetches of their press pages/feeds returned nothing and no
+# feed URL was discoverable; they need either live inspection in a real
+# browser or a feed URL supplied by the site owner.
 
 # Future policy fields (health) -- no sources yet. The website already
 # has a tab wired up for this (currently shown as "coming soon" and
