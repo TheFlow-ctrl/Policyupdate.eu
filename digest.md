@@ -27,6 +27,15 @@ Brussels, BELGIUM – As Europe’s largest telecom operators gather in Brussels
 
 ---
 
+### Europe’s telecom sector delivers great value for money and shows progress, but still has ground to cover on some dimensions
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-06*
+
+Europe’s telecom sector delivers great value for money and shows progress, but still has ground to cover on some dimensions yannick.stephan Tue, 06/10/2026 - 17:22 Press Releases European consumers benefit from affordable broadband services and a sector that remains financially resilient overall and supportive of investment and innovation, according to BEREC’s latest fact-finding report on where Europe stands in telecommunications. At the same time, the EU-27 still has to fill in the gap to the top global peers on network download speeds, while the roll-out of next-generation networks is not…
+
+[Read more](https://www.berec.europa.eu/en/news/press-releases/europes-telecom-sector-delivers-great-value-for-money-and-shows-progress-but-still-has-ground-to-cover-on-some-dimensions)
+
+---
+
 ### Bridging Policy Gaps in Transition Times: How Local Actors Navigate Low Policy Coherence for Advancing a Circular Built Environment
 *Environmental Policy and Governance — 2026-10-02*
 
@@ -108,15 +117,6 @@ AlgorithmWatch fokussiert sich in dieser Stellungnahme auf die Datenerhebung bei
 
 ---
 
-### What didn’t work: Gaps, delays, and difficult lessons from the first phase of South Africa’s JETP
-*E3G — 2026-09-29*
-
-South Africa’s Just Energy Transition Partnership (JETP) has helped mobilise international support for the country’s energy transition, but its first phase has also exposed the challenges of turning ambition into delivery. Understanding what has held implementation back, and what can be done differently, will be critical as the JETP moves into its next phase. Financing gaps, debt risks, and delayed delivery The JETP’s first phase exposed a large gap between South Africa’s transition needs and the finance available to meet them. The Just Energy Transition Investment Plan estimated that about…
-
-[Read more](https://www.e3g.org/news/what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp/?utm_source=rss&utm_medium=rss&utm_campaign=what-didn-t-work-gaps-delays-and-difficult-lessons-from-the-first-phase-of-south-africa-s-jetp)
-
----
-
 ### Site Surveys and Managing Geohazard Assessments of Wind Farms: Building Confidence from Seabed to Site Design
 *IOGP — 2026-10-05*
 
@@ -135,6 +135,24 @@ This article examines whether European Union (EU) rule-of-law principles constra
 
 ---
 
+### CCIA Report Finds the EU’s DMA Losing Appeal as Global Model for Digital Competition Policy
+*CCIA Europe (Computer & Communications Industry Association) — 2026-10-06*
+
+Washington – A new report from the CCIA Research Center finds that the European Union’s Digital Markets Act (DMA) is losing appeal as a global model for digital competition policy, with governments increasingly pursuing narrower approaches. The report, “The Anti-Brussels Effect in Digital Competition Policy and the DMA’s Fading Appeal as a Global Model,” examines 83 developments across 16 jurisdictions. Of the 14 jurisdictions outside the EU that considered adopting a framework modeled on the DMA, 11 have either turned away from the approach or implemented a substantially narrower or more…
+
+[Read more](https://ccianet.org/news/2026/10/ccia-report-finds-the-eus-dma-losing-appeal-as-global-model-for-digital-competition-policy/)
+
+---
+
+### CCIA Report Finds the EU’s DMA Losing Appeal as Global Model for Digital Competition Policy
+*CCIA Europe (Computer & Communications Industry Association) — 2026-10-06*
+
+Washington – A new report from the CCIA Research Center finds that the European Union’s Digital Markets Act (DMA) is losing appeal as a global model for digital competition policy, with governments increasingly pursuing narrower approaches. The report, “The Anti-Brussels Effect in Digital Competition Policy and the DMA’s Fading Appeal as a Global Model,” examines 83 developments across 16 jurisdictions. Of the 14 jurisdictions outside the EU that considered adopting a framework modeled on the DMA, 11 have either turned away from the approach or implemented a substantially narrower or more…
+
+[Read more](https://ccianet.org/news/2026/10/ccia-report-finds-the-eus-dma-losing-appeal-as-global-model-for-digital-competition-policy/)
+
+---
+
 ### CLEPA joins call for workable CBAM rules that protect the entire automotive value chain
 *CLEPA (European Association of Automotive Suppliers) — 2026-10-05*
 
@@ -150,15 +168,6 @@ CLEPA, together with ACEA and Tyres Europe, has called on EU institutions to ens
 Brussels, 1 October – The European Environmental Bureau (EEB) today announced its withdrawal from the Critical Chemicals Alliance (CCA) , warning that the initiative is set to preserve current chemical production, including hazardous, carbon-intensive and fossil-dependent chemicals, rather than driving the transformation Europe needs. The CCA, launched by the European Commission to identify chemicals and production capacities considered critical to Europe’s economy and address concerns around supply and competitiveness [1], is approaching the adoption of its recommendations at its second…
 
 [Read more](https://eeb.org/en/eeb-pull-out-of-crittical-chemicals-alliance-over-industry-capture-and-deregulation-risks/)
-
----
-
-### Pre-COP: A moment to carry the Pacific’s climate action fight forward, not dilute it
-*E3G — 2026-09-29*
-
-“1.5C to stay alive is not a slogan, it’s a lifeline.” That was the Pacific Leaders’ message at the Pacific Islands Forum (PIF), as a new United Nations Environment Programme report was published warning that 1.5C is now widely assessed as unavoidable under current policies. That warning carried through to UN General Assembly (UNGA), where Leaders and the UN Secretary-General linked fossil fuel dependence directly to “havoc” . From the PIF to UNGA, the diagnosis is converging, but momentum now needs to land. The Pre-COP, 5-8 October, is the final major diplomatic moment before COP31 and the…
-
-[Read more](https://www.e3g.org/news/precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it/?utm_source=rss&utm_medium=rss&utm_campaign=precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it)
 
 ---
 
@@ -243,12 +252,30 @@ This article focuses on appraising the progress of efforts by the European Union
 
 ---
 
+### Can a Sweltering Summer Create an Autumn of Opportunity for the Transition?
+*Carbon Tracker — 2026-10-06*
+
+Recent months have reinforced the case for accelerating action on the energy transition and climate, particularly from a European perspective. Let’s list the reasons why: this summer has been like no other in Europe, with five major heatwaves across the continent and provisional data from the UK Met Office showing temperatures in London approximately 4°C above the long-term baseline average (1991-2020); internationally, 2026 has been marked by a series of extreme weather events, from the tragic landslide in Nepal caused by a melting glacier to a deadly winter storm bringing widespread…
+
+[Read more](https://carbontracker.org/can-a-sweltering-summer-create-an-autumn-of-opportunity-for-the-transition/)
+
+---
+
 ### Can Demand Side Response Keep Romania’s Lights on Under System Stress?
 *EPG Thinktank — 2026-10-01*
 
 Download the PDF Demand Side Response (DSR) could provide a credible alternative to keeping coal capacity online while supporting Romania’s longer-term energy transition, with energy storage and increased low carbon capacities. Romania’s DSR potential is estimated at up to 235 MW of industrial use and 1,800 MW at the household level. Some Romanian officials continue to argue that coal is indispensable on the grounds that it’s the only guarantee of security of supply in both summer and winter. However, a scaled-up DSR mechanism could cover these adequacy gaps and incur savings of around EUR…
 
 [Read more](https://www.epg-thinktank.org/can-demand-side-response-keep-romanias-lights-on-under-system-stress/)
+
+---
+
+### IMF-World Bank Annual Meetings: Debt, energy and climate crises loom large
+*E3G — 2026-10-06*
+
+Just weeks after devastating floods hit Bangkok, the city will host the world’s finance leaders for the IMF-World Bank Annual Meetings (12–18 October). Delegates will confront a global economy under pressure from fossil fuel supply shocks, rising debt distress and accelerating climate impacts, with many economies facing constrained fiscal space, including in Asia. The meetings, taking place after Bangkok Climate Action Week, will put pressure on international financial institutions (IFIs) and their shareholders to show how they can mobilise finance for investment and resilience while…
+
+[Read more](https://www.e3g.org/news/imf-world-bank-annual-meetings-debt-energy-and-climate-crises-loom-large/?utm_source=rss&utm_medium=rss&utm_campaign=imf-world-bank-annual-meetings-debt-energy-and-climate-crises-loom-large)
 
 ---
 
@@ -288,24 +315,6 @@ Nepal’s floods put the global loss and damage system to the test Expert commen
 
 ---
 
-### The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next?
-*International Crisis Group — 2026-09-29*
-
-The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next? eschelhaas Tue, 09/29/2026 - 18:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Iraqi security forces stand guard during a funerary procession for a slain member of Iraq's Hashed al-Shaabi, or the Popular Mobilisation Forces (PMF), who was killed in a US-Israeli air strike in Mosul the previous evening, in Baghdad on March 8, 2026. AHMAD AL-RUBAYE / AFP Commentary / Middle East & North Africa 29 September 2026 14…
-
-[Read more](https://www.crisisgroup.org/cmt/middle-east-north-africa/iraq-united-states/us-led-anti-isis-coalition-leaving-iraq-what-happens-next)
-
----
-
-### Peer-to-Peer Sessions: exchange with and learn from other cities
-*Energy Cities — 2026-09-29*
-
-SPARKLE supports cities across Europe to accelerate their local energy transition by strengthening skills, collaboration and practical implementation. Through peer-to-peer exchange, capacity building and shared learning, the project helps cities learn from one another, tackle common challenges and turn ambitious climate and energy goals into action . From October 2026 to Autumn 2027, we are holding short, monthly, free peer-to-peer online sessions, open to any city and/or their partners to participate in, with additional information, support and resources shared after each one. All sessions…
-
-[Read more](https://energy-cities.eu/sparkle-peer-to-peer-sessions-exchange-with-and-learn-from-other-cities/)
-
----
-
 ### How the insurance industry can help society adapt to climate change
 *Chatham House — 2026-10-01*
 
@@ -321,6 +330,15 @@ How the insurance industry can help society adapt to climate change Expert comme
 How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
 
 [Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
+
+---
+
+### Beyond the targets: What levers can MDBs pull to scale finance?
+*E3G — 2026-10-06*
+
+Multilateral Development Banks’ (MDBs) climate finance is well on course to meet 2030 targets, yet those targets sit far below what independent economists judge necessary. Of the supply-side levers, new capital and higher climate shares are currently politically fraught, whereas balance sheet optimisation and private capital mobilisation are ripe for action and should be pursued at scale. The World Bank’s decision to retire its 45% climate finance target while extending its Climate Change Action Plan signals intensifying shareholder pressure on MDB climate commitments, and other MDBs are…
+
+[Read more](https://www.e3g.org/news/beyond-the-targets-what-levers-can-mdbs-pull-to-scale-finance/?utm_source=rss&utm_medium=rss&utm_campaign=beyond-the-targets-what-levers-can-mdbs-pull-to-scale-finance)
 
 ---
 
@@ -532,7 +550,7 @@ A Circular Economy Act delivering a strong EU market for secondary raw materials
 ---
 
 ### Commission approves €170 million Bulgarian State aid for farmers facing increased fuel and fertiliser prices
-*European Commission — Press Corner — 2026-10-01*
+*European Commission (Competition Press Corner) — 2026-10-01*
 
 European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
 
@@ -564,15 +582,6 @@ European Commission Statement Brussels, 02 Oct 2026 Today, we, the Leaders of th
 The Commission’s regulatory dialogues with gatekeepers in the framework of its enforcement of the Digital Markets Act (DMA) are delivering more fairness and transparency.
 
 [Read more](https://digital-markets-act.ec.europa.eu/factsheet-how-dma-ensures-businesses-using-bookingcom-are-free-set-their-prices-and-bookingcom-2026-09-28_en)
-
----
-
-### Improving Energy Efficiency: An Obvious and Urgent Next Step...
-*Orgalim — 2026-09-29*
-
-From industry associations to environmental and civil-society bodies, a total of 93 organisations spanning are asking European Commission President Ursula von der Leyen for a binding energy efficiency target for 2040.
-
-[Read more](https://orgalim.eu/en/improving-energy-efficiency-an-obvious-and-urgent-next-step/)
 
 ---
 
