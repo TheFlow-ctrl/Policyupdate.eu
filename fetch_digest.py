@@ -2520,7 +2520,10 @@ def main():
     update_static_html(
         all_entries,
         dt.date.today().isoformat(),
-        source_count=len(sources),
+        # Unique outlets, matching the public Sources list (an outlet tracked
+        # under several fields has several sources.yaml entries but is one
+        # outlet).
+        source_count=len({s.get("name") for s in sources if s.get("name")}),
         sources=sources,
     )
     submit_indexnow([INDEXNOW_SITE_URL])
