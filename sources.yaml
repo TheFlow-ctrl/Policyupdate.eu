@@ -1526,8 +1526,8 @@ sources:
     field: green-deal
     actor_type: think-tank
 
-  # --- Security / foreign policy (field exists on the site but the tab is --
-  # --- still disabled -- these sources are ready for when it's activated. --
+  # --- Security / foreign policy (Security tab live as Beta since Oct 2026; --
+  # --- keyword-filtered via SECURITY_KEYWORDS in fetch_digest.py. --
   # --- Also cross-tagged into green-deal when an entry matches, see above.)
   - name: ECFR
     url: https://ecfr.eu/feed
@@ -1618,6 +1618,73 @@ sources:
     field: security
     actor_type: think-tank
     # Confirmed exact URL (valid RSS content-type) -- currently empty.
+
+  # --- Security Beta additions (Oct 2026) -- defence, cyber/hybrid threats,
+  # --- economic security. Security is now keyword-filtered
+  # --- (SECURITY_KEYWORDS in fetch_digest.py), so the general foreign-policy
+  # --- sources above and below only surface their in-scope output.
+  - name: ICDS (International Centre for Defence and Security)
+    url: https://icds.ee/en/feed/
+    field: security
+    actor_type: think-tank
+    # Confirmed live (Estonian defence/security think tank), items current
+    # to 2 Oct 2026.
+  - name: EU DisinfoLab
+    url: https://www.disinfo.eu/feed/
+    field: security
+    actor_type: ngo
+    # Confirmed live, current to 30 Sep 2026. Disinformation / hybrid-threat
+    # research; mostly weekly "Disinfo Update" digests plus reports.
+  - name: Centre for European Reform
+    url: https://www.cer.eu/rss.xml
+    field: security
+    actor_type: think-tank
+    # Confirmed live, current to 5 Oct 2026. Broad EU think tank (Brexit,
+    # economy, defence) -- the keyword gate keeps the defence/security
+    # items. The feed also lists media appearances.
+  - name: ECSO (European Cyber Security Organisation)
+    url: https://ecs-org.eu/feed/
+    field: security
+    actor_type: industry
+    # Confirmed live, current to 6 Oct 2026. Industry association: NIS2 /
+    # Cyber Resilience Act policy work alongside event and membership news
+    # (events and call-style posts are dropped by the global event filter).
+  - name: Atlantic Council
+    url: https://www.atlanticcouncil.org/feed/
+    field: security
+    actor_type: think-tank
+    eu_gate: true
+    # Confirmed live, current to 5 Oct 2026. US-based and global in scope, so
+    # eu_gate keeps only items with an EU/Europe angle.
+  - name: German Marshall Fund of the United States
+    url: https://www.gmfus.org/rss.xml
+    field: security
+    actor_type: think-tank
+    eu_gate: true
+    # Confirmed live, current to 5 Oct 2026. Transatlantic think tank; the
+    # feed also lists expert profiles and media hits (title-only, mostly
+    # dropped by the keyword gate). eu_gate keeps the Europe-relevant items.
+  - name: Breaking Defense
+    url: https://breakingdefense.com/feed/
+    field: security
+    actor_type: media
+    eu_gate: true
+    # Confirmed live, current to 5 Oct 2026. US-centric defence trade press;
+    # eu_gate drops everything without a European angle (European procurement,
+    # NATO, Ukraine support, EU defence-industrial policy).
+  - name: CEPA (Center for European Policy Analysis)
+    url: https://cepa.org/feed/
+    field: security
+    actor_type: think-tank
+    eu_gate: true
+    # UNVERIFIED: the fetch timed out in this environment. Standard WordPress
+    # feed URL; if the Actions log shows no items, check the URL.
+  - name: EUISS (EU Institute for Security Studies)
+    url: https://www.iss.europa.eu/rss.xml
+    field: security
+    actor_type: eu-institution
+    # UNVERIFIED: the fetch timed out in this environment. EU agency think
+    # tank (Drupal feed path); check the Actions log for items.
 
   # --- Competition law (field exists on the site but the tab is still --
   # --- disabled, pending review -- added Sep 2026 at the request of --
