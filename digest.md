@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-05
+# Weekly Climate, Energy & Environment Digest — 2026-10-06
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-05*
+*World Competition — 2026-10-06*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -10,20 +10,11 @@ This article examines the extent to which designated “gatekeepers” implement
 ---
 
 ### THE ‘INTERNAL MARKET DETOUR’ FOR DEFENDING DEMOCRACY [pre-publication]
-*Common Market Law Review — 2026-10-05*
+*Common Market Law Review — 2026-10-06*
 
 This article examines the EU’s recent approach to defending democracy through internal market legislation. It analyses three central instruments – the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive – to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this ‘internal market detour’ is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/Common+Market+Law+Review/63.5 [pre-publication]/COLA2026072)
-
----
-
-### Multilateral Cooperation and Confidence-Building in Cyberspace
-*SWP (German Institute for International and Security Affairs) — 2026-09-29*
-
-The OSCE as a Laboratory for Cooperative Cybersecurity The number of cyber incidents involving state actors and state-controlled actors is rising worldwide – particularly in the OSCE region – yet the diplomatic instruments designed to contain such incidents receive comparatively little attention. The OSCE (Organisation for Security and Co-operation in Europe) and other regional organisations have adopted a range of confidence-building measures (CBMs) in the cyber domain that provide a basis for deeper multilateral cooperation. It remains unclear, however, to what extent these measures respond…
-
-[Read more](https://www.swp-berlin.org/en/publication/multilateral-cooperation-and-confidence-building-in-cyberspace)
 
 ---
 
@@ -54,8 +45,17 @@ Berlin, 2. Oktober 2026 – In seiner Stellungnahme vor dem Wirtschaftsausschuss
 
 ---
 
+### Rising emissions have locked-in future climate impacts, scale of damage depends on action now – 10 new insights
+*PIK Potsdam — 2026-10-06*
+
+Past emissions have already committed the planet to higher temperatures, sea levels and other long-term impacts, with new research showing that the resulting economic and social costs are greater than previously understood. At the same time, rapid emissions cuts can still limit the damage, while advances in climate science are making it increasingly possible to trace responsibility for climate-related harm. These findings are among the 10 major developments highlighted in the 2026/2027 “10 New Insights in Climate Science” report, produced by more than 70 scientists from nearly 30 countries, i…
+
+[Read more](https://www.pik-potsdam.de/en/news/latest-news/rising-emissions-have-locked-in-future-climate-impacts-but-the-scale-of-damage-still-depends-on-action-taken-now-2013-10-new-insights-from-climate-science)
+
+---
+
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-05*
+*European Environmental Law Review — 2026-10-06*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -69,6 +69,15 @@ This article examines the evolving role of the Transmission System Operator (TSO
 Eine einfache Berechnung auf Basis der verfügbaren Daten und unter Annahme eines starken Wachstums zeigt: Bereits eine geringe Verschlechterung von Effizienzstandards bei Rechenzentren führt zu sehr großen zusätzlichen Strom- und Wärmebedarfen. Im Jahr 2045 entspricht der zusätzliche Energieverbrauch der Stromproduktion von sieben Gaskraftwerken. Die zusätzlich zu erzeugende Wärmemenge im Jahr 2045 entspricht der Wärme-Importmenge, die mit elf großen LNG-Tankschiffen transportiert werden kann. Akkumuliert über die Jahre 2026 bis 2045 führen sowohl der Strommehrverbrauch als auch die…
 
 [Read more](https://algorithmwatch.org/de/verschlechterungen-von-effizienzstandards-bei-rechenzentren-fuhren-zu-zusatzlichen-energiebedarfen/)
+
+---
+
+### Open letter to EU ministers to support the inclusion of Indian ship recycling yards on the European List
+*ECSA (European Community Shipowners' Associations) — 2026-10-06*
+
+Open letter to EU ministers to support the inclusion of Indian ship recycling yards on the European List Dear Ministers, BIMCO, the Cruise Lines International Association (CLIA), European Shipowners | ECSA, the International Chamber of Shipping (ICS), INTERCARGO, INTERFERRY, INTERTANKO, and the World Shipping Council (WSC) call on EU Member States to deliver a positive opinion on the European Commission’s proposal to add two Indian ship recycling facilities to the updated European List of Ship Recycling Facilities. This proposed inclusion of the two Indian yards reflects years of substantial…
+
+[Read more](https://ecsa.eu/open-letter-to-the-environment-and-transport-ministers-of-the-european-union-2/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-to-the-environment-and-transport-ministers-of-the-european-union-2)
 
 ---
 
@@ -118,7 +127,7 @@ On 24 September 2026, the IOGP Geomatics Committee’s Geophysical Operations Su
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-05*
+*European Environmental Law Review — 2026-10-06*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -150,6 +159,15 @@ Brussels, 1 October – The European Environmental Bureau (EEB) today announced 
 “1.5C to stay alive is not a slogan, it’s a lifeline.” That was the Pacific Leaders’ message at the Pacific Islands Forum (PIF), as a new United Nations Environment Programme report was published warning that 1.5C is now widely assessed as unavoidable under current policies. That warning carried through to UN General Assembly (UNGA), where Leaders and the UN Secretary-General linked fossil fuel dependence directly to “havoc” . From the PIF to UNGA, the diagnosis is converging, but momentum now needs to land. The Pre-COP, 5-8 October, is the final major diplomatic moment before COP31 and the…
 
 [Read more](https://www.e3g.org/news/precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it/?utm_source=rss&utm_medium=rss&utm_campaign=precop-a-moment-to-carry-the-pacific-s-climate-action-fight-forward-not-dilute-it)
+
+---
+
+### “New pathways explored”: Closing event for the Ariadne energy transition project
+*PIK Potsdam — 2026-10-06*
+
+The Ariadne research project has provided important guidance for the energy transition in Germany since its inceptions in mid-2019, and will leave well-founded recommendations for its further orientation when it closes at the end of 2026. This is the key message of the Ariadne closing conference today in Berlin, attended by around 200 experts from the fields of science, politics, business and civil society. Coinciding with this event, a major report summarises the findings of the scientific project, which comprises 26 institutes and is led by the Potsdam Institute for Climate Impact Research…
+
+[Read more](https://www.pik-potsdam.de/en/news/latest-news/new-pathways-explored-closing-event-for-the-ariadne-energy-transition-project)
 
 ---
 
@@ -198,6 +216,15 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 
 ---
 
+### Five Energy Market Factors That Could Tip the Scales in the Middle East War
+*International Crisis Group — 2026-10-01*
+
+Five Energy Market Factors That Could Tip the Scales in the Middle East War pfranz Thu, 10/01/2026 - 19:11 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List A garbage truck drives past gas prices above $6 a gallon and diesel prices above $8 a gallon as they are displayed outside of a Shell gas station in Carson, California on September 22, 2026. Patrick T. Fallon / AFP Commentary / United States 01 October 2026 20+ minutes Five Energy Market Factors That Could Tip the Scales in the Middle…
+
+[Read more](https://www.crisisgroup.org/cmt/united-states/united-states-iran-israelpalestine/five-energy-market-factors-could-tip-scales-middle-east-war)
+
+---
+
 ### Sánchez’s gamble: This ‘all-in’ election will have international impact
 *Chatham House — 2026-10-05*
 
@@ -208,7 +235,7 @@ Sánchez’s gamble: This ‘all-in’ election will have international impact E
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-05*
+*European Environmental Law Review — 2026-10-06*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -258,6 +285,15 @@ Brussels, BELGIUM – The Computer & Communications Industry Association (CCIA E
 Nepal’s floods put the global loss and damage system to the test Expert comment jon.wallace 5 October 2026 Nepal’s recovery from August’s catastrophic glacial flood will test the efficiency of the UN’s Fund for Responding to Loss and Damage. It will also resurface questions about the responsibilities of the greatest carbon emitters. On 26 August 2026, a glacial disaster high in the Himalayas sent a wall of meltwater and debris tearing through Nepal’s Bhotekoshi and Rasuwa region at speeds of nearly 188 km per hour. The flood has claimed over 1400 lives, with thousands still missing. Nepal is…
 
 [Read more](https://www.chathamhouse.org/2026/10/nepals-floods-put-global-loss-and-damage-system-test)
+
+---
+
+### The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next?
+*International Crisis Group — 2026-09-29*
+
+The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next? eschelhaas Tue, 09/29/2026 - 18:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Iraqi security forces stand guard during a funerary procession for a slain member of Iraq's Hashed al-Shaabi, or the Popular Mobilisation Forces (PMF), who was killed in a US-Israeli air strike in Mosul the previous evening, in Baghdad on March 8, 2026. AHMAD AL-RUBAYE / AFP Commentary / Middle East & North Africa 29 September 2026 14…
+
+[Read more](https://www.crisisgroup.org/cmt/middle-east-north-africa/iraq-united-states/us-led-anti-isis-coalition-leaving-iraq-what-happens-next)
 
 ---
 
@@ -351,12 +387,30 @@ Welcome to the Migration Update August-September 2026. This curated news selecti
 
 ---
 
+### September Trends and October Alerts 2026
+*International Crisis Group — 2026-09-30*
+
+September Trends and October Alerts 2026 oolofsson Wed, 09/30/2026 - 12:06 CrisisWatch Tracking Conflict Worldwide Loading Map Early Warning Resolution Opportunity Risk Alert Trends Improved Situation Deteriorated Situation Unchanged Situation Standby monitoring Not monitored Scroll down to read trends & outlook Share Facebook Twitter Email Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List CrisisWatch is our global conflict tracker, an early warning tool designed to help prevent deadly…
+
+[Read more](https://www.crisisgroup.org/crisiswatch/september-trends-and-october-alerts-2026)
+
+---
+
 ### Living better while living longer
 *FEPS (S&D) — 2026-09-30*
 
 Europeans are living longer. This is one of the achievements of our social model. The question is whether we are living those additional years in good physical and mental health and whether this progress is shared equally across society. The pursuit of longevity cannot simply mean adding years to life. It just as well means adding life to those years. In other words, extending the time in which we can take a full part in society, keep our relationships, feel accomplished and live with dignity. Importantly, though, healthy longevity must not become another privilege that correlates with income…
 
 [Read more](https://feps-europe.eu/living-better-while-living-longer/)
+
+---
+
+### Inside Sudan’s War
+*International Crisis Group — 2026-10-01*
+
+Inside Sudan’s War mloukili Thu, 10/01/2026 - 13:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 01 October 2026 1 minute Inside Sudan’s War In this episode of The Horn , Alan speaks with Yousra Elbagir, Sky News’s Africa correspondent, about her reporting from inside Sudan’s war, including around El Obeid and El Fasher, how Sudanese are surviving the war and how the war could end. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Sudan In…
+
+[Read more](https://www.crisisgroup.org/pod/africa/sudan/inside-sudans-war)
 
 ---
 
@@ -369,12 +423,12 @@ September brings not only the start of a new policy season but also a renewed co
 
 ---
 
-### Targeted consultation to support a better copyright environment for creativity and innovation
-*European Commission -- Shaping Europe's Digital Future — 2026-09-29*
+### On Our Radar
+*International Crisis Group — 2026-10-01*
 
-Targeted consultation to support a better copyright environment for creativity and innovation Anonymous (not verified) Tue, 09/29/2026 - 10:15 Opening: 29 September 2026 Closing: 03 November 2026 The Commission has launched a targeted consultation in preparation of a possible initiative for a better copyright environment for creativity and innovation. © anyaberkut Main link https://ec.europa.eu/eusurvey/runner/targetedconsultationcopyright Related topics Research and Innovation Copyright Artificial intelligence
+On Our Radar eschelhaas Fri, 10/02/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 02 October 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky E-mail Facebook Linkedin Twitter…
 
-[Read more](https://digital-strategy.ec.europa.eu/en/consultations/targeted-consultation-support-better-copyright-environment-creativity-and-innovation)
+[Read more](https://www.crisisgroup.org/sco/global/our-radar)
 
 ---
 
@@ -384,6 +438,15 @@ Targeted consultation to support a better copyright environment for creativity a
 Renewables reached a new all-time monthly high in August, at 3,312 GWh. However, wholesale market prices hit a yearly high of €133.4/MWh, driven by increased gas usage, and higher gas prices rose in August due to the escalating crisis. Batteries prevented 15.4% of August’s RES curtailments, which were limited to 158.6 GWh for the month, but nevertheless approached 2 TWh (1,905 GWh) since the beginning of the year. The post Trends in electricity production – August 2026 first appeared on The Green Tank .
 
 [Read more](https://thegreentank.gr/en/2026/09/30/admie-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-aug26-en)
+
+---
+
+### The "Green Transition” Programme officially launched: nearly PLN 800 million for climate, energy, nature and circular economy projects
+*Polish Ministry of Climate and Environment — 2026-09-30*
+
+Nearly PLN 800 million will be allocated to projects supporting climate protection, the development of local energy systems, nature conservation and more efficient resource management. At the opening conference held on 30 September 2026, the Ministry of Climate and Environment officially launched the "Green Transition” Programme, funded under the European Economic Area Financial Mechanism 2021-2028.
+
+[Read more](https://www.gov.pl/web/climate/the-green-transition-programme-officially-launched-nearly-pln-800-million-for-climate-energy-nature-and-circular-economy-projects)
 
 ---
 
@@ -414,6 +477,24 @@ The conference “Clean Energy, Restored Lands: The Path Forward for Coal Region
 
 ---
 
+### Nikos Mantzaris on News 24/7’s Pop Science
+*The Green Tank — 2026-10-06*
+
+Why does electricity remain expensive despite the growing share of renewable energy? Nikos Mantzaris, Lead Policy Analyst and co-founder of The Green Tank, spoke with Niki Bakouli on Pop Science, News 24/7’s podcast about the factors shaping electricity prices and ways to reduce energy costs for consumers. The post Nikos Mantzaris on News 24/7’s Pop Science first appeared on The Green Tank .
+
+[Read more](https://thegreentank.gr/en/2026/10/06/nm-popscience-podcast-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-popscience-podcast-en)
+
+---
+
+### From Cities to Seas: Humboldt Fellows Explore Nature-Based Solutions and Ecosystem-Based Governance
+*Ecologic Institute — 2026-09-30*
+
+Ecologic Institute welcomed the International Climate Protection Fellows of the Alexander von Humboldt Foundation. The visit brought together a highly interdisciplinary group exploring how nature-based solutions and ecosystem-based governance can help turn complex environmental challenges into practical, collaborative action.
+
+[Read more](https://www.ecologic.eu/20682)
+
+---
+
 ### Commission finds Polish support for MAN Trucks factory expansion incompatible State aid
 *European Commission — Press Corner — 2026-10-04*
 
@@ -423,21 +504,21 @@ European Commission Press release Brussels, 05 Oct 2026 The European Commission 
 
 ---
 
-### Hydrogen on track: new standards support fuel-cell-powered rolling stock
-*CEN-CENELEC — 2026-09-29*
-
-As Europe continues its transition towards cleaner and more sustainable mobility, hydrogen is emerging as one of the technologies that could help reduce the environmental impact of rail transport, particularly on lines where conventional electrification is difficult or economically challenging.
-
-[Read more](https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-09-29-en-iec-63341-series/)
-
----
-
 ### Public innovation and Energy Communities towards participatory democracies
 *EU Covenant of Mayors — 2026-09-30*
 
 Energy communities are opening up new ways for people and local actors to collectively engage in the energy system. With public purpose and support, they can go beyond sustainability: strengthening local cooperation, tackling energy poverty and building shared ownership and trust.
 
 [Read more](https://eu-mayors.ec.europa.eu/en/news/public-innovation-and-energy-communities-towards-participatory-democracies)
+
+---
+
+### VVD: Light petroleum products detected off the Kurzeme coast; the possibility of historical pollution has been ruled out
+*Latvian Ministry of Climate and Energy — 2026-10-02*
+
+. Information compiled by: State Environmental Service The State Environmental Service (VVD) has received the results of laboratory analyses concerning the oil pollution detected on the Kurzeme coast. The results of the analyses…
+
+[Read more](https://www.kem.gov.lv/lv/jaunums/vvd-kurzemes-piekraste-konstateti-vieglie-naftas-produkti-izslegta-vesturiska-piesarnojuma-versija)
 
 ---
 
@@ -459,30 +540,12 @@ European Commission Press release Brussels, 02 Oct 2026 The European Commission 
 
 ---
 
-### Road to biodiversity COP17 and climate COP31: Cities and regions urge Ireland’s EU presidency to recognise their efforts
-*Committee of the Regions — 2026-09-29*
-
-Last summer's record heatwaves, wildfires and other extreme weather events across Europe again proved the urgency to tackle climate change and strengthen resilience at all levels of government…
-
-[Read more](https://www.cor.europa.eu/en/news/road-biodiversity-cop17-and-climate-cop31-cities-and-regions-urge-irelands-eu-presidency-recognise)
-
----
-
 ### Without Fear or Favour: The European Commission’s DMA Non-Compliance Decision Against Google’s Self-Preferencing (Case DMA.100193)
 *Kluwer Competition Law Blog — 2026-09-30*
 
 In July, the European Commission issued its non-compliance decision against gatekeeper Google for its breach of the self-preferencing prohibition under Article 6(5) DMA.
 
 [Read more](https://legalblogs.wolterskluwer.com/competition-blog/without-fear-or-favour-the-european-commissions-dma-non-compliance-decision-against-googles-self-preferencing-case-dma100193/)
-
----
-
-### GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology
-*Hydrogen Europe — 2026-09-29*
-
-[…] The post GEN-H plans 200-300 MW zero-emission balancing power facility in Finland based on Hycamite methane pyrolysis technology appeared first on Hydrogen Europe .
-
-[Read more](https://hydrogeneurope.eu/gen-h-plans-200-300-mw-zero-emission-balancing-power-facility-in-finland-based-on-hycamite-methane-pyrolysis-technology/)
 
 ---
 
@@ -513,12 +576,12 @@ From industry associations to environmental and civil-society bodies, a total of
 
 ---
 
-### Identifying leaks in the pipeline from science to biodiversity protection
-*BC3 — 2026-09-29*
+### SIPRI hosts Canberra workshop on China’s export control framework
+*SIPRI — 2026-10-06*
 
-A newly published global review highlights the importance of relationships with scientists, relevant research, and organisational resources in shaping how scientific evidence informs conservation decisions.
+On 23 September, SIPRI’s Dual–Use and Arms Trade Control Programme delivered a workshop in Canberra on ‘Developments in China’s Export Control Framework: Implications for Australia and Multilateral Cooperation’.
 
-[Read more](https://www.bc3research.org/en/2026/09/identifying-leaks-in-the-pipeline-from-science-to-biodiversity-protection/)
+[Read more](https://www.sipri.org/news/2026/sipri-hosts-canberra-workshop-chinas-export-control-framework)
 
 ---
 
@@ -528,6 +591,15 @@ A newly published global review highlights the importance of relationships with 
 New European Commission-OECD research shows the severe and lasting impact of automotive job losses and strengthens the case for anticipating change, protecting ...
 
 [Read more](https://news.industriall-europe.eu/Article/1602)
+
+---
+
+### Preparations for the UN Climate Change Conference: Pre-COP31 taking place in Fiji
+*German Federal Environment Ministry (BMUKN) — 2026-10-05*
+
+The conference in Fiji will lay the political groundwork for the UN Climate Change Conference COP31 in Antalya in November. State Secretary Jochen Flasbarth will take part on behalf of Germany.
+
+[Read more](https://www.bundesumweltministerium.de/en/pressrelease/preparations-for-the-un-climate-change-conference-pre-cop31-taking-place-in-fiji)
 
 ---
 
@@ -549,12 +621,12 @@ The Karakoram mountain range is one of the most remote and difficult to study in
 
 ---
 
-### European Semester must deliver for industrial workers and support a just transition
-*industriAll Europe — 2026-09-29*
+### Applications open for online course on WMD non-proliferation and disarmament
+*SIPRI — 2026-10-06*
 
-IndustriAll Europe participated on 28 September, alongside the ETUC, in the Implementation Dialogue on the European Semester, organised by Commissioner Valdis D...
+Applications are now open for an intensive online course on weapons of mass destruction (WMD) non-proliferation and disarmament in an era of technological convergence.
 
-[Read more](https://news.industriall-europe.eu/Article/1599)
+[Read more](https://www.sipri.org/news/2026/applications-open-online-course-wmd-non-proliferation-and-disarmament)
 
 ---
 
@@ -573,15 +645,6 @@ Semiconductors are essential to Europe’s industries, technological sovereignty
 The post The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe’s Future Competitiveness appeared first on The Lisbon Council .
 
 [Read more](https://lisboncouncil.net/the-1-trillion-why-an-obscure-copyright-acronym-could-decide-europes-future-competitiveness/)
-
----
-
-### Green Deal Funding Alert – September 2026
-*Committee of the Regions — 2026-09-29*
-
-This is the latest edition of the Green Deal Funding Alert, this edition focuses funding calls for the green transition, as well as capacity building and learning from peers' opportunities.
-
-[Read more](https://www.cor.europa.eu/en/news/green-deal-funding-alert-september-2026)
 
 ---
 
@@ -612,6 +675,24 @@ The BRIDGES 5.0 project has concluded after four years of work on how Europe’s
 
 ---
 
+### Beyond a legacy of war: Integrating mine action into climate security
+*SIPRI — 2026-10-06*
+
+This blog highlights how climate change and landmine contamination can interact to create new security risks.
+
+[Read more](https://www.sipri.org/commentary/blog/2026/beyond-legacy-war-integrating-mine-action-climate-security)
+
+---
+
+### Beyond a legacy of war: Integrating mine action into climate security
+*SIPRI — 2026-10-06*
+
+This blog highlights how climate change and landmine contamination can interact to create new security risks.
+
+[Read more](https://www.sipri.org/commentary/blog/2026/beyond-legacy-war-integrating-mine-action-climate-security)
+
+---
+
 ### SIPRI co-convenes human security dialogue in Rome
 *SIPRI — 2026-10-05*
 
@@ -621,12 +702,12 @@ On 16–17 September, SIPRI, IAI and UNTFHS convened a two-day dialogue in Rome 
 
 ---
 
-### IETA welcomes Canada's initiative to develop Article 6 participation framework
-*IETA — 2026-09-29*
+### How are European small enterprises dealing with the circular economy? [version 2; peer review: 3 approved with reservations]
+*Open Research Europe (ORE) — 2026-10-06*
 
-IETA welcomes Canada's initiative to develop Article 6 participation framework
+doi:10.12688/openreseurope.23303.2
 
-[Read more](https://www.ieta.org/news/ieta-welcomes-canadas-initiative-to-develop-article-6-participation-framework)
+[Read more](https://open-research-europe.ec.europa.eu/articles/6-163/v2?src=rss)
 
 ---
 
@@ -645,5 +726,12 @@ Unlocking corporate demand for carbon removal starts with clear guidance
 Setting the course for novel marine carbon removal in Europe
 
 [Read more](https://carbongap.org/insights/setting-the-course-for-novel-marine-carbon-removal-in-europe)
+
+---
+
+### MITECO launches the Maciñeira Just Transition Hub competition for renewables and energy storage – 1 photo
+*Spanish MITECO — 2026-09-30*
+
+[Read more](https://www.miteco.gob.es/es/prensa/ultimas-noticias/2026/septiembre/el-miteco-lanza-el-concurso-del-nudo-de-transicion-justa-de-maci.html)
 
 ---

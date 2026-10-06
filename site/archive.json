@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05",
+  "generated": "2026-10-06",
   "months": [
     {
       "key": "2026-11",
@@ -28,7 +28,7 @@
           "field": "competition",
           "title": "Selective Confusion: An Empirical Analysis of the DMA\u2019s Brussels Effect [pre-publication]",
           "link": "https://kluwerlawonline.com/JournalArticle/World+Competition/49.3 [pre-publication]/WOCO2026021",
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "summary": "This article examines the extent to which designated \u201cgatekeepers\u201d implement the provisions of the EU\u2019s Digital Markets Act (DMA) outside its territorial scope (\u201cBrussels Effect\u201d). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance\u2026",
           "image": null,
           "actor_type": "academic",
@@ -42,7 +42,7 @@
           "field": "competition",
           "title": "THE \u2018INTERNAL MARKET DETOUR\u2019 FOR DEFENDING DEMOCRACY [pre-publication]",
           "link": "https://kluwerlawonline.com/JournalArticle/Common+Market+Law+Review/63.5 [pre-publication]/COLA2026072",
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "summary": "This article examines the EU\u2019s recent approach to defending democracy through internal market legislation. It analyses three central instruments \u2013 the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive \u2013 to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this \u2018internal market detour\u2019 is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the\u2026",
           "image": null,
           "actor_type": "academic",
@@ -86,11 +86,23 @@
           "tags": []
         },
         {
+          "org": "PIK Potsdam",
+          "field": "green-deal",
+          "title": "Rising emissions have locked-in future climate impacts, scale of damage depends on action now \u2013 10 new insights",
+          "link": "https://www.pik-potsdam.de/en/news/latest-news/rising-emissions-have-locked-in-future-climate-impacts-but-the-scale-of-damage-still-depends-on-action-taken-now-2013-10-new-insights-from-climate-science",
+          "date": "2026-10-06",
+          "summary": "Past emissions have already committed the planet to higher temperatures, sea levels and other long-term impacts, with new research showing that the resulting economic and social costs are greater than previously understood. At the same time, rapid emissions cuts can still limit the damage, while advances in climate science are making it increasingly possible to trace responsibility for climate-related harm. These findings are among the 10 major developments highlighted in the 2026/2027 \u201c10 New Insights in Climate Science\u201d report, produced by more than 70 scientists from nearly 30 countries, i\u2026",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "European Environmental Law Review",
           "field": "green-deal",
           "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
           "image": null,
           "actor_type": "academic",
@@ -106,6 +118,18 @@
           "summary": "Eine einfache Berechnung auf Basis der verf\u00fcgbaren Daten und unter Annahme eines starken Wachstums zeigt: Bereits eine geringe Verschlechterung von Effizienzstandards bei Rechenzentren f\u00fchrt zu sehr gro\u00dfen zus\u00e4tzlichen Strom- und W\u00e4rmebedarfen. Im Jahr 2045 entspricht der zus\u00e4tzliche Energieverbrauch der Stromproduktion von sieben Gaskraftwerken. Die zus\u00e4tzlich zu erzeugende W\u00e4rmemenge im Jahr 2045 entspricht der W\u00e4rme-Importmenge, die mit elf gro\u00dfen LNG-Tankschiffen transportiert werden kann. Akkumuliert \u00fcber die Jahre 2026 bis 2045 f\u00fchren sowohl der Strommehrverbrauch als auch die\u2026",
           "image": "https://algorithmwatch.org/wp-content/uploads/2026/10/480px_261002_Screenshot_PUE-Studie_JBO-1.webp",
           "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "ECSA (European Community Shipowners' Associations)",
+          "field": "green-deal",
+          "title": "Open letter to EU ministers to support the inclusion of Indian ship recycling yards on the European List",
+          "link": "https://ecsa.eu/open-letter-to-the-environment-and-transport-ministers-of-the-european-union-2/?utm_source=rss&utm_medium=rss&utm_campaign=open-letter-to-the-environment-and-transport-ministers-of-the-european-union-2",
+          "date": "2026-10-06",
+          "summary": "Open letter to EU ministers to support the inclusion of Indian ship recycling yards on the European List Dear Ministers, BIMCO, the Cruise Lines International Association (CLIA), European Shipowners | ECSA, the International Chamber of Shipping (ICS), INTERCARGO, INTERFERRY, INTERTANKO, and the World Shipping Council (WSC) call on EU Member States to deliver a positive opinion on the European Commission\u2019s proposal to add two Indian ship recycling facilities to the updated European List of Ship Recycling Facilities. This proposed inclusion of the two Indian yards reflects years of substantial\u2026",
+          "image": "https://ecsa.eu/wp-content/uploads/2026/09/e0f1fb-1900-x-600-px-3.png",
+          "actor_type": "industry",
           "content_type": null,
           "tags": []
         },
@@ -150,7 +174,7 @@
           "field": "green-deal",
           "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
           "image": null,
           "actor_type": "academic",
@@ -184,6 +208,18 @@
           "tags": []
         },
         {
+          "org": "PIK Potsdam",
+          "field": "green-deal",
+          "title": "\u201cNew pathways explored\u201d: Closing event for the Ariadne energy transition project",
+          "link": "https://www.pik-potsdam.de/en/news/latest-news/new-pathways-explored-closing-event-for-the-ariadne-energy-transition-project",
+          "date": "2026-10-06",
+          "summary": "The Ariadne research project has provided important guidance for the energy transition in Germany since its inceptions in mid-2019, and will leave well-founded recommendations for its further orientation when it closes at the end of 2026. This is the key message of the Ariadne closing conference today in Berlin, attended by around 200 experts from the fields of science, politics, business and civil society. Coinciding with this event, a major report summarises the findings of the scientific project, which comprises 26 institutes and is led by the Potsdam Institute for Climate Impact Research\u2026",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "E3G",
           "field": "green-deal",
           "title": "Europe\u2019s clean industrial strategy needs a comprehensive lead-market architecture",
@@ -208,6 +244,18 @@
           "tags": []
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Five Energy Market Factors That Could Tip the Scales in the Middle East War",
+          "link": "https://www.crisisgroup.org/cmt/united-states/united-states-iran-israelpalestine/five-energy-market-factors-could-tip-scales-middle-east-war",
+          "date": "2026-10-01",
+          "summary": "Five Energy Market Factors That Could Tip the Scales in the Middle East War pfranz Thu, 10/01/2026 - 19:11 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List A garbage truck drives past gas prices above $6 a gallon and diesel prices above $8 a gallon as they are displayed outside of a Shell gas station in Carson, California on September 22, 2026. Patrick T. Fallon / AFP Commentary / United States 01 October 2026 20+ minutes Five Energy Market Factors That Could Tip the Scales in the Middle\u2026",
+          "image": "https://www.crisisgroup.org/sites/default/files/2026-10/hero_IranEnergy.jpg",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "Chatham House",
           "field": "security",
           "title": "S\u00e1nchez\u2019s gamble: This \u2018all-in\u2019 election will have international\u00a0impact",
@@ -224,7 +272,7 @@
           "field": "green-deal",
           "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-          "date": "2026-10-05",
+          "date": "2026-10-06",
           "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
           "image": null,
           "actor_type": "academic",
@@ -354,6 +402,18 @@
           "tags": []
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "Inside Sudan\u2019s War",
+          "link": "https://www.crisisgroup.org/pod/africa/sudan/inside-sudans-war",
+          "date": "2026-10-01",
+          "summary": "Inside Sudan\u2019s War mloukili Thu, 10/01/2026 - 13:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 01 October 2026 1 minute Inside Sudan\u2019s War In this episode of The Horn , Alan speaks with Yousra Elbagir, Sky News\u2019s Africa correspondent, about her reporting from inside Sudan\u2019s war, including around El Obeid and El Fasher, how Sudanese are surviving the war and how the war could end. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Sudan In\u2026",
+          "image": "https://www.crisisgroup.org/sites/default/files/2024-01/horn-hero_0.png",
+          "actor_type": "think-tank",
+          "content_type": "podcast",
+          "tags": []
+        },
+        {
           "org": "Wilfried Martens Centre (EPP)",
           "field": "security",
           "title": "September 2026",
@@ -362,6 +422,18 @@
           "summary": "September brings not only the start of a new policy season but also a renewed conversation about where the EU is heading, marked by the annual State of the Union address. In a Martens Centre blog post Klaus Welle, Tomi Huhtanen, Peter Hefele, Dimitar Lilkov and Gavin Synnott highlight five elements that emerged from SOTEU. Check it out here ! In this edition of our monthly newsletter, we also bring together our latest media mentions , events , and research touching upon key issues for Europe: from competitiveness and security to digitalising Europe\u2019s economy and cross-border resilience . Head\u2026",
           "image": null,
           "actor_type": "political",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "On Our Radar",
+          "link": "https://www.crisisgroup.org/sco/global/our-radar",
+          "date": "2026-10-01",
+          "summary": "On Our Radar eschelhaas Fri, 10/02/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 02 October 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky E-mail Facebook Linkedin Twitter\u2026",
+          "image": "https://www.crisisgroup.org/sites/default/files/on-our-radar-hero.png",
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -392,6 +464,18 @@
           "tags": []
         },
         {
+          "org": "The Green Tank",
+          "field": "green-deal",
+          "title": "Nikos Mantzaris on News 24/7\u2019s Pop Science",
+          "link": "https://thegreentank.gr/en/2026/10/06/nm-popscience-podcast-en/?utm_source=rss&utm_medium=rss&utm_campaign=nm-popscience-podcast-en",
+          "date": "2026-10-06",
+          "summary": "Why does electricity remain expensive despite the growing share of renewable energy? Nikos Mantzaris, Lead Policy Analyst and co-founder of The Green Tank, spoke with Niki Bakouli on Pop Science, News 24/7\u2019s podcast about the factors shaping electricity prices and ways to reduce energy costs for consumers. The post Nikos Mantzaris on News 24/7\u2019s Pop Science first appeared on The Green Tank .",
+          "image": "https://thegreentank.gr/wp-content/uploads/2026/10/NM-@-Pop-Science-podcast-e1791276574820.png",
+          "actor_type": "think-tank",
+          "content_type": "podcast",
+          "tags": []
+        },
+        {
           "org": "European Commission \u2014 Press Corner",
           "field": "competition",
           "title": "Commission finds Polish support for MAN Trucks factory expansion incompatible State aid",
@@ -404,6 +488,20 @@
           "tags": [
             "state-aid"
           ]
+        },
+        {
+          "org": "Latvian Ministry of Climate and Energy",
+          "field": "green-deal",
+          "title": "VVD: Light petroleum products detected off the Kurzeme coast; the possibility of historical pollution has been ruled out",
+          "link": "https://www.kem.gov.lv/lv/jaunums/vvd-kurzemes-piekraste-konstateti-vieglie-naftas-produkti-izslegta-vesturiska-piesarnojuma-versija",
+          "date": "2026-10-02",
+          "summary": ". Information compiled by: State Environmental Service The State Environmental Service (VVD) has received the results of laboratory analyses concerning the oil pollution detected on the Kurzeme coast. The results of the analyses\u2026",
+          "image": null,
+          "original_title": "VVD: Kurzemes piekrast\u0113 konstat\u0113ti vieglie naftas produkti, izsl\u0113gta v\u0113sturiska pies\u0101r\u0146ojuma versija",
+          "translated_from": "lv",
+          "actor_type": "eu27-ministry",
+          "content_type": null,
+          "tags": []
         },
         {
           "org": "PlasticsEurope",
@@ -458,12 +556,48 @@
           ]
         },
         {
+          "org": "SIPRI",
+          "field": "security",
+          "title": "SIPRI hosts Canberra workshop on China\u2019s export control framework",
+          "link": "https://www.sipri.org/news/2026/sipri-hosts-canberra-workshop-chinas-export-control-framework",
+          "date": "2026-10-06",
+          "summary": "On 23 September, SIPRI\u2019s Dual\u2013Use and Arms Trade Control Programme delivered a workshop in Canberra on \u2018Developments in China\u2019s Export Control Framework: Implications for Australia and Multilateral Cooperation\u2019.",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "German Federal Environment Ministry (BMUKN)",
+          "field": "green-deal",
+          "title": "Preparations for the UN Climate Change Conference: Pre-COP31 taking place in Fiji",
+          "link": "https://www.bundesumweltministerium.de/en/pressrelease/preparations-for-the-un-climate-change-conference-pre-cop31-taking-place-in-fiji",
+          "date": "2026-10-05",
+          "summary": "The conference in Fiji will lay the political groundwork for the UN Climate Change Conference COP31 in Antalya in November. State Secretary Jochen Flasbarth will take part on behalf of Germany.",
+          "image": null,
+          "actor_type": "eu27-ministry",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "BC3",
           "field": "green-deal",
           "title": "The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity",
           "link": "https://www.bc3research.org/en/2026/10/the-first-chemical-analysis-of-snow-accumulated-on-the-godwin-austen-glacier-shows-pollution-from-human-activity/",
           "date": "2026-10-02",
           "summary": "The Karakoram mountain range is one of the most remote and difficult to study in High Mountain Asia, located in the center and southeast of the continent.",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "SIPRI",
+          "field": "security",
+          "title": "Applications open for online course on WMD non-proliferation and disarmament",
+          "link": "https://www.sipri.org/news/2026/applications-open-online-course-wmd-non-proliferation-and-disarmament",
+          "date": "2026-10-06",
+          "summary": "Applications are now open for an intensive online course on weapons of mass destruction (WMD) non-proliferation and disarmament in an era of technological convergence.",
           "image": null,
           "actor_type": "think-tank",
           "content_type": null,
@@ -521,6 +655,18 @@
         },
         {
           "org": "SIPRI",
+          "field": "green-deal",
+          "title": "Beyond a legacy of war: Integrating mine action into climate security",
+          "link": "https://www.sipri.org/commentary/blog/2026/beyond-legacy-war-integrating-mine-action-climate-security",
+          "date": "2026-10-06",
+          "summary": "This blog highlights how climate change and landmine contamination can interact to create new security risks.",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "SIPRI",
           "field": "security",
           "title": "SIPRI co-convenes human security dialogue in Rome",
           "link": "https://www.sipri.org/news/2026/sipri-co-convenes-human-security-dialogue-rome",
@@ -528,6 +674,18 @@
           "summary": "On 16\u201317 September, SIPRI, IAI and UNTFHS convened a two-day dialogue in Rome on human security in Europe and the Mediterranean.",
           "image": null,
           "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Open Research Europe (ORE)",
+          "field": "green-deal",
+          "title": "How are European small enterprises dealing with the circular economy? [version 2; peer review: 3 approved with reservations]",
+          "link": "https://open-research-europe.ec.europa.eu/articles/6-163/v2?src=rss",
+          "date": "2026-10-06",
+          "summary": "doi:10.12688/openreseurope.23303.2",
+          "image": null,
+          "actor_type": "academic",
           "content_type": null,
           "tags": []
         }
@@ -1360,6 +1518,18 @@
           "content_type": null
         },
         {
+          "org": "International Crisis Group",
+          "field": "security",
+          "title": "The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next?",
+          "link": "https://www.crisisgroup.org/cmt/middle-east-north-africa/iraq-united-states/us-led-anti-isis-coalition-leaving-iraq-what-happens-next",
+          "date": "2026-09-29",
+          "summary": "The U.S.-led Anti-ISIS Coalition is Leaving Iraq: What Happens Next? eschelhaas Tue, 09/29/2026 - 18:14 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Iraqi security forces stand guard during a funerary procession for a slain member of Iraq's Hashed al-Shaabi, or the Popular Mobilisation Forces (PMF), who was killed in a US-Israeli air strike in Mosul the previous evening, in Baghdad on March 8, 2026. AHMAD AL-RUBAYE / AFP Commentary / Middle East & North Africa 29 September 2026 14\u2026",
+          "image": "https://www.crisisgroup.org/sites/default/files/2026-09/Iraq-commentary-hero.jpg",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "ECFR",
           "field": "security",
           "title": "A no to the EU, not to Europe: What Icelanders actually voted on",
@@ -1883,6 +2053,18 @@
         {
           "org": "International Crisis Group",
           "field": "security",
+          "title": "September Trends and October Alerts 2026",
+          "link": "https://www.crisisgroup.org/crisiswatch/september-trends-and-october-alerts-2026",
+          "date": "2026-09-30",
+          "summary": "September Trends and October Alerts 2026 oolofsson Wed, 09/30/2026 - 12:06 CrisisWatch Tracking Conflict Worldwide Loading Map Early Warning Resolution Opportunity Risk Alert Trends Improved Situation Deteriorated Situation Unchanged Situation Standby monitoring Not monitored Scroll down to read trends & outlook Share Facebook Twitter Email Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List CrisisWatch is our global conflict tracker, an early warning tool designed to help prevent deadly\u2026",
+          "image": "https://www.crisisgroup.org/sites/default/files/2023-09/Globe_0.svg",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "International Crisis Group",
+          "field": "security",
           "title": "Ten Challenges for the UN in 2026-2027",
           "link": "https://www.crisisgroup.org/sbr/global/sb15-ten-challenges-un-2026-2027",
           "date": "2026-09-14",
@@ -2127,17 +2309,6 @@
           "content_type": null
         },
         {
-          "org": "International Crisis Group",
-          "field": "security",
-          "title": "On Our Radar",
-          "link": "https://www.crisisgroup.org/sco/global/our-radar",
-          "date": "2026-09-24",
-          "summary": "On Our Radar eschelhaas Fri, 09/25/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 25 September 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group\u2019s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky Email Facebook Linkedin Twitter\u2026",
-          "actor_type": "think-tank",
-          "content_type": null,
-          "tags": []
-        },
-        {
           "org": "European Commission -- Shaping Europe's Digital Future",
           "field": "tech",
           "title": "Targeted consultation to support a better copyright environment for creativity and innovation",
@@ -2193,6 +2364,18 @@
           "summary": "Renewables reached a new all-time monthly high in August, at 3,312 GWh. However, wholesale market prices hit a yearly high of \u20ac133.4/MWh, driven by increased gas usage, and higher gas prices rose in August due to the escalating crisis. Batteries prevented 15.4% of August\u2019s RES curtailments, which were limited to 158.6 GWh for the month, but nevertheless approached 2 TWh (1,905 GWh) since the beginning of the year. The post Trends in electricity production \u2013 August 2026 first appeared on The Green Tank .",
           "image": "https://thegreentank.gr/wp-content/uploads/2024/08/admie-1-1.jpg",
           "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Polish Ministry of Climate and Environment",
+          "field": "green-deal",
+          "title": "The \"Green Transition\u201d Programme officially launched: nearly PLN 800 million for climate, energy, nature and circular economy projects",
+          "link": "https://www.gov.pl/web/climate/the-green-transition-programme-officially-launched-nearly-pln-800-million-for-climate-energy-nature-and-circular-economy-projects",
+          "date": "2026-09-30",
+          "summary": "Nearly PLN 800 million will be allocated to projects supporting climate protection, the development of local energy systems, nature conservation and more efficient resource management. At the opening conference held on 30 September 2026, the Ministry of Climate and Environment officially launched the \"Green Transition\u201d Programme, funded under the European Economic Area Financial Mechanism 2021-2028.",
+          "image": "https://www.gov.pl/photo/format/20d2db24-9299-45a3-9688-4b6f54483923/resolution/1920x810",
+          "actor_type": "eu27-ministry",
           "content_type": null,
           "tags": []
         },
@@ -2270,6 +2453,18 @@
           "link": "https://thegreentank.gr/en/2026/09/10/electricity-exports-gas-report-en/?utm_source=rss&utm_medium=rss&utm_campaign=electricity-exports-gas-report-en",
           "date": "2026-09-10",
           "summary": "The Green Tank\u2019s new analysis [in Greek], titled \u201cElectricity exports from fossil gas: the cost to the Greek market and the climate\u201d, quantitatively examines the impact of this additional use of fossil gas for electricity exports on Greece\u2019s wholesale electricity market and on emissions from the power sector. The post How much do electricity exports cost us? first appeared on The Green Tank .",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Ecologic Institute",
+          "field": "green-deal",
+          "title": "From Cities to Seas: Humboldt Fellows Explore Nature-Based Solutions and Ecosystem-Based Governance",
+          "link": "https://www.ecologic.eu/20682",
+          "date": "2026-09-30",
+          "summary": "Ecologic Institute welcomed the International Climate Protection Fellows of the Alexander von Humboldt Foundation. The visit brought together a highly interdisciplinary group exploring how nature-based solutions and ecosystem-based governance can help turn complex environmental challenges into practical, collaborative action.",
+          "image": null,
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -2787,6 +2982,20 @@
           "date": "2026-09-14",
           "summary": "A stakeholder report by EUobserver quoting our Policy Director, Peter Hefele.",
           "actor_type": "political",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Spanish MITECO",
+          "field": "green-deal",
+          "title": "MITECO launches the Maci\u00f1eira Just Transition Hub competition for renewables and energy storage \u2013 1 photo",
+          "link": "https://www.miteco.gob.es/es/prensa/ultimas-noticias/2026/septiembre/el-miteco-lanza-el-concurso-del-nudo-de-transicion-justa-de-maci.html",
+          "date": "2026-09-30",
+          "summary": "",
+          "image": null,
+          "original_title": "El MITECO lanza el concurso del nudo de transici\u00f3n justa de Maci\u00f1eira para renovables y almacenamiento 1 foto",
+          "translated_from": "es",
+          "actor_type": "eu27-ministry",
           "content_type": null,
           "tags": []
         },
