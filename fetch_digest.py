@@ -24,6 +24,7 @@ import yaml
 from bs4 import BeautifulSoup
 
 import backend_scrapers
+import translation
 
 try:
     from langdetect import DetectorFactory as _LangDetectorFactory
@@ -846,6 +847,7 @@ ACTOR_LABELS = {
     "trade-union": "Trade Unions",
     "ngo": "NGO & Advocacy",
     "eu-institution": "EU Institutions",
+    "eu27-ministry": "EU 27 Ministries",
     "international-org": "International Organisations",
     "media": "Media & Journalism",
 }
@@ -854,7 +856,7 @@ ACTOR_LABELS = {
 # in index.html.
 ACTOR_ORDER = [
     "think-tank", "academic", "political", "industry", "trade-union", "ngo",
-    "eu-institution", "international-org", "media",
+    "eu-institution", "eu27-ministry", "international-org", "media",
 ]
 
 # Homepage URL for sources.yaml entries that use a "scraper" key instead of
@@ -862,6 +864,18 @@ ACTOR_ORDER = [
 # the target page each scraper function documents/scrapes in
 # backend_scrapers.py -- update here if a scraper's target page moves.
 SCRAPER_HOMEPAGES = {
+    "spain_miteco": "https://www.miteco.gob.es/es/prensa/ultimas-noticias.html",
+    "latvia_kem": "https://www.kem.gov.lv/lv/jaunumi",
+    "portugal_gov": "https://www.portugal.gov.pt/pt/gc25/comunicacao/noticias",
+    "ireland_decc": "https://www.gov.ie/en/department-of-climate-energy-and-the-environment/",
+    "denmark_kefm": "https://en.kefm.dk/news",
+    "hungary_kormany": "https://kormany.hu/en/news",
+    "malta_doi": "https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/default.aspx",
+    "cyprus_pio": "https://www.pio.gov.cy/en/press-releases-articles.html",
+    "bmukn": "https://www.bundesumweltministerium.de/en/",
+    "bulgaria_moew": "https://www.moew.government.bg/en/",
+    "sweden_government": "https://www.government.se/press-releases/",
+    "poland_climate_ministry": "https://www.gov.pl/web/climate",
     "cefic": "https://cefic.org",
     "eurofer": "https://www.eurofer.eu",
     "eurelectric": "https://www.eurelectric.org",
@@ -1076,7 +1090,7 @@ def is_relevant(title, excerpt, actor_type=None, field=None):
     return bool(pattern.search(text))
 
 
-def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
+def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False, topic_gate=True):
     """Keyword-filter entries, but ONLY for field in ('green-deal',
     'competition').
 
@@ -1116,6 +1130,15 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     there's no case here for keeping a purely-global item just because it
     hits a 1.5C-style benchmark keyword. See the eu_gate: true entries in
     sources.yaml for which sources use this.
+
+    `topic_gate` (per-source YAML flag `topic_gate: false`) switches OFF the
+    keyword topic check only -- the EU / international-org gates still run.
+    For sources that are already single-topic by nature (e.g. Eurelectric,
+    the EU electricity federation), where press-release titles often carry
+    no Green Deal keyword at all: Eurelectric's Power Barometer 2026
+    release ("Electricity weathered energy shocks in 2026, but storage and
+    flexibility must catch up") contains none of the keywords above and
+    was silently dropped.
     """
     if field not in ("green-deal", "competition"):
         # No topic keyword gate for these fields (see above), but the
@@ -1132,7 +1155,7 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False):
     eu_skipped = 0
     io_skipped = 0
     for entry in entries:
-        if not is_relevant(entry["title"], entry["summary"], actor_type, field):
+        if topic_gate and not is_relevant(entry["title"], entry["summary"], actor_type, field):
             skipped += 1
             continue
         if actor_type == "academic" and not is_eu_relevant(entry["title"], entry["summary"]):
@@ -1556,6 +1579,7 @@ ACTOR_RSS_LABELS = {
     "trade-union": "Trade Unions",
     "ngo": "NGO & Advocacy",
     "eu-institution": "EU Institutions",
+    "eu27-ministry": "EU 27 Ministries",
     "international-org": "International Organisations",
     "media": "Media & Journalism",
 }
@@ -1644,7 +1668,16 @@ def render_entry_html(entry):
         for t in entry.get("tags") or []
     )
     tags_block = f'<div class="entry-tags">{tags_html}</div>' if tags_html else ""
-    meta = f"{org}{f' · {_escape_html(actor_label)}' if actor_label else ''} — {date}"
+    translated_from = entry.get("translated_from")
+    translated_note = ""
+    if translated_from:
+        original = entry.get("original_title")
+        tip = _escape_html(f"Original title: {original}" if original else "Machine-translated")
+        translated_note = (
+            f' · <span class="translated-note" title="{tip}">machine-translated from '
+            f'{_escape_html(translation.language_name(translated_from))}</span>'
+        )
+    meta = f"{org}{f' · {_escape_html(actor_label)}' if actor_label else ''} — {date}{translated_note}"
     content_type = entry.get("content_type")
     format_label = FORMAT_LABELS.get(content_type)
     format_badge = (
@@ -2126,6 +2159,7 @@ def main():
     cutoff = dt.datetime.utcnow() - dt.timedelta(days=DAYS_BACK)
 
     all_entries = []
+    translation_cache = None  # loaded lazily by the first translate_from source
     for source in sources:
         name = source["name"]
         field = source.get("field", "green-deal")
@@ -2144,6 +2178,25 @@ def main():
             # published.
             print(f"  [warning] unexpected error processing {name}, skipping: {exc}")
             raw_entries = []
+
+        # National-language sources (the EU 27 Ministries without an English
+        # stream): translate title + summary to English FIRST, so every
+        # filter below -- events, non-English, the English keyword gate --
+        # works on English text. Anything that fails to translate keeps its
+        # native text and is dropped by the non-English filter. See
+        # translation.py.
+        translate_from = source.get("translate_from")
+        if translate_from and raw_entries:
+            if translation_cache is None:
+                translation_cache = translation.load_cache()
+            raw_entries, n_ok, n_fail = translation.translate_entries(
+                raw_entries, translate_from, cache=translation_cache
+            )
+            print(
+                f"  translated {n_ok} item(s) from "
+                f"{translation.language_name(translate_from)}"
+                + (f" ({n_fail} could not be translated)" if n_fail else "")
+            )
 
         raw_entries, event_skipped = filter_out_events(raw_entries)
         if event_skipped:
@@ -2168,7 +2221,10 @@ def main():
         # through so academic sources get the widened topic check + EU
         # gate (see apply_relevance_filter()).
         try:
-            primary_entries = apply_relevance_filter(raw_entries, field, actor_type, eu_gate)
+            primary_entries = apply_relevance_filter(
+                raw_entries, field, actor_type, eu_gate,
+                topic_gate=source.get("topic_gate", True),
+            )
         except Exception as exc:
             print(f"  [warning] unexpected error filtering {name}, skipping: {exc}")
             primary_entries = []
@@ -2232,6 +2288,9 @@ def main():
                 all_entries.append(cross_entry)
             if competition_cross_matches:
                 print(f"  +{len(competition_cross_matches)} also surfaced under competition (cross-topic match)")
+
+    if translation_cache is not None:
+        translation.save_cache(translation_cache)
 
     all_entries, duplicates_dropped = dedupe_entries(all_entries)
     if duplicates_dropped:
