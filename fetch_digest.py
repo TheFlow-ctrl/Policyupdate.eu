@@ -1,7 +1,7 @@
 """
 Pulls the last 7 days of publications from the RSS feeds and scrapers listed
 in sources.yaml, filters them to topic-relevant content for the fields that
-use a keyword filter (green-deal, competition -- security/tech/health are
+use a keyword filter (green-deal, competition, security -- tech/health are
 source-segregated instead and not topic-filtered), and writes them to
 digest.md (human-readable) and site/digest.json (what the website reads to
 display entries).
@@ -273,6 +273,91 @@ COMPETITION_CROSS_TAG_KEYWORDS = [
 
 _COMPETITION_CROSS_TAG_PATTERN = re.compile(
     r"\b(" + "|".join(re.escape(k) for k in COMPETITION_CROSS_TAG_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# Topic filter for field == "security" (Beta, launched Oct 2026). Scope as
+# chosen by the site owner: defence & military, cyber & hybrid threats, and
+# economic / supply-chain security (internal security & migration are NOT
+# covered). Applied to sources tagged field: security -- most of which are
+# general foreign-policy think tanks (ECFR, Chatham House, SWP, Crisis
+# Group...) that publish plenty of off-scope material, so unlike the
+# pre-Beta "source-segregated" behaviour they now need a keyword gate, the
+# same way green-deal and competition do. Bare "security" and "energy
+# security" are deliberately NOT keywords (hopelessly overloaded: social
+# security, food security, energy security -- the last of which is already
+# a green-deal keyword with a different meaning).
+SECURITY_KEYWORDS = [
+    # Defence & military
+    "defence", "defense", "european defence", "defence industry",
+    "defence industrial", "defence spending", "defence procurement",
+    "defence budget", "defence readiness", "defence union",
+    "security and defence", "common security and defence policy", "csdp",
+    "cfsp", "strategic compass", "european defence fund",
+    "edip", "readiness 2030", "rearm europe", "rearmament", "rearm",
+    "military", "armed forces", "military mobility", "pesco",
+    "european peace facility", "european defence agency",
+    "nato", "collective defence", "deterrence", "nuclear deterrent",
+    "arms control", "arms export", "arms exports", "arms race",
+    "ammunition", "air defence", "missile", "missiles", "drone", "drones",
+    "war in ukraine", "russia's war", "russian aggression", "ukraine",
+    # Cyber & hybrid threats
+    "cybersecurity", "cyber security", "cyber attack", "cyberattack",
+    "cyber attacks", "cyberattacks", "cyber resilience", "cyber defence",
+    "cyber solidarity", "cyber", "nis2", "nis 2", "ransomware",
+    "critical infrastructure", "critical entities",
+    "hybrid threat", "hybrid threats", "hybrid warfare", "hybrid attack",
+    "hybrid attacks", "sabotage", "espionage", "foreign interference",
+    "election interference", "disinformation", "information manipulation",
+    "fimi",
+    # Economic & supply-chain security
+    "economic security", "supply chain security", "supply-chain security",
+    "de-risking", "derisking", "strategic dependencies",
+    "strategic dependency", "economic coercion", "anti-coercion",
+    "economic statecraft", "fdi screening", "investment screening",
+    "foreign investment screening", "foreign direct investment screening",
+    "export control", "export controls", "dual-use", "sanctions",
+    "sanction", "sanctions package", "critical raw materials",
+    "technological sovereignty", "chips act",
+]
+
+_SECURITY_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in SECURITY_KEYWORDS) + r")\b",
+    re.IGNORECASE,
+)
+
+# Tighter counterpart for cross-tagging content INTO security from sources
+# whose primary field is something else (green-deal NGOs writing about
+# defence-industry spending, competition sources covering FDI screening...).
+# Same discipline as COMPETITION_CROSS_TAG_KEYWORDS: dropped from the list
+# above are the terms that are ordinary outside a security-dedicated feed:
+# bare "military"/"defence"/"drone(s)"/"missile(s)" (energy-system and
+# industrial articles use them in passing), "ukraine" (reconstruction,
+# energy and trade stories that are not security stories), bare "cyber",
+# "critical infrastructure" (grid/energy-infrastructure writing), "sanction"
+# singular, "disinformation"/"information manipulation" (green-deal NGOs
+# publish a lot on climate disinformation), "critical raw materials" and
+# "chips act" (already green-deal/competition tags -- they would flood the
+# security tab), "deterrence", "espionage", "sabotage" (generic news words).
+SECURITY_CROSS_TAG_KEYWORDS = [
+    "defence industry", "european defence industry", "defence industrial",
+    "defence spending", "defence procurement", "defence readiness",
+    "defence union", "european defence union", "security and defence",
+    "common security and defence policy", "strategic compass",
+    "european defence fund", "edip", "readiness 2030", "rearm europe",
+    "rearmament", "military mobility", "pesco", "european peace facility",
+    "nato", "hybrid threat", "hybrid threats", "hybrid warfare",
+    "cybersecurity", "cyber security", "cyber resilience act", "nis2",
+    "nis 2", "cyber solidarity", "cyber defence",
+    "economic security", "supply chain security", "supply-chain security",
+    "de-risking", "strategic dependencies", "economic coercion",
+    "anti-coercion", "fdi screening", "investment screening",
+    "foreign investment screening", "export controls", "dual-use",
+    "sanctions package",
+]
+
+_SECURITY_CROSS_TAG_PATTERN = re.compile(
+    r"\b(" + "|".join(re.escape(k) for k in SECURITY_CROSS_TAG_KEYWORDS) + r")\b",
     re.IGNORECASE,
 )
 
@@ -828,14 +913,81 @@ _COMPETITION_LEGISLATION_PATTERNS = {
     for tag_id, _label, keywords in COMPETITION_LEGISLATION_TAGS
 }
 
+# Sub-categories under the security field (Beta), same mechanism as the
+# two vocabularies above. These are a mix of enacted instruments (NIS2, CRA,
+# FDI Screening, dual-use controls) and live policy programmes (ReArm
+# Europe / Readiness 2030, EDIP, the Economic Security Strategy) -- the
+# "named instrument" pattern holds loosely here because much of EU security
+# policy is programmes and strategies rather than single laws. "crma"
+# deliberately reuses the id of the green-deal/competition tag (same
+# instrument, same label; see the note on COMPETITION_LEGISLATION_TAGS).
+#
+# (tag id, display label, keyword phrases to match)
+SECURITY_LEGISLATION_TAGS = [
+    ("rearm-europe", "ReArm Europe / Readiness 2030", [
+        "rearm europe", "readiness 2030", "rearmament", "defence readiness",
+        "white paper for european defence", "safe instrument",
+        "security action for europe",
+    ]),
+    ("edip", "EDIP", [
+        "edip", "european defence industry programme",
+        "european defence industrial programme",
+    ]),
+    ("edf", "European Defence Fund", [
+        "european defence fund",
+    ]),
+    ("nato-eu", "EU-NATO & Collective Defence", [
+        "nato", "collective defence", "military mobility",
+    ]),
+    ("nis2", "NIS2 Directive", [
+        "nis2", "nis 2", "network and information security directive",
+    ]),
+    ("cra", "Cyber Resilience Act", [
+        "cyber resilience act",
+    ]),
+    ("hybrid-threats", "Hybrid Threats & Disinformation", [
+        "hybrid threat", "hybrid threats", "hybrid warfare", "hybrid attack",
+        "hybrid attacks", "disinformation", "information manipulation",
+        "fimi", "foreign interference",
+    ]),
+    ("economic-security", "Economic Security", [
+        "economic security", "de-risking", "derisking", "strategic dependencies",
+        "economic coercion", "anti-coercion", "supply chain security",
+        "supply-chain security",
+    ]),
+    ("fdi-screening", "FDI Screening", [
+        "fdi screening", "investment screening", "foreign investment screening",
+        "foreign direct investment screening",
+    ]),
+    ("export-controls", "Export Controls (Dual-Use)", [
+        "export control", "export controls", "dual-use",
+    ]),
+    ("sanctions", "EU Sanctions", [
+        "sanctions", "sanctions package", "restrictive measures",
+    ]),
+    ("crma", "CRMA", [
+        "critical raw materials act", "crma",
+    ]),
+]
+
+_SECURITY_LEGISLATION_PATTERNS = {
+    tag_id: re.compile(
+        r"\b(" + "|".join(re.escape(k) for k in keywords) + r")\b",
+        re.IGNORECASE,
+    )
+    for tag_id, _label, keywords in SECURITY_LEGISLATION_TAGS
+}
+
 # Kept in sync with TOPIC_LABELS in script.js -- used only to render the
-# tag pills in the static (pre-rendered) HTML below. Merges both green-deal
-# and competition tag vocabularies into one lookup (safe: the two id sets
-# only deliberately overlap on nzia/crma, where the label is identical
+# tag pills in the static (pre-rendered) HTML below. Merges the green-deal,
+# competition and security tag vocabularies into one lookup (safe: the id
+# sets only deliberately overlap on nzia/crma, where the label is identical
 # either way).
 TOPIC_LABELS = {
     tag_id: label
-    for tag_id, label, _keywords in LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS
+    for tag_id, label, _keywords in (
+        LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS + SECURITY_LEGISLATION_TAGS
+    )
 }
 
 # Kept in sync with ACTOR_LABELS in script.js.
@@ -940,6 +1092,8 @@ def tag_legislation(title, excerpt, field="green-deal"):
     text = f"{title or ''} {excerpt or ''}"
     if field == "competition":
         tags, patterns = COMPETITION_LEGISLATION_TAGS, _COMPETITION_LEGISLATION_PATTERNS
+    elif field == "security":
+        tags, patterns = SECURITY_LEGISLATION_TAGS, _SECURITY_LEGISLATION_PATTERNS
     else:
         tags, patterns = LEGISLATION_TAGS, _LEGISLATION_PATTERNS
     return [
@@ -1083,6 +1237,8 @@ def is_relevant(title, excerpt, actor_type=None, field=None):
     text = f"{title or ''} {excerpt or ''}"
     if field == "competition":
         pattern = _COMPETITION_PATTERN
+    elif field == "security":
+        pattern = _SECURITY_PATTERN
     elif actor_type == "academic":
         pattern = _ACADEMIC_KEYWORD_PATTERN
     else:
@@ -1092,12 +1248,14 @@ def is_relevant(title, excerpt, actor_type=None, field=None):
 
 def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False, topic_gate=True):
     """Keyword-filter entries, but ONLY for field in ('green-deal',
-    'competition').
+    'competition', 'security').
 
-    Other fields (security, tech, health) are source-segregated instead --
+    Other fields (tech, health) are source-segregated instead --
     every source tagged with one of those fields is already handpicked for
     that topic, so running them through a keyword filter would wrongly
-    reject nearly everything. Competition is different from those: its
+    reject nearly everything. Security joined the keyword-filtered group at
+    its Beta launch (SECURITY_KEYWORDS): its sources are general foreign-
+    policy think tanks that need a topic gate. Competition is different from those: its
     sources include broad official Commission feeds (the Competition Press
     Corner is commissioner-scoped, not topic-scoped) that need their own
     keyword gate (COMPETITION_KEYWORDS) the same way green-deal's broad
@@ -1140,7 +1298,7 @@ def apply_relevance_filter(entries, field, actor_type=None, eu_gate=False, topic
     flexibility must catch up") contains none of the keywords above and
     was silently dropped.
     """
-    if field not in ("green-deal", "competition"):
+    if field not in ("green-deal", "competition", "security"):
         # No topic keyword gate for these fields (see above), but the
         # per-source eu_gate flag must still be honoured -- previously this
         # returned early and silently ignored eu_gate for security/tech/
@@ -1513,7 +1671,12 @@ def write_rss_feed():
     # same source of truth TOPIC_LABELS in script.js mirrors) rather than
     # kept as a standalone module-level dict, so there's exactly one place
     # ("ets1" -> "ETS I" etc.) that can drift instead of two.
-    tag_labels = {tag_id: label for tag_id, label, _ in LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS}
+    tag_labels = {
+        tag_id: label
+        for tag_id, label, _ in (
+            LEGISLATION_TAGS + COMPETITION_LEGISLATION_TAGS + SECURITY_LEGISLATION_TAGS
+        )
+    }
 
     items_xml = []
     for entry in recent:
@@ -1552,7 +1715,7 @@ def write_rss_feed():
     <title>PolicyUpdate.eu — Weekly Digest</title>
     <link>{INDEXNOW_SITE_URL}</link>
     <atom:link href="{INDEXNOW_SITE_URL}feed.xml" rel="self" type="application/rss+xml"/>
-    <description>The latest Think Tank, NGO &amp; Industry contributions to EU policy debates — collected daily.</description>
+    <description>Your daily radar on EU policy. Think tanks, NGOs, industry, ministries and EU institutions, all in one feed — updated daily.</description>
     <language>en</language>
     <lastBuildDate>{last_build_date}</lastBuildDate>
 {chr(10).join(items_xml)}
@@ -2232,7 +2395,7 @@ def main():
         for entry in primary_entries:
             entry["tags"] = (
                 tag_legislation(entry["title"], entry["summary"], field)
-                if field in ("green-deal", "competition")
+                if field in ("green-deal", "competition", "security")
                 else []
             )
 
@@ -2288,6 +2451,26 @@ def main():
                 all_entries.append(cross_entry)
             if competition_cross_matches:
                 print(f"  +{len(competition_cross_matches)} also surfaced under competition (cross-topic match)")
+
+        # Cross-tagging into security (Beta): same mechanism again, with the
+        # tight SECURITY_CROSS_TAG_KEYWORDS subset (see its comment for what
+        # was left out and why). Lets e.g. a green-deal NGO's piece on the
+        # defence-industrial build-up or a competition source's FDI-screening
+        # item also appear on the Security tab.
+        if field != "security":
+            security_cross_matches = [
+                e for e in raw_entries
+                if _cross_tag_match(e, _SECURITY_CROSS_TAG_PATTERN, eu_gate)
+            ]
+            for match in security_cross_matches:
+                cross_entry = dict(match)  # copy -- don't mutate the original
+                cross_entry["field"] = "security"
+                cross_entry["tags"] = tag_legislation(
+                    cross_entry["title"], cross_entry["summary"], "security"
+                )
+                all_entries.append(cross_entry)
+            if security_cross_matches:
+                print(f"  +{len(security_cross_matches)} also surfaced under security (cross-topic match)")
 
     if translation_cache is not None:
         translation.save_cache(translation_cache)
