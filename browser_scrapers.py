@@ -484,7 +484,79 @@ def scrape_kfw(cutoff):
     return items
 
 
+# ---------------------------------------------------------------------------
+# Config-driven listing scrapers for JS-rendered ministry sites (Oct 2026).
+# ---------------------------------------------------------------------------
+# Each entry: registry key -> (org name, listing URL, base URL, regex that
+# item links must match, CSS selector to wait for). Plain fetches of these
+# pages return an empty JS shell, so they are rendered in Chromium and then
+# handed to the same parse_link_listing() used by the static scrapers.
+# ALL OF THESE ARE UNVERIFIED against live HTML (the build environment could
+# not render them); a source that yields nothing prints a warning line, and
+# the href pattern / wait selector here is the first thing to adjust.
+LISTING_SITES = {
+    "ireland_decc": (
+        "Irish Dept. of Climate, Energy and the Environment",
+        "https://www.gov.ie/en/department-of-climate-energy-and-the-environment/press-releases/",
+        "https://www.gov.ie",
+        r"/en/department-of-climate-energy-and-the-environment/press-releases/[^/?#]+/?$",
+        'a[href*="/press-releases/"]',
+    ),
+    "denmark_kefm": (
+        "Danish Ministry of Climate, Energy and Utilities",
+        "https://en.kefm.dk/news",
+        "https://en.kefm.dk",
+        r"kefm\.dk/news/[^?#]*[^/?#]{8,}",
+        'a[href*="/news/"]',
+    ),
+    "hungary_kormany": (
+        "Hungarian Government (kormany.hu, English news)",
+        "https://kormany.hu/en/news",
+        "https://kormany.hu",
+        r"kormany\.hu/en/[^?#]*news[^?#]*/[^/?#]{8,}",
+        'a[href*="/en/"]',
+    ),
+    "malta_doi": (
+        "Government of Malta (DOI press releases)",
+        "https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/default.aspx",
+        "https://www.gov.mt",
+        r"/Press(?:%20| )Releases/Pages/[^?#]+\.aspx",
+        'a[href*="Press"]',
+    ),
+    "cyprus_pio": (
+        "Cyprus Press and Information Office",
+        "https://www.pio.gov.cy/en/press-releases-articles.html",
+        "https://www.pio.gov.cy",
+        r"pio\.gov\.cy/en/press-releases[^?#]*/[^/?#]{8,}",
+        'a[href*="press-releases"]',
+    ),
+    "portugal_gov": (
+        "Portuguese Government (news, Portuguese)",
+        "https://www.portugal.gov.pt/pt/gc25/comunicacao/noticias",
+        "https://www.portugal.gov.pt",
+        r"/pt/gc\d+/comunicacao/noticia\?i=",
+        'a[href*="noticia"]',
+    ),
+}
+
+
+def _make_listing_scraper(key):
+    org, url, base, href_re, wait_sel = LISTING_SITES[key]
+
+    def scraper(cutoff):
+        from backend_scrapers import parse_link_listing
+        try:
+            html_text = _fetch_rendered_html(url, wait_sel)
+            return parse_link_listing(html_text, base, org, href_re, cutoff)
+        except Exception as exc:
+            print(f"[browser_scrapers] {key} failed: {exc}")
+            return []
+    scraper.__name__ = f"scrape_{key}"
+    return scraper
+
+
 BROWSER_SCRAPERS = {
+    **{k: _make_listing_scraper(k) for k in LISTING_SITES},
     "echa": scrape_echa,
     "eca": scrape_eca,
     "shareaction": scrape_shareaction,
