@@ -49,6 +49,19 @@ const TOPIC_LABELS = {
   fsr: "Foreign Subsidies Regulation",
   "chips-act": "European Chips Act",
   "eu-competitiveness": "EU Competitiveness Agenda",
+  // Keep in sync with SECURITY_LEGISLATION_TAGS in fetch_digest.py ("crma"
+  // above is reused as-is).
+  "rearm-europe": "ReArm Europe / Readiness 2030",
+  edip: "EDIP",
+  edf: "European Defence Fund",
+  "nato-eu": "EU-NATO & Collective Defence",
+  nis2: "NIS2 Directive",
+  cra: "Cyber Resilience Act",
+  "hybrid-threats": "Hybrid Threats & Disinformation",
+  "economic-security": "Economic Security",
+  "fdi-screening": "FDI Screening",
+  "export-controls": "Export Controls (Dual-Use)",
+  sanctions: "EU Sanctions",
 };
 
 // Keep in sync with actor_type values in sources.yaml.
@@ -376,6 +389,101 @@ const TOPIC_INFO = {
       "It's the live debate behind any future reform of merger review or State aid policy — worth tracking even though nothing here has legal force yet, since it's shaping how today's cases get argued and decided.",
     eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0030",
   },
+  // Below: security-field tags (Beta). Keep in sync with
+  // SECURITY_LEGISLATION_TAGS in fetch_digest.py. crma reuses the entry
+  // above. Several of these are programmes/strategies rather than single
+  // laws, so `eurlexUrl` is sometimes an official Commission/Council page
+  // (renderTopicInfo() labels the link accordingly).
+  "rearm-europe": {
+    instrument:
+      "White Paper for European Defence – Readiness 2030 (March 2025) and the SAFE defence-loans instrument",
+    description:
+      "The EU's plan to quickly rebuild Europe's defence capacity: governments are encouraged to spend more on defence (including through national escape clauses in the fiscal rules) and can borrow up to €150 billion in EU-backed loans (SAFE) to buy military equipment together.",
+    whyItMatters:
+      "It marks a shift for the EU from a mainly civilian actor to a financer of defence procurement, and it decides which companies and countries benefit from the biggest rise in European military spending in decades.",
+    eurlexUrl: "https://defence-industry-space.ec.europa.eu/",
+  },
+  edip: {
+    instrument: "European Defence Industry Programme (EDIP), proposed by the Commission in March 2024",
+    description:
+      "An EU programme to strengthen and coordinate Europe's defence industry: supporting joint procurement, higher production capacity and secure supply chains for defence products, including for Ukraine.",
+    whyItMatters:
+      "It is the main EU tool aimed at fixing the fragmented, slow European defence-industrial base — and a place where fights over \"buy European\" rules and who gets EU money play out.",
+    eurlexUrl: "https://defence-industry-space.ec.europa.eu/",
+  },
+  edf: {
+    instrument: "Regulation (EU) 2021/697",
+    description:
+      "The EU's dedicated fund for defence research and development: it co-finances collaborative projects between companies and research bodies from several member states.",
+    whyItMatters:
+      "It was the first time EU money went directly into joint defence R&D, and it set the template for the larger defence-industrial programmes that followed.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2021/697/oj/eng",
+  },
+  "nato-eu": {
+    instrument: "EU-NATO Joint Declarations (2016, 2018 and 2023)",
+    description:
+      "The framework for cooperation between the EU and NATO: coordinating on military mobility, cyber and hybrid threats, defence-industrial work and support for Ukraine.",
+    whyItMatters:
+      "Most EU member states rely on NATO for collective defence, so how the two organisations share tasks decides what the EU can and cannot do on security.",
+    eurlexUrl: "https://www.consilium.europa.eu/en/policies/eu-nato-cooperation/",
+  },
+  nis2: {
+    instrument: "Directive (EU) 2022/2555",
+    description:
+      "Sets the EU-wide cybersecurity rules for companies and bodies in sectors such as energy, transport, health, digital infrastructure and public administration — including risk-management duties and the obligation to report serious incidents.",
+    whyItMatters:
+      "It turned cybersecurity from good practice into a legal duty for thousands of organisations, with management personally accountable and fines for failures.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng",
+  },
+  cra: {
+    instrument: "Regulation (EU) 2024/2847",
+    description:
+      "Requires products with digital elements — from smart devices to software — to meet cybersecurity requirements over their whole life, including security updates and vulnerability reporting by manufacturers.",
+    whyItMatters:
+      "It shifts responsibility for security flaws from users to the makers of connected products, and affects anyone who builds, imports or sells hardware and software in the EU.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng",
+  },
+  "hybrid-threats": {
+    instrument:
+      "Strategic Compass for Security and Defence (March 2022) and the EU toolbox against foreign information manipulation and interference",
+    description:
+      "The EU's approach to hybrid threats — sabotage, cyber attacks, disinformation and foreign interference in elections — combining sanctions, resilience measures and cooperation with NATO and member states.",
+    whyItMatters:
+      "These attacks sit below the threshold of open war but target infrastructure, elections and public trust, so how the EU responds shapes everyday security as much as military spending does.",
+    eurlexUrl: "https://www.consilium.europa.eu/en/policies/countering-hybrid-threats/",
+  },
+  "economic-security": {
+    instrument: "Joint Communication JOIN(2023) 20 (European Economic Security Strategy, June 2023)",
+    description:
+      "The EU's strategy for dealing with risks from economic dependencies: it aims to promote competitiveness, protect against risks such as supply-chain disruption and economic coercion, and partner with others — often summarised as \"de-risking\" rather than decoupling.",
+    whyItMatters:
+      "It links trade, industrial and security policy, and is the umbrella for tools such as investment screening and export controls that directly affect companies' business with China and other third countries.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023JC0020",
+  },
+  "fdi-screening": {
+    instrument: "Regulation (EU) 2019/452",
+    description:
+      "Creates an EU cooperation mechanism for screening foreign direct investment on security and public-order grounds: member states can flag and comment on each other's cases, and the Commission can give opinions.",
+    whyItMatters:
+      "It decides whether and under what conditions foreign buyers can take over European companies in sensitive sectors such as energy, ports, chips and data.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2019/452/oj/eng",
+  },
+  "export-controls": {
+    instrument: "Regulation (EU) 2021/821 (dual-use export controls)",
+    description:
+      "Sets the EU rules for exporting \"dual-use\" items — goods, software and technology that have both civilian and military uses — requiring licences and allowing controls to be tightened for security or human-rights reasons.",
+    whyItMatters:
+      "It is the legal basis for controlling sensitive technology such as advanced chips, surveillance tools and quantum components, with direct effects on exporters.",
+    eurlexUrl: "https://eur-lex.europa.eu/eli/reg/2021/821/oj/eng",
+  },
+  sanctions: {
+    instrument: "Article 215 TFEU, applied through Council Decisions and Regulations",
+    description:
+      "The EU's sanctions (\"restrictive measures\") — asset freezes, travel bans and trade restrictions — adopted by unanimity of the member states in response to aggression, human-rights abuses or other threats, most prominently in packages against Russia.",
+    whyItMatters:
+      "Sanctions are the EU's most-used hard-power tool, and each new package changes what companies and banks may legally do.",
+    eurlexUrl: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016E/TXT",
+  },
 };
 
 let digestData = null;
@@ -435,13 +543,19 @@ function renderTopicInfo() {
 
   const info = TOPIC_INFO[activeTopic];
   const label = escapeHtml(TOPIC_LABELS[activeTopic] || activeTopic);
+  // Most entries link to the legal text on EUR-Lex; a few (programmes and
+  // strategies, e.g. in the Security field) link to an official Commission
+  // or Council page instead -- label the link accordingly.
+  const sourceLabel = /eur-lex\.europa\.eu/.test(info.eurlexUrl)
+    ? "official legal text on EUR-Lex ↗"
+    : "official source ↗";
 
   el.hidden = false;
   el.innerHTML = `
     <h3>${label}</h3>
     <p>${escapeHtml(info.description)}</p>
     <p class="topic-info-why"><strong>Why it matters:</strong> ${escapeHtml(info.whyItMatters)}</p>
-    <p class="topic-info-source">${escapeHtml(info.instrument)} · <a href="${info.eurlexUrl}" target="_blank" rel="noopener">official legal text on EUR-Lex ↗</a></p>
+    <p class="topic-info-source">${escapeHtml(info.instrument)} · <a href="${info.eurlexUrl}" target="_blank" rel="noopener">${sourceLabel}</a></p>
   `;
 }
 
@@ -1020,10 +1134,14 @@ function hideAllSections() {
 // separate <nav id="topic-tabs">/<nav id="competition-topic-tabs"> bars in
 // index.html. This shows whichever bar matches `field` and hides the
 // other -- pass null to hide both (views with no per-law filter at all).
-// Fields with no tag vocabulary of their own yet (security/tech/health)
-// also resolve to "hide both" via the `|| null` fallthrough below.
+// Security (Beta) has its own bar too; fields with no tag vocabulary yet
+// (tech/health) resolve to "hide all" via the `|| null` fallthrough below.
 function syncTopicTabsForField(field) {
-  const bars = { "green-deal": "topic-tabs", competition: "competition-topic-tabs" };
+  const bars = {
+    "green-deal": "topic-tabs",
+    competition: "competition-topic-tabs",
+    security: "security-topic-tabs",
+  };
   const visibleId = bars[field] || null;
   Object.values(bars).forEach((id) => {
     document.getElementById(id).hidden = id !== visibleId;
