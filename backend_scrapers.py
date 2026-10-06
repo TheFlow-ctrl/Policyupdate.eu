@@ -2836,7 +2836,470 @@ def scrape_perspectives_climate(cutoff):
 
 
 # ---------------------------------------------------------------------------
+# BMUKN -- German Federal Environment Ministry
+# ---------------------------------------------------------------------------
+BMUKN_DETAIL_PAGE_CAP = 12
+_BMUKN_PRESS_LIST_URL = "https://www.bundesumweltministerium.de/en/press/current-press-releases"
+_BMUKN_PRESS_HREF_RE = re.compile(r"/(?:PM\d+-1|en/pressrelease/[^/?#]+)/?$")
+_BMUKN_DATE_RE = re.compile(r"\b(\d{2})\.(\d{2})\.(\d{4})\b")
+
+
+def scrape_bmukn(cutoff):
+    """
+    https://www.bundesumweltministerium.de/en/press/current-press-releases
+    -- English press releases of Germany's Federal Ministry for the
+    Environment, Climate Action, Nature Conservation and Nuclear Safety
+    (BMUKN, formerly BMUV). TYPO3 site, no RSS feed (/rss.xml returns
+    nothing). Added after the ministry's "Roadmap for Transitioning Away
+    from Fossil Fuels" (press release 121/26, 23 Sep 2026) was missed
+    because no German federal ministry was being tracked at all.
+
+    The listing is server-rendered (confirmed via a plain fetch: ~20
+    releases per page, newest first, each an <h3> link to a short URL such
+    as /PM11920-1 that redirects to /en/pressrelease/<slug>). Only the
+    link targets are relied on here -- the listing's own wrapper markup
+    wasn't inspected at HTML level, so rather than guessing class names
+    this takes every anchor whose href looks like a press-release URL, and
+    resolves date/title/summary from each release's own page, the same
+    detail-page approach scrape_orgalim()/scrape_ceps() use. Confirmed live
+    on a detail page: <meta property="article:published"
+    content="2026-09-23T14:33:00+02:00">, <meta name="twitter:title">
+    (clean title, without the " - BMUKN - Press release" suffix of
+    og:title) and <meta property="og:description">; the visible
+    "dd.mm.yyyy" date under the <h1> is used as a fallback.
+
+    Only the English-language listing is read, so titles are English and
+    the non-English filter is unaffected. The ministry publishes on many
+    topics (nuclear safety, species protection...); off-topic ones are
+    removed downstream by the usual green-deal keyword filter.
+    """
+    org = "German Federal Environment Ministry (BMUKN)"
+    base = "https://www.bundesumweltministerium.de"
+    items = []
+    try:
+        soup = _get_soup(_BMUKN_PRESS_LIST_URL)
+        links = []
+        for a in soup.find_all("a", href=True):
+            href = urljoin(base, a["href"])
+            if not href.startswith(base):
+                continue
+            if not _BMUKN_PRESS_HREF_RE.search(href.split("?")[0]):
+                continue
+            if href not in links:
+                links.append(href)
+
+        seen_canonical = set()
+        for link in links[:BMUKN_DETAIL_PAGE_CAP]:
+            try:
+                detail = _get_soup(link)
+            except requests.RequestException as exc:
+                print(f"[backend_scrapers] BMUKN detail fetch failed for {link}: {exc}")
+                continue
+
+            canon_el = detail.find("link", attrs={"rel": "canonical"})
+            canonical = canon_el["href"] if canon_el and canon_el.get("href") else link
+            if canonical in seen_canonical:
+                continue
+            seen_canonical.add(canonical)
+
+            dt = None
+            for prop in ("article:published", "article:published_time"):
+                meta = detail.find("meta", attrs={"property": prop})
+                if meta and meta.get("content"):
+                    try:
+                        dt = datetime.fromisoformat(meta["content"])
+                        if dt.tzinfo is not None:
+                            dt = dt.replace(tzinfo=None)
+                    except ValueError:
+                        dt = None
+                    if dt:
+                        break
+            if dt is None:
+                m = _BMUKN_DATE_RE.search(detail.get_text(" ", strip=True))
+                if m:
+                    dt = datetime(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+            if not _passes_cutoff(dt, cutoff):
+                continue
+
+            title = ""
+            tw = detail.find("meta", attrs={"name": "twitter:title"})
+            if tw and tw.get("content"):
+                title = tw["content"]
+            if not title:
+                h1 = detail.find("h1")
+                title = h1.get_text(strip=True) if h1 else ""
+            if not title:
+                continue
+
+            summary = ""
+            desc = detail.find("meta", attrs={"property": "og:description"}) or detail.find(
+                "meta", attrs={"name": "description"}
+            )
+            if desc and desc.get("content"):
+                summary = desc["content"]
+
+            items.append(_make_item(org, title, canonical, dt, summary or title))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_bmukn failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Poland -- Ministry of Climate and Environment (gov.pl)
+# ---------------------------------------------------------------------------
+_POLAND_CLIMATE_NEWS_URL = "https://www.gov.pl/web/climate/news"
+_POLAND_DATE_RE = re.compile(r"\b(\d{2})\.(\d{2})\.(\d{4})\b")
+# gov.pl site sections that live under /web/climate/ but are navigation, not
+# news articles (seen in the menu of the fetched page).
+_POLAND_NAV_SLUGS = {
+    "ministry", "ministry1", "management", "departments", "what-we-do",
+    "what-we-do1", "news", "contact", "contact-details", "press",
+    "programmes-and-projects", "national-energy-and-climate-plan",
+    "national-raw-materials-policy",
+}
+
+
+def scrape_poland_climate_ministry(cutoff):
+    """
+    https://www.gov.pl/web/climate/news -- English news of Poland's Ministry
+    of Climate and Environment (MKiŚ). No RSS feed (/web/climate/rss just
+    redirects to the gov.pl home page). The listing is server-rendered:
+    confirmed via a plain fetch that every item shows an image, a
+    "dd.mm.yyyy" date, a title link to /web/climate/<slug> and a summary
+    paragraph, newest first, 10 per page.
+
+    The wrapper markup wasn't inspected at HTML level, so rather than
+    guessing class names this walks up from every /web/climate/<slug> link
+    to the closest <li> that also contains a dd.mm.yyyy date, and takes the
+    longest anchor text in it as the title. Menu links are excluded by slug.
+    First page only (the 10 newest items) -- enough for a daily run.
+    """
+    org = "Polish Ministry of Climate and Environment"
+    base = "https://www.gov.pl"
+    items = []
+    try:
+        soup = _get_soup(_POLAND_CLIMATE_NEWS_URL)
+        seen = set()
+        for li in soup.find_all("li"):
+            text = li.get_text(" ", strip=True)
+            m = _POLAND_DATE_RE.search(text)
+            if not m:
+                continue
+            best = None
+            for a in li.find_all("a", href=True):
+                href = urljoin(base, a["href"]).split("?")[0].split("#")[0]
+                if not href.startswith(base + "/web/climate/"):
+                    continue
+                slug = href[len(base + "/web/climate/"):].strip("/")
+                if not slug or "/" in slug or slug in _POLAND_NAV_SLUGS:
+                    continue
+                label = a.get_text(" ", strip=True)
+                if best is None or len(label) > len(best[1]):
+                    best = (href, label)
+            if not best or len(best[1]) < 10:
+                continue
+            link, title = best
+            if link in seen:
+                continue
+            seen.add(link)
+            dt = datetime(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+            if not _passes_cutoff(dt, cutoff):
+                continue
+            summary = text.replace(m.group(0), "", 1).replace(title, "", 1).strip()
+            img_el = li.select_one("img[src]")
+            image = urljoin(base, img_el["src"]) if img_el else None
+            items.append(_make_item(org, title, link, dt, summary or title, image=image))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_poland_climate_ministry failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Bulgaria -- Ministry of Environment and Water (MOEW)
+# ---------------------------------------------------------------------------
+_BG_NEWS_URL = "https://www.moew.government.bg/en/press-center/national-news/"
+_BG_DATE_RE = re.compile(r"\b(\d{1,2})\s+([A-Z][a-z]{2}),\s+(\d{4})\b")
+
+
+def scrape_bulgaria_moew(cutoff):
+    """
+    https://www.moew.government.bg/en/press-center/national-news/ -- English
+    national news of Bulgaria's Ministry of Environment and Water. No RSS
+    found. Listing confirmed server-rendered via a plain fetch: each item is
+    an <h3> link (article URL directly under /en/<slug>/) followed by a
+    "10 Aug, 2026 | 14:31" stamp and a short teaser, newest first.
+
+    Wrapper markup wasn't inspected at HTML level, so this takes every <h3>
+    that contains a link into /en/ outside the press-center/ section, and
+    reads the date and teaser from the nearest enclosing container.
+    """
+    org = "Bulgarian Ministry of Environment and Water"
+    base = "https://www.moew.government.bg"
+    items = []
+    try:
+        soup = _get_soup(_BG_NEWS_URL)
+        seen = set()
+        for h3 in soup.find_all("h3"):
+            a = h3.find("a", href=True)
+            if not a:
+                continue
+            link = urljoin(base, a["href"]).split("#")[0]
+            if not link.startswith(base + "/en/") or "/press-center/" in link:
+                continue
+            if link in seen:
+                continue
+            title = a.get_text(" ", strip=True)
+            if len(title) < 10:
+                continue
+            container = h3.parent
+            text = container.get_text(" ", strip=True) if container else ""
+            m = _BG_DATE_RE.search(h3.get_text(" ", strip=True)) or _BG_DATE_RE.search(text)
+            if not m:
+                continue
+            try:
+                dt = datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}", "%d %b %Y")
+            except ValueError:
+                continue
+            seen.add(link)
+            if not _passes_cutoff(dt, cutoff):
+                continue
+            summary = text.replace(title, "", 1)
+            summary = re.sub(r"\d{1,2}\s+[A-Z][a-z]{2},\s+\d{4}\s*\|\s*\d{2}:\d{2}", "", summary)
+            summary = summary.replace("see more", "").strip()
+            img_el = container.select_one("img[src]") if container else None
+            image = urljoin(base, img_el["src"]) if img_el else None
+            items.append(_make_item(org, title, link, dt, summary or title, image=image))
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_bulgaria_moew failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Sweden -- Government Offices press releases (government.se)
+# ---------------------------------------------------------------------------
+SWEDEN_LISTING_PAGES = 3
+_SE_PRESS_URL = "https://www.government.se/press-releases/"
+_SE_DATE_RE = re.compile(r"Published\s+(\d{1,2}\s+[A-Z][a-z]+\s+\d{4})")
+_SE_HREF_RE = re.compile(r"/press-releases/\d{4}/\d{2}/[^/?#]+/?$")
+
+
+def scrape_sweden_government(cutoff):
+    """
+    https://www.government.se/press-releases/ -- English press releases of
+    the Swedish Government Offices, ALL ministries (the RSS endpoints tried
+    returned nothing; the subscribe page only offers an e-mail form). The
+    ministry filter on the site is JS-driven, so instead of guessing its
+    query parameters this reads the first SWEDEN_LISTING_PAGES unfiltered
+    pages (?p=1..3, 10 items each, newest first) and leaves the topic
+    selection to the usual green-deal keyword filter -- most items are
+    defence / foreign affairs and get dropped there. Climate, energy and
+    nuclear releases come from the Ministries of Climate and Enterprise and
+    of Finance.
+
+    Confirmed via a plain fetch: each item is a link to
+    /press-releases/YYYY/MM/<slug>/ followed by "Published 30 September 2026
+    · Press release from <ministers / ministries>". Wrapper markup not
+    inspected at HTML level: the date is read from the enclosing <li>.
+    """
+    org = "Swedish Government Offices"
+    base = "https://www.government.se"
+    items = []
+    seen = set()
+    try:
+        for page in range(1, SWEDEN_LISTING_PAGES + 1):
+            url = _SE_PRESS_URL if page == 1 else f"{_SE_PRESS_URL}?p={page}"
+            try:
+                soup = _get_soup(url)
+            except requests.RequestException as exc:
+                print(f"[backend_scrapers] Sweden page {page} failed: {exc}")
+                break
+            page_old = False
+            for a in soup.find_all("a", href=True):
+                href = urljoin(base, a["href"]).split("?")[0].split("#")[0]
+                if not _SE_HREF_RE.search(href) or href in seen:
+                    continue
+                title = a.get_text(" ", strip=True)
+                if len(title) < 10:
+                    continue
+                li = a.find_parent("li") or a.parent
+                text = li.get_text(" ", strip=True) if li else ""
+                m = _SE_DATE_RE.search(text)
+                if not m:
+                    continue
+                try:
+                    dt = datetime.strptime(m.group(1), "%d %B %Y")
+                except ValueError:
+                    continue
+                seen.add(href)
+                if not _passes_cutoff(dt, cutoff):
+                    page_old = True
+                    continue
+                from_part = text.split("from", 1)[1].strip() if " from " in text else ""
+                summary = f"Press release from {from_part}" if from_part else title
+                items.append(_make_item(org, title, href, dt, summary))
+            if page_old:
+                break
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_sweden_government failed: {exc}")
+        return []
+    return items
+
+
+# ---------------------------------------------------------------------------
+# Generic link-list parser + native-language ministry scrapers (Oct 2026).
+# Used by the static scrapers below AND by the config-driven Playwright
+# scrapers in browser_scrapers.py (they only differ in how the HTML is got).
+# ---------------------------------------------------------------------------
+_NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./](\d{1,2})[./](\d{4})\b")
+
+_MONTHS_EN = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july",
+     "august", "september", "october", "november", "december"], 1)}
+# Month names of the languages with text-dated listings (English plus
+# Portuguese / Spanish / Danish for the native-language ministry sources).
+_MONTHS_EN.update({
+    "janeiro": 1, "fevereiro": 2, "março": 3, "abril": 4, "maio": 5,
+    "junho": 6, "julho": 7, "agosto": 8, "setembro": 9, "outubro": 10,
+    "novembro": 11, "dezembro": 12,
+    "enero": 1, "febrero": 2, "marzo": 3, "mayo": 5, "junio": 6, "julio": 7,
+    "septiembre": 9, "octubre": 10, "noviembre": 11, "diciembre": 12,
+    "januar": 1, "februar": 2, "marts": 3, "maj": 5, "juni": 6, "juli": 7,
+    "oktober": 10,
+})
+_TEXT_DATE_EN_RE = re.compile(
+    r"\b(\d{1,2})(?:st|nd|rd|th|\.)?\s+(?:de\s+)?("
+    + "|".join(sorted(_MONTHS_EN, key=len, reverse=True))
+    + r")\s+(?:de\s+)?(\d{4})\b",
+    re.I)
+
+
+def _find_date_in_text(text):
+    """dd.mm.yyyy / dd/mm/yyyy or '5 October 2026' -> datetime, else None."""
+    m = _NUMERIC_DATE_RE.search(text or "")
+    if m:
+        try:
+            return datetime(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+        except ValueError:
+            pass
+    m = _TEXT_DATE_EN_RE.search(text or "")
+    if m:
+        try:
+            return datetime(int(m.group(3)), _MONTHS_EN[m.group(2).lower()],
+                            int(m.group(1)))
+        except ValueError:
+            pass
+    return None
+
+
+def parse_link_listing(html_text, base_url, org, href_re, cutoff,
+                       ancestor_levels=3, min_title_len=15):
+    """Generic news-listing parser. For every <a> whose absolute href matches
+    `href_re`, the title is the link text (or the nearest heading in the
+    enclosing block), and the date is the first numeric/English date found
+    in the link text or in up to `ancestor_levels` enclosing blocks. Items
+    without a parseable date are skipped (see _passes_cutoff). Returns
+    _make_item dicts, newest-agnostic, de-duplicated by link."""
+    soup = BeautifulSoup(html_text, "html.parser")
+    href_re = re.compile(href_re) if isinstance(href_re, str) else href_re
+    items, seen = [], set()
+    for a in soup.find_all("a", href=True):
+        href = urljoin(base_url, a["href"]).split("#")[0]
+        if href in seen or not href_re.search(href):
+            continue
+        link_text = a.get_text(" ", strip=True)
+        block, dt, block_text = a, _find_date_in_text(link_text), link_text
+        node = a
+        for _ in range(ancestor_levels):
+            if dt:
+                break
+            node = node.parent
+            if node is None or node.name in ("body", "html", "main"):
+                break
+            # Stop climbing once the block contains several listing links:
+            # the date would belong to a different item.
+            if len([x for x in node.find_all("a", href=True)
+                    if href_re.search(urljoin(base_url, x["href"]))]) > 1:
+                break
+            block_text = node.get_text(" ", strip=True)
+            block = node
+            dt = _find_date_in_text(block_text)
+        if not dt:
+            continue
+        title = link_text
+        if len(title) < min_title_len or _find_date_in_text(title) and len(title) < 25:
+            h = block.find(["h1", "h2", "h3", "h4"]) if block is not a else None
+            title = h.get_text(" ", strip=True) if h else title
+        # Drop a leading/trailing date stamp from the title text.
+        title = _NUMERIC_DATE_RE.sub("", title).strip(" -–|·:")
+        if len(title) < min_title_len:
+            continue
+        seen.add(href)
+        if not _passes_cutoff(dt, cutoff):
+            continue
+        summary = ""
+        if block is not a:
+            summary = block_text.replace(link_text, "", 1)
+            summary = _NUMERIC_DATE_RE.sub("", summary)
+            summary = _TEXT_DATE_EN_RE.sub("", summary)
+            summary = re.sub(r"\b(Published|Publicado|Publicada)( on| em| el)?\b",
+                             "", summary, flags=re.I)
+            summary = re.sub(r"\s+", " ", summary).strip(" -–|·:")
+        items.append(_make_item(org, title, href, dt, summary))
+    return items
+
+
+def scrape_spain_miteco(cutoff):
+    """
+    https://www.miteco.gob.es/es/prensa/ultimas-noticias.html -- Spanish
+    Ministry for the Ecological Transition, press releases (Spanish; the
+    `translate_from: es` flag in sources.yaml machine-translates them).
+    Item links look like /es/prensa/ultimas-noticias/YYYY/<month>/<slug>.html
+    with the dd/mm/yyyy date in the link text. Not verified against live
+    HTML.
+    """
+    try:
+        soup_html = requests.get(
+            "https://www.miteco.gob.es/es/prensa/ultimas-noticias.html",
+            headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        soup_html.raise_for_status()
+        return parse_link_listing(
+            soup_html.text, "https://www.miteco.gob.es", "Spanish MITECO",
+            r"/es/prensa/ultimas-noticias/\d{4}/[^/]+/[^/]+\.html", cutoff)
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_spain_miteco failed: {exc}")
+        return []
+
+
+def scrape_latvia_kem(cutoff):
+    """
+    https://www.kem.gov.lv/lv/jaunumi -- Latvian Ministry of Climate and
+    Energy news (Latvian; machine-translated via `translate_from: lv`).
+    Item links /lv/jaunums/<slug>, date dd.mm.yyyy. Not verified against
+    live HTML.
+    """
+    try:
+        resp = requests.get("https://www.kem.gov.lv/lv/jaunumi",
+                            headers=HEADERS, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+        return parse_link_listing(
+            resp.text, "https://www.kem.gov.lv", "Latvian Ministry of Climate and Energy",
+            r"/lv/jaunums/[^/?#]+", cutoff)
+    except Exception as exc:
+        print(f"[backend_scrapers] scrape_latvia_kem failed: {exc}")
+        return []
+
+
+# ---------------------------------------------------------------------------
 SCRAPERS = {
+    "spain_miteco": scrape_spain_miteco,
+    "latvia_kem": scrape_latvia_kem,
+    "bulgaria_moew": scrape_bulgaria_moew,
+    "sweden_government": scrape_sweden_government,
+    "poland_climate_ministry": scrape_poland_climate_ministry,
+    "bmukn": scrape_bmukn,
     "ceps": scrape_ceps,
     "transport_environment": scrape_transport_environment,
     "pik_potsdam": scrape_pik_potsdam,
