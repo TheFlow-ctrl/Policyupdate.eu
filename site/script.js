@@ -1597,7 +1597,11 @@ function renderEntry(entry) {
   // single delegated click listener on #entries/#archive-months (see
   // setupCiteButtons()) rather than a handler per card, since entries are
   // replaced wholesale on every re-render.
-  const citeBtn = `<button type="button" class="cite-btn" data-title="${title}" data-org="${org}" data-date="${date}" data-link="${escapeHtml(link)}" title="Copy a citation for this entry">Cite</button>`;
+  // Shown as a quotation-mark button in the card's top-right corner (see
+  // .cite-btn in style.css); copies an APA 7 reference (buildCitation()).
+  // data-original carries the untranslated title of machine-translated
+  // items so the reference can follow APA's "Original [Translation]" form.
+  const citeBtn = `<button type="button" class="cite-btn" data-title="${title}" data-org="${org}" data-date="${date}" data-link="${escapeHtml(link)}" data-original="${escapeHtml(entry.original_title || "")}" data-lang="${escapeHtml(entry.translated_from || "")}" title="Copy APA citation" aria-label="Copy APA citation for this entry">&ldquo;</button>`;
 
   // Machine-translated items (EU 27 Ministries with no English stream --
   // see translation.py). Mirrors render_entry_html() in fetch_digest.py.
@@ -1607,9 +1611,10 @@ function renderEntry(entry) {
 
   return `
     <article class="entry-card">
+      ${citeBtn}
       ${image}
       <h3>${formatBadge}<a href="${link}" target="_blank" rel="noopener">${title}</a></h3>
-      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}${translatedNote} · ${citeBtn}</div>
+      <div class="entry-meta">${org}${actorLabel ? ` · ${escapeHtml(actorLabel)}` : ""} — ${date}${translatedNote}</div>
       ${summary}
       ${tagsHtml}
     </article>
@@ -1645,24 +1650,70 @@ function escapeHtml(str) {
 // what render already decided to show means these can never disagree
 // with what the person is actually looking at.
 
-// Informal but complete enough for a bibliography/reading-list entry --
-// not a strict APA/Chicago citation, since which style a researcher wants
-// varies; this gives them the pieces (who, when, what, where) to reformat
-// however their citation manager needs.
-function buildCitation(title, org, date, link) {
-  const year = (date.match(/^\d{4}/) || [])[0];
-  const when = year ? ` (${year})` : "";
-  const today = new Date().toISOString().slice(0, 10);
-  return `${org}${when}. ${title}. Retrieved from ${link} (via PolicyUpdate.eu, accessed ${today}).`;
+// APA 7th edition reference for a web page / online publication by a
+// group author (the organisation), the form that fits almost every entry:
+//
+//   Organisation. (2026, October 5). *Title*. https://link
+//
+// - Author = the publishing organisation (APA: group author, no initials).
+// - Date = (Year, Month Day); "(n.d.)" when the entry has no usable date.
+// - Title is italicised (standalone web document); the copy puts both an
+//   HTML version (italics survive pasting into Word/Docs) and a plain-text
+//   version (asterisk-free) on the clipboard.
+// - The site name is omitted because it would repeat the author; no
+//   retrieval date because these pages are not designed to change (APA 7
+//   §9.16). The original source is cited, not PolicyUpdate.eu.
+// - Machine-translated items follow APA's form for a non-English title:
+//   "Original title [English translation]".
+// Titles are used as published: APA wants sentence case, which cannot be
+// derived reliably from arbitrary headlines, so check capitalisation
+// before submitting.
+const APA_MONTHS = [
+  "January", "February", "March", "April", "May", "June", "July",
+  "August", "September", "October", "November", "December",
+];
+
+function apaDate(date) {
+  const m = String(date || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return "n.d.";
+  const month = APA_MONTHS[Number(m[2]) - 1];
+  return month ? `${m[1]}, ${month} ${Number(m[3])}` : m[1];
+}
+
+// Appends the closing period APA wants after a title/author unless the
+// text already ends in terminal punctuation.
+function withPeriod(text) {
+  const t = String(text || "").trim();
+  return /[.?!]$/.test(t) ? t : t + ".";
+}
+
+// Returns {text, html}: the same reference as plain text and as HTML
+// (italic title, linked URL).
+function buildApaCitation(title, org, date, link, original) {
+  const author = withPeriod(org || "Unknown author");
+  const shownTitle = original ? `${original} [${title}]` : title;
+  const titleText = withPeriod(shownTitle);
+  const when = `(${apaDate(date)}).`;
+  const hasLink = link && link !== "#";
+  const text = `${author} ${when} ${titleText}${hasLink ? " " + link : ""}`;
+  const html =
+    `${escapeHtml(author)} ${escapeHtml(when)} <i>${escapeHtml(titleText)}</i>` +
+    (hasLink ? ` <a href="${escapeHtml(link)}">${escapeHtml(link)}</a>` : "");
+  return { text, html };
+}
+
+// Kept under the old name for any caller that wants just the string.
+function buildCitation(title, org, date, link, original) {
+  return buildApaCitation(title, org, date, link, original).text;
 }
 
 async function copyCitation(button) {
-  const { title, org, date, link } = button.dataset;
-  const citation = buildCitation(title, org, date, link);
+  const { title, org, date, link, original } = button.dataset;
+  const { text: citation, html } = buildApaCitation(title, org, date, link, original);
   const originalText = button.textContent;
 
   function showCopied() {
-    button.textContent = "Copied!";
+    button.textContent = "✓";
     button.classList.add("cite-btn-copied");
     setTimeout(() => {
       button.textContent = originalText;
@@ -1671,7 +1722,17 @@ async function copyCitation(button) {
   }
 
   try {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
+    if (navigator.clipboard && window.ClipboardItem && navigator.clipboard.write) {
+      // Rich copy: italics + live link when pasted into Word / Docs /
+      // Zotero notes; plain-text apps get the plain version.
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          "text/html": new Blob([html], { type: "text/html" }),
+          "text/plain": new Blob([citation], { type: "text/plain" }),
+        }),
+      ]);
+      showCopied();
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
       await navigator.clipboard.writeText(citation);
       showCopied();
     } else {
