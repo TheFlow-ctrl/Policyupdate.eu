@@ -34,7 +34,26 @@ jobs:
         # Playwright.
         run: playwright install --with-deps chromium
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install translation engine (anylang)
+        # The Linguist browser extension's translation core. Used by
+        # translate_node.cjs for the EU 27 Ministries sources that have
+        # `translate_from:` in sources.yaml. If this step or the
+        # translation itself fails, those items are simply dropped (they
+        # are never published untranslated) -- the rest of the run is
+        # unaffected.
+        run: npm install --no-save --no-audit --no-fund anylang
+
       - name: Run digest script
+        # DEEPL_API_KEY (repo secret; a free DeepL API key ending in ":fx")
+        # makes DeepL API Free the primary translation engine for the
+        # `translate_from:` sources. Without it the unofficial Google/Lingva
+        # fallbacks in translate_node.cjs are used.
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: python fetch_digest.py
 
       - name: Commit updated digest
@@ -47,6 +66,9 @@ jobs:
           # committed here too, or those changes are silently discarded when
           # the ephemeral runner is torn down and the live site never
           # reflects them (this was previously happening unnoticed).
+          # translation_cache.json: machine translations are cached so each
+          # text is only ever translated once (see translation.py).
           git add digest.md site/digest.json site/archive.json site/index.html
+          git add translation_cache.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Digest update"
           git push
