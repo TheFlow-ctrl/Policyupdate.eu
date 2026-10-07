@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-06
+# Weekly Climate, Energy & Environment Digest — 2026-10-07
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-06*
+*World Competition — 2026-10-07*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -9,12 +9,12 @@ This article examines the extent to which designated “gatekeepers” implement
 
 ---
 
-### THE ‘INTERNAL MARKET DETOUR’ FOR DEFENDING DEMOCRACY [pre-publication]
-*Common Market Law Review — 2026-10-06*
+### Dark clouds ahead: Energy outlooks for winter
+*EUISS (EU Institute for Security Studies) — 2026-10-05*
 
-This article examines the EU’s recent approach to defending democracy through internal market legislation. It analyses three central instruments – the European Media Freedom Act, the Political Advertising Regulation and the proposed Transparency of Foreign Interest Directive – to show how their political aim of defending democracy comes into tension with their market-centric legal basis in Article 114 TFEU. The article argues that this ‘internal market detour’ is legally sustainable, but normatively ambivalent. While it enables the EU to act in areas where it lacks explicit competences, the…
+Dark clouds ahead: Energy outlooks for winter marianna.liana… Mon, 10/05/2026 - 17:05 5 minutes The energy outlook for Europe heading into winter 2026 is the bleakest since Russia’s full-scale invasion of Ukraine. The EU should coordinate targeted energy price relief measures, ensuring that money is invested in long-term security and competitiveness while simultaneously responding to Russian hybrid aggression. Gas storage is at its lowest level since 2022. Energy prices have skyrocketed. Oil is up 68% , diesel 45% , jet fuel 112% and gas 135% from a year ago. On 25 September, the European…
 
-[Read more](https://kluwerlawonline.com/JournalArticle/Common+Market+Law+Review/63.5 [pre-publication]/COLA2026072)
+[Read more](https://www.iss.europa.eu/publications/commentary/dark-clouds-ahead-energy-outlooks-winter)
 
 ---
 
@@ -54,6 +54,15 @@ Berlin, 2. Oktober 2026 – In seiner Stellungnahme vor dem Wirtschaftsausschuss
 
 ---
 
+### Support for the development of a framework for sustainable urban logistics within Bologna’s Limited Traffic Zone (ZTL)
+*Netzero Cities — 2026-10-07*
+
+Deadline: 27 October 2026 (23:59 CEST Time) Background The City of Bologna, as one of the cities participating in the EU Mission for Climate-Neutral and Smart Cities, has laid our an ambitious climate neutrality pathway through its Climate City Contract (CCC), setting out a comprehensive vision for decarbonising the city by 2030. Mobility and the shift towards low-carbon, sustainable transport systems represent a central pillar of this pathway. In support to these objectives, the NetZeroCities programme has been providing tailored technical assistance to Bologna through the City Expert…
+
+[Read more](https://netzerocities.eu/2026/10/07/support-for-the-development-of-a-framework-for-sustainable-urban-logistics-within-bolognas-limited-traffic-zone-ztl/)
+
+---
+
 ### Rising emissions have locked-in future climate impacts, scale of damage depends on action now – 10 new insights
 *PIK Potsdam — 2026-10-06*
 
@@ -64,7 +73,7 @@ Past emissions have already committed the planet to higher temperatures, sea lev
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-06*
+*European Environmental Law Review — 2026-10-07*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -108,15 +117,6 @@ Call for Inputs on the review of the regulatory framework for regulated intra-EU
 
 ---
 
-### Stellungnahme zum Gesetz zur Fortentwicklung polizeirechtlicher Maßnahmen in Schleswig-Holstein
-*AlgorithmWatch — 2026-09-30*
-
-AlgorithmWatch fokussiert sich in dieser Stellungnahme auf die Datenerhebung bei öffentlichen Veranstaltungen und Ansammlungen sowie an allgemein zugänglichen Orten (§ 184), die Echtzeit-Fernidentifizierung in öffentlich zugänglichen Räumen (§ 184b), die Durchführung der Echtzeit-Fernidentifizierung in öffentlich zugänglichen Räumen (§ 184c), die nachträgliche Fernidentifizierung (§ 195b) sowie die Durchführung der nachträglichen Fernidentifizierung (§ 195c). Die nachträgliche Fernidentifizierung per Abgleich biometrischer Daten mit biometrischen Daten aus dem Internet schafft die technischen…
-
-[Read more](https://algorithmwatch.org/de/stellungnahme-zum-gesetz-zur-fortentwicklung-polizeirechtlicher-masnahmen-in-schleswig-holstein/)
-
----
-
 ### Site Surveys and Managing Geohazard Assessments of Wind Farms: Building Confidence from Seabed to Site Design
 *IOGP — 2026-10-05*
 
@@ -126,8 +126,35 @@ On 24 September 2026, the IOGP Geomatics Committee’s Geophysical Operations Su
 
 ---
 
+### Public consultation on the draft BEREC Report on the impact of generative AI on internet openness
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-07*
+
+Public consultation on the draft BEREC Report on the impact of generative AI on internet openness yannick.stephan Wed, 07/10/2026 - 09:10 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 11 November 2026 (CoB) During the 68th BEREC ordinary meetings (1-2 October 2026), the Board of Regulators adopted the draft BEREC Report on the impact of generative AI on internet openness [BoR (26) 141] for public consultation. Background Generative AI services have spread rapidly in the last five years and have deeply modified our everyday digital activities. Such…
+
+[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-report-on-the-impact-of-generative-ai-on-internet-openness)
+
+---
+
+### Public consultation on the draft BEREC Report on access conditions to State aid funded networks
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-07*
+
+Public consultation on the draft BEREC Report on access conditions to State aid funded networks yannick.stephan Wed, 07/10/2026 - 09:08 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 13 November 2026 During the 68th BEREC ordinary meetings (1-2 October 2026), the Board of Regulators adopted the draft BEREC Report on access conditions to State aid funded networks [BoR (26) 139] for public consultation. Background Privately funded broadband networks have reached substantial coverage in commercially viable areas in many EU Member States. However, public…
+
+[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-report-on-access-conditions-to-state-aid-funded-networks)
+
+---
+
+### Public consultation on the draft BEREC Report on access conditions to State aid funded networks
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-07*
+
+Public consultation on the draft BEREC Report on access conditions to State aid funded networks yannick.stephan Wed, 07/10/2026 - 09:08 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 13 November 2026 During the 68th BEREC ordinary meetings (1-2 October 2026), the Board of Regulators adopted the draft BEREC Report on access conditions to State aid funded networks [BoR (26) 139] for public consultation. Background Privately funded broadband networks have reached substantial coverage in commercially viable areas in many EU Member States. However, public…
+
+[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-report-on-access-conditions-to-state-aid-funded-networks)
+
+---
+
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-06*
+*European Environmental Law Review — 2026-10-07*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -171,30 +198,21 @@ Brussels, 1 October – The European Environmental Bureau (EEB) today announced 
 
 ---
 
+### The Case for a Visa Ban: Pathways to Denying Russian (Ex-)Combatants Entry to the EU
+*ICDS (International Centre for Defence and Security) — 2026-09-30*
+
+The case for a ban rests on two distinct but overlapping threats: (1) covert, hybrid, and intelligence operations, and (2) criminality. From the front line in Ukraine, many Russian troops return home with a history of violence, weapons trafficking and looting, and with a sense of lawlessness and impunity. Returnees with combat experience are an ideal recruitment pool for sabotage and subversion by the Russian security services. The initiative began in Estonia and has since been championed by Nordic-Baltic neighbours and endorsed by European states farther from Russia’s border, all of which…
+
+[Read more](https://icds.ee/en/the-case-for-a-visa-ban-pathways-to-denying-russian-ex-combatants-entry-to-the-eu/)
+
+---
+
 ### “New pathways explored”: Closing event for the Ariadne energy transition project
 *PIK Potsdam — 2026-10-06*
 
 The Ariadne research project has provided important guidance for the energy transition in Germany since its inceptions in mid-2019, and will leave well-founded recommendations for its further orientation when it closes at the end of 2026. This is the key message of the Ariadne closing conference today in Berlin, attended by around 200 experts from the fields of science, politics, business and civil society. Coinciding with this event, a major report summarises the findings of the scientific project, which comprises 26 institutes and is led by the Potsdam Institute for Climate Impact Research…
 
 [Read more](https://www.pik-potsdam.de/en/news/latest-news/new-pathways-explored-closing-event-for-the-ariadne-energy-transition-project)
-
----
-
-### Report: Climate risks could multiply disruptions to Finland’s security of supply
-*FIIA (Finnish Institute of International Affairs) — 2026-09-30*
-
-Climate change threatens Finland’s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). “Climate risks cannot be treated as something that we can circle back to once military crises are over,” says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and…
-
-[Read more](https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply)
-
----
-
-### Report: Climate risks could multiply disruptions to Finland’s security of supply
-*FIIA (Finnish Institute of International Affairs) — 2026-09-30*
-
-Climate change threatens Finland’s security of supply by increasing the likelihood of simultaneous crises and disruptions. Finland must prepare for climate risks as part of geopolitical crises and security policy, states a new report by the Finnish Institute of International Affairs (FIIA) and the National Emergency Supply Agency (NESA). “Climate risks cannot be treated as something that we can circle back to once military crises are over,” says Leading Researcher Emma Hakala from FIIA, who headed the research project. For example, extreme weather events can disrupt production, transport and…
-
-[Read more](https://fiia.fi/en/news/report-climate-risks-could-multiply-disruptions-to-finlands-security-of-supply)
 
 ---
 
@@ -207,15 +225,6 @@ Last month the European Commission published its proposal for the revision of Eu
 
 ---
 
-### Escaping the Hormuz trap: What should an agreement to reopen the Strait look like?
-*Chatham House — 2026-09-30*
-
-Escaping the Hormuz trap: What should an agreement to reopen the Strait look like? Expert comment jon.wallace 30 September 2026 A detailed, reciprocal, and verifiable process is essential to ensure that any agreement holds. The war between the United States and Iran has entered an uncertain phase between escalation and diplomacy. At the UN General Assembly, Iran offered a proposal to reopen the Strait of Hormuz and resume nuclear talks – if various conditions were met. That has apparently been rejected by President Donald Trump. Subsequent reports claimed the president was considering new…
-
-[Read more](https://www.chathamhouse.org/2026/09/escaping-hormuz-trap-what-should-agreement-reopen-strait-look)
-
----
-
 ### Slovenia must protect independent and sustainable funding for RTV Slovenija
 *European Federation of Journalists — 2026-10-05*
 
@@ -225,26 +234,8 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 
 ---
 
-### Five Energy Market Factors That Could Tip the Scales in the Middle East War
-*International Crisis Group — 2026-10-01*
-
-Five Energy Market Factors That Could Tip the Scales in the Middle East War pfranz Thu, 10/01/2026 - 19:11 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List A garbage truck drives past gas prices above $6 a gallon and diesel prices above $8 a gallon as they are displayed outside of a Shell gas station in Carson, California on September 22, 2026. Patrick T. Fallon / AFP Commentary / United States 01 October 2026 20+ minutes Five Energy Market Factors That Could Tip the Scales in the Middle…
-
-[Read more](https://www.crisisgroup.org/cmt/united-states/united-states-iran-israelpalestine/five-energy-market-factors-could-tip-scales-middle-east-war)
-
----
-
-### Sánchez’s gamble: This ‘all-in’ election will have international impact
-*Chatham House — 2026-10-05*
-
-Sánchez’s gamble: This ‘all-in’ election will have international impact Expert comment jon.wallace 5 October 2026 Announcing the election, Sánchez set himself in opposition to President Trump and Javier Milei as well as Spain’s populist right. Much will depend on the prime minister’s ability to rally a fragmented left. The decision by Prime Minister Pedro Sánchez to call a snap election is a risky move, but he will have felt he had little choice. His decision fires the starting gun on a year of vital and polarized elections across Europe. The announcement is not entirely unexpected. Spain was…
-
-[Read more](https://www.chathamhouse.org/2026/10/sanchezs-gamble-all-election-will-have-international-impact)
-
----
-
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-06*
+*European Environmental Law Review — 2026-10-07*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -271,20 +262,11 @@ Download the PDF Demand Side Response (DSR) could provide a credible alternative
 ---
 
 ### IMF-World Bank Annual Meetings: Debt, energy and climate crises loom large
-*E3G — 2026-10-06*
+*E3G — 2026-10-07*
 
 Just weeks after devastating floods hit Bangkok, the city will host the world’s finance leaders for the IMF-World Bank Annual Meetings (12–18 October). Delegates will confront a global economy under pressure from fossil fuel supply shocks, rising debt distress and accelerating climate impacts, with many economies facing constrained fiscal space, including in Asia. The meetings, taking place after Bangkok Climate Action Week, will put pressure on international financial institutions (IFIs) and their shareholders to show how they can mobilise finance for investment and resilience while…
 
 [Read more](https://www.e3g.org/news/imf-world-bank-annual-meetings-debt-energy-and-climate-crises-loom-large/?utm_source=rss&utm_medium=rss&utm_campaign=imf-world-bank-annual-meetings-debt-energy-and-climate-crises-loom-large)
-
----
-
-### War has returned to Tigray. This time it may not stay in Ethiopia
-*Chatham House — 2026-10-01*
-
-War has returned to Tigray. This time it may not stay in Ethiopia Expert comment LToremark 1 October 2026 As fighting escalates in Tigray and neighbouring areas, there are fears that Ethiopia’s internal instability could spill over into the wider Horn of Africa region. Conflict returned to Ethiopia’s northern region of Tigray on 23 September, as the Tigray People’s Liberation Front (TPLF) forces stormed three national airports in Tigray. In what the TPLF claimed was defensive combat , ground offensives were also expanded along Tigray’s southern and eastern borders with the neighbouring Amhara…
-
-[Read more](https://www.chathamhouse.org/2026/10/war-has-returned-tigray-time-it-may-not-stay-ethiopia)
 
 ---
 
@@ -297,30 +279,12 @@ With a draft climate bill introduced, Indonesia may be entering a new era of cli
 
 ---
 
-### CCIA Europe Strengthens Brussels Team with Three New Appointments
-*CCIA Europe (Computer & Communications Industry Association) — 2026-09-30*
+### Barcelona Cybersecurity Congress 2026 to explore AI’s impact on industrial cybersecurity
+*ECSO (European Cyber Security Organisation) — 2026-10-06*
 
-Brussels, BELGIUM – The Computer & Communications Industry Association (CCIA Europe) has strengthened its Brussels office with new staff appointments across its policy and communications teams. Albane Vannier, Alessia Loi, and Beatriz Tomé Rodríguez join CCIA Europe as it continues to advocate for a thriving EU digital economy, a role the Association has played since 2009. Albane Vannier joins CCIA Europe as Policy Manager, leading the Association’s advocacy on consumer protection, online safety, and platform-related issues. Prior to this role, Vannier worked as a public affairs consultant in…
+Connecting the European cybersecurity ecosystem through AI, resilience and strategic collaboration The seventh edition of the Barcelona Cybersecurity Congress (BCC) will take place from 3–5 November 2026 in Barcelona, bringing together cybersecurity professionals, industry leaders, researchers and public-sector stakeholders to examine how Artificial Intelligence is reshaping industrial cybersecurity. Held under the theme “Connecting the European […] The post Barcelona Cybersecurity Congress 2026 to explore AI’s impact on industrial cybersecurity appeared first on ECSO .
 
-[Read more](https://ccianet.org/news/2026/09/ccia-europe-strengthens-brussels-team-with-three-new-appointments/)
-
----
-
-### Nepal’s floods put the global loss and damage system to the test
-*Chatham House — 2026-10-05*
-
-Nepal’s floods put the global loss and damage system to the test Expert comment jon.wallace 5 October 2026 Nepal’s recovery from August’s catastrophic glacial flood will test the efficiency of the UN’s Fund for Responding to Loss and Damage. It will also resurface questions about the responsibilities of the greatest carbon emitters. On 26 August 2026, a glacial disaster high in the Himalayas sent a wall of meltwater and debris tearing through Nepal’s Bhotekoshi and Rasuwa region at speeds of nearly 188 km per hour. The flood has claimed over 1400 lives, with thousands still missing. Nepal is…
-
-[Read more](https://www.chathamhouse.org/2026/10/nepals-floods-put-global-loss-and-damage-system-test)
-
----
-
-### How the insurance industry can help society adapt to climate change
-*Chatham House — 2026-10-01*
-
-How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
-
-[Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
+[Read more](https://ecs-org.eu/news/barcelona-cybersecurity-congress-2026-to-explore-ais-impact-on-industrial-cybersecurity/)
 
 ---
 
@@ -351,21 +315,21 @@ Key points for consumers: Future-proofing electricity bills sandrine.carpentier 
 
 ---
 
+### Establishing the European AI Observatory: Call for tenders
+*European Commission -- Shaping Europe's Digital Future — 2026-10-05*
+
+Establishing the European AI Observatory: Call for tenders Anonymous (not verified) Mon, 10/05/2026 - 09:22 Opening: 05 October 2026 Closing: 03 November 2026 The Commission is seeking a procurement contract for the setup and operation of the AI Observatory for a period of three years. The European AI Observatory is a new initiative to monitor and boost the uptake of AI in key sectors across the EU. It will support the objectives of the Apply AI Strategy . The project will provide indicators to assess the impact of AI in strategic sectors. It will also monitor AI development and changes it…
+
+[Read more](https://digital-strategy.ec.europa.eu/en/funding/establishing-european-ai-observatory-call-tenders)
+
+---
+
 ### Public consultation on the draft BEREC Work Programme 2027
 *BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
 
 Public consultation on the draft BEREC Work Programme 2027 yannick.stephan Thu, 01/10/2026 - 09:00 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 31 October 2026 In January this year, BEREC adopted the Outline BEREC Work Programme 2027 , which reflected BEREC's objectives for the upcoming year. BEREC launched a first Call for inputs on the Work Programme 2027 from 27 February to 15 April. During the call for proposals, several additional actions were identified. Considering the early input received, during the 68th BEREC ordinary meetings (1-2 October…
 
 [Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-work-programme-2027)
-
----
-
-### Why the Houthis' Red Sea power play makes Iran even stronger
-*Chatham House — 2026-10-02*
-
-Why the Houthis' Red Sea power play makes Iran even stronger Audio sseth.drupal@c… 2 October 2026 On this week’s episode of Independent Thinking, our experts discuss what Houthi control of the Bab al-Mandab strait means for the wider region. The Iranian-backed Houthi rebels’ capture of Yemen’s port city of Mocha means that Iran now effectively controls two crucial waterways in the region – the Bab al-Mandab Strait to the Red Sea and thus the Suez Canal, as well as the Hormuz Strait. Why has this simmering conflict exploded again? What do Iran and the Houthis want? How serious is this…
-
-[Read more](https://www.chathamhouse.org/2026/10/houthis-red-sea-power-play-makes-iran-stronger-independent-thinking-podcast)
 
 ---
 
@@ -387,6 +351,15 @@ No directive will heat a single home on its own. That work happens in cities and
 
 ---
 
+### Key European Airports Need Permanent Drone Defenses
+*CEPA (Center for European Policy Analysis) — 2026-10-06*
+
+Drone technology spurred by the war in Ukraine is evolving at a sometimes stupefying pace. From conducting deep strikes to disrupting logistics and evacuating wounded soldiers, unmanned systems are at the heart of modern warfare. Most important are Unmanned Aerial Systems (UAS) and counter-UAS, where the European Union and NATO are still a long way behind. Both should recognize the threat to continental security and the most important aspects of civil life, like airports. Counter-drone equipment and personnel should now be deployed at key points like airports, before being replicated more…
+
+[Read more](https://cepa.org/article/key-european-airports-need-permanent-drone-defenses/)
+
+---
+
 ### Michel Van Bellinghen elected BEREC Chair 2028
 *BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
 
@@ -405,66 +378,66 @@ Welcome to the Migration Update August-September 2026. This curated news selecti
 
 ---
 
-### September Trends and October Alerts 2026
-*International Crisis Group — 2026-09-30*
+### Europeanising NATO: The Defence Industry
+*ICDS (International Centre for Defence and Security) — 2026-09-30*
 
-September Trends and October Alerts 2026 oolofsson Wed, 09/30/2026 - 12:06 CrisisWatch Tracking Conflict Worldwide Loading Map Early Warning Resolution Opportunity Risk Alert Trends Improved Situation Deteriorated Situation Unchanged Situation Standby monitoring Not monitored Scroll down to read trends & outlook Share Facebook Twitter Email Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List CrisisWatch is our global conflict tracker, an early warning tool designed to help prevent deadly…
+These are interlinked, as industrial dependencies in Europe—especially on the US defence industrial base—might become aggravated if US political priorities shift further away from the continent. This need not manifest as an outright refusal by the US to sell equipment, but rather as prioritisation that leaves European customers in a difficult position given the compressed timelines of the current security environment. Nonetheless, significant economic and political opportunities for the European Defence and Technological Industrial Base (EDTIB) and its customers exist today. Economically,…
 
-[Read more](https://www.crisisgroup.org/crisiswatch/september-trends-and-october-alerts-2026)
-
----
-
-### Living better while living longer
-*FEPS (S&D) — 2026-09-30*
-
-Europeans are living longer. This is one of the achievements of our social model. The question is whether we are living those additional years in good physical and mental health and whether this progress is shared equally across society. The pursuit of longevity cannot simply mean adding years to life. It just as well means adding life to those years. In other words, extending the time in which we can take a full part in society, keep our relationships, feel accomplished and live with dignity. Importantly, though, healthy longevity must not become another privilege that correlates with income…
-
-[Read more](https://feps-europe.eu/living-better-while-living-longer/)
+[Read more](https://icds.ee/en/europeanising-nato-the-defence-industry/)
 
 ---
 
-### Inside Sudan’s War
-*International Crisis Group — 2026-10-01*
+### Times Radio: UK rejoining the EU?
+*Centre for European Reform — 2026-10-05*
 
-Inside Sudan’s War mloukili Thu, 10/01/2026 - 13:56 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Podcast / Africa 01 October 2026 1 minute Inside Sudan’s War In this episode of The Horn , Alan speaks with Yousra Elbagir, Sky News’s Africa correspondent, about her reporting from inside Sudan’s war, including around El Obeid and El Fasher, how Sudanese are surviving the war and how the war could end. Share BlueSky Email Facebook Linkedin Twitter Whatsapp Save Print Related Tags Sudan In…
+"I think what's driving this is desire to get economic growth, because he [Andy Burnham] understands that what Starmer was doing with the nitty gritty piecemeal negotiations on things like youth mobility and merging the emissions trading schemes and so on, we're not going to deliver anything very dramatic in terms of economic growth. ...And he understands that if you want to have a better economic growth, significant economic growth, you need to actually revisit the red lines and go for something like customs union or single market or memberships. I think it's just driven by growth. And he's…
 
-[Read more](https://www.crisisgroup.org/pod/africa/sudan/inside-sudans-war)
-
----
-
-### September 2026
-*Wilfried Martens Centre (EPP) — 2026-10-02*
-
-September brings not only the start of a new policy season but also a renewed conversation about where the EU is heading, marked by the annual State of the Union address. In a Martens Centre blog post Klaus Welle, Tomi Huhtanen, Peter Hefele, Dimitar Lilkov and Gavin Synnott highlight five elements that emerged from SOTEU. Check it out here ! In this edition of our monthly newsletter, we also bring together our latest media mentions , events , and research touching upon key issues for Europe: from competitiveness and security to digitalising Europe’s economy and cross-border resilience . Head…
-
-[Read more](https://www.martenscentre.eu/newsletter/september-2026/)
+[Read more](https://www.cer.eu/media/times-radio-uk-rejoining-eu)
 
 ---
 
-### On Our Radar
-*International Crisis Group — 2026-10-01*
+### Europeanising NATO: The Arctic
+*ICDS (International Centre for Defence and Security) — 2026-10-06*
 
-On Our Radar eschelhaas Fri, 10/02/2026 - 00:00 Latest Updates Africa Asia-Pacific Europe Latin America & Caribbean Middle East & North Africa United States Global Issues & Institutions My Reading List Special Coverage / Global 02 October 2026 20+ minutes On Our Radar On Our Radar scans conflicts and crises around the globe every week and features some of the hotspots Crisis Group’s analysts are closely watching. Whether an under-reported trend or a headline-grabbing development, our field experts explain why it matters or what should be done. Share BlueSky E-mail Facebook Linkedin Twitter…
+President Donald Trump’s claim to Greenland has exposed the Arctic as a region of transatlantic dispute. It stems not only from Trump’s personal ambition to expand US territory but also from the region’s growing importance for the US in its strategic competition with Russia and China. In principle, Europeans and Canadians share interests with Americans in checking the growing presence of strategic rivals in the region. Trump’s unprecedented claim to the territory of a NATO Ally is both an obstacle and an opportunity for an Alliance undergoing a historic shift of the defence burden to the…
 
-[Read more](https://www.crisisgroup.org/sco/global/our-radar)
-
----
-
-### Trends in electricity production – August 2026
-*The Green Tank — 2026-09-30*
-
-Renewables reached a new all-time monthly high in August, at 3,312 GWh. However, wholesale market prices hit a yearly high of €133.4/MWh, driven by increased gas usage, and higher gas prices rose in August due to the escalating crisis. Batteries prevented 15.4% of August’s RES curtailments, which were limited to 158.6 GWh for the month, but nevertheless approached 2 TWh (1,905 GWh) since the beginning of the year. The post Trends in electricity production – August 2026 first appeared on The Green Tank .
-
-[Read more](https://thegreentank.gr/en/2026/09/30/admie-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=admie-aug26-en)
+[Read more](https://icds.ee/en/europeanising-nato-the-arctic/)
 
 ---
 
-### The "Green Transition” Programme officially launched: nearly PLN 800 million for climate, energy, nature and circular economy projects
-*Polish Ministry of Climate and Environment — 2026-09-30*
+### Record turnout at fifth ECSO CISO Meetup brings more than 230 European cybersecurity leaders to Berlin
+*ECSO (European Cyber Security Organisation) — 2026-10-02*
 
-Nearly PLN 800 million will be allocated to projects supporting climate protection, the development of local energy systems, nature conservation and more efficient resource management. At the opening conference held on 30 September 2026, the Ministry of Climate and Environment officially launched the "Green Transition” Programme, funded under the European Economic Area Financial Mechanism 2021-2028.
+More than 230 senior cybersecurity professionals and public-sector representatives gathered at Estrel Berlin on 1–2 October for the fifth edition of the ECSO CISO Meetup. Non-profit, community-led, and free of charge: the record attendance reflects the relevance of the Meetup as the leading event of its kind, built by CISOs, for CISOs. Berlin became the […] The post Record turnout at fifth ECSO CISO Meetup brings more than 230 European cybersecurity leaders to Berlin appeared first on ECSO .
 
-[Read more](https://www.gov.pl/web/climate/the-green-transition-programme-officially-launched-nearly-pln-800-million-for-climate-energy-nature-and-circular-economy-projects)
+[Read more](https://ecs-org.eu/news/record-turnout-at-fifth-ecso-ciso-meetup-brings-more-than-230-european-cybersecurity-leaders-to-berlin/)
+
+---
+
+### Joris Teer's interview with DW News on China's CRM dominance
+*EUISS (EU Institute for Security Studies) — 2026-10-07*
+
+Joris Teer's interview with DW News on China's CRM dominance marianna.liana… Wed, 10/07/2026 - 11:30 Joris Teer joined Deutsche Welle News to discuss China's stranglehold on the critical raw materials supply chain and the immense influence this gives Beijing over the global economy. He shared his insights on how China's dominance in rare earths has altered US-China relations and shifted the Trump administration's narrative, why other countries are struggling to catch up with China's lead in rare earth mining and refining, and more.
+
+[Read more](https://www.iss.europa.eu/press/joris-teers-interview-dw-news-chinas-crm-dominance)
+
+---
+
+### Tim Rühlig on what the Trump-Xi meeting means for Ukraine
+*EUISS (EU Institute for Security Studies) — 2026-10-07*
+
+Tim Rühlig on what the Trump-Xi meeting means for Ukraine marianna.liana… Wed, 10/07/2026 - 11:17 According to Tim Rühlig, Beijing is not necessarily interested in an indefinite continuation of hostilities between Russia and Ukraine. China could orchestrate a "hybrid peace" scenario, in which the active phase of the war would cease while the Russian threat to Europe persists. Under such a scenario, Western attention would remain focused primarily on Europe rather than East Asia," he explained to Radio Liberty . (in Ukrainian)
+
+[Read more](https://www.iss.europa.eu/press/tim-ruhlig-what-trump-xi-meeting-means-ukraine)
+
+---
+
+### Quointelligence is the Winner of the ECSO STARtup Award 2026
+*ECSO (European Cyber Security Organisation) — 2026-10-06*
+
+Following QuoIntelligence‘s recognition as the winner of the ECSO STARtup Award 2026 and Europe’s Most Promising Cybersecurity Start-up, we spoke with Marco Riccardi, Founder & CEO of QuoIntelligence, about the company’s journey, mission, and vision for the future. Founded in 2020, QuoIntelligence has rapidly grown into a leading European risk intelligence provider, helping organisations anticipate […] The post Quointelligence is the Winner of the ECSO STARtup Award 2026 appeared first on ECSO .
+
+[Read more](https://ecs-org.eu/news/quointelligence-is-the-winner-of-the-ecso-startup-award-2026/)
 
 ---
 
@@ -483,6 +456,15 @@ On 16 September, the European Commission presented the KIDS ACT, its plan for ma
 With three months to go before the EU Deforestation Regulation (EUDR) is enforced, IEEP and World Resources Institute brought together the European Commission and business voices to address the question: are you ready for the EUDR? The answer was a resounding ‘yes’. The post Three months countdown: from political debate to execution of the EU Deforestation Regulation appeared first on IEEP AISBL .
 
 [Read more](https://ieep.eu/news/three-months-countdown-from-political-debate-to-execution-of-the-eu-deforestation-regulation/)
+
+---
+
+### Giuseppe Spatafora quoted in Diari ARA
+*EUISS (EU Institute for Security Studies) — 2026-10-07*
+
+Giuseppe Spatafora quoted in Diari ARA marianna.liana… Wed, 10/07/2026 - 11:21 The new trilateral security deal signed by the US, Denmark, and Greenland is "a good agreement for Europe," said Giuseppe Spatafora to Diari ARA , "as it further binds the US to the defense of NATO's northern flank". However, trust between the partners remains deeply eroded, and it will be difficult to forget the previous strains in transatlantic relations.
+
+[Read more](https://www.iss.europa.eu/press/giuseppe-spatafora-quoted-diari-ara)
 
 ---
 
@@ -514,7 +496,7 @@ Ecologic Institute welcomed the International Climate Protection Fellows of the 
 ---
 
 ### Commission finds Polish support for MAN Trucks factory expansion incompatible State aid
-*European Commission — Press Corner — 2026-10-04*
+*European Commission (Competition Press Corner) — 2026-10-04*
 
 European Commission Press release Brussels, 05 Oct 2026 The European Commission has concluded that Poland's plan to support the extension of capacity of a factory of truck producer MAN Trucks Sp. z o. o. in Niepołomice in the Małopolskie region is not in line with EU State aid rules. Therefore, Poland cannot disburse the aid.
 
@@ -558,24 +540,6 @@ European Commission Press release Brussels, 02 Oct 2026 The European Commission 
 
 ---
 
-### Without Fear or Favour: The European Commission’s DMA Non-Compliance Decision Against Google’s Self-Preferencing (Case DMA.100193)
-*Kluwer Competition Law Blog — 2026-09-30*
-
-In July, the European Commission issued its non-compliance decision against gatekeeper Google for its breach of the self-preferencing prohibition under Article 6(5) DMA.
-
-[Read more](https://legalblogs.wolterskluwer.com/competition-blog/without-fear-or-favour-the-european-commissions-dma-non-compliance-decision-against-googles-self-preferencing-case-dma100193/)
-
----
-
-### G7 Leaders' Statement on global energy security and market stability
-*European Commission — Press Corner — 2026-10-02*
-
-European Commission Statement Brussels, 02 Oct 2026 Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil ...
-
-[Read more](https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2057)
-
----
-
 ### Factsheet - How the DMA ensures businesses using Booking.com are free to set their prices on and off Booking.com
 *Digital Markets Act (European Commission) — 2026-10-02*
 
@@ -591,15 +555,6 @@ The Commission’s regulatory dialogues with gatekeepers in the framework of its
 On 23 September, SIPRI’s Dual–Use and Arms Trade Control Programme delivered a workshop in Canberra on ‘Developments in China’s Export Control Framework: Implications for Australia and Multilateral Cooperation’.
 
 [Read more](https://www.sipri.org/news/2026/sipri-hosts-canberra-workshop-chinas-export-control-framework)
-
----
-
-### Automotive transition: new EC-OECD evidence strengthens case for anticipation, quality jobs and industrial policy
-*industriAll Europe — 2026-09-30*
-
-New European Commission-OECD research shows the severe and lasting impact of automotive job losses and strengthens the case for anticipating change, protecting ...
-
-[Read more](https://news.industriall-europe.eu/Article/1602)
 
 ---
 
@@ -630,15 +585,6 @@ The Karakoram mountain range is one of the most remote and difficult to study in
 
 ---
 
-### Applications open for online course on WMD non-proliferation and disarmament
-*SIPRI — 2026-10-06*
-
-Applications are now open for an intensive online course on weapons of mass destruction (WMD) non-proliferation and disarmament in an era of technological convergence.
-
-[Read more](https://www.sipri.org/news/2026/applications-open-online-course-wmd-non-proliferation-and-disarmament)
-
----
-
 ### Chips Act 2.0 must put Europe’s industrial capacity and workers at its core
 *industriAll Europe — 2026-10-05*
 
@@ -648,12 +594,12 @@ Semiconductors are essential to Europe’s industries, technological sovereignty
 
 ---
 
-### The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe’s Future Competitiveness
-*Lisbon Council — 2026-10-05*
+### The European Commission’s failure to take a final decision on a request for public access to documents concerning the application of the interoperability requirements to Artificial Intelligence products under the Digital Markets Act
+*European Ombudsman — 2026-10-07*
 
-The post The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe’s Future Competitiveness appeared first on The Lisbon Council .
+[...]
 
-[Read more](https://lisboncouncil.net/the-1-trillion-why-an-obscure-copyright-acronym-could-decide-europes-future-competitiveness/)
+[Read more](https://www.ombudsman.europa.eu/en/opening-summary/en/234512)
 
 ---
 
@@ -666,15 +612,6 @@ The post The 1 (Trillion): Why an Obscure Copyright Acronym Could Decide Europe�
 
 ---
 
-### Sustainable European sovereignty must deliver for workers
-*industriAll Europe — 2026-10-01*
-
-Europe’s push for greater sovereignty must strengthen its industrial base, deliver affordable clean energy and give workers a real say in technological change. ...
-
-[Read more](https://news.industriall-europe.eu/Article/1603)
-
----
-
 ### Workers must shape Europe’s industrial transformation
 *industriAll Europe — 2026-10-02*
 
@@ -684,6 +621,15 @@ The BRIDGES 5.0 project has concluded after four years of work on how Europe’s
 
 ---
 
+### We are staying: European diplomats reject Russian calls to leave Ukraine
+*Atlantic Council — 2026-10-06*
+
+The post We are staying: European diplomats reject Russian calls to leave Ukraine appeared first on Atlantic Council .
+
+[Read more](https://www.atlanticcouncil.org/blogs/ukrainealert/we-are-staying-european-diplomats-reject-russian-calls-to-leave-ukraine/)
+
+---
+
 ### Beyond a legacy of war: Integrating mine action into climate security
 *SIPRI — 2026-10-06*
 
@@ -693,21 +639,12 @@ This blog highlights how climate change and landmine contamination can interact 
 
 ---
 
-### Beyond a legacy of war: Integrating mine action into climate security
-*SIPRI — 2026-10-06*
+### Ukraine can play a key role enabling US energy exports to Europe
+*Atlantic Council — 2026-10-01*
 
-This blog highlights how climate change and landmine contamination can interact to create new security risks.
+The post Ukraine can play a key role enabling US energy exports to Europe appeared first on Atlantic Council .
 
-[Read more](https://www.sipri.org/commentary/blog/2026/beyond-legacy-war-integrating-mine-action-climate-security)
-
----
-
-### SIPRI co-convenes human security dialogue in Rome
-*SIPRI — 2026-10-05*
-
-On 16–17 September, SIPRI, IAI and UNTFHS convened a two-day dialogue in Rome on human security in Europe and the Mediterranean.
-
-[Read more](https://www.sipri.org/news/2026/sipri-co-convenes-human-security-dialogue-rome)
+[Read more](https://www.atlanticcouncil.org/blogs/ukrainealert/ukraine-can-play-a-key-role-enabling-us-energy-exports-to-europe/)
 
 ---
 
@@ -720,12 +657,12 @@ doi:10.12688/openreseurope.23303.2
 
 ---
 
-### Unlocking corporate demand for carbon removal starts with clear guidance
-*Carbon Gap — 2026-09-30*
+### Carbon Dioxide Infrastructure and Project Deployment - Policy Summit takeaways
+*Carbon Gap — 2026-10-07*
 
-Unlocking corporate demand for carbon removal starts with clear guidance
+Carbon Dioxide Infrastructure and Project Deployment - Policy Summit takeaways
 
-[Read more](https://carbongap.org/insights/unlocking-corporate-demand-for-carbon-removal-starts-with-clear-guidance)
+[Read more](https://carbongap.org/insights/carbon-dioxide-infrastructure-and-project-deployment)
 
 ---
 
@@ -735,12 +672,5 @@ Unlocking corporate demand for carbon removal starts with clear guidance
 Setting the course for novel marine carbon removal in Europe
 
 [Read more](https://carbongap.org/insights/setting-the-course-for-novel-marine-carbon-removal-in-europe)
-
----
-
-### MITECO launches the Maciñeira Just Transition Hub competition for renewables and energy storage – 1 photo
-*Spanish MITECO — 2026-09-30*
-
-[Read more](https://www.miteco.gob.es/es/prensa/ultimas-noticias/2026/septiembre/el-miteco-lanza-el-concurso-del-nudo-de-transicion-justa-de-maci.html)
 
 ---
