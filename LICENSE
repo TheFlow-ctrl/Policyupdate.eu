@@ -1,0 +1,32 @@
+Copyright (c) 2026 Florian Hoppe. All rights reserved.
+
+This repository and everything in it ("the Software"), including but not
+limited to the source code, scrapers, filters, configuration files, the
+curated source list (sources.yaml), keyword lists, data files, text,
+design and documentation, is proprietary.
+
+The Software is made visible on a public hosting platform for transparency
+only. No licence or permission is granted to copy, reproduce, modify,
+adapt, translate, redistribute, publish, sublicense, sell, or create
+derivative works from the Software or any part of it, or to use it to
+train, fine-tune, or populate any machine-learning model, dataset, or
+competing service, without the prior written permission of the copyright
+holder.
+
+Viewing the Software on the hosting platform, and the use of the
+published website (https://www.policyupdate.eu) as intended for readers,
+are permitted. Quoting short extracts of the published website content
+with attribution to PolicyUpdate.eu is permitted to the extent allowed by
+applicable copyright law. Third-party content shown on the website
+(titles, summaries, and links to publications of other organisations)
+remains the property of its respective owners.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+For permission requests, contact: florian.hoppe@vub.be
