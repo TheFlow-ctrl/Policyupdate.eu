@@ -515,18 +515,21 @@ h1, h2, h3 {
   width: fit-content;
   max-width: 100%;
   margin: 0 0 10px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--navy-950);
   border-radius: 3px;
   overflow: hidden;
-  background: var(--card-bg);
+  background: var(--navy-950);
 }
 
+/* All tabs navy with white text; the active one is marked by a gold
+   underline and a lighter navy fill. */
 .layer-tab {
   padding: 8px 16px;
   border: none;
-  border-right: 1px solid var(--border);
-  background: var(--card-bg);
-  color: var(--muted);
+  border-right: 1px solid var(--navy-700);
+  border-bottom: 3px solid transparent;
+  background: var(--navy-950);
+  color: #fff;
   font-size: 0.8rem;
   font-weight: 600;
   font-family: "IBM Plex Sans", sans-serif;
@@ -538,12 +541,13 @@ h1, h2, h3 {
 }
 
 .layer-tab:hover {
-  color: var(--navy-950);
+  background: var(--navy-800);
 }
 
 .layer-tab.active {
-  background: var(--navy-950);
-  color: white;
+  background: var(--navy-700);
+  border-bottom-color: var(--gold);
+  color: #fff;
 }
 
 .layer-blurb {
