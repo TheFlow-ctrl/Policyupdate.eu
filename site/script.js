@@ -97,6 +97,54 @@ const FORMAT_LABELS = {
   interview: "Interview",
 };
 
+// Content layers (Oct 2026): the source categories (actor_type) grouped
+// into three kinds of content, shown as a filter bar above the actor tabs.
+//   institutional -- what institutions and governments themselves publish
+//   stakeholder   -- how interested parties position themselves
+//   analysis      -- how analysts and observers interpret it
+// Every actor_type in ACTOR_LABELS should appear in exactly one layer; an
+// actor_type missing here is simply not reachable via a layer filter (it
+// still shows under "All content").
+const CONTENT_LAYERS = [
+  {
+    id: "institutional",
+    label: "Institutional output",
+    blurb: "What EU institutions, national ministries and international organisations publish.",
+    actors: ["eu-institution", "eu27-ministry", "international-org"],
+  },
+  {
+    id: "stakeholder",
+    label: "Stakeholder views",
+    blurb: "How industry, trade unions and political groups position themselves.",
+    actors: ["industry", "trade-union", "political"],
+  },
+  {
+    id: "analysis",
+    label: "Analysis",
+    blurb: "How think tanks, NGOs, academics and the media interpret what is happening.",
+    actors: ["think-tank", "ngo", "academic", "media"],
+  },
+];
+
+function layerById(id) {
+  return CONTENT_LAYERS.find((l) => l.id === id) || null;
+}
+
+// The layer an actor_type belongs to (label for the CSV export), or "".
+function layerLabelForActor(actorType) {
+  const layer = CONTENT_LAYERS.find((l) => l.actors.includes(actorType));
+  return layer ? layer.label : "";
+}
+
+// Sponsors (Oct 2026). Leave empty until a sponsor has agreed to be named --
+// while the list is empty the footer "Supported by" strip stays hidden and
+// the Funding & Sponsors page says the project is self-funded. To add one,
+// append an object like:
+//   { name: "Example Law Firm", url: "https://example.com",
+//     logo: "images/sponsors/example.svg",   // optional; name is shown if omitted
+//     alsoTracked: false }                    // true if the sponsor is also a tracked source
+const SPONSORS = [];
+
 // Fixed display order for the "All voices" view's category grouping --
 // chosen by the user, not alphabetical or by volume. Any actor_type not
 // listed here (there shouldn't be any -- this should stay a superset of
@@ -494,6 +542,7 @@ let visualisationRendered = false;
 let activeField = "green-deal";
 let activeTopic = "all";
 let activeActor = "all";
+let activeLayer = "all"; // "all" or a CONTENT_LAYERS id
 let searchQuery = ""; // always lowercase -- see matchesFilters()
 let currentDisplayedEntries = []; // whatever's currently on screen -- see exportCsv()
 
@@ -525,10 +574,12 @@ async function loadDigest() {
 function matchesFilters(entry) {
   const topicOk = activeTopic === "all" || (entry.tags || []).includes(activeTopic);
   const actorOk = activeActor === "all" || (entry.actor_type || "think-tank") === activeActor;
+  const layer = layerById(activeLayer);
+  const layerOk = !layer || layer.actors.includes(entry.actor_type || "think-tank");
   const searchOk =
     !searchQuery ||
     `${entry.title || ""} ${entry.summary || ""} ${entry.org || ""}`.toLowerCase().includes(searchQuery);
-  return topicOk && actorOk && searchOk;
+  return topicOk && actorOk && layerOk && searchOk;
 }
 
 function renderTopicInfo() {
@@ -573,7 +624,7 @@ function renderActiveField() {
   currentDisplayedEntries = filtered; // what "Export CSV" exports -- see exportCsv()
 
   if (filtered.length === 0) {
-    entriesEl.innerHTML = activeTopic === "all" && activeActor === "all" && !searchQuery
+    entriesEl.innerHTML = activeTopic === "all" && activeActor === "all" && activeLayer === "all" && !searchQuery
       ? '<p class="empty">No new publications this week — check back soon.</p>'
       : '<p class="empty">No entries this week match that filter.</p>';
     updateActorScrollSpyTargets();
@@ -824,7 +875,7 @@ function setActiveState(el, isActive) {
 // has a correct aria-pressed value from the very first render, before any
 // click (real or simulated via applyStateFromUrl()) has happened.
 function initAriaPressed() {
-  document.querySelectorAll(".field-tab, .topic-tab, .actor-tab, .utility-link").forEach((el) => {
+  document.querySelectorAll(".field-tab, .topic-tab, .layer-tab, .actor-tab, .utility-link").forEach((el) => {
     el.setAttribute("aria-pressed", el.classList.contains("active") ? "true" : "false");
   });
 }
@@ -935,6 +986,70 @@ function setupActorTabs() {
         const targetId = archiveVisible ? "archive-months" : "entries";
         document.getElementById(targetId).scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    });
+  });
+}
+
+// Shows/hides the whole source-filter area (content layer + source
+// category) in one go -- replaces the old direct actor-tabs toggling so the
+// two bars always travel together.
+function setActorBarsHidden(hidden) {
+  document.getElementById("actor-tabs").hidden = hidden;
+  document.getElementById("layer-tabs").hidden = hidden;
+  const blurb = document.getElementById("layer-blurb");
+  // The blurb only exists while a layer is picked; never show it when the
+  // bars themselves are hidden.
+  blurb.hidden = hidden || activeLayer === "all";
+}
+
+// Applies activeLayer to the UI: highlights the layer button, shows the
+// layer's one-line description, hides the source-category tabs that don't
+// belong to the layer, and relabels the "All voices" tab to match.
+function syncLayerUi() {
+  const layer = layerById(activeLayer);
+  document.querySelectorAll(".layer-tab").forEach((t) => {
+    setActiveState(t, t.dataset.layer === activeLayer);
+  });
+
+  const blurb = document.getElementById("layer-blurb");
+  if (layer) {
+    blurb.textContent = layer.blurb;
+    blurb.hidden = document.getElementById("layer-tabs").hidden;
+  } else {
+    blurb.textContent = "";
+    blurb.hidden = true;
+  }
+
+  document.querySelectorAll(".actor-tab").forEach((t) => {
+    const actor = t.dataset.actor;
+    if (actor === "all") {
+      t.textContent = layer ? `All ${layer.label.toLowerCase()}` : "All voices";
+      t.hidden = false;
+    } else {
+      t.hidden = !!layer && !layer.actors.includes(actor);
+    }
+  });
+}
+
+function setupLayerTabs() {
+  document.querySelectorAll(".layer-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activeLayer = tab.dataset.layer;
+      const layer = layerById(activeLayer);
+
+      // A single source category picked earlier may not exist in the new
+      // layer -- fall back to the layer's overview instead of showing an
+      // always-empty result.
+      if (layer && activeActor !== "all" && !layer.actors.includes(activeActor)) {
+        activeActor = "all";
+      }
+      document.querySelectorAll(".actor-tab").forEach((t) => {
+        setActiveState(t, t.dataset.actor === activeActor);
+      });
+
+      syncLayerUi();
+      rerenderCurrentView();
+      syncUrlFromState();
     });
   });
 }
@@ -1055,6 +1170,7 @@ function syncUrlFromState() {
   if (view === "digest" || view === "archive") {
     if (view === "digest" && activeField !== "green-deal") params.set("field", activeField);
     if (activeTopic !== "all") params.set("topic", activeTopic);
+    if (activeLayer !== "all") params.set("layer", activeLayer);
     if (activeActor !== "all") params.set("actor", activeActor);
     if (searchQuery) params.set("q", searchQuery);
   }
@@ -1078,6 +1194,7 @@ function applyStateFromUrl() {
   const field = safeUrlParam(params, "field", "green-deal");
   const topic = safeUrlParam(params, "topic", null);
   const actor = safeUrlParam(params, "actor", null);
+  const layer = safeUrlParam(params, "layer", null);
   const q = (params.get("q") || "").slice(0, 200);
 
   if (["archive", "policy-cycle", "visualisation"].includes(view)) {
@@ -1098,6 +1215,12 @@ function applyStateFromUrl() {
   if (topic && topic !== "all") {
     const topicBtn = document.querySelector(`.topic-tabs:not([hidden]) .topic-tab[data-topic="${topic}"]`);
     if (topicBtn) topicBtn.click();
+  }
+  // Layer before actor: picking a layer hides the actor tabs outside it,
+  // and resets the actor filter if it doesn't belong to the layer.
+  if (layer && layer !== "all") {
+    const layerBtn = document.querySelector(`.layer-tab[data-layer="${layer}"]`);
+    if (layerBtn) layerBtn.click();
   }
   if (actor && actor !== "all") {
     const actorBtn = document.querySelector(`.actor-tab[data-actor="${actor}"]`);
@@ -1152,7 +1275,7 @@ function showDigestView() {
   hideAllSections();
   document.getElementById("digest-section").hidden = false;
   syncTopicTabsForField(activeField);
-  document.getElementById("actor-tabs").hidden = false;
+  setActorBarsHidden(false);
   document.getElementById("search-bar").hidden = false;
 }
 
@@ -1163,7 +1286,7 @@ function showArchiveView() {
   // regardless of which field tab was active before -- always the
   // green-deal bar, not syncTopicTabsForField(activeField).
   syncTopicTabsForField("green-deal");
-  document.getElementById("actor-tabs").hidden = false;
+  setActorBarsHidden(false);
   document.getElementById("search-bar").hidden = false;
   loadArchive();
 }
@@ -1179,7 +1302,7 @@ function showPolicyCycleView() {
   hideAllSections();
   document.getElementById("policy-cycle-section").hidden = false;
   syncTopicTabsForField("green-deal");
-  document.getElementById("actor-tabs").hidden = true;
+  setActorBarsHidden(true);
   document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadPolicyCycle();
@@ -1194,7 +1317,7 @@ function showVisualisationView() {
   hideAllSections();
   document.getElementById("visualisation-section").hidden = false;
   syncTopicTabsForField(null);
-  document.getElementById("actor-tabs").hidden = true;
+  setActorBarsHidden(true);
   document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
   loadVisualisation();
@@ -1207,7 +1330,7 @@ function showInfoView(sectionId) {
   hideAllSections();
   document.getElementById(sectionId).hidden = false;
   syncTopicTabsForField(null);
-  document.getElementById("actor-tabs").hidden = true;
+  setActorBarsHidden(true);
   document.getElementById("search-bar").hidden = true;
   document.getElementById("topic-info").hidden = true;
 }
@@ -1265,11 +1388,92 @@ function setupUtilityNav() {
   // The "us" link inside the Sources page's intro text jumps to Contact --
   // reuses the real Contact nav button's click handler above, so active
   // states stay in sync instead of duplicating the switch logic here.
-  const sourcesContactLink = document.getElementById("sources-contact-link");
-  if (sourcesContactLink) {
-    sourcesContactLink.addEventListener("click", () => {
-      document.querySelector('.utility-link[data-view="contact"]').click();
+  // Same trick for the Funding & Sponsors page's "Get in touch" link.
+  ["sources-contact-link", "funding-contact-link"].forEach((id) => {
+    const link = document.getElementById(id);
+    if (link) {
+      link.addEventListener("click", () => {
+        document.querySelector('.utility-link[data-view="contact"]').click();
+      });
+    }
+  });
+
+  // The footer strip's "Editorial independence" link opens the Funding &
+  // Sponsors page and scrolls to the independence statement.
+  const independenceLink = document.getElementById("sponsor-strip-independence");
+  if (independenceLink) {
+    independenceLink.addEventListener("click", () => {
+      document.querySelector('.utility-link[data-view="funding"]').click();
+      const target = document.getElementById("independence");
+      if (target) target.scrollIntoView({ block: "start" });
     });
+  }
+
+  // The "Here could be your company logo" slot opens the Funding & Sponsors
+  // page at its "Become a sponsor" section.
+  const sponsorSlot = document.getElementById("sponsor-slot");
+  if (sponsorSlot) {
+    sponsorSlot.addEventListener("click", () => {
+      document.querySelector('.utility-link[data-view="funding"]').click();
+      const target = document.getElementById("become-sponsor");
+      if (target) target.scrollIntoView({ block: "start" });
+    });
+  }
+}
+
+// --- Sponsors ---------------------------------------------------------
+// Renders the SPONSORS list (top of this file) in two places: the discreet
+// "Supported by" strip in the footer (hidden while the list is empty) and
+// the "Who supports us" block on the Funding & Sponsors page. All values
+// are escaped; only http(s) URLs are linked.
+function safeHttpUrl(url) {
+  try {
+    const u = new URL(url, location.href);
+    return u.protocol === "https:" || u.protocol === "http:" ? u.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function renderSponsors() {
+  const strip = document.getElementById("sponsor-strip");
+  const stripList = document.getElementById("sponsor-strip-list");
+  const pageBlock = document.getElementById("funding-sponsors");
+  if (!SPONSORS.length) {
+    // No sponsors yet: the strip stays visible with just its label and the
+    // "your logo here" invitation (the list is empty). The static
+    // "currently self-funded" text on the Funding page stays too.
+    if (stripList) stripList.innerHTML = "";
+    return;
+  }
+
+  const sponsorInner = (s, forStrip) => {
+    const name = escapeHtml(s.name || "");
+    const logo = s.logo
+      ? `<img src="${escapeHtml(s.logo)}" alt="${name}" class="sponsor-logo" loading="lazy">`
+      : name;
+    const url = safeHttpUrl(s.url);
+    const body = forStrip ? logo : name;
+    return url
+      ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener sponsored">${body}</a>`
+      : body;
+  };
+
+  if (strip && stripList) {
+    stripList.innerHTML = SPONSORS.map((s) => `<li>${sponsorInner(s, true)}</li>`).join("");
+  }
+
+  if (pageBlock) {
+    pageBlock.innerHTML =
+      `<p>PolicyUpdate.eu is supported by the following organisations. Their support is governed by the editorial-independence rules below.</p>` +
+      `<ul class="info-page-list">` +
+      SPONSORS.map((s) => {
+        const note = s.alsoTracked
+          ? ` <span class="sponsor-disclosure">— also one of the outlets we track; its publications are treated like any other.</span>`
+          : "";
+        return `<li>${sponsorInner(s, false)}${note}</li>`;
+      }).join("") +
+      `</ul>`;
   }
 }
 
@@ -1618,7 +1822,7 @@ function renderArchive() {
   currentDisplayedEntries = filteredMonths.flatMap((month) => month.entries);
 
   if (filteredMonths.length === 0) {
-    monthsEl.innerHTML = activeTopic === "all" && activeActor === "all" && !searchQuery
+    monthsEl.innerHTML = activeTopic === "all" && activeActor === "all" && activeLayer === "all" && !searchQuery
       ? '<p class="empty">No archived entries yet — the archive fills in as weekly digests run.</p>'
       : '<p class="empty">No archived entries match that filter yet.</p>';
     announceResultsCount(0);
@@ -1889,10 +2093,11 @@ function csvEscape(value) {
 }
 
 function entriesToCsv(entries) {
-  const headers = ["Title", "Organisation", "Actor Type", "Date", "Field", "Topics", "Format", "Link", "Summary"];
+  const headers = ["Title", "Organisation", "Content Layer", "Actor Type", "Date", "Field", "Topics", "Format", "Link", "Summary"];
   const rows = entries.map((e) => [
     e.title || "",
     e.org || "",
+    layerLabelForActor(e.actor_type || "think-tank"),
     ACTOR_LABELS[e.actor_type] || e.actor_type || "",
     e.date || "",
     FIELD_LABELS[e.field] || e.field || "",
@@ -2200,8 +2405,10 @@ function renderVisualisation(data) {
 
 setupFieldTabs();
 setupTopicTabs();
+setupLayerTabs();
 setupActorTabs();
 setupUtilityNav();
+renderSponsors();
 setupActorScrollSpy();
 setupSearch();
 setupCiteButtons();
