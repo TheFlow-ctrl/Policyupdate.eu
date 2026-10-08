@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-07
+# Weekly Climate, Energy & Environment Digest — 2026-10-08
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-07*
+*World Competition — 2026-10-08*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -18,12 +18,12 @@ Dark clouds ahead: Energy outlooks for winter marianna.liana… Mon, 10/05/2026 
 
 ---
 
-### Hidden ‘Network Fee’ Backdoors in EU Digital Networks Act Exposed as Big Telcos Push for Mandatory Payments Behind Closed Doors
-*CCIA Europe (Computer & Communications Industry Association) — 2026-10-01*
+### EU Defence Spending
+*EUISS (EU Institute for Security Studies) — 2026-10-08*
 
-Brussels, BELGIUM – As Europe’s largest telecom operators gather in Brussels today, the Computer & Communications Industry Association (CCIA Europe) has launched a new policy explainer revealing how the European Commission’s proposed Digital Networks Act (DNA) creates two legal pathways for mandatory ‘network fees’. The explainer, Beyond Speculation: How the DNA Codifies Pathways Towards Network Fees , warns that the threat is no longer theoretical: mechanisms that could introduce network fees are already written into the text being negotiated by EU co-legislators. Yet after years of publicly…
+EU Defence Spending christian.diet… Thu, 10/08/2026 - 10:45 18 minutes Introduction Defence budgets across Europe are rising. Russia’s war on Ukraine, combined with doubts over the future of US security guarantees, have prompted European governments to invest more in defence. According to EUISS calculations based on EDA and NATO data, spending by EU Member States was 56% higher in 2025 than it was in 2022, after accounting for inflation. One challenge is sustaining and increasing this spending. Rebuilding Europe’s military capacity will require investment over many years. Yet many national…
 
-[Read more](https://ccianet.org/news/2026/10/hidden-network-fee-backdoors-in-eu-digital-networks-act-exposed-as-big-telcos-push-for-mandatory-payments-behind-closed-doors/)
+[Read more](https://www.iss.europa.eu/publications/analysis/eu-defence-spending)
 
 ---
 
@@ -42,6 +42,15 @@ Europe’s telecom sector delivers great value for money and shows progress, but
 ABSTRACT The construction sector is a major contributor to the climate crisis, accounting for over one‐third of global energy‐related CO2 emissions. In response, the European Commission identified the circular economy as a means of achieving green growth and prioritized the construction sector in its Circular Economy Action Plan. Since then, national and local governments have begun developing policy regimes to promote the circular economy in the built environment (CEBE). However, implementation remains limited, and policy coherence—the alignment of objectives and instruments across…
 
 [Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70123?af=R)
+
+---
+
+### The Cloud and AI Development Act (CADA) represents everything that’s wrong with Europe’s approach to digital sovereignty
+*EDRi (European Digital Rights) — 2026-10-08*
+
+The EU’s Tech Sovereignty Package is supposed to jump-start Europe’s “sovereign AI” ambitions. But due to fundamental misunderstandings about the technology behind ‘AI’ and the blind trust in Big Tech’s AI doomer and boomer narratives, it is more likely to instead hurt digital rights and the environment instead, and waste valuable public resources that should have been invested in actually increasing Europe’s digital resilience. The Cloud and AI Development (CADA) Act, a part of the Tech Sovereignty Package, adds up to an aggressive policy push to impose “European AI”. The post The Cloud and…
+
+[Read more](https://edri.org/our-work/the-cloud-and-ai-development-act-cada-represents-everything-thats-wrong-with-europes-approach-to-digital-sovereignty/)
 
 ---
 
@@ -73,7 +82,7 @@ Past emissions have already committed the planet to higher temperatures, sea lev
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-07*
+*European Environmental Law Review — 2026-10-08*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -99,12 +108,21 @@ Open letter to EU ministers to support the inclusion of Indian ship recycling ya
 
 ---
 
-### Stellungnahme zur öffentlichen Anhörung anlässlich der geplanten Novelle des Energieeffizienzgesetzes
-*AlgorithmWatch — 2026-10-01*
+### €2 million LIFT programme backs Bristol, Leuven and Aarhus to fast-track climate finance and solar innovation
+*Netzero Cities — 2026-10-07*
 
-Der vorliegende Gesetzentwurf, beschlossen von der Bundesregierung am 10.7.2026, ändert das Energieeffizienzgesetz (EnEfG) vom 13.11.2023, das Energiedienstleistungsgesetz (EDL-G) vom 04.11.2010 sowie mehrere Verordnungen. Diese Stellungnahme beschränkt sich aus Zeitgründen auf die Änderungen im Energieeffizienzgesetz (EnEfG-E) und darin auf die Änderungen mit direktem Bezug zu Rechenzentren (insbesondere Abschnitt 4 „Energieeffizienz in Rechenzentren“, §§ 11-15). Anlass der Novelle ist zum einen die Neufassung der Europäischen Energieeffizienzrichtlinie (EED) vom 10. Oktober 2023 und zum…
+Authors: Barbara Jarkiewicz NetZeroCities has selected three European cities for the Leveraging Innovation and Financing for Transformation programme (LIFT), which will support cities in overcoming some of the practical barriers that stand between climate ambition and implementation. Bristol, Leuven and Aarhus will test new approaches to finance, community energy and solar deployment to advance climate action across the continent. Backed by a €2 million in total funding, LIFT is a short-term, implementation-focused programme designed for Mission cities that are ready to put innovative…
 
-[Read more](https://algorithmwatch.org/de/stellungnahme-novelle-energieeffizienzgesetz/)
+[Read more](https://netzerocities.eu/2026/10/07/2-million-lift-programme-backs-bristol-leuven-and-aarhus-to-fast-track-climate-finance-and-solar-innovation/)
+
+---
+
+### Brazil’s Amazon rainforest is at risk if Bolsonaro wins – but its low-carbon economy is here to stay
+*Chatham House — 2026-10-07*
+
+Brazil’s Amazon rainforest is at risk if Bolsonaro wins – but its low-carbon economy is here to stay Expert comment LToremark 7 October 2026 If Flávio Bolsonaro wins Brazil’s presidential run-off, he will likely roll back Lula’s deforestation regulations. But the country’s low-carbon transition will be harder to reverse. The outcome of the first round of Brazil’s presidential election has put President Luiz Inácio Lula da Silva and his main challenger Flávio Bolsonaro – son of former president Jair Bolsonaro – into a run-off at the end of October. The result itself is not surprising. But…
+
+[Read more](https://www.chathamhouse.org/2026/10/brazils-amazon-rainforest-risk-if-bolsonaro-wins-its-low-carbon-economy-here-stay)
 
 ---
 
@@ -153,8 +171,17 @@ Public consultation on the draft BEREC Report on access conditions to State aid 
 
 ---
 
+### D3 brings class actions on addictive design against Facebook, Instagram, TikTok and YouTube
+*EDRi (European Digital Rights) — 2026-10-08*
+
+The Portuguese digital rights organisation and EDRi member D3 announces that it has brought four class actions lawsuits against Facebook, Instagram, TikTok and YouTube over the use of addictive design practices. The cases challenge design practices that can encourage compulsive use of online platforms and seek to hold platforms accountable for the way their services affect users. Similar initiatives might come up in other EU Member States as part of a broader European response. The post D3 brings class actions on addictive design against Facebook, Instagram, TikTok and YouTube appeared first…
+
+[Read more](https://edri.org/our-work/d3-brings-class-actions-on-addictive-design-against-facebook-instagram-tiktok-and-youtube/)
+
+---
+
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-07*
+*European Environmental Law Review — 2026-10-08*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -189,21 +216,12 @@ CLEPA, together with ACEA and Tyres Europe, has called on EU institutions to ens
 
 ---
 
-### EEB pull out of Critical Chemicals Alliance over industry capture and deregulation risks
-*EEB (European Environmental Bureau) — 2026-10-01*
+### After the RAF Fairford incident, the UK should develop its homeland defence forces
+*Chatham House — 2026-10-07*
 
-Brussels, 1 October – The European Environmental Bureau (EEB) today announced its withdrawal from the Critical Chemicals Alliance (CCA) , warning that the initiative is set to preserve current chemical production, including hazardous, carbon-intensive and fossil-dependent chemicals, rather than driving the transformation Europe needs. The CCA, launched by the European Commission to identify chemicals and production capacities considered critical to Europe’s economy and address concerns around supply and competitiveness [1], is approaching the adoption of its recommendations at its second…
+After the RAF Fairford incident, the UK should develop its homeland defence forces Expert comment thilton.drupal 7 October 2026 The threat of hybrid attacks from Iran and Russia means the UK should develop a force dedicated to protecting its bases and infrastructure at home. Finland and Poland offer lessons. The US’s withdrawal of its bombers from RAF Fairford, following a suspected terror plot against the base, has brought attention to how the UK defends its homeland military bases and other critical infrastructure. The UK government has insisted RAF Fairford is safe following the arrest of…
 
-[Read more](https://eeb.org/en/eeb-pull-out-of-crittical-chemicals-alliance-over-industry-capture-and-deregulation-risks/)
-
----
-
-### The Case for a Visa Ban: Pathways to Denying Russian (Ex-)Combatants Entry to the EU
-*ICDS (International Centre for Defence and Security) — 2026-09-30*
-
-The case for a ban rests on two distinct but overlapping threats: (1) covert, hybrid, and intelligence operations, and (2) criminality. From the front line in Ukraine, many Russian troops return home with a history of violence, weapons trafficking and looting, and with a sense of lawlessness and impunity. Returnees with combat experience are an ideal recruitment pool for sabotage and subversion by the Russian security services. The initiative began in Estonia and has since been championed by Nordic-Baltic neighbours and endorsed by European states farther from Russia’s border, all of which…
-
-[Read more](https://icds.ee/en/the-case-for-a-visa-ban-pathways-to-denying-russian-ex-combatants-entry-to-the-eu/)
+[Read more](https://www.chathamhouse.org/2026/10/after-raf-fairford-incident-uk-should-develop-its-homeland-defence-forces)
 
 ---
 
@@ -225,6 +243,15 @@ Last month the European Commission published its proposal for the revision of Eu
 
 ---
 
+### European Peace Facility (EPF) – The Next Stage of Europe’s Security Adaptation
+*ECIPE — 2026-10-07*
+
+The September 2026 update of the European Peace Facility (EPF) , which supports defence and security in the EU and partner countries, reflects a broader transformation of Europe’s approach to security. The Facility is becoming more differentiated and increasingly oriented towards sustainable military capability at the same time as Europe is assuming greater responsibility for its own defence. The next stage should build on this progress by tailoring specialised EU instruments to address different vulnerabilities and ensuring that their combined effects strengthen Europe’s capacity to shape…
+
+[Read more](https://ecipe.org/insights/european-peace-facility/)
+
+---
+
 ### Slovenia must protect independent and sustainable funding for RTV Slovenija
 *European Federation of Journalists — 2026-10-05*
 
@@ -235,11 +262,29 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-07*
+*European Environmental Law Review — 2026-10-08*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013)
+
+---
+
+### The impact of generative artificial intelligence on internet openness
+*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-07*
+
+The impact of generative artificial intelligence on internet openness yannick.stephan Wed, 07/10/2026 - 11:54 Press Releases Generative artificial intelligence (AI) services are increasingly used and they now represent common gateways to online information. While these services can generate efficiencies, reduce search costs and improve users’ experience, there is little transparency about how information is selected and prioritised, and users’ freedom of choice may be affected. In its draft report BEREC highlights how generative AI transforms both user’s access to online content and services…
+
+[Read more](https://www.berec.europa.eu/en/news/press-releases/the-impact-of-generative-artificial-intelligence-on-internet-openness)
+
+---
+
+### EU Defence Series: The Neo-Prime Time. Scaling Up Europe’s Defence AI Industry
+*ICDS (International Centre for Defence and Security) — 2026-10-07*
+
+A new generation of AI-focused firms has emerged to deliver services for key defence functions — intelligence, targeting, command and control, and logistics — and to integrate weapon systems in its own right. Such ‘neo-primes’ are a relatively recent phenomenon and contrast with traditional large defence companies, known as primes, the main contractors that develop and integrate complex military systems for governments. [1] The US is home to several neo-primes upending the defence and broader technology sectors, with Palantir and Anduril among the most successful examples. European…
+
+[Read more](https://icds.ee/en/eu-defence-series-the-neo-prime-time-scaling-up-europes-defence-ai-industry/)
 
 ---
 
@@ -252,15 +297,6 @@ Recent months have reinforced the case for accelerating action on the energy tra
 
 ---
 
-### Can Demand Side Response Keep Romania’s Lights on Under System Stress?
-*EPG Thinktank — 2026-10-01*
-
-Download the PDF Demand Side Response (DSR) could provide a credible alternative to keeping coal capacity online while supporting Romania’s longer-term energy transition, with energy storage and increased low carbon capacities. Romania’s DSR potential is estimated at up to 235 MW of industrial use and 1,800 MW at the household level. Some Romanian officials continue to argue that coal is indispensable on the grounds that it’s the only guarantee of security of supply in both summer and winter. However, a scaled-up DSR mechanism could cover these adequacy gaps and incur savings of around EUR…
-
-[Read more](https://www.epg-thinktank.org/can-demand-side-response-keep-romanias-lights-on-under-system-stress/)
-
----
-
 ### IMF-World Bank Annual Meetings: Debt, energy and climate crises loom large
 *E3G — 2026-10-07*
 
@@ -270,21 +306,21 @@ Just weeks after devastating floods hit Bangkok, the city will host the world’
 
 ---
 
-### What could a climate council unlock for Indonesia’s climate agenda?
-*E3G — 2026-09-30*
-
-With a draft climate bill introduced, Indonesia may be entering a new era of climate governance. Establishing a climate council is one option on the table . Drawing on models from over 25 countries, where similar institutions have demonstrated their value, a new climate institution could unlock climate finance, improve carbon markets and bring government, researchers, business and civil society closer together in addressing Indonesia’s risks and opportunities for climate action. Good climate governance needs climate councils Governments need institutions that support them to address climate…
-
-[Read more](https://www.e3g.org/news/what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda/?utm_source=rss&utm_medium=rss&utm_campaign=what-could-a-climate-council-unlock-for-indonesia-s-climate-agenda)
-
----
-
 ### Barcelona Cybersecurity Congress 2026 to explore AI’s impact on industrial cybersecurity
 *ECSO (European Cyber Security Organisation) — 2026-10-06*
 
 Connecting the European cybersecurity ecosystem through AI, resilience and strategic collaboration The seventh edition of the Barcelona Cybersecurity Congress (BCC) will take place from 3–5 November 2026 in Barcelona, bringing together cybersecurity professionals, industry leaders, researchers and public-sector stakeholders to examine how Artificial Intelligence is reshaping industrial cybersecurity. Held under the theme “Connecting the European […] The post Barcelona Cybersecurity Congress 2026 to explore AI’s impact on industrial cybersecurity appeared first on ECSO .
 
 [Read more](https://ecs-org.eu/news/barcelona-cybersecurity-congress-2026-to-explore-ais-impact-on-industrial-cybersecurity/)
+
+---
+
+### Russia’s Kaliningrad threats show the value of Baltic preparedness
+*Chatham House — 2026-10-07*
+
+Russia’s Kaliningrad threats show the value of Baltic preparedness Expert comment jon.wallace 7 October 2026 Moscow’s nuclear rhetoric should be taken seriously. But Baltic states know grey zone attacks and territorial incursions are equally serious threats. Vladimir Putin always chooses his words carefully. If Russia faced a direct attack on Kaliningrad (its enclave on the Baltic Sea), he warned on 1 October, the use of ‘all weapons in (our) country’s arsenal’ would inevitably be on the table. The statement followed an earlier Russian note to NATO, threatening nuclear escalation if the…
+
+[Read more](https://www.chathamhouse.org/2026/10/russias-kaliningrad-threats-show-value-baltic-preparedness)
 
 ---
 
@@ -324,24 +360,6 @@ Establishing the European AI Observatory: Call for tenders Anonymous (not verifi
 
 ---
 
-### Public consultation on the draft BEREC Work Programme 2027
-*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
-
-Public consultation on the draft BEREC Work Programme 2027 yannick.stephan Thu, 01/10/2026 - 09:00 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 31 October 2026 In January this year, BEREC adopted the Outline BEREC Work Programme 2027 , which reflected BEREC's objectives for the upcoming year. BEREC launched a first Call for inputs on the Work Programme 2027 from 27 February to 15 April. During the call for proposals, several additional actions were identified. Considering the early input received, during the 68th BEREC ordinary meetings (1-2 October…
-
-[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/public-consultation-on-the-draft-berec-work-programme-2027)
-
----
-
-### The Carbon Footprint of Electricity Production –  August 2026
-*The Green Tank — 2026-10-01*
-
-The upward trend in power sector emissions continued in August, reaching 1.38 million tonnes (+7.8% compared with July), driven by increased use of lignite and fossil gas, despite the record level of renewable energy generation recorded in the same month. With the addition of August’s emissions, cumulative sector emissions since the beginning of 2026 reached 9.6 million tonnes, exceeding the carbon budget set under the National Energy and Climate Plan (NECP) for the whole of 2026. The post The Carbon Footprint of Electricity Production – August 2026 first appeared on The Green Tank .
-
-[Read more](https://thegreentank.gr/en/2026/10/01/emissionswatch-aug26-en/?utm_source=rss&utm_medium=rss&utm_campaign=emissionswatch-aug26-en)
-
----
-
 ### Europe sets the rules, Heat Heroes make them work
 *Energy Cities — 2026-10-05*
 
@@ -360,33 +378,6 @@ Drone technology spurred by the war in Ukraine is evolving at a sometimes stupef
 
 ---
 
-### Michel Van Bellinghen elected BEREC Chair 2028
-*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-01*
-
-Michel Van Bellinghen elected BEREC Chair 2028 yannick.stephan Thu, 01/10/2026 - 08:59 Latest News At its plenary meeting on 1 October 2026, the Board of Regulators elected Michel Van Bellinghen , Chair of the BIPT Council (Belgium), as the BEREC Chair for 2028. In the year preceding the chairmanship, he will join the Mini-Board and work closely with the incoming Chair, Alejandra de Iturriaga Gandini ( CNMC , Spain), helping to ensure a smooth handover of responsibilities and continuity in BEREC’s work. This will be the second time Michel Van Bellinghen serves as BEREC Chair. BEREC leadership…
-
-[Read more](https://www.berec.europa.eu/en/news/latest-news/michel-van-bellinghen-elected-berec-chair-2028)
-
----
-
-### Migration Update August-September 2026
-*Wilfried Martens Centre (EPP) — 2026-09-30*
-
-Welcome to the Migration Update August-September 2026. This curated news selection brings together many of the most important developments in the migration policy area over the last month, including recent ones tied to the ongoing conflict in Ukraine. The purpose of these news summaries is to provide a factual base for migration debates within the European centre-right. Vít Novotný is responsible for the selection of information items from the media, governments and social media. The value of these summaries is in the categorisation of information items and in listing those items that readers…
-
-[Read more](https://www.martenscentre.eu/migration-update/migration-update-august-september-2026/)
-
----
-
-### Europeanising NATO: The Defence Industry
-*ICDS (International Centre for Defence and Security) — 2026-09-30*
-
-These are interlinked, as industrial dependencies in Europe—especially on the US defence industrial base—might become aggravated if US political priorities shift further away from the continent. This need not manifest as an outright refusal by the US to sell equipment, but rather as prioritisation that leaves European customers in a difficult position given the compressed timelines of the current security environment. Nonetheless, significant economic and political opportunities for the European Defence and Technological Industrial Base (EDTIB) and its customers exist today. Economically,…
-
-[Read more](https://icds.ee/en/europeanising-nato-the-defence-industry/)
-
----
-
 ### Times Radio: UK rejoining the EU?
 *Centre for European Reform — 2026-10-05*
 
@@ -396,12 +387,30 @@ These are interlinked, as industrial dependencies in Europe—especially on the 
 
 ---
 
+### China Needs Russia in the Fight
+*CEPA (Center for European Policy Analysis) — 2026-10-07*
+
+During a four-hour meeting in Brussels in July 2025, Chinese Foreign Minister Wang Yi reportedly told the European Union’s top diplomat, Kaja Kallas, that China could not afford a Russian defeat in Ukraine. This was a simple power calculus: if Russia lost, the United States would be free to shift its full attention to Beijing. The remark came more than three years into the Sino-Russian “no-limits partnership” that Presidents Xi and Putin declared on the eve of the full-scale Russian invasion of Ukraine in 2022. The exchange, first reported by the South China Morning Post and omitted from the…
+
+[Read more](https://cepa.org/article/china-needs-russia-in-the-fight/)
+
+---
+
 ### Europeanising NATO: The Arctic
 *ICDS (International Centre for Defence and Security) — 2026-10-06*
 
 President Donald Trump’s claim to Greenland has exposed the Arctic as a region of transatlantic dispute. It stems not only from Trump’s personal ambition to expand US territory but also from the region’s growing importance for the US in its strategic competition with Russia and China. In principle, Europeans and Canadians share interests with Americans in checking the growing presence of strategic rivals in the region. Trump’s unprecedented claim to the territory of a NATO Ally is both an obstacle and an opportunity for an Alliance undergoing a historic shift of the defence burden to the…
 
 [Read more](https://icds.ee/en/europeanising-nato-the-arctic/)
+
+---
+
+### Today, EuroCOP stands alongside the European and global trade union movement to mark World Day for Decent Work.
+*EuroCOP (European Confederation of Police) — 2026-10-07*
+
+For Europe’s police officers, decent work means fair pay, safe working conditions, proper protections, sustainable working hours and the respect that every worker deserves. We are proud to add the voice of Europe’s police officers to this collective call for dignity, fairness and decent work for all. Together, our voice is stronger. Photos courtesy of ETUC The post Today, EuroCOP stands alongside the European and global trade union movement to mark World Day for Decent Work. first appeared on Euro Cop .
+
+[Read more](https://eurocop.org/today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work/?utm_source=rss&utm_medium=rss&utm_campaign=today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work)
 
 ---
 
@@ -441,21 +450,30 @@ Following QuoIntelligence‘s recognition as the winner of the ECSO STARtup Awar
 
 ---
 
-### The KIDS Act will make the internet less safe
-*EDRi (European Digital Rights) — 2026-09-30*
+### No human required: Austria’s plan for AI-only government decisions
+*EDRi (European Digital Rights) — 2026-10-08*
 
-On 16 September, the European Commission presented the KIDS ACT, its plan for making online experiences safer for young people. Far from being a move to lead the EU towards better digital environments, this move is a missed opportunity to address the root cause of why online platforms are harmful to children – and everyone else. This blog analyse the proposal’s shortcomings. The post The KIDS Act will make the internet less safe appeared first on European Digital Rights (EDRi) .
+A sweeping change to Austria's administrative law would let authorities issue binding decisions using AI systems with no human ever reviewing the outcome. EDRi member epicenter.works has sent an open letter to parliament, and is looking for input from readers elsewhere in Europe about how other countries are handling, or planning to handle, the same issue. The post No human required: Austria’s plan for AI-only government decisions appeared first on European Digital Rights (EDRi) .
 
-[Read more](https://edri.org/our-work/the-kids-act-will-make-the-internet-less-safe/)
+[Read more](https://edri.org/our-work/no-human-required-austrias-plan-for-ai-only-government-decisions/)
 
 ---
 
-### Three months countdown: from political debate to execution of the EU Deforestation Regulation
-*IEEP — 2026-10-01*
+### Your data, their decision: the hidden surveillance infrastructure behind Europe’s digital borders
+*EDRi (European Digital Rights) — 2026-10-08*
 
-With three months to go before the EU Deforestation Regulation (EUDR) is enforced, IEEP and World Resources Institute brought together the European Commission and business voices to address the question: are you ready for the EUDR? The answer was a resounding ‘yes’. The post Three months countdown: from political debate to execution of the EU Deforestation Regulation appeared first on IEEP AISBL .
+A new report by ARTICLE 19 examines how the European Union is presiding over the most significant expansion of border surveillance in its history. Much of this development is being outsourced to private companies – with profound consequences for privacy and freedom of expression. The post Your data, their decision: the hidden surveillance infrastructure behind Europe’s digital borders appeared first on European Digital Rights (EDRi) .
 
-[Read more](https://ieep.eu/news/three-months-countdown-from-political-debate-to-execution-of-the-eu-deforestation-regulation/)
+[Read more](https://edri.org/our-work/your-data-their-decision-the-hidden-surveillance-infrastructure-behind-europes-digital-borders/)
+
+---
+
+### ECSO CISO Community establishes national chapter in Croatia
+*ECSO (European Cyber Security Organisation) — 2026-10-08*
+
+The European Cyber Security Organisation (ECSO) is pleased to announce the establishment of the ECSO CISO Community Croatia, marking a new milestone in the continued expansion of the ECSO CISO Community across Europe. The partnership agreement was officially signed during the 5th edition of the ECSO CISO Meetup, held in Berlin on 1 and 2 […] The post ECSO CISO Community establishes national chapter in Croatia appeared first on ECSO .
+
+[Read more](https://ecs-org.eu/news/ecso-ciso-community-establishes-national-chapter-in-croatia/)
 
 ---
 
@@ -486,15 +504,6 @@ Why does electricity remain expensive despite the growing share of renewable ene
 
 ---
 
-### From Cities to Seas: Humboldt Fellows Explore Nature-Based Solutions and Ecosystem-Based Governance
-*Ecologic Institute — 2026-09-30*
-
-Ecologic Institute welcomed the International Climate Protection Fellows of the Alexander von Humboldt Foundation. The visit brought together a highly interdisciplinary group exploring how nature-based solutions and ecosystem-based governance can help turn complex environmental challenges into practical, collaborative action.
-
-[Read more](https://www.ecologic.eu/20682)
-
----
-
 ### Commission finds Polish support for MAN Trucks factory expansion incompatible State aid
 *European Commission (Competition Press Corner) — 2026-10-04*
 
@@ -504,12 +513,21 @@ European Commission Press release Brussels, 05 Oct 2026 The European Commission 
 
 ---
 
-### Public innovation and Energy Communities towards participatory democracies
-*EU Covenant of Mayors — 2026-09-30*
+### EDRi-gram, 8 October 2026
+*EDRi (European Digital Rights) — 2026-10-08*
 
-Energy communities are opening up new ways for people and local actors to collectively engage in the energy system. With public purpose and support, they can go beyond sustainability: strengthening local cooperation, tackling energy poverty and building shared ownership and trust.
+What has the EDRi network been up to over the past few weeks? Find out the latest digital rights news in our regular newsletter. In this edition: Turning up the heat – Commission backs social media bans, Apple held accountable, summer to-dos, & more! The post EDRi-gram, 8 October 2026 appeared first on European Digital Rights (EDRi) .
 
-[Read more](https://eu-mayors.ec.europa.eu/en/news/public-innovation-and-energy-communities-towards-participatory-democracies)
+[Read more](https://edri.org/our-work/edri-gram-8-october-2026/)
+
+---
+
+### Keynote speech by Commissioner Kubilius in the conference "Military Schengen 2026. Military Logistics: Requirements for Infrastructure and Carriers"
+*European Commission — Press Corner — 2026-10-07*
+
+European Commission Speech Hamburg, 07 Oct 2026 Good afternoon, It's a pleasure to be in Hamburg. And to speak about military mobility. Because everybody knows, how important Hamburg Port is for the economy...
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2098)
 
 ---
 
@@ -519,6 +537,24 @@ Energy communities are opening up new ways for people and local actors to collec
 . Information compiled by: State Environmental Service The State Environmental Service (VVD) has received the results of laboratory analyses concerning the oil pollution detected on the Kurzeme coast. The results of the analyses…
 
 [Read more](https://www.kem.gov.lv/lv/jaunums/vvd-kurzemes-piekraste-konstateti-vieglie-naftas-produkti-izslegta-vesturiska-piesarnojuma-versija)
+
+---
+
+### Eurobarometer shows consumers' growing trust in EU Ecolabel
+*European Commission — Press Corner — 2026-10-07*
+
+European Commission Press release Brussels, 08 Oct 2026 Released on the occasion of the World Ecolabel Day, the latest Eurobarometer survey shows an increased trust and recognition for the EU Ecolabel among European consumers who are increasingly looking for sustainable products.
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2091)
+
+---
+
+### Remarks by Commissioner Hoekstra at the Pre-COP31 High-Level Session on Pacific Energy Transition: From Ambition to Implementation
+*European Commission — Press Corner — 2026-10-07*
+
+European Commission Speech Fiji, 07 Oct 2026 Thank you very much Chair. Very important to be here and discuss this topic. There are two numbers that struck me. One – Pacific countries spend between 10 and ...
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2101)
 
 ---
 
@@ -576,15 +612,6 @@ The Karakoram mountain range is one of the most remote and difficult to study in
 
 ---
 
-### Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold
-*Hydrogen Europe — 2026-09-30*
-
-[…] The post Reverion Raises $175M Series B to Scale Production of its Dispatchable, Carbon-Negative Power Plants Tenfold appeared first on Hydrogen Europe .
-
-[Read more](https://hydrogeneurope.eu/reverion-raises-175m-series-b-to-scale-production-of-its-dispatchable-carbon-negative-power-plants-tenfold/)
-
----
-
 ### Chips Act 2.0 must put Europe’s industrial capacity and workers at its core
 *industriAll Europe — 2026-10-05*
 
@@ -603,21 +630,21 @@ Semiconductors are essential to Europe’s industries, technological sovereignty
 
 ---
 
-### Divided EU cyber defence faces real-life Russian and Chinese threats
-*Wilfried Martens Centre (EPP) — 2026-09-30*
+### A competitive, safe and sustainable European chemical industry: strengthening strategic chemical sites and quality industrial jobs in Europe
+*industriAll Europe — 2026-10-07*
 
-“For Dimitar Lilkov from the Wilfried Martens Centre for European Studies, there were three main sources of friction: national security, trust and money”.
+Joint Statement of industriAll Europe and the European Chemical Employers Group (ECEG)...
 
-[Read more](https://www.martenscentre.eu/media-mentions/divided-eu-cyber-defence-faces-real-life-russian-and-chinese-threats/)
+[Read more](https://news.industriall-europe.eu/Article/1612)
 
 ---
 
-### Workers must shape Europe’s industrial transformation
-*industriAll Europe — 2026-10-02*
+### EERA’s transversal Joint Programme on Energy Security and Resilience kicks off operational phase
+*EERA — 2026-10-07*
 
-The BRIDGES 5.0 project has concluded after four years of work on how Europe’s green and digital transitions can become more human-centred, sustainable and resi...
+News: EERA’s transversal Joint Programme on Energy Security and Resilience kicks off operational phase
 
-[Read more](https://news.industriall-europe.eu/Article/1601)
+[Read more](https://www.eera-set.eu/news-resources/8951-eera-s-transversal-joint-programme-on-energy-security-and-resilience-kicks-off-operational-phase.html)
 
 ---
 
@@ -639,16 +666,7 @@ This blog highlights how climate change and landmine contamination can interact 
 
 ---
 
-### Ukraine can play a key role enabling US energy exports to Europe
-*Atlantic Council — 2026-10-01*
-
-The post Ukraine can play a key role enabling US energy exports to Europe appeared first on Atlantic Council .
-
-[Read more](https://www.atlanticcouncil.org/blogs/ukrainealert/ukraine-can-play-a-key-role-enabling-us-energy-exports-to-europe/)
-
----
-
-### How are European small enterprises dealing with the circular economy? [version 2; peer review: 3 approved with reservations]
+### How are European small enterprises dealing with the circular economy? [version 2; peer review: 1 approved, 2 approved with reservations]
 *Open Research Europe (ORE) — 2026-10-06*
 
 doi:10.12688/openreseurope.23303.2

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07",
+  "generated": "2026-10-08",
   "months": [
     {
       "key": "2026-11",
@@ -28,7 +28,7 @@
           "field": "competition",
           "title": "Selective Confusion: An Empirical Analysis of the DMA\u2019s Brussels Effect [pre-publication]",
           "link": "https://kluwerlawonline.com/JournalArticle/World+Competition/49.3 [pre-publication]/WOCO2026021",
-          "date": "2026-10-07",
+          "date": "2026-10-08",
           "summary": "This article examines the extent to which designated \u201cgatekeepers\u201d implement the provisions of the EU\u2019s Digital Markets Act (DMA) outside its territorial scope (\u201cBrussels Effect\u201d). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance\u2026",
           "image": null,
           "actor_type": "academic",
@@ -60,6 +60,20 @@
           "actor_type": "eu-institution",
           "content_type": "report",
           "tags": []
+        },
+        {
+          "org": "EUISS (EU Institute for Security Studies)",
+          "field": "security",
+          "title": "EU Defence Spending",
+          "link": "https://www.iss.europa.eu/publications/analysis/eu-defence-spending",
+          "date": "2026-10-08",
+          "summary": "EU Defence Spending christian.diet\u2026 Thu, 10/08/2026 - 10:45 18 minutes Introduction Defence budgets across Europe are rising. Russia\u2019s war on Ukraine, combined with doubts over the future of US security guarantees, have prompted European governments to invest more in defence. According to EUISS calculations based on EDA and NATO data, spending by EU Member States was 56% higher in 2025 than it was in 2022, after accounting for inflation. One challenge is sustaining and increasing this spending. Rebuilding Europe\u2019s military capacity will require investment over many years. Yet many national\u2026",
+          "image": "https://public.flourish.studio/visualisation/30496217/thumbnail",
+          "actor_type": "eu-institution",
+          "content_type": "report",
+          "tags": [
+            "nato-eu"
+          ]
         },
         {
           "org": "CCIA Europe (Computer & Communications Industry Association)",
@@ -94,6 +108,18 @@
           "summary": "ABSTRACT The construction sector is a major contributor to the climate crisis, accounting for over one\u2010third of global energy\u2010related CO2 emissions. In response, the European Commission identified the circular economy as a means of achieving green growth and prioritized the construction sector in its Circular Economy Action Plan. Since then, national and local governments have begun developing policy regimes to promote the circular economy in the built environment (CEBE). However, implementation remains limited, and policy coherence\u2014the alignment of objectives and instruments across\u2026",
           "image": null,
           "actor_type": "academic",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "EDRi (European Digital Rights)",
+          "field": "tech",
+          "title": "The Cloud and AI Development Act (CADA) represents everything that\u2019s wrong with Europe\u2019s approach to digital sovereignty",
+          "link": "https://edri.org/our-work/the-cloud-and-ai-development-act-cada-represents-everything-thats-wrong-with-europes-approach-to-digital-sovereignty/",
+          "date": "2026-10-08",
+          "summary": "The EU\u2019s Tech Sovereignty Package is supposed to jump-start Europe\u2019s \u201csovereign AI\u201d ambitions. But due to fundamental misunderstandings about the technology behind \u2018AI\u2019 and the blind trust in Big Tech\u2019s AI doomer and boomer narratives, it is more likely to instead hurt digital rights and the environment instead, and waste valuable public resources that should have been invested in actually increasing Europe\u2019s digital resilience. The Cloud and AI Development (CADA) Act, a part of the Tech Sovereignty Package, adds up to an aggressive policy push to impose \u201cEuropean AI\u201d. The post The Cloud and\u2026",
+          "image": null,
+          "actor_type": "ngo",
           "content_type": null,
           "tags": []
         },
@@ -138,7 +164,7 @@
           "field": "green-deal",
           "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-          "date": "2026-10-07",
+          "date": "2026-10-08",
           "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
           "image": null,
           "actor_type": "academic",
@@ -170,6 +196,18 @@
           "tags": []
         },
         {
+          "org": "Netzero Cities",
+          "field": "green-deal",
+          "title": "\u20ac2 million LIFT programme backs Bristol, Leuven and Aarhus to fast-track climate finance and solar innovation",
+          "link": "https://netzerocities.eu/2026/10/07/2-million-lift-programme-backs-bristol-leuven-and-aarhus-to-fast-track-climate-finance-and-solar-innovation/",
+          "date": "2026-10-07",
+          "summary": "Authors: Barbara Jarkiewicz NetZeroCities has selected three European cities for the Leveraging Innovation and Financing for Transformation programme (LIFT), which will support cities in overcoming some of the practical barriers that stand between climate ambition and implementation. Bristol, Leuven and Aarhus will test new approaches to finance, community energy and solar deployment to advance climate action across the continent. Backed by a \u20ac2 million in total funding, LIFT is a short-term, implementation-focused programme designed for Mission cities that are ready to put innovative\u2026",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "AlgorithmWatch",
           "field": "tech",
           "title": "Stellungnahme zur \u00f6ffentlichen Anh\u00f6rung anl\u00e4sslich der geplanten Novelle des Energieeffizienzgesetzes",
@@ -178,6 +216,18 @@
           "summary": "Der vorliegende Gesetzentwurf, beschlossen von der Bundesregierung am 10.7.2026, \u00e4ndert das Energieeffizienzgesetz (EnEfG) vom 13.11.2023, das Energiedienstleistungsgesetz (EDL-G) vom 04.11.2010 sowie mehrere Verordnungen. Diese Stellungnahme beschr\u00e4nkt sich aus Zeitgr\u00fcnden auf die \u00c4nderungen im Energieeffizienzgesetz (EnEfG-E) und darin auf die \u00c4nderungen mit direktem Bezug zu Rechenzentren (insbesondere Abschnitt 4 \u201eEnergieeffizienz in Rechenzentren\u201c, \u00a7\u00a7 11-15). Anlass der Novelle ist zum einen die Neufassung der Europ\u00e4ischen Energieeffizienzrichtlinie (EED) vom 10. Oktober 2023 und zum\u2026",
           "image": "https://algorithmwatch.org/wp-content/uploads/2026/10/480px_261001-Cover-Page-Stellungnahme-EnEfgG-AlgorithmWatch-1.webp",
           "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "Chatham House",
+          "field": "green-deal",
+          "title": "Brazil\u2019s Amazon rainforest is at risk if Bolsonaro wins \u2013 but its low-carbon economy is here to stay",
+          "link": "https://www.chathamhouse.org/2026/10/brazils-amazon-rainforest-risk-if-bolsonaro-wins-its-low-carbon-economy-here-stay",
+          "date": "2026-10-07",
+          "summary": "Brazil\u2019s Amazon rainforest is at risk if Bolsonaro wins \u2013 but its low-carbon economy is here to stay Expert comment LToremark 7 October 2026 If Fl\u00e1vio Bolsonaro wins Brazil\u2019s presidential run-off, he will likely roll back Lula\u2019s deforestation regulations. But the country\u2019s low-carbon transition will be harder to reverse. The outcome of the first round of Brazil\u2019s presidential election has put President Luiz In\u00e1cio Lula da Silva and his main challenger Fl\u00e1vio Bolsonaro \u2013 son of former president Jair Bolsonaro \u2013 into a run-off at the end of October. The result itself is not surprising. But\u2026",
+          "image": "https://www.chathamhouse.org/sites/default/files/styles/chat_social_twitter_1200_600/public/2026-10/2026-10-07-brazil-bolsonaro-climate-2298112697.jpg?itok=Pizp0ONJ",
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -232,11 +282,23 @@
           ]
         },
         {
+          "org": "EDRi (European Digital Rights)",
+          "field": "tech",
+          "title": "D3 brings class actions on addictive design against Facebook, Instagram, TikTok and YouTube",
+          "link": "https://edri.org/our-work/d3-brings-class-actions-on-addictive-design-against-facebook-instagram-tiktok-and-youtube/",
+          "date": "2026-10-08",
+          "summary": "The Portuguese digital rights organisation and EDRi member D3 announces that it has brought four class actions lawsuits against Facebook, Instagram, TikTok and YouTube over the use of addictive design practices. The cases challenge design practices that can encourage compulsive use of online platforms and seek to hold platforms accountable for the way their services affect users. Similar initiatives might come up in other EU Member States as part of a broader European response. The post D3 brings class actions on addictive design against Facebook, Instagram, TikTok and YouTube appeared first\u2026",
+          "image": null,
+          "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "European Environmental Law Review",
           "field": "green-deal",
           "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-          "date": "2026-10-07",
+          "date": "2026-10-08",
           "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
           "image": null,
           "actor_type": "academic",
@@ -282,6 +344,20 @@
           "tags": []
         },
         {
+          "org": "Chatham House",
+          "field": "security",
+          "title": "After the RAF Fairford incident, the UK should develop its homeland defence forces",
+          "link": "https://www.chathamhouse.org/2026/10/after-raf-fairford-incident-uk-should-develop-its-homeland-defence-forces",
+          "date": "2026-10-07",
+          "summary": "After the RAF Fairford incident, the UK should develop its homeland defence forces Expert comment thilton.drupal 7 October 2026 The threat of hybrid attacks from Iran and Russia means the UK should develop a force dedicated to protecting its bases and infrastructure at home. Finland and Poland offer lessons. The US\u2019s withdrawal of its bombers from RAF Fairford, following a suspected terror plot against the base, has brought attention to how the UK defends its homeland military bases and other critical infrastructure. The UK government has insisted RAF Fairford is safe following the arrest of\u2026",
+          "image": "https://www.chathamhouse.org/sites/default/files/styles/chat_social_twitter_1200_600/public/2026-10/2026-10-07-raf-fairford-uk-police-2297506824.jpg?itok=we-6zRUq",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": [
+            "hybrid-threats"
+          ]
+        },
+        {
           "org": "PIK Potsdam",
           "field": "green-deal",
           "title": "\u201cNew pathways explored\u201d: Closing event for the Ariadne energy transition project",
@@ -301,6 +377,18 @@
           "date": "2026-10-01",
           "summary": "Last month the European Commission published its proposal for the revision of Europe\u2019s public procurement rulebook, the Public Procurement Act. This proposal follows the Industrial Accelerator Act, published in March, and forms a key part of the Commission\u2019s attempt to secure Europe\u2019s industrial capacity by creating demand for low-carbon materials and products. With the two instruments now on the table, the architecture for European lead markets is taking shape. Yet the measures still fall short of providing the scale and certainty of demand needed to turn planned investments into European\u2026",
           "image": "https://www.e3g.org/wp-content/uploads/Low-carbon-projects-pipeline-Europe-1.png",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "ECIPE",
+          "field": "security",
+          "title": "European Peace Facility (EPF) \u2013\u00a0The Next Stage of Europe\u2019s Security Adaptation",
+          "link": "https://ecipe.org/insights/european-peace-facility/",
+          "date": "2026-10-07",
+          "summary": "The September 2026 update of the European Peace Facility (EPF) , which supports defence and security in the EU and partner countries, reflects a broader transformation of Europe\u2019s approach to security. The Facility is becoming more differentiated and increasingly oriented towards sustainable military capability at the same time as Europe is assuming greater responsibility for its own defence. The next stage should build on this progress by tailoring specialised EU instruments to address different vulnerabilities and ensuring that their combined effects strengthen Europe\u2019s capacity to shape\u2026",
+          "image": null,
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -346,10 +434,34 @@
           "field": "green-deal",
           "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-          "date": "2026-10-07",
+          "date": "2026-10-08",
           "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
           "image": null,
           "actor_type": "academic",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "BEREC (Body of European Regulators for Electronic Communications)",
+          "field": "tech",
+          "title": "The impact of generative artificial intelligence on internet openness",
+          "link": "https://www.berec.europa.eu/en/news/press-releases/the-impact-of-generative-artificial-intelligence-on-internet-openness",
+          "date": "2026-10-07",
+          "summary": "The impact of generative artificial intelligence on internet openness yannick.stephan Wed, 07/10/2026 - 11:54 Press Releases Generative artificial intelligence (AI) services are increasingly used and they now represent common gateways to online information. While these services can generate efficiencies, reduce search costs and improve users\u2019 experience, there is little transparency about how information is selected and prioritised, and users\u2019 freedom of choice may be affected. In its draft report BEREC highlights how generative AI transforms both user\u2019s access to online content and services\u2026",
+          "image": "https://www.berec.europa.eu/sites/default/files/styles/cropped/public/2024-09/iStock-1494104649.jpg?itok=HLF8yRuh",
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "ICDS (International Centre for Defence and Security)",
+          "field": "security",
+          "title": "EU Defence Series: The Neo-Prime Time. Scaling Up Europe\u2019s Defence AI Industry",
+          "link": "https://icds.ee/en/eu-defence-series-the-neo-prime-time-scaling-up-europes-defence-ai-industry/",
+          "date": "2026-10-07",
+          "summary": "A new generation of AI-focused firms has emerged to deliver services for key defence functions \u2014 intelligence, targeting, command and control, and logistics \u2014 and to integrate weapon systems in its own right. Such \u2018neo-primes\u2019 are a relatively recent phenomenon and contrast with traditional large defence companies, known as primes, the main contractors that develop and integrate complex military systems for governments. [1] The US is home to several neo-primes upending the defence and broader technology sectors, with Palantir and Anduril among the most successful examples. European\u2026",
+          "image": null,
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -424,6 +536,20 @@
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
+        },
+        {
+          "org": "Chatham House",
+          "field": "security",
+          "title": "Russia\u2019s Kaliningrad threats show the value of Baltic preparedness",
+          "link": "https://www.chathamhouse.org/2026/10/russias-kaliningrad-threats-show-value-baltic-preparedness",
+          "date": "2026-10-07",
+          "summary": "Russia\u2019s Kaliningrad threats show the value of Baltic preparedness Expert comment jon.wallace 7 October 2026 Moscow\u2019s nuclear rhetoric should be taken seriously. But Baltic states know grey zone attacks and territorial incursions are equally serious threats. Vladimir Putin always chooses his words carefully. If Russia faced a direct attack on Kaliningrad (its enclave on the Baltic Sea), he warned on 1 October, the use of \u2018all weapons in (our) country\u2019s arsenal\u2019 would inevitably be on the table. The statement followed an earlier Russian note to NATO, threatening nuclear escalation if the\u2026",
+          "image": "https://www.chathamhouse.org/sites/default/files/styles/chat_social_twitter_1200_600/public/2026-10/2026-10-07-baltic-military-1241758892.jpg?itok=SRjDgA30",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": [
+            "nato-eu"
+          ]
         },
         {
           "org": "Chatham House",
@@ -562,6 +688,18 @@
           "tags": []
         },
         {
+          "org": "CEPA (Center for European Policy Analysis)",
+          "field": "security",
+          "title": "China Needs Russia in the Fight",
+          "link": "https://cepa.org/article/china-needs-russia-in-the-fight/",
+          "date": "2026-10-07",
+          "summary": "During a four-hour meeting in Brussels in July 2025, Chinese Foreign Minister Wang Yi reportedly told the European Union\u2019s top diplomat, Kaja Kallas, that China could not afford a Russian defeat in Ukraine. This was a simple power calculus: if Russia lost, the United States would be free to shift its full attention to Beijing. The remark came more than three years into the Sino-Russian \u201cno-limits partnership\u201d that Presidents Xi and Putin declared on the eve of the full-scale Russian invasion of Ukraine in 2022. The exchange, first reported by the South China Morning Post and omitted from the\u2026",
+          "image": "https://i0.wp.com/cepa.org/wp-content/uploads/2026/05/CEPA-Defense-Technology-Report-BUTTON-FINAL-e1777987512766.jpg?fit=1000%2C633&ssl=1",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "ICDS (International Centre for Defence and Security)",
           "field": "security",
           "title": "Europeanising NATO: The Arctic",
@@ -574,6 +712,18 @@
           "tags": [
             "nato-eu"
           ]
+        },
+        {
+          "org": "EuroCOP (European Confederation of Police)",
+          "field": "green-deal",
+          "title": "Today, EuroCOP stands alongside the European and global trade union movement to mark World Day for Decent Work.",
+          "link": "https://eurocop.org/today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work/?utm_source=rss&utm_medium=rss&utm_campaign=today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work",
+          "date": "2026-10-07",
+          "summary": "For Europe\u2019s police officers, decent work means fair pay, safe working conditions, proper protections, sustainable working hours and the respect that every worker deserves. We are proud to add the voice of Europe\u2019s police officers to this collective call for dignity, fairness and decent work for all. Together, our voice is stronger. Photos courtesy of ETUC The post Today, EuroCOP stands alongside the European and global trade union movement to mark World Day for Decent Work. first appeared on Euro Cop .",
+          "image": null,
+          "actor_type": "trade-union",
+          "content_type": null,
+          "tags": []
         },
         {
           "org": "International Crisis Group",
@@ -660,6 +810,42 @@
           "tags": []
         },
         {
+          "org": "EDRi (European Digital Rights)",
+          "field": "tech",
+          "title": "No human required: Austria\u2019s plan for AI-only government decisions",
+          "link": "https://edri.org/our-work/no-human-required-austrias-plan-for-ai-only-government-decisions/",
+          "date": "2026-10-08",
+          "summary": "A sweeping change to Austria's administrative law would let authorities issue binding decisions using AI systems with no human ever reviewing the outcome. EDRi member epicenter.works has sent an open letter to parliament, and is looking for input from readers elsewhere in Europe about how other countries are handling, or planning to handle, the same issue. The post No human required: Austria\u2019s plan for AI-only government decisions appeared first on European Digital Rights (EDRi) .",
+          "image": null,
+          "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "EDRi (European Digital Rights)",
+          "field": "tech",
+          "title": "Your data, their decision: the hidden surveillance infrastructure behind Europe\u2019s digital borders",
+          "link": "https://edri.org/our-work/your-data-their-decision-the-hidden-surveillance-infrastructure-behind-europes-digital-borders/",
+          "date": "2026-10-08",
+          "summary": "A new report by ARTICLE 19 examines how the European Union is presiding over the most significant expansion of border surveillance in its history. Much of this development is being outsourced to private companies \u2013 with profound consequences for privacy and freedom of expression. The post Your data, their decision: the hidden surveillance infrastructure behind Europe\u2019s digital borders appeared first on European Digital Rights (EDRi) .",
+          "image": null,
+          "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "ECSO (European Cyber Security Organisation)",
+          "field": "security",
+          "title": "ECSO CISO Community establishes national chapter in Croatia",
+          "link": "https://ecs-org.eu/news/ecso-ciso-community-establishes-national-chapter-in-croatia/",
+          "date": "2026-10-08",
+          "summary": "The European Cyber Security Organisation (ECSO) is pleased to announce the establishment of the ECSO CISO Community Croatia, marking a new milestone in the continued expansion of the ECSO CISO Community across Europe. The partnership agreement was officially signed during the 5th edition of the ECSO CISO Meetup, held in Berlin on 1 and 2 [\u2026] The post ECSO CISO Community establishes national chapter in Croatia appeared first on ECSO .",
+          "image": null,
+          "actor_type": "industry",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "IEEP",
           "field": "green-deal",
           "title": "Three months countdown: from political debate to execution of the EU Deforestation Regulation",
@@ -726,6 +912,32 @@
           ]
         },
         {
+          "org": "EDRi (European Digital Rights)",
+          "field": "tech",
+          "title": "EDRi-gram, 8 October 2026",
+          "link": "https://edri.org/our-work/edri-gram-8-october-2026/",
+          "date": "2026-10-08",
+          "summary": "What has the EDRi network been up to over the past few weeks? Find out the latest digital rights news in our regular newsletter. In this edition: Turning up the heat \u2013 Commission backs social media bans, Apple held accountable, summer to-dos, & more! The post EDRi-gram, 8 October 2026 appeared first on European Digital Rights (EDRi) .",
+          "image": null,
+          "actor_type": "ngo",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "European Commission \u2014 Press Corner",
+          "field": "security",
+          "title": "Keynote speech by Commissioner Kubilius in the conference \"Military Schengen 2026. Military Logistics: Requirements for Infrastructure and Carriers\"",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2098",
+          "date": "2026-10-07",
+          "summary": "European Commission Speech Hamburg, 07 Oct 2026 Good afternoon, It's a pleasure to be in Hamburg. And to speak about military mobility. Because everybody knows, how important Hamburg Port is for the economy...",
+          "image": null,
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": [
+            "nato-eu"
+          ]
+        },
+        {
           "org": "Latvian Ministry of Climate and Energy",
           "field": "green-deal",
           "title": "VVD: Light petroleum products detected off the Kurzeme coast; the possibility of historical pollution has been ruled out",
@@ -736,6 +948,30 @@
           "original_title": "VVD: Kurzemes piekrast\u0113 konstat\u0113ti vieglie naftas produkti, izsl\u0113gta v\u0113sturiska pies\u0101r\u0146ojuma versija",
           "translated_from": "lv",
           "actor_type": "eu27-ministry",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "European Commission \u2014 Press Corner",
+          "field": "green-deal",
+          "title": "Eurobarometer shows consumers' growing trust in EU Ecolabel",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2091",
+          "date": "2026-10-07",
+          "summary": "European Commission Press release Brussels, 08 Oct 2026 Released on the occasion of the World Ecolabel Day, the latest Eurobarometer survey shows an increased trust and recognition for the EU Ecolabel among European consumers who are increasingly looking for sustainable products.",
+          "image": null,
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "European Commission \u2014 Press Corner",
+          "field": "green-deal",
+          "title": "Remarks by Commissioner Hoekstra at the Pre-COP31 High-Level Session on Pacific Energy Transition: From Ambition to Implementation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2101",
+          "date": "2026-10-07",
+          "summary": "European Commission Speech Fiji, 07 Oct 2026 Thank you very much Chair. Very important to be here and discuss this topic. There are two numbers that struck me. One \u2013 Pacific countries spend between 10 and ...",
+          "image": null,
+          "actor_type": "eu-institution",
           "content_type": null,
           "tags": []
         },
@@ -884,6 +1120,18 @@
         {
           "org": "industriAll Europe",
           "field": "green-deal",
+          "title": "A competitive, safe and sustainable European chemical industry: strengthening strategic chemical sites and quality industrial jobs in Europe",
+          "link": "https://news.industriall-europe.eu/Article/1612",
+          "date": "2026-10-07",
+          "summary": "Joint Statement of industriAll Europe and the European Chemical Employers Group (ECEG)...",
+          "image": null,
+          "actor_type": "trade-union",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "industriAll Europe",
+          "field": "green-deal",
           "title": "Sustainable European sovereignty must deliver for workers",
           "link": "https://news.industriall-europe.eu/Article/1603",
           "date": "2026-10-01",
@@ -902,6 +1150,18 @@
           "summary": "The BRIDGES 5.0 project has concluded after four years of work on how Europe\u2019s green and digital transitions can become more human-centred, sustainable and resi...",
           "image": null,
           "actor_type": "trade-union",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "EERA",
+          "field": "green-deal",
+          "title": "EERA\u2019s transversal Joint Programme on Energy Security and Resilience kicks off operational phase",
+          "link": "https://www.eera-set.eu/news-resources/8951-eera-s-transversal-joint-programme-on-energy-security-and-resilience-kicks-off-operational-phase.html",
+          "date": "2026-10-07",
+          "summary": "News: EERA\u2019s transversal Joint Programme on Energy Security and Resilience kicks off operational phase",
+          "image": null,
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -956,7 +1216,7 @@
         {
           "org": "Open Research Europe (ORE)",
           "field": "green-deal",
-          "title": "How are European small enterprises dealing with the circular economy? [version 2; peer review: 3 approved with reservations]",
+          "title": "How are European small enterprises dealing with the circular economy? [version 2; peer review: 1 approved, 2 approved with reservations]",
           "link": "https://open-research-europe.ec.europa.eu/articles/6-163/v2?src=rss",
           "date": "2026-10-06",
           "summary": "doi:10.12688/openreseurope.23303.2",
