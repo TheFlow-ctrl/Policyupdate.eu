@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-08
+# Weekly Climate, Energy & Environment Digest — 2026-10-09
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-08*
+*World Competition — 2026-10-09*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -54,15 +54,6 @@ The EU’s Tech Sovereignty Package is supposed to jump-start Europe’s “sove
 
 ---
 
-### AlgorithmWatch kritisiert im Wirtschaftsausschuss: Weniger Effizienz bei Rechenzentren kostet die Wirtschaft Milliarden
-*AlgorithmWatch — 2026-10-02*
-
-Berlin, 2. Oktober 2026 – In seiner Stellungnahme vor dem Wirtschaftsausschuss des Bundestags bemängelt Dr. Julian Bothe, Senior Policy Manager bei AlgorithmWatch, mehrere zentrale Punkte des Gesetzentwurfs. Er kritisiert, dass Effizienzanforderungen und Transparenz für Rechenzentren geschwächt und die Pflicht zur Nutzung erneuerbarer Energien verschoben werden sollen, ebenso wie den Versuch, zusätzliche Ausnahmen bei der Abwärmenutzung zu schaffen. Angesichts der zahlreichen laufenden Bauprojekte widerspricht Dr. Bothe zudem der Annahme der Bundesregierung, dass es überhaupt notwendig ist,…
-
-[Read more](https://algorithmwatch.org/de/algorithmwatch-kritisiert-im-wirtschaftsausschuss-weniger-effizienz-bei-rechenzentren-kostet-die-wirtschaft-milliarden/)
-
----
-
 ### Support for the development of a framework for sustainable urban logistics within Bologna’s Limited Traffic Zone (ZTL)
 *Netzero Cities — 2026-10-07*
 
@@ -82,20 +73,11 @@ Past emissions have already committed the planet to higher temperatures, sea lev
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-08*
+*European Environmental Law Review — 2026-10-09*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
 [Read more](https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011)
-
----
-
-### Studie: Verschlechterungen von Effizienzstandards bei Rechenzentren führen zu sehr großen zusätzlichen Energiebedarfen
-*AlgorithmWatch — 2026-10-02*
-
-Eine einfache Berechnung auf Basis der verfügbaren Daten und unter Annahme eines starken Wachstums zeigt: Bereits eine geringe Verschlechterung von Effizienzstandards bei Rechenzentren führt zu sehr großen zusätzlichen Strom- und Wärmebedarfen. Im Jahr 2045 entspricht der zusätzliche Energieverbrauch der Stromproduktion von sieben Gaskraftwerken. Die zusätzlich zu erzeugende Wärmemenge im Jahr 2045 entspricht der Wärme-Importmenge, die mit elf großen LNG-Tankschiffen transportiert werden kann. Akkumuliert über die Jahre 2026 bis 2045 führen sowohl der Strommehrverbrauch als auch die…
-
-[Read more](https://algorithmwatch.org/de/verschlechterungen-von-effizienzstandards-bei-rechenzentren-fuhren-zu-zusatzlichen-energiebedarfen/)
 
 ---
 
@@ -117,21 +99,21 @@ Authors: Barbara Jarkiewicz NetZeroCities has selected three European cities for
 
 ---
 
+### Plant diversity as insurance against climate change: Loss of diversity in grasslands could lead to 15 percent less CO₂ uptake in 2050
+*PIK Potsdam — 2026-10-08*
+
+A substantial loss of plant diversity could mean that grasslands worldwide, including meadows and pastures, would absorb around 15 percent less CO₂ through photosynthesis by mid-century compared to a scenario in which diversity is maintained. In some of the most affected regions, CO₂ uptake through photosynthesis could decline by 50 percent, even in a scenario in which global warming remains below 2°C. The findings were published today in a new peer-reviewed study from the Potsdam Institute for Climate Impact Research (PIK) and Kiel University (CAU) in PNAS.
+
+[Read more](https://www.pik-potsdam.de/en/news/latest-news/plant-diversity-as-insurance-against-climate-change-loss-of-diversity-in-grasslands-could-lead-to-15-percent-less-co2-uptake-in-2050)
+
+---
+
 ### Brazil’s Amazon rainforest is at risk if Bolsonaro wins – but its low-carbon economy is here to stay
 *Chatham House — 2026-10-07*
 
 Brazil’s Amazon rainforest is at risk if Bolsonaro wins – but its low-carbon economy is here to stay Expert comment LToremark 7 October 2026 If Flávio Bolsonaro wins Brazil’s presidential run-off, he will likely roll back Lula’s deforestation regulations. But the country’s low-carbon transition will be harder to reverse. The outcome of the first round of Brazil’s presidential election has put President Luiz Inácio Lula da Silva and his main challenger Flávio Bolsonaro – son of former president Jair Bolsonaro – into a run-off at the end of October. The result itself is not surprising. But…
 
 [Read more](https://www.chathamhouse.org/2026/10/brazils-amazon-rainforest-risk-if-bolsonaro-wins-its-low-carbon-economy-here-stay)
-
----
-
-### Call for Inputs on the review of the regulatory framework for regulated intra-EU communications
-*BEREC (Body of European Regulators for Electronic Communications) — 2026-10-02*
-
-Call for Inputs on the review of the regulatory framework for regulated intra-EU communications yannick.stephan Fri, 02/10/2026 - 12:10 Breadcrumbs Public Consultations & Calls for Inputs Deadline to submit contributions: 6 November 2026 Background The European Commission has invited BEREC to assess the functioning of the market and to provide its views on the regulatory framework, including the transition towards the application of the principle that retail prices for regulated intra-EU calls and SMS should not differ from domestic retail prices from 1 January 2029, subject to the applicable…
-
-[Read more](https://www.berec.europa.eu/en/public-consultations-calls-for-inputs/call-for-inputs-on-the-review-of-the-regulatory-framework-for-regulated-intra-eu-communications)
 
 ---
 
@@ -180,8 +162,17 @@ The Portuguese digital rights organisation and EDRi member D3 announces that it 
 
 ---
 
+### Tim Rühlig quoted in the Associated Press ahead of EU Trade Commissioner's visit to Beijing
+*EUISS (EU Institute for Security Studies) — 2026-10-07*
+
+Tim Rühlig quoted in the Associated Press ahead of EU Trade Commissioner's visit to Beijing marianna.liana… Wed, 10/07/2026 - 16:59 Europe cannot disengage completely with China as it did from Russia following the invasion of Ukraine, but there is robust momentum to rethink its trade relationship with Beijing, explained Tim Rühlig to the Associated Press . He underscored that simply protecting oneself from China is not the future. "But in order to have a chance of making yourself ready for future technologies and to remain competitive in the coming 15-20 years, you have to protect yourself."…
+
+[Read more](https://www.iss.europa.eu/press/tim-ruhlig-quoted-associated-press-ahead-eu-trade-commissioners-visit-beijing)
+
+---
+
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-08*
+*European Environmental Law Review — 2026-10-09*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -234,21 +225,21 @@ The Ariadne research project has provided important guidance for the energy tran
 
 ---
 
-### Europe’s clean industrial strategy needs a comprehensive lead-market architecture
-*E3G — 2026-10-01*
-
-Last month the European Commission published its proposal for the revision of Europe’s public procurement rulebook, the Public Procurement Act. This proposal follows the Industrial Accelerator Act, published in March, and forms a key part of the Commission’s attempt to secure Europe’s industrial capacity by creating demand for low-carbon materials and products. With the two instruments now on the table, the architecture for European lead markets is taking shape. Yet the measures still fall short of providing the scale and certainty of demand needed to turn planned investments into European…
-
-[Read more](https://www.e3g.org/news/europe-s-clean-industrial-strategy-needs-a-comprehensive-lead-market-architecture/?utm_source=rss&utm_medium=rss&utm_campaign=europe-s-clean-industrial-strategy-needs-a-comprehensive-lead-market-architecture)
-
----
-
 ### European Peace Facility (EPF) – The Next Stage of Europe’s Security Adaptation
 *ECIPE — 2026-10-07*
 
 The September 2026 update of the European Peace Facility (EPF) , which supports defence and security in the EU and partner countries, reflects a broader transformation of Europe’s approach to security. The Facility is becoming more differentiated and increasingly oriented towards sustainable military capability at the same time as Europe is assuming greater responsibility for its own defence. The next stage should build on this progress by tailoring specialised EU instruments to address different vulnerabilities and ensuring that their combined effects strengthen Europe’s capacity to shape…
 
 [Read more](https://ecipe.org/insights/european-peace-facility/)
+
+---
+
+### Commission holds special meeting of Scientific panel on frontier AI safety and risks
+*European Commission -- Shaping Europe's Digital Future — 2026-10-09*
+
+Commission holds special meeting of Scientific panel on frontier AI safety and risks Anonymous (not verified) Fri, 10/09/2026 - 09:16 Today, the Commission holds a special meeting of the Scientific Panel on artificial intelligence (AI). The panel has been investigating recent loss-of-control incidents, and together with the Commission’s AI Office, has worked on a set of questions for the companies that developed the models involved. Henna Virkkunen, Executive Vice-President for Tech Sovereignty, Security and Democracy, will attend the meeting. The Scientific Panel brings together 60…
+
+[Read more](https://digital-strategy.ec.europa.eu/en/news/commission-holds-special-meeting-scientific-panel-frontier-ai-safety-and-risks)
 
 ---
 
@@ -262,7 +253,7 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-08*
+*European Environmental Law Review — 2026-10-09*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -324,15 +315,6 @@ Russia’s Kaliningrad threats show the value of Baltic preparedness Expert comm
 
 ---
 
-### How the insurance industry can help society adapt to climate change
-*Chatham House — 2026-10-01*
-
-How the insurance industry can help society adapt to climate change Expert comment LToremark 1 October 2026 As climate change threatens to make homes uninsurable, the insurance industry is often the bearer of bad news. But its understanding of future risks can be used to help society adapt to a warming world. There are increasingly frequent headlines about how climate change is affecting insurance coverage and affordability: homeowners in areas prone to wildfires, hurricanes or flooding discovering that their existing policies cannot be renewed, or that cover has become unaffordable or…
-
-[Read more](https://www.chathamhouse.org/2026/10/how-insurance-industry-can-help-society-adapt-climate-change)
-
----
-
 ### Beyond the targets: What levers can MDBs pull to scale finance?
 *E3G — 2026-10-06*
 
@@ -375,6 +357,33 @@ No directive will heat a single home on its own. That work happens in cities and
 Drone technology spurred by the war in Ukraine is evolving at a sometimes stupefying pace. From conducting deep strikes to disrupting logistics and evacuating wounded soldiers, unmanned systems are at the heart of modern warfare. Most important are Unmanned Aerial Systems (UAS) and counter-UAS, where the European Union and NATO are still a long way behind. Both should recognize the threat to continental security and the most important aspects of civil life, like airports. Counter-drone equipment and personnel should now be deployed at key points like airports, before being replicated more…
 
 [Read more](https://cepa.org/article/key-european-airports-need-permanent-drone-defenses/)
+
+---
+
+### CEPA Launches Global Shadow War Initiative
+*CEPA (Center for European Policy Analysis) — 2026-10-08*
+
+WASHINGTON, DC — October 8 — The Center for European Policy Analysis (CEPA) today launched the Global Shadow War Initiative, a new grouping of experts dedicated to providing meaningful and practical solutions to democratic allies to counter an unconventional campaign of aggression that authoritarian states are waging. Today, authoritarian adversaries are enabling each other in a concerted campaign of coordinated aggression. From Europe to the Indo-Pacific and beyond, Russia and China are aligned in their intent to unseat US global leadership. This is not a so-called “hybrid threat” – this is…
+
+[Read more](https://cepa.org/article/cepa-launches-global-shadow-war-initiative/)
+
+---
+
+### Europeanising NATO: Immediate Response
+*ICDS (International Centre for Defence and Security) — 2026-10-08*
+
+The Trump Administration has made clear that the European Allies should “take primary responsibility for Europe’s conventional defense with critical but more limited U.S. support.” [1] The Pentagon has already reduced troop numbers in Europe, cancelled previously announced deployments of key capabilities, and declared that many US units will no longer be available to the pool allocated to SACEUR for Europe’s defence—the NATO force model (NFM). [2] It has also announced a six-month review of its European force posture and basing intended, in part, to move NATO towards a setting in which Europe…
+
+[Read more](https://icds.ee/en/europeanising-nato-immediate-response/)
+
+---
+
+### When market leadership becomes a merger control liability: What the General Court's Booking/eTraveli judgment means for M&A Strategy
+*Kluwer Competition Law Blog — 2026-10-09*
+
+The EU General Court has upheld the European Commission's first-ever prohibition of a conglomerate merger based purely on so-called "ecosystem" or entrenchment concerns, confirming that a dominant acquirer's expansion into adjacent markets can be blocked under the EU merger control regime. The ruling validates the EC's use of a novel "reverse leveraging" theory of harm – and going beyond theories of harm outlined in the Non-Horizontal Merger Guidelines – to address potential entrenchment concerns.
+
+[Read more](https://legalblogs.wolterskluwer.com/competition-blog/when-market-leadership-becomes-a-merger-control-liability-what-the-general-courts-bookingetraveli-judgment-means-for-ma-strategy/)
 
 ---
 
@@ -513,6 +522,15 @@ European Commission Press release Brussels, 05 Oct 2026 The European Commission 
 
 ---
 
+### Opening remarks by Executive Vice-President Séjourné at the press point on the second group of strategic projects under the Critical Raw Materials Act
+*European Commission — Press Corner — 2026-10-09*
+
+European Commission Speech Brussels, 09 Oct 2026 Bonjour à toutes et à tous, Pour la quatrième fois du mandat, je reviens devant vous faire état de l'avancement de notre politique sur les matières premières cr...
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2121)
+
+---
+
 ### EDRi-gram, 8 October 2026
 *EDRi (European Digital Rights) — 2026-10-08*
 
@@ -528,15 +546,6 @@ What has the EDRi network been up to over the past few weeks? Find out the lates
 European Commission Speech Hamburg, 07 Oct 2026 Good afternoon, It's a pleasure to be in Hamburg. And to speak about military mobility. Because everybody knows, how important Hamburg Port is for the economy...
 
 [Read more](https://ec.europa.eu/commission/presscorner/detail/en/speech_26_2098)
-
----
-
-### VVD: Light petroleum products detected off the Kurzeme coast; the possibility of historical pollution has been ruled out
-*Latvian Ministry of Climate and Energy — 2026-10-02*
-
-. Information compiled by: State Environmental Service The State Environmental Service (VVD) has received the results of laboratory analyses concerning the oil pollution detected on the Kurzeme coast. The results of the analyses…
-
-[Read more](https://www.kem.gov.lv/lv/jaunums/vvd-kurzemes-piekraste-konstateti-vieglie-naftas-produkti-izslegta-vesturiska-piesarnojuma-versija)
 
 ---
 
@@ -558,21 +567,30 @@ European Commission Speech Fiji, 07 Oct 2026 Thank you very much Chair. Very imp
 
 ---
 
-### Joint statement: A Circular Economy Act delivering a strong EU market for secondary raw materials
-*PlasticsEurope — 2026-10-02*
+### Swedish DPA fines Miljödata i Karlskrona approximately EUR 160 000 for insufficient technical and organisational measures to ensure information security
+*European Data Protection Board (EDPB) — 2026-10-08*
 
-A Circular Economy Act delivering a strong EU market for secondary raw materials Download The post Joint statement: A Circular Economy Act delivering a strong EU market for secondary raw materials appeared first on Plastics Europe .
+Swedish DPA fines Miljödata i Karlskrona approximately EUR 160 000 for insufficient technical and organisational measures to ensure information security ikerinar Thu, 08/10/2026 - 17:22
 
-[Read more](https://plasticseurope.org/media/joint-statement-a-circular-economy-act-delivering-a-strong-eu-market-for-secondary-raw-materials/)
+[Read more](https://www.edpb.europa.eu/news/swedish-dpa-fines-miljodata-i-karlskrona-approximately-eur-160-000-for-insufficient-technical_en)
 
 ---
 
-### Commission approves €170 million Bulgarian State aid for farmers facing increased fuel and fertiliser prices
-*European Commission (Competition Press Corner) — 2026-10-01*
+### Unravelling the secrets of Atlantic Ocean microbiomes
+*CORDIS — 2026-10-08*
 
-European Commission Press release Brussels, 02 Oct 2026 The European Commission has approved a €170 million Bulgarian State aid scheme for farmers facing increased fuel and fertiliser prices due to the Middle East crisis.
+The Atlantic Ocean is a treasure trove of information on marine biodiversity, much of it still hidden in its depths. AtlantECO made significant progress in understanding Atlantic microbiomes and their role in marine health and ocean sustainability.
 
-[Read more](https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2019)
+[Read more](https://cordis.europa.eu/article/rcn/467851/en?WT.mc_id=RSS-Feed&WT.rss_f=article&WT.rss_a=467851&WT.rss_ev=a)
+
+---
+
+### Hellenic DPA decision on a data breach involving E.E.T.A.A. S.A. as processor for the Ministry of Social Cohesion and Family Affairs
+*European Data Protection Board (EDPB) — 2026-10-08*
+
+Hellenic DPA decision on a data breach involving E.E.T.A.A. S.A. as processor for the Ministry of Social Cohesion and Family Affairs ikerinar Thu, 08/10/2026 - 16:36
+
+[Read more](https://www.edpb.europa.eu/news/hellenic-dpa-decision-on-a-data-breach-involving-eetaa-sa-as-processor-for-the-ministry-of_en)
 
 ---
 
@@ -603,21 +621,30 @@ The conference in Fiji will lay the political groundwork for the UN Climate Chan
 
 ---
 
-### The first chemical analysis of snow accumulated on the Godwin-Austen glacier shows pollution from human activity
-*BC3 — 2026-10-02*
+### PRESS RELEASE: Strengthening the backbone of Europe: Second wave of strategic projects announced under the CRMA
+*Euromines — 2026-10-09*
 
-The Karakoram mountain range is one of the most remote and difficult to study in High Mountain Asia, located in the center and southeast of the continent.
+Brussels, 09 October 2026 - Following today’s announcement of the results for the second call for Strategic Projects under the Critical Raw Materials Act...
 
-[Read more](https://www.bc3research.org/en/2026/10/the-first-chemical-analysis-of-snow-accumulated-on-the-godwin-austen-glacier-shows-pollution-from-human-activity/)
+[Read more](https://euromines.org/press-release-strengthening-the-backbone-of-europe-second-wave-of-strategic-projects-announced-under-the-crma/)
 
 ---
 
-### Chips Act 2.0 must put Europe’s industrial capacity and workers at its core
-*industriAll Europe — 2026-10-05*
+### Dutch DPA fines Uber EUR 824 990 000 for unlawful automated decision-making and insufficient information on profiling
+*European Data Protection Board (EDPB) — 2026-10-08*
 
-Semiconductors are essential to Europe’s industries, technological sovereignty and quality jobs. industriAll Europe calls for Chips Act 2.0 to strengthen the en...
+Dutch DPA fines Uber EUR 824 990 000 for unlawful automated decision-making and insufficient information on profiling ikerinar Thu, 08/10/2026 - 15:03
 
-[Read more](https://news.industriall-europe.eu/Article/1606)
+[Read more](https://www.edpb.europa.eu/news/dutch-dpa-fines-uber-eur-824-990-000-for-unlawful-automated-decision-making-and-insufficient_en)
+
+---
+
+### Italian DPA fines BBVA EUR 5 508 000 for failing to respect a customer’s objection to direct marketing
+*European Data Protection Board (EDPB) — 2026-10-09*
+
+Italian DPA fines BBVA EUR 5 508 000 for failing to respect a customer’s objection to direct marketing ikerinar Fri, 09/10/2026 - 09:49
+
+[Read more](https://www.edpb.europa.eu/news/italian-dpa-fines-bbva-eur-5-508-000-for-failing-to-respect-a-customers-objection-to-direct_en)
 
 ---
 
@@ -639,6 +666,33 @@ Joint Statement of industriAll Europe and the European Chemical Employers Group 
 
 ---
 
+### Italian DPA fines Emirates EUR 180 000 for infringements concerning passengers’ health data
+*European Data Protection Board (EDPB) — 2026-10-09*
+
+Italian DPA fines Emirates EUR 180 000 for infringements concerning passengers’ health data ikerinar Fri, 09/10/2026 - 09:26
+
+[Read more](https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en)
+
+---
+
+### Italian DPA fines security company EUR 39 000 for violations concerning employees’ data
+*European Data Protection Board (EDPB) — 2026-10-09*
+
+Italian DPA fines security company EUR 39 000 for violations concerning employees’ data ikerinar Fri, 09/10/2026 - 10:25
+
+[Read more](https://www.edpb.europa.eu/news/italian-dpa-fines-security-company-eur-39-000-for-violations-concerning-employees-data_en)
+
+---
+
+### Italian DPA fines IQVIA EUR 7 000 000 for unlawful processing of patients’ health data
+*European Data Protection Board (EDPB) — 2026-10-09*
+
+Italian DPA fines IQVIA EUR 7 000 000 for unlawful processing of patients’ health data ikerinar Fri, 09/10/2026 - 10:02
+
+[Read more](https://www.edpb.europa.eu/news/italian-dpa-fines-iqvia-eur-7-000-000-for-unlawful-processing-of-patients-health-data_en)
+
+---
+
 ### EERA’s transversal Joint Programme on Energy Security and Resilience kicks off operational phase
 *EERA — 2026-10-07*
 
@@ -657,6 +711,15 @@ The post We are staying: European diplomats reject Russian calls to leave Ukrain
 
 ---
 
+### A minimal, deployment-agnostic zero trust cybersecurity framework for federated research infrastructures [version 1; peer review: awaiting peer review]
+*Open Research Europe (ORE) — 2026-10-09*
+
+doi:10.12688/openreseurope.24088.1
+
+[Read more](https://open-research-europe.ec.europa.eu/articles/6-408/v1?src=rss)
+
+---
+
 ### Beyond a legacy of war: Integrating mine action into climate security
 *SIPRI — 2026-10-06*
 
@@ -666,12 +729,39 @@ This blog highlights how climate change and landmine contamination can interact 
 
 ---
 
+### Ukraine can help Europe counter Russia’s escalating shadow war
+*Atlantic Council — 2026-10-08*
+
+The post Ukraine can help Europe counter Russia’s escalating shadow war appeared first on Atlantic Council .
+
+[Read more](https://www.atlanticcouncil.org/blogs/ukrainealert/ukraine-can-help-europe-counter-russias-escalating-shadow-war/)
+
+---
+
 ### How are European small enterprises dealing with the circular economy? [version 2; peer review: 1 approved, 2 approved with reservations]
 *Open Research Europe (ORE) — 2026-10-06*
 
 doi:10.12688/openreseurope.23303.2
 
 [Read more](https://open-research-europe.ec.europa.eu/articles/6-163/v2?src=rss)
+
+---
+
+### What is Artists for Climate Action? And how is it supporting a more liveable planet?
+*ClientEarth — 2026-10-08*
+
+What is Artists for Climate Action? And how is it supporting a more liveable planet?
+
+[Read more](https://www.clientearth.org/latest/news/what-is-artists-for-climate-action-and-how-is-it-supporting-a-more-liveable-planet/)
+
+---
+
+### An assessment of European water storage requirements for adaptation to climate change [version 1; peer review: awaiting peer review]
+*Open Research Europe (ORE) — 2026-10-09*
+
+doi:10.12688/openreseurope.23566.1
+
+[Read more](https://open-research-europe.ec.europa.eu/articles/6-404/v1?src=rss)
 
 ---
 
