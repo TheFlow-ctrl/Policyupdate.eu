@@ -1,7 +1,7 @@
-# Weekly Climate, Energy & Environment Digest — 2026-10-09
+# Weekly Climate, Energy & Environment Digest — 2026-10-10
 
 ### Selective Confusion: An Empirical Analysis of the DMA’s Brussels Effect [pre-publication]
-*World Competition — 2026-10-09*
+*World Competition — 2026-10-10*
 
 This article examines the extent to which designated “gatekeepers” implement the provisions of the EU’s Digital Markets Act (DMA) outside its territorial scope (“Brussels Effect”). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance…
 
@@ -36,12 +36,12 @@ Europe’s telecom sector delivers great value for money and shows progress, but
 
 ---
 
-### Bridging Policy Gaps in Transition Times: How Local Actors Navigate Low Policy Coherence for Advancing a Circular Built Environment
-*Environmental Policy and Governance — 2026-10-02*
+### The EU Deforestation Regulation: Challenges, Opportunities and the Potential Impacts on the Producing Countries of Cocoa and Coffee
+*Environmental Policy and Governance — 2026-10-08*
 
-ABSTRACT The construction sector is a major contributor to the climate crisis, accounting for over one‐third of global energy‐related CO2 emissions. In response, the European Commission identified the circular economy as a means of achieving green growth and prioritized the construction sector in its Circular Economy Action Plan. Since then, national and local governments have begun developing policy regimes to promote the circular economy in the built environment (CEBE). However, implementation remains limited, and policy coherence—the alignment of objectives and instruments across…
+ABSTRACT The European Union Deforestation Regulation (EUDR) is a policy that prohibits access to the EU market for commodities that are linked to deforestation. We did a systematic review to understand perceived challenges, opportunities and potential impacts of the EUDR on producing countries of cocoa and coffee. The challenges include national laws that are incompatible with the EUDR, a lack of awareness and technical capacity, map misclassifications, and the burden on smallholder farmers. The opportunities include setting standards for fairer prices, improving human rights, and…
 
-[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70123?af=R)
+[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70150?af=R)
 
 ---
 
@@ -73,7 +73,7 @@ Past emissions have already committed the planet to higher temperatures, sea lev
 ---
 
 ### Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union
-*European Environmental Law Review — 2026-10-09*
+*European Environmental Law Review — 2026-10-10*
 
 This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021–2022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article…
 
@@ -172,7 +172,7 @@ Tim Rühlig quoted in the Associated Press ahead of EU Trade Commissioner's visi
 ---
 
 ### Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis
-*European Environmental Law Review — 2026-10-09*
+*European Environmental Law Review — 2026-10-10*
 
 This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment…
 
@@ -207,6 +207,15 @@ CLEPA, together with ACEA and Tyres Europe, has called on EU institutions to ens
 
 ---
 
+### Assessing Policy‐Oriented Learning About Climate‐Related Forest Disturbances in Europe
+*Environmental Policy and Governance — 2026-10-09*
+
+ABSTRACT European forests provide multiple ecosystem services but are increasingly under pressure from climate‐related disturbances such as droughts, storms and insect calamities. Forest policy is an important driver for the adaptation of forest management practices to climate change. The paper aims at exploring how individual policy actors from four European countries perceive and learn about various forest policy topics in the context of climate‐related disturbances. Informed by the Advocacy Coalition Framework, it addresses the research question of how flexible and divisive their beliefs…
+
+[Read more](https://onlinelibrary.wiley.com/doi/10.1002/eet.70148?af=R)
+
+---
+
 ### After the RAF Fairford incident, the UK should develop its homeland defence forces
 *Chatham House — 2026-10-07*
 
@@ -222,6 +231,24 @@ After the RAF Fairford incident, the UK should develop its homeland defence forc
 The Ariadne research project has provided important guidance for the energy transition in Germany since its inceptions in mid-2019, and will leave well-founded recommendations for its further orientation when it closes at the end of 2026. This is the key message of the Ariadne closing conference today in Berlin, attended by around 200 experts from the fields of science, politics, business and civil society. Coinciding with this event, a major report summarises the findings of the scientific project, which comprises 26 institutes and is led by the Potsdam Institute for Climate Impact Research…
 
 [Read more](https://www.pik-potsdam.de/en/news/latest-news/new-pathways-explored-closing-event-for-the-ariadne-energy-transition-project)
+
+---
+
+### New EU “strategic projects”: NGOs call for thorough checks to protect water and health
+*EEB (European Environmental Bureau) — 2026-10-09*
+
+Brussels, 9 October 2026 – As the European Commission announces 46 new ‘Strategic Projects’ under the Critical Raw Materials Act (CRMA) today, the European Environmental Bureau stresses that “strategic” must not mean exempt from due scrutiny. All projects must undergo robust impact assessments and comply fully with EU social and environmental protections. The new list of 46 ‘Strategic Projects’ spans 16 EU countries, covering various stages of the raw materials value chain. The EEB, which coordinates the EU Raw Materials Coalition , warns that many of these new projects are located in…
+
+[Read more](https://eeb.org/en/new-eu-strategic-projects-ngos-call-for-thorough-checks-to-protect-water-and-health/)
+
+---
+
+### As Putin Wages Shadow War, Europe Looks for a Way to Hit Back; News Analysis
+*German Marshall Fund of the United States — 2026-10-09*
+
+As Putin Wages Shadow War, Europe Looks for a Way to Hit Back; News Analysis Subigya Basnet Fri, 10/09/2026 - 10:56 Quote Claudia Major, a defense expert with the German Marshall Fund, said that Mr. Putin wanted “not only to show that support for Ukraine has a cost, but to undermine the trust of the populace that a democratic state can protect them.” Russia’s aim in Ukraine is not only territorial, she added, but also “to show that the West doesn’t hold together and can be undermined from within.” Date Fri, 10/09/2026 - 12:00 External Media Outlet New York Times Authors Dr. Claudia Major News…
+
+[Read more](https://www.gmfus.org/node/26419)
 
 ---
 
@@ -243,6 +270,15 @@ Commission holds special meeting of Scientific panel on frontier AI safety and r
 
 ---
 
+### 2030 and beyond: Benchmarks for the energy transition and clean electrification
+*E3G — 2026-10-09*
+
+The COP31 Presidents’ target of meeting 35% of final energy consumption from electricity by 2035 – dubbed “35-by-35” – delivers enormous economic and energy security benefits when powered by clean energy. Our analysis of recent reports has provided a set of climate benchmarks for a 1.5 °C-aligned pathway into the 2030s. These benchmarks can be used to inform policy and drive ambition. Achieving that ambition, however, depends on accelerated renewable energy deployment and more targeted support for end-use electrification. Thankfully, it is already cost-effective to raise electrification…
+
+[Read more](https://www.e3g.org/news/2030-and-beyond-benchmarks-for-the-energy-transition-and-clean-electrification/?utm_source=rss&utm_medium=rss&utm_campaign=2030-and-beyond-benchmarks-for-the-energy-transition-and-clean-electrification)
+
+---
+
 ### Slovenia must protect independent and sustainable funding for RTV Slovenija
 *European Federation of Journalists — 2026-10-05*
 
@@ -253,7 +289,7 @@ The European Federation of Journalists (EFJ) stands with its Slovenian affiliate
 ---
 
 ### Invasive Alien Species and European Union Regulation: Some Reflections
-*European Environmental Law Review — 2026-10-09*
+*European Environmental Law Review — 2026-10-10*
 
 This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended…
 
@@ -333,12 +369,30 @@ Key points for consumers: Future-proofing electricity bills sandrine.carpentier 
 
 ---
 
+### If Šefčovič leaves China empty-handed, EU retaliation looms
+*German Marshall Fund of the United States — 2026-10-09*
+
+If Šefčovič leaves China empty-handed, EU retaliation looms Subigya Basnet Fri, 10/09/2026 - 10:56 Quote But experts warn it might still not be enough. For Penny Naas, who heads the German Marshall Fund’s Brussels office, the outstanding problem is that, unlike the U.S. and China, which can respectively leverage semiconductors and critical raw materials to maintain some sort of détente, Europe lacks an equivalent lever beyond its single market. (...) “If they [EU countries] take decisive action, they [should] keep in mind that China will retaliate, and at this moment, are they prepared for…
+
+[Read more](https://www.gmfus.org/node/26418)
+
+---
+
 ### Establishing the European AI Observatory: Call for tenders
 *European Commission -- Shaping Europe's Digital Future — 2026-10-05*
 
 Establishing the European AI Observatory: Call for tenders Anonymous (not verified) Mon, 10/05/2026 - 09:22 Opening: 05 October 2026 Closing: 03 November 2026 The Commission is seeking a procurement contract for the setup and operation of the AI Observatory for a period of three years. The European AI Observatory is a new initiative to monitor and boost the uptake of AI in key sectors across the EU. It will support the objectives of the Apply AI Strategy . The project will provide indicators to assess the impact of AI in strategic sectors. It will also monitor AI development and changes it…
 
 [Read more](https://digital-strategy.ec.europa.eu/en/funding/establishing-european-ai-observatory-call-tenders)
+
+---
+
+### Readying the Nordics for War – Let’s Not Waste Time
+*CEPA (Center for European Policy Analysis) — 2026-10-09*
+
+The Russian threat rises and rises. The risks and costs from its shadow (and sometimes open) attacks are increasing, and at some point soon there will be a serious crisis, perhaps brought on by the casualties from a successful version of the Kremlin’s bungled strike at Leipzig Airport in August. Facing this, Europe’s most aware and best-prepared countries are represented by the Baltic states and the Nordic nations of Norway , Denmark, Sweden and Finland. They have been spending and reorganizing at speed since Russia’s all-out invasion of Ukraine, as has Germany . With France and the UK, the…
+
+[Read more](https://cepa.org/article/readying-the-nordics-for-war-lets-not-waste-time/)
 
 ---
 
@@ -375,6 +429,15 @@ WASHINGTON, DC — October 8 — The Center for European Policy Analysis (CEPA) 
 The Trump Administration has made clear that the European Allies should “take primary responsibility for Europe’s conventional defense with critical but more limited U.S. support.” [1] The Pentagon has already reduced troop numbers in Europe, cancelled previously announced deployments of key capabilities, and declared that many US units will no longer be available to the pool allocated to SACEUR for Europe’s defence—the NATO force model (NFM). [2] It has also announced a six-month review of its European force posture and basing intended, in part, to move NATO towards a setting in which Europe…
 
 [Read more](https://icds.ee/en/europeanising-nato-immediate-response/)
+
+---
+
+### Trust Is as Important to NATO as Guns
+*CEPA (Center for European Policy Analysis) — 2026-10-09*
+
+The alliance cannot sustain collective defense if its citizens doubt why it exists, distrust what it says, or come to believe it is responsible for the threats it confronts. Public trust in NATO should be seen as a key part of Europe’s security infrastructure. Societal trust is crucial to countering Russia in the information sphere, which is where the narrative battles take place. For NATO members, these battles matter because public acceptance of Moscow’s false claim that the West caused the war could weaken support for Ukraine and for the alliance’s broader deterrence mission. Polling in…
+
+[Read more](https://cepa.org/article/trust-is-as-important-to-nato-as-guns/)
 
 ---
 
@@ -420,15 +483,6 @@ President Donald Trump’s claim to Greenland has exposed the Arctic as a region
 For Europe’s police officers, decent work means fair pay, safe working conditions, proper protections, sustainable working hours and the respect that every worker deserves. We are proud to add the voice of Europe’s police officers to this collective call for dignity, fairness and decent work for all. Together, our voice is stronger. Photos courtesy of ETUC The post Today, EuroCOP stands alongside the European and global trade union movement to mark World Day for Decent Work. first appeared on Euro Cop .
 
 [Read more](https://eurocop.org/today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work/?utm_source=rss&utm_medium=rss&utm_campaign=today-eurocop-stands-alongside-the-european-and-global-trade-union-movement-to-mark-world-day-for-decent-work)
-
----
-
-### Record turnout at fifth ECSO CISO Meetup brings more than 230 European cybersecurity leaders to Berlin
-*ECSO (European Cyber Security Organisation) — 2026-10-02*
-
-More than 230 senior cybersecurity professionals and public-sector representatives gathered at Estrel Berlin on 1–2 October for the fifth edition of the ECSO CISO Meetup. Non-profit, community-led, and free of charge: the record attendance reflects the relevance of the Meetup as the leading event of its kind, built by CISOs, for CISOs. Berlin became the […] The post Record turnout at fifth ECSO CISO Meetup brings more than 230 European cybersecurity leaders to Berlin appeared first on ECSO .
-
-[Read more](https://ecs-org.eu/news/record-turnout-at-fifth-ecso-ciso-meetup-brings-more-than-230-european-cybersecurity-leaders-to-berlin/)
 
 ---
 
@@ -501,6 +555,15 @@ Giuseppe Spatafora quoted in Diari ARA marianna.liana… Wed, 10/07/2026 - 11:21
 The conference “Clean Energy, Restored Lands: The Path Forward for Coal Regions” examined how European coal and lignite regions can transition from fossil fuel production to sustainable economic development through research, innovation, site restoration, and regional regeneration. Organised in partnership with EURACOAL for the EU Research Fund for Coal and Steel (RFCS) and the Coal … Continue reading An RFCS-CRiT conference →
 
 [Read more](https://euracoal.eu/2026/10/05/an-rfcs-crit-conference/)
+
+---
+
+### Joint Statement at the second meeting of the EU-China Trade and Investment Consultations
+*European Commission — Press Corner — 2026-10-09*
+
+European Commission Statement Beijing, 09 Oct 2026 On 8-9 October 2026, Wang Wentao, Minister of Commerce of China, and Maroš Šefčovič, Commissioner for Trade and Economic Security, Interinstitutional Relations and Transparency, of the European Commission, held the second meeting of the EU-China Trade and Investment Consultations (TIC) in Beijing.
+
+[Read more](https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2122)
 
 ---
 
@@ -594,12 +657,12 @@ Hellenic DPA decision on a data breach involving E.E.T.A.A. S.A. as processor fo
 
 ---
 
-### Factsheet - How the DMA ensures businesses using Booking.com are free to set their prices on and off Booking.com
-*Digital Markets Act (European Commission) — 2026-10-02*
+### Leader of vast money mule operation that laundered cybercriminal proceeds pleads guilty
+*The Record (Recorded Future News) — 2026-10-09*
 
-The Commission’s regulatory dialogues with gatekeepers in the framework of its enforcement of the Digital Markets Act (DMA) are delivering more fairness and transparency.
+Oleg Korniev, a 42-year-old dual citizen of Ukraine and Russia, was a principal of Your Mule Cashout, or “YMCO,” which from 2007 until 2014 set up a sophisticated network of mules in the U.S. and Europe.
 
-[Read more](https://digital-markets-act.ec.europa.eu/factsheet-how-dma-ensures-businesses-using-bookingcom-are-free-set-their-prices-and-bookingcom-2026-09-28_en)
+[Read more](https://therecord.media/leader-of-money-mule-operation-for-cybercriminals-pleads-guilty)
 
 ---
 

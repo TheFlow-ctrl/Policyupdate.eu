@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "months": [
     {
       "key": "2026-11",
@@ -28,7 +28,7 @@
           "field": "competition",
           "title": "Selective Confusion: An Empirical Analysis of the DMA\u2019s Brussels Effect [pre-publication]",
           "link": "https://kluwerlawonline.com/JournalArticle/World+Competition/49.3 [pre-publication]/WOCO2026021",
-          "date": "2026-10-09",
+          "date": "2026-10-10",
           "summary": "This article examines the extent to which designated \u201cgatekeepers\u201d implement the provisions of the EU\u2019s Digital Markets Act (DMA) outside its territorial scope (\u201cBrussels Effect\u201d). Drawing on transparency reports, contractual documents, and informal communications, we reveal significant disparities in compliance strategies: Apple, Alphabet, and Booking predominantly restrict their implementation to the EU or European Economic Area (EEA), whereas Microsoft, Meta, and ByteDance extend certain measures to non-EU jurisdictions, notably Switzerland. Crucially, obligations subject to non-compliance\u2026",
           "image": null,
           "actor_type": "academic",
@@ -124,6 +124,20 @@
           "tags": []
         },
         {
+          "org": "Environmental Policy and Governance",
+          "field": "green-deal",
+          "title": "The EU Deforestation Regulation: Challenges, Opportunities and the Potential Impacts on the Producing Countries of Cocoa and Coffee",
+          "link": "https://onlinelibrary.wiley.com/doi/10.1002/eet.70150?af=R",
+          "date": "2026-10-08",
+          "summary": "ABSTRACT The European Union Deforestation Regulation (EUDR) is a policy that prohibits access to the EU market for commodities that are linked to deforestation. We did a systematic review to understand perceived challenges, opportunities and potential impacts of the EUDR on producing countries of cocoa and coffee. The challenges include national laws that are incompatible with the EUDR, a lack of awareness and technical capacity, map misclassifications, and the burden on smallholder farmers. The opportunities include setting standards for fairer prices, improving human rights, and\u2026",
+          "image": null,
+          "actor_type": "academic",
+          "content_type": null,
+          "tags": [
+            "eudr"
+          ]
+        },
+        {
           "org": "AlgorithmWatch",
           "field": "tech",
           "title": "AlgorithmWatch kritisiert im Wirtschaftsausschuss: Weniger Effizienz bei Rechenzentren kostet die Wirtschaft Milliarden",
@@ -164,7 +178,7 @@
           "field": "green-deal",
           "title": "Law, Public Acceptance and Nuclear Waste Management: The Finnish Experience and Lessons for the European Union",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026011",
-          "date": "2026-10-09",
+          "date": "2026-10-10",
           "summary": "This article examines the evolving role of the Transmission System Operator (TSO) in the aftermath of the 2021\u20132022 energy crisis with a particular focus on their involvement in the financial electricity markets through Electricity Price Area Differential (EPAD)-coupling. The Commission Regulation (EU) 2016/1719 of 26 September 2016 Establishing a Guideline on Forward Capacity Allocation (FCA Regulation) requires that the national regulatory authorities intervene when market failure is detected, this intervention requires that the TSOs take steps to ensure liquidity in the market. The article\u2026",
           "image": null,
           "actor_type": "academic",
@@ -322,7 +336,7 @@
           "field": "green-deal",
           "title": "Integrating Scope 3 Emissions into Environmental Impact Assessments: An EU Rule-of-Law Analysis",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026014",
-          "date": "2026-10-09",
+          "date": "2026-10-10",
           "summary": "This article examines whether European Union (EU) rule-of-law principles constrain the introduction and application of Scope 3 greenhouse gas assessment obligations within environmental impact assessment (EIA) procedures. Although the EIA Directive does not expressly require the assessment of downstream emissions, Member States retain considerable discretion to adopt broader climate-related assessment requirements. The article argues that EU law does not preclude such developments but conditions the manner in which they may be introduced and applied. The permissibility of reassessment\u2026",
           "image": null,
           "actor_type": "academic",
@@ -354,6 +368,18 @@
           "tags": [
             "cbam"
           ]
+        },
+        {
+          "org": "Environmental Policy and Governance",
+          "field": "green-deal",
+          "title": "Assessing Policy\u2010Oriented Learning About Climate\u2010Related Forest Disturbances in Europe",
+          "link": "https://onlinelibrary.wiley.com/doi/10.1002/eet.70148?af=R",
+          "date": "2026-10-09",
+          "summary": "ABSTRACT European forests provide multiple ecosystem services but are increasingly under pressure from climate\u2010related disturbances such as droughts, storms and insect calamities. Forest policy is an important driver for the adaptation of forest management practices to climate change. The paper aims at exploring how individual policy actors from four European countries perceive and learn about various forest policy topics in the context of climate\u2010related disturbances. Informed by the Advocacy Coalition Framework, it addresses the research question of how flexible and divisive their beliefs\u2026",
+          "image": null,
+          "actor_type": "academic",
+          "content_type": null,
+          "tags": []
         },
         {
           "org": "EEB (European Environmental Bureau)",
@@ -394,6 +420,20 @@
           "tags": []
         },
         {
+          "org": "EEB (European Environmental Bureau)",
+          "field": "competition",
+          "title": "New EU \u201cstrategic projects\u201d: NGOs call for thorough checks to protect water and health",
+          "link": "https://eeb.org/en/new-eu-strategic-projects-ngos-call-for-thorough-checks-to-protect-water-and-health/",
+          "date": "2026-10-09",
+          "summary": "Brussels, 9 October 2026 \u2013 As the European Commission announces 46 new \u2018Strategic Projects\u2019 under the Critical Raw Materials Act (CRMA) today, the European Environmental Bureau stresses that \u201cstrategic\u201d must not mean exempt from due scrutiny. All projects must undergo robust impact assessments and comply fully with EU social and environmental protections. The new list of 46 \u2018Strategic Projects\u2019 spans 16 EU countries, covering various stages of the raw materials value chain. The EEB, which coordinates the EU Raw Materials Coalition , warns that many of these new projects are located in\u2026",
+          "image": null,
+          "actor_type": "ngo",
+          "content_type": null,
+          "tags": [
+            "crma"
+          ]
+        },
+        {
           "org": "E3G",
           "field": "green-deal",
           "title": "Europe\u2019s clean industrial strategy needs a comprehensive lead-market architecture",
@@ -401,6 +441,18 @@
           "date": "2026-10-01",
           "summary": "Last month the European Commission published its proposal for the revision of Europe\u2019s public procurement rulebook, the Public Procurement Act. This proposal follows the Industrial Accelerator Act, published in March, and forms a key part of the Commission\u2019s attempt to secure Europe\u2019s industrial capacity by creating demand for low-carbon materials and products. With the two instruments now on the table, the architecture for European lead markets is taking shape. Yet the measures still fall short of providing the scale and certainty of demand needed to turn planned investments into European\u2026",
           "image": "https://www.e3g.org/wp-content/uploads/Low-carbon-projects-pipeline-Europe-1.png",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "German Marshall Fund of the United States",
+          "field": "security",
+          "title": "As Putin Wages Shadow War, Europe Looks for a Way to Hit Back; News Analysis",
+          "link": "https://www.gmfus.org/node/26419",
+          "date": "2026-10-09",
+          "summary": "As Putin Wages Shadow War, Europe Looks for a Way to Hit Back; News Analysis Subigya Basnet Fri, 10/09/2026 - 10:56 Quote Claudia Major, a defense expert with the German Marshall Fund, said that Mr. Putin wanted \u201cnot only to show that support for Ukraine has a cost, but to undermine the trust of the populace that a democratic state can protect them.\u201d Russia\u2019s aim in Ukraine is not only territorial, she added, but also \u201cto show that the West doesn\u2019t hold together and can be undermined from within.\u201d Date Fri, 10/09/2026 - 12:00 External Media Outlet New York Times Authors Dr. Claudia Major News\u2026",
+          "image": null,
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -426,6 +478,18 @@
           "summary": "Commission holds special meeting of Scientific panel on frontier AI safety and risks Anonymous (not verified) Fri, 10/09/2026 - 09:16 Today, the Commission holds a special meeting of the Scientific Panel on artificial intelligence (AI). The panel has been investigating recent loss-of-control incidents, and together with the Commission\u2019s AI Office, has worked on a set of questions for the companies that developed the models involved. Henna Virkkunen, Executive Vice-President for Tech Sovereignty, Security and Democracy, will attend the meeting. The Scientific Panel brings together 60\u2026",
           "image": "https://digital-strategy.ec.europa.eu/sites/default/files/styles/newsroom_large/public/newsroom/items/4_GPAI_CoP_Safety_security_rwseJDm7ss0QRPGhT5Ci3hCLcI_248010.jpg?itok=H3i6DfOX",
           "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "E3G",
+          "field": "green-deal",
+          "title": "2030 and beyond: Benchmarks for the energy transition and clean electrification",
+          "link": "https://www.e3g.org/news/2030-and-beyond-benchmarks-for-the-energy-transition-and-clean-electrification/?utm_source=rss&utm_medium=rss&utm_campaign=2030-and-beyond-benchmarks-for-the-energy-transition-and-clean-electrification",
+          "date": "2026-10-09",
+          "summary": "The COP31 Presidents\u2019 target of meeting 35% of final energy consumption from electricity by 2035 \u2013 dubbed \u201c35-by-35\u201d \u2013 delivers enormous economic and energy security benefits when powered by clean energy. Our analysis of recent reports has provided a set of climate benchmarks for a 1.5 \u00b0C-aligned pathway into the 2030s. These benchmarks can be used to inform policy and drive ambition. Achieving that ambition, however, depends on accelerated renewable energy deployment and more targeted support for end-use electrification. Thankfully, it is already cost-effective to raise electrification\u2026",
+          "image": null,
+          "actor_type": "think-tank",
           "content_type": null,
           "tags": []
         },
@@ -470,7 +534,7 @@
           "field": "green-deal",
           "title": "Invasive Alien Species and European Union Regulation: Some Reflections",
           "link": "https://kluwerlawonline.com/JournalArticle/European+Energy+and+Environmental+Law+Review/35.3/EELR2026013",
-          "date": "2026-10-09",
+          "date": "2026-10-10",
           "summary": "This article focuses on appraising the progress of efforts by the European Union (EU) to address the issue of invasive alien species (IAS) affecting the Union. IAS have been identified as being a significant challenge for environmental authorities world-wide in seeking to uphold, develop and promote policies concerning biodiversity protection. In 2014, the Union first adopted a legislative instrument intended to provide the basis for the EU to apply its objective on ensuring that effective measures are deployed to eliminate or at least minimize the environmental threats posed by the intended\u2026",
           "image": null,
           "actor_type": "academic",
@@ -624,6 +688,18 @@
           "tags": []
         },
         {
+          "org": "German Marshall Fund of the United States",
+          "field": "security",
+          "title": "If \u0160ef\u010dovi\u010d leaves China empty-handed, EU retaliation looms",
+          "link": "https://www.gmfus.org/node/26418",
+          "date": "2026-10-09",
+          "summary": "If \u0160ef\u010dovi\u010d leaves China empty-handed, EU retaliation looms Subigya Basnet Fri, 10/09/2026 - 10:56 Quote But experts warn it might still not be enough. For Penny Naas, who heads the German Marshall Fund\u2019s Brussels office, the outstanding problem is that, unlike the U.S. and China, which can respectively leverage semiconductors and critical raw materials to maintain some sort of d\u00e9tente, Europe lacks an equivalent lever beyond its single market. (...) \u201cIf they [EU countries] take decisive action, they [should] keep in mind that China will retaliate, and at this moment, are they prepared for\u2026",
+          "image": null,
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
           "org": "European Commission -- Shaping Europe's Digital Future",
           "field": "tech",
           "title": "Establishing the European AI Observatory: Call for tenders",
@@ -667,6 +743,18 @@
           "date": "2026-10-01",
           "summary": "The upward trend in power sector emissions continued in August, reaching 1.38 million tonnes (+7.8% compared with July), driven by increased use of lignite and fossil gas, despite the record level of renewable energy generation recorded in the same month. With the addition of August\u2019s emissions, cumulative sector emissions since the beginning of 2026 reached 9.6 million tonnes, exceeding the carbon budget set under the National Energy and Climate Plan (NECP) for the whole of 2026. The post The Carbon Footprint of Electricity Production \u2013 August 2026 first appeared on The Green Tank .",
           "image": "https://thegreentank.gr/wp-content/uploads/2024/08/co2.jpg",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "CEPA (Center for European Policy Analysis)",
+          "field": "security",
+          "title": "Readying the Nordics for War \u2013 Let\u2019s Not Waste Time",
+          "link": "https://cepa.org/article/readying-the-nordics-for-war-lets-not-waste-time/",
+          "date": "2026-10-09",
+          "summary": "The Russian threat rises and rises. The risks and costs from its shadow (and sometimes open) attacks are increasing, and at some point soon there will be a serious crisis, perhaps brought on by the casualties from a successful version of the Kremlin\u2019s bungled strike at Leipzig Airport in August. Facing this, Europe\u2019s most aware and best-prepared countries are represented by the Baltic states and the Nordic nations of Norway , Denmark, Sweden and Finland. They have been spending and reorganizing at speed since Russia\u2019s all-out invasion of Ukraine, as has Germany . With France and the UK, the\u2026",
+          "image": "https://i0.wp.com/cepa.org/wp-content/uploads/2026/05/CEPA-Defense-Technology-Report-BUTTON-FINAL-e1777987512766.jpg?fit=1000%2C633&ssl=1",
           "actor_type": "think-tank",
           "content_type": null,
           "tags": []
@@ -751,6 +839,20 @@
           "content_type": null,
           "tags": [
             "merger-control"
+          ]
+        },
+        {
+          "org": "CEPA (Center for European Policy Analysis)",
+          "field": "security",
+          "title": "Trust Is as Important to NATO as Guns",
+          "link": "https://cepa.org/article/trust-is-as-important-to-nato-as-guns/",
+          "date": "2026-10-09",
+          "summary": "The alliance cannot sustain collective defense if its citizens doubt why it exists, distrust what it says, or come to believe it is responsible for the threats it confronts. Public trust in NATO should be seen as a key part of Europe\u2019s security infrastructure. Societal trust is crucial to countering Russia in the information sphere, which is where the narrative battles take place. For NATO members, these battles matter because public acceptance of Moscow\u2019s false claim that the West caused the war could weaken support for Ukraine and for the alliance\u2019s broader deterrence mission. Polling in\u2026",
+          "image": "https://i0.wp.com/cepa.org/wp-content/uploads/2026/05/CEPA-Defense-Technology-Report-BUTTON-FINAL-e1777987512766.jpg?fit=1000%2C633&ssl=1",
+          "actor_type": "think-tank",
+          "content_type": null,
+          "tags": [
+            "nato-eu"
           ]
         },
         {
@@ -964,6 +1066,20 @@
           "tags": []
         },
         {
+          "org": "European Commission \u2014 Press Corner",
+          "field": "security",
+          "title": "Joint Statement at the second meeting of the EU-China Trade and Investment Consultations",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2122",
+          "date": "2026-10-09",
+          "summary": "European Commission Statement Beijing, 09 Oct 2026 On 8-9 October 2026, Wang Wentao, Minister of Commerce of China, and Maro\u0161 \u0160ef\u010dovi\u010d, Commissioner for Trade and Economic Security, Interinstitutional Relations and Transparency, of the European Commission, held the second meeting of the EU-China Trade and Investment Consultations (TIC) in Beijing.",
+          "image": null,
+          "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": [
+            "economic-security"
+          ]
+        },
+        {
           "org": "The Green Tank",
           "field": "green-deal",
           "title": "Nikos Mantzaris on News 24/7\u2019s Pop Science",
@@ -1126,6 +1242,18 @@
           "summary": "Hellenic DPA decision on a data breach involving E.E.T.A.A. S.A. as processor for the Ministry of Social Cohesion and Family Affairs ikerinar Thu, 08/10/2026 - 16:36",
           "image": null,
           "actor_type": "eu-institution",
+          "content_type": null,
+          "tags": []
+        },
+        {
+          "org": "The Record (Recorded Future News)",
+          "field": "tech",
+          "title": "Leader of vast money mule operation that laundered cybercriminal proceeds pleads guilty",
+          "link": "https://therecord.media/leader-of-money-mule-operation-for-cybercriminals-pleads-guilty",
+          "date": "2026-10-09",
+          "summary": "Oleg Korniev, a 42-year-old dual citizen of Ukraine and Russia, was a principal of Your Mule Cashout, or \u201cYMCO,\u201d which from 2007 until 2014 set up a sophisticated network of mules in the U.S. and Europe.",
+          "image": "http://cms.therecord.media/uploads/pexels_pixabay_259027_fd32e562f3.jpg",
+          "actor_type": "media",
           "content_type": null,
           "tags": []
         },
